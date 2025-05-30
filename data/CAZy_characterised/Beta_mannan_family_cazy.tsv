@@ -1,0 +1,31 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+endo-β-1,4-mannanase (Kcr_0419 )	3.2.1.78	pubmed	Candidatus Korarchaeum cryptofilum OPF8	ACB07175.1			Archaea	21	GH113
+endo-β-1,4-mannanase (ManA; AaManA)	3.2.1.78	pubmed	Alicyclobacillus acidocaldarius TC-12-31	ABG77968.1	A5H1I6	3CIV[A]4CD6[A]4CD7[A,B]4CD8[A]	Bacteria	21	GH113
+β-mannanase (Man113) (Man113A)	3.2.1.78	pubmed	Alicyclobacillus sp. A4	AGN12833.1	W5R5D2		Bacteria	21	GH113
+β-1,4-mannanase (AxMan113A)	3.2.1.78	pubmed	Amphibacillus xylanus NBRC 15112	BAM48369.1	K0J0N5	5YLH[A,B]5YLI[A,B]5YLK[A,B]5YLL[A,B]5Z4T[A,B]	Bacteria	21	GH113
+endo-β-1,4-mannanase (ManB; BaMan113A) (Man113A)	3.2.1.78	pubmed	Bacillus sp. N16-5	AML27062.1	A0A140EH91	7DV7[A,B]7DVJ[A,B]7DVZ[A,B]7DW8[A,B]7DWA[A,B]	Bacteria	21	GH113
+β-mannosidase (Q783_10190 )	3.2.1.25	pubmed	Carnobacterium inhibens subsp. gilichinskyi WN1359	AGY82530.1			Bacteria	21	GH113
+endo-β-1,4-mannanase (Clocel_3428 )	3.2.1.78	pubmed	Clostridium cellulovorans 743B	ADL53106.1			Bacteria	21	GH113
+β-mannosidase (Cspa_c52740 )	3.2.1.25	pubmed	Clostridium saccharoperbutylacetonicum N1-4(HMT)	AGF59019.1			Bacteria	21	GH113
+endo-β-1,4-mannanase (CCU_09070 )	3.2.1.78	pubmed	Coprococcus sp. ART55/1	CBK82649.1			Bacteria	21	GH113
+β-mannosidase (FAEPRAM212_01134 )	3.2.1.25	pubmed	Faecalibacterium prausnitzii M21/2	EDP22100.1			Bacteria	21	GH113
+FPR_17310	3.2.1.78	doi	Faecalibacterium prausnitzii SL3/3	CBL01979.1			Bacteria	21	GH113
+endo-β-1,4-mannanase (PM3016_2412 )	3.2.1.78	pubmed	Paenibacillus mucilaginosus 3016	AFC29300.1			Bacteria	21	GH113
+endo-β-1,4-mannanase (PM3016_4087 )	3.2.1.78	pubmed	Paenibacillus mucilaginosus 3016	AFC30869.1			Bacteria	21	GH113
+β-mannosidase (R70723_09070 )	3.2.1.25	pubmed	Paenibacillus sp. FSL R7-0273	AIQ46016.1			Bacteria	21	GH113
+β-mannosidase (PSTEL_08720 )	3.2.1.25	pubmed	Paenibacillus stellifer DSM 14472	AIQ63165.1			Bacteria	21	GH113
+reducing end exo-β-mannosidase (RiGH113; RIL182_01090; ROSINTL182_05483)	3.2.1.-	pubmed	Roseburia intestinalis L1-82	VCV21219.1	C7G6H0		Bacteria	21	GH113
+reducing end exo-β-mannosidase (RiGH113; RIL182_01090; ROSINTL182_05483)	3.2.1.-	pubmed	Roseburia intestinalis L1-82	EEV02560.1	C7G6H0		Bacteria	21	GH113
+endo-β-1,4-mannanase (RBI_II00178 )	3.2.1.78	pubmed	Ruminococcus bicirculans 80/3	CCO05952.1			Bacteria	21	GH113
+endo-β-1,4-mannanase (HGMM_OP4C795 )	3.2.1.78	pubmed	uncultured Acetothermia bacterium	BAL60159.1			Bacteria	21	GH113
+endo-β-1,4-mannanase	3.2.1.78	pubmed	Xanthomonas campestris pv. campestris str. ATCC 33913	AAM39996.1			Bacteria	21	GH113
+endo-β-1,4-mannanase (J154_03684 )	3.2.1.78	pubmed	Xanthomonas citri pv. citri gd2	AJZ27962.1			Bacteria	21	GH113
+β-1,4-mannanase (SsGH134)	3.2.1.78	pubmed	Streptomyces sp. NRRL B-24484	WP_030268297.1	A0A1L1QK12A0A1L1QK13A0A1L1QK16	5JTS[A]5JU9[A]5JUG[A]	Bacteria	7	GH134
+acetylxylan esterase / 6-O-glycoside deacetylase (CelE;CtCE2;Cthe_0797) (Cel5C)	3.1.1.723.1.1.-	pubmedpubmed	Acetivibrio thermocellus ATCC 27405	ABN52032.1	A3DDK3P10477	2WAB[A]2WAO[A]	Bacteria	7	CE2
+acetylxylan esterase (CE2A;CjCE2A;CJA_0450) (Axe2C)	3.1.1.72		Cellvibrio japonicus Ueda107	ACE84991.1	B3PIB0	2WAA[A]	Bacteria	7	CE2
+acetylxylan esterase / 6-O-glycoside deacetylase (CE2C;CjCE2C;CJA_2889) (Axe2B)	3.1.1.723.1.1.-		Cellvibrio japonicus Ueda107	ACE85140.1	B3PC75		Bacteria	7	CE2
+acetylxylan esterase / 6-O-glycoside deacetylase (CjCE2B;CJA_3103) (CE2B)	3.1.1.723.1.1.-		Cellvibrio japonicus Ueda107	ACE85322.1	B3PDE5	2W9X[A,B]	Bacteria	7	CE2
+acetyl β-mannan-esterase (broad specificity acting on 3-O-, 4-O-, and 6-O-acetylations) (RiCE2; RIL182_01101; ROSINTL182_05473+ROSINTL182_05472; CelE)	3.1.1.6	pubmed	Roseburia intestinalis L1-82	EEV02550.1	C7G6F9C7G6G0		Bacteria	7	CE2
+acetyl β-mannan-esterase (broad specificity acting on 3-O-, 4-O-, and 6-O-acetylations) (RiCE2; RIL182_01101; ROSINTL182_05473+ROSINTL182_05472; CelE)	3.1.1.6	pubmed	Roseburia intestinalis L1-82	EEV02615.1	C7G6F9C7G6G0		Bacteria	7	CE2
+acetyl β-mannan-esterase (broad specificity acting on 3-O-, 4-O-, and 6-O-acetylations) (RiCE2; RIL182_01101; ROSINTL182_05473+ROSINTL182_05472; CelE)	3.1.1.6	pubmed	Roseburia intestinalis L1-82	VCV21230.1	C7G6F9C7G6G0		Bacteria	7	CE2
+acetyl β-mannan-esterase (specific to 2-O-acetylations) (RiCE17; RiCEX; ROSINTL182_05471)	3.1.1.-	pubmed	Roseburia intestinalis L1-82	EEV02614.1	C7G6F8	6HFZ[A,B,C,D]6HH9[A,B,C,D]	Bacteria	2	CE17

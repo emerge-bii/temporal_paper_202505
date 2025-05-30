@@ -1,0 +1,140 @@
+---
+title: "beta_diversity_over_time"
+author: "Dylan Cronin"
+date: "2024-06-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#Import libraries
+library(ggplot2)
+
+library(here)
+
+```
+
+```{r, colors-levels}
+theme_set(theme_bw())
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("Palsa", "Bog", "Fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+shape_habitat  <- c(15, 16, 17)
+fill_habitat   <- colour_habitat
+depth_levels <- c("0-9", "10-19", "20-29", "30-39")
+depth_labels <- c("0", "10", "20", "30")
+fill_depth   <- RColorBrewer::brewer.pal(5, "YlOrBr")[-1]
+colour_depth <- fill_depth
+year_levels <- c("2011", "2012", "2013", "2014", "2015", "2016", "2017")
+year_labels <- year_levels
+fill_year   <- RColorBrewer::brewer.pal(7, "OrRd")
+colour_year <- fill_year
+assembly_levels <- c("Homogenous selection", "Heterogenous selection",
+                     "Homogenizing dispersal", "Dispersal limitation and drift",
+                     "Drift")
+assembly_labels <- assembly_levels
+colour_assembly <- c("#521168", "#8e318f","#BD4D0C","#FF8000", "#FADBAC") # purple/orange
+fill_assembly <- colour_assembly
+
+special_levels <- c("generalist", "methanogen", "fermenter", "macromolecule_degrader", "methanotroph", "homoacetogen", "monomer_degrader", NA)
+special_colour <- RColorBrewer::brewer.pal(9, "Set1")[-8]
+special_fill <- special_colour
+
+n_special_levels <- c("nitrite_oxidiser", "nitrogen_fixer", "nitrate_reducer", "denitrifier", NA)
+n_special_colour <- RColorBrewer::brewer.pal(9, "Set1")[-5:-8]
+n_special_fill <- n_special_colour
+```
+
+```{r}
+
+# Importing from CSV files
+ref_diversity_long <- read.csv(here("quantify_stability_with_time_figure","Figure1_beta_diversity_over_time", 'ref_diversity_long.csv')) #long form beta diversity within and against reference year
+ref_diversity_long_against_ref <- read.csv(here("quantify_stability_with_time_figure","Figure1_beta_diversity_over_time", 'ref_diversity_long_against_ref.csv')) #beta diversity against reference year (only includes comparisons against reference year)
+ref_diversity_long_within_ref <- read.csv(here("quantify_stability_with_time_figure","Figure1_beta_diversity_over_time",'ref_diversity_long_within_ref.csv')) #beta diversity within reference year
+mean_beta_diversity <- read.csv(here("quantify_stability_with_time_figure","Figure1_beta_diversity_over_time", 'mean_beta_diversity.csv')) #mean beta diversity
+mean_beta_diversity_within_ref <- read.csv(here("quantify_stability_with_time_figure","Figure1_beta_diversity_over_time", 'mean_beta_diversity_within_ref.csv')) #mean beta diversity only within reference year
+minmax_beta_diversity <- read.csv(here("quantify_stability_with_time_figure","Figure1_beta_diversity_over_time",'minmax_beta_diversity.csv')) #max and min beta diversity
+minmax_beta_diversity_within_ref <- read.csv(here("quantify_stability_with_time_figure","Figure1_beta_diversity_over_time",'minmax_beta_diversity_within_ref.csv')) #max and min beta diversity within reference year
+
+```
+
+
+```{r, fix-data-formats}
+
+fix_data_formats <- function(input_dataframe) {
+  out_df <- input_dataframe %>% 
+    mutate(Habitat___from = factor(Habitat___from, levels = habitat_levels),
+           DepthLumping_from = factor(DepthLumping_from, levels = depth_levels))
+  return(out_df)
+}
+ref_diversity_long <- fix_data_formats(ref_diversity_long) 
+minmax_beta_diversity <- fix_data_formats(minmax_beta_diversity)
+ref_diversity_long_against_ref <- fix_data_formats(ref_diversity_long_against_ref)
+mean_beta_diversity <- fix_data_formats(mean_beta_diversity) 
+mean_beta_diversity_within_ref <- fix_data_formats(mean_beta_diversity_within_ref)
+ref_diversity_long_within_ref <- fix_data_formats(ref_diversity_long_within_ref)
+minmax_beta_diversity_within_ref <- fix_data_formats(minmax_beta_diversity_within_ref)
+```
+```{r}
+
+
+
+BetaDiv_ref <- ggplot(ref_diversity_long, aes(x = Year___from, group = DepthLumping_from, 
+                               color = Habitat___from)) +
+  geom_point(data = ref_diversity_long_against_ref, 
+             aes(y = BetaDiversity, shape = DepthLumping_from), alpha = 0.5) +
+    geom_ribbon(data = minmax_beta_diversity, 
+              aes(ymin = min_BetaDiversity, ymax = max_BetaDiversity, 
+                  fill = Habitat___from, color = Habitat___from), alpha = 0.3) +
+  geom_line(data = mean_beta_diversity, aes(y = MeanBetaDiversity, linetype = DepthLumping_from), size = 1.2, color = "black") +
+  geom_hline(data = mean_beta_diversity_within_ref, aes(yintercept = WithinRefYearAvg), linetype = "dashed") +
+  geom_point(data = ref_diversity_long_within_ref, aes(y = BetaDiversity, shape = DepthLumping_from), color = "gray", alpha = 0.5) +
+  geom_ribbon(data = minmax_beta_diversity_within_ref, 
+              aes(ymin = min_BetaDiversity, ymax = max_BetaDiversity, color = "grey"), color = NA, alpha = 0.3) +
+  scale_color_manual(name = "Habitat", breaks = habitat_levels, 
+                       values = colour_habitat) +
+  scale_fill_manual(name = "Habitat", breaks = habitat_levels, 
+                       values = colour_habitat) +
+  scale_shape_manual(name = "Depth (cm)", breaks = c("0-9", "10-19", "20-29", "30-39"), 
+                       values = c(1,2,3,4)) +
+  scale_linetype_manual(name = "Depth (cm)", breaks = c("0-9", "10-19", "20-29", "30-39"),
+                        values = c(1,2,3,4)) +
+  facet_grid(DepthLumping_from ~ Habitat___from) +
+  labs(x = "Year",
+       y = "Beta Diversity") +
+  ylim(0, 1) +
+  coord_fixed(ratio = 6) +
+  guides(linetype = guide_legend(keywidth = unit(2.4, "cm"), 
+                                 override.aes = list(fill = NA, color = "black", size = 6, linewidth = 2)),
+         shape = guide_legend(keywidth = unit(2.4, "cm"), 
+                                 override.aes = list(fill = NA, color = "black", size = 6))) +
+  theme_bw() +
+  theme(strip.text.x = element_text(angle = 0), 
+        strip.text.y = element_text(angle = 0, size = rel(2)),
+        legend.position = "right",
+        axis.title = element_text(size = rel(2)),
+        axis.text.x = element_text(angle = 0, hjust = 0.5, size = rel(2)),
+        axis.text.y = element_text(size = rel(2)),
+        legend.text = element_text(size = rel(1.7)),
+        legend.title = element_text(size = rel(2)),
+        panel.spacing = unit(1, "lines"),
+        strip.background = element_rect(fill = "white", color = NA))
+BetaDiv_ref
+
+BetaDiv_ref_legend <- cowplot::get_legend(BetaDiv_ref, return_all = TRUE)
+
+cowplot::plot_grid(BetaDiv_ref_legend)
+
+
+BetaDiv_ref_nolegend <- BetaDiv_ref +
+  theme(legend.position = "none")
+ggsave(here("Figure 1", "BetaDiv_time_nolegend.png"), plot = BetaDiv_ref_nolegend, device = "png", dpi = 300,
+       height = 10, width = 10)
+
+ggsave(here("Figure 1", "BetaDiv_time.png"), plot = BetaDiv_ref, device = "png", dpi = 300,
+       height = 10, width = 10)
+
+```

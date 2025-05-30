@@ -1,0 +1,14 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+β-L-arabinobiosidase (HypBA2;BLLJ_0212)	3.2.1.187	pubmed	Bifidobacterium longum subsp. longum JCM 1217	BAJ34647.1	E8MGH9	6M5A[A]	Bacteria	2	GH121
+β-L-arabinobiosidase (HypBA2;BLLJ_0212)	3.2.1.187	pubmed	Bifidobacterium longum subsp. longum JCM 1217	BAJ65882.1	E8MGH9	6M5A[A]	Bacteria	2	GH121
+3-C-carboxy-5-deoxy-L-xylose (aceric acid) hydrolase (BT1003;BT_1003)	3.2.1.-	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO76110.1	Q8A914	5MQO[A]	Bacteria	7	GH127
+β-L-arabinofuranosidase (BT3674)	3.2.1.185	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO78779.1	Q8A1I7	6EX6[A,B]	Bacteria	7	GH127
+β-1,2-L-arabinofuranosidase (HypBA1;BlGH127;BLLJ_0211)	3.2.1.185	pubmed	Bifidobacterium longum subsp. longum JCM 1217	BAK79118.1	E8MGH8	3WKW[A]3WKX[A]3WRE[A]3WRF[A]3WRG[A]7BZL[A]7DIF[A]7EXU[A]7EXV[A]7EXW[A]	Bacteria	7	GH127
+β-1,2-L-arabinofuranosidase (HypBA1;BlGH127;BLLJ_0211)	3.2.1.185	pubmed	Bifidobacterium longum subsp. longum JCM 1217	BAJ65881.1	E8MGH8	3WKW[A]3WKX[A]3WRE[A]3WRF[A]3WRG[A]7BZL[A]7DIF[A]7EXU[A]7EXV[A]7EXW[A]	Bacteria	7	GH127
+α-1,3-(3,6)-anhydro-D-galactosidase (DagA3; ZgGH127-3; zobellia_3150)	3.2.1.-	pubmed	Zobellia galactanivorans DsijT	CAZ97289.1	G0L003		Bacteria	7	GH127
+α-1,3-(3,6)-anhydro-D-galactosidase (DagA2; ZgGH127-2; zobellia_3148)	3.2.1.-	pubmed	Zobellia galactanivorans DsijT	CAZ97287.1	G0L7B5		Bacteria	7	GH127
+α-1,3-(3,6)-anhydro-D-galactosidase (DagA1; ZgGH127-1; zobellia_3147)	3.2.1.-	pubmed	Zobellia galactanivorans DsijT	CAZ97286.1	G0L001		Bacteria	7	GH127
+bimodular β-L-arabinofuranosidase / β-glucuronidase (BT0996; BT_0996)	3.2.1.185	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO76103.1	Q8A921	5MT2[A]5MUI[A]5MUJ[A]	Bacteria	2	GH137
+bimodular β-L-arabinofuranosidase / β-glucuronidase (BT0996; BT_0996)	3.2.1.185	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_809909.1	Q8A921	5MT2[A]5MUI[A]5MUJ[A]	Bacteria	2	GH137
+bimodular 2-keto-3-deoxy-D-lyxo-heptulosaric acid (Dha) hydrolase / β-L-arabinofuranosidase (BT_1020; BT1020)	3.2.1.185	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO76127.1	Q8A8Z7	5MQR[A]5MQS[A]	Bacteria	2	GH142
+β-L-arabinofuranosidase (BT0349)	3.2.1.185	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO75456.1	Q8AAW3	5OPJ[A]6YQH[AAA]	Bacteria	2	GH146

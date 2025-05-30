@@ -1,0 +1,66 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+β-1,3-glucanosyltransglucosidase (Glt7;Avin_39140)	2.4.1.-	pubmed	Azotobacter vinelandii DJ ATCC BAA-1303	ACO80054.1	C1DSW1		Bacteria	51	GH17
+laminarinase (FaGH17A ; BN863_18720)	3.2.1.39	pubmed	Formosa agariphila KMM 3901	CDF79584.1			Bacteria	51	GH17
+debranched laminarin-specific laminarinase (FbGH17B; FORMB_24740)	3.2.1.39	pubmed	Formosa sp. Hel1_33_131	AOR29491.1	A0A1D7Y1M4		Bacteria	51	GH17
+laminarinase (FbGH17A; FORMB_24720)	3.2.1.39	pubmed	Formosa sp. Hel1_33_131	AOR29489.1	A0A1D7Y259	6FCG[A,B,C,D,E,F]	Bacteria	51	GH17
+cyclic β-1-3-glucan synthase (NdvB;Glt1;PA1163)	2.4.1.-	pubmed	Pseudomonas aeruginosa PAO1	AAG04552.1	Q9I4H4		Bacteria	51	GH17
+cyclic β-1-3-glucan synthase (NdvB;Glt1;PA1163)	2.4.1.-	pubmed	Pseudomonas aeruginosa PAO1	NP_249854.1	Q9I4H4		Bacteria	51	GH17
+β-1,3-glucanosyltransglucosidase (Glt3;PP1526)	2.4.1.-	pubmed	Pseudomonas putida KT2440	AAN67147.1	Q88MP4		Bacteria	51	GH17
+β-1,3-glucanosyltransglucosidase (Glt3;PP1526)	2.4.1.-	pubmed	Pseudomonas putida KT2440	NP_743683.1	Q88MP4		Bacteria	51	GH17
+laminarinase (VbGH17A; B003_13785)	3.2.1.39	pubmed	Vibrio breoganii 1C10	OEF87991.1			Bacteria	51	GH17
+endo-β-1,3-glucanase (VvGH17; AOT11_01225)	3.2.1.39	pubmed	Vibrio vulnificus NBRC 15645 = ATCC 27562	ASM98089.1			Bacteria	51	GH17
+hesperidin 6-O-α-L-rhamnosyl-β-glucosidase (AMIS_8220)	3.2.1.168	pubmed	Actinoplanes missouriensis 431	BAL86042.1			Bacteria	50	GH55
+laminarin-degrading enzyme (AMIS_27790)	3.2.1.58	pubmed	Actinoplanes missouriensis 431	BAL87999.1	I0H4R2		Bacteria	50	GH55
+laminarin-degrading enzyme (AMIS_36420)	3.2.1.58	pubmed	Actinoplanes missouriensis 431	BAL88862.1	I0H775		Bacteria	50	GH55
+laminarin-degrading enzyme (L083_2417)	3.2.1.58	pubmed	Actinoplanes sp. N902-109	AGL15927.1	R4L928		Bacteria	50	GH55
+laminarin-degrading enzyme (Amir_1676)	3.2.1.58	pubmed	Actinosynnema mirum DSM 43827	ACU35625.1	C6WCK8		Bacteria	50	GH55
+laminarin-degrading enzyme (RAM_26755)	3.2.1.58	pubmed	Amycolatopsis mediterranei S699	AEK43828.1	G0FTE1		Bacteria	50	GH55
+laminarin-degrading enzyme (RAM_26755)	3.2.1.58	pubmed	Amycolatopsis mediterranei S699	AFO78726.1	G0FTE1		Bacteria	50	GH55
+endo-β-1,3-glucanase / laminarinase (GluA)	3.2.1.39	pubmed	Arthrobacter sp. NHB-10	BAF52916.1	A4PHQ5		Bacteria	50	GH55
+laminarin-degrading enzyme (bgla_2g01330)	3.2.1.58	pubmed	Burkholderia gladioli BSR3	AEA62613.1	F2LJF2		Bacteria	50	GH55
+laminarin-degrading enzyme (bpr_I0587)	3.2.1.58	pubmed	Butyrivibrio proteoclasticus B316	ADL33332.1	E0S0K7		Bacteria	50	GH55
+bi-functional exo-β-1,3-glucanase and endo-β-1,3-glucanase / laminarinase (Calkro_0111)	3.2.1.58	pubmed	Caldicellulosiruptor kronotskyensis 2002	ADQ45027.1	E4SCH2		Bacteria	50	GH55
+laminarin-degrading enzyme (Deipe_2653)	3.2.1.58	pubmed	Deinococcus peraridilitoris DSM 19664	AFZ68118.1	L0A2M0		Bacteria	50	GH55
+laminarin-degrading enzyme (Hoch_1480)	3.2.1.58	pubmed	Haliangium ochraceum DSM 14365	ACY14033.1	D0LVP9		Bacteria	50	GH55
+laminarin-degrading enzyme (Haur_1518)	3.2.1.58	pubmed	Herpetosiphon aurantiacus DSM 785	ABX04162.1	A9B4J7		Bacteria	50	GH55
+laminarin-degrading enzyme (ML5_0893)	3.2.1.58	pubmed	Micromonospora sp. L5	ADU06434.1	D3C8S2		Bacteria	50	GH55
+laminarin-degrading enzyme (Asphe3_00570)	3.2.1.58	pubmed	Pseudarthrobacter phenanthrenivorans Sphe3	ADX71276.1	F0M5E4		Bacteria	50	GH55
+laminarin-degrading enzyme (STAUR_2771)	3.2.1.58	pubmed	Stigmatella aurantiaca DW4/3-1	ADO70569.1	E3FMH6		Bacteria	50	GH55
+laminarin-degrading enzyme (SBI_09384)	3.2.1.58	pubmed	Streptomyces bingchenggensis BCW-1	ADI12502.1	D7C5X3		Bacteria	50	GH55
+laminarin-degrading enzyme (BN159_1797)	3.2.1.58	pubmed	Streptomyces davaonensis JCM 4913	CCK26176.1	K4QTC8		Bacteria	50	GH55
+laminarin-degrading enzyme (BN159_1515)	3.2.1.58	pubmed	Streptomyces davaonensis JCM 4913	CCK25894.1	K4QZU1		Bacteria	50	GH55
+laminarin-degrading enzyme (SFUL_414)	3.2.1.58	pubmed	Streptomyces fulvissimus DSM 40593	AGK75398.1	N0CP81		Bacteria	50	GH55
+laminarin-degrading enzyme (SFUL_4929)	3.2.1.58	pubmed	Streptomyces fulvissimus DSM 40593	AGK79825.1	N0CVU7		Bacteria	50	GH55
+laminarin-degrading enzyme (SFUL_6252)	3.2.1.58	pubmed	Streptomyces fulvissimus DSM 40593	AGK81135.1	N0CZE9		Bacteria	50	GH55
+laminarin-degrading enzyme (SGR_2402)	3.2.1.58	pubmed	Streptomyces griseus subsp. griseus NBRC 13350	BAG19231.1	B1W1K6		Bacteria	50	GH55
+laminarin-degrading enzyme (SGR_6722)	3.2.1.58	pubmed	Streptomyces griseus subsp. griseus NBRC 13350	BAG23551.1	B1VMS6		Bacteria	50	GH55
+laminarin-degrading enzyme (SHJG_7770)	3.2.1.58	pubmed	Streptomyces hygroscopicus subsp. jinggangensis 5008	AEY93037.1	H2JTG1		Bacteria	50	GH55
+laminarin-degrading enzyme (SHJG_8243)	3.2.1.58	pubmed	Streptomyces hygroscopicus subsp. jinggangensis 5008	AEY93509.1	H2K2K7		Bacteria	50	GH55
+laminarin-degrading enzyme (Sfla_2164)	3.2.1.58	pubmed	Streptomyces pratensis ATCC 33331	ADW03597.1	C9NCX6		Bacteria	50	GH55
+laminarin-degrading enzyme (Sfla_5710)	3.2.1.58	pubmed	Streptomyces pratensis ATCC 33331	ADW07102.1	C9NK40		Bacteria	50	GH55
+laminarin-degrading enzyme (F750_4648)	3.2.1.58	pubmed	Streptomyces sp. PAMC 26508	AGJ57089.1			Bacteria	50	GH55
+exo-β-1,3-glucanase (SacteLam55A;SACTE_4363) (Lam55A)	3.2.1.58	pubmed	Streptomyces sp. SirexAA-E	AEN12197.1	G2NFJ9	4PEW[A,B]4PEX[A,B]4PEY[A]4PEZ[A]4PF0[A,B]4TYV[A,B]4TZ1[A]4TZ3[A]4TZ5[A,B]	Bacteria	50	GH55
+laminarin-degrading enzyme (SVEN_0573)	3.2.1.58	pubmed	Streptomyces venezuelae ATCC 10712	CCA53860.1	F2R8E2		Bacteria	50	GH55
+laminarin-degrading enzyme (SVEN_0573)	3.2.1.58	pubmed	Streptomyces venezuelae ATCC 10712	QER97425.1	F2R8E2		Bacteria	50	GH55
+laminarin-degrading enzyme (SVEN_0630)	3.2.1.58	pubmed	Streptomyces venezuelae ATCC 10712	CCA53917.1	F2R8J9		Bacteria	50	GH55
+laminarin-degrading enzyme (SVEN_0630)	3.2.1.58	pubmed	Streptomyces venezuelae ATCC 10712	QER97475.1	F2R8J9		Bacteria	50	GH55
+laminarin-degrading enzyme (Strvi_6100)	3.2.1.58	pubmed	Streptomyces violaceusniger Tu 4113	AEM85591.1	G2PGL2		Bacteria	50	GH55
+laminarin-degrading enzyme (Sros_2003)	3.2.1.58	pubmed	Streptosporangium roseum DSM 43021	ACZ84991.1	D2AW38		Bacteria	50	GH55
+β-1,3-glucanase (laminaripentaose-producing) (GlcI)	3.2.1.39	pubmed	Arthrobacter sp. YCWD3	BAA04892.1	Q59146		Bacteria	6	GH64
+β-1,3-glucanase (laminaripentaose-producing) (BglI)	3.2.1.39	pubmed	Cellulosimicrobium cellulans 73 14 / ATCC21606 / DSM 10297	AAA25520.1	P22222		Bacteria	6	GH64
+endo-β-1,3-glucanase (Kfgh64;Kfla_5574)	3.2.1.39	pubmed	Kribbella flavida DSM 17836	ADB34580.1	D2PN96		Bacteria	6	GH64
+β-1,3-glucanase B (GluB)	3.2.1.39	pubmed	Lysobacter enzymogenes N4-7	AAN77504.1	Q8GCZ6		Bacteria	6	GH64
+β-1,3-glucanase (laminaripentaose-producing) (Lph;LPHase)	3.2.1.39	doi	Streptomyces matensis DIC-108	BAA34349.1	Q9Z4I2	3GD0[A]3GD9[A]	Bacteria	6	GH64
+β-1,3-glucanase (Cthe_0660)	3.2.1.39	pubmed	Acetivibrio thermocellus ATCC 27405	ABN51895.1	A3DD66	6FOP[A]	Bacteria	15	GH81
+β-1,3-glucanase / laminarinase (BhGH81;BH0236)	3.2.1.39	pubmed	Halalkalibacterium halodurans C-125	BAB03955.1	Q9KG76	5T49[A]5T4A[A]5T4C[A]5T4G[A]5UPI[A]5UPM[A]5UPN[A]5UPO[A]5V1W[A]	Bacteria	15	GH81
+β-1,3-glucanase / laminarinase (BhGH81;BH0236)	3.2.1.39	pubmed	Halalkalibacterium halodurans C-125	NP_241102.1	Q9KG76	5T49[A]5T4A[A]5T4C[A]5T4G[A]5UPI[A]5UPM[A]5UPN[A]5UPO[A]5V1W[A]	Bacteria	15	GH81
+β-1,3-glucanase (Tfu_2130) (Lam81A)	3.2.1.39	pubmed	Thermobifida fusca YX	AAZ56163.1	Q47N06		Bacteria	15	GH81
+endo-β-1,3-glucanase (AmGH128_I;RAM_19160)	3.2.1.39	pubmed	Amycolatopsis mediterranei S699	AEK42318.1	G0FQ07	6UAQ[A]6UAR[A]6UAS[A]6UAT[A]6UAU[A]6UFL[A]6UFZ[A]	Bacteria	8	GH128
+endo-β-1,3-glucanase (AmGH128_I;RAM_19160)	3.2.1.39	pubmed	Amycolatopsis mediterranei S699	AFO77254.1	G0FQ07	6UAQ[A]6UAR[A]6UAS[A]6UAT[A]6UAU[A]6UFL[A]6UFZ[A]	Bacteria	8	GH128
+endo-β-1,3-glucanase (PvGH128_II;CFBP1590__2373)	3.2.1.39	pubmed	Pseudomonas viridiflava CFBP 1590	SMS09959.1	A0A1Y6JJH6	6UAV[A]6UAW[A]	Bacteria	8	GH128
+endo-β-1,3-glucanase (ScGH128_II;sce3275)	3.2.1.39	pubmed	Sorangium cellulosum So ce56	CAN93434.1	A9GMG4	6UAX[A,B]	Bacteria	8	GH128
+endo-β-1,3-glucanase active on curdlan (BcellWH2_01931; BACWH2_1796)	3.2.1.39	pubmed	Bacteroides cellulosilyticus WH2	ALJ59177.1	A0A0P0FYR1		Bacteria	2	GH157
+endo-β-1,3-glucanase active on curdlan (BcellWH2_01931; BACWH2_1796)	3.2.1.39	pubmed	Bacteroides cellulosilyticus WH2	WP_029429093.1	A0A0P0FYR1		Bacteria	2	GH157
+endo-β-1,3-glucanase (BfGH158; HMPREF9446_00612)	3.2.1.39	pubmed	Bacteroides fluxus YIT 12057	EGF59242.1	F3PPH2		Bacteria	4	GH158
+endo-β-1,3-glucanase (BuGH158; BACUNI_01485)	3.2.1.39	pubmed	Bacteroides uniformis ATCC 8492	ZP_02070068.1	A0A412SRH5	6PAL[A,B]	Bacteria	4	GH158
+endo-β-1,3-glucanase active on curdlan (Vvad_PD1638)	3.2.1.39	pubmed	Victivallis vadensis ATCC BAA-548	ZP_06243608.1			Bacteria	4	GH158

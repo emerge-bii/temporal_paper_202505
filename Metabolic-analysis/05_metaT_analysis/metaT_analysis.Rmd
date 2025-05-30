@@ -1,0 +1,1831 @@
+---
+title: "MetaT analysis"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, error = FALSE, fig.width = 6, fig.asp = 0.618, out.width = "100%", fig.align = "center")
+
+library(ggnewscale)
+library(ggh4x)
+library(betareg)
+library(broom)
+library(emmeans)
+library(ggupset)
+library(ggrepel)
+library(cowplot)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+main_dir <- here("Metabolic-analysis", "05_metaT_analysis")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("Palsa", "Bog", "Fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+shape_habitat  <- c(15, 16, 17)
+fill_habitat   <- colour_habitat
+
+depth_levels <- c("0-9", "10-19", "20-29", "30-39")
+depth_labels <- c("0", "10", "20", "30")
+fill_depth   <- RColorBrewer::brewer.pal(5, "YlOrBr")[-1]
+colour_depth <- fill_depth
+
+year_levels <- c("2011", "2012", "2013", "2014", "2015", "2016", "2017")
+year_labels <- year_levels
+fill_year   <- RColorBrewer::brewer.pal(7, "BuPu")
+colour_year <- fill_year
+
+phylum_levels <- c(
+  # Bacteria
+  "p__Acidobacteriota",
+  "p__Actinobacteriota",
+  "p__Bacteroidota",
+  "p__Chloroflexota",
+  "p__Desulfobacterota",
+  "p__Eremiobacterota",
+  "p__Proteobacteria",
+  "p__Verrucomicrobiota",
+  # Archaea
+  "p__Halobacteriota",
+  "p__Methanobacteriota",
+  "p__Thermoplasmatota",
+  "p__Thermoproteota",
+  "other"
+)
+phylum_labels <- c(
+  # Bacteria
+  "Acidobacteriota",
+  "Actinobacteriota",
+  "Bacteroidota",
+  "Chloroflexota",
+  "Desulfobacterota",
+  "Eremiobacterota",
+  "Proteobacteria",
+  "Verrucomicrobiota",
+  # Archaea
+  "Halobacteriota",
+  "Methanobacteriota",
+  "Thermoplasmatota",
+  "Thermoproteota",
+  "other"
+)
+colour_phylum <- c(RColorBrewer::brewer.pal(12, "Set3"), "white")
+fill_phylum <- colour_phylum
+
+metapathway_levels <- metapathway_groups %>% `$`(metapath) %>% unique()
+colour_metapathway <- RColorBrewer::brewer.pal(10, "Set3")
+fill_metapathway <- colour_metapathway
+
+set.seed(42)
+```
+
+```{r wrangling}
+# Normalise transcripts by relative abundance
+rel_abund <- trimmed_mean$rel_abund %>%
+  pivot_longer(-genome, names_to = "temporal_sample_id", values_to = "rel_abund")
+
+metaT_genomes_norm <- metaT_genomes %>%
+  left_join(sample_metadata %>% select(SampleID__, temporal_sample_id)) %>%
+  left_join(rel_abund, by = c("genome", "temporal_sample_id")) %>%
+  mutate(
+    tpm_norm = tpm / rel_abund,
+    # 12% of tpm are Inf (>0 tpm and 0 rel_abund)
+    # .4% of tpm are NaN (0 tpm and 0 rel_abund)
+    tpm_norm = if_else(is.finite(tpm_norm), tpm_norm, 0)
+    ) %>%
+  rename(tpm_raw = tpm) %>%
+  rename(tpm = tpm_norm)
+
+metaT_pathways_norm <- metaT_pathways %>%
+  left_join(rel_abund, by = c("genome", "temporal_sample_id")) %>%
+  mutate(
+    tpm_norm = tpm / rel_abund,
+    # 7% of tpm are Inf (>0 tpm and 0 rel_abund)
+    # .2% of tpm are NaN (0 tpm and 0 rel_abund)
+    tpm_norm = if_else(is.finite(tpm_norm), tpm_norm, 0)
+  ) %>%
+  rename(tpm_raw = tpm) %>%
+  rename(tpm = tpm_norm)
+
+metaT_exp_norm <- metaT_exp %>%
+  left_join(rel_abund, by = c("genome", "temporal_sample_id")) %>%
+  mutate(
+    tpm_norm = tpm / rel_abund,
+    # 11% of tpm are Inf (>0 tpm and 0 rel_abund)
+    # .7% of tpm are NaN (0 tpm and 0 rel_abund)
+    tpm_norm = if_else(is.finite(tpm_norm), tpm_norm, 0)
+    ) %>%
+  rename(tpm_raw = tpm) %>%
+  rename(tpm = tpm_norm)
+
+metaT_exp_sum <- metaT_exp %>%
+  group_by(subpathway, temporal_sample_id) %>%
+  summarise(tpm = sum(tpm))
+
+metaT_genes <- metaT_pathways %>%
+  filter(!is.na(label_id)) %>%
+  distinct(gene_id, label_id, temporal_sample_id, .keep_all = TRUE)
+
+metaT_genes_sum <- metaT_genes %>%
+  group_by(label_id, temporal_sample_id) %>%
+  summarise(tpm = sum(tpm))
+```
+
+## Stats
+
+```{r metaT-availability}
+sample_metadata <- sample_metadata %>%
+  mutate(Core__ = factor(Core__, levels = c(1, 2, 3)))
+
+sample_metadata_subset <- sample_metadata %>%
+  filter(SampleID__ %in% (metaT_genomes$SampleID__ %>% unique()))
+
+sample_metadata %>%
+  ggplot(aes(Core__, DepthAvg__)) +
+  geom_errorbar(aes(ymin = DepthMin__, ymax = DepthMax__), width = 0) +
+  geom_point(color = "grey40", fill = NA) +
+  geom_point(data = sample_metadata_subset, aes(Core__, DepthAvg__), color = "red") +
+  ggh4x::facet_nested(~Year__ + Habitat__) +
+  scale_y_reverse() +
+  labs(
+    title = "MetaT availability",
+    subtitle = "red = present, black = absent"
+  )
+ggsave("metaT_availability.png", path = main_dir, dpi = 900, height = 8, width = 12)
+```
+
+```{r pathway-betareg}
+#################
+### Wrangling ###
+#################
+alpha <- 0.05
+
+stats_metadata <- sample_metadata %>%
+  select(temporal_sample_id, Habitat__, DepthLumping, Year__) %>%
+  mutate(
+    Year__ = factor(Year__, levels = year_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+    Habitat__ = factor(Habitat__, levels = habitat_levels)
+  )
+
+stats_df <- metaT_exp %>%
+  group_by(temporal_sample_id, subpathway) %>%
+  summarise(tpm = sum(tpm)) %>%
+  mutate(abund = tpm / sum(tpm)) %>%
+  inner_join(stats_metadata, by = "temporal_sample_id")
+
+# Check 1/0 counts
+# stats_df %>%
+#   group_by(subpathway) %>%
+#   summarise(
+#     zero = sum(abund == 0),
+#     one = sum(abund == 1),
+#     other = sum(abund > 0 & abund < 1)
+#     ) %>%
+#   filter(zero > 0 | one > 0) %>%
+#   print(n = Inf)
+
+#################
+### Functions ###
+#################
+transform_perc <- function(vec) {
+  # See Smithson & Verkuilen 2006 (https://doi.org/10.1037/1082-989X.11.1.54)
+  (vec * (length(vec) - 1) + 0.5) / length(vec)
+}
+
+###############
+### Habitat ###
+###############
+# betareg between habitats
+# Likelihood ratio test between beta-distribution regression models with and without habitat parameter with FDR correction
+overall_df <- stats_df %>%
+  group_by(subpathway) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(
+    data = map(data, ~ .x %>% mutate(adj_abund = transform_perc(abund))),
+    base_fit = map(data, ~ betareg(adj_abund ~ 1, link = "logit", data = .)),
+    fit = map(data, ~ betareg(adj_abund ~ Habitat__, link = "logit", data = .)),
+    tidy = map(fit, tidy),
+    lrt = map2(base_fit, fit, lmtest::lrtest),
+    raw_pval = map_dbl(lrt, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(2)),
+    pval = p.adjust(raw_pval, method = "fdr"),
+    sig = map_lgl(pval, ~ . < alpha)
+  )
+
+############################
+### Depth within Habitat ###
+############################
+# betareg between depths
+# Likelihood ratio test between beta-distribution regression models with and without depth parameter nested within each Habitat with FDR correction
+
+habitat_df <- stats_df %>%
+  group_by(subpathway, Habitat__) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(count = map_dbl(data, ~ sum(.$abund))) %>%
+  filter(count > 0) %>%
+  mutate(
+    data = map(data, ~ .x %>% mutate(adj_abund = transform_perc(abund))),
+    base_fit = map(data, ~ betareg(adj_abund ~ 1, link = "logit", data = .)),
+    fit = map(data, ~ betareg(adj_abund ~ DepthLumping, link = "logit", data = .)),
+    tidy = map(fit, tidy),
+    lrt = map2(base_fit, fit, lmtest::lrtest),
+    raw_pval = map_dbl(lrt, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(2)),
+    pval = p.adjust(raw_pval, method = "fdr"),
+    sig = map_lgl(pval, ~ . < alpha)
+  )
+
+#################################
+### Year within Habitat-Depth ###
+#################################
+# betareg between years
+# Likelihood ratio test between beta-distribution regression models with and without year parameter nested within each Habitat-depth with FDR correction
+
+habitat_depth_df <- stats_df %>%
+  group_by(subpathway, Habitat__, DepthLumping) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(count = map_dbl(data, ~ sum(.$abund > 0))) %>%
+  filter(count > 1) %>%
+  mutate(
+    data = map(data, ~ .x %>% mutate(adj_abund = transform_perc(abund))),
+    base_fit = map(data, ~ betareg(adj_abund ~ 1, link = "logit", data = .)),
+    fit = map(data, ~ betareg(adj_abund ~ Year__, link = "logit", data = .)),
+    tidy = map(fit, tidy),
+    lrt = map2(base_fit, fit, lmtest::lrtest),
+    raw_pval = map_dbl(lrt, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(2)),
+    pval = p.adjust(raw_pval, method = "fdr"),
+    sig = map_lgl(pval, ~ . < alpha)
+  )
+
+# Year as numeric
+habitat_depth_yearnum_df <- stats_df %>%
+  mutate(Year__ = map_dbl(Year__, ~ .x %>% paste() %>% as.numeric())) %>%
+  group_by(subpathway, Habitat__, DepthLumping) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(count = map_dbl(data, ~ sum(.$abund > 0))) %>%
+  filter(count > 1) %>%
+  mutate(
+    data = map(data, ~ .x %>% mutate(adj_abund = transform_perc(abund))),
+    base_fit = map(data, ~ betareg(adj_abund ~ 1, link = "logit", data = .)),
+    fit = map(data, ~ betareg(adj_abund ~ Year__, link = "logit", data = .)),
+    tidy = map(fit, tidy),
+    lrt = map2(base_fit, fit, lmtest::lrtest),
+    raw_pval = map_dbl(lrt, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(2)),
+    pval = p.adjust(raw_pval, method = "fdr"),
+    sig = map_lgl(pval, ~ . < alpha)
+  )
+```
+
+```{r temperature}
+temp_metadata <- sample_metadata %>%
+  select(SampleID__, temporal_sample_id, Habitat__, T_soil.deg_C, T_air.deg_C)
+
+regress_against_temp <- function(metaT_df, grouping, formula) {
+  temp_metadata %>%
+    inner_join(metaT_df) %>%
+    group_by(Habitat__, {{grouping}}) %>%
+    nest() %>%
+    ungroup() %>%
+    mutate(
+      model = map(data, ~ lm({{formula}}, data = .)),
+      stats = map(model, broom::glance),
+      raw_pval = map_dbl(stats, ~ .$p.value),
+      pval = p.adjust(raw_pval, method = "fdr"),
+      rsq = map_dbl(stats,  ~ .$r.squared)
+    )
+}
+
+genome_gtemp_stats <- regress_against_temp(metaT_genomes, genome, tpm ~ T_soil.deg_C)
+genome_atemp_stats <- regress_against_temp(metaT_genomes, genome, tpm ~ T_air.deg_C)
+pathway_gtemp_stats <- regress_against_temp(metaT_exp_sum, subpathway, tpm ~ T_soil.deg_C)
+pathway_atemp_stats <- regress_against_temp(metaT_exp_sum, subpathway, tpm ~ T_air.deg_C)
+```
+
+## Summarise across genomes
+
+```{r genome-summary-function}
+genome_summary <- function(metaT_df, ylabel, output_dir, nudge = 1e3) {
+  column_layers <- list(
+    geom_col(colour = colour_brewer$black, size = 0.1),
+    facet_grid(cols = vars(factor(Habitat__, levels = habitat_levels)), scales = "free_x"),
+    scale_fill_manual("Phylum", values = colour_phylum, breaks = phylum_levels, labels = phylum_labels),
+    scale_y_continuous(expand = c(0, 0)),
+    ylab(ylabel),
+    theme_cowplot(),
+    theme(
+      legend.position = c(0.8, 0.7),
+      axis.text.x = element_blank()
+      )
+  )
+
+  ###########################
+  ### Top 50 per Habitat ###
+  ###########################
+  top50 <- metaT_df %>%
+    group_by(Habitat__) %>%
+    slice_max(tpm, n = 50) %>%
+    mutate(
+      Phylum_old = Phylum,
+      Phylum = map_chr(Phylum, ~ ifelse(. %in% phylum_levels, ., "other")),
+      genome = reorder(str_c(Habitat__, genome), -tpm)
+      )
+
+  top50_labels <- top50 %>%
+    filter(Phylum == "other") %>%
+    mutate(Phylum_old = map_chr(Phylum_old, str_remove, "p__"))
+
+  top50 %>%
+    ggplot(aes(genome, tpm, fill = Phylum)) +
+    column_layers +
+    geom_text_repel(data = top50_labels, aes(label = Phylum_old), nudge_y = nudge * 10, max.overlaps = Inf) +
+    xlab("Top 50 genomes")
+  ggsave("sample_average.png", path = output_dir, width = 12, height = 7, dpi = 900)
+
+  ###############################
+  ### Top Archaea per Habitat ###
+  ###############################
+  top_archaea <- metaT_df %>%
+    filter(Domain == "d__Archaea") %>%
+    group_by(Habitat__) %>%
+    slice_max(tpm, n = 100) %>%
+    mutate(
+      Phylum_old = Phylum,
+      Phylum = map_chr(Phylum, ~ ifelse(. %in% phylum_levels, ., "other")),
+      genome_old = genome,
+      genome = reorder(str_c(Habitat__, genome), -tpm)
+      )
+
+  top_archaea_labels <- top_archaea %>%
+    filter(genome_old %in% c("PLGY01", "PMEE01", "20120700_S1D_59", "3300037104_19", "PMNG01")) %>%
+    filter(tpm > 100)
+
+  top_archaea %>%
+    ggplot(aes(genome, tpm, fill = Phylum)) +
+    column_layers +
+    geom_text_repel(data = top_archaea_labels, aes(label = genome_old), nudge_y = nudge, nudge_x = 10, max.overlaps = Inf) +
+    xlab("Archaeal genomes (53)")
+  ggsave("sample_average_archaea.png", path = output_dir, width = 12, height = 7, dpi = 900)
+
+  ####################################
+  ### Total per Phylum per Habitat ###
+  ####################################
+  total_phyla <- metaT_df %>%
+    group_by(Habitat__, Phylum) %>%
+    summarise(tpm = sum(tpm)) %>%
+    mutate(
+      Phylum_old = Phylum,
+      Phylum_fill = map_chr(Phylum, ~ ifelse(. %in% phylum_levels, ., "other")),
+      Phylum = map_chr(Phylum, str_remove, "p__"),
+      Phylum = reorder(str_c(Habitat__, Phylum), -tpm)
+      )
+
+  total_phyla_labels <- total_phyla %>%
+    filter(Phylum_fill == "other") %>%
+    mutate(Phylum_old = map_chr(Phylum_old, str_remove, "p__")) %>%
+    filter(tpm > 4000)
+
+  total_phyla %>%
+    ggplot(aes(Phylum, tpm, fill = Phylum_fill)) +
+    column_layers +
+    geom_text_repel(data = total_phyla_labels, aes(label = Phylum_old), nudge_y = nudge * 100, nudge_x = 20, max.overlaps = Inf) +
+    xlab("Sum of genomes for each Phyla")
+  ggsave("sample_average_top.png", path = output_dir, width = 12, height = 7, dpi = 900)
+}
+```
+
+```{r genome-summary}
+output_dir <- here(main_dir, "genomes")
+dir.create(output_dir, recursive = TRUE)
+
+# Plot histogram of genome mean total tpm across samples
+metaT_habitat_genomes <- metaT_genomes %>%
+  left_join(sample_metadata %>% select(SampleID__, Habitat__)) %>%
+  group_by(genome, Habitat__) %>%
+  summarise(tpm = mean(tpm)) %>%
+  left_join(genome_info %>% select(genome, taxonomy = gtdb2_taxonomy)) %>%
+  separate(taxonomy, into = c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), sep = ";") %>%
+  arrange(desc(tpm))
+
+metaT_habitat_genomes %>%
+  select(Habitat__, genome, tpm) %>%
+  arrange(Habitat__, desc(tpm)) %>%
+  write_csv(here(output_dir, "metaT_genome_total_mean_tpm.csv"))
+
+genome_summary(metaT_habitat_genomes, "Total tpm averaged over samples", output_dir)
+```
+
+```{r genome-summary-norm}
+output_dir <- here(main_dir, "genomes_norm")
+dir.create(output_dir, recursive = TRUE)
+
+# Plot histogram of genome mean total tpm across samples
+metaT_habitat_genomes_norm <- metaT_genomes_norm %>%
+  left_join(sample_metadata %>% select(SampleID__, Habitat__)) %>%
+  group_by(genome, Habitat__) %>%
+  summarise(tpm = mean(tpm)) %>%
+  left_join(genome_info %>% select(genome, taxonomy = gtdb2_taxonomy)) %>%
+  separate(taxonomy, into = c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), sep = ";") %>%
+  arrange(desc(tpm))
+
+metaT_habitat_genomes_norm %>%
+  select(Habitat__, genome, tpm) %>%
+  arrange(Habitat__, desc(tpm)) %>%
+  write_csv(here(output_dir, "metaT_genome_total_mean_tpm.csv"))
+
+genome_summary(metaT_habitat_genomes_norm, "Total tpm normalised by relative abundance averaged over samples", output_dir, nudge = 1e6)
+```
+
+```{r genome-specific-function}
+genome_specific <- function(metaT_df, genome, output_dir) {
+  metaT_df <- metaT_df %>%
+    filter(genome == {{genome}})
+
+  if (nrow(metaT_df) == 0) return()
+  if (sum(metaT_df$tpm) == 0) return()
+
+  metaT_df %>%
+    left_join(sample_metadata %>% select(SampleID__, DepthLumping, Habitat__)) %>%
+    ggplot(aes(x = DepthLumping, y = tpm, fill = Habitat__)) +
+    geom_boxplot() +
+    facet_grid(cols = vars(factor(Habitat__, levels = habitat_levels))) +
+    scale_x_discrete(limits = depth_levels, labels = depth_labels) +
+    scale_y_log10() +
+    scale_fill_manual(breaks = habitat_levels, values = colour_habitat) +
+    scale_colour_manual(breaks = habitat_levels, values = colour_habitat) +
+    xlab("Depth (cm)") +
+    ylab("Cumulative transcripts (tpm)") +
+    theme_cowplot() +
+    theme(legend.position = "none", strip.background = element_blank())
+
+  ggsave(paste0(genome, ".png"), path = output_dir, dpi = 900)
+}
+```
+
+```{r genome-specific}
+output_dir <- here(main_dir, "genomes", "individual")
+dir.create(output_dir, recursive = TRUE)
+
+# Plot sum tpm across habitat * depth
+metaT_genomes$genome %>%
+  unique() %>%
+  lapply(genome_specific, metaT_df = metaT_genomes, output_dir = output_dir)
+```
+
+```{r genome-specific-norm}
+output_dir <- here(main_dir, "genomes_norm", "individual")
+dir.create(output_dir, recursive = TRUE)
+
+# Plot sum tpm across habitat * depth
+metaT_genomes_norm$genome %>%
+  unique() %>%
+  lapply(genome_specific, metaT_df = metaT_genomes_norm, output_dir = output_dir)
+```
+
+```{r phyla-overviews}
+output_dir <- here(main_dir, "heatmaps")
+dir.create(output_dir, recursive = TRUE)
+
+phyla_tpm <- metaT_genomes %>%
+  left_join(genome_info %>% select(genome, taxonomy) %>% separate(taxonomy, into = c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), sep = ";")) %>%
+  left_join(sample_metadata %>% select(SampleID__, Habitat__, DepthLumping, Year__)) %>%
+  mutate(
+    Domain = str_remove(Domain, "d__"),
+    Phylum_old = Phylum,
+    Phylum = map_chr(Phylum, ~ ifelse(. %in% phylum_levels, ., "other")),
+    Phylum = factor(Phylum, levels = phylum_levels, labels = phylum_labels),
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    Year__ = factor(Year__, levels = year_levels, labels = year_labels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+  )
+
+######################
+### Phylum heatmap ###
+######################
+phyla_tpm %>%
+  mutate(
+    genome = factor(genome, levels = unique(genome)),
+    genome = fct_reorder(genome, str_c(Domain, Phylum, Class, Order, Family, Genus, Species))
+  ) %>%
+  ggplot(aes(x = SampleID__, y = genome, fill = log10(tpm))) +
+  facet_nested(Domain + Phylum ~ Habitat__ + DepthLumping, scales = "free", space = "free_y", switch = "y", strip = strip_nested(size = "variable")) +
+  facetted_pos_scales(y = list(ROW %% 2 == 0 ~ scale_y_discrete(guide = guide_axis_manual(colour = "grey")))) +
+  geom_tile() +
+  scale_fill_distiller(palette = "Blues", na.value = "white", direction = 1) +
+  theme_cowplot() +
+  theme(
+    axis.text.y = element_blank(), axis.title.y = element_blank(), axis.ticks.y = element_blank(),
+    axis.text.x = element_blank(), axis.title.x = element_blank(), axis.ticks.x = element_blank(),
+    panel.spacing = unit(0, "lines"), strip.background = element_blank(),
+    strip.text.y.left = element_text(angle = 0), strip.placement = "outside",
+    legend.position = "bottom",
+    )
+
+ggsave("mag_heatmap.png", path = output_dir, dpi = 900)
+ggsave("mag_heatmap.svg", path = output_dir, dpi = 900)
+
+###############################
+### Phylum stacked bar plot ###
+###############################
+phyla_tpm %>%
+  group_by(Phylum, Habitat__, DepthLumping, Year__, SampleID__) %>%
+  summarise(tpm = sum(tpm)) %>%
+  summarise(tpm = mean(tpm)) %>%
+  ggplot(aes(Year__, tpm, fill = Phylum)) +
+  geom_col() +
+  facet_grid(
+    cols = vars(Habitat__),
+    rows = vars(DepthLumping)
+    ) +
+  scale_fill_manual("Phylum", values = fill_phylum, breaks = phylum_labels) +
+  xlab("Year") +
+  ylab("Transcription (tpm)") +
+  theme_cowplot() +
+  theme(strip.background = element_blank())
+
+ggsave("phyla_stacked.png", path = output_dir, width = 7, height = 7, dpi = 900)
+ggsave("phyla_stacked.svg", path = output_dir, width = 7, height = 7, dpi = 900)
+
+#################################
+### Top MAGs stacked bar plot ###
+#################################
+top_mags <- phyla_tpm %>%
+  group_by(Habitat__, DepthLumping, genome) %>%
+  summarise(tpm = mean(tpm)) %>%
+  slice_max(tpm, n = 10) %>%
+  select(-tpm) %>%
+  mutate(top_mag = TRUE)
+
+top_abund <- phyla_tpm %>%
+  left_join(top_mags) %>%
+  filter(!is.na(top_mag)) %>%
+  group_by(Habitat__, DepthLumping, Year__, genome) %>%
+  summarise(tpm = mean(tpm))
+
+top_abund_plots <- top_abund %>%
+  mutate(
+    genome = case_when(
+      str_detect(genome, "Palsa.None.R2.T0.JGI.BFC.metaspades_bin.152_78.26_8.29")       ~ "Palsa_152",
+      str_detect(genome, "Palsa.None.R2.T0.JGI.BFC.metaspades_bin.61_83.67_6.26")        ~ "Palsa_61",
+      str_detect(genome, "Bog.Labelled.R2.T2.F2.JGI.BFC.metaspades_bin.30_90.30_1.69")   ~ "Bog_30",
+      str_detect(genome, "Bog.Unlabelled.R3.T2.F3.JGI.BFC.metaspades_bin.11_93.17_1.72") ~ "Bog_11",
+      str_detect(genome, "Bog.None.R2.T0.JGI.BFC.metaspades_bin.84_100.00_0.00")         ~ "Bog_84",
+      str_detect(genome, "Fen.Labelled.R2.T3.F3.JGI.BFC.metaspades_bin.38_80.01_9.95")   ~ "Fen_38",
+      TRUE ~ genome
+    ),
+  ) %>%
+  group_by(Habitat__, DepthLumping) %>%
+  nest() %>%
+  ungroup() %>%
+  arrange(DepthLumping, Habitat__) %>%
+  mutate(
+    plot = pmap(
+      list(data, Habitat__, DepthLumping),
+      ~ ..1 %>%
+          ggplot(aes(Year__, tpm, fill = genome)) +
+          geom_col() +
+          scale_fill_brewer(palette = "Paired") +
+          xlab("Year") +
+          ylab("Transcripts (tpm)") +
+          ggtitle(str_c(..2, ..3, sep = " ")) +
+          theme_cowplot()
+  )) %>%
+  pull(plot)
+
+cowplot::plot_grid(plotlist = top_abund_plots, ncol = 3)
+
+ggsave("top_mags_stacked.png", path = output_dir, width = 20, height = 20, dpi = 600)
+ggsave("top_mags_stacked.svg", path = output_dir, width = 20, height = 20, dpi = 600)
+```
+
+## Summarise across metapathway groups
+
+```{r metapathway-summary-functions}
+pathway_summary <- function(metapath, input_df) {
+  df <- input_df %>%
+    filter(metapath == {{metapath}}) %>%
+    mutate(Year__ = factor(Year__, levels = year_levels, labels = year_labels))
+
+  metapath_label <- str_replace(metapath, " ", "_")
+
+  line_layers <- list(
+    geom_point(),
+    geom_line(),
+    scale_colour_manual(values = RColorBrewer::brewer.pal(11, "Paired")),
+    scale_y_log10(),
+    xlab("Year"),
+    ylab("Path-based average transcripts"),
+    theme_cowplot()
+  )
+
+  df %>%
+    group_by(metapath, subpathway, Habitat__, Year__) %>%
+    summarise(tpm = mean(tpm)) %>%
+    ggplot(aes(Year__, tpm, colour = subpathway, group = subpathway)) +
+    facet_grid(cols = vars(Habitat__)) +
+    line_layers
+  ggsave(str_c(metapath_label, "_pathway_habitat.png"), path = output_dir, width = 12, height = 7, dpi = 900)
+
+  df %>%
+    group_by(metapath, subpathway, Habitat__, DepthLumping, Year__) %>%
+    summarise(tpm = mean(tpm)) %>%
+    ggplot(aes(Year__, tpm, colour = subpathway, group = subpathway)) +
+    facet_grid(cols = vars(Habitat__), rows = vars(DepthLumping)) +
+    line_layers
+  ggsave(str_c(metapath_label, "_pathway_depth.png"), path = output_dir, width = 12, height = 14, dpi = 900)
+}
+```
+
+```{r metapathway-summary}
+output_dir <- here(main_dir, "metapathways")
+
+###########################
+### Metapathway summary ###
+###########################
+# Sum metapathways per sample, plot per habitat per year
+metaT_metapath <- metaT_exp %>%
+  left_join(metapathway_groups) %>%
+  group_by(temporal_sample_id, metapath) %>%
+  summarise(tpm = sum(tpm)) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping, Year__)) %>%
+  mutate(
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+    Year__ = factor(Year__, levels = year_levels),
+    metapath = factor(metapath, levels = metapathway_levels)
+  )
+
+metaT_pathway_prop <- metaT_pathways %>%
+  group_by(SampleID__, gene_id) %>%
+  summarise(tpm = first(tpm)) %>%
+  group_by(SampleID__) %>%
+  summarise(tpm = sum(tpm)) %>%
+  left_join(sample_metadata %>% select(SampleID__, Habitat__, Year__)) %>%
+  group_by(Habitat__, Year__) %>%
+  summarise(tpm = mean(tpm)) %>%
+  mutate(prop = 100 * tpm / 10**6) %>%
+  mutate(
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    Year__ = factor(Year__, levels = year_levels)
+  )
+
+metapath_layers <- list(
+  geom_col(position = position_fill()),
+  scale_fill_manual(values = fill_metapathway),
+  xlab("Year"),
+  ylab("Proportion of path-based average transcripts"),
+  theme_cowplot()
+)
+
+metaT_metapath %>%
+  group_by(metapath, Habitat__, Year__) %>%
+  summarise(tpm = mean(tpm)) %>%
+  ggplot(aes(Year__, tpm, fill = metapath)) +
+  geom_text(data = metaT_pathway_prop, aes(Year__, 1.05, label = str_c(round(prop, 1), "%")), inherit.aes = FALSE) +
+  facet_grid(cols = vars(Habitat__)) +
+  scale_y_continuous(expand = expansion(mult = c(0, .05))) +
+  metapath_layers
+ggsave("metapathway_habitat.png", path = output_dir, width = 12, height = 7, dpi = 900)
+
+metaT_metapath %>%
+  group_by(metapath, Habitat__, DepthLumping, Year__) %>%
+  summarise(tpm = mean(tpm)) %>%
+  ggplot(aes(Year__, tpm, fill = metapath)) +
+  facet_grid(cols = vars(Habitat__), rows = vars(DepthLumping)) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0))) +
+  metapath_layers
+ggsave("metapathway_depths.png", path = output_dir, width = 12, height = 7, dpi = 900)
+
+#######################
+### Pathway summary ###
+#######################
+metaT_path <- metaT_exp %>%
+  left_join(metapathway_groups) %>%
+  group_by(temporal_sample_id, metapath, subpathway) %>%
+  summarise(tpm = sum(tpm)) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping, Year__)) %>%
+  mutate(
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+    Year__ = factor(Year__, levels = year_levels),
+    metapath = factor(metapath, levels = metapathway_levels)
+  )
+
+line_layers <- list(
+  geom_point(),
+  geom_line(),
+  scale_colour_manual(values = colour_metapathway),
+  scale_y_log10(),
+  xlab("Year"),
+  ylab("Path-based average transcripts"),
+  theme_cowplot()
+)
+
+metaT_path %>%
+  group_by(metapath, subpathway, Habitat__, Year__) %>%
+  summarise(tpm = mean(tpm)) %>%
+  ggplot(aes(Year__, tpm, colour = metapath, group = subpathway)) +
+  facet_grid(cols = vars(Habitat__)) +
+  line_layers
+ggsave("pathway_habitat.png", path = output_dir, width = 12, height = 7, dpi = 900)
+
+metaT_path %>%
+  group_by(metapath, subpathway, Habitat__, DepthLumping, Year__) %>%
+  summarise(tpm = mean(tpm)) %>%
+  ggplot(aes(Year__, tpm, colour = metapath, group = subpathway)) +
+  facet_grid(cols = vars(Habitat__), rows = vars(DepthLumping)) +
+  line_layers
+ggsave("pathway_habitat_depth.png", path = output_dir, width = 12, height = 14, dpi = 900)
+
+# Separate plots for each of the metapathways
+metaT_path %>%
+  ungroup() %>%
+  select(metapath) %>%
+  filter(!metapath %in% c("cazymes")) %>%
+  distinct() %>%
+  pull(metapath) %>%
+  map(pathway_summary, input_df = metaT_path)
+```
+
+## Map transcripts to pathways
+
+```{r pathway-summary-function}
+pathway_summary <- function(metaT_path_df, metaT_exp_df, ylabel, output_dir, nudge = 1e3) {
+  column_layers <- list(
+    geom_col(colour = colour_brewer$black, size = 0.1),
+    geom_errorbar(aes(ymin = tpm - sd, ymax = tpm + sd), size = 0.2, width = 0.1),
+    facet_grid(cols = vars(factor(Habitat__, levels = habitat_levels))),
+    scale_y_continuous(expand = c(0, 0)),
+    scale_fill_manual("group", values = colour_metapathway, breaks = metapathway_levels),
+    ylab(ylabel),
+    coord_flip(),
+    theme_cowplot(),
+    theme(
+      legend.position = c(0.8, 0.4),
+      axis.text.y = element_text(size = rel(0.7)),
+      axis.title.y = element_blank()
+      )
+  )
+
+  metaT_path_df %>%
+    mutate(subpathway = map2_chr(pathway, subpathway, str_c, sep = "-")) %>%
+    group_by(subpathway) %>%
+    distinct(gene_id, temporal_sample_id, .keep_all = TRUE) %>%
+    ungroup() %>%
+    complete(subpathway, temporal_sample_id, fill = list(tpm = 0)) %>%
+    group_by(subpathway, temporal_sample_id) %>%
+    summarise(tpm = sum(tpm)) %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, Habitat__)) %>%
+    group_by(subpathway, Habitat__) %>%
+    summarise(sd = sd(tpm), tpm = mean(tpm)) %>%
+    left_join(metapathway_groups) %>%
+    filter(!is.na(metapath)) %>%
+    ggplot(aes(reorder(subpathway_label, tpm), tpm, fill = metapath)) +
+    column_layers
+  ggsave("sample_average_all.png", path = output_dir, width = 12, height = 7, dpi = 900)
+
+  # Remove genomes without the pathway call
+  metaT_path_df %>%
+    mutate(subpathway = map2_chr(pathway, subpathway, str_c, sep = "-")) %>%
+    left_join(product_refined, by = c("genome", "subpathway")) %>%
+    filter(!is.na(call), call) %>%
+    group_by(subpathway) %>%
+    distinct(gene_id, temporal_sample_id, .keep_all = TRUE) %>%
+    ungroup() %>%
+    complete(subpathway, temporal_sample_id, fill = list(tpm = 0)) %>%
+    group_by(subpathway, temporal_sample_id) %>%
+    summarise(tpm = sum(tpm)) %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, Habitat__)) %>%
+    group_by(subpathway, Habitat__) %>%
+    summarise(sd = sd(tpm), tpm = mean(tpm)) %>%
+    left_join(metapathway_groups) %>%
+    filter(!is.na(metapath)) %>%
+    ggplot(aes(reorder(subpathway_label, tpm), tpm, fill = metapath)) +
+    column_layers
+  ggsave("sample_average_calls.png", path = output_dir, width = 12, height = 7, dpi = 900)
+
+  ##########################
+  ### Path-based average ###
+  ##########################
+  # Stacked barplot of pathway expression split by genome (coloured by phyla)
+  metaT_exp_df %>%
+    group_by(subpathway, temporal_sample_id) %>%
+    summarise(tpm = sum(tpm)) %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, Habitat__)) %>%
+    group_by(subpathway, Habitat__) %>%
+    summarise(sd = sd(tpm), tpm = mean(tpm)) %>%
+    left_join(metapathway_groups) %>%
+    ggplot(aes(reorder(subpathway_label, tpm), tpm, fill = metapath)) +
+    column_layers +
+    ylab("Path-based average tpm")
+  ggsave("sample_path_based.png", path = output_dir, width = 12, height = 7, dpi = 900)
+}
+```
+
+```{r pathway-summary}
+output_dir <- here(main_dir, "pathways")
+dir.create(output_dir, recursive = TRUE)
+
+transcribed_pathways <- metaT_pathways %>% mutate(path = map2_chr(pathway, subpathway, str_c, sep = "-")) %>% `$`(path) %>% unique()
+metapathway_groups %>%
+  filter(!subpathway %in% transcribed_pathways)
+# Missing:
+# nitrogen_redox: anammox (no positive calls)
+
+# Plot histogram of pathway mean total tpm across samples
+pathway_summary(metaT_pathways, metaT_exp, "Total tpm averaged over samples", output_dir)
+
+# From W&S2018, expect that (palsa, bog, fen; ~ tpm):
+# Acetoclastic methanogenesis: 0, 100, 500
+# Hydrogenotrophic methanogenesis: 70, 500, 1300
+# Methanotrophy: 300, 300, 650
+# Lactate fermentation: 20, 20, 20
+# Mannose degradation: 0, 5, 20
+
+metaT_exp %>%
+  group_by(subpathway, temporal_sample_id) %>%
+  summarise(tpm = sum(tpm)) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__)) %>%
+  group_by(subpathway, Habitat__) %>%
+  summarise(tpm = mean(tpm)) %>%
+  pivot_wider(names_from = "Habitat__", values_from = "tpm") %>%
+  select(subpathway, Palsa, Bog, Fen) %>%
+  print(n = Inf)
+```
+
+```{r pathway-summary-norm}
+output_dir <- here(main_dir, "pathways_norm")
+dir.create(output_dir, recursive = TRUE)
+
+# Plot histogram of pathway mean total tpm across samples
+pathway_summary(metaT_pathways_norm, metaT_exp_norm, "Total tpm normalised by relative abundance averaged over samples", output_dir)
+```
+
+```{r pathway-genomes-function}
+pathway_genomes <- function(metaT_df, pathway, output_dir, ylabel) {
+  metaT_df <- metaT_df %>%
+    filter(subpathway == {{pathway}})
+
+  if (nrow(metaT_df) == 0) return()
+  if (sum(metaT_df$tpm) == 0) return()
+
+  metaT_df %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, DepthLumping, Habitat__)) %>%
+    left_join(genome_info %>% select(genome, taxonomy = gtdb2_taxonomy)) %>%
+    separate(taxonomy, into = c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), sep = ";") %>%
+    group_by(Phylum, Habitat__, DepthLumping, temporal_sample_id) %>%
+    summarise(tpm = sum(tpm)) %>%
+    summarise(sd = sd(tpm), tpm = mean(tpm)) %>%
+    mutate(
+      Phylum_fill = map_chr(Phylum, ~ ifelse(. %in% phylum_levels, ., "other")),
+      Phylum = map_chr(Phylum, str_remove, "p__")
+    ) %>%
+    group_by(Phylum) %>%
+    mutate(total = sum(tpm)) %>%
+    filter(total > 0) %>%
+    ggplot(aes(reorder(Phylum, tpm), tpm, fill = Phylum_fill)) +
+    geom_col(colour = colour_brewer$black, size = 0.1) +
+    geom_errorbar(aes(ymin = tpm - sd, ymax = tpm + sd), size = 0.2, width = 0.1) +
+    facet_grid(cols = vars(factor(Habitat__, levels = habitat_levels)), rows = vars(factor(DepthLumping, levels = depth_levels))) +
+    scale_y_continuous(expand = c(0, 0)) +
+    scale_fill_manual(values = colour_phylum, breaks = phylum_levels, labels = phylum_labels) +
+    xlab("Phylum") +
+    ylab(ylabel) +
+    coord_flip() +
+    theme_cowplot() +
+    theme(
+      legend.position = "None",
+      axis.text.y = element_text(size = rel(0.7)),
+      axis.text.x = element_text(size = rel(0.7)),
+      panel.spacing.x = unit(4, "mm")
+      )
+
+  ggsave(paste0(pathway, ".png"), path = output_dir,
+    width = 12, height = 7, dpi = 900)
+}
+```
+
+```{r pathway-genomes}
+output_dir <- here(main_dir, "pathways", "together")
+dir.create(output_dir, recursive = TRUE)
+
+# Plot path-based averaged tpm across habitat * depth
+metaT_exp$subpathway %>%
+  unique() %>%
+  lapply(pathway_genomes, metaT_df = metaT_exp, output_dir = output_dir, ylabel = "Path-based average tpm")
+```
+
+```{r pathway-genomes-norm}
+output_dir <- here(main_dir, "pathways_norm", "together")
+dir.create(output_dir, recursive = TRUE)
+
+# Plot path-based averaged tpm across habitat * depth
+metaT_exp_norm$subpathway %>%
+  unique() %>%
+  lapply(pathway_genomes, metaT_df = metaT_exp_norm, output_dir = output_dir, ylabel = "Path-based average tpm normalised by relative abundance")
+```
+
+```{r genome-pathways-function}
+genome_pathways <- function(metaT_df, genome, output_dir, ylabel) {
+  metaT_df <- metaT_df %>%
+    filter(genome == {{genome}})
+
+  if (nrow(metaT_df) == 0) return()
+  if (sum(metaT_df$tpm) == 0) return()
+
+  metaT_df %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, DepthLumping, Habitat__)) %>%
+    group_by(subpathway, Habitat__, DepthLumping) %>%
+    summarise(sd = sd(tpm), tpm = mean(tpm)) %>%
+    left_join(metapathway_groups) %>%
+    group_by(subpathway_label) %>%
+    mutate(total = sum(tpm)) %>%
+    filter(total > 0) %>%
+    ggplot(aes(reorder(subpathway_label, tpm), tpm, fill = metapath)) +
+    geom_col(colour = colour_brewer$black, size = 0.1) +
+    geom_errorbar(aes(ymin = tpm - sd, ymax = tpm + sd), size = 0.2, width = 0.1) +
+    facet_grid(cols = vars(factor(Habitat__, levels = habitat_levels)), rows = vars(factor(DepthLumping, levels = depth_levels))) +
+    scale_y_continuous(expand = c(0, 0)) +
+    scale_fill_manual("group", values = colour_metapathway, breaks = metapathway_levels) +
+    ylab(ylabel) +
+    coord_flip() +
+    theme_cowplot() +
+    theme(
+      legend.position = "right",
+      axis.text.y = element_text(size = rel(0.7)),
+      axis.text.x = element_text(size = rel(0.7)),
+      axis.title.y = element_blank(),
+      panel.spacing.x = unit(4, "mm")
+      )
+
+  ggsave(paste0(genome, ".png"), path = output_dir,
+    width = 12, height = 7, dpi = 900)
+}
+```
+
+```{r genome-pathways}
+output_dir <- here(main_dir, "pathways", "individual")
+dir.create(output_dir, recursive = TRUE)
+
+# Plot path-based averaged tpm across habitat * depth
+metaT_exp$genome %>%
+  unique() %>%
+  lapply(genome_pathways, metaT_df = metaT_exp, output_dir = output_dir, ylabel = "Path-based average tpm")
+```
+
+```{r genome-pathways-norm}
+output_dir <- here(main_dir, "pathways_norm", "individual")
+dir.create(output_dir, recursive = TRUE)
+
+# Plot path-based averaged tpm across habitat * depth
+metaT_exp_norm$genome %>%
+  unique() %>%
+  lapply(genome_pathways, metaT_df = metaT_exp_norm, output_dir = output_dir, ylabel = "Path-based average tpm normalised by relative abundance")
+```
+
+```{r interesting-pathways}
+output_dir <- here(main_dir, "pathways", "interesting")
+dir.create(output_dir, recursive = TRUE)
+
+plot_against_wtd <- function(df, filename, ylabel, xlabel, model_wtd = 0.2) {
+  max_tpm <- max(df$tpm)
+  methanotroph_models <- df %>%
+    group_by(wtd_type, Habitat__) %>%
+    nest() %>%
+    filter(Habitat__ != "Palsa") %>%
+    mutate(
+      model = map(data, ~ lm(wtd ~ tpm, data = .)),
+      info = map(model, broom::glance),
+      rsq = map_dbl(info, ~ .$r.squared),
+      rsq = round(rsq, 2),
+      pval = map_dbl(info, ~ .$p.value),
+      pval = round(pval, 4),
+      label = map2_chr(rsq, pval, ~ str_c("R2: ", .x, "; p: ", .y))
+    ) %>%
+    filter(!is.na(rsq)) %>%
+    ungroup() %>%
+    mutate(
+      tpm = max_tpm * (1 - 0.02 * row_number()),
+      wtd = model_wtd
+    )
+
+  df %>%
+    ggplot(aes(wtd, tpm, colour = factor(Habitat__, levels = habitat_levels))) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    geom_text(aes(label = label), data = methanotroph_models, hjust = "left") +
+    facet_grid(cols = vars(wtd_type), scales = "free") +
+    scale_colour_manual("Habitat", values = colour_habitat, breaks = habitat_levels) +
+    ylab(ylabel) +
+    xlab(xlabel) +
+    theme_cowplot()
+
+  ggsave(filename, path = output_dir, width = 12, height = 7, dpi = 900)
+}
+
+###################################################
+### Plot methanotroph transcription against WTD ###
+###################################################
+methanotroph_wtd <- metaT_exp %>%
+  filter(subpathway == "carbon_redox-dissimilatory_methanotrophy") %>%
+  group_by(temporal_sample_id) %>%
+  summarise(tpm = sum(tpm)) %>%
+  left_join(
+    sample_metadata %>%
+      select(
+        temporal_sample_id, Habitat__, DepthLumping,
+        WTD_21d = pct_time_below_WTD_21d,
+        WTD_28d = pct_time_below_WTD_28d,
+        WTD_grow = pct_time_below_WTD_growing,
+        WTD_dist = Samp_dist_WT
+        )
+  ) %>%
+  pivot_longer(starts_with("WTD"), names_to = "wtd_type", values_to = "wtd")
+
+plot_against_wtd(methanotroph_wtd, "methanotrophy_wtd.png", "Methanotrophy pathway transcription (tpm)", "wtd")
+
+###############################################
+### Plot methanotroph abundance against WTD ###
+###############################################
+methanotroph_wtd_abund <- pathway_abundance_cumu %>%
+  select(temporal_sample_id = sample, tpm = `carbon_redox-dissimilatory_methanotrophy`) %>%
+  left_join(
+    sample_metadata %>%
+      select(
+        temporal_sample_id, Habitat__, DepthLumping,
+        WTD_21d = pct_time_below_WTD_21d,
+        WTD_28d = pct_time_below_WTD_28d,
+        WTD_grow = pct_time_below_WTD_growing,
+        WTD_dist = Samp_dist_WT
+        )
+  ) %>%
+  pivot_longer(starts_with("WTD"), names_to = "wtd_type", values_to = "wtd")
+
+plot_against_wtd(methanotroph_wtd_abund, "methanotrophy_wtd_abund.png", "Methanotroph relative abundance", "wtd")
+
+##########################
+### Plot WTD over time ###
+##########################
+wtd_data <- sample_metadata %>%
+  select(Habitat__, Core__, Year__, WTD = WTD.cm_neg_is_below_sfc__) %>%
+  distinct() %>%
+  filter(Habitat__ != "Palsa", WTD != "Not Measured") %>%
+  mutate(WTD = as.numeric(WTD))
+
+max_wtd <- max(wtd_data$WTD)
+wtd_models <- wtd_data %>%
+  group_by(Habitat__) %>%
+  nest() %>%
+  mutate(
+    model = map(data, ~ lm(WTD ~ Year__, data = .)),
+    info = map(model, broom::glance),
+    rsq = map_dbl(info, ~ .$r.squared),
+    rsq = round(rsq, 2),
+    pval = map_dbl(info, ~ .$p.value),
+    pval = round(pval, 2),
+    label = map2_chr(rsq, pval, ~ str_c("R2: ", .x, "; p: ", .y))
+  ) %>%
+  filter(!is.na(rsq)) %>%
+  ungroup() %>%
+  mutate(
+    WTD = max_wtd * (1 - 0.2 * row_number()),
+    Year__ = 2014
+  )
+
+wtd_data %>%
+  ggplot(aes(Year__, WTD, colour = factor(Habitat__, levels = habitat_levels))) +
+  geom_jitter(height = 0, width = 0.1) +
+  geom_smooth(method = "lm") +
+  geom_text(aes(label = label), data = wtd_models, hjust = "left") +
+  scale_colour_manual("Habitat", values = colour_habitat, breaks = habitat_levels) +
+  theme_cowplot()
+ggsave("wtd_time.png", path = output_dir, width = 12, height = 7, dpi = 900)
+
+########################################################
+### Plot methanotroph transcription against CH4 flux ###
+########################################################
+methanotroph_ch4 <- metaT_exp %>%
+  filter(subpathway == "carbon_redox-dissimilatory_methanotrophy") %>%
+  group_by(temporal_sample_id) %>%
+  summarise(tpm = sum(tpm)) %>%
+  left_join(
+    sample_metadata %>%
+      select(
+        temporal_sample_id, Habitat__, DepthLumping,
+        CH4_7d = CH4_Flux_AVE_1wk_before_coring,
+        CH4_14d = CH4_Flux_AVE_2wk_before_coring,
+        CH4_21d = CH4_Flux_AVE_3wk_before_coring,
+        CH4_28d = CH4_Flux_AVE_4wk_before_coring
+        )
+  ) %>%
+  pivot_longer(starts_with("CH4"), names_to = "wtd_type", values_to = "wtd")
+
+plot_against_wtd(methanotroph_ch4, "methanotrophy_ch4.png", "Methanotrophy pathway transcription (tpm)", "Methane flux", model_wtd = 2)
+
+####################################################
+### Plot methanotroph abundance against CH4 flux ###
+####################################################
+methanotroph_ch4_abund <- pathway_abundance_cumu %>%
+  select(temporal_sample_id = sample, tpm = `carbon_redox-dissimilatory_methanotrophy`) %>%
+  left_join(
+    sample_metadata %>%
+      select(
+        temporal_sample_id, Habitat__, DepthLumping,
+        CH4_7d = CH4_Flux_AVE_1wk_before_coring,
+        CH4_14d = CH4_Flux_AVE_2wk_before_coring,
+        CH4_21d = CH4_Flux_AVE_3wk_before_coring,
+        CH4_28d = CH4_Flux_AVE_4wk_before_coring
+        )
+  ) %>%
+  pivot_longer(starts_with("CH4"), names_to = "wtd_type", values_to = "wtd")
+
+plot_against_wtd(methanotroph_ch4_abund, "methanotrophy_ch4_abund.png", "Methanotroph relative abundance", "Methane flux", model_wtd = 2)
+
+###############################
+### Plot CH4 flux over time ###
+###############################
+ch4_data <- sample_metadata %>%
+  select(
+    Habitat__, Year__,
+    CH4_7d = CH4_Flux_AVE_1wk_before_coring,
+    CH4_14d = CH4_Flux_AVE_2wk_before_coring,
+    CH4_21d = CH4_Flux_AVE_3wk_before_coring,
+    CH4_28d = CH4_Flux_AVE_4wk_before_coring
+    ) %>%
+  distinct() %>%
+  filter(Year__ != 2017) %>%
+  pivot_longer(starts_with("CH4"), names_to = "ch4_type", values_to = "ch4")
+
+max_ch4 <- max(ch4_data$ch4, na.rm = TRUE)
+ch4_models <- ch4_data %>%
+  group_by(Habitat__, ch4_type) %>%
+  nest() %>%
+  mutate(
+    model = map(data, ~ lm(ch4 ~ Year__, data = .)),
+    info = map(model, broom::glance),
+    rsq = map_dbl(info, ~ .$r.squared),
+    rsq = round(rsq, 2),
+    pval = map_dbl(info, ~ .$p.value),
+    pval = round(pval, 2),
+    label = map2_chr(rsq, pval, ~ str_c("R2: ", .x, "; p: ", .y))
+  ) %>%
+  filter(!is.na(rsq)) %>%
+  ungroup() %>%
+  mutate(
+    ch4 = max_ch4 * (1.3 - 0.02 * row_number()),
+    Year__ = 2013
+  )
+
+ch4_data %>%
+  ggplot(aes(Year__, ch4, colour = factor(Habitat__, levels = habitat_levels))) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  geom_text(aes(label = label), data = ch4_models, hjust = "left") +
+  facet_grid(cols = vars(ch4_type), scales = "free") +
+  scale_colour_manual("Habitat", values = colour_habitat, breaks = habitat_levels) +
+  theme_cowplot()
+ggsave("ch4_time.png", path = output_dir, width = 12, height = 7, dpi = 900)
+```
+
+## Genomes over time
+
+```{r genome-time-function}
+genome_time <- function(metaT_df, genome, output_dir, ylabel) {
+  metaT_df <- metaT_df %>%
+    filter(genome == {{genome}})
+
+  if (nrow(metaT_df) == 0) return()
+  if (sum(metaT_df$tpm) == 0) return()
+
+  # facet: habitat columns, depth rows
+  # y axis: year
+  # x axis: tpm
+  metaT_df %>%
+    left_join(sample_metadata %>% select(SampleID__, DepthLumping, Habitat__, Year__)) %>%
+    mutate(Year__ = factor(Year__, levels = year_levels, labels = year_labels)) %>%
+    ggplot(aes(x = Year__, y = tpm, fill = Habitat__)) +
+    geom_boxplot() +
+    facet_grid(
+      cols = vars(factor(Habitat__, levels = habitat_levels)),
+      rows = vars(factor(DepthLumping, levels = depth_levels))
+      ) +
+    coord_flip() +
+    scale_y_log10() +
+    scale_fill_manual(breaks = habitat_levels, values = colour_habitat) +
+    scale_colour_manual(breaks = habitat_levels, values = colour_habitat) +
+    xlab("Year") +
+    ylab(ylabel) +
+    theme_cowplot() +
+    theme(legend.position = "none", strip.background = element_blank())
+
+  ggsave(paste0(genome, ".png"), path = output_dir,
+    width = 7, height = 7, dpi = 900)
+}
+```
+
+```{r genome-time}
+output_dir <- here(main_dir, "genomes", "time")
+dir.create(output_dir, recursive = TRUE)
+
+metaT_genomes$genome %>%
+  unique() %>%
+  map(genome_time, metaT_df = metaT_genomes, output_dir = output_dir, ylabel = "Cumulative transcripts (tpm)")
+```
+
+## Pathways over time
+
+```{r pathway-time-function}
+pathway_time <- function(metaT_df, pathway, output_dir, ylabel,
+  habitat_stats = overall_df, depth_stats = habitat_df, year_stats = habitat_depth_df) {
+
+  metaT_df <- metaT_df %>%
+    filter(subpathway == {{pathway}})
+
+  if (nrow(metaT_df) == 0) return()
+  if (sum(metaT_df$tpm) == 0) return()
+
+  df_limits <- metaT_df %>%
+    filter(tpm > 0) %>%
+    summarise(
+      min = min(tpm),
+      max = max(tpm),
+      mid = 10 ^ mean(log10(c(min, max)))
+      )
+
+  habitat_diff <- habitat_stats %>%
+    filter(subpathway == {{pathway}}) %>%
+    select(sig, data) %>%
+    mutate(
+      Habitat__ = "Palsa",
+      DepthLumping = "0-9",
+      Year__ = 3.5,
+      tpm = df_limits$min,
+      label = map_chr(sig, ~ ifelse(., "★", ""))
+    )
+
+  depth_diff <- depth_stats %>%
+    filter(subpathway == {{pathway}}) %>%
+    select(sig, Habitat__) %>%
+    mutate(
+      DepthLumping = "0-9",
+      Year__ = 3.5,
+      tpm = df_limits$mid,
+      label = map_chr(sig, ~ ifelse(., "★", ""))
+    )
+
+  year_diff <- year_stats %>%
+    filter(subpathway == {{pathway}}) %>%
+    select(sig, Habitat__, DepthLumping) %>%
+    mutate(
+      Year__ = 2,
+      tpm = df_limits$max,
+      label = map_chr(sig, ~ ifelse(., "★", ""))
+    )
+
+  # facet: habitat columns, depth rows
+  # y axis: year
+  # x axis: tpm
+  metaT_df %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, DepthLumping, Habitat__, Year__)) %>%
+    mutate(Year__ = factor(Year__, levels = year_levels, labels = year_labels)) %>%
+    ggplot(aes(x = Year__, y = tpm, fill = Habitat__)) +
+    geom_boxplot() +
+    facet_grid(
+      cols = vars(factor(Habitat__, levels = habitat_levels)),
+      rows = vars(factor(DepthLumping, levels = depth_levels))
+      ) +
+    geom_text(aes(label = label), data = habitat_diff, size = 7, family = "HiraKakuPro-W3") +
+    geom_text(aes(label = label, colour = Habitat__), data = depth_diff, size = 7, family = "HiraKakuPro-W3") +
+    geom_text(aes(label = label, colour = Habitat__), data = year_diff, size = 7, family = "HiraKakuPro-W3") +
+    coord_flip() +
+    #scale_y_log10() +
+    scale_fill_manual(breaks = habitat_levels, values = colour_habitat) +
+    scale_colour_manual(breaks = habitat_levels, values = colour_habitat) +
+    xlab("Year") +
+    ylab(ylabel) +
+    theme_cowplot() +
+    theme(legend.position = "none", strip.background = element_blank())
+
+  ggsave(paste0(pathway, ".png"), path = output_dir,
+    width = 7, height = 7, dpi = 900)
+}
+```
+
+```{r pathway-time}
+output_dir <- here(main_dir, "pathways", "time")
+dir.create(output_dir, recursive = TRUE)
+
+metaT_exp$subpathway %>%
+  unique() %>%
+  map(pathway_time, metaT_df = metaT_exp_sum, output_dir = output_dir, ylabel = "Cumulative path-based transcripts (tpm)")
+```
+
+```{r pathway-instability}
+output_dir <- here(main_dir, "pathways", "instability")
+dir.create(output_dir, recursive = TRUE)
+
+# 34/132 are from Fen 10-19cm
+habitat_depth_df %>%
+  filter(sig) %>%
+  mutate(fold_change = map_dbl(data, ~ max(.$tpm) / min(.$tpm))) %>%
+  arrange(desc(fold_change)) %>%
+  filter(Habitat__ == "Fen", DepthLumping == "10-19")
+
+chosen_subpathways <- tribble(
+  ~subpathway, ~label, ~direction,
+  # Increasing
+  "acetoclastic_methanogenesis-all", "Acetoclastic methanogenesis", 1,
+  "CAZy-Polyphenolics", "CAZy Polyphenolics", 1,
+  "sulfur_redox-dissimilatory_sulfate_reduction", "Dissim. sulfate reduction", 1,
+  # Decreasing
+  "CAZy-Amorphous_Cellulose", "CAZy Amorph. Cellulose", -1,
+  "CAZy-Arabinan", "CAZy Arabinan", -1,
+  "CAZy-Arabinose_cleavage", "CAZy Arabinose cleavage", -1,
+  "CAZy-Beta_galactan__pectic_galactan_", "CAZy Beta galactan", -1,
+  "CAZy-Chitin", "CAZy Chitin", -1,
+  "CAZy-Mixed_Linkage_glucans", "CAZy Mixed-linkage glucans", -1,
+  "CAZy-Pectin", "CAZy Pectin", -1,
+  "CAZy-Rhamnose_cleavage", "CAZy Rhamnose-cleavage", -1,
+  "CAZy-Sulf_Polysachharides", "CAZy Sulfur polysaccharides", -1,
+  "CAZy-Xylans", "CAZy Xylans", -1,
+  "CAZy-Xyloglucan", "CAZy Xyloglucan", -1,
+  "fructose_degradation-all", "Fructose degradation", -1,
+  "fucose_degradation-all", "Fucose degradation", -1,
+  "galactose_degradation-all", "Galactose degradation", -1,
+  "lactose_degradation-all", "Lactose degradation", -1,
+  "mannose_degradation-all", "Mannose degradation", -1,
+  "sucrose_degradation-all", "Sucrose degradation", -1,
+  "xylose_degradation-xylonate_hydratase_pathway", "Xylose deg. (hydratase)", -1,
+  "propionate_fermentation-acrylate_pathway", "Propionate fermentation", -1,
+  "flagella_assembly-all", "Flagella assembly", -1,
+)
+
+#############################
+### Instability over time ###
+#############################
+unstable_exp <- metaT_exp %>%
+  inner_join(chosen_subpathways) %>%
+  left_join(metapathway_groups) %>%
+  group_by(metapath, subpathway, direction, temporal_sample_id) %>%
+  summarise(tpm = sum(tpm)) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, Year__, DepthLumping)) %>%
+  filter(
+    Habitat__ == "Fen",
+    DepthLumping == "10-19"
+  ) %>%
+  mutate(
+    Year__ = factor(Year__, levels = year_levels),
+    metapath = factor(metapath, levels = metapathway_levels),
+    subpathway = factor(subpathway, levels = chosen_subpathways$subpathway, labels = chosen_subpathways$label),
+    direction = factor(direction, levels = c(1, -1), labels = c("Increasing", "Decreasing"))
+  )
+
+unstable_exp %>%
+  group_by(metapath, subpathway, direction, Year__) %>%
+  summarise(tpm = mean(tpm)) %>%
+  ggplot(aes(Year__, tpm, group = subpathway)) +
+  geom_point() +
+  geom_line() +
+  geom_text_repel(aes(label = subpathway), data = . %>% filter(Year__ == 2017), nudge_x = 0.1, nudge_y = 0.01, hjust = "left", direction = "y", min.segment.length = 0.6) +
+  facet_grid(cols = vars(direction)) +
+  scale_x_discrete(expand = expansion(mult = c(0.03, 0.7))) +
+  scale_y_log10(limits = c(0.1, 2000), expand = expansion(mult = c(0, 0))) +
+  xlab("Year") +
+  ylab("Cumulative path-based transcripts (tpm)") +
+  ggtitle("Changing expression of pathways in 10-19cm Fen") +
+  theme_cowplot() +
+  theme(legend.position = "none")
+ggsave("unstable_time.png", path = output_dir, width = 12, height = 7, dpi = 600)
+
+###############################
+### Instability fold change ###
+###############################
+unstable_fold <- unstable_exp %>%
+  group_by(metapath, subpathway, direction, Year__) %>%
+  summarise(tpm = mean(tpm)) %>%
+  arrange(subpathway, Year__) %>%
+  mutate(fold_change = log2(tpm / lag(tpm))) %>%
+  filter(!is.na(fold_change))
+
+sort_folds <- function(x) ifelse(mean(x) > 0, max(x), min(x))
+
+unstable_fold %>%
+  ggplot(aes(fct_reorder(subpathway, fold_change, .fun = sort_folds), fold_change, fill = direction)) +
+  stat_summary(fun = mean, geom = "bar") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  geom_point() +
+  scale_fill_manual(values = c("Increasing" = "#E69F00", "Decreasing" = "#56B4E9")) +
+  coord_flip() +
+  xlab("Pathway") +
+  ylab("log2 fold change (year-to-year)") +
+  ggtitle("Changing expression of pathways in 10-19cm Fen") +
+  theme_cowplot() +
+  theme(legend.position = "none")
+ggsave("unstable_fold.png", path = output_dir, width = 12, height = 7, dpi = 600)
+```
+
+## Genomes over temperature
+
+```{r genome-temp-function}
+genome_temp <- function(metaT_df, genome, stats_df, temp, temp_type, xlabel, ylabel) {
+  metaT_df <- metaT_df %>%
+    filter(genome == {{genome}})
+
+  stats_df <- stats_df %>%
+    filter(genome == {{genome}}) %>%
+    mutate(
+      label = map2_chr(rsq, pval, ~ str_c("R2=", round(.x, 2), ", p=", round(.y, 3))),
+      label = map2_chr(Habitat__, label, ~ str_c(.x, ": ", .y))
+      ) %>%
+    group_by(genome) %>%
+    summarise(label = str_c(label, collapse = "\n"))
+
+  if (nrow(metaT_df) == 0) return()
+  if (sum(metaT_df$tpm) == 0) return()
+
+  metaT_df %>%
+    left_join(sample_metadata %>% select(SampleID__, DepthLumping, Habitat__, Year__, temp = {{temp}})) %>%
+    mutate(Habitat__ = factor(Habitat__, levels = habitat_levels)) %>%
+    ggplot(aes(temp, tpm, colour = Habitat__)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    geom_text(aes(x = -Inf, y = Inf, hjust = 0, vjust = 1, label = label), data = stats_df, inherit.aes = FALSE) +
+    scale_colour_manual(breaks = habitat_levels, values = colour_habitat) +
+    xlab(xlabel) +
+    ylab(ylabel) +
+    theme_cowplot() +
+    theme(legend.position = "none", strip.background = element_blank())
+
+  ggsave(str_c(genome, "_", temp_type, ".png"), path = output_dir,
+    width = 7, height = 7, dpi = 900)
+}
+```
+
+```{r genome-temp}
+output_dir <- here(main_dir, "genomes", "temp")
+dir.create(output_dir, recursive = TRUE)
+
+metaT_genomes$genome %>%
+  unique() %>%
+  map(genome_temp, metaT_df = metaT_genomes, stats_df = genome_gtemp_stats, temp = T_soil.deg_C, "soil", xlabel = "Ground temperature (°C)", ylabel = "Cumulative transcripts (tpm)")
+
+metaT_genomes$genome %>%
+  unique() %>%
+  map(genome_temp, metaT_df = metaT_genomes, stats_df = genome_atemp_stats, temp = T_air.deg_C, "air", xlabel = "Air temperature (°C)", ylabel = "Cumulative transcripts (tpm)")
+```
+
+## Pathways over temperature
+
+```{r pathway-temp-function}
+pathway_temp <- function(metaT_df, pathway, stats_df, temp, temp_type, xlabel, ylabel) {
+  metaT_df <- metaT_df %>%
+    filter(subpathway == {{pathway}})
+
+  stats_df <- stats_df %>%
+    filter(subpathway == {{pathway}}) %>%
+    mutate(
+      label = map2_chr(rsq, pval, ~ str_c("R2=", round(.x, 2), ", p=", round(.y, 3))),
+      label = map2_chr(Habitat__, label, ~ str_c(.x, ": ", .y))
+      ) %>%
+    group_by(subpathway) %>%
+    summarise(label = str_c(label, collapse = "\n"))
+
+  if (nrow(metaT_df) == 0) return()
+  if (sum(metaT_df$tpm) == 0) return()
+
+  metaT_df %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, DepthLumping, Habitat__, Year__, temp = {{temp}})) %>%
+    mutate(Habitat__ = factor(Habitat__, levels = habitat_levels)) %>%
+    ggplot(aes(temp, tpm, colour = Habitat__)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    geom_text(aes(x = -Inf, y = Inf, hjust = 0, vjust = 1, label = label), data = stats_df, inherit.aes = FALSE) +
+    scale_colour_manual(breaks = habitat_levels, values = colour_habitat) +
+    xlab(xlabel) +
+    ylab(ylabel) +
+    theme_cowplot() +
+    theme(legend.position = "none", strip.background = element_blank())
+
+  ggsave(str_c(pathway, "_", temp_type, ".png"), path = output_dir,
+    width = 7, height = 7, dpi = 900)
+}
+```
+
+```{r pathway-temp}
+output_dir <- here(main_dir, "pathways", "temp")
+dir.create(output_dir, recursive = TRUE)
+
+metaT_exp$subpathway %>%
+  unique() %>%
+  map(pathway_temp, metaT_df = metaT_exp_sum, stats_df = pathway_gtemp_stats, temp = T_soil.deg_C, "soil", xlabel = "Ground temperature (°C)", ylabel = "Cumulative transcripts (tpm)")
+
+metaT_exp$subpathway %>%
+  unique() %>%
+  map(pathway_temp, metaT_df = metaT_exp_sum, stats_df = pathway_atemp_stats, temp = T_air.deg_C, "air", xlabel = "Air temperature (°C)", ylabel = "Cumulative transcripts (tpm)")
+```
+
+## Temperature comparison
+
+```{r temp-comp}
+temp_metadata <- sample_metadata %>%
+  select(SampleID__, temporal_sample_id, Habitat__, T_soil.deg_C, T_air.deg_C)
+
+temp_metadata %>%
+  mutate(Habitat__ = factor(Habitat__, levels = habitat_levels)) %>%
+  ggplot(aes(T_soil.deg_C, T_air.deg_C, colour = Habitat__)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  scale_colour_manual(breaks = habitat_levels, values = colour_habitat) +
+  xlab("Ground temperature (°C)") +
+  ylab("Air temperature (°C)") +
+  theme_cowplot()
+
+ggsave("ground_air_temp.png", path = main_dir, width = 7, height = 7, dpi = 900)
+```
+
+## Searching non-pathway genes
+
+```{r non-pathway-genes}
+metaT_data <- sample_metadata %>%
+  read_metaT_data()
+
+grouped_proportions <- metaT_data %>%
+  mutate(group = case_when(
+      gene_id %in% metaT_pathways$gene_id ~ "Pathway",
+      is.na(ko_id) ~ "No KO",
+      TRUE ~ "No pathway"
+    )) %>%
+  group_by(temporal_sample_id, group) %>%
+  summarise(tpm = sum(tpm)) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping, Year__)) %>%
+  group_by(Habitat__, Year__, group) %>%
+  summarise(tpm = mean(tpm)) %>%
+  mutate(
+    perc = round(100 * tpm / 10**6, 1)
+  ) %>%
+  select(-tpm) %>%
+  pivot_wider(names_from = group, values_from = perc)
+
+#######################
+### Non-pathway KOs ###
+#######################
+metaT_nonpathways <- metaT_data %>%
+  filter(!is.na(ko_id), !gene_id %in% metaT_pathways$gene_id) %>%
+  left_join(kegg_brite, by = c("ko_id" = "kegg_id"))
+
+top_10_nonpathway <- metaT_nonpathways %>%
+  group_by(temporal_sample_id, group_A, group_B, group_C, ko_id, kegg_description) %>%
+  summarise(tpm = sum(tpm)) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping, Year__)) %>%
+  group_by(Habitat__, Year__, group_A, group_B, group_C, ko_id, kegg_description) %>%
+  summarise(tpm = mean(tpm)) %>%
+  group_by(Habitat__, Year__) %>%
+  slice_max(tpm, n = 10) %>%
+  arrange(Habitat__, Year__, desc(tpm))
+
+###########################
+### Non-pathway non-KOs ###
+###########################
+metaT_nonko <- metaT_data %>%
+  filter(is.na(ko_id), !gene_id %in% metaT_pathways$gene_id)
+
+top_2_nonko <- metaT_nonko %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping, Year__)) %>%
+  group_by(Habitat__, Year__, gene_id) %>%
+  summarise(tpm = mean(tpm)) %>%
+  slice_max(tpm, n = 2) %>%
+  mutate(
+    perc = 100 * tpm / 10**6
+    )
+```
+
+## Transcription to rel_abund comparison
+
+```{r tpm-abund-function}
+tpm_abund <- function(genome1, pathway, genome2, output_dir, metaT_df = metaT_exp_norm, abund_df = rel_abund) {
+  plot_df <- metaT_df %>%
+    filter(genome == {{genome1}}, subpathway == {{pathway}}) %>%
+    select(-rel_abund) %>%
+    filter(tpm > 0) %>%
+    left_join(abund_df %>% filter(genome == {{genome2}}), by = "temporal_sample_id") %>%
+    mutate(rel_abund = map_dbl(rel_abund, ~ ifelse(. == 0, 1e-5, .)))
+
+  plot_df %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping, Year__)) %>%
+    mutate(Habitat__ = factor(Habitat__, levels = habitat_levels, labels = habitat_levels)) %>%
+    ggplot(aes(tpm, rel_abund, colour = Habitat__)) +
+    geom_point() +
+    scale_x_log10() +
+    scale_y_log10() +
+    scale_colour_manual(breaks = habitat_levels, values = colour_habitat) +
+    theme_cowplot()
+
+  ggsave(str_c(genome1, "tpm", genome2, "abund.png", sep = "_"), path = output_dir, width = 7, height = 7, dpi = 900)
+}
+```
+
+```{r tpm-abund}
+output_dir <- here(main_dir, "transcription_comp")
+dir.create(output_dir, recursive = TRUE)
+
+####################################
+### Hydrogenotrophic methanogens ###
+####################################
+output_subdir <- here(output_dir, "hydrogenotrophic_methanogens")
+dir.create(output_subdir, recursive = TRUE)
+
+tpm_abund("PLGY01", "hydrogenotrophic_methanogenesis-all", "20170700_S25_26", output_subdir) # Methanoflorens stordalenmirensis/Acidoflorens stordalenmirensis
+tpm_abund("PLGY01", "hydrogenotrophic_methanogenesis-all", "20140700_E22_12", output_subdir) # Methanoflorens stordalenmirensis/Changshengia (Dormibacterota)
+tpm_abund("PLGY01", "hydrogenotrophic_methanogenesis-all", "20110800_S1D_5", output_subdir) # Methanoflorens stordalenmirensis/Actinobacteriota
+
+tpm_abund("PMEE01", "hydrogenotrophic_methanogenesis-all", "20100900_E1D_10", output_subdir) # Methanoflorens crilli/Acidoflorens sp. 2
+tpm_abund("PMEE01", "hydrogenotrophic_methanogenesis-all", "20110800_E1D_1", output_subdir) # Methanoflorens crilli/Chloroflexota
+tpm_abund("PMEE01", "hydrogenotrophic_methanogenesis-all", "20120600_E1D_53", output_subdir) # Methanoflorens crilli/Bacteroidota
+
+tpm_abund("20120700_S1D_59", "hydrogenotrophic_methanogenesis-all", "20120700_S1D_13", output_subdir) # 20120700_S1D_59/Acidobacteriota
+tpm_abund("20120700_S1D_59", "hydrogenotrophic_methanogenesis-all", "20120700_S1D_41", output_subdir) # 20120700_S1D_59/Acidobacteriota
+tpm_abund("20120700_S1D_59", "hydrogenotrophic_methanogenesis-all", "20120700_S1D_85", output_subdir) # 20120700_S1D_59/Verrucomicrobiota
+
+################################
+### Acetoclastic methanogens ###
+################################
+output_subdir <- here(output_dir, "acetoclastic_methanogens")
+dir.create(output_subdir, recursive = TRUE)
+
+tpm_abund("3300037104_19", "acetoclastic_methanogenesis-all", "20160700_E13_6", output_subdir) # 3300037104_19/Desulfobacterota
+tpm_abund("3300037104_19", "acetoclastic_methanogenesis-all", "20150700_E34_11", output_subdir) # 3300037104_19/Desulfobacterota
+tpm_abund("3300037104_19", "acetoclastic_methanogenesis-all", "20120600_E3D_29", output_subdir) # 3300037104_19/Bacteroidota
+
+tpm_abund("PMNG01", "acetoclastic_methanogenesis-all", "20120600_E2D_9", output_subdir) # PMNG01/Gemmatimonadota
+tpm_abund("PMNG01", "acetoclastic_methanogenesis-all", "20100900_E1D_10", output_subdir) # PMNG01/Acidobacteriota
+```
+
+## CAZy gene summaries
+
+```{r cazy-genomes-function}
+cazy_genomes <- function(cazy, metaT_df, ylabel) {
+  metaT_df <- metaT_df %>%
+    filter(label_id == {{cazy}})
+
+  if (nrow(metaT_df) == 0) return()
+  if (sum(metaT_df$tpm) == 0) return()
+
+  metaT_df %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, DepthLumping, Habitat__)) %>%
+    left_join(genome_info %>% select(genome, taxonomy = gtdb2_taxonomy)) %>%
+    separate(taxonomy, into = c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), sep = ";") %>%
+    group_by(Phylum, Habitat__, DepthLumping, temporal_sample_id) %>%
+    summarise(tpm = sum(tpm)) %>%
+    summarise(sd = sd(tpm), tpm = mean(tpm)) %>%
+    mutate(
+      Phylum_fill = map_chr(Phylum, ~ ifelse(. %in% phylum_levels, ., "other")),
+      Phylum = map_chr(Phylum, str_remove, "p__")
+    ) %>%
+    group_by(Phylum) %>%
+    mutate(total = sum(tpm)) %>%
+    filter(total > 0) %>%
+    ggplot(aes(reorder(Phylum, tpm), tpm, fill = Phylum_fill)) +
+    geom_col(colour = colour_brewer$black, size = 0.1) +
+    geom_errorbar(aes(ymin = tpm - sd, ymax = tpm + sd), size = 0.2, width = 0.1) +
+    facet_grid(cols = vars(factor(Habitat__, levels = habitat_levels)), rows = vars(factor(DepthLumping, levels = depth_levels))) +
+    scale_y_continuous(expand = c(0, 0)) +
+    scale_fill_manual(values = colour_phylum, breaks = phylum_levels, labels = phylum_labels) +
+    xlab("Phylum") +
+    ylab(ylabel) +
+    coord_flip() +
+    theme_cowplot() +
+    theme(
+      legend.position = "None",
+      axis.text.y = element_text(size = rel(0.7)),
+      axis.text.x = element_text(size = rel(0.7)),
+      panel.spacing.x = unit(4, "mm")
+      )
+
+  ggsave(str_c(cazy, ".png"), path = output_dir,
+    width = 12, height = 7, dpi = 900)
+}
+```
+
+```{r cazy-genomes}
+output_dir <- here(main_dir, "cazy", "together")
+dir.create(output_dir, recursive = TRUE)
+
+# Plot path-based averaged tpm across habitat * depth
+metaT_pathways %>%
+  filter(pathway == "CAZy") %>%
+  distinct(label_id) %>%
+  pull(label_id) %>%
+  map(cazy_genomes, metaT_df = metaT_genes, ylabel = "Average cumulative expression (tpm)")
+```
+
+## CAZy genes over time
+
+```{r cazy-time-function}
+cazy_time <- function(cazy, metaT_df, ylabel) {
+  metaT_df <- metaT_df %>%
+    filter(label_id == {{cazy}})
+
+  if (nrow(metaT_df) == 0) return()
+  if (sum(metaT_df$tpm) == 0) return()
+
+  # facet: habitat columns, depth rows
+  # y axis: year
+  # x axis: tpm
+  metaT_df %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, DepthLumping, Habitat__, Year__)) %>%
+    mutate(Year__ = factor(Year__, levels = year_levels, labels = year_labels)) %>%
+    ggplot(aes(x = Year__, y = tpm, fill = Habitat__)) +
+    geom_boxplot() +
+    facet_grid(
+      cols = vars(factor(Habitat__, levels = habitat_levels)),
+      rows = vars(factor(DepthLumping, levels = depth_levels))
+      ) +
+    coord_flip() +
+    #scale_y_log10() +
+    scale_fill_manual(breaks = habitat_levels, values = colour_habitat) +
+    scale_colour_manual(breaks = habitat_levels, values = colour_habitat) +
+    xlab("Year") +
+    ylab(ylabel) +
+    theme_cowplot() +
+    theme(legend.position = "none", strip.background = element_blank())
+
+  ggsave(str_c(cazy, ".png"), path = output_dir,
+    width = 7, height = 7, dpi = 900)
+}
+```
+
+```{r cazy-time}
+output_dir <- here(main_dir, "cazy", "time")
+dir.create(output_dir, recursive = TRUE)
+
+metaT_pathways %>%
+  filter(pathway == "CAZy") %>%
+  distinct(label_id) %>%
+  pull(label_id) %>%
+  map(cazy_time, metaT_df = metaT_genes_sum, ylabel = "Cumulative transcripts (tpm)")
+```
+
+## Transcription score
+
+```{r transcription-score-function}
+transcription_score <- function(pathway, metaT_df, ylabel) {
+  metaT_df <- metaT_df %>%
+    filter(subpathway == {{pathway}})
+
+  if (nrow(metaT_df) == 0) return()
+
+  metaT_df %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, DepthLumping, Habitat__, Year__)) %>%
+    mutate(
+      Habitat__ = factor(Habitat__, levels = habitat_levels),
+      Year__ = factor(Year__, levels = year_levels, labels = year_labels),
+      DepthLumping = factor(DepthLumping, levels = depth_levels)
+      ) %>%
+    ggplot(aes(x = Year__, y = score, fill = Habitat__, colour = Habitat__)) +
+    geom_jitter(width = 0.2, height = 0) +
+    facet_grid(
+      cols = vars(Habitat__),
+      rows = vars(DepthLumping)
+      ) +
+    coord_flip() +
+    scale_fill_manual(breaks = habitat_levels, values = colour_habitat) +
+    scale_colour_manual(breaks = habitat_levels, values = colour_habitat) +
+    xlab("Year") +
+    ylab(ylabel) +
+    theme_cowplot() +
+    theme(legend.position = "none", strip.background = element_blank())
+
+  ggsave(str_c(pathway, ".png"), path = output_dir, width = 7, height = 7, dpi = 900)
+  ggsave(str_c(pathway, ".svg"), path = output_dir, width = 7, height = 7, dpi = 900)
+}
+```
+
+```{r transcription-score}
+output_dir <- here(main_dir, "pathways", "score")
+dir.create(output_dir, recursive = TRUE)
+
+# Proportion of cells encoding pathway that are transcribing it per sample
+metaT_score <- metaT_exp %>%
+  left_join(product_refined, by = c("genome", "subpathway")) %>%
+  filter(!is.na(call), call) %>%
+  left_join(rel_abund) %>%
+  filter(rel_abund > 0) %>%
+  group_by(subpathway, temporal_sample_id) %>%
+  mutate(rel_prop = rel_abund / sum(rel_abund)) %>%
+  summarise(score = sum((tpm > 0) * rel_prop))
+
+metaT_score %>%
+  distinct(subpathway) %>%
+  pull(subpathway) %>%
+  map(transcription_score, metaT_df = metaT_score, ylabel = "Proportion of encoding cells transcribing pathway")
+```

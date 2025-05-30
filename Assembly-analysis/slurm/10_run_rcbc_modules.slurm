@@ -1,0 +1,119 @@
+#!/bin/bash
+
+## Note - Slurm script comments require two hash symbols (##).  A single
+## hash symbol immediately followed by SBATCH indicates an SBATCH
+## directive.  "##SBATCH" indicates the SBATCH command is commented
+## out and is inactive.
+
+## NTasks is not thread count, be sure to leave it set at 1
+#SBATCH --ntasks=48
+
+## If your program will be using less than 24 threads, or you
+## require more than 24 threads, set cpus-per-task to the 
+## desired threadcount.  Leave this commented out for the
+## default 24 threads.
+#SBATCH --cpus-per-task=1
+
+## You will need to specify a minimum amount of memory in the
+## following situaitons:
+##   1. If you require more than 128GB of RAM, specify either:
+##      a. "--mem=512000" for at least 512GB of RAM (6 possible nodes)
+##      b. "--mem=1000000" for at least 1TB of RAM (2 possible nodes)
+##   2. If you are running a job with less than 24 threads, you will
+##      normally be given your thread count times 5.3GB in RAM.  So
+##      a single thread would be given about 5GB of RAM.  If you
+##      require more, please specify it as a "--mem=XXXX" option,
+##      but avoid using all available RAM so others may share the node.
+##SBATCH --mem=512000
+
+## Normally jobs will restart automatically if the cluster experiences
+## an unforeseen issue.  This may not be desired if you want to retain
+## the work that's been performed by your script so far.   
+#SBATCH --no-requeue
+
+## Normal Slurm options
+## SBATCH -p shared
+#SBATCH --job-name="fen_RCBC_module"
+#SBATCH --output=10_run_rcbc_modules_%j.output
+
+##SBATCH --exclude=node105
+
+## Load the appropriate modules first.  Linuxbrew/colsa contains most
+## programs, though some are contained within the anaconda/colsa
+## module.  Refer to http://premise.sr.unh.edu for more info.
+module purge
+module load anaconda/colsa
+eval "$(conda shell.bash hook)"
+conda activate temporal_paper_v0.13
+
+
+## Instruct your program to make use of the number of desired threads.
+## As your job will be allocated an entire node, this should normally
+## be 24.
+
+
+
+# 0: Set up variables and initialize directories
+
+PROJ_DIR=/mnt/home/ernakovich/heh1030/EMERGE/decadal/temporal_paper/Assembly-analysis/
+
+# move into project directory
+cd $PROJ_DIR
+# Make Rout dir if it doesnt' exist
+mkdir -p R/Rout
+
+echo "Output will be in"
+echo $PROJ_DIR/R/Rout
+
+#for i in $(ls $PROJ_DIR/outputs/palsa_module_otus/*.RDS);
+#do
+#  echo $i
+#  mpiexec -n 1 Rscript R/02_Module_assembly/02_calc_rcbc_modules.R $i --show-progress
+#  echo "Finished RCBC calculation, starting next"
+#done
+
+#for i in $(ls $PROJ_DIR/outputs/bog_module_otus/*.RDS);
+#do
+#  echo $i
+#  mpiexec -n 1 Rscript R/02_Module_assembly/02_calc_rcbc_modules.R $i --show-progress
+#  echo "Finished RCBC calculation, starting next"
+#done
+
+for i in $(ls $PROJ_DIR/outputs/fen_module_otus/*.RDS);
+do
+  echo $i
+  mpiexec -n 1 Rscript R/02_Module_assembly/02_calc_rcbc_modules.R $i --show-progress
+  echo "Finished RCBC calculation, starting next"
+done
+
+
+#for i in $(ls $PROJ_DIR/outputs/all_module_otus/*.RDS); 
+#do 
+#  echo $i
+#  mpiexec -n 1 Rscript R/02_Module_assembly/02_calc_rcbc_modules.R $i --show-progress
+#  echo "Finished RCBC calculation, starting next"
+#done
+
+#mpiexec -n 1 Rscript R/08_calc_rcbc_modules.R \
+#  /mnt/home/ernakovich/heh1030/EMERGE/decadal/temporal_paper/Assembly-analysis/outputs/bog_module_otus/bog_module_black.RDS --show-progress
+#mpiexec -n 1 Rscript R/08_calc_rcbc_modules.R \
+#  /mnt/home/ernakovich/heh1030/EMERGE/decadal/temporal_paper/Assembly-analysis/outputs/bog_module_otus/bog_module_blue.RDS --show-progress
+#mpiexec -n 1 Rscript R/08_calc_rcbc_modules.R \
+#  /mnt/home/ernakovich/heh1030/EMERGE/decadal/temporal_paper/Assembly-analysis/outputs/bog_module_otus/bog_module_brown.RDS --show-progress
+#mpiexec -n 1 Rscript R/08_calc_rcbc_modules.R \
+#  /mnt/home/ernakovich/heh1030/EMERGE/decadal/temporal_paper/Assembly-analysis/outputs/bog_module_otus/bog_module_green.RDS --show-progress
+#mpiexec -n 1 Rscript R/08_calc_rcbc_modules.R \
+#  /mnt/home/ernakovich/heh1030/EMERGE/decadal/temporal_paper/Assembly-analysis/outputs/bog_module_otus/bog_module_grey.RDS --show-progress
+#mpiexec -n 1 Rscript R/08_calc_rcbc_modules.R \
+#  /mnt/home/ernakovich/heh1030/EMERGE/decadal/temporal_paper/Assembly-analysis/outputs/bog_module_otus/bog_module_magenta.RDS --show-progress
+#mpiexec -n 1 Rscript R/08_calc_rcbc_modules.R \
+#  /mnt/home/ernakovich/heh1030/EMERGE/decadal/temporal_paper/Assembly-analysis/outputs/bog_module_otus/bog_module_pink.RDS --show-progress
+#mpiexec -n 1 Rscript R/08_calc_rcbc_modules.R \
+#  /mnt/home/ernakovich/heh1030/EMERGE/decadal/temporal_paper/Assembly-analysis/outputs/bog_module_otus/bog_module_purple.RDS --show-progress
+#mpiexec -n 1 Rscript R/08_calc_rcbc_modules.R \
+#  /mnt/home/ernakovich/heh1030/EMERGE/decadal/temporal_paper/Assembly-analysis/outputs/bog_module_otus/bog_module_red.RDS --show-progress
+#mpiexec -n 1 Rscript R/08_calc_rcbc_modules.R \
+#  /mnt/home/ernakovich/heh1030/EMERGE/decadal/temporal_paper/Assembly-analysis/outputs/bog_module_otus/bog_module_turquoise.RDS --show-progress
+#mpiexec -n 1 Rscript R/08_calc_rcbc_modules.R \
+#  /mnt/home/ernakovich/heh1030/EMERGE/decadal/temporal_paper/Assembly-analysis/outputs/bog_module_otus/bog_module_yellow.RDS --show-progress
+

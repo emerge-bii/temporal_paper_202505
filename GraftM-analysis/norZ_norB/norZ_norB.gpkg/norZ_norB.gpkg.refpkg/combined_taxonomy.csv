@@ -1,0 +1,16 @@
+tax_id,parent_id,rank,tax_name,root,rank_0
+Root,Root,root,Root,Root,
+cNor_Bacteroidota,Root,rank_0,cNor_Bacteroidota,Root,cNor_Bacteroidota
+cNor_Firmicutes,Root,rank_0,cNor_Firmicutes,Root,cNor_Firmicutes
+cNor_Verrucomicrobiota,Root,rank_0,cNor_Verrucomicrobiota,Root,cNor_Verrucomicrobiota
+Unknown,Root,rank_0,Unknown,Root,Unknown
+cNor_Mixed,Root,rank_0,cNor_Mixed,Root,cNor_Mixed
+cNor_Alphaproteobacteria,Root,rank_0,cNor_Alphaproteobacteria,Root,cNor_Alphaproteobacteria
+cNor_Gammaproteobacteria,Root,rank_0,cNor_Gammaproteobacteria,Root,cNor_Gammaproteobacteria
+qNor_Archaea,Root,rank_0,qNor_Archaea,Root,qNor_Archaea
+qNor_Alphaproteobacteria,Root,rank_0,qNor_Alphaproteobacteria,Root,qNor_Alphaproteobacteria
+qNor_Planctomycetota,Root,rank_0,qNor_Planctomycetota,Root,qNor_Planctomycetota
+qNor_Firmicutes,Root,rank_0,qNor_Firmicutes,Root,qNor_Firmicutes
+Nod,Root,rank_0,Nod,Root,Nod
+qNor_Mixed,Root,rank_0,qNor_Mixed,Root,qNor_Mixed
+qNor_Mixed_2,Root,rank_0,qNor_Mixed_2,Root,qNor_Mixed_2

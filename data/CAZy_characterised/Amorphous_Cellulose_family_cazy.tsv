@@ -1,0 +1,90 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+cellobiohydrolase A (CbhA;Celf_1925) (Cel6B)	3.2.1.91	pubmed	Cellulomonas fimi ATCC 484	AAC36898.1	P50401	7CBD[A]	Bacteria	79	GH6
+cellobiohydrolase A (CbhA;Celf_1925) (Cel6B)	3.2.1.91	pubmed	Cellulomonas fimi ATCC 484	ABH87631.1	P50401	7CBD[A]	Bacteria	79	GH6
+cellobiohydrolase A (CbhA;Celf_1925) (Cel6B)	3.2.1.91	pubmed	Cellulomonas fimi ATCC 484	AEE46055.1	P50401	7CBD[A]	Bacteria	79	GH6
+endo-β-1,4-glucanase A (CenA;Celf_3184) (Cel6A)	3.2.1.4	pubmed	Cellulomonas fimi ATCC 484	AEE47298.1	F4GZY2P07984		Bacteria	79	GH6
+endo-β-1,4-glucanase A (CenA;Celf_3184) (Cel6A)	3.2.1.4	pubmed	Cellulomonas fimi ATCC 484	AAA23084.1	F4GZY2P07984		Bacteria	79	GH6
+endo-β-1,4-glucanase A (CenA;Celf_3184) (Cel6A)	3.2.1.4	pubmed	Cellulomonas fimi ATCC 484	AAE59939.1	F4GZY2P07984		Bacteria	79	GH6
+endo-β-1,4-glucanase (CelL)	3.2.1.4	pubmed	Cellulosimicrobium funkei HY-13	ALK04194.1	A0A0P0IZM9		Bacteria	79	GH6
+exo-β-1,4-xylanase (XylK2)	3.2.1.8	pubmed	Cellulosimicrobium sp. HY-13	ADR71224.1	E5LP78		Bacteria	79	GH6
+cellobiohydrolase 6A (CJA_2473) (Cel6A)	3.2.1.91	pubmed	Cellvibrio japonicus Ueda107	ACE85978.1	B3PKK5		Bacteria	79	GH6
+endo-β-1,4-glucanase (CenA;MCenA)	3.2.1.4	pubmed	Micromonospora cellulolyticum	AAC60491.1	Q53488		Bacteria	79	GH6
+endoglucanase (CelA1;CelA;Rv0062;MTV030.05) (Cel6)	3.2.1.4	pubmed	Mycobacterium tuberculosis H37Rv	CAA16243.1	Q79G13	1UOZ[A]1UP0[A]1UP2[A]1UP3[A]	Bacteria	79	GH6
+endoglucanase (CelA1;CelA;Rv0062;MTV030.05) (Cel6)	3.2.1.4	pubmed	Mycobacterium tuberculosis H37Rv	AFN47905.1	Q79G13	1UOZ[A]1UP0[A]1UP2[A]1UP3[A]	Bacteria	79	GH6
+endoglucanase (CelA1;CelA;Rv0062;MTV030.05) (Cel6)	3.2.1.4	pubmed	Mycobacterium tuberculosis H37Rv	CAE55238.1	Q79G13	1UOZ[A]1UP0[A]1UP2[A]1UP3[A]	Bacteria	79	GH6
+endoglucanase (CelA1;CelA;Rv0062;MTV030.05) (Cel6)	3.2.1.4	pubmed	Mycobacterium tuberculosis H37Rv	CCP42784.1	Q79G13	1UOZ[A]1UP0[A]1UP2[A]1UP3[A]	Bacteria	79	GH6
+endoglucanase (CelA1;CelA;Rv0062;MTV030.05) (Cel6)	3.2.1.4	pubmed	Mycobacterium tuberculosis H37Rv	NP_214576.1	Q79G13	1UOZ[A]1UP0[A]1UP2[A]1UP3[A]	Bacteria	79	GH6
+endo-β-1,4-glucanase I (EGI;EGII)	3.2.1.4	pubmed	Neisseria sicca SB	BAJ21449.1	E1CAJ8		Bacteria	79	GH6
+endo-β-1,4-glucanase 6A (Sde_2272) (Cel6A)	3.2.1.4	pubmed	Saccharophagus degradans 2-40	ABD81532.1	Q21IE7		Bacteria	79	GH6
+endo-β-1,4-glucanase A (CelA1;Cel1;CMCASE I)	3.2.1.4	pubmed	Streptomyces halstedii JM8	CAA78145.1	P33682		Bacteria	79	GH6
+exoglucanase (CbhII)	3.2.1.91	pubmed	Streptomyces sp. M23	BAB83928.1	Q8VLR1		Bacteria	79	GH6
+bifunctional β-1,4-endoglucanase / cellobiohydrolase (CelAB)	3.2.1.91	pubmed	Teredinibacter turnerae T7901	ABS72374.1	A9Q634		Bacteria	79	GH6
+cellobiohydrolase 6B / exoglucanase (E3;Ex;Tfu_0620) (Cel6B)	3.2.1.91	pubmed	Thermobifida fusca YX	AAA62211.1	Q47SA9Q60029Q9KH72	4AVN[A]4AVO[A]4B4F[A,B]4B4H[A,B]	Bacteria	79	GH6
+cellobiohydrolase 6B / exoglucanase (E3;Ex;Tfu_0620) (Cel6B)	3.2.1.91	pubmed	Thermobifida fusca YX	AAF75786.1	Q47SA9Q60029Q9KH72	4AVN[A]4AVO[A]4B4F[A,B]4B4H[A,B]	Bacteria	79	GH6
+cellobiohydrolase 6B / exoglucanase (E3;Ex;Tfu_0620) (Cel6B)	3.2.1.91	pubmed	Thermobifida fusca YX	AAZ54658.1	Q47SA9Q60029Q9KH72	4AVN[A]4AVO[A]4B4F[A,B]4B4H[A,B]	Bacteria	79	GH6
+cellobiohydrolase 6B / exoglucanase (E3;Ex;Tfu_0620) (Cel6B)	3.2.1.91	pubmed	Thermobifida fusca YX	ABH87632.1	Q47SA9Q60029Q9KH72	4AVN[A]4AVO[A]4B4F[A,B]4B4H[A,B]	Bacteria	79	GH6
+endo-β-1,4-glucanase (E2;CelB;Tfu_1074) (Cel6A)	3.2.1.4	pubmed	Thermobifida fusca YX	AAC06388.1	P26222Q47R05	1TML[A]2BOD[X]2BOE[X]2BOF[X]2BOG[X]	Bacteria	79	GH6
+endo-β-1,4-glucanase (E2;CelB;Tfu_1074) (Cel6A)	3.2.1.4	pubmed	Thermobifida fusca YX	AAE59940.1	P26222Q47R05	1TML[A]2BOD[X]2BOE[X]2BOF[X]2BOG[X]	Bacteria	79	GH6
+endo-β-1,4-glucanase (E2;CelB;Tfu_1074) (Cel6A)	3.2.1.4	pubmed	Thermobifida fusca YX	AAZ55112.1	P26222Q47R05	1TML[A]2BOD[X]2BOE[X]2BOF[X]2BOG[X]	Bacteria	79	GH6
+endoglucanase (ThCel6A) (alkali-stable) (Cel6A)	3.2.1.4	pubmed	Thermobifida halotolerans YIM 90462T	AHN09982.1	X2G0M7		Bacteria	79	GH6
+cellulase (Cel6H) (partial) (Cel6H)	3.2.1.4	doi	uncultured bacterium	AEK21789.1	G1K3U8		Bacteria	79	GH6
+cellulase (Cel6H) (partial) (Cel6H)	3.2.1.4	doi	uncultured bacterium	AEK21789.2	G1K3U8		Bacteria	79	GH6
+cellulase (Lc-CelB)	3.2.1.4	pubmed	uncultured bacterium	AHL27895.1	W8PF16		Bacteria	79	GH6
+cellulase (Lc-CelJ)	3.2.1.4	pubmed	uncultured bacterium	AHL27903.1	W8P3Q3		Bacteria	79	GH6
+exoglucanase (CbsA) (fragment)	3.2.1.4	pubmed	Xanthomonas oryzae pv. oryzae BXO43	AAT35586.1	A0A384E106Q6IT74	5XYH[A]	Bacteria	79	GH6
+endo-β-1,4-glucanase (Cel6A)	3.2.1.4	pubmed	Xylanimicrobium pachnodae DSM 12657	AAD54679.1	Q9RQE6		Bacteria	79	GH6
+endo-β-1,4-glucanase (CtCel124;Cthe_0435) (Cel124A)	3.2.1.4	pubmed	Acetivibrio thermocellus ATCC 27405	ABN51673.1	A3DCJ4	2XQO[A]6G1G[A]6G1I[A,B]	Bacteria	2	GH124
+cellodextrin-phosphorylase (Cdp; CtCDP; RtCDP; Cthe_2989)	2.4.1.49	doi	Acetivibrio thermocellus ATCC 27405	ABN54185.1	A3DJQ6O24780Q93HT8	5NZ7[A,B]5NZ8[A,B]	Bacteria	41	GH94
+cellodextrin-phosphorylase (Cdp; CtCDP; RtCDP; Cthe_2989)	2.4.1.49	doi	Acetivibrio thermocellus ATCC 27405	BAA22081.1	A3DJQ6O24780Q93HT8	5NZ7[A,B]5NZ8[A,B]	Bacteria	41	GH94
+cellobiose phosphorylase (Cbp; CtCBP; RtCBD; Cthe_0275)	2.4.1.20	pubmed	Acetivibrio thermocellus ATCC 27405	ABN51514.1	A3DC35		Bacteria	41	GH94
+cellodextrin phosphorylase (Cdp-ym4)	2.4.1.49	pubmed	Acetivibrio thermocellus YM4	BAB71818.1	Q93HT8		Bacteria	41	GH94
+cellobiose phosphorylase (Cbp)	2.4.1.20	pubmed	Acetivibrio thermocellus YM4	AAL67138.1	Q8VP44	3QDE[A,B]	Bacteria	41	GH94
+cellobiose-phosphorylase (Cbp)	2.4.1.20	pubmed	Acetivibrio thermocellus YM4	BAA25846.1	O66383		Bacteria	41	GH94
+laminaribiose phosphorylase (ACL_0729;ACL0729)	2.4.1.31	pubmed	Acholeplasma laidlawii PG-8A	ABX81345.1	A9NG65		Bacteria	41	GH94
+acholetin phosphorylase (AchP; ACL_1061)	2.4.1.-	pubmed	Acholeplasma laidlawii PG-8A	ABX81671.1			Bacteria	41	GH94
+cyclic β-1,2-glucan synthetase (Cgs)	2.4.1.333	pubmed	Brucella abortus S19	ACD71661.1	A0A0F6ANM6B2S8A8O85166		Bacteria	41	GH94
+cyclic β-1,2-glucan synthetase (Cgs)	2.4.1.333	pubmed	Brucella abortus S19	AAC34747.1	A0A0F6ANM6B2S8A8O85166		Bacteria	41	GH94
+cyclic β-1,2-glucan synthetase (Cgs)	2.4.1.333	pubmed	Brucella abortus S19	AAC34747.2	A0A0F6ANM6B2S8A8O85166		Bacteria	41	GH94
+cellobiose phosphorylase (Cbp;CgCBP)	2.4.1.20	pubmed	Cellulomonas gilvus ATCC13127	BAA28631.1	O66264	2CQS[A,B]2CQT[A,B]3ACS[A,B]3ACT[A,B]3AFJ[A,B]3QFY[A,B]3QFZ[A,B]3QG0[A,B]	Bacteria	41	GH94
+cellobiose phosphorylase (CbP)	2.4.1.20	doi	Cellulomonas uda DSM 20108	AAQ20920.1	Q7WTR6	3RRS[A,B]3RSY[A,B]3S4A[A,B]3S4B[A,B]3S4C[A]3S4D[A]	Bacteria	41	GH94
+4-O-β-D-glucosyl-N-acetyl-D-glucosamine phosphorylase(IaGP; IALB_1006)	2.4.1.-	pubmed	Ignavibacterium album JCM 16511	AFH48717.1			Bacteria	41	GH94
+β-1,2-oligoglucan phosphorylase (LpSOGP;Cphy_0694)	2.4.1.333	pubmed	Lachnoclostridium phytofermentans ISDg	ABX41081.1	A9KJS6	5H3Z[A,B]5H40[A,B]5H41[A,B]5H42[A,B]	Bacteria	41	GH94
+β-1,2-oligoglucan phosphorylase (LiSOGP;Lin1839)	2.4.1.333	pubmed	Listeria innocua Clip11262	CAC97070.1	Q92AT0		Bacteria	41	GH94
+β-1,2-oligoglucan phosphorylase (LiSOGP;Lin1839)	2.4.1.333	pubmed	Listeria innocua Clip11262	NP_471174.1	Q92AT0		Bacteria	41	GH94
+3-O-β-D-glucopyranosyl β-D-glucuronide phosphorylase (PBOR_13355)	2.4.1.-	doi	Paenibacillus borealis DSM 13188	AIQ57809.1			Bacteria	41	GH94
+solabiose phosphorylase (PBOR_28850)	2.4.1.389	pubmed	Paenibacillus borealis DSM 13188	AIQ60507.1			Bacteria	41	GH94
+solabiose phosphorylase (GGalP;X809_13280)	2.4.1.389	pubmed	Paenibacillus polymyxa CR1	AHC20114.1			Bacteria	41	GH94
+solabiose phosphorylase (GGalP;X809_13280)	2.4.1.389	pubmed	Paenibacillus polymyxa CR1	AHC20112.2			Bacteria	41	GH94
+laminaribiose phosphorylase (LbpA)	2.4.1.31	pubmed	Paenibacillus sp. YM1	BAJ10826.1	D7UT17	6GGY[A,B]6GH2[A,B]6GH3[A,B]	Bacteria	41	GH94
+cellodextrin phosphorylase (CdpA; Ccel_1439)	2.4.1.49	pubmed	Ruminiclostridium cellulolyticum H10	ACL75793.1			Bacteria	41	GH94
+cellodextrin phisphorylase (CdpC; Ccel_3412)	2.4.1.49	pubmed	Ruminiclostridium cellulolyticum H10	ACL77700.1			Bacteria	41	GH94
+cellobiose phosphorylase (CbpA;Ccel_2109)	2.4.1.20	pubmed	Ruminiclostridium cellulolyticum H10	ACL76454.1	B8I421		Bacteria	41	GH94
+cellodextrin phosporylase (CdpB; Ccel_2354)	2.4.1.49	pubmed	Ruminiclostridium cellulolyticum H10	ACL76688.1			Bacteria	41	GH94
+cellobiose phosphorylase (CBP;RaCBP;Rumal_0187)	2.4.1.20	pubmed	Ruminococcus albus 7 = DSM 20455	ADU20744.1	E0LCW6E6UCF2		Bacteria	41	GH94
+cellodextrin phosphorylase (CDP;RaCDP;Rumal_2403)	2.4.1.49	pubmed	Ruminococcus albus 7 = DSM 20455	ADU22883.1	E0L4C3E6UE18		Bacteria	41	GH94
+cellobionic acid phosphorylase 94B (Cep94B;CBAP;SdCBAP;Sde_0906) (Cep94B)	2.4.1.321	pubmed	Saccharophagus degradans 2-40	ABD80168.1	Q21MB1	4ZLE[A]4ZLF[A]4ZLG[A]4ZLI[A]	Bacteria	41	GH94
+cellobiose phosphorylase 94A (Cbp;SdCBP;Sde_1318) (Cep94A)	2.4.1.20	pubmed	Saccharophagus degradans 2-40	ABD80580.1	Q21L49		Bacteria	41	GH94
+cellodextrin-phosphorylase (CepB;CsCdP)	2.4.1.49	pubmed	Thermoclostridium stercorarium DSM8532	AAC45511.1	P77846		Bacteria	41	GH94
+cellobiose-phosphorylase (CepA)	2.4.1.20	pubmed	Thermoclostridium stercorarium NCIB 11754	AAC45510.1	Q59316		Bacteria	41	GH94
+cellobiose-phosphorylase (CepA;TM1848;Tmari_1863)	2.4.1.20	pubmed	Thermotoga maritima MSB8	AAD36910.1	Q9X2G3R4P2E1		Bacteria	41	GH94
+cellobiose-phosphorylase (CepA;TM1848;Tmari_1863)	2.4.1.20	pubmed	Thermotoga maritima MSB8	AGL50787.1	Q9X2G3R4P2E1		Bacteria	41	GH94
+cellobiose-phosphorylase (CepA;TM1848;Tmari_1863)	2.4.1.20	pubmed	Thermotoga maritima MSB8	AHD18255.1	Q9X2G3R4P2E1		Bacteria	41	GH94
+cellobiose-phosphorylase (CepA;TM1848;Tmari_1863)	2.4.1.20	pubmed	Thermotoga maritima MSB8	AKE29604.1	Q9X2G3R4P2E1		Bacteria	41	GH94
+cellobiose-phosphorylase (CepA;TM1848;Tmari_1863)	2.4.1.20	pubmed	Thermotoga maritima MSB8	NP_229644.1	Q9X2G3R4P2E1		Bacteria	41	GH94
+cellobiose-phosphorylase (CbpA)	2.4.1.20	pubmed	Thermotoga neapolitana DSM 4359	AAB95491.2	B9K7M6O52504		Bacteria	41	GH94
+cellobiose-phosphorylase (CbpA)	2.4.1.20	pubmed	Thermotoga neapolitana DSM 4359	ACM22959.1	B9K7M6O52504		Bacteria	41	GH94
+cellobiose phosphorylase (GH94_G)	2.4.1.20	pubmed	uncultured bacterium	QCO92836.1			Bacteria	41	GH94
+cellodextrin phosphorylase (GH94_F)	2.4.1.49	pubmed	uncultured bacterium	QCO92835.1			Bacteria	41	GH94
+laminaribiose phosphorylase (GH94_B)	2.4.1.31	pubmed	uncultured bacterium	QCO92990.1			Bacteria	41	GH94
+laminaribiose phosphorylase (GH94_C)	2.4.1.31	pubmed	uncultured bacterium	QCO92945.1			Bacteria	41	GH94
+laminaribiose phosphorylase (GH94_C)	2.4.1.31	pubmed	uncultured bacterium	QCO93023.1			Bacteria	41	GH94
+laminaribiose phosphorylase (GH94_C)	2.4.1.31	pubmed	uncultured bacterium	QCO93046.1			Bacteria	41	GH94
+cellobiose phosphorylase (GH94_E)	2.4.1.20	pubmed	uncultured bacterium	QCO92799.1			Bacteria	41	GH94
+cellodextrin phosphorylase (GH94_A)	2.4.1.49	pubmed	uncultured bacterium	QCO92991.1			Bacteria	41	GH94
+cellodextrin phosphorylase (GH94_D)	2.4.1.49	pubmed	uncultured bacterium	QCO92946.1			Bacteria	41	GH94
+cellodextrin phosphorylase (GH94_D)	2.4.1.49	pubmed	uncultured bacterium	QCO93024.1			Bacteria	41	GH94
+cellodextrin phosphorylase (GH94_D)	2.4.1.49	pubmed	uncultured bacterium	QCO93047.1			Bacteria	41	GH94
+diacetylchitobiose phosphorylase (ChbP)	2.4.1.280	pubmed	Vibrio furnissii	AAG23740.1	Q9F8X1		Bacteria	41	GH94
+chitobiose phosphorylase (ChbP;VpChBP)	2.4.1.280	pubmed	Vibrio proteolyticus	BAC87867.1	Q76IQ9	1V7V[A]1V7W[A]1V7X[A]	Bacteria	41	GH94
+cellobionic acid phosphorylase (CelAP; NdvB; XCC4077)	2.4.1.321	pubmed	Xanthomonas campestris pv. campestris str. ATCC 33913	AAM43298.1	Q8P3J4		Bacteria	41	GH94
+cellobionic acid phosphorylase (CelAP; NdvB; XCC4077)	2.4.1.321	pubmed	Xanthomonas campestris pv. campestris str. ATCC 33913	NP_639416.1	Q8P3J4		Bacteria	41	GH94

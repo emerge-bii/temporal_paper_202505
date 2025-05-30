@@ -1,0 +1,54 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+endo-α-N-acetylgalactosaminidase (BL0464)	3.2.1.97	pubmed	Bifidobacterium longum NCC2705	AAN24297.1	Q8G712		Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (BL0464)	3.2.1.97	pubmed	Bifidobacterium longum NCC2705	CAM83937.1	Q8G712		Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (BL0464)	3.2.1.97	pubmed	Bifidobacterium longum NCC2705	NP_695661.1	Q8G712		Bacteria	13	GH101
+core 1 endo-α-N-acetylgalactosaminidase (EngBF;BLLJ_0168)	3.2.1.97	pubmed	Bifidobacterium longum subsp. longum JCM 1217	BAJ65838.1	A0A413AG90Q3T552	2ZXQ[A]6QEP[A]6QEV[B]6QFK[A]6QFO[A]6SH9[B]	Bacteria	13	GH101
+core 1 endo-α-N-acetylgalactosaminidase (EngBF;BLLJ_0168)	3.2.1.97	pubmed	Bifidobacterium longum subsp. longum JCM 1217	AAX44931.1	A0A413AG90Q3T552	2ZXQ[A]6QEP[A]6QEV[B]6QFK[A]6QFO[A]6SH9[B]	Bacteria	13	GH101
+core 1 endo-α-N-acetylgalactosaminidase (EngBF;BLLJ_0168)	3.2.1.97	pubmed	Bifidobacterium longum subsp. longum JCM 1217	CAM83935.1	A0A413AG90Q3T552	2ZXQ[A]6QEP[A]6QEV[B]6QFK[A]6QFO[A]6SH9[B]	Bacteria	13	GH101
+core 1 endo-α-N-acetylgalactosaminidase (EngCP;CPF_0685)	3.2.1.97	pubmed	Clostridium perfringens ATCC 13124	ABG82921.1	A0A0H2YQ40Q0TTA3		Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (EngCP;CPE0693)	3.2.1.97	pubmed	Clostridium perfringens str. 13	BAB80399.1	B5BSV7Q8XMJ5		Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (EngCP;CPE0693)	3.2.1.97	pubmed	Clostridium perfringens str. 13	ACK18392.1	B5BSV7Q8XMJ5		Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (EngCP;CPE0693)	3.2.1.97	pubmed	Clostridium perfringens str. 13	BAG69287.1	B5BSV7Q8XMJ5		Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (EngCP;CPE0693)	3.2.1.97	pubmed	Clostridium perfringens str. 13	CAM83938.1	B5BSV7Q8XMJ5		Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (EngCP;CPE0693)	3.2.1.97	pubmed	Clostridium perfringens str. 13	NP_561609.1	B5BSV7Q8XMJ5		Bacteria	13	GH101
+core 1 / core 3 endo-α-N-acetylgalactosaminidase (EngPA;PPA1569)	3.2.1.97	pubmed	Cutibacterium acnes KPA171202	AAT83312.1	Q6A7F3		Bacteria	13	GH101
+core 1 / core 3 endo-α-N-acetylgalactosaminidase (EngEF;EndoEF) (partial)	3.2.1.97	pubmed	Enterococcus faecalis NBRC3971	BAG75105.1	B5UB72		Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (EF1800)	3.2.1.97	pubmed	Enterococcus faecalis V583	AAO81568.1	Q833X5		Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (EF1800)	3.2.1.97	pubmed	Enterococcus faecalis V583	CAM83940.1	Q833X5		Bacteria	13	GH101
+core 1 endo-α-N-acetylgalactosaminidase (EngAA;AAur_1465)	3.2.1.97	pubmed	Paenarthrobacter aurescens TC1	ABM10140.1	A1R4S7		Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (spr0328) (SpGH101)	3.2.1.97	pubmed	Streptococcus pneumoniae R6	AAK99132.1	Q8DR60	3ECQ[A,B]	Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (spr0328) (SpGH101)	3.2.1.97	pubmed	Streptococcus pneumoniae R6	CAM83936.1	Q8DR60	3ECQ[A,B]	Bacteria	13	GH101
+core 1 endo-α-N-acetylgalactosaminidase (EngSP; SP_0368)	3.2.1.97	pubmed	Streptococcus pneumoniae TIGR4	ABC75807.1	Q2MGH6	5A55[A]5A56[A]5A57[A]5A58[A]5A59[A]5A5A[A]	Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (Tn0153)	3.2.1.97	pubmed	Tyzzerella nexilis	WP_004611020.1			Bacteria	13	GH101
+endo-α-N-acetylgalactosaminidase (Tn2105)	3.2.1.97	pubmed	Tyzzerella nexilis	WP_004612822.1			Bacteria	13	GH101
+exo-α-N-acetylgalactosaminidase (NagBb)	3.2.1.49	pubmed	Bifidobacterium bifidum JCM 1254	BAL14929.1	G5ELM1	5WZN[A,B]5WZP[A,B]5WZQ[A,B]5WZR[A,B]	Bacteria	3	GH129
+exo-α-1,3-(3,6)-anhydro-D-galactosidase (DagB; ZgGH129; zobellia_3152)	3.2.1.-	pubmed	Zobellia galactanivorans DsijT	CAZ97291.1	G0L004	5OPQ[A,B,C,D]	Bacteria	3	GH129
+β-1,3-galactosyl-N-acetylhexosamine phosphorylase / galacto-N-biose/lacto-N-biose I phosphorylase (GLNBP;Apre_1669)	2.4.1.211	pubmed	Anaerococcus prevotii DSM 20548	ACV29689.1	C7RES6		Bacteria	16	GH112
+lacto-N-biose phosphorylase (LnpA1;LnbP)	2.4.1.211	pubmed	Bifidobacterium bifidum JCM 1254	BAD80752.1	Q5NU16		Bacteria	16	GH112
+galacto-N-biose / lacto-N-biose phosphorylase (LnpA1;LnbP;GLNBP;BLLJ_1623)	2.4.1.211	pubmed	Bifidobacterium longum subsp. longum JCM 1217	BAD80751.1	E8MF13	2ZUS[A,B,C,D]2ZUT[A,B,C,D]2ZUU[A,B,C,D]2ZUV[A,B]2ZUW[A,B,C,D]3WFZ[A,B,C,D]	Bacteria	16	GH112
+galacto-N-biose / lacto-N-biose phosphorylase (LnpA1;LnbP;GLNBP;BLLJ_1623)	2.4.1.211	pubmed	Bifidobacterium longum subsp. longum JCM 1217	BAF73924.1	E8MF13	2ZUS[A,B,C,D]2ZUT[A,B,C,D]2ZUU[A,B,C,D]2ZUV[A,B]2ZUW[A,B,C,D]3WFZ[A,B,C,D]	Bacteria	16	GH112
+galacto-N-biose / lacto-N-biose phosphorylase (LnpA1;LnbP;GLNBP;BLLJ_1623)	2.4.1.211	pubmed	Bifidobacterium longum subsp. longum JCM 1217	BAJ67290.1	E8MF13	2ZUS[A,B,C,D]2ZUT[A,B,C,D]2ZUU[A,B,C,D]2ZUV[A,B]2ZUW[A,B,C,D]3WFZ[A,B,C,D]	Bacteria	16	GH112
+β-galactoside phosphorylase (bpr_I0232)	2.4.1.-	pubmed	Butyrivibrio proteoclasticus B316	ADL32981.1			Bacteria	16	GH112
+β-galactoside phosphorylase (bpr_I0232)	2.4.1.-	pubmed	Butyrivibrio proteoclasticus B316	WP_013279638.1			Bacteria	16	GH112
+galacto-N-biose phosphorylase (CPF_0553)	2.4.1.211	pubmed	Clostridium perfringens ATCC 13124	ABG83511.1	A0A0H2YRA5Q0TTN3		Bacteria	16	GH112
+β-1,3-galactosyl-N-acetylhexosamine phosphorylase (GnpA)	2.4.1.211	pubmed	Cutibacterium acnes JCM 6425	BAH10636.1	B7XEJ1		Bacteria	16	GH112
+β-1,3-galactosyl-N-acetylhexosamine phosphorylase / galacto-N-biose phosphorylase (GNBP;HMPREF0357_1319)	2.4.1.211	pubmed	Erysipelothrix rhusiopathiae ATCC 19414	ZP_05748149.1			Bacteria	16	GH112
+β-1,3-galactosyl-N-acetylhexosamine phosphorylase (Cphy_3030)	2.4.1.211	pubmed	Lachnoclostridium phytofermentans ISDg	ABX43387.1	A9KQ75		Bacteria	16	GH112
+β-1,3-galactosyl-N-acetylhexosamine phosphorylase (Cphy_0577)	2.4.1.211	pubmed	Lachnoclostridium phytofermentans ISDg	ABX40964.1	A9KIW5		Bacteria	16	GH112
+β-D-galactosyl-1,4-L-rhamnose phosphorylase (Cphy_1920)	2.4.1.247	pubmed	Lachnoclostridium phytofermentans ISDg	ABX42289.1	A9KHK4		Bacteria	16	GH112
+D-galactosyl-β-1,4-L-rhamnose phosphorylase (GalRhaP;Oter_1377)	2.4.1.247	doi	Opitutus terrae PB90-1	ACB74662.1	B1ZRY6		Bacteria	16	GH112
+β-1,3-galactosyl-N-acetylhexosamine phosphorylase (RhGLnbp112;RHOM_04120)	2.4.1.211	pubmed	Roseburia hominis A2-183	AEN95946.1	G2T0V2		Bacteria	16	GH112
+β-1,3-galactosyl-N-acetylhexosamine phosphorylase (RiGLnbp112; ROSEINA2194_01886; GnpA)	2.4.1.211	pubmed	Roseburia inulinivorans DSM 16841	EEG94248.1	C0FT19		Bacteria	16	GH112
+β-1,3-galactosyl-N-acetylhexosamine phosphorylase / galacto-N-biose phosphorylase (GNBP;Smon_0146)	2.4.1.211	pubmed	Streptobacillus moniliformis DSM 12112	ACZ00636.1	D1AWG0		Bacteria	16	GH112
+β-1,3-galactosyl-N-acetylhexosamine phosphorylase (GalGlyNAcP;VV2_1091)	2.4.1.211	pubmed	Vibrio vulnificus CMCP6	AAO07997.1	A0A3Q0KZS1		Bacteria	16	GH112
+β-1,3-galactosyl-N-acetylhexosamine phosphorylase (GalGlyNAcP;VV2_1091)	2.4.1.211	pubmed	Vibrio vulnificus CMCP6	NP_763007.1	A0A3Q0KZS1		Bacteria	16	GH112
+α-N-acetylgalactosaminidase (AmGH109B;Amuc_0017)	3.2.1.49	doi	Akkermansia muciniphila ATCC BAA-835	ACD03864.1	B2UL75		Bacteria	9	GH109
+α-N-acetylgalactosaminidase (AmGH109B;Amuc_0017)	3.2.1.49	doi	Akkermansia muciniphila ATCC BAA-835	QTD80695.1	B2UL75		Bacteria	9	GH109
+a/β-N-acetylgalactosaminidase (AmGH109A;Amuc_0920)	3.2.1.493.2.1.52	doidoi	Akkermansia muciniphila ATCC BAA-835	ACD04752.1	B2UQL7	6T2B[A,B,C,D]	Bacteria	9	GH109
+a/β-N-acetylgalactosaminidase (AmGH109A;Amuc_0920)	3.2.1.493.2.1.52	doidoi	Akkermansia muciniphila ATCC BAA-835	QTD81538.1	B2UQL7	6T2B[A,B,C,D]	Bacteria	9	GH109
+N-acetylgalactosaminidase	3.2.1.49	pubmed	Arenibacter latericius KMM426	ADM26828.1	E1AXI3		Bacteria	9	GH109
+α-N-acetylgalactosaminidase (NagA)	3.2.1.49	pubmed	Elizabethkingia meningoseptica ATCC 13253	CAJ01375.1	A2AWV6		Bacteria	9	GH109
+α-N-acetylgalactosaminidase (NagA)	3.2.1.49	pubmed	Elizabethkingia meningoseptica ATCC 33958	CAJ01376.1	A4Q8F7	2IXA[A]2IXB[A]	Bacteria	9	GH109
+α-N-acetylgalactosaminidase (BvGH109_1)	3.2.1.49	pubmed	Phocaeicola vulgatus	WP_005848863.1			Bacteria	9	GH109
+α-N-acetylgalactosaminidase (NagA)	3.2.1.49	pubmed	Shewanella oneidensis ATCC70050	CAJ01377.1	Q8ECL7		Bacteria	9	GH109
+α-N-acetylgalactosaminidase	3.2.1.49	pubmed	Tannerella forsythia ATCC43037	CAJ01380.1	A4Q8G1		Bacteria	9	GH109

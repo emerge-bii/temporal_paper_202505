@@ -1,0 +1,675 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+chitinase (ChiN1;Chi;VNG_0816G;Vng0816g)	3.2.1.14	doi	Halobacterium salinarum NRC-1	AAG19274.1	Q9HR84		Archaea	100	GH18
+chitinase (ChiN1;Chi;VNG_0816G;Vng0816g)	3.2.1.14	doi	Halobacterium salinarum NRC-1	NP_279794.1	Q9HR84		Archaea	100	GH18
+chitinase (Chia1;HsChiA1;OE2201F)	3.2.1.14	pubmed	Halobacterium salinarum R1	CAP13543.1	B0R478		Archaea	100	GH18
+HFX_5038 (ChiCHme)	3.2.1.14	pubmed	Haloferax mediterranei ATCC 33500 CGMCC 1.2087	AFK20875.1	I3R9G5		Archaea	100	GH18
+HFX_5038 (ChiCHme)	3.2.1.14	pubmed	Haloferax mediterranei ATCC 33500 CGMCC 1.2087	QCQ77304.1	I3R9G5		Archaea	100	GH18
+HFX_5037 (ChiBHme)	3.2.1.14	pubmed	Haloferax mediterranei ATCC 33500 CGMCC 1.2087	AFK20874.1	I3R9G4		Archaea	100	GH18
+HFX_5037 (ChiBHme)	3.2.1.14	pubmed	Haloferax mediterranei ATCC 33500 CGMCC 1.2087	QCQ77303.1	I3R9G4		Archaea	100	GH18
+HFX_5039 (ChiDHme)	3.2.1.14	pubmed	Haloferax mediterranei ATCC 33500 CGMCC 1.2087	AFK20876.1	I3R9G6M0JBD1		Archaea	100	GH18
+HFX_5039 (ChiDHme)	3.2.1.14	pubmed	Haloferax mediterranei ATCC 33500 CGMCC 1.2087	QCQ77305.1	I3R9G6M0JBD1		Archaea	100	GH18
+HFX_5036 (ChiAHme)	3.2.1.14	pubmed	Haloferax mediterranei ATCC 33500 CGMCC 1.2087	AFK20873.1	I3R9G3		Archaea	100	GH18
+HFX_5036 (ChiAHme)	3.2.1.14	pubmed	Haloferax mediterranei ATCC 33500 CGMCC 1.2087	QCQ77302.1	I3R9G3		Archaea	100	GH18
+chitinase (PF1234+PF1233;ChiA+ChiB) (Chi18B+Chi18A)	3.2.1.14	pubmedpubmed	Pyrococcus furiosus DSM 3638	AAL81357.1	Q8U1H4Q8U1H5		Archaea	100	GH18
+chitinase (PF1234+PF1233;ChiA+ChiB) (Chi18B+Chi18A)	3.2.1.14	pubmedpubmed	Pyrococcus furiosus DSM 3638	AAL81358.1	Q8U1H4Q8U1H5		Archaea	100	GH18
+chitinase (PF1234+PF1233;ChiA+ChiB) (Chi18B+Chi18A)	3.2.1.14	pubmedpubmed	Pyrococcus furiosus DSM 3638	NP_578962.1	Q8U1H4Q8U1H5		Archaea	100	GH18
+chitinase (PF1234+PF1233;ChiA+ChiB) (Chi18B+Chi18A)	3.2.1.14	pubmedpubmed	Pyrococcus furiosus DSM 3638	NP_578963.1	Q8U1H4Q8U1H5		Archaea	100	GH18
+chitinase (PF1234+PF1233;ChiA+ChiB) (Chi18B+Chi18A)	3.2.1.14	pubmedpubmed	Pyrococcus furiosus DSM 3638	AAL81357.1	Q8U1H5	2DSK[A,B]3A4W[A,B]3A4X[A,B]3AFB[A,B]	Archaea	100	GH18
+chitinase (PF1234+PF1233;ChiA+ChiB) (Chi18B+Chi18A)	3.2.1.14	pubmedpubmed	Pyrococcus furiosus DSM 3638	NP_578962.1	Q8U1H5	2DSK[A,B]3A4W[A,B]3A4X[A,B]3AFB[A,B]	Archaea	100	GH18
+chitinase A (ChiA;TK1765)	3.2.1.200	pubmed	Thermococcus kodakarensis KOD1	BAD85954.1	Q9UWR7		Archaea	100	GH18
+chitinase A (ChiA;TK1765)	3.2.1.200	pubmed	Thermococcus kodakarensis KOD1	CAT70561.1	Q9UWR7		Archaea	100	GH18
+chitinase A (ChiA;TK1765)	3.2.1.14	pubmed	Thermococcus kodakarensis KOD1	BAD85954.1	Q9UWR7		Archaea	100	GH18
+chitinase A (ChiA;TK1765)	3.2.1.14	pubmed	Thermococcus kodakarensis KOD1	CAT70561.1	Q9UWR7		Archaea	100	GH18
+chitinase A (ChiA; Cthe_0270) (Chi18A)	3.2.1.14	pubmed	Acetivibrio thermocellus ATCC 27405	CAA93150.1	A3DC30Q59326Q8VVI8		Bacteria	100	GH18
+chitinase A (ChiA; Cthe_0270) (Chi18A)	3.2.1.14	pubmed	Acetivibrio thermocellus ATCC 27405	ABN51509.1	A3DC30Q59326Q8VVI8		Bacteria	100	GH18
+chitinase (Chi1)	3.2.1.14	pubmed	Aeromonas caviae CB101	CAD58828.1	Q8GHI4		Bacteria	100	GH18
+chitinase A (ChiA;AcD1ChiA)	3.2.1.14	pubmed	Aeromonas caviae K1 / D1	AAA93130.1	Q43919		Bacteria	100	GH18
+chitinase (ChiA)	3.2.1.14	doi	Aeromonas hydrophila JMP636	AAF70180.1	Q9L5D5		Bacteria	100	GH18
+chitinase (ChiA)	3.2.1.14	doi	Aeromonas hydrophila JMP636	AAE36542.1	Q9L5D5		Bacteria	100	GH18
+chitinase 92 (Chi92)	3.2.1.14	pubmed	Aeromonas hydrophila JP101	AAG09437.1	Q9F9Q8		Bacteria	100	GH18
+chitinase (Chi-A;AHA_0977)	3.2.1.14	pubmed	Aeromonas hydrophila subsp. hydrophila ATCC 7966	ABK39408.1	A0KGX3		Bacteria	100	GH18
+chitinase (ChiA)	3.2.1.14	pubmed	Aeromonas hydrophila SUWA-9	BAE87051.1	Q25BN2		Bacteria	100	GH18
+hexaoligochitin-producing chitinase (ASCHI61) (partial)	3.2.1.14	pubmed	Aeromonas schubertii	ABF29701.1	D2CFK8		Bacteria	100	GH18
+chitinase II	3.2.1.14	doi	Aeromonas sp. 10S-24	BAA06605.1	Q59145		Bacteria	100	GH18
+chitinase (pCA8)	3.2.1.14	doi	Aeromonas sp. 10S-24	BAA36459.1	Q9ZNJ2		Bacteria	100	GH18
+chitinase (ChiCD3)	3.2.1.14	doi	Aeromonas sp. CD3 / Aeromonas veronii CD3	ACR33067.1	D2DJ38		Bacteria	100	GH18
+chitinase (ChiB565;B565_0857)	3.2.1.14	pubmed	Aeromonas veronii B565	AEB48892.1			Bacteria	100	GH18
+endochitinase A (AsChi18A; VSAL_I0757)	3.2.1.14	pubmed	Aliivibrio salmonicida LFI1238	CAQ78442.1			Bacteria	100	GH18
+chitinase (ChiC)	3.2.1.14	pubmed	Arthrobacter sp. TAD20	CAD43215.1	Q6A4C3		Bacteria	100	GH18
+chitinase (ChitiA)	3.2.1.14	pubmed	Arthrobacter sp. TAD20	CAB62382.1	Q9RMB8		Bacteria	100	GH18
+chitinase (ChitiB)	3.2.1.14	pubmed	Arthrobacter sp. TAD20	CAB62499.1	Q9REI6	1KFW[A]	Bacteria	100	GH18
+N-acetylglucosaminidase / spore cortex-lytic enzyme (SleL;YaaH;BAS3402)	3.2.1.-	pubmed	Bacillus anthracis str. Sterne	AAT55709.1	P0DPJ9		Bacteria	100	GH18
+N-acetylglucosaminidase / spore cortex-lytic enzyme (SleL;YaaH;BAS3402)	3.2.1.-	pubmed	Bacillus anthracis str. Sterne	AJH43466.1	P0DPJ9		Bacteria	100	GH18
+chitinase CW (ChiCW)	3.2.1.14	pubmed	Bacillus cereus 28-9	AAM48520.2	Q8KVU8		Bacteria	100	GH18
+chitinase CH (ChiCH)	3.2.1.14	pubmed	Bacillus cereus 28-9	AAP47142.1	Q7X4L4		Bacteria	100	GH18
+exochitinase (BC3725)	3.2.1.14	pubmed	Bacillus cereus ATCC 14579	AAP10651.1	A0A5B7VMB4Q81A65		Bacteria	100	GH18
+exochitinase (BC3725)	3.2.1.14	pubmed	Bacillus cereus ATCC 14579	NP_833450.1	A0A5B7VMB4Q81A65		Bacteria	100	GH18
+chitinase B (ChiB)	3.2.1.14	pubmed	Bacillus cereus CH	BAB16891.1	Q9FAC8		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	pubmed	Bacillus cereus CH	BAB16890.1	Q9FAC9		Bacteria	100	GH18
+cortical lytic enzyme / N-acetylglucosaminidase (CFLE;SleL)	3.2.1.-	pubmed	Bacillus cereus IFO13579	BAA92376.1	Q9K3E4		Bacteria	100	GH18
+chitinase (ChiNCTU2)	3.2.1.14	pubmed	Bacillus cereus NCTU2 / 42	ACY39278.1	D0VV09	3N11[A]3N12[A]3N13[A]3N15[A]3N17[A]3N18[A]3N1A[A]	Bacteria	100	GH18
+chitinase (ChiL)	3.2.1.14	pubmed	Bacillus cf. pumilus SG2	ABF50676.1	Q0MRC2Q1HFN7		Bacteria	100	GH18
+chitinase (ChiL)	3.2.1.14	pubmed	Bacillus cf. pumilus SG2	ABI15083.1	Q0MRC2Q1HFN7		Bacteria	100	GH18
+bifunctional chitinase / lysozyme (ChiS)	3.2.1.143.2.1.17	pubmed	Bacillus cf. pumilus SG2	ABI15082.1	Q0MRC3Q2I0I7		Bacteria	100	GH18
+bifunctional chitinase / lysozyme (ChiS)	3.2.1.143.2.1.17	pubmed	Bacillus cf. pumilus SG2	ABC86581.1	Q0MRC3Q2I0I7		Bacteria	100	GH18
+chitinase 1 (Chi;Chi1;YvbX;BliCHI;BLi00338;BL01685)	3.2.1.14	doi	Bacillus licheniformis DSM 13 = ATCC 14580	AAU21943.2	A5A699D0EW66Q65NR8		Bacteria	100	GH18
+chitinase 1 (Chi;Chi1;YvbX;BliCHI;BLi00338;BL01685)	3.2.1.14	doi	Bacillus licheniformis DSM 13 = ATCC 14580	AAU21943.1	A5A699D0EW66Q65NR8		Bacteria	100	GH18
+chitinase 1 (Chi;Chi1;YvbX;BliCHI;BLi00338;BL01685)	3.2.1.14	doi	Bacillus licheniformis DSM 13 = ATCC 14580	AAU39296.1	A5A699D0EW66Q65NR8		Bacteria	100	GH18
+chitinase 1 (Chi;Chi1;YvbX;BliCHI;BLi00338;BL01685)	3.2.1.14	doi	Bacillus licheniformis DSM 13 = ATCC 14580	ACR87900.1	A5A699D0EW66Q65NR8		Bacteria	100	GH18
+chitinase 1 (Chi;Chi1;YvbX;BliCHI;BLi00338;BL01685)	3.2.1.14	doi	Bacillus licheniformis DSM 13 = ATCC 14580	ACW83016.1	A5A699D0EW66Q65NR8		Bacteria	100	GH18
+chitinase 1 (Chi;Chi1;YvbX;BliCHI;BLi00338;BL01685)	3.2.1.14	doi	Bacillus licheniformis DSM 13 = ATCC 14580	CAF05579.1	A5A699D0EW66Q65NR8		Bacteria	100	GH18
+chitinase 1 (Chi;Chi1;YvbX;BliCHI;BLi00338;BL01685)	3.2.1.14	doi	Bacillus licheniformis DSM 13 = ATCC 14580	CAV28467.1	A5A699D0EW66Q65NR8		Bacteria	100	GH18
+chitinase (ChiA)	3.2.1.14	pubmed	Bacillus licheniformis DSM 8785	ACK44109.1	B7UB89		Bacteria	100	GH18
+chitinase A-BL3 (ChiA;ChiA-BL3)	3.2.1.14	pubmed	Bacillus licheniformis MS-3	ACI24006.1	B6DXA5		Bacteria	100	GH18
+chitinase (ChiMY;ChiB)	3.2.1.14	pubmed	Bacillus licheniformis MY75	ACF40833.1	B5A7P1		Bacteria	100	GH18
+chitinase	3.2.1.14	doi	Bacillus licheniformis N1	ACU43581.1	C8CAY2		Bacteria	100	GH18
+chitinase B (ChiB;Chi72;Chi66;Chi58)	3.2.1.14	pubmedpubmed	Bacillus licheniformis SK-1	ABJ74158.1	Q1EM71		Bacteria	100	GH18
+chitinase (ChiL;ChiLm)	3.2.1.14	pubmed	Bacillus sp. AV2-9	AFK64770.1	I3UID2		Bacteria	100	GH18
+chitinase (Chisb;Chi) (chitobiose-producing)	3.2.1.132	pubmed	Bacillus sp. DAU101	ABC66095.1	A0EQW8		Bacteria	100	GH18
+chitinase (Chi-1;SCChi-1)	3.2.1.14	pubmed	Bacillus sp. SC081 / Bacillus atrophaeus SC081	ADJ56636.1	D8V3F2		Bacteria	100	GH18
+chitinase (Chi113)	3.2.1.14	pubmed	Bacillus subtilis AP113	ABG57262.1	Q0Q2G5		Bacteria	100	GH18
+chitinase (Chi) (Chi18)	3.2.1.14	pubmed	Bacillus subtilis CHU26	AAC23715.1	O85500		Bacteria	100	GH18
+chitinase	3.2.1.14	pubmed	Bacillus thuringiensis 97243-1	ACA34287.1	B1PBV0		Bacteria	100	GH18
+chitinase (ChiA74;Chi)	3.2.1.14	pubmed	Bacillus thuringiensis LBIT-82	AAL17867.1	A0A243G6Q6A4GT76Q8RSX8Q93AD3	6BT9[A,B]	Bacteria	100	GH18
+chitinase (ChiA74;Chi)	3.2.1.14	pubmed	Bacillus thuringiensis LBIT-82	AAL71886.2	A0A243G6Q6A4GT76Q8RSX8Q93AD3	6BT9[A,B]	Bacteria	100	GH18
+chitinase (ChiA74;Chi)	3.2.1.14	pubmed	Bacillus thuringiensis LBIT-82	ABO21095.1	A0A243G6Q6A4GT76Q8RSX8Q93AD3	6BT9[A,B]	Bacteria	100	GH18
+chitinase B (ChiB)	3.2.1.14	pubmed	Bacillus thuringiensis serovar colmeri 15A3	ABF57674.1	Q1G154		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	doi	Bacillus thuringiensis serovar colmeri 15A3	ABM05818.1	A1YLR3		Bacteria	100	GH18
+chitinase (Schi;Kchi)	3.2.1.14	doi	Bacillus thuringiensis serovar kurstaki	AAO34713.1	Q84FN2		Bacteria	100	GH18
+chitinase (Chi;BtCHI) (partial)	3.2.1.14	pubmed	Bacillus thuringiensis serovar kurstaki	ACW83014.1	D0EW64		Bacteria	100	GH18
+chitobiosidase / exochitinase (Chi255)	3.2.1.143.2.1.200	pubmedpubmed	Bacillus thuringiensis serovar kurstaki BUPM255	CAG25670.1	Q3MTV5		Bacteria	100	GH18
+chitinase (ChiA;ChiA-HD73)	3.2.1.14	pubmed	Bacillus thuringiensis serovar kurstaki HD-73	ABQ65137.2	A5YRG4		Bacteria	100	GH18
+chitinase (Chi9602;Chi)	3.2.1.14	pubmed	Bacillus thuringiensis serovar tenebrionis 9602	AHA95666.1	V5NZX0		Bacteria	100	GH18
+chitinase (Chi)	3.2.1.14	pubmed	Bacillus thuringiensis SUBSP. PAKISTANI	AAB58579.1	O07088		Bacteria	100	GH18
+mannosyl-glycoprotein endo-β-N-acetylglucosaminidase (BT1044)	3.2.1.96	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO76151.1	A0A0P0FQI4Q8A8X3	6Q64[A]	Bacteria	100	GH18
+mannosyl-glycoprotein endo-β-N-acetylglucosaminidase (BT1044)	3.2.1.96	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_809957.1	A0A0P0FQI4Q8A8X3	6Q64[A]	Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase (BT3987;BT_3987)	3.2.1.96	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	AAO79092.1	Q8A0N4	3POH[A]6T8I[A]6T8K[A,B]6T8L[A]6TCV[B]6TCW[A]7NWF[A]	Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase (BT3987;BT_3987)	3.2.1.96	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	NP_812898.1	Q8A0N4	3POH[A]6T8I[A]6T8K[A,B]6T8L[A]6TCV[B]6TCW[A]7NWF[A]	Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase (EndoBI-2;BLIF_1310)	3.2.1.96	pubmed	Bifidobacterium longum subsp. infantis 157F	BAJ71450.1	E8MUK6		Bacteria	100	GH18
+endoglycosidase (EndoBI-1; Blon_2468)	3.2.1.96	pubmed	Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088	ACJ53522.1	B7GPC7		Bacteria	100	GH18
+chitinase (ChiA)	3.2.1.14	pubmed	Brevibacillus laterosporus M64	AKN21157.1	A0A0H3YJ45		Bacteria	100	GH18
+chitinase (ChiC)	3.2.1.14	pubmed	Brevibacillus laterosporus M9	AKN79540.1	A0A0H4CS66		Bacteria	100	GH18
+chitinase 72A (Chi72A)	3.2.1.14		Brevibacillus sp. CDY64	AKN79541.1			Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	pubmed	Cellulomonas uda ATCC 21399	AAG27061.2	Q9EY44		Bacteria	100	GH18
+chitinase 18A (CjChi18A; CJA_1182) (Chi18A)	3.2.1.14	pubmed	Cellvibrio japonicus Ueda107	ACE83143.1	B3PBW8		Bacteria	100	GH18
+chitinase 18B (CjChi18B; CJA_0988) (Chi18B)	3.2.1.14	pubmed	Cellvibrio japonicus Ueda107	ACE84354.1	B3PB16		Bacteria	100	GH18
+chitinase 18C (CjChi18C; CJA_2993) (Chi18C)	3.2.1.14	pubmed	Cellvibrio japonicus Ueda107	ACE85832.1	B3PCT3		Bacteria	100	GH18
+chitinase 18D (CjChi18D; CJA_2611) (Chi18D)	3.2.1.14	pubmed	Cellvibrio japonicus Ueda107	ACE85899.1	B3PLJ1		Bacteria	100	GH18
+chitinase C (ChiC)	3.2.1.14	pubmed	Chitiniphilus shinanonensis SAY3	BAK53887.1	F8WSQ0		Bacteria	100	GH18
+chitinase E (ChiE)	3.2.1.14	pubmed	Chitiniphilus shinanonensis SAY3	BAK53889.1	F8WSQ2		Bacteria	100	GH18
+chitinase G (ChiG)	3.2.1.14	pubmed	Chitiniphilus shinanonensis SAY3	BAK53891.1	F8WSQ4		Bacteria	100	GH18
+chitinase (ChiL)	3.2.1.14	pubmed	Chitiniphilus shinanonensis SAY3	BAK53954.1	F8WSX2	6KST[A,B]6KXL[A,B]6KXM[A,B]6KXN[A,B]	Bacteria	100	GH18
+chitinase (Chi54)	3.2.1.14	pubmed	Chromobacterium sp. C-61	AAP88583.1	Q5MYT4		Bacteria	100	GH18
+chitinase (Chi45;CvChi45;CV2935)	3.2.1.14	pubmed	Chromobacterium violaceum ATCC 12472	AAQ60603.1	Q7NTW8	4TX8[A]	Bacteria	100	GH18
+chitinase (Chi45;CvChi45;CV2935)	3.2.1.14	pubmed	Chromobacterium violaceum ATCC 12472	NP_902605.1	Q7NTW8	4TX8[A]	Bacteria	100	GH18
+exo-chitinase X (CHI-X)	3.2.1.14	pubmed	Citrobacter freundii P	AGD94964.2	L7YAM9		Bacteria	100	GH18
+exo-chitinase X (CHI-X)	3.2.1.14	pubmed	Citrobacter freundii P	AGD94964.1	L7YAM9		Bacteria	100	GH18
+chitinase A (ChiA) (Chi18A)	3.2.1.14	pubmed	Clostridium paraputrificum M-21	BAA34922.1	Q9ZNL0		Bacteria	100	GH18
+chitinase B (ChiB) (Chi18B)	3.2.1.14	pubmed	Clostridium paraputrificum M-21	BAA23796.1	O50076		Bacteria	100	GH18
+chitinase C (ChiC) (Chi18C)	3.2.1.14	pubmed	Clostridium paraputrificum M-21	BAD12045.1	Q75ZW9		Bacteria	100	GH18
+chitinase C (ChiC) (Chi18C)	3.2.1.14	pubmed	Clostridium paraputrificum M-21	BAD29950.1	Q75ZW9		Bacteria	100	GH18
+chitinase (ChiD ; CcChi1; COCOR_06744)	3.2.1.14	pubmed	Corallococcus coralloides DSM 2259	AFE08343.1	H8MZA8		Bacteria	100	GH18
+endo-N-acetylglucosaminidase F1 (EndoF1;Endo F1)	3.2.1.96	pubmed	Elizabethkingia meningoseptica ATCC 33958	AAA24922.1	P36911	2EBN[A]	Bacteria	100	GH18
+endo-N-acetylglucosaminidase F2 (EndoF2;Endo F2)	3.2.1.96	pubmedpubmed	Elizabethkingia meningoseptica ATCC 33958	AAA24923.1	P36912		Bacteria	100	GH18
+endo-N-acetylglucosaminidase F3 (EndoF3;Endo F3)	3.2.1.96	pubmedpubmed	Elizabethkingia meningoseptica ATCC 33958	AAA24924.1	P36913	1EOK[A]1EOM[A]	Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.201	doi	Enterobacter sp. G-1	AAB97779.1	O54328		Bacteria	100	GH18
+endoglycosidase (EndoE;NdoE)	3.2.1.96	pubmed	Enterococcus faecalis HER1044	AAR20477.1	Q6U890	7PUJ[A]7PUK[A,B]	Bacteria	100	GH18
+bifunctional endo-β-N-acetylglucosaminidase / exo-β-N-acetylglucosaminidase (EndoE;OG1RF_10107)	3.2.1.96	pubmed	Enterococcus faecalis OG1RF	AEA92794.1			Bacteria	100	GH18
+bifunctional endo-β-N-acetylglucosaminidase / exo-β-N-acetylglucosaminidase (EndoE;OG1RF_10107)	3.2.1.96	pubmed	Enterococcus faecalis OG1RF	AZV32936.1			Bacteria	100	GH18
+endo-N-glycosidase (EndoE;EF0114)	3.2.1.523.2.1.96	pubmedpubmed	Enterococcus faecalis V583	AAO79989.1	Q839P8		Bacteria	100	GH18
+endo-N-glycosidase (EndoE;EF0114)	3.2.1.523.2.1.96	pubmedpubmed	Enterococcus faecalis V583	AAR59795.1	Q839P8		Bacteria	100	GH18
+endo-N-glycosidase (EndoE;EF0114)	3.2.1.523.2.1.96	pubmedpubmed	Enterococcus faecalis V583	NP_813917.1	Q839P8		Bacteria	100	GH18
+chtinase (EfChi18A;EF0361) (Chi18A)	3.2.1.14	pubmed	Enterococcus faecalis V583	AAO80224.1	Q838S2		Bacteria	100	GH18
+chtinase (EfChi18A;EF0361) (Chi18A)	3.2.1.14	pubmed	Enterococcus faecalis V583	NP_814153.1	Q838S2		Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase (EfEndo18A;EF2863) (Endo18A)	3.2.1.96	pubmed	Enterococcus faecalis V583	AAO82555.1	Q830C5		Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase (EfEndo18A;EF2863) (Endo18A)	3.2.1.96	pubmed	Enterococcus faecalis V583	NP_816485.1	Q830C5		Bacteria	100	GH18
+endochitinase (ChiA;YheB;b3338)	3.2.1.14	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC76363.1	P13656		Bacteria	100	GH18
+endochitinase (ChiA;YheB;b3338)	3.2.1.14	pubmed	Escherichia coli str. K-12 substr. MG1655	AAA58135.1	P13656		Bacteria	100	GH18
+endochitinase (ChiA;YheB;b3338)	3.2.1.14	pubmed	Escherichia coli str. K-12 substr. MG1655	AIZ89659.1	P13656		Bacteria	100	GH18
+endochitinase (ChiA;YheB;b3338)	3.2.1.14	pubmed	Escherichia coli str. K-12 substr. MG1655	ALI38980.1	P13656		Bacteria	100	GH18
+endochitinase (ChiA;YheB;b3338)	3.2.1.14	pubmed	Escherichia coli str. K-12 substr. MG1655	AMC96225.1	P13656		Bacteria	100	GH18
+endochitinase (ChiA;YheB;b3338)	3.2.1.14	pubmed	Escherichia coli str. K-12 substr. MG1655	AUG18042.1	P13656		Bacteria	100	GH18
+endochitinase (ChiA;YheB;b3338)	3.2.1.14	pubmed	Escherichia coli str. K-12 substr. MG1655	AVI53496.1	P13656		Bacteria	100	GH18
+endochitinase (ChiA;YheB;b3338)	3.2.1.14	pubmed	Escherichia coli str. K-12 substr. MG1655	AYG17720.1	P13656		Bacteria	100	GH18
+endochitinase (ChiA;YheB;b3338)	3.2.1.14	pubmed	Escherichia coli str. K-12 substr. MG1655	NP_417797.1	P13656		Bacteria	100	GH18
+chitinase	3.2.1.14	doi	Ewingella americana PI98	CAA62151.1	Q27SX4Q59341		Bacteria	100	GH18
+chitinase	3.2.1.14	doi	Ewingella americana PI98	ABD47744.1	Q27SX4Q59341		Bacteria	100	GH18
+chitinase (ChiA;Fjoh_4555)	3.2.1.14	pubmedpubmed	Flavobacterium johnsoniae UW101	ABQ07554.1	A5FB63		Bacteria	100	GH18
+chitinase (ChiA;Fjoh_4555)	3.2.1.14	pubmedpubmed	Flavobacterium johnsoniae UW101	ABQ07554.1	A5FB63		Bacteria	100	GH18
+chitinase (FjChiB;Fjoh_4560)	3.2.1.14	pubmed	Flavobacterium johnsoniae UW101	ABQ07559.1	A5FB54	6XYZ[A]	Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase (Endo-Fsp)	3.2.1.96	pubmed	Flavobacterium sp. SK1022	BAB20938.1	P80036Q9F1K1		Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase (Endo-Fsp)	3.2.1.96	pubmed	Flavobacterium sp. SK1022	AAB20312.1	P80036Q9F1K1		Bacteria	100	GH18
+FTH_0088 (ChiB)	3.2.1.14	pubmed	Francisella tularensis subsp. holarctica OSU18	ABI82135.1			Bacteria	100	GH18
+FTH_1471 (ChiA)	3.2.1.14	pubmed	Francisella tularensis subsp. holarctica OSU18	ABI83277.1			Bacteria	100	GH18
+FTH_1579 (ChiC)	3.2.1.14	pubmed	Francisella tularensis subsp. holarctica OSU18	ABI83369.1			Bacteria	100	GH18
+chitinase A (ChiA;FTN_0627)	3.2.1.14	pubmed	Francisella tularensis subsp. novicida U112	ABB76136.1	A0Q5K5Q09WI8		Bacteria	100	GH18
+chitinase A (ChiA;FTN_0627)	3.2.1.14	pubmed	Francisella tularensis subsp. novicida U112	ABK89520.1	A0Q5K5Q09WI8		Bacteria	100	GH18
+chitinase A (ChiA;FTN_0627)	3.2.1.14	pubmed	Francisella tularensis subsp. novicida U112	AJI60891.1	A0Q5K5Q09WI8		Bacteria	100	GH18
+chitinase B (ChiB;FTN_1744)	3.2.1.14	pubmed	Francisella tularensis subsp. novicida U112	ABB76137.1	A0Q8N1Q09WI7		Bacteria	100	GH18
+chitinase B (ChiB;FTN_1744)	3.2.1.14	pubmed	Francisella tularensis subsp. novicida U112	ABK90596.1	A0Q8N1Q09WI7		Bacteria	100	GH18
+chitinase B (ChiB;FTN_1744)	3.2.1.14	pubmed	Francisella tularensis subsp. novicida U112	AJI60276.1	A0Q8N1Q09WI7		Bacteria	100	GH18
+FTT_1768c / FTT1768c (ChiB)	3.2.1.14	pubmed	Francisella tularensis subsp. tularensis SCHU S4	CAG46401.1			Bacteria	100	GH18
+FTT_0715 / FTT0715 (ChiA)	3.2.1.14	pubmed	Francisella tularensis subsp. tularensis SCHU S4	CAG45348.1			Bacteria	100	GH18
+FTW_0313 (ChiC)	3.2.1.14	pubmed	Francisella tularensis subsp. tularensis WY96-3418	ABO46262.1			Bacteria	100	GH18
+chitinase (ChiA;ChiABhp;ChiJ;BH0916)	3.2.1.14	doi	Halalkalibacterium halodurans C-125	BAB04635.1	Q9KED7		Bacteria	100	GH18
+chitinase (ChiA;ChiABhp;ChiJ;BH0916)	3.2.1.14	doi	Halalkalibacterium halodurans C-125	NP_241782.1	Q9KED7		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	pubmed	Isoptericola jiangsuensis CLG	ADD17350.1	D3YGV2		Bacteria	100	GH18
+chitinase B (ChiB)	3.2.1.14	pubmed	Isoptericola jiangsuensis CLG	ADD17351.1	D3YGV3		Bacteria	100	GH18
+chitinase (Chi69;Chi04)	3.2.1.14	pubmed	Janthinobacterium lividum	AAA83223.1	Q48373Q6QWH4		Bacteria	100	GH18
+chitinase (Chi69;Chi04)	3.2.1.14	pubmed	Janthinobacterium lividum	AAS19502.1	Q48373Q6QWH4		Bacteria	100	GH18
+chitinase (Chi69;Chi04)	3.2.1.14	pubmed	Janthinobacterium lividum	BAF02560.1	Q48373Q6QWH4		Bacteria	100	GH18
+chitinase (ChiA)	3.2.1.14	pubmed	Kitasatospora aureofaciens CMUAC130	BAC66179.1	Q845S2		Bacteria	100	GH18
+chitinase (ChiSH1)	3.2.1.14	doi	Kurthia zopfii KI2-119	BAA09831.1	Q48494		Bacteria	100	GH18
+surfactant-activated chitinase (ChiA;LpChiA)	3.2.1.14	pubmed	Laceyella putida JAM-FM3001	BAO37115.1	W0T116		Bacteria	100	GH18
+exo-chitinase (Cphy_1799;Cphy1799)	3.2.1.-	pubmed	Lachnoclostridium phytofermentans ISDg	ABX42168.1	A9KSD6		Bacteria	100	GH18
+endo-chitinase (Cphy_1800;Cphy1800)	3.2.1.14	pubmed	Lachnoclostridium phytofermentans ISDg	ABX42169.1	A9KSD7		Bacteria	100	GH18
+chitinase (ChiA;L9964) (Chi18A)	3.2.1.14	pubmed	Lactococcus lactis subsp. lactis Il1403	AAK06048.1	Q9CE95	3IAN[A]	Bacteria	100	GH18
+chitinase (ChiA;L9964) (Chi18A)	3.2.1.14	pubmed	Lactococcus lactis subsp. lactis Il1403	NP_268107.1	Q9CE95	3IAN[A]	Bacteria	100	GH18
+endochitinase (ChiA;lpl1121)	3.2.1.14	pubmed	Legionella pneumophila str. Lens	CAH15360.1	Q5WXH7		Bacteria	100	GH18
+chitinase (ChiA;Lmo1883)	3.2.1.14	pubmed	Listeria monocytogenes EGD-e	CAC99961.1	Q8Y619		Bacteria	100	GH18
+chitinase (ChiA;Lmo1883)	3.2.1.14	pubmed	Listeria monocytogenes EGD-e	NP_465407.1	Q8Y619		Bacteria	100	GH18
+chitinase (ChiB;Lmo0105)	3.2.1.14	pubmed	Listeria monocytogenes EGD-e	CAC98320.1	Q8YAL3		Bacteria	100	GH18
+chitinase (ChiB;Lmo0105)	3.2.1.14	pubmed	Listeria monocytogenes EGD-e	NP_463638.1	Q8YAL3		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	pubmed	Lysobacter enzymogenes C3	AAT77163.1	Q6BCF8		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	pubmed	Lysobacter enzymogenes C3	ALN56484.1	Q6BCF8		Bacteria	100	GH18
+chitinase 60 (Chi60;MmChi60)	3.2.1.14	pubmed	Moritella marina	CAM88673.1	B1VBB0	4HMC[A]4HMD[A]4HME[A]4MB3[A]4MB4[A]4MB5[A]4W5Z[A]	Bacteria	100	GH18
+chitinase (Chi1)	3.2.1.14	pubmed	Niallia circulans C-2	AAF74782.1	Q9KHB3		Bacteria	100	GH18
+chitinase (Chi41)	3.2.1.14	pubmed	Niallia circulans NO. 4.1	AAF23368.1	Q9RG51		Bacteria	100	GH18
+chitinase A1 (ChiA;ChiA1)	3.2.1.14	pubmed	Niallia circulans WL-12	AAA81528.1	P20533	1ITX[A]	Bacteria	100	GH18
+chitinase C1 (ChiC) (fragment)	3.2.1.14	doi	Niallia circulans WL-12	BAA13974.1	P94289		Bacteria	100	GH18
+chitinase D (ChiD)	3.2.1.14	pubmed	Niallia circulans WL-12	BAA34114.1	P27050		Bacteria	100	GH18
+chitinase (ChiA)	3.2.1.14	pubmed	Nocardiopsis prasina OPC-131	BAC45251.1	Q8GI54		Bacteria	100	GH18
+exo-chitinase (Chi1;PbChi74) (GlcNAc-producing)	3.2.1.-	pubmed	Paenibacillus barengoltzii CAU904	AIC64238.1	A0A060KSS6		Bacteria	100	GH18
+chitinase (Chi68;PeChi68)	3.2.1.14	pubmed	Paenibacillus elgii HOA73	ARU77129.1	A0A1Y0JY52		Bacteria	100	GH18
+chitinase (ChiC)	3.2.1.14	pubmed	Paenibacillus sp. FPU-7	BAM67139.1			Bacteria	100	GH18
+chitinase (ChiE)	3.2.1.14	pubmed	Paenibacillus sp. FPU-7	BAM67141.1			Bacteria	100	GH18
+multi-modular chitinase (ChiW)	3.2.1.14	pubmedpubmed	Paenibacillus sp. FPU-7	BAM67143.1	K7ZLW6	5GZT[B]5GZU[A,B]5GZV[A,B]	Bacteria	100	GH18
+multi-modular chitinase (ChiW)	3.2.1.14	pubmedpubmed	Paenibacillus sp. FPU-7	BAM67143.1	K7ZLW6	5GZT[B]5GZU[A,B]5GZV[A,B]	Bacteria	100	GH18
+chitinase (ChiA)	3.2.1.14	pubmed	Paenibacillus sp. FPU-7	BAM67137.1			Bacteria	100	GH18
+chitinase (ChiB)	3.2.1.14	pubmed	Paenibacillus sp. FPU-7	BAM67138.1			Bacteria	100	GH18
+chitinase (ChiD)	3.2.1.14	pubmed	Paenibacillus sp. FPU-7	BAM67140.1			Bacteria	100	GH18
+chitinase (ChiF)	3.2.1.14	pubmed	Paenibacillus sp. FPU-7	BAM67142.1	K7ZS16		Bacteria	100	GH18
+chitinase (fragment)	3.2.1.14		proteobacterium 12A	ABE96872.1	A1XNE9		Bacteria	100	GH18
+endochitinase Chi23	3.2.1.14	pubmed	Pseudoalteromonas aurantia DSM 6057	QGN68168.1	A0A650AJ72	6K7Z[A,B,C,D]	Bacteria	100	GH18
+β-N-acetylglucosaminidase (chi22718_III;Orf2)	3.2.1.14	pubmed	Pseudoalteromonas issachenkonii PAMC 22718	AGX85874.1			Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.200	pubmed	Pseudoalteromonas piscicida O-7	BAA02908.1	P32823		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.200	pubmed	Pseudoalteromonas piscicida O-7	BAB79620.1	P32823		Bacteria	100	GH18
+chitinase C (ChiC)	3.2.1.14	pubmed	Pseudoalteromonas piscicida O-7	BAA24795.1	O50590		Bacteria	100	GH18
+chitinase B (ChiB)	3.2.1.14	pubmed	Pseudoalteromonas piscicida O-7	BAC53628.1			Bacteria	100	GH18
+chitinase D (ChiD)	3.2.1.200	pubmedpubmed	Pseudoalteromonas piscicida O-7	BAB79618.1	Q8VLQ3		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	pubmed	Pseudoalteromonas sp. S9 S91	AAC79665.1	Q9ZIX4		Bacteria	100	GH18
+chitinase C (ChiC)	3.2.1.14	pubmed	Pseudoalteromonas sp. S9 S91	AAC79667.1	Q9ZIX2		Bacteria	100	GH18
+chitinase (Pachi)	3.2.1.14	pubmed	Pseudomonas aeruginosa 0364	ALD59804.1	A0A0M4K3X3		Bacteria	100	GH18
+chitinase (PaChi;PADK2_13770)	3.2.1.14	pubmed	Pseudomonas aeruginosa DK2	AFM65035.1			Bacteria	100	GH18
+chitinase (ChiC;PA2300)	3.2.1.14	pubmed	Pseudomonas aeruginosa PAO1	AAG05688.1	G3XCM1Q9I1H5		Bacteria	100	GH18
+chitinase (ChiC;PA2300)	3.2.1.14	pubmed	Pseudomonas aeruginosa PAO1	AAK69491.1	G3XCM1Q9I1H5		Bacteria	100	GH18
+chitinase (ChiC;PA2300)	3.2.1.14	pubmed	Pseudomonas aeruginosa PAO1	ACQ33294.1	G3XCM1Q9I1H5		Bacteria	100	GH18
+chitinase (ChiC;PA2300)	3.2.1.14	pubmed	Pseudomonas aeruginosa PAO1	CAC27256.1	G3XCM1Q9I1H5		Bacteria	100	GH18
+chitinase (ChiC;PA2300)	3.2.1.14	pubmed	Pseudomonas aeruginosa PAO1	CAC27257.1	G3XCM1Q9I1H5		Bacteria	100	GH18
+chitinase (ChiC;PA2300)	3.2.1.14	pubmed	Pseudomonas aeruginosa PAO1	NP_250990.1	G3XCM1Q9I1H5		Bacteria	100	GH18
+chitinase	3.2.1.14	pubmed	Pseudomonas sp. BK1	AAP79427.1	Q6X934		Bacteria	100	GH18
+chitinase (PchA)	3.2.1.14	pubmed	Pseudomonas sp. PE2	BAB79259.1	Q8VUU6		Bacteria	100	GH18
+chitinase C (ChiC;PsChiC)	3.2.1.14	doi	Pseudomonas sp. TxG6-1	ADW77630.1	V5IV80		Bacteria	100	GH18
+chitinase (ChiA)	3.2.1.14	pubmed	Rhodothermus marinus PRI378	AAU11838.1	Q66SU9		Bacteria	100	GH18
+chitodextrinase 18A (CdxA;Sde_3982) (Cdx18A)	3.2.1.14	pubmed	Saccharophagus degradans 2-40	AAO47607.1	Q84AP8		Bacteria	100	GH18
+chitodextrinase 18A (CdxA;Sde_3982) (Cdx18A)	3.2.1.14	pubmed	Saccharophagus degradans 2-40	ABD83237.1	Q84AP8		Bacteria	100	GH18
+chitodextrinase 18A (CdxA;Sde_3982) (Cdx18A)	3.2.1.14	pubmed	Saccharophagus degradans 2-40	ACG81705.1	Q84AP8		Bacteria	100	GH18
+endo/exo-chitinase 18B (ChiB;Sde_3870) (Chi18B)	3.2.1.14	pubmed	Saccharophagus degradans 2-40	DAA01334.1	Q7PC53		Bacteria	100	GH18
+endo/exo-chitinase 18B (ChiB;Sde_3870) (Chi18B)	3.2.1.14	pubmed	Saccharophagus degradans 2-40	ABD83125.1	Q7PC53		Bacteria	100	GH18
+endo/exo-chitinase 18B (ChiB;Sde_3870) (Chi18B)	3.2.1.14	pubmed	Saccharophagus degradans 2-40	ACG81702.1	Q7PC53		Bacteria	100	GH18
+endo/exo-chitinase 18B (ChiB;Sde_3870) (Chi18B)	3.2.1.200	pubmed	Saccharophagus degradans 2-40	DAA01334.1	Q7PC53		Bacteria	100	GH18
+endo/exo-chitinase 18B (ChiB;Sde_3870) (Chi18B)	3.2.1.200	pubmed	Saccharophagus degradans 2-40	ABD83125.1	Q7PC53		Bacteria	100	GH18
+endo/exo-chitinase 18B (ChiB;Sde_3870) (Chi18B)	3.2.1.200	pubmed	Saccharophagus degradans 2-40	ACG81702.1	Q7PC53		Bacteria	100	GH18
+endo/exo-chitinase 18B (ChiB;Sde_3870) (Chi18B)	3.2.1.200	pubmed	Saccharophagus degradans 2-40	ACG81709.1	Q7PC53		Bacteria	100	GH18
+endo/exo-chitinase 18B (ChiB;Sde_3870) (Chi18B)	3.2.1.200	pubmed	Saccharophagus degradans 2-40	ACG81710.1	Q7PC53		Bacteria	100	GH18
+chitinase 18C (ChiC;Sde_3605) (Chi18C)	3.2.1.14	pubmed	Saccharophagus degradans 2-40	DAA01336.1	Q7PC51		Bacteria	100	GH18
+chitinase 18C (ChiC;Sde_3605) (Chi18C)	3.2.1.14	pubmed	Saccharophagus degradans 2-40	ABD82860.1	Q7PC51		Bacteria	100	GH18
+chitinase 18C (ChiC;Sde_3605) (Chi18C)	3.2.1.14	pubmed	Saccharophagus degradans 2-40	ACG81703.1	Q7PC51		Bacteria	100	GH18
+chitinase 18A (Sde_1704; ChiA) (Chi18A)	3.2.1.14	pubmed	Saccharophagus degradans 2-40	DAA01335.1	Q7PC52		Bacteria	100	GH18
+chitinase 18A (Sde_1704; ChiA) (Chi18A)	3.2.1.14	pubmed	Saccharophagus degradans 2-40	ABD80964.1	Q7PC52		Bacteria	100	GH18
+chitinase 18A (Sde_1704; ChiA) (Chi18A)	3.2.1.14	pubmed	Saccharophagus degradans 2-40	ACG81701.1	Q7PC52		Bacteria	100	GH18
+chitinase (ChiA2;SACE_1076)	3.2.1.14	pubmed	Saccharopolyspora erythraea NRRL 2338	CAM00408.1	A4F8N3P14529		Bacteria	100	GH18
+chitinase (ChiA;SL0018;SL1344_0018)	3.2.1.14	pubmed	Salmonella enterica subsp. enterica serovar Typhimurium str. SL1344	CBW16119.1	A0A0H3N7I6E1W7P1		Bacteria	100	GH18
+chitinase (ChiA;SL0018;SL1344_0018)	3.2.1.14	pubmed	Salmonella enterica subsp. enterica serovar Typhimurium str. SL1344	CBW16119.2	A0A0H3N7I6E1W7P1		Bacteria	100	GH18
+endochitinase (Chi21702;Chi)	3.2.1.14	pubmed	Sanguibacter antarcticus KOPRI 21702	ABD39718.1	C8XPA7		Bacteria	100	GH18
+chitinase (Chit58;ChiA)	3.2.1.14	pubmed	Sanguibacter sp. C4	ABB91448.1	Q2V9S9		Bacteria	100	GH18
+chitinase C1 (ChiC)	3.2.1.14	pubmed	Serratia marcescens 2170	BAA76623.1	Q9WXD3		Bacteria	100	GH18
+chitinase A (ChiA;SmChiA)	3.2.1.201	pubmed	Serratia marcescens 2170 / 27117 / BJL200 / ATCC990 / QMB1466	AAA26551.1	O83008P07254Q6T6I1	1CTN[A]1EDQ[A]1EHN[A]1EIB[A]1FFQ[A]1FFR[A]1K9T[A]1NH6[A]1RD6[A]1X6L[A]1X6N[A]2WK2[A]2WLY[A]2WLZ[A]2WM0[A]5Z7M[A]5Z7N[A]5Z7O[A]5Z7P[A]	Bacteria	100	GH18
+chitinase A (ChiA;SmChiA)	3.2.1.201	pubmed	Serratia marcescens 2170 / 27117 / BJL200 / ATCC990 / QMB1466	AAR10884.1	O83008P07254Q6T6I1	1CTN[A]1EDQ[A]1EHN[A]1EIB[A]1FFQ[A]1FFR[A]1K9T[A]1NH6[A]1RD6[A]1X6L[A]1X6N[A]2WK2[A]2WLY[A]2WLZ[A]2WM0[A]5Z7M[A]5Z7N[A]5Z7O[A]5Z7P[A]	Bacteria	100	GH18
+chitinase A (ChiA;SmChiA)	3.2.1.201	pubmed	Serratia marcescens 2170 / 27117 / BJL200 / ATCC990 / QMB1466	BAA31567.1	O83008P07254Q6T6I1	1CTN[A]1EDQ[A]1EHN[A]1EIB[A]1FFQ[A]1FFR[A]1K9T[A]1NH6[A]1RD6[A]1X6L[A]1X6N[A]2WK2[A]2WLY[A]2WLZ[A]2WM0[A]5Z7M[A]5Z7N[A]5Z7O[A]5Z7P[A]	Bacteria	100	GH18
+chitinase A (ChiA;SmChiA)	3.2.1.201	pubmed	Serratia marcescens 2170 / 27117 / BJL200 / ATCC990 / QMB1466	CAA27292.1	O83008P07254Q6T6I1	1CTN[A]1EDQ[A]1EHN[A]1EIB[A]1FFQ[A]1FFR[A]1K9T[A]1NH6[A]1RD6[A]1X6L[A]1X6N[A]2WK2[A]2WLY[A]2WLZ[A]2WM0[A]5Z7M[A]5Z7N[A]5Z7O[A]5Z7P[A]	Bacteria	100	GH18
+chitinase A (ChiA;SmChiA)	3.2.1.201	pubmed	Serratia marcescens 2170 / 27117 / BJL200 / ATCC990 / QMB1466	CAA85291.1	O83008P07254Q6T6I1	1CTN[A]1EDQ[A]1EHN[A]1EIB[A]1FFQ[A]1FFR[A]1K9T[A]1NH6[A]1RD6[A]1X6L[A]1X6N[A]2WK2[A]2WLY[A]2WLZ[A]2WM0[A]5Z7M[A]5Z7N[A]5Z7O[A]5Z7P[A]	Bacteria	100	GH18
+chitinase C (ChiC;SmChiC)	3.2.1.14	pubmed	Serratia marcescens AS1.1652	AHN91474.1	X2KWS3		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	doi	Serratia marcescens ATCC 990	AAW47932.1	A6XFF7Q5I4H6		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	doi	Serratia marcescens ATCC 990	ABI58232.1	A6XFF7Q5I4H6		Bacteria	100	GH18
+chitinase A1 (ChiA1)	3.2.1.14	doi	Serratia marcescens AV305	AAF22480.1	Q9RH34		Bacteria	100	GH18
+chitinase (Chit62)	3.2.1.14	pubmed	Serratia marcescens B4A	ADR30609.1	E5FGC5		Bacteria	100	GH18
+chitinase B (ChiB;SmChiB)	3.2.1.14	pubmed	Serratia marcescens BJL200	CAA85292.1	P11797Q54276	1E15[A,B]1E6N[A,B]1E6P[A,B]1E6R[A,B]1E6Z[A,B]1GOI[A,B]1GPF[A,B]1O6I[A,B]1OGB[A,B]1OGG[A,B]1UR8[A,B]1UR9[A,B]1W1P[A,B]1W1T[A,B]1W1V[A,B]1W1Y[A,B]6JK9[A,B]6JKF[A,B]7C34[A,B]7C92[A,B]	Bacteria	100	GH18
+chitinase C / C1 (ChiC;ChiC1;SmChiC;SmChi18C)	3.2.1.14	pubmed	Serratia marcescens BJL200	CAF74787.1	Q700B8	4AXN[A,B]	Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	pubmed	Serratia marcescens BN10	AAZ86539.1	Q3Y4D2		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	pubmed	Serratia marcescens GEI	ACX42071.1	D0ELI2		Bacteria	100	GH18
+chitinase B (ChiB)	3.2.1.14	pubmed	Serratia marcescens GEI	ACX42072.1	D0ELI3		Bacteria	100	GH18
+chitinase C1 (Chic1)	3.2.1.14	pubmed	Serratia marcescens GEI	ACX42073.1	D0ELI4		Bacteria	100	GH18
+chitinase (ChiB;ChiBjp)	3.2.1.14	pubmed	Serratia marcescens JPP1	AHZ63793.1	A0A059UJT0		Bacteria	100	GH18
+chitinase 55kDa	3.2.1.143.2.1.200	pubmedpubmed	Serratia marcescens KCTC2172	AAC37122.1	Q59929		Bacteria	100	GH18
+chitinase C1 (ChiC;Chi52)	3.2.1.14	pubmed	Serratia marcescens KCTC2172	AAC09387.1	Q54442		Bacteria	100	GH18
+endochitinase A (ChiA)	3.2.1.14	pubmed	Serratia marcescens NIMA	AAS68517.1	Q6Q215		Bacteria	100	GH18
+chitinase B (ChiB)	3.2.1.14	pubmed	Serratia marcescens QMB1466 / BJL200	CAA33278.1	A0A3E2ECF9P11797Q547S1	1H0G[A,B]1H0I[A,B]3WD0[A]3WD1[A]3WD2[A]3WD3[A]3WD4[A]4Z2G[A]4Z2H[A]4Z2I[A]4Z2J[A]4Z2K[A]4Z2L[A]	Bacteria	100	GH18
+chitinase B (ChiB)	3.2.1.14	pubmed	Serratia marcescens QMB1466 / BJL200	AAL57855.1	A0A3E2ECF9P11797Q547S1	1H0G[A,B]1H0I[A,B]3WD0[A]3WD1[A]3WD2[A]3WD3[A]3WD4[A]4Z2G[A]4Z2H[A]4Z2I[A]4Z2J[A]4Z2K[A]4Z2L[A]	Bacteria	100	GH18
+chitinase B (ChiB)	3.2.1.14	pubmed	Serratia marcescens QMB1466 / BJL200	BAA31568.1	A0A3E2ECF9P11797Q547S1	1H0G[A,B]1H0I[A,B]3WD0[A]3WD1[A]3WD2[A]3WD3[A]3WD4[A]4Z2G[A]4Z2H[A]4Z2I[A]4Z2J[A]4Z2K[A]4Z2L[A]	Bacteria	100	GH18
+chitinase (Chit60)	3.2.1.14	pubmed	Serratia plymuthica	CAD32933.1	Q8KKF5		Bacteria	100	GH18
+chitinase	3.2.1.14	pubmed	Serratia plymuthica IC1270	AAB49933.1	P97034		Bacteria	100	GH18
+chitinase A (ChiA;SpChiA;Spro_0137)	3.2.1.14	pubmed	Serratia proteamaculans 568	ABV39247.1	A8G807		Bacteria	100	GH18
+chitinase B (ChiB;SpChiB;Spro_1223)	3.2.1.14	pubmed	Serratia proteamaculans 568	ABV40327.1	A8GB37		Bacteria	100	GH18
+chitinase D (ChiD;SpChiD;Spro_2725)	3.2.1.14	pubmed	Serratia proteamaculans 568	ABV41826.1	A8GFD6	4LGX[A]4NZC[A]4PTM[A]4Q22[A]6F8N[A,B]6HM1[A]	Bacteria	100	GH18
+chitinase C (ChiC;SpChiC;Spro_3476)	3.2.1.14	pubmed	Serratia proteamaculans 568	ABV42574.1	A8GHI4		Bacteria	100	GH18
+exochitinase (ChiA)	3.2.1.14	pubmed	Serratia sp. KCK	ABM69267.1	A2TC68		Bacteria	100	GH18
+chitinase (Chi60)	3.2.1.201	pubmed	Serratia sp. TU09	AAK72610.2	Q93LF1		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	pubmed	Stenotrophomonas maltophilia 34S1	AAB70917.1	O30678		Bacteria	100	GH18
+chitinase A (ChiA;StmChiA;Smlt0682)	3.2.1.14	pubmed	Stenotrophomonas maltophilia K279a	CAQ44264.1	B2FMT1		Bacteria	100	GH18
+chitinase B (ChiB;StmChib;Smlt3383)	3.2.1.14	pubmed	Stenotrophomonas maltophilia K279a	CAQ46811.1	B2FN84		Bacteria	100	GH18
+IgG-deglycosylating hydrolase (EndoSe;SEQ_0432)	3.2.1.96	pubmed	Streptococcus equi subsp. equi 4047	CAW92602.1	C0M680		Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase  S (EndoS;NdoS;Endo S)	3.2.1.96	pubmed	Streptococcus pyogenes 40/58 AP1	AAK00850.1	Q9APG4	cryst	Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase S (NdoS;EndoS;SPy1813)	3.2.1.96	pubmedpubmed	Streptococcus pyogenes M1 GAS SF370	AAK34539.1	J7M8R4Q99Y92	6EN3[A]	Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase S (NdoS;EndoS;SPy1813)	3.2.1.96	pubmedpubmed	Streptococcus pyogenes M1 GAS SF370	NP_269818.1	J7M8R4Q99Y92	6EN3[A]	Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase (EndoS;M5005_Spy_1540)	3.2.1.96	pubmed	Streptococcus pyogenes MGAS5005	AAZ52158.1		4NUY[A]4NUZ[A]	Bacteria	100	GH18
+endo-β-1,4-N-acetylglucosamine (NdoS2;EndoS2;EndoS49;Spy49_1414c)	3.2.1.96	pubmed	Streptococcus pyogenes NZ131	ACI61688.1	A0A0H3C1U3B5XI26T1WGN1	6E58[A,B]6MDS[A,B]6MDV[A,B]	Bacteria	100	GH18
+chitinase H (ChiH;Chi18cH;SCO6012;SC7B7.09c) (Chi18H)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	CAA15789.1	O50506		Bacteria	100	GH18
+chitinase H (ChiH;Chi18cH;SCO6012;SC7B7.09c) (Chi18H)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	NP_630126.1	O50506		Bacteria	100	GH18
+chitinase A (ChiA;Chi18bA;SCK15.05c;SCO5003) (Chi18A)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	CAB92596.1	Q9KY99Q9Z9M9	3EBV[A]	Bacteria	100	GH18
+chitinase A (ChiA;Chi18bA;SCK15.05c;SCO5003) (Chi18A)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	BAA75642.1	Q9KY99Q9Z9M9	3EBV[A]	Bacteria	100	GH18
+chitinase A (ChiA;Chi18bA;SCK15.05c;SCO5003) (Chi18A)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	NP_629155.1	Q9KY99Q9Z9M9	3EBV[A]	Bacteria	100	GH18
+chitinase C (ChiC;Chi18aC;ScChiC;2SC6G5.20c;SCO5376) (Chi18C)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	CAB94547.1	Q7AKG2Q9S675Q9Z9M8		Bacteria	100	GH18
+chitinase C (ChiC;Chi18aC;ScChiC;2SC6G5.20c;SCO5376) (Chi18C)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	AAD16453.1	Q7AKG2Q9S675Q9Z9M8		Bacteria	100	GH18
+chitinase C (ChiC;Chi18aC;ScChiC;2SC6G5.20c;SCO5376) (Chi18C)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	BAA75644.1	Q7AKG2Q9S675Q9Z9M8		Bacteria	100	GH18
+chitinase C (ChiC;Chi18aC;ScChiC;2SC6G5.20c;SCO5376) (Chi18C)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	NP_629515.1	Q7AKG2Q9S675Q9Z9M8		Bacteria	100	GH18
+chitinase D (ChiD;Chi18aD;SCO1429) (Chi18D)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	CAB61662.1	Q7AKQ9Q9Z9M7		Bacteria	100	GH18
+chitinase D (ChiD;Chi18aD;SCO1429) (Chi18D)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	BAA75645.1	Q7AKQ9Q9Z9M7		Bacteria	100	GH18
+chitinase D (ChiD;Chi18aD;SCO1429) (Chi18D)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	NP_625711.1	Q7AKQ9Q9Z9M7		Bacteria	100	GH18
+chitinase I (Chi I)	3.2.1.14		Streptomyces griseus HUT 6037	BAB86375.1	Q8RQP8		Bacteria	100	GH18
+chitinase II (Chi II)	3.2.1.14	pubmed	Streptomyces griseus HUT 6037	BAB86376.1	Q8RQP7		Bacteria	100	GH18
+chitinase III (ChiIII;Chi III)	3.2.1.14	pubmed	Streptomyces griseus HUT 6037	BAB86377.1	Q8RQP6		Bacteria	100	GH18
+chitinase B (ChiB)	3.2.1.14	doi	Streptomyces lividans 1326	BAA25139.1	O69311		Bacteria	100	GH18
+chitinase C (ChiC)	3.2.1.14	pubmed	Streptomyces lividans TK64	BAA02168.1	P36909		Bacteria	100	GH18
+exo-chitinase (Chi01;ChiO1)	3.2.1.-	pubmed	Streptomyces olivaceoviridis ATCC 11238	CAA50398.1	Q05638		Bacteria	100	GH18
+chitinase (Chi92)	3.2.1.14	doi	Streptomyces olivaceoviridis ATCC 11238	CAB83055.1	Q9L3E8		Bacteria	100	GH18
+chitinase C	3.2.1.14	pubmed	Streptomyces peucetius	AAF43629.1	Q9L8G0		Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase H (EndoH;Endo-H;Endo H)	3.2.1.96	pubmed	Streptomyces plicatus	AAA26738.1	P04067	1C3F[A]1C8X[A]1C8Y[A]1C90[A,B]1C91[A]1C92[A]1C93[A]1EDT[A]6VE1[A,B,C,D]	Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase H (EndoH;Endo-H;Endo H)	3.2.1.96	pubmed	Streptomyces plicatus	AAX00996.1	P04067	1C3F[A]1C8X[A]1C8Y[A]1C90[A,B]1C91[A]1C92[A]1C93[A]1EDT[A]6VE1[A,B,C,D]	Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase H (EndoH;Endo-H;Endo H)	3.2.1.96	pubmed	Streptomyces plicatus	AAY74563.1	P04067	1C3F[A]1C8X[A]1C8Y[A]1C90[A,B]1C91[A]1C92[A]1C93[A]1EDT[A]6VE1[A,B,C,D]	Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase H (EndoH;Endo-H;Endo H)	3.2.1.96	pubmed	Streptomyces plicatus	ABA35708.1	P04067	1C3F[A]1C8X[A]1C8Y[A]1C90[A,B]1C91[A]1C92[A]1C93[A]1EDT[A]6VE1[A,B,C,D]	Bacteria	100	GH18
+chitinase-63	3.2.1.14	pubmed	Streptomyces plicatus ATCC 27800	AAA26720.1	P11220		Bacteria	100	GH18
+chitinase (fragment)	3.2.1.14	pubmed	Streptomyces sp. DA11	ABY83190.1	B0LS89		Bacteria	100	GH18
+chitinase (Chi40)	3.2.1.14	pubmed	Streptomyces thermoviolaceus OPC-520	BAA03404.1	Q56077	4W5U[A,B]	Bacteria	100	GH18
+chitinase (Chi30)	3.2.1.14	pubmed	Streptomyces thermoviolaceus OPC-520	BAA88835.1	Q9RHU3		Bacteria	100	GH18
+Tfu_0580	3.2.1.14	doi	Thermobifida fusca YX	AAZ54618.1	Q47SE9		Bacteria	100	GH18
+chitinase (Chi18H8;Chi)	3.2.1.14	pubmed	uncultured bacterium	AGN95784.1	R9WA37		Bacteria	100	GH18
+chitinase B (VacB)	3.2.1.14	pubmed	Vibrio alginolyticus H-8	BAB21607.1	Q99PX0		Bacteria	100	GH18
+chitinase B (VacB)	3.2.1.14	pubmed	Vibrio alginolyticus H-8	CAC29091.1	Q99PX0		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	pubmed	Vibrio cholerae	AAC72236.1	Q9ZFP7		Bacteria	100	GH18
+chitinase (ChiA2;VCA0027)	3.2.1.14	pubmed	Vibrio cholerae O1 biovar El Tor str. N16961	AAF95941.1	Q9KND8		Bacteria	100	GH18
+chitinase (ChiA2;VCA0027)	3.2.1.14	pubmed	Vibrio cholerae O1 biovar El Tor str. N16961	NP_232428.1	Q9KND8		Bacteria	100	GH18
+chitodextrinase (EndoI)	3.2.1.200	pubmed	Vibrio furnissii	AAC44673.1	P96156		Bacteria	100	GH18
+chitodextrinase (EndoI)	3.2.1.200	pubmed	Vibrio furnissii	AAE36539.1	P96156		Bacteria	100	GH18
+chitinase A (ChiA;VhChiA)	3.2.1.14	pubmed	Vibrio harveyi	AAK11576.1	Q9AMP1	3ARO[A]3ARP[A]3ARQ[A]3ARR[A]3ARS[A]3ART[A]3ARU[A]3ARV[A]3ARW[A]3ARX[A]3ARY[A]3ARZ[A]3AS0[A]3AS1[A]3AS2[A]3AS3[A]3B8S[A,B]3B9A[A]3B9D[A]3B9E[A]	Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	pubmed	Vibrio harveyi BB7	AAC46383.1	P96168		Bacteria	100	GH18
+chitinase (Vpc)	3.2.1.14	pubmed	Vibrio parahaemolyticus ATCC17802	BAA78115.1	Q9WX42		Bacteria	100	GH18
+chitinase (Chi1;Pα-Chi)	3.2.1.14	pubmed	Vibrio parahaemolyticus KN1699	BAF91600.1	A8QZK0B0F618		Bacteria	100	GH18
+chitinase (Chi1;Pα-Chi)	3.2.1.14	pubmed	Vibrio parahaemolyticus KN1699	ABY50231.1	A8QZK0B0F618		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	pubmed	Vibrio proteolyticus 442	BAF76068.1	A7M6A0		Bacteria	100	GH18
+chitinase (ChiA)	3.2.1.14	pubmed	Vibrio sp. Fi:7	AAG12973.1	Q9EY54		Bacteria	100	GH18
+endo-β-N-acetylglucosaminidase (NixF;XCC2889)	3.2.1.14	pubmed	Xanthomonas campestris pv. campestris str. ATCC 33913	AAM42161.1	Q8P6S6		Bacteria	100	GH18
+chitinase A (ChiA)	3.2.1.14	doi	Xanthomonas sp. AK	BAA36460.1	Q9Z493		Bacteria	100	GH18
+chitinase A (ChiA;PD_1826;PD1826)	3.2.1.14	pubmed	Xylella fastidiosa Temecula1	AAO29659.1	Q87AJ8		Bacteria	100	GH18
+chitinase (Chi1) (Yen-Tc subunit)	3.2.1.14	pubmed	Yersinia sp. MH-1 / Yersinia entomophaga MH96	ABG33870.1	B6A876	3OA5[A,B]4A5Q[A,B,C,D,E]	Bacteria	100	GH18
+chitinase (Chi2) (Yen-Tc subunit)	3.2.1.14	doi	Yersinia sp. MH-1 / Yersinia entomophaga MH96	ABG33867.1	B6A879	4DWS[A,B,C,D]6OGD[C,F,I,L,O]	Bacteria	100	GH18
+chitinase (Ac-chitinase)	3.2.1.14	pubmed	Autographa californica nucleopolyhedrovirus	AAA66756.1			Viruses	13	GH18
+chitinase (ChiA;ACNVgp127)	3.2.1.14	pubmed	Autographa californica nucleopolyhedrovirus	NP_054156.1	P41684		Viruses	13	GH18
+chitinase (ChiA;Chi-A;orf126;BmNPVgp110)	3.2.1.14	pubmed	Bombyx mori nucleopolyhedrovirus T3	AAC63792.1	O92482		Viruses	13	GH18
+chitinase (ChiA;Chi-A;orf126;BmNPVgp110)	3.2.1.14	pubmed	Bombyx mori nucleopolyhedrovirus T3	NP_047523.1	O92482		Viruses	13	GH18
+chitinase (ChiA;Chi;ORF10)	3.2.1.14	pubmed	Cydia pomonella granulosis virus (isolate Mexican)	AAK70677.1	A0A097P1R0O91465		Viruses	13	GH18
+chitinase (ChiA;Chi;ORF10)	3.2.1.14	pubmed	Cydia pomonella granulosis virus (isolate Mexican)	BAA31200.1	A0A097P1R0O91465		Viruses	13	GH18
+chitinase (ChiA;Chi;ORF10)	3.2.1.14	pubmed	Cydia pomonella granulosis virus (isolate Mexican)	NP_148794.1	A0A097P1R0O91465		Viruses	13	GH18
+chitinase (Chi;DkChi)	3.2.1.14	pubmed	Dendrolimus kikuchii nucleopolyhedrovirus	AFP66961.1	J9QJL6		Viruses	13	GH18
+exochitinase (Chi;Orf110)	3.2.1.14	pubmed	Epiphyas postvittana nucleopolyhedrovirus	AAK85674.1	Q91GE4		Viruses	13	GH18
+exochitinase (Chi;Orf110)	3.2.1.14	pubmed	Epiphyas postvittana nucleopolyhedrovirus	NP_203279.1	Q91GE4		Viruses	13	GH18
+chitinase (A260R;PBCV1_A260R)	3.2.1.14	pubmed	Paramecium bursaria Chlorella virus 1	AAC96628.1	O41019Q84577		Viruses	13	GH18
+chitinase (A260R;PBCV1_A260R)	3.2.1.14	pubmed	Paramecium bursaria Chlorella virus 1	AAC96628.3	O41019Q84577		Viruses	13	GH18
+chitinase (A260R;PBCV1_A260R)	3.2.1.14	pubmed	Paramecium bursaria Chlorella virus 1	AAC97066.2	O41019Q84577		Viruses	13	GH18
+chitinase (A260R;PBCV1_A260R)	3.2.1.14	pubmed	Paramecium bursaria Chlorella virus 1	NP_048613.1	O41019Q84577		Viruses	13	GH18
+endochitinase (A181/182R;PBCV1_A181/182R)	3.2.1.14	pubmedpubmed	Paramecium bursaria Chlorella virus 1	AAC96549.2	Q84501		Viruses	13	GH18
+endochitinase (A181/182R;PBCV1_A181/182R)	3.2.1.14	pubmedpubmed	Paramecium bursaria Chlorella virus 1	AAC96549.3	Q84501		Viruses	13	GH18
+endochitinase (A181/182R;PBCV1_A181/182R)	3.2.1.14	pubmedpubmed	Paramecium bursaria Chlorella virus 1	NP_048529.1	Q84501		Viruses	13	GH18
+endochitinase (A181/182R;PBCV1_A181/182R)	3.2.1.14	pubmedpubmed	Paramecium bursaria Chlorella virus 1	AAC96549.2	Q84501		Viruses	13	GH18
+endochitinase (A181/182R;PBCV1_A181/182R)	3.2.1.14	pubmedpubmed	Paramecium bursaria Chlorella virus 1	AAC96549.3	Q84501		Viruses	13	GH18
+endochitinase (A181/182R;PBCV1_A181/182R)	3.2.1.14	pubmedpubmed	Paramecium bursaria Chlorella virus 1	NP_048529.1	Q84501		Viruses	13	GH18
+bimodular exo-chitinase / β-N-acetylglucosaminidase  (vChti-1)	3.2.1.14	pubmedpubmed	Paramecium bursaria Chlorella virus CVK2	BAA78554.1	Q9WAX4		Viruses	13	GH18
+bimodular exo-chitinase / β-N-acetylglucosaminidase  (vChti-1)	3.2.1.143.2.1.52	pubmedpubmedpubmed	Paramecium bursaria Chlorella virus CVK2	BAA78554.1	Q9WAX4		Viruses	13	GH18
+chitinase A (ChiA)	3.2.1.14	doi	Spodoptera litura nucleopolyhedrovirus	AGN92862.1	U3LWZ3		Viruses	13	GH18
+chitinase (pRYA1) (frameshift)	3.2.1.14	pubmed	Aeromonas sp. 10S-24	BAA76716.1	Q9WXI9		Bacteria	98	GH19
+chitinase B (ChiB)	3.2.1.14	pubmed	Burkholderia gladioli CHB101	BAA92252.1	Q9LBM0		Bacteria	98	GH19
+chitinase N (ChiN)	3.2.1.14	pubmed	Chitiniphilus shinanonensis SAY3	BAK53965.1	F8WSX8		Bacteria	98	GH19
+chitinase I (Chi-1)	3.2.1.14	pubmed	Niallia circulans KA-304	BAD92016.1	Q59I46		Bacteria	98	GH19
+chitinase (ChiB)	3.2.1.14	pubmed	Nocardiopsis prasina OPC-131	BAC45252.1	Q8GI53		Bacteria	98	GH19
+chitinase (Chi19;PtChi19;PTD2_01021)	3.2.1.14	doi	Pseudoalteromonas tunicata D2 / CCUG 44952T	EAR30107.1	A4C3H5		Bacteria	98	GH19
+chitinase F (ChiF;SC5H1.29c;SCO7263) (Chi19F)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	CAB42954.1	Q9RHK9Q9S6T0Q9Z9M6		Bacteria	98	GH19
+chitinase F (ChiF;SC5H1.29c;SCO7263) (Chi19F)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	BAA75646.1	Q9RHK9Q9S6T0Q9Z9M6		Bacteria	98	GH19
+chitinase F (ChiF;SC5H1.29c;SCO7263) (Chi19F)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	BAA84194.1	Q9RHK9Q9S6T0Q9Z9M6		Bacteria	98	GH19
+chitinase F (ChiF;SC5H1.29c;SCO7263) (Chi19F)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	NP_631319.1	Q9RHK9Q9S6T0Q9Z9M6		Bacteria	98	GH19
+chitinase G (ChiG;SCO0482;SCF80.03;SCF34.01) (Chi19G)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	CAD55444.1	Q8CK55Q9Z9M4	2CJL[A,B]	Bacteria	98	GH19
+chitinase G (ChiG;SCO0482;SCF80.03;SCF34.01) (Chi19G)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	BAA75648.1	Q8CK55Q9Z9M4	2CJL[A,B]	Bacteria	98	GH19
+chitinase G (ChiG;SCO0482;SCF80.03;SCF34.01) (Chi19G)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	CAB57191.1	Q8CK55Q9Z9M4	2CJL[A,B]	Bacteria	98	GH19
+chitinase G (ChiG;SCO0482;SCF80.03;SCF34.01) (Chi19G)	3.2.1.14	pubmed	Streptomyces coelicolor A3(2)	NP_733504.1	Q8CK55Q9Z9M4	2CJL[A,B]	Bacteria	98	GH19
+chitinase A (ChiA)	3.2.1.14	pubmed	Streptomyces cyaneus SP-27	BAG55920.1	B3XZQ2		Bacteria	98	GH19
+chitinase C (ChiC)	3.2.1.14	pubmed	Streptomyces griseus HUT 6037	BAA23739.1	O50152	1WVU[A,B]1WVV[A,B]2DBT[A,B,C]	Bacteria	98	GH19
+chitinase (Chi30;Chit30)	3.2.1.14	pubmed	Streptomyces olivaceoviridis ATCC 11238	CAB37321.1	Q9Z4P2		Bacteria	98	GH19
+chitinase IS (ChiIS)	3.2.1.14	pubmed	Streptomyces sp. MG3	AAT27430.1	Q5J1K1		Bacteria	98	GH19
+chitinase (Chi25)	3.2.1.14	pubmed	Streptomyces thermoviolaceus OPC-520	BAA88834.1	Q9RHU4		Bacteria	98	GH19
+chitinase (Chi35)	3.2.1.14	pubmed	Streptomyces thermoviolaceus OPC-520	BAA88833.1	Q9RHU5		Bacteria	98	GH19
+chitinase (reducing end-specific)	3.2.1.201	pubmed	Vibrio proteolyticus	BAE86996.1	Q25BT4		Bacteria	98	GH19
+endolysin (LysAB2)	3.2.1.17	pubmed	Acinetobacter phage phiAB2	ADX62345.1			Viruses	98	GH19
+endolysin (ABgp46)	3.2.1.17	pubmed	Acinetobacter phage vB_AbaP_CEB1	ALC76575.1			Viruses	98	GH19
+lysozyme (Gp69;ORF69)	3.2.1.17	doi	Microcystis virus Ma-LMM01	BAF36160.1	A0A7I3		Viruses	98	GH19
+endolysin (SPN1S_0028)	3.2.1.17	pubmed	Salmonella phage SPN1S	AEX26904.1	H2D0G4	4OK7[A,B,C]	Viruses	98	GH19
+bifunctional N-acetylmuramidase / D-,L-endopeptidase (CwlT;YddH;BSU04970)	3.2.1.17	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB12304.1	A0A6M3Z8B5P96645		Bacteria	34	GH23
+bifunctional N-acetylmuramidase / D-,L-endopeptidase (CwlT;YddH;BSU04970)	3.2.1.17	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY91781.1	A0A6M3Z8B5P96645		Bacteria	34	GH23
+bifunctional N-acetylmuramidase / D-,L-endopeptidase (CwlT;YddH;BSU04970)	3.2.1.17	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR80443.1	A0A6M3Z8B5P96645		Bacteria	34	GH23
+bifunctional N-acetylmuramidase / D-,L-endopeptidase (CwlT;YddH;BSU04970)	3.2.1.17	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR84656.1	A0A6M3Z8B5P96645		Bacteria	34	GH23
+bifunctional N-acetylmuramidase / D-,L-endopeptidase (CwlT;YddH;BSU04970)	3.2.1.17	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_388378.1	A0A6M3Z8B5P96645		Bacteria	34	GH23
+muramidase (BsMpgB;BSU19130;YocA)	3.2.1.17	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB13805.1			Bacteria	34	GH23
+muramidase (BsMpgB;BSU19130;YocA)	3.2.1.17	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY93230.1			Bacteria	34	GH23
+muramidase (BsMpgB;BSU19130;YocA)	3.2.1.17	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR81912.1			Bacteria	34	GH23
+muramidase (BsMpgB;BSU19130;YocA)	3.2.1.17	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR86126.1			Bacteria	34	GH23
+muramidase (BsMpgB;BSU19130;YocA)	3.2.1.17	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_389794.1			Bacteria	34	GH23
+bifunctional muramidase soluble-lytic transglycosylase (CwlQ;YjbJ;BSU11570)	4.2.2.n13.2.1.17	pubmedpubmed	Bacillus subtilis subsp. subtilis str. 168	AIY92440.1	A0A0A1HAW6A0A6M3ZIK5O31608		Bacteria	34	GH23
+bifunctional muramidase soluble-lytic transglycosylase (CwlQ;YjbJ;BSU11570)	4.2.2.n13.2.1.17	pubmedpubmed	Bacillus subtilis subsp. subtilis str. 168	AQR81111.1	A0A0A1HAW6A0A6M3ZIK5O31608		Bacteria	34	GH23
+bifunctional muramidase soluble-lytic transglycosylase (CwlQ;YjbJ;BSU11570)	4.2.2.n13.2.1.17	pubmedpubmed	Bacillus subtilis subsp. subtilis str. 168	AQR85325.1	A0A0A1HAW6A0A6M3ZIK5O31608		Bacteria	34	GH23
+bifunctional muramidase soluble-lytic transglycosylase (CwlQ;YjbJ;BSU11570)	4.2.2.n13.2.1.17	pubmedpubmed	Bacillus subtilis subsp. subtilis str. 168	CAB09517.1	A0A0A1HAW6A0A6M3ZIK5O31608		Bacteria	34	GH23
+bifunctional muramidase soluble-lytic transglycosylase (CwlQ;YjbJ;BSU11570)	4.2.2.n13.2.1.17	pubmedpubmed	Bacillus subtilis subsp. subtilis str. 168	CAB13014.1	A0A0A1HAW6A0A6M3ZIK5O31608		Bacteria	34	GH23
+bifunctional muramidase soluble-lytic transglycosylase (CwlQ;YjbJ;BSU11570)	4.2.2.n13.2.1.17	pubmedpubmed	Bacillus subtilis subsp. subtilis str. 168	NP_389039.1	A0A0A1HAW6A0A6M3ZIK5O31608		Bacteria	34	GH23
+peptidoglycan lytic transglycosylase (RC10_04025)	4.2.2.n1	pubmed	Campylobacter jejuni CJ677CC047	ALW37381.1		7LAM[A]7LAQ[A]	Bacteria	34	GH23
+muramidase (EfMgpB;EF1518)	3.2.1.17	pubmed	Enterococcus faecalis V583	AAO81308.1			Bacteria	34	GH23
+muramidase (EfMgpB;EF1518)	3.2.1.17	pubmed	Enterococcus faecalis V583	NP_815238.1			Bacteria	34	GH23
+exolytic transglycosylase (MltC;BWG_2685)	4.2.2.n1	pubmed	Escherichia coli BW2952 K-12	ACR63750.1	C5A0N2P0C066	4C5F[A,B]4CFO[A,B]4CFP[A,B]4CHX[A,B]	Bacteria	34	GH23
+soluble lytic transglycosylase (SLT;SLTY;B4392;Slt70;EO53_18390)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AIZ92838.1	P03810P0AGC3	1QSA[A]1QTE[A]1SLY[A]	Bacteria	34	GH23
+soluble lytic transglycosylase (SLT;SLTY;B4392;Slt70;EO53_18390)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AAA24634.1	P03810P0AGC3	1QSA[A]1QTE[A]1SLY[A]	Bacteria	34	GH23
+soluble lytic transglycosylase (SLT;SLTY;B4392;Slt70;EO53_18390)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AAA97288.1	P03810P0AGC3	1QSA[A]1QTE[A]1SLY[A]	Bacteria	34	GH23
+soluble lytic transglycosylase (SLT;SLTY;B4392;Slt70;EO53_18390)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC77345.2	P03810P0AGC3	1QSA[A]1QTE[A]1SLY[A]	Bacteria	34	GH23
+soluble lytic transglycosylase (SLT;SLTY;B4392;Slt70;EO53_18390)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	ALI37950.1	P03810P0AGC3	1QSA[A]1QTE[A]1SLY[A]	Bacteria	34	GH23
+soluble lytic transglycosylase (SLT;SLTY;B4392;Slt70;EO53_18390)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AMC97248.1	P03810P0AGC3	1QSA[A]1QTE[A]1SLY[A]	Bacteria	34	GH23
+soluble lytic transglycosylase (SLT;SLTY;B4392;Slt70;EO53_18390)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AUG19070.1	P03810P0AGC3	1QSA[A]1QTE[A]1SLY[A]	Bacteria	34	GH23
+soluble lytic transglycosylase (SLT;SLTY;B4392;Slt70;EO53_18390)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AVI54536.1	P03810P0AGC3	1QSA[A]1QTE[A]1SLY[A]	Bacteria	34	GH23
+soluble lytic transglycosylase (SLT;SLTY;B4392;Slt70;EO53_18390)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AYG20839.1	P03810P0AGC3	1QSA[A]1QTE[A]1SLY[A]	Bacteria	34	GH23
+soluble lytic transglycosylase (SLT;SLTY;B4392;Slt70;EO53_18390)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	NP_418809.1	P03810P0AGC3	1QSA[A]1QTE[A]1SLY[A]	Bacteria	34	GH23
+lytic transglycosylase (MltE;b1193)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC74277.2	P0C960P76009	2Y8P[A,B]3T1Z[A,B]3T21[A,B]3T36[A,B,C,D,E]3T4I[A,B,C,D,E]4HJV[A,B,C,D,E]4HJY[A,B]6GHY[A,B]6GHZ[A,B]6GI3[B]6GI4[B]	Bacteria	34	GH23
+lytic transglycosylase (MltE;b1193)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC74277.1	P0C960P76009	2Y8P[A,B]3T1Z[A,B]3T21[A,B]3T36[A,B,C,D,E]3T4I[A,B,C,D,E]4HJV[A,B,C,D,E]4HJY[A,B]6GHY[A,B]6GHZ[A,B]6GI3[B]6GI4[B]	Bacteria	34	GH23
+lytic transglycosylase (MltE;b1193)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AIZ91692.1	P0C960P76009	2Y8P[A,B]3T1Z[A,B]3T21[A,B]3T36[A,B,C,D,E]3T4I[A,B,C,D,E]4HJV[A,B,C,D,E]4HJY[A,B]6GHY[A,B]6GHZ[A,B]6GI3[B]6GI4[B]	Bacteria	34	GH23
+lytic transglycosylase (MltE;b1193)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	ALI41030.1	P0C960P76009	2Y8P[A,B]3T1Z[A,B]3T21[A,B]3T36[A,B,C,D,E]3T4I[A,B,C,D,E]4HJV[A,B,C,D,E]4HJY[A,B]6GHY[A,B]6GHZ[A,B]6GI3[B]6GI4[B]	Bacteria	34	GH23
+lytic transglycosylase (MltE;b1193)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AMC98403.1	P0C960P76009	2Y8P[A,B]3T1Z[A,B]3T21[A,B]3T36[A,B,C,D,E]3T4I[A,B,C,D,E]4HJV[A,B,C,D,E]4HJY[A,B]6GHY[A,B]6GHZ[A,B]6GI3[B]6GI4[B]	Bacteria	34	GH23
+lytic transglycosylase (MltE;b1193)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AUG15971.1	P0C960P76009	2Y8P[A,B]3T1Z[A,B]3T21[A,B]3T36[A,B,C,D,E]3T4I[A,B,C,D,E]4HJV[A,B,C,D,E]4HJY[A,B]6GHY[A,B]6GHZ[A,B]6GI3[B]6GI4[B]	Bacteria	34	GH23
+lytic transglycosylase (MltE;b1193)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AVI55710.1	P0C960P76009	2Y8P[A,B]3T1Z[A,B]3T21[A,B]3T36[A,B,C,D,E]3T4I[A,B,C,D,E]4HJV[A,B,C,D,E]4HJY[A,B]6GHY[A,B]6GHZ[A,B]6GI3[B]6GI4[B]	Bacteria	34	GH23
+lytic transglycosylase (MltE;b1193)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	AYG19721.1	P0C960P76009	2Y8P[A,B]3T1Z[A,B]3T21[A,B]3T36[A,B,C,D,E]3T4I[A,B,C,D,E]4HJV[A,B,C,D,E]4HJY[A,B]6GHY[A,B]6GHZ[A,B]6GI3[B]6GI4[B]	Bacteria	34	GH23
+lytic transglycosylase (MltE;b1193)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. MG1655	NP_415711.1	P0C960P76009	2Y8P[A,B]3T1Z[A,B]3T21[A,B]3T36[A,B,C,D,E]3T4I[A,B,C,D,E]4HJV[A,B,C,D,E]4HJY[A,B]6GHY[A,B]6GHZ[A,B]6GI3[B]6GI4[B]	Bacteria	34	GH23
+lytic murein transglycosylase (YfhD;MltF)	4.2.2.n1	pubmed	Escherichia coli str. K-12 substr. W3110	BAE76734.1	P0AGC5		Bacteria	34	GH23
+lytic transglycosylase (MltD;HP1572)	4.2.2.n1	pubmed	Helicobacter pylori 26695	AAD08609.1	O26092		Bacteria	34	GH23
+lytic transglycosylase (MltD;HP1572)	4.2.2.n1	pubmed	Helicobacter pylori 26695	AFV42796.1	O26092		Bacteria	34	GH23
+lytic transglycosylase (MltD;HP1572)	4.2.2.n1	pubmed	Helicobacter pylori 26695	NP_208363.1	O26092		Bacteria	34	GH23
+peptidoglycan lytic transglycosylase (Slt;HP0645)	4.2.2.n1	pubmed	Helicobacter pylori 26695	AAD07706.1	O25362		Bacteria	34	GH23
+peptidoglycan lytic transglycosylase (Slt;HP0645)	4.2.2.n1	pubmed	Helicobacter pylori 26695	AFV41866.1	O25362		Bacteria	34	GH23
+peptidoglycan lytic transglycosylase (Slt;HP0645)	4.2.2.n1	pubmed	Helicobacter pylori 26695	NP_207439.1	O25362		Bacteria	34	GH23
+peptidoglycan lytic transglycosylase (MltF;PA3764)	4.2.2.n1	pubmed	Pseudomonas aeruginosa PAO1	AAG07151.1	A0A0J9X1Z1A0A1I9GEN8A0A1I9GEN9Q9HXN1	4OWD[A]4OXV[A]4OYV[A]4OZ9[A]4P0G[A]4P11[A]5A5X[A,B]5AA1[A,B,C,D]5AA2[A,B,C,D]5AA3[A,B,C,D,E,F,G,H,I,J,K,L]5AA4[A,B,C,D]	Bacteria	34	GH23
+peptidoglycan lytic transglycosylase (MltF;PA3764)	4.2.2.n1	pubmed	Pseudomonas aeruginosa PAO1	NP_252453.1	A0A0J9X1Z1A0A1I9GEN8A0A1I9GEN9Q9HXN1	4OWD[A]4OXV[A]4OYV[A]4OZ9[A]4P0G[A]4P11[A]5A5X[A,B]5AA1[A,B,C,D]5AA2[A,B,C,D]5AA3[A,B,C,D,E,F,G,H,I,J,K,L]5AA4[A,B,C,D]	Bacteria	34	GH23
+chitinase (ChiC;Rα-ChiC)	3.2.1.14	pubmed	Ralstonia sp. A-471	BAH10650.1	B7XCV4	3W6B[A,B,C,D]3W6C[A,B,C,D]3W6D[A,B,C,D]3W6E[A,B,C,D]3W6F[A,B,C,D]	Bacteria	34	GH23
+lytic transglycosylase (MltC;SL1344_3087)	4.2.2.n1	pubmed	Salmonella enterica subsp. enterica serovar Typhimurium str. SL1344	CBW19186.1	A0A0H3NLY5E1WHQ1		Bacteria	34	GH23
+muramidase (SpMpgB;SPD_0912)	3.2.1.17	pubmed	Streptococcus pneumoniae D39	ABJ55097.1			Bacteria	34	GH23
+muramidase (StMpg;Bstu0757)	3.2.1.17	pubmed	Streptococcus thermophilus LMG 18311	AAV60448.1			Bacteria	34	GH23
+peptidoglycan lytic transglycosylase (PHIKZ144;gp144;Orf144)	4.2.2.n1	pubmed	Phikzvirus phiKZ	AAL83045.1	Q8SD18	3BKH[A]3BKV[A]	Viruses	34	GH23
+endo-β-N-acetylglucosamidase (CwlG)	3.2.1.-	pubmed	Bacillus subtilis AC327	BAA08089.1	P39848		Bacteria	26	GH73
+peptidoglycan hydrolase (LytG;YubE;BSU31120)	3.2.1.-	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB15090.1	A0A6M3ZIV4O32083		Bacteria	26	GH73
+peptidoglycan hydrolase (LytG;YubE;BSU31120)	3.2.1.-	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY94432.1	A0A6M3ZIV4O32083		Bacteria	26	GH73
+peptidoglycan hydrolase (LytG;YubE;BSU31120)	3.2.1.-	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR83138.1	A0A6M3ZIV4O32083		Bacteria	26	GH73
+peptidoglycan hydrolase (LytG;YubE;BSU31120)	3.2.1.-	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR87353.1	A0A6M3ZIV4O32083		Bacteria	26	GH73
+peptidoglycan hydrolase (LytG;YubE;BSU31120)	3.2.1.-	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_390990.1	A0A6M3ZIV4O32083		Bacteria	26	GH73
+endo-β-N-acetylglucosamidase (LytD;CwlG;BSU35780)	3.2.1.-	pubmed	Bacillus subtilis subsp. subtilis str. 168	AAA67857.1	A0A6M3ZGJ9P39848		Bacteria	26	GH73
+endo-β-N-acetylglucosamidase (LytD;CwlG;BSU35780)	3.2.1.-	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY94892.1	A0A6M3ZGJ9P39848		Bacteria	26	GH73
+endo-β-N-acetylglucosamidase (LytD;CwlG;BSU35780)	3.2.1.-	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR83616.1	A0A6M3ZGJ9P39848		Bacteria	26	GH73
+endo-β-N-acetylglucosamidase (LytD;CwlG;BSU35780)	3.2.1.-	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR87831.1	A0A6M3ZGJ9P39848		Bacteria	26	GH73
+endo-β-N-acetylglucosamidase (LytD;CwlG;BSU35780)	3.2.1.-	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB15595.1	A0A6M3ZGJ9P39848		Bacteria	26	GH73
+endo-β-N-acetylglucosamidase (LytD;CwlG;BSU35780)	3.2.1.-	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_391459.1	A0A6M3ZGJ9P39848		Bacteria	26	GH73
+peptidoglycan hydrolase with β-N-acetylglucosaminidase specificity (AcD;CD1304)	3.2.1.-	pubmed	Clostridioides difficile 630	CAJ68161.1	Q5S4P9		Bacteria	26	GH73
+peptidoglycan hydrolase with β-N-acetylglucosaminidase specificity (AcD;CD1304)	3.2.1.-	pubmed	Clostridioides difficile 630	AAV54288.1	Q5S4P9		Bacteria	26	GH73
+peptidoglycan hydrolase with β-N-acetylglucosaminidase specificity (AcD;CD1304)	3.2.1.-	pubmed	Clostridioides difficile 630	AJP11001.1	Q5S4P9		Bacteria	26	GH73
+peptidoglycan hydrolase with β-N-acetylglucosaminidase specificity / autolysin (Acp;CPE1231)	3.2.1.-	pubmed	Clostridium perfringens str. 13	BAB80937.1	D2KAF8Q8XL11	5AZM[A]5WQW[A]	Bacteria	26	GH73
+peptidoglycan hydrolase with β-N-acetylglucosaminidase specificity / autolysin (Acp;CPE1231)	3.2.1.-	pubmed	Clostridium perfringens str. 13	ADA00360.1	D2KAF8Q8XL11	5AZM[A]5WQW[A]	Bacteria	26	GH73
+peptidoglycan hydrolase with β-N-acetylglucosaminidase specificity / autolysin (Acp;CPE1231)	3.2.1.-	pubmed	Clostridium perfringens str. 13	NP_562147.1	D2KAF8Q8XL11	5AZM[A]5WQW[A]	Bacteria	26	GH73
+autolysin	3.2.1.-	pubmed	Enterococcus faecalis	AAA67325.1	P37710		Bacteria	26	GH73
+N-acetylglucosaminidase (AtlA;EF0799;EF_0799)	3.2.1.-	pubmed	Enterococcus faecalis V583	AAO80613.1	P37710		Bacteria	26	GH73
+N-acetylglucosaminidase (AtlA;EF0799;EF_0799)	3.2.1.-	pubmed	Enterococcus faecalis V583	AAR60023.1	P37710		Bacteria	26	GH73
+N-acetylglucosaminidase (AtlA;EF0799;EF_0799)	3.2.1.-	pubmed	Enterococcus faecalis V583	NP_814543.1	P37710		Bacteria	26	GH73
+N-acetylglucosaminidase / β-1,4-N-acetylmuramoylhydrolase (Mur2;Mur-2)	3.2.1.173.2.1.96	pubmedpubmed	Enterococcus hirae ATCC 9790	AAA24776.1	P39046		Bacteria	26	GH73
+N-acetylglucosaminidase / autolysin (Acm2;lp_2645)	3.2.1.-	pubmed	Lactiplantibacillus plantarum WCFS1	CAD64901.1	F9URD9		Bacteria	26	GH73
+N-acetylglucosaminidase / autolysin (Acm2;lp_2645)	3.2.1.-	pubmed	Lactiplantibacillus plantarum WCFS1	CCC79778.1	F9URD9		Bacteria	26	GH73
+N-acetylglucosaminidase / autolysin (Acm2;lp_2645)	3.2.1.-	pubmed	Lactiplantibacillus plantarum WCFS1	NP_786050.1	F9URD9		Bacteria	26	GH73
+N-acetylglucosaminidase / peptidoglycan hydrolase (AcmA;llmg_0280)	3.2.1.96	pubmed	Lactococcus lactis subsp. cremoris MG1363	AAC33367.1	A2RHZ5P0C2T5Q48603		Bacteria	26	GH73
+N-acetylglucosaminidase / peptidoglycan hydrolase (AcmA;llmg_0280)	3.2.1.96	pubmed	Lactococcus lactis subsp. cremoris MG1363	AAB93629.1	A2RHZ5P0C2T5Q48603		Bacteria	26	GH73
+N-acetylglucosaminidase / peptidoglycan hydrolase (AcmA;llmg_0280)	3.2.1.96	pubmed	Lactococcus lactis subsp. cremoris MG1363	CAA03037.1	A2RHZ5P0C2T5Q48603		Bacteria	26	GH73
+N-acetylglucosaminidase / peptidoglycan hydrolase (AcmA;llmg_0280)	3.2.1.96	pubmed	Lactococcus lactis subsp. cremoris MG1363	CAL96887.1	A2RHZ5P0C2T5Q48603		Bacteria	26	GH73
+peptidoglycan hydrolase (AcmB; llmg_2165)	3.2.1.-	pubmed	Lactococcus lactis subsp. cremoris MG1363	CAC93669.1	A2RN45Q8KKF9		Bacteria	26	GH73
+peptidoglycan β-N-acetylglucosaminidase (AcmA;L68758)	3.2.1.-	pubmed	Lactococcus lactis subsp. lactis Il1403	AAK04370.1	Q9CIT4		Bacteria	26	GH73
+peptidoglycan β-N-acetylglucosaminidase (AcmA;L68758)	3.2.1.-	pubmed	Lactococcus lactis subsp. lactis Il1403	NP_266428.1	Q9CIT4		Bacteria	26	GH73
+peptidoglycan β-N-acetylglucosaminidase (AcmB;L159324;LL1907)	3.2.1.-	pubmed	Lactococcus lactis subsp. lactis Il1403	AAK06005.1	Q9CED5		Bacteria	26	GH73
+peptidoglycan β-N-acetylglucosaminidase (AcmB;L159324;LL1907)	3.2.1.-	pubmed	Lactococcus lactis subsp. lactis Il1403	NP_268064.1	Q9CED5		Bacteria	26	GH73
+peptidoglycan β-N-acetylglucosaminidase (AcmC;L2183;LL1365)	3.2.1.-	pubmed	Lactococcus lactis subsp. lactis Il1403	AAK05463.1	Q9CFV0		Bacteria	26	GH73
+peptidoglycan β-N-acetylglucosaminidase (AcmC;L2183;LL1365)	3.2.1.-	pubmed	Lactococcus lactis subsp. lactis Il1403	NP_267521.1	Q9CFV0		Bacteria	26	GH73
+peptidoglycan hydrolase (MurA;p66;Lmo2691)	3.2.1.-	pubmed	Listeria monocytogenes EGD-e	CAD00904.1	Q8Y3Y8		Bacteria	26	GH73
+peptidoglycan hydrolase (MurA;p66;Lmo2691)	3.2.1.-	pubmed	Listeria monocytogenes EGD-e	NP_466213.1	Q8Y3Y8		Bacteria	26	GH73
+peptidoglycan hydrolase / N-acetylglucosaminidase (Auto;Lmo1076)	3.2.1.96	pubmed	Listeria monocytogenes EGD-e	NP_464601.1	Q8Y842	3FI7[A]	Bacteria	26	GH73
+peptidoglycan hydrolase / N-acetylglucosaminidase (Auto;Lmo1076)	3.2.1.96	pubmed	Listeria monocytogenes EGD-e	CAC99154.1	Q8Y842	3FI7[A]	Bacteria	26	GH73
+autolysin (IspC;LMOf2365_1093)	3.2.1.-	pubmed	Listeria monocytogenes serotype 4b str. F2365	AAT03870.1	Q720Z4		Bacteria	26	GH73
+flagellum-specific muramidase / peptidoglycan hydrolase (FlgJ;StFlgJ;STM1182)	3.2.1.-	pubmed	Salmonella enterica subsp. enterica serovar Typhimurium str. LT2	AAL20112.1	P15931	5DN4[A]5DN5[A,B,C]	Bacteria	26	GH73
+flagellum-specific muramidase / peptidoglycan hydrolase (FlgJ;StFlgJ;STM1182)	3.2.1.-	pubmed	Salmonella enterica subsp. enterica serovar Typhimurium str. LT2	AAA27070.1	P15931	5DN4[A]5DN5[A,B,C]	Bacteria	26	GH73
+flagellum-specific muramidase / peptidoglycan hydrolase (FlgJ;StFlgJ;STM1182)	3.2.1.-	pubmed	Salmonella enterica subsp. enterica serovar Typhimurium str. LT2	NP_460153.1	P15931	5DN4[A]5DN5[A,B,C]	Bacteria	26	GH73
+peptidoglycan hydrolase (FlgJ;SPH1045)	3.2.1.-	pubmed	Sphingomonas sp. A1	BAH11452.1	B7XH69	2ZYC[A]3K3T[A]3VWO[A]	Bacteria	26	GH73
+bifunctional amidase / endo-N-acetylglucosaminidase	3.2.1.-	pubmed	Staphylococcus aureus RN450	AAA99982.1	P52081Q2FZK7		Bacteria	26	GH73
+bifunctional amidase / endo-N-acetylglucosaminidase	3.2.1.-	pubmed	Staphylococcus aureus RN450	BAA04185.1	P52081Q2FZK7		Bacteria	26	GH73
+SAV1052 autolysin	3.2.1.17	pubmed	Staphylococcus aureus subsp. aureus Mu50	BAB57214.2	Q931U5Q931U5	6FXO[A]	Bacteria	26	GH73
+SAV1052 autolysin	3.2.1.17	pubmed	Staphylococcus aureus subsp. aureus Mu50	BAB45607.1	Q931U5Q931U5	6FXO[A]	Bacteria	26	GH73
+SAV1052 autolysin	3.2.1.17	pubmed	Staphylococcus aureus subsp. aureus Mu50	CAD98826.1	Q931U5Q931U5	6FXO[A]	Bacteria	26	GH73
+bifunctional autolysin = N-acetyl-glucosaminidase / N-acetylmuramyl-L-alanine amidase (AtlL)	3.2.1.-	pubmed	Staphylococcus lugdunensis ATCC 43809	ACD37724.1	B5L7M5		Bacteria	26	GH73
+peptidoglycan endo-β-N-acetylglucosaminidase (LytB)	3.2.1.-	pubmed	Streptococcus pneumoniae R6	AAK99671.1	P59206	7PJ3[A]7PJ4[A]7PJ5[A]7PJ6[A]7PL3[A]7POD[A]	Bacteria	26	GH73
+peptidoglycan endo-β-N-acetylglucosaminidase (LytB)	3.2.1.-	pubmed	Streptococcus pneumoniae R6	AAW08925.1	P59206	7PJ3[A]7PJ4[A]7PJ5[A]7PJ6[A]7PL3[A]7POD[A]	Bacteria	26	GH73
+peptidoglycan endo-β-N-acetylglucosaminidase (LytB)	3.2.1.-	pubmed	Streptococcus pneumoniae R6	CAA09078.1	P59206	7PJ3[A]7PJ4[A]7PJ5[A]7PJ6[A]7PL3[A]7POD[A]	Bacteria	26	GH73
+peptidoglycan endo-β-N-acetylglucosaminidase (LytB)	3.2.1.-	pubmed	Streptococcus pneumoniae R6	CAA09078.2	P59206	7PJ3[A]7PJ4[A]7PJ5[A]7PJ6[A]7PL3[A]7POD[A]	Bacteria	26	GH73
+peptidoglycan endo-β-N-acetylglucosaminidase (LytB)	3.2.1.-	pubmed	Streptococcus pneumoniae R6	NP_358461.1	P59206	7PJ3[A]7PJ4[A]7PJ5[A]7PJ6[A]7PL3[A]7POD[A]	Bacteria	26	GH73
+endo-β-N-acetylglucosaminidase (LytB;SP0965)	3.2.1.-	pubmed	Streptococcus pneumoniae TIGR4	AAK75086.1	P59205	4Q2W[A]	Bacteria	26	GH73
+endo-β-N-acetylglucosaminidase (LytB;SP0965)	3.2.1.-	pubmed	Streptococcus pneumoniae TIGR4	AAQ38107.1	P59205	4Q2W[A]	Bacteria	26	GH73
+endo-β-N-acetylglucosaminidase (LytB;SP0965)	3.2.1.-	pubmed	Streptococcus pneumoniae TIGR4	AAY71753.1	P59205	4Q2W[A]	Bacteria	26	GH73
+endo-β-N-acetylglucosaminidase (LytB;SP0965)	3.2.1.-	pubmed	Streptococcus pneumoniae TIGR4	ABA35746.1	P59205	4Q2W[A]	Bacteria	26	GH73
+endo-β-N-acetylglucosaminidase (LytB;SP0965)	3.2.1.-	pubmed	Streptococcus pneumoniae TIGR4	ABA35884.1	P59205	4Q2W[A]	Bacteria	26	GH73
+endo-β-N-acetylglucosaminidase (LytB;SP0965)	3.2.1.-	pubmed	Streptococcus pneumoniae TIGR4	NP_345446.1	P59205	4Q2W[A]	Bacteria	26	GH73
+β-N-acetylglucosaminidase (TM0633)	3.2.1.-	pubmed	Thermotoga maritima MSB8	AAD35717.1	Q9WZA1R4NYQ2	4QDN[A]	Bacteria	26	GH73
+β-N-acetylglucosaminidase (TM0633)	3.2.1.-	pubmed	Thermotoga maritima MSB8	AGL49559.1	Q9WZA1R4NYQ2	4QDN[A]	Bacteria	26	GH73
+β-N-acetylglucosaminidase (TM0633)	3.2.1.-	pubmed	Thermotoga maritima MSB8	AHD17612.1	Q9WZA1R4NYQ2	4QDN[A]	Bacteria	26	GH73
+β-N-acetylglucosaminidase (TM0633)	3.2.1.-	pubmed	Thermotoga maritima MSB8	AKE28421.1	Q9WZA1R4NYQ2	4QDN[A]	Bacteria	26	GH73
+β-N-acetylglucosaminidase (TM0633)	3.2.1.-	pubmed	Thermotoga maritima MSB8	NP_228442.1	Q9WZA1R4NYQ2	4QDN[A]	Bacteria	26	GH73
+dispersin B / β-1,6-N-acetylglucosaminidase (DspB)	3.2.1.-	pubmed	Actinobacillus pleuropneumoniae IA1	AAT46094.1	Q6GYA5		Bacteria	100	GH20
+chitobiase (NagA1)	3.2.1.52	doi	Aeromonas caviae CB101	CAH55822.1	Q659J9		Bacteria	100	GH20
+β-N-acetylglucosaminidase (NagA;Nag-A) (Nag20A)	3.2.1.52	pubmed	Aeromonas hydrophila SUWA-9	BAD00143.1	Q75V90		Bacteria	100	GH20
+β-N-acetylglucosaminidase (NagB;Nag-B)	3.2.1.52	pubmed	Aeromonas hydrophila SUWA-9	BAF76001.1	A7M7B5		Bacteria	100	GH20
+β-N-acetylglucosaminidase	3.2.1.52	pubmed	Aeromonas sp. 10S-24	BAA92145.1	Q9LC82		Bacteria	100	GH20
+dispersin B / β-1,6-N-acetylglucosaminidase (DspB)	3.2.1.-	pubmed	Aggregatibacter actinomycetemcomitans CU1000	AAP31025.1	Q840G9	1YHT[A]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (Amuc_0868)	3.2.1.52	pubmed	Akkermansia muciniphila ATCC BAA-835	ACD04701.1	B2UQG6	7CBN[A]7CBO[A]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (Amuc_0868)	3.2.1.52	pubmed	Akkermansia muciniphila ATCC BAA-835	QTD81489.1	B2UQG6	7CBN[A]7CBO[A]	Bacteria	100	GH20
+Amuc_2018	3.2.1.52	pubmed	Akkermansia muciniphila ATCC BAA-835	ACD05828.1	B2UP57	6JE8[A]6JEA[A]6JEB[A]	Bacteria	100	GH20
+Amuc_2018	3.2.1.52	pubmed	Akkermansia muciniphila ATCC BAA-835	QTD80528.1	B2UP57	6JE8[A]6JEA[A]6JEB[A]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (Amuc_2136)	3.2.1.52	pubmed	Akkermansia muciniphila ATCC BAA-835	ACD05945.1	B2UPR7	6JQF[A]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (Amuc_2136)	3.2.1.52	pubmed	Akkermansia muciniphila ATCC BAA-835	QTD80640.1	B2UPR7	6JQF[A]	Bacteria	100	GH20
+chitobiase (Chb;ArChb)	3.2.1.52	pubmed	Arthrobacter sp. TAD20	CAB72127.1	Q9L448		Bacteria	100	GH20
+β-N-acetylhexosaminidase (NahB; BF1734)	3.2.1.52	pubmed	Bacteroides fragilis YCH46	BAD48481.1	G8K031Q84ID8		Bacteria	100	GH20
+β-N-acetylhexosaminidase (NahB; BF1734)	3.2.1.52	pubmed	Bacteroides fragilis YCH46	BAC56900.2	G8K031Q84ID8		Bacteria	100	GH20
+BF1736 (NahC)	3.2.1.52	pubmed	Bacteroides fragilis YCH46	BAD48483.1	G8K030Q84ID6		Bacteria	100	GH20
+BF1736 (NahC)	3.2.1.52	pubmed	Bacteroides fragilis YCH46	BAC56902.1	G8K030Q84ID6		Bacteria	100	GH20
+BF1736 (NahC)	3.2.1.52	pubmed	Bacteroides fragilis YCH46	BAC56902.2	G8K030Q84ID6		Bacteria	100	GH20
+β-N-acetylglucosaminidase (BT0459)	3.2.1.52	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO75566.1	A0A174QSL3Q8AAK5	6Q63[A,B,C]	Bacteria	100	GH20
+β-N-acetylglucosaminidase (BT0459)	3.2.1.52	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_809372.1	A0A174QSL3Q8AAK5	6Q63[A,B,C]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (BT0460)	3.2.1.52	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO75567.1	Q8AAK4		Bacteria	100	GH20
+β-N-acetylhexosaminidase (BT0460)	3.2.1.52	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_809373.1	Q8AAK4		Bacteria	100	GH20
+β-N-acetylhexosaminidase (BT0456)	3.2.1.52	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO75563.1	Q8AAK8		Bacteria	100	GH20
+β-N-acetylhexosaminidase (BT0456)	3.2.1.52	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_809369.1	Q8AAK8		Bacteria	100	GH20
+β-N-acetylhexosaminidase (BT0506)	3.2.1.52	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO75613.1	Q8AAF9		Bacteria	100	GH20
+β-N-acetylhexosaminidase (BT0506)	3.2.1.52	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_809419.1	Q8AAF9		Bacteria	100	GH20
+lacto-N-triose II β-N-acetylhexosaminidase (BbhI)	3.2.1.52	pubmed	Bifidobacterium bifidum JCM 1254	BAI94822.1	D4QAP4		Bacteria	100	GH20
+β-N-acetylhexosaminidase (BbhII)	3.2.1.52	pubmed	Bifidobacterium bifidum JCM 1254	BAI94823.1	D4QAP5		Bacteria	100	GH20
+lacto-N-biosidase (LnbB)	3.2.1.140	pubmed	Bifidobacterium bifidum JCM 1254	ABZ78855.1	B3TLD6	4H04[A,B]4JAW[A,B]5BXP[A,B]5BXR[A,B]5BXS[A,B]5BXT[A,B]	Bacteria	100	GH20
+β-N-acetylhexosaminidase / β-N-acetylglucosaminidase (Blon_0459)	3.2.1.52	pubmed	Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088	ACJ51575.1	B7GN69		Bacteria	100	GH20
+β-N-acetylhexosaminidase / β-N-acetylglucosaminidase (Blon_0732)	3.2.1.52	pubmed	Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088	ACJ51836.1	B7GPV6		Bacteria	100	GH20
+β-N-acetylhexosaminidase / β-N-acetylglucosaminidase (Blon_2355)	3.2.1.52	pubmed	Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088	ACJ53413.1	B7GNQ7		Bacteria	100	GH20
+β-N-acetylhexosaminidase (Hex20) (Hex20A)	3.2.1.52	pubmed	Cellulomonas fimi ATCC 484	AAQ05800.1	Q7WUL4		Bacteria	100	GH20
+β-N-acetylglucosaminidase (Nag1)	3.2.1.52	pubmed	Enterobacter sp. G-1	BAA74506.1	Q9ZN69		Bacteria	100	GH20
+endoglycosidase (EndoE;NdoE)	3.2.1.96	pubmed	Enterococcus faecalis HER1044	AAR20477.1	Q6U890	7PUL[A]	Bacteria	100	GH20
+bifunctional endo-β-N-acetylglucosaminidase / exo-β-N-acetylglucosaminidase (EndoE;OG1RF_10107)	3.2.1.52	pubmed	Enterococcus faecalis OG1RF	AEA92794.1			Bacteria	100	GH20
+bifunctional endo-β-N-acetylglucosaminidase / exo-β-N-acetylglucosaminidase (EndoE;OG1RF_10107)	3.2.1.52	pubmed	Enterococcus faecalis OG1RF	AZV32936.1			Bacteria	100	GH20
+endo-N-glycosidase (EndoE;EF0114)	3.2.1.523.2.1.96	pubmedpubmed	Enterococcus faecalis V583	AAO79989.1	Q839P8		Bacteria	100	GH20
+endo-N-glycosidase (EndoE;EF0114)	3.2.1.523.2.1.96	pubmedpubmed	Enterococcus faecalis V583	AAR59794.1	Q839P8		Bacteria	100	GH20
+endo-N-glycosidase (EndoE;EF0114)	3.2.1.523.2.1.96	pubmedpubmed	Enterococcus faecalis V583	AAR59795.1	Q839P8		Bacteria	100	GH20
+endo-N-glycosidase (EndoE;EF0114)	3.2.1.523.2.1.96	pubmedpubmed	Enterococcus faecalis V583	NP_813917.1	Q839P8		Bacteria	100	GH20
+β-N-acetylhexosaminidase (FjGH20;Fjoh_4556)	3.2.1.52	pubmed	Flavobacterium johnsoniae UW101	ABQ07555.1	A5FB64	6YHH[A,B]	Bacteria	100	GH20
+β-N-acetylglucosaminidase	3.2.1.52	pubmed	Lacticaseibacillus casei ATCC 27092	BAA76352.1	Q9WXH9		Bacteria	100	GH20
+β-N-acetylhexosaminidase (LnbA;L126168)	3.2.1.52	pubmed	Lactococcus lactis subsp. lactis Il1403	AAK05592.1	Q9CFI2		Bacteria	100	GH20
+β-N-acetylhexosaminidase (LnbA;L126168)	3.2.1.52	pubmed	Lactococcus lactis subsp. lactis Il1403	NP_267650.1	Q9CFI2		Bacteria	100	GH20
+β-N-acetylhexosaminidase (hj5Nag)	3.2.1.52	pubmed	Microbacterium sp. HJ5	ARJ33352.1		7BWG[A,B]	Bacteria	100	GH20
+β-N-acetyl-6-sulfo-glucosaminidase (Niako_3494)	3.2.1.-	pubmed	Niastella koreensis GR20-10	AEV99795.1	G8TKW6		Bacteria	100	GH20
+β-N-acetylhexosaminidase (OPIT5_18630)	3.2.1.52	pubmed	Opitutaceae bacterium TAV5	AHF94523.1	W0JBW2		Bacteria	100	GH20
+β-hexosaminidase (Hex1T)	3.2.1.52	pubmed	Paenibacillus sp. TS12	BAI63641.1	D0VX21D2KW09	3GH4[A]3GH5[A]3GH7[A]3SUR[A]3SUS[A]3SUT[A]3SUU[A]3SUV[A]3SUW[A]	Bacteria	100	GH20
+β-N-acetylglucosaminidase (NahA;PG0043)	3.2.1.52	pubmed	Porphyromonas gingivalis W83	CAA55582.1	P49008		Bacteria	100	GH20
+β-N-acetylglucosaminidase (NahA;PG0043)	3.2.1.52	pubmed	Porphyromonas gingivalis W83	AAQ65295.1	P49008		Bacteria	100	GH20
+β-N-acetylglucosaminidase (NahA;PG0043)	3.2.1.52	pubmed	Porphyromonas gingivalis W83	NP_904396.1	P49008		Bacteria	100	GH20
+mucin-desulfating glycosidase / sulfoglycosidase / β-6-SO3-N-acetylglucosaminidase (Sgl)	3.2.1.-	pubmed	Prevotella sp. RS2	AAW30398.1	Q5MAH5		Bacteria	100	GH20
+β-N-acetylhexosaminidase	3.2.1.52	pubmed	proteobacterium AI21	ABE96869.1	A1XNE6		Bacteria	100	GH20
+β-N-acetylglucosaminidase B (Nag096)	3.2.1.52	pubmed	Pseudoalteromonas piscicida O-7	BAA06136.1	P49007		Bacteria	100	GH20
+β-N-acetylhexosaminidase (Hex86)	3.2.1.52	pubmed	Pseudoalteromonas piscicida O-7	BAB84321.1	Q8VUM1		Bacteria	100	GH20
+β-N-acetylglucosaminidase A (NagA)	3.2.1.52	pubmed	Pseudoalteromonas piscicida O-7	BAB17855.1	Q9FAC5		Bacteria	100	GH20
+β-N-acetylglucosaminidase (ChiP)	3.2.1.52	pubmed	Pseudoalteromonas sp. S9 S91	AAC83238.1	Q9ZH38		Bacteria	100	GH20
+β-N-acetylglucosaminidase 20B (HexB;Sde_3271) (Hex20B)	3.2.1.52	pubmed	Saccharophagus degradans 2-40	DAA01339.1	Q7PC48		Bacteria	100	GH20
+β-N-acetylglucosaminidase 20B (HexB;Sde_3271) (Hex20B)	3.2.1.52	pubmed	Saccharophagus degradans 2-40	ABD82526.1	Q7PC48		Bacteria	100	GH20
+β-N-acetylglucosaminidase 20B (HexB;Sde_3271) (Hex20B)	3.2.1.52	pubmed	Saccharophagus degradans 2-40	ACG81707.1	Q7PC48		Bacteria	100	GH20
+β-N-acetylglucosaminidase 20A (HexA; Sde_3037) (Hex20A)	3.2.1.52	pubmed	Saccharophagus degradans 2-40	DAA01338.1	Q7PC49		Bacteria	100	GH20
+β-N-acetylglucosaminidase 20A (HexA; Sde_3037) (Hex20A)	3.2.1.52	pubmed	Saccharophagus degradans 2-40	ABD82294.1	Q7PC49		Bacteria	100	GH20
+β-N-acetylglucosaminidase 20A (HexA; Sde_3037) (Hex20A)	3.2.1.52	pubmed	Saccharophagus degradans 2-40	ACG81706.1	Q7PC49		Bacteria	100	GH20
+chitobiase (Chb;Ctb;SmCHB;SmGH20A)	3.2.1.52	pubmed	Serratia marcescens 2170	AAB03808.1	Q54468	1C7S[A]1C7T[A]1QBA[A]1QBB[A]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (Hex;StmHex;Smlt4027)	3.2.1.52	pubmed	Stenotrophomonas maltophilia K279a	CAQ47422.1	B2FUR2		Bacteria	100	GH20
+β-N-acetylglucosaminidase (GcnA)	3.2.1.52	pubmed	Streptococcus gordonii FSS2	AAS02154.1	Q6ST21	2EPK[X]2EPL[X]2EPM[X]2EPN[A,B]2EPO[A,B]	Bacteria	100	GH20
+β-N-acetylglucosaminidase (StrH)	3.2.1.52	pubmedpubmed	Streptococcus pneumoniae ATCC 12213	AAC41450.1	P49610		Bacteria	100	GH20
+β-N-acetylglucosaminidase (StrH)	3.2.1.52	pubmedpubmed	Streptococcus pneumoniae ATCC 12213	AAC41450.1	P49610		Bacteria	100	GH20
+β-N-acetylhexosaminidase (StrH;spr0057)	3.2.1.52	pubmedpubmed	Streptococcus pneumoniae R6	AAK98861.1	Q8DRL6	3RPM[A]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (StrH;spr0057)	3.2.1.52	pubmedpubmed	Streptococcus pneumoniae R6	NP_357651.1	Q8DRL6	3RPM[A]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (StrH;spr0057)	3.2.1.52	pubmedpubmed	Streptococcus pneumoniae R6	AAK98861.1	Q8DRL6	3RPM[A,B]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (StrH;spr0057)	3.2.1.52	pubmedpubmed	Streptococcus pneumoniae R6	NP_357651.1	Q8DRL6	3RPM[A,B]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (GH20C;SP2141;SP_2141)	3.2.1.52	pubmed	Streptococcus pneumoniae TIGR4	AAK76198.1	A0A0H2US73	5A69[A]5A6A[A,B]5A6B[A,B,C,D]5A6J[A,B,C,D]5A6K[A,B]5AC4[A,B]5AC5[A,B]	Bacteria	100	GH20
+β-N-acetylglucosaminidase (StrH;SP0057;SP_0057)	3.2.1.52	pubmedpubmed	Streptococcus pneumoniae TIGR4	AAK74246.1	P49610	2YL6[A]2YL8[A]2YLL[A]4AZ5[A]4AZ6[A]4AZ7[A]4AZB[A]	Bacteria	100	GH20
+β-N-acetylglucosaminidase (StrH;SP0057;SP_0057)	3.2.1.52	pubmedpubmed	Streptococcus pneumoniae TIGR4	NP_344606.1	P49610	2YL6[A]2YL8[A]2YLL[A]4AZ5[A]4AZ6[A]4AZ7[A]4AZB[A]	Bacteria	100	GH20
+β-N-acetylglucosaminidase (StrH;SP0057;SP_0057)	3.2.1.52	pubmedpubmed	Streptococcus pneumoniae TIGR4	AAK74246.1	P49610	2YL5[A,B,C,D]2YL9[A,B,C,D]2YLA[A,B,C,D]4AZC[A,B,C,D]4AZG[A,B]4AZH[A,B,C,D]4AZI[A,B]	Bacteria	100	GH20
+β-N-acetylglucosaminidase (StrH;SP0057;SP_0057)	3.2.1.52	pubmedpubmed	Streptococcus pneumoniae TIGR4	NP_344606.1	P49610	2YL5[A,B,C,D]2YL9[A,B,C,D]2YLA[A,B,C,D]4AZC[A,B,C,D]4AZG[A,B]4AZH[A,B,C,D]4AZI[A,B]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (SaHEX)	3.2.1.52	pubmed	Streptomyces alfalfae ACCC 40021	AYR18867.1	A0A3G3NI51		Bacteria	100	GH20
+β-N-acetylhexosaminidase (HexA;SCO2786)	3.2.1.52	pubmed	Streptomyces coelicolor A3(2)	CAB87223.1	Q9L068	4C7D[A,B]4C7F[A,B]4C7G[A]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (HexA;SCO2786)	3.2.1.52	pubmed	Streptomyces coelicolor A3(2)	NP_627016.1	Q9L068	4C7D[A,B]4C7F[A,B]4C7G[A]	Bacteria	100	GH20
+β-N-acetylhexosaminidase (SGR_4591)	3.2.1.52	pubmed	Streptomyces griseus subsp. griseus NBRC 13350	BAG21420.1	B1VVQ9		Bacteria	100	GH20
+β-N-acetylglucosaminidase (Hex;SpHex)	3.2.1.52	pubmed	Streptomyces plicatus	AAC38798.3	O85361	1HP4[A]1HP5[A]1JAK[A]1M01[A]1M03[A]1M04[A]5FCZ[A]5FD0[A]	Bacteria	100	GH20
+lacto-N-biosidase	3.2.1.140	pubmed	Streptomyces sp. 142	AAD10478.1	Q9Z4I7		Bacteria	100	GH20
+lacto-N-biosidase	3.2.1.140	pubmed	Streptomyces sp. 142	AAE24545.1	Q9Z4I7		Bacteria	100	GH20
+β-N-acetylglucosaminidase C (NagC)	3.2.1.52	pubmed	Streptomyces thermoviolaceus OPC-520	BAC76622.1	Q83WL6		Bacteria	100	GH20
+N-acetyl β-glucosaminidase (NagB)	3.2.1.52	pubmed	Streptomyces thermoviolaceus OPC-520	BAA88762.2	Q9RHV6		Bacteria	100	GH20
+β-N-acetylglucosaminidase (HexA;NABGLU;TF2925;BFO_1923)	3.2.1.52	pubmed	Tannerella forsythia 92A2	AEW20137.1	G8UPN3Q84FS9		Bacteria	100	GH20
+β-N-acetylglucosaminidase (HexA;NABGLU;TF2925;BFO_1923)	3.2.1.52	pubmed	Tannerella forsythia 92A2	AAO33832.1	G8UPN3Q84FS9		Bacteria	100	GH20
+β-N-acetylhexosaminidase (Hex1;SoMe-cHEX1)	3.2.1.52	pubmed	uncultured Actinomycetales bacterium	AKC34128.1	A0A0E3XI19		Bacteria	100	GH20
+β-N-acetylhexosaminidase (Hex2;SoMe-cHEX2)	3.2.1.52	pubmed	uncultured Bacteroidetes bacterium	AKC34129.1	A0A0E3XHF8		Bacteria	100	GH20
+N-acetylhexosaminidase (ExoI)	3.2.1.52	pubmed	Vibrio furnissii	AAC44672.1	P96155		Bacteria	100	GH20
+N-acetylhexosaminidase (ExoI)	3.2.1.52	pubmed	Vibrio furnissii	AAE36540.1	P96155		Bacteria	100	GH20
+β-N-acetylglucosaminidase (Nag1;VhNag1)	3.2.1.52	pubmed	Vibrio harveyi 650	ADJ68332.1	D9ISD9		Bacteria	100	GH20
+β-N-acetylglucosaminidase (Nag2;VhNag2)	3.2.1.52	pubmed	Vibrio harveyi 650	ADJ68333.1	D9ISE0	6EZR[A,B]6EZS[A,B]6EZT[A,B]6K35[A,B]	Bacteria	100	GH20
+N-acetyl β-glucosaminidase (Chb)	3.2.1.52	pubmed	Vibrio harveyi B392	AAA88682.1	P13670		Bacteria	100	GH20
+N-acetyl β-glucosaminidase (Chb)	3.2.1.52	pubmed	Vibrio harveyi B392	AAR60429.1	P13670		Bacteria	100	GH20
+N-acetyl β-glucosaminidase (Chb)	3.2.1.52	pubmed	Vibrio harveyi B392	AAX00633.1	P13670		Bacteria	100	GH20
+N-acetyl β-glucosaminidase (Chb)	3.2.1.52	pubmed	Vibrio harveyi B392	CAD26692.1	P13670		Bacteria	100	GH20
+N-acetyl β-glucosaminidase (Chb)	3.2.1.52	pubmed	Vibrio parahaemolyticus ATCC 27969	AAA65915.1	Q60081		Bacteria	100	GH20
+exo-β-N-acetylglucosaminidase (NixG;NahA;XCC2890)	3.2.1.52	pubmed	Xanthomonas campestris pv. campestris str. ATCC 33913	AAM42162.1	Q8P6S5		Bacteria	100	GH20
+exo-β-N-acetylglucosaminidase (NixG;NahA;XCC2890)	3.2.1.52	pubmed	Xanthomonas campestris pv. campestris str. ATCC 33913	NP_638238.1	Q8P6S5		Bacteria	100	GH20
+β-N-acetylglucosaminidase (NagA;YPTB1123)	3.2.1.52	pubmed	Yersinia pseudotuberculosis IP 32953	CAH20363.1	Q66DC3		Bacteria	100	GH20
+β-N-acetylglucosaminidase (BtOGA;BtGH84;BT4395;BT_4395)	3.2.1.169	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO79500.1	Q89ZI2	2CHN[A,B]2CHO[A,B]2J47[A]2J4G[A,B]2JIW[A,B]2VVN[A,B]2VVS[A]2W4X[A]2W66[A,B]2W67[A,B]2WCA[A]2WZH[A]2WZI[A,B]2X0H[A,B]2XJ7[A,B]2XM1[A,B]2XM2[A,B]4AIS[A,B]4AIU[A]4UR9[A,B]5ABE[A,B]5ABF[A,B]5ABG[A,B]5ABH[A,B]5FKY[A,B]5FL0[A,B]5FL1[A,B]5MI4[A]5MI5[A]5MI6[A]5MI7[A]7K41[A]7OU8[A,B]	Bacteria	18	GH84
+β-N-acetylglucosaminidase (BtOGA;BtGH84;BT4395;BT_4395)	3.2.1.169	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_813306.1	Q89ZI2	2CHN[A,B]2CHO[A,B]2J47[A]2J4G[A,B]2JIW[A,B]2VVN[A,B]2VVS[A]2W4X[A]2W66[A,B]2W67[A,B]2WCA[A]2WZH[A]2WZI[A,B]2X0H[A,B]2XJ7[A,B]2XM1[A,B]2XM2[A,B]4AIS[A,B]4AIU[A]4UR9[A,B]5ABE[A,B]5ABF[A,B]5ABG[A,B]5ABH[A,B]5FKY[A,B]5FL0[A,B]5FL1[A,B]5MI4[A]5MI5[A]5MI6[A]5MI7[A]7K41[A]7OU8[A,B]	Bacteria	18	GH84
+β-N-acetylglucosaminidase (Nag84A)	3.2.1.52	pubmed	Clostridium paraputrificum M-21	BAC99989.1	Q76D19		Bacteria	18	GH84
+exo-β-N-acetylglucosaminidase (NagH;CpGH84A;CPF_0184) (GH84A)	3.2.1.52	pubmed	Clostridium perfringens ATCC 13124	ABG83307.1	A0A0H2YRL1P26831Q0TUP2	6PV4[A,B,C,D]	Bacteria	18	GH84
+hyaluronidase (NagJ;CpNagJ;CpOGA;CPF_1442)	3.2.1.523.2.1.169	pubmedpubmed	Clostridium perfringens ATCC 13124	ABG84519.1	Q0TR53	2J62[A,B]2V5C[A,B]2V5D[A]2VUR[A,B]2WB5[A,B]2X0Y[A,B]2YDQ[A]2YDR[A]2YDS[A]4ZXL[A]5OXD[A]6RHE[A]7KHV[A,B,C,D,E,F]	Bacteria	18	GH84
+hyaluronidase (NagH)	3.2.1.35	pubmed	Clostridium perfringens CPN50	AAA23259.1	P26831		Bacteria	18	GH84
+hyaluronidase / ?-toxin (NagH;CPE0191) (GH84A)	3.2.1.35	pubmed	Clostridium perfringens str. 13	BAB79897.1	P26831		Bacteria	18	GH84
+hyaluronidase / ?-toxin (NagH;CPE0191) (GH84A)	3.2.1.35	pubmed	Clostridium perfringens str. 13	NP_561107.1	P26831		Bacteria	18	GH84
+β-N-acetylglucosaminidase (NagJ;CpNagJ;CPE1234) (GH84C)	3.2.1.52	pubmed	Clostridium perfringens str. 13	BAB80940.1	Q0TR53Q8XL08	2CBI[A,B]2CBJ[A,B]2XPK[A,B]	Bacteria	18	GH84
+β-N-acetylglucosaminidase (NagJ;CpNagJ;CPE1234) (GH84C)	3.2.1.52	pubmed	Clostridium perfringens str. 13	NP_562150.1	Q0TR53Q8XL08	2CBI[A,B]2CBJ[A,B]2XPK[A,B]	Bacteria	18	GH84
+O-glycoprotein β-N-acetylglucosaminidase (SpOGA; SPy1600)	3.2.1.169	pubmed	Streptococcus pyogenes M1 GAS SF370	AAK34378.1	Q99YP8		Bacteria	18	GH84
+O-glycoprotein β-N-acetylglucosaminidase (SpOGA; SPy1600)	3.2.1.169	pubmed	Streptococcus pyogenes M1 GAS SF370	NP_269657.1	Q99YP8		Bacteria	18	GH84
+O-glycoprotein β-N-acetylglucosaminidase (TtOGA; Tter_0116)	3.2.1.169	pubmed	Thermobaculum terrenum ATCC BAA-798	ACZ41038.1		5DIY[A,B]	Bacteria	18	GH84
+acetylxylan esterase (XynA/U;Cthe_2972) (Xyn11A)	3.1.1.72		Acetivibrio thermocellus ATCC 27405	ABN54169.1	A3DJP0		Bacteria	52	CE4
+xylanase A or U / acetylxylan esterase (XynA;XynU;CtCE4;LX4) (Xyn11A)	3.1.1.72		Acetivibrio thermocellus F1 / YS	AAC04579.1	O52780O87119	2C71[A]2C79[A]	Bacteria	52	CE4
+xylanase A or U / acetylxylan esterase (XynA;XynU;CtCE4;LX4) (Xyn11A)	3.1.1.72		Acetivibrio thermocellus F1 / YS	BAA33543.1	O52780O87119	2C71[A]2C79[A]	Bacteria	52	CE4
+bifunctional UDP-GlcNAc: LPS α-N-acetylglucosaminyltransferase / LPS deacetylase (WahA)	3.5.1.-		Aeromonas hydrophila AH-3	ACA14474.1	B2KYM8		Bacteria	52	CE4
+poly-β-1,6-N-acetylglucosamine de-N-acetylase (Adeg_0846)	3.5.1.-		Ammonifex degensii KC4	ACX51986.1	C9RCK9	4WCJ[A]	Bacteria	52	CE4
+chitooligosaccharide deacetylase (NodB;AZC_3817)	3.5.1.-		Azorhizobium caulinodans ORS 571	BAF89815.1	Q07740		Bacteria	52	CE4
+chitooligosaccharide deacetylase (NodB;AZC_3817)	3.5.1.-		Azorhizobium caulinodans ORS 571	AAB51163.1	Q07740		Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (BC1960)	3.5.1.104		Bacillus cereus ATCC 14579	AAP08931.1	A0A5B7VG42Q81EK9	4L1G[A,B,C,D]5O6Y[A,B,C,D]	Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (BC1960)	3.5.1.104		Bacillus cereus ATCC 14579	NP_831730.1	A0A5B7VG42Q81EK9	4L1G[A,B,C,D]5O6Y[A,B,C,D]	Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (BC3618)	3.5.1.104		Bacillus cereus ATCC 14579	AAP10549.1	Q81AF4		Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (BC3618)	3.5.1.104		Bacillus cereus ATCC 14579	NP_833348.1	Q81AF4		Bacteria	52	CE4
+peptidoglycan N-acetylmuramic acid deacetylase (YfjS;PdaA;BSU07980)	3.5.1.104		Bacillus subtilis subsp. subtilis str. 168	CAB12627.1	A0A6M4JL51O34928	1NY1[A]1W17[A,B]1W1A[1,2]1W1B[1,2]	Bacteria	52	CE4
+peptidoglycan N-acetylmuramic acid deacetylase (YfjS;PdaA;BSU07980)	3.5.1.104		Bacillus subtilis subsp. subtilis str. 168	AIY92088.1	A0A6M4JL51O34928	1NY1[A]1W17[A,B]1W1A[1,2]1W1B[1,2]	Bacteria	52	CE4
+peptidoglycan N-acetylmuramic acid deacetylase (YfjS;PdaA;BSU07980)	3.5.1.104		Bacillus subtilis subsp. subtilis str. 168	AQR80751.1	A0A6M4JL51O34928	1NY1[A]1W17[A,B]1W1A[1,2]1W1B[1,2]	Bacteria	52	CE4
+peptidoglycan N-acetylmuramic acid deacetylase (YfjS;PdaA;BSU07980)	3.5.1.104		Bacillus subtilis subsp. subtilis str. 168	AQR84964.1	A0A6M4JL51O34928	1NY1[A]1W17[A,B]1W1A[1,2]1W1B[1,2]	Bacteria	52	CE4
+peptidoglycan N-acetylmuramic acid deacetylase (YfjS;PdaA;BSU07980)	3.5.1.104		Bacillus subtilis subsp. subtilis str. 168	NP_388679.1	A0A6M4JL51O34928	1NY1[A]1W17[A,B]1W1A[1,2]1W1B[1,2]	Bacteria	52	CE4
+poly-β-1,6-N-acetyl-D-glucosamine N-deacetylase/poly-β-1,6-D-glucosamine hydrolase (PgaB; PgaBBb; BB1768)	3.5.1.-	pubmed	Bordetella bronchiseptica RB50	CAE32265.1	A0A0H3LKK6	5BU6[A,B]	Bacteria	52	CE4
+acetylxylan esterase (TTE0866)	3.1.1.72	pubmed	Caldanaerobacter subterraneus subsp. tengcongensis MB4	AAM24122.1	Q8RBF4	7FBW[A]7Y51[A]	Bacteria	52	CE4
+acetylxylan esterase (TTE0866)	3.1.1.72	pubmed	Caldanaerobacter subterraneus subsp. tengcongensis MB4	NP_622518.1	Q8RBF4	7FBW[A]7Y51[A]	Bacteria	52	CE4
+xylanase A (XynA;Clocel_2295)	3.1.1.72		Clostridium cellulovorans 743B	AAN32825.1	D9SP57Q8GH59		Bacteria	52	CE4
+xylanase A (XynA;Clocel_2295)	3.1.1.72		Clostridium cellulovorans 743B	ADL52022.1	D9SP57Q8GH59		Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (EF1843;EF_1843)	3.5.1.104		Enterococcus faecalis V583	AAO81606.1	Q833T7		Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (EF1843;EF_1843)	3.5.1.104		Enterococcus faecalis V583	NP_815536.1	Q833T7		Bacteria	52	CE4
+poly-β-1,6-N-acetyl-D-glucosamine N-deacetylase/poly-β-1,6-D-glucosamine hydrolase (PgaB; PgaBEc; b1023)	3.5.1.-	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC74108.1	P75906	3VUS[A,B]4F9D[A,B]4F9J[A,B]	Bacteria	52	CE4
+poly-β-1,6-N-acetyl-D-glucosamine N-deacetylase/poly-β-1,6-D-glucosamine hydrolase (PgaB; PgaBEc; b1023)	3.5.1.-	pubmed	Escherichia coli str. K-12 substr. MG1655	AIZ91855.1	P75906	3VUS[A,B]4F9D[A,B]4F9J[A,B]	Bacteria	52	CE4
+poly-β-1,6-N-acetyl-D-glucosamine N-deacetylase/poly-β-1,6-D-glucosamine hydrolase (PgaB; PgaBEc; b1023)	3.5.1.-	pubmed	Escherichia coli str. K-12 substr. MG1655	ALI41195.1	P75906	3VUS[A,B]4F9D[A,B]4F9J[A,B]	Bacteria	52	CE4
+poly-β-1,6-N-acetyl-D-glucosamine N-deacetylase/poly-β-1,6-D-glucosamine hydrolase (PgaB; PgaBEc; b1023)	3.5.1.-	pubmed	Escherichia coli str. K-12 substr. MG1655	AMC98237.1	P75906	3VUS[A,B]4F9D[A,B]4F9J[A,B]	Bacteria	52	CE4
+poly-β-1,6-N-acetyl-D-glucosamine N-deacetylase/poly-β-1,6-D-glucosamine hydrolase (PgaB; PgaBEc; b1023)	3.5.1.-	pubmed	Escherichia coli str. K-12 substr. MG1655	AUG15811.1	P75906	3VUS[A,B]4F9D[A,B]4F9J[A,B]	Bacteria	52	CE4
+poly-β-1,6-N-acetyl-D-glucosamine N-deacetylase/poly-β-1,6-D-glucosamine hydrolase (PgaB; PgaBEc; b1023)	3.5.1.-	pubmed	Escherichia coli str. K-12 substr. MG1655	AVI55545.1	P75906	3VUS[A,B]4F9D[A,B]4F9J[A,B]	Bacteria	52	CE4
+poly-β-1,6-N-acetyl-D-glucosamine N-deacetylase/poly-β-1,6-D-glucosamine hydrolase (PgaB; PgaBEc; b1023)	3.5.1.-	pubmed	Escherichia coli str. K-12 substr. MG1655	AYG19881.1	P75906	3VUS[A,B]4F9D[A,B]4F9J[A,B]	Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (PgdA;Lmo0415)	3.5.1.104		Listeria monocytogenes EGD-e	NP_463944.1	Q8Y9V5		Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (PgdA;Lmo0415)	3.5.1.104		Listeria monocytogenes EGD-e	ABX11547.1	Q8Y9V5		Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (PgdA;Lmo0415)	3.5.1.104		Listeria monocytogenes EGD-e	CAC98494.1	Q8Y9V5		Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (PdgA;LMOf2365_0434)	3.5.1.104		Listeria monocytogenes serotype 4b str. F2365	AAT03218.1	Q723P3		Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (PdgA;LMOf2365_0434)	3.5.1.104		Listeria monocytogenes serotype 4b str. F2365	ABX11545.1	Q723P3		Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (PdgA;LMOf2365_0434)	3.5.1.104		Listeria monocytogenes serotype 4b str. F2365	ABX11546.1	Q723P3		Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (PdgA;LMOf2365_0434)	3.5.1.104		Listeria monocytogenes serotype 4b str. F2365	ABX11548.1	Q723P3		Bacteria	52	CE4
+chitooligosaccharide deacetylase (NodB)	3.5.1.-		Neorhizobium galegae	CAA60878.1	P50354		Bacteria	52	CE4
+chitooligosaccharide deacetylase (NodB)	3.5.1.-		Rhizobium leguminosarum	CAA25813.1	P04339		Bacteria	52	CE4
+chitooligosaccharide deacetylase (NodB)	3.5.1.-		Rhizobium leguminosarum	CAA68620.1	P04339		Bacteria	52	CE4
+chitooligosaccharide deacetylase (NodB)	3.5.1.-		Rhizobium leguminosarum	CAA27352.1	P04676		Bacteria	52	CE4
+chitooligosaccharide deacetylase (pRL100186; NodB)	3.5.1.-		Rhizobium leguminosarum bv. viciae 3841	CAK10410.1	Q1M7W8		Bacteria	52	CE4
+chitooligosaccharide  deacetylase (NodB)	3.5.1.-		Rhizobium sp. GRH2	AJW76244.1	A0A0N7AXL7		Bacteria	52	CE4
+chitooligosaccharide deacetylase (NodB)	3.5.1.-		Rhizobium sp. N33	AAB16896.1	P72333		Bacteria	52	CE4
+endo-β-1,4-xylanase 11D (Xyn11D)	3.1.1.72		Ruminococcus albus 8	AEE64769.1	F6LP81		Bacteria	52	CE4
+endo-β-1,4-xylanase 11D (Xyn11D)	3.1.1.72		Ruminococcus albus 8	ZP_08160424.1	F6LP81		Bacteria	52	CE4
+chitooligosaccharide deacetylase (NodB;Y4hH;NGR234_137)	3.5.1.-		Sinorhizobium fredii NGR234	AAB91696.1	P50355		Bacteria	52	CE4
+chitooligosaccharide deacetylase (NodB;Y4hH;NGR234_137)	3.5.1.-		Sinorhizobium fredii NGR234	CAA51773.1	P50355		Bacteria	52	CE4
+chitooligosaccharide deacetylase (NodB;Y4hH;NGR234_137)	3.5.1.-		Sinorhizobium fredii NGR234	NP_443884.1	P50355		Bacteria	52	CE4
+chitooligosaccharide deacetylase (NodB)	3.5.1.-		Sinorhizobium meliloti	CAA25809.1	P02963		Bacteria	52	CE4
+poly-β-1,6-N-acetylglucosamine deacetylase (IcaB)	3.5.1.-		Staphylococcus epidermidis SE5	AAN17773.1	Q3YA33Q6TYB1		Bacteria	52	CE4
+polysaccharide deacetylase (SMU.623c)	3.5.1.-		Streptococcus mutans UA159	AAN58357.1	Q8DV82	2W3Z[A]	Bacteria	52	CE4
+polysaccharide deacetylase (SMU.623c)	3.5.1.-		Streptococcus mutans UA159	NP_721051.1	Q8DV82	2W3Z[A]	Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (PgdA)	3.5.1.104		Streptococcus pneumoniae R36A	CAB96552.1	Q97PW1Q9K516		Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (PgdA)	3.5.1.104		Streptococcus pneumoniae R6	AAL00137.1	Q8DP63	2C1G[A]2C1I[A]	Bacteria	52	CE4
+peptidoglycan N-acetylglucosamine deacetylase (PgdA)	3.5.1.104		Streptococcus pneumoniae R6	NP_358926.1	Q8DP63	2C1G[A]2C1I[A]	Bacteria	52	CE4
+acetyl xylan esterase (AxeA;AcXE;SlCE4)	3.1.1.72		Streptomyces lividans 1326	AAC06115.2	Q54413	2CC0[A,B]	Bacteria	52	CE4
+acetyl xylan esterase (AxeA;AcXE;SlCE4)	3.1.1.72		Streptomyces lividans 1326	AAC06115.1	Q54413	2CC0[A,B]	Bacteria	52	CE4
+acetyl xylan esterase (StXIII)	3.1.1.63.1.1.72		Streptomyces thermoviolaceus OPC-520	BAA19779.1	Q76BV1		Bacteria	52	CE4
+acetyl xylan esterase (StXIII)	3.1.1.63.1.1.72		Streptomyces thermoviolaceus OPC-520	BAD02384.1	Q76BV1		Bacteria	52	CE4
+deacetylase (DeaA;DA1)	3.1.1.-		Vibrio alginolyticus H-8	BAB21759.1	Q99PX1		Bacteria	52	CE4
+deacetylase (DeaA;DA1)	3.1.1.-		Vibrio alginolyticus H-8	CAC29092.1	Q99PX1		Bacteria	52	CE4
+chitin oligosaccharide deacetylase (Cod;VcCDA;VC1280)	3.1.1.-		Vibrio cholerae O1 biovar El Tor str. N16961	AAF94439.1	Q9KSH6	4NY2[A,B]4NYU[A]4NYY[A,B,C,D]4NZ1[A,B]4NZ3[A,B]4NZ4[A,B]4OUI[A,B]	Bacteria	52	CE4
+chitin oligosaccharide deacetylase (Cod;VcCDA;VC1280)	3.1.1.-		Vibrio cholerae O1 biovar El Tor str. N16961	NP_230925.1	Q9KSH6	4NY2[A,B]4NYU[A]4NYY[A,B,C,D]4NZ1[A,B]4NZ3[A,B]4NZ4[A,B]4OUI[A,B]	Bacteria	52	CE4
+chitin oligosaccharide deacetylase (Cod1;Pα-Cod;Vp-COD)	3.1.1.-		Vibrio parahaemolyticus KN1699	BAF65669.1	A6P4T5	3WX7[A,B]	Bacteria	52	CE4

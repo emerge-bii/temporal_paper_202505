@@ -1,0 +1,344 @@
+---
+title: "Co-presence network analysis"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  error = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center")
+
+library(cowplot)
+library(propr)
+library(ggraph)
+library(igraph)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+
+main_dir <- here("Metabolic-analysis", "04_copresence_network")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("palsa", "bog", "fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+
+metapathway_levels <- metapathway_groups %>% `$`(metapath) %>% unique()
+colour_metapathway <- RColorBrewer::brewer.pal(10, "Set3")
+fill_metapathway <- colour_metapathway
+
+get_angle <- function(x, y) {
+  case_when(
+    x > 0 & y > 0   ~ as.numeric(atan(y / x)) * 180/pi,
+    x > 0 & y == 0  ~ 0,
+    x > 0 & y < 0   ~ as.numeric(atan(y / x)) * 180/pi,
+    x < 0 & y > 0   ~ as.numeric(atan(y / x)) * 180/pi,
+    x < 0 & y == 0  ~ 180,
+    x < 0 & y < 0   ~ as.numeric(atan(y / x)) * 180/pi,
+    x == 0 & y > 0  ~ 90,
+    x == 0 & y < 0  ~ 270,
+    x == 0 & y == 0 ~ 0
+  )
+}
+
+get_hjust <- function(x) {
+  ifelse(x > 0, 0, 1)
+}
+
+transform_perc <- function(vec) {
+  # See Smithson & Verkuilen 2006 (https://doi.org/10.1037/1082-989X.11.1.54)
+  (vec * (length(vec) - 1) + 0.5) / length(vec)
+}
+```
+
+```{r network-setup}
+comb_connections <- product_refined %>%
+  left_join(metapathway_groups, by = "subpathway") %>%
+  select(group = metapath, item = subpathway, genome, call)
+
+# Create hierarchical graph
+edges_df <- bind_rows(
+    comb_connections %>%
+      select(from = group, to = item),
+    comb_connections %>%
+      select(to = group) %>%
+      mutate(from = "root")
+    ) %>%
+  unique() %>%
+  arrange(from, to)
+
+vertices_df <- bind_rows(
+  edges_df %>%
+    select(name = from),
+  edges_df %>%
+    select(name = to)) %>%
+  unique() %>%
+  mutate(
+    group = map_chr(name, ~ edges_df$from[match(., edges_df$to)])
+  ) %>%
+  arrange(group, name) %>%
+  left_join(metapathway_groups, by = c("name" = "subpathway"))
+
+reaction_graph <- graph_from_data_frame(edges_df, vertices = vertices_df)
+```
+
+# Co-presence of pathways in genomes network analysis
+
+```{r network-genomes}
+output_dir <- here(main_dir, "mags")
+dir.create(output_dir, recursive = TRUE)
+
+# Create connections from Pearson correlation across genomes
+alpha <- 0.05
+test_df <- comb_connections %>%
+  select(-group) %>%
+  mutate(call = map_int(call, as.integer)) %>%
+  pivot_wider(names_from = item, values_from = call, values_fill = 0) %>%
+  select(-genome)
+
+output_df <- test_df %>%
+  names() %>%
+  combn(2) %>%
+  t() %>%
+  as_tibble(.name_repair = "unique") %>%
+  setNames(c("x", "y")) %>%
+  mutate(
+    corr = map2(x, y, ~ cor.test(test_df[[.x]], test_df[[.y]])),
+    corr = map(corr, broom::tidy)
+  ) %>%
+  unnest(cols = c(corr)) %>%
+  mutate(
+    pval = p.adjust(p.value, method = "fdr")
+  ) %>%
+  filter(pval < alpha, abs(estimate) > 0.2)
+
+output_df %>%
+  write_tsv(here(output_dir, "genome_copresence.tsv"))
+
+connection_df <- output_df %>%
+  select(from = x, to = y, value = estimate)
+
+# Plot edge bundling
+ggraph(reaction_graph, layout = "dendrogram", circular = TRUE) +
+  geom_conn_bundle(
+    data = get_con(
+      from = match(connection_df$from, vertices_df$name),
+      to = match(connection_df$to, vertices_df$name),
+      col = connection_df$value
+    ), aes(colour = col)
+  ) +
+  geom_node_point(aes(filter = leaf, colour = group, x = x * 1.05, y = y * 1.05)) +
+  geom_node_text(aes(x = x*1.1, y = y*1.1, filter = leaf, label = subpathway_label, angle = get_angle(x, y), hjust = get_hjust(x)), size = 1.5, alpha = 1) +
+  scale_edge_colour_distiller(palette = "RdBu", limits = c(-1, 1)) +
+  scale_colour_manual(values = colour_metapathway, breaks = metapathway_levels) +
+  coord_fixed() +
+  theme_void() +
+  expand_limits(x = c(-1.2, 1.2), y = c(-1.2, 1.2))
+
+ggsave("genome_copresence.png", path = output_dir, dpi = 900)
+```
+
+# Co-presence of pathways in samples network analysis
+
+```{r network-samples}
+output_dir <- here(main_dir, "samples")
+dir.create(output_dir, recursive = TRUE)
+
+form_correlation_network <- function(habitat, mag_connections = connection_df) {
+  exclude_mag_corr <- function(from, to, df = mag_connections) {
+    df %>%
+      filter((from == !! from & to == !! to) | (from == !! to & to == !! from)) %>%
+      nrow() == 0
+  }
+
+  # Create connections from Rho correlation across samples
+  alpha <- 0.05
+
+  comb_rho <- pathway_abundance_cumu %>%
+    left_join(sample_metadata %>%
+    select(sample = temporal_sample_id, Habitat__)) %>%
+    filter(Habitat__ == {{habitat}}) %>%
+    select(-c(sample, Habitat__)) %>%
+    # Filter out pathways with >90% zero abundance
+    select(where(~ sum(. != 0) > length(.) / 10)) %>%
+    mutate(across(everything(), transform_perc)) %>%
+    propr(metric = "rho", p = 1000)
+
+  comb_cutoffs <- updateCutoffs(comb_rho, cutoff = seq(0.05, 0.95, 0.05), ncores = 20)
+  print(comb_cutoffs)
+
+  chosen_cutoff <- comb_cutoffs@fdr %>%
+    as_tibble() %>%
+    filter(FDR < alpha) %>%
+    slice(1) %>%
+    `$`(cutoff)
+
+  connection_df <- comb_rho@matrix %>%
+    as_tibble() %>%
+    mutate(from = comb_rho@matrix %>% rownames()) %>%
+    pivot_longer(-from, names_to = "to", values_to = "value") %>%
+    filter(abs(value) > chosen_cutoff, from != to) %>%
+    # Remove visa versa correlations
+    mutate(
+      diff = map2_chr(from, to,
+        ~ c(.x, .y) %>% sort() %>% str_c(collapse = "=")
+      )) %>%
+    distinct(diff, .keep_all = TRUE) %>%
+    # Remove correlations due to MAGs encoding both pathways
+    mutate(not_mag_corr = map2_lgl(from, to, exclude_mag_corr)) %>%
+    filter(not_mag_corr)
+
+  return(connection_df)
+}
+
+plot_correlation_network <- function(connections, filename, removal_list = NULL) {
+  connection_df <- connections %>%
+    # Remove correlations to plot specific groups
+    filter(!from %in% removal_list | !to %in% removal_list) %>%
+    select(from, to, value) %>%
+    arrange(abs(value))
+
+  if (nrow(connection_df) == 0) {
+    return()
+  }
+
+  # Plot edge bundling
+  ggraph(reaction_graph, layout = "dendrogram", circular = TRUE) +
+    geom_conn_bundle(
+      data = get_con(
+        from = match(connection_df$from, vertices_df$name),
+        to = match(connection_df$to, vertices_df$name),
+        col = connection_df$value
+      ), aes(colour = col), alpha = 0.5
+    ) +
+    geom_node_point(aes(filter = leaf, colour = group, x = x * 1.05, y = y * 1.05)) +
+    geom_node_text(aes(x = x*1.1, y = y*1.1, filter = leaf, label = subpathway_label, angle = get_angle(x, y), hjust = get_hjust(x)), size = 1.5, alpha = 1) +
+    scale_edge_colour_distiller(palette = "RdBu", limits = c(-1, 1)) +
+    scale_colour_manual(values = colour_metapathway, breaks = metapathway_levels) +
+    annotation_custom(
+      grid::textGrob(
+        label = str_c("count: ", nrow(connection_df)),
+        x = unit(0.85, "npc"),
+        y = unit(0.95, "npc"),
+        hjust = 0
+      )
+    ) +
+    coord_fixed() +
+    theme_void() +
+    expand_limits(x = c(-1.2, 1.2), y = c(-1.2, 1.2))
+
+  ggsave(filename, path = output_dir, dpi = 900)
+}
+
+figure_suffix <- "sample_correlation.png"
+for (habitat in c("Palsa", "Bog", "Fen")) {
+  connections <- form_correlation_network(habitat, mag_connections = connection_df)
+  plot_correlation_network(connections, str_c(casefold(habitat), figure_suffix, sep = "_"))
+
+  # Subset for each metapath
+  for (metapath in metapathway_groups$metapath %>% unique()) {
+    plot_correlation_network(
+      connections,
+      str_c(casefold(habitat), metapath, figure_suffix, sep = "_"),
+      removal_list = metapathway_groups %>%
+        filter(metapath != !! metapath) %>%
+        `$`(subpathway)
+    )
+  }
+
+  # Methanogen pairs
+  plot_correlation_network(
+      connections,
+      str_c(casefold(habitat), "h", "methanogenesis", figure_suffix, sep = "_"),
+      removal_list = metapathway_groups %>%
+        filter(!subpathway %in% c("hydrogenotrophic_methanogenesis-all", "methylotrophic_methanogenesis-h2_indep")) %>%
+        `$`(subpathway)
+    )
+
+  plot_correlation_network(
+      connections,
+      str_c(casefold(habitat), "a", "methanogenesis", figure_suffix, sep = "_"),
+      removal_list = metapathway_groups %>%
+        filter(!subpathway %in% c("acetoclastic_methanogenesis-all", "methylotrophic_methanogenesis-h2_dep")) %>%
+        `$`(subpathway)
+    )
+}
+
+##############
+### Output ###
+##############
+Palsa_connections <- form_correlation_network("Palsa", mag_connections = connection_df)
+Bog_connections <- form_correlation_network("Bog", mag_connections = connection_df)
+Fen_connections <- form_correlation_network("Fen", mag_connections = connection_df)
+
+habitat_connections <- bind_rows(
+    Palsa_connections %>% mutate(habitat = "Palsa"),
+    Bog_connections %>% mutate(habitat = "Bog"),
+    Fen_connections %>% mutate(habitat = "Fen")
+  ) %>%
+  select(habitat, x = from, y = to, rho = value) %>%
+  arrange(habitat, desc(rho))
+
+habitat_connections %>%
+  write_tsv(here(output_dir, "habitat_copresence.tsv"))
+
+##################
+### Clustering ###
+##################
+connections <- Palsa_connections
+connections <- Bog_connections
+connections <- Fen_connections
+
+# Spinglass is only algorithm to explicitly support negative weights
+conn_graph <- graph_from_data_frame(connections %>% rename(weight = value))
+conn_cluster <- cluster_spinglass(conn_graph, implementation = "neg")
+
+conn_cluster_df <- tibble(
+    subpathway = V(conn_graph)$name,
+    cluster = conn_cluster$membership
+  ) %>%
+  arrange(cluster) %>%
+  left_join(metapathway_groups)
+
+conn_cluster_print <- conn_cluster_df %>%
+  group_by(cluster, metapath) %>%
+  summarise(list = str_c(subpathway_label, collapse = ", ")) %>%
+  mutate(meta = map2_chr(metapath, list, str_c, sep = ": ")) %>%
+  summarise(comb = str_c(meta, collapse = "; "))
+
+for (n in 1:nrow(conn_cluster_print)) {
+  conn_cluster_print %>%
+    `$`(comb) %>%
+    `[[`(n) %>%
+    print()
+
+  group_vertices <- which(
+    V(conn_graph)$name %in%
+    (conn_cluster_df %>%
+      filter(cluster == n) %>%
+      `$`(subpathway)
+    )
+    )
+
+  subgraph(conn_graph, group_vertices) %>%
+    eigen_centrality() %>%
+    `$`(vector) %>%
+    bind_rows() %>%
+    pivot_longer(everything(), names_to = "subpathway", values_to = "centrality") %>%
+    arrange(desc(centrality)) %>%
+    print()
+}
+```

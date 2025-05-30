@@ -1,0 +1,113 @@
+---
+title: "Compare DRAM distillate and product"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  error = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center")
+
+library(cowplot)
+library(tidyverse)
+library(gt)
+library(here)
+source(here("setup.R"))
+
+output_dir <- here("Metabolic-analysis", "02_DRAM_distillate", "comparisons")
+dir.create(output_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("palsa", "bog", "fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+```
+
+```{r wrangling}
+temporal_pathways <- dram_summarise_pathways %>%
+    filter(percent_coverage >= 0.6, reactions_coverage > 0, is.na(percent_signature) | percent_signature > 0) %>%
+    mutate(subpathway = map2_chr(pathway, subpathway, ~ str_c(.x, "-", .y)), temporal_call = TRUE) %>%
+    select(subpathway, genome, temporal_call)
+
+compare_pathways <- emerge_product_refined %>%
+    rename(dram_call = call) %>%
+    left_join(temporal_pathways, by = c("subpathway", "genome")) %>%
+    mutate(
+        temporal_call = map_lgl(temporal_call, ~ !is.na(.)),
+        agreement = map2_chr(temporal_call, dram_call, 
+          ~ case_when(
+              .x & .y ~ "both",
+              .x & !.y ~ "temporal",
+              !.x & .y ~ "dram",
+              TRUE ~ "neither"
+              ))
+        )
+
+compare <- compare_pathways %>%
+    group_by(subpathway, agreement) %>%
+    summarise(n = n()) %>%
+    pivot_wider(names_from = agreement, values_from = n)
+```
+
+
+```{r comparison-table}
+comparison_table <- compare %>%
+  # Ensure that all cols present even if NA
+  union_all(
+    tibble(both = integer(), temporal = integer(), dram = integer(), neither = integer())
+    ) %>%
+  replace_na(list(both = 0, temporal = 0, dram = 0, neither = 0)) %>%
+  select(subpathway, neither, temporal, dram, both) %>%
+  ungroup() %>%
+  gt(rowname_col = "subpathway") %>%
+  fmt_integer(columns = c(neither, temporal, dram, both)) %>%
+  cols_label(
+    neither  = "both -ve",
+    temporal = "temporal +ve",
+    dram     = "dram +ve",
+    both     = "both +ve"
+  ) %>%
+  tab_style(
+    style = cell_fill(),
+    locations = cells_body(columns = c(temporal, both))
+  ) %>%
+  tab_options(table.width = pct(80))
+
+gtsave(comparison_table, "comparison_table.html", path = output_dir)
+gtsave(comparison_table, "comparison_table.png", path = output_dir)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,341 @@
+---
+title: "Metabolic RDAs"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, error = FALSE, fig.width = 6, fig.asp = 0.618, out.width = "100%", fig.align = "center")
+
+library(vegan)
+library(cowplot)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+main_dir <- here("Metabolic-analysis", "08_RDA")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("Palsa", "Bog", "Fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+shape_habitat  <- c(22, 21, 24)
+fill_habitat   <- colour_habitat
+
+depth_levels <- c("0-9", "10-19", "20-29", "30-39")
+depth_labels <- c("0", "10", "20", "30")
+fill_depth   <- RColorBrewer::brewer.pal(5, "YlOrBr")[-1]
+colour_depth <- fill_depth
+
+year_levels <- c("2011", "2012", "2013", "2014", "2015", "2016", "2017")
+year_labels <- year_levels
+fill_year   <- RColorBrewer::brewer.pal(7, "BuPu")
+colour_year <- fill_year
+
+set.seed(42)
+
+prepare_rel_abund <- function(metadata = pathway_metadata, habitat = c("Palsa", "Bog", "Fen")) {
+  rel_abund <- metadata %>%
+    filter(Habitat__ %in% {{habitat}}) %>%
+    group_by(temporal_sample_id, pathway) %>%
+    summarise(rel_abund = sum(rel_abund)) %>%
+    pivot_wider(names_from = temporal_sample_id, values_from = rel_abund, values_fill = 0) %>%
+    select(-1) %>%
+    mutate(
+      across(everything(), ~ . / sum(.)),
+      across(everything(), transform_perc)
+      )
+
+  return(rel_abund)
+}
+```
+
+```{r wrangling}
+pathway_metadata <- pathway_abundance_cumu %>%
+  pivot_longer(-sample, names_to = "pathway", values_to = "rel_abund") %>%
+  rename(temporal_sample_id = sample) %>%
+  left_join(sample_metadata, by = "temporal_sample_id") %>%
+  mutate(
+    habitat = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+    year = factor(Year__, levels = year_levels),
+  ) %>%
+  filter(!is.na(habitat))
+
+complete_metadata <- sample_metadata %>%
+  select(
+    Habitat__, DepthLumping, Year__,
+    temp_soil = T_soil.deg_C,
+    temp_air = T_air.deg_C,
+    temp_1d = samplingdate_mean_AirTemperature,
+    temp_7d = mean_AirTemperature_7d,
+    temp_14d = mean_AirTemperature_14d,
+    temp_21d = mean_AirTemperature_21d,
+    temp_28d = mean_AirTemperature_28d,
+    temp_grow = mean_AirTemperature_growing,
+    WTD_21d = pct_time_below_WTD_21d,
+    WTD_28d = pct_time_below_WTD_28d,
+    WTD_grow = pct_time_below_WTD_growing,
+    WTD_dist = Samp_dist_WT
+  )
+```
+
+```{r constrained-ord-functions}
+###############
+### Numeric ###
+###############
+plot_rda <- function(rda_obj, matrix, habitat, xlab = "dbRDA1 (temperature)") {
+  #sppscores(rda_obj) <- matrix # Add species scores to rda object
+
+  scor <- vegan::scores(rda_obj, choices = c(1, 2))
+  sites <- scor$sites %>%
+    as_tibble(rownames = "temporal_sample_id") %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping, Year__))
+  variables <- scor$biplot %>%
+    as_tibble(rownames = "label") %>%
+    mutate(
+      dbRDA1 = dbRDA1 / max(abs(dbRDA1)) * max(abs(sites %>% pull(dbRDA1))),
+      MDS1 = MDS1 / max(abs(MDS1)) * max(abs(sites %>% pull(MDS1)))
+    )
+
+  test <- anova.cca(rda_obj, step = 1000) %>%
+    broom::tidy()
+  model_info <- tribble(
+      ~metric, ~value,
+      "Conditional %", if (!is.null(rda_obj$pCCA)) {round(100 * rda_obj$pCCA$tot.chi / rda_obj$tot.chi, 1)} else {NA},
+      "Constrained %", round(100 * rda_obj$CCA$tot.chi / rda_obj$tot.chi, 1),
+      "Unconstrained %", round(100 * rda_obj$CA$tot.chi / rda_obj$tot.chi, 1),
+      "R2", RsquareAdj(rda_obj)$r.squared %>% round(3),
+      "p-value", test$p.value[1] %>% round(3),
+      "df", test$df[2]
+    ) %>%
+    drop_na() %>%
+    gridExtra::tableGrob()
+
+  base_plot <- ggplot() +
+    geom_vline(xintercept = 0, colour = "grey50") +
+    geom_hline(yintercept = 0, colour = "grey50") +
+    geom_segment(data = variables, aes(x = 0, y = 0, xend = dbRDA1, yend = MDS1), linewidth = 0.5, colour = "black") +
+    geom_text(data = variables, aes(x = dbRDA1, y = MDS1, label = label)) +
+    scale_shape_manual("Habitat", values = shape_habitat, breaks = habitat_levels) +
+    coord_fixed() +
+    xlab(xlab) +
+    ylab("MDS1 (unconstrained)") +
+    theme_cowplot()
+
+  depth_plot <- base_plot +
+    geom_point(data = sites, aes(x = dbRDA1, y = MDS1, shape = Habitat__, fill = DepthLumping)) +
+    scale_fill_manual("Depth", values = colour_depth, breaks = depth_levels) +
+    guides(fill = guide_legend(override.aes = list(shape = 21)))
+  plot_grid(depth_plot, model_info, nrow = 2, rel_heights = c(2, 1))
+  ggsave(str_c(c("beta_rda", habitat, "depth.png"), collapse = "_"), path = output_dir, width = 7, height = 7, dpi = 900)
+
+  year_plot <- base_plot +
+    geom_point(data = sites, aes(x = dbRDA1, y = MDS1, shape = Habitat__, fill = factor(Year__))) +
+    scale_fill_manual("Year", values = colour_year, breaks = year_levels) +
+    guides(fill = guide_legend(override.aes = list(shape = 21)))
+  plot_grid(year_plot, model_info, nrow = 2, rel_heights = c(2, 1))
+  ggsave(str_c(c("beta_rda", habitat, "year.png"), collapse = "_"), path = output_dir, width = 7, height = 7, dpi = 900)
+}
+
+rda_analysis <- function(taxa_level = sequence, habitat_level = c("Palsa", "Bog", "Fen")) {
+  pathway_filtered <- pathway_metadata %>% filter(!is.na(T_soil.deg_C))
+  metadata_filtered <- complete_metadata %>% filter(!is.na(temp_soil))
+  matrix <- prepare_rel_abund(metadata = pathway_filtered, habitat = {{habitat_level}}) %>% t()
+  beta_diversity <- matrix %>% vegdist(method = "bray")
+
+  if (identical(habitat_level, c("Palsa", "Bog", "Fen"))) {
+    beta_rda <- dbrda(
+      beta_diversity ~ Condition(Habitat__ + DepthLumping) + temp_soil,
+      data = metadata_filtered
+      )
+  } else {
+    beta_rda <- dbrda(
+      beta_diversity ~ Condition(DepthLumping) + temp_soil,
+      data = metadata_filtered %>% filter(Habitat__ %in% {{habitat_level}})
+      )
+  }
+
+  plot_rda(beta_rda, matrix, {{habitat_level}})
+
+  return(beta_rda)
+}
+
+rda_analysis_year <- function(taxa_level = sequence, habitat_level = c("Palsa", "Bog", "Fen")) {
+  matrix <- prepare_rel_abund(metadata = pathway_metadata, habitat = {{habitat_level}}) %>% t()
+  beta_diversity <- matrix %>% vegdist(method = "bray")
+
+  if (identical(habitat_level, c("Palsa", "Bog", "Fen"))) {
+    beta_rda <- dbrda(
+      beta_diversity ~ Condition(Habitat__ + DepthLumping) + Year__,
+      data = complete_metadata
+      )
+  } else {
+    beta_rda <- dbrda(
+      beta_diversity ~ Condition(DepthLumping) + Year__,
+      data = complete_metadata %>% filter(Habitat__ %in% {{habitat_level}})
+      )
+  }
+
+  plot_rda(beta_rda, matrix, {{habitat_level}}, xlab = "dbRDA1 (year)")
+
+  return(beta_rda)
+}
+
+##############
+### Factor ###
+##############
+plot_frda <- function(rda_obj, matrix, habitat) {
+  #sppscores(rda_obj) <- matrix # Add species scores to rda object
+
+  scor <- vegan::scores(rda_obj, choices = c(1, 2))
+  sites <- scor$sites %>%
+    as_tibble(rownames = "temporal_sample_id") %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping, Year__))
+  variables <- scor$biplot %>%
+    as_tibble(rownames = "label") %>%
+    mutate(
+      label = str_remove(label, "factor\\(Year__\\)"),
+      dbRDA1 = dbRDA1 / max(abs(dbRDA1)) * max(abs(sites %>% pull(dbRDA1))),
+      dbRDA2 = dbRDA2 / max(abs(dbRDA2)) * max(abs(sites %>% pull(dbRDA2)))
+    )
+
+  test <- anova.cca(rda_obj, step = 1000) %>%
+    broom::tidy()
+  model_info <- tribble(
+      ~metric, ~value,
+      "Conditional %", if (!is.null(rda_obj$pCCA)) {round(100 * rda_obj$pCCA$tot.chi / rda_obj$tot.chi, 1)} else {NA},
+      "Constrained %", round(100 * rda_obj$CCA$tot.chi / rda_obj$tot.chi, 1),
+      "Unconstrained %", round(100 * rda_obj$CA$tot.chi / rda_obj$tot.chi, 1),
+      "R2", RsquareAdj(rda_obj)$r.squared %>% round(3),
+      "p-value", test$p.value[1] %>% round(3),
+      "df", test$df[2]
+    ) %>%
+    drop_na() %>%
+    gridExtra::tableGrob()
+
+  base_plot <- ggplot() +
+    geom_vline(xintercept = 0, colour = "grey50") +
+    geom_hline(yintercept = 0, colour = "grey50") +
+    geom_segment(data = variables, aes(x = 0, y = 0, xend = dbRDA1, yend = dbRDA2), linewidth = 0.5, colour = "black") +
+    geom_text(data = variables, aes(x = dbRDA1, y = dbRDA2, label = label)) +
+    scale_shape_manual("Habitat", values = shape_habitat, breaks = habitat_levels) +
+    coord_fixed() +
+    xlab("dbRDA1") +
+    ylab("dbRDA2") +
+    theme_cowplot()
+
+  depth_plot <- base_plot +
+    geom_point(data = sites, aes(x = dbRDA1, y = dbRDA2, shape = Habitat__, fill = DepthLumping)) +
+    scale_fill_manual("Depth", values = colour_depth, breaks = depth_levels) +
+    guides(fill = guide_legend(override.aes = list(shape = 21)))
+  plot_grid(depth_plot, model_info, nrow = 2, rel_heights = c(2, 1))
+  ggsave(str_c(c("beta_rda", habitat, "depth.png"), collapse = "_"), path = output_dir, width = 7, height = 7, dpi = 900)
+
+  year_plot <- base_plot +
+    geom_point(data = sites, aes(x = dbRDA1, y = dbRDA2, shape = Habitat__, fill = factor(Year__))) +
+    scale_fill_manual("Year", values = colour_year, breaks = year_levels) +
+    guides(fill = guide_legend(override.aes = list(shape = 21)))
+  plot_grid(year_plot, model_info, nrow = 2, rel_heights = c(2, 1))
+  ggsave(str_c(c("beta_rda", habitat, "year.png"), collapse = "_"), path = output_dir, width = 7, height = 7, dpi = 900)
+}
+
+frda_analysis_year <- function(taxa_level = sequence, habitat_level = c("Palsa", "Bog", "Fen")) {
+  matrix <- prepare_rel_abund(metadata = pathway_metadata, habitat = {{habitat_level}}) %>% t()
+  beta_diversity <- matrix %>% vegdist(method = "bray")
+
+  if (identical(habitat_level, c("Palsa", "Bog", "Fen"))) {
+    beta_rda <- dbrda(
+      beta_diversity ~ Condition(Habitat__ + DepthLumping) + factor(Year__),
+      data = complete_metadata
+      )
+  } else {
+    beta_rda <- dbrda(
+      beta_diversity ~ Condition(DepthLumping) + factor(Year__),
+      data = complete_metadata %>% filter(Habitat__ %in% {{habitat_level}})
+      )
+  }
+
+  plot_frda(beta_rda, matrix, {{habitat_level}})
+
+  return(beta_rda)
+}
+```
+
+```{r constrained-ord}
+###################
+### Temperature ###
+###################
+output_dir <- here(main_dir, "temperature")
+dir.create(output_dir, recursive = TRUE)
+
+rda_analysis_base <- rda_analysis()
+rda_analysis_Palsa <- rda_analysis(habitat_level = c("Palsa"))
+rda_analysis_Bog <- rda_analysis(habitat_level = c("Bog"))
+rda_analysis_Fen <- rda_analysis(habitat_level = c("Fen"))
+
+####################
+### Numeric year ###
+####################
+output_dir <- here(main_dir, "year_num")
+dir.create(output_dir, recursive = TRUE)
+
+rda_analysis_year_base <- rda_analysis_year()
+rda_analysis_year_Palsa <- rda_analysis_year(habitat_level = c("Palsa"))
+rda_analysis_year_Bog <- rda_analysis_year(habitat_level = c("Bog"))
+rda_analysis_year_Fen <- rda_analysis_year(habitat_level = c("Fen"))
+
+###################
+### Factor year ###
+###################
+output_dir <- here(main_dir, "year_factor")
+dir.create(output_dir, recursive = TRUE)
+
+frda_analysis_year_base <- frda_analysis_year()
+frda_analysis_year_Palsa <- frda_analysis_year(habitat_level = c("Palsa"))
+frda_analysis_year_Bog <- frda_analysis_year(habitat_level = c("Bog"))
+frda_analysis_year_Fen <- frda_analysis_year(habitat_level = c("Fen"))
+
+##############
+### Output ###
+##############
+get_model_info <- function(rda_obj, method) {
+  test <- anova.cca(rda_obj, step = 1000) %>%
+    broom::tidy()
+  tribble(
+      ~metric, ~value,
+      "Conditional %", if (!is.null(rda_obj$pCCA)) {round(100 * rda_obj$pCCA$tot.chi / rda_obj$tot.chi, 1)} else {NA},
+      "Constrained %", round(100 * rda_obj$CCA$tot.chi / rda_obj$tot.chi, 1),
+      "Unconstrained %", round(100 * rda_obj$CA$tot.chi / rda_obj$tot.chi, 1),
+      "R2", RsquareAdj(rda_obj)$r.squared %>% round(3),
+      "p-value", test$p.value[1] %>% round(3),
+      "df", test$df[2]
+    ) %>%
+    drop_na() %>%
+    cross_join(tibble(method = {{method}}))
+}
+
+rda_model_info <- bind_rows(
+    rda_analysis_base %>% get_model_info("dbRDA soil temperature conditioned on Habitat and Depth"),
+    rda_analysis_Palsa %>% get_model_info("dbRDA soil temperature conditioned on Depth for Palsa"),
+    rda_analysis_Bog %>% get_model_info("dbRDA soil temperature conditioned on Depth for Bog"),
+    rda_analysis_Fen %>% get_model_info("dbRDA soil temperature conditioned on Depth for Fen"),
+    rda_analysis_year_base %>% get_model_info("dbRDA Year conditioned on Habitat and Depth"),
+    rda_analysis_year_Palsa %>% get_model_info("dbRDA Year conditioned on Depth for Palsa"),
+    rda_analysis_year_Bog %>% get_model_info("dbRDA Year conditioned on Depth for Bog"),
+    rda_analysis_year_Fen %>% get_model_info("dbRDA Year conditioned on Depth for Fen"),
+    frda_analysis_year_base %>% get_model_info("dbRDA Year as factor conditioned on Habitat and Depth"),
+    frda_analysis_year_Palsa %>% get_model_info("dbRDA Year as factor conditioned on Depth for Palsa"),
+    frda_analysis_year_Bog %>% get_model_info("dbRDA Year as factor conditioned on Depth for Bog"),
+    frda_analysis_year_Fen %>% get_model_info("dbRDA Year as factor conditioned on Depth for Fen"),
+  ) %>%
+  pivot_wider(names_from = metric, values_from = value)
+
+rda_model_info %>%
+  write_tsv(here(main_dir, "rda_model_info.tsv"))
+```

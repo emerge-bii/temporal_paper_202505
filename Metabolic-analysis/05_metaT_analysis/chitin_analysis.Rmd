@@ -1,0 +1,231 @@
+---
+title: "Chitin analysis"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, error = FALSE, fig.width = 6, fig.asp = 0.618, out.width = "100%", fig.align = "center")
+
+library(propr)
+library(cowplot)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+main_dir <- here("Metabolic-analysis", "05_metaT_analysis")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("Palsa", "Bog", "Fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+shape_habitat  <- c(15, 16, 17)
+fill_habitat   <- colour_habitat
+
+depth_levels <- c("0-9", "10-19", "20-29", "30-39")
+depth_labels <- c("0", "10", "20", "30")
+fill_depth   <- RColorBrewer::brewer.pal(5, "YlOrBr")[-1]
+colour_depth <- fill_depth
+
+year_levels <- c("2011", "2012", "2013", "2014", "2015", "2016", "2017")
+year_labels <- year_levels
+fill_year   <- RColorBrewer::brewer.pal(7, "OrRd")
+colour_year <- fill_year
+
+set.seed(42)
+```
+
+```{r wrangling}
+dram_annotations <- read_dram_annotations()
+
+metaT_data <- sample_metadata %>%
+  read_metaT_data(annotations = dram_annotations)
+```
+
+```{r chitin}
+output_dir <- here(main_dir, "chitin")
+dir.create(output_dir, recursive = TRUE)
+
+top_chitin_genomes <- metaT_exp %>%
+  filter(subpathway == "CAZy-Chitin", tpm > 0) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping)) %>%
+  group_by(Habitat__, DepthLumping, genome) %>%
+  summarise(tpm_max = max(tpm), tpm_mean = mean(tpm), tpm_sd = sd(tpm), n = n()) %>%
+  arrange(desc(tpm_mean)) %>%
+  filter(!is.na(tpm_sd)) %>%
+  slice_head(n = 5) %>%
+  ungroup()
+
+metaT_exp %>%
+  filter(tpm > 0) %>%
+  left_join(top_chitin_genomes %>% select(genome, Habitat__)) %>%
+  filter(!is.na(Habitat__)) %>%
+  group_by(Habitat__, subpathway, temporal_sample_id) %>%
+  summarise(tpm = sum(tpm)) %>%
+  summarise(tpm = mean(tpm)) %>%
+  arrange(Habitat__, desc(tpm)) %>%
+  print(n = Inf)
+
+metaT_data %>%
+  filter(tpm > 0, !is.na(ko_id)) %>%
+  left_join(top_chitin_genomes %>% select(genome, Habitat__)) %>%
+  filter(!is.na(Habitat__)) %>%
+  group_by(Habitat__, ko_id, temporal_sample_id) %>%
+  summarise(tpm = sum(tpm)) %>%
+  summarise(tpm = mean(tpm)) %>%
+  arrange(Habitat__, desc(tpm)) %>%
+  pivot_wider(names_from = Habitat__, values_from = tpm) %>%
+  mutate(mean_hab = pmap_dbl(list(Palsa, Bog, Fen), ~ mean(c(..1, ..2, ..3)))) %>%
+  arrange(desc(mean_hab)) %>%
+  print(n = 30)
+
+# Top genes transcribed by top Chitin genomes in each habitat
+#    ko_id     Bog      Fen      Palsa
+#  1 K03530    248.    2185.      511.   - DNA-binding protein HU-beta
+#  2 K03704    320.     233.     1947.   - cold shock protein
+#  3 K03088    180.     287.      462.   - RNA polymerase sigma-70 factor, ECF subfamily
+#  4 K02956    203.     111.      449.   - small subunit ribosomal protein S15
+#  5 K04749     48.2     76.0     430.   - anti-sigma B factor antagonist
+#  6 K02016      1.82     7.01    495.   - iron complex transport system substrate-binding protein
+#  7 K01555    360.       0.403   123.   - fumarylacetoacetase (tyrosine degradation)
+#  8 K02406    272.     195.        1.47 - flagellin
+#  9 K03561     76.1    198.      182.   - biopolymer transport protein ExbB
+# 10 K03116    146.     112.      192.   - sec-independent protein translocase protein TatA
+# 11 K03832     61.8    114.      273.   - periplasmic protein TonB
+# 12 K02970    139.      97.8     186.   - small subunit ribosomal protein S21
+# 13 K02909     91.7    117.      160.   - large subunit ribosomal protein L31
+# 14 K09888      8.39   286.       41.4  - cell division protein ZapA
+# 15 K02916     92.7     55.1     145.   - large subunit ribosomal protein L35
+# 16 K02871     45.4     77.5     163.   - large subunit ribosomal protein L13
+# 17 K04078     62.0     43.4     173.   - chaperonin GroES
+# 18 K04564     30.9     58.4     187.   - superoxide dismutase, Fe-Mn family
+# 19 K13628     26.1      2.17    236.   - iron-sulfur cluster assembly protein
+# 20 K02078     37.4    105.      115.   - acyl carrier protein
+# 21 K02110     30.1    116.      111.   - F-type H+-transporting ATPase subunit c
+# 22 K12132     35.3     18.4     198.   - eukaryotic-like serine/threonine-protein kinase
+##23 K00134     34.2    186.       28.3  - glyceraldehyde 3-phosphate dehydrogenase (phosphorylating)
+# 24 K13993     85.4     40.2     121.   - HSP20 family protein
+# 25 K06142     40.1     76.8     122.   - outer membrane protein
+# 26 K02913     52.9     65.0     120.   - large subunit ribosomal protein L33
+##27 K00262    168.      34.6      30.6  - glutamate dehydrogenase (NADP+)
+##28 K01915    104.      86.4      39.7  - glutamine synthetase
+# 29 K02275      9.10     5.37    211.   - cytochrome c oxidase subunit II
+# 30 K02004     23.0     86.7     107.   - putative ABC transport system permease protein
+
+#####################################
+### Analysis of interesting genes ###
+#####################################
+interesting_genes <- tribble(
+  ~pathway, ~ko_id,
+  "urea_cycle", "K01948", # CPS1 (carbamoyl-phosphate synthase) - eukaryotic
+  "urea_cycle", "K00611",
+  "urea_cycle", "K01940",
+  "urea_cycle", "K01755",
+  "urea_cycle", "K14681",
+  "urea_cycle", "K01476",
+  "GS_GOGAT_assimilation", "K01915", # glnA (glutamine synthetase)
+  "GS_GOGAT_assimilation", "K00265", # gltB (glutamate synthase NADPH)
+  "GS_GOGAT_assimilation", "K00264", # GLT1 (glutamate synthase NADH) - eukaryotic
+  "GS_GOGAT_assimilation", "K00284", # GLU/gltS (glutamate synthase ferredoxin)
+  "glutamate_dehydrogenase", "K00260", # gudB/rocG (glutamate dehydrogenase NAD+)
+  "glutamate_dehydrogenase", "K15371", # GDH2 (glutamate dehydrogenase NAD+)
+  "glutamate_dehydrogenase", "K00261", # gdhA (glutamate dehydrogenase NAD(P)+)
+  "glutamate_dehydrogenase", "K00262", # gdhA (glutamate dehydrogenase NADP+)
+  "chitin_degradation", "K02777", # crr (sugar PTS EIIA; (outer)GlcNAc -> GlcNAc-6P)
+  "chitin_degradation", "K02804", # nagE (GlcNAc PTS EIIICBA; (outer)GlcNAc -> GlcNAc-6P)
+  "chitin_degradation", "K00884", # nagK (GlcNAc kinase; GlcNAc -> GlcNAc-6P)
+  "chitin_degradation", "K01443", # nagA (GlcNAc-6P deacetylase; GlcNAc-6P -> GlcN-6P)
+  "chitin_degradation", "K02564", # nagB (GlcN-6P deaminase; GlcN-6P -> Fru-6P)
+  "chitin_degradation", "K07102", # amgK (MurNAc 1-kinase; GlcNAc -> GlcNAc-1P)
+  "chitin_degradation", "K04042", # glmU (GlcNAc-1P N-acetyltransferase; GlcNAc-1P -> UDP-GlcNAc)
+  "chitin_degradation", "K00820"  # glmS (glutamine-fructose-6-phosphate transaminase; GlcNAc-6P + glutamate -> Fru-6P + glutamine)
+)
+
+dram_annotations %>%
+  filter(ko_id %in% interesting_genes$ko_id) %>%
+  group_by(ko_id, genome) %>%
+  summarise() %>%
+  count() %>%
+  left_join(interesting_genes) %>%
+  arrange(pathway) %>%
+  print(n = Inf)
+
+metaT_data %>%
+  filter(tpm > 0, !is.na(ko_id), ko_id %in% interesting_genes$ko_id) %>%
+  left_join(interesting_genes) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__)) %>%
+  group_by(ko_id, Habitat__, temporal_sample_id) %>%
+  summarise(tpm = sum(tpm)) %>%
+  summarise(tpm = mean(tpm)) %>%
+  arrange(Habitat__, desc(tpm)) %>%
+  pivot_wider(names_from = Habitat__, values_from = tpm) %>%
+  mutate(mean_hab = pmap_dbl(list(Palsa, Bog, Fen), ~ mean(c(..1, ..2, ..3)))) %>%
+  arrange(desc(mean_hab)) %>%
+  print(n = Inf)
+```
+
+```{r chitin-synthase}
+# K00698: CHS1 (chitin synthase)
+# K14666: nodC (chitin-oligo synthase from Rhizobia)
+# GT2: includes both of above
+dram_annotations %>%
+  filter(ko_id %in% c("K00698", "K14666") | cazy_id %in% c("GT2"))
+
+# No hits
+```
+
+```{r methanogen-transcription}
+selected_methanogens <- c("PLGY01", "PMEE01", "20120700_S1D_59", "3300037104_19", "PMNG01")
+metaT_data %>%
+  filter(tpm > 0, genome %in% selected_methanogens) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping)) %>%
+  group_by(genome, Habitat__, ko_id, temporal_sample_id) %>%
+  summarise(tpm = sum(tpm)) %>%
+  summarise(tpm = mean(tpm)) %>%
+  filter(Habitat__ != "Palsa") %>%
+  arrange(genome, Habitat__, desc(tpm)) %>%
+  slice_head(n = 10) %>%
+  left_join(reaction_definitions) %>%
+  print(n = Inf)
+
+metaT_data %>%
+  filter(tpm > 0, genome %in% selected_methanogens) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping)) %>%
+  group_by(genome, Habitat__, gene_id) %>%
+  summarise(tpm = mean(tpm), ko_id = first(ko_id)) %>%
+  arrange(desc(tpm)) %>%
+  slice_head(n = 1)
+
+# PLGY01 Bog most transcribed gene: PLGY01_ENA|PLGY01000051|PLGY01000051.1_81 - hypothetical
+# 20120700_S1D_59 Bog most transcribed gene: 20120700_S1D_59_c_000000099108_4 - hypothetical
+# 3300037104_19 Fen most transcribed gene: 3300037104_19_Ga0395706_005576_5 - mcrG
+# PMNG01 Fen most transcribed gene: PMNG01_ENA|PMNG01000088|PMNG01000088.1_1 - hypothetical
+# PMEE01 Fen most transcribed gene: PMEE01_ENA|PMEE01000066|PMEE01000066.1_60 - no hits
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

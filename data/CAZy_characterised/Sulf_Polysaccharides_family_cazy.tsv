@@ -1,0 +1,173 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+keratan sulfate hydrolase / keratanase II	3.2.1.-	pubmed	Niallia circulans KST202	AAO88279.1	Q7X0Z0		Bacteria	2	GH111
+Ι-carrageenase (CgiA)	3.2.1.157	pubmed	Alteromonas sp. ATCC 43554 / Alteromonas fortis	CAC07801.1	Q9F5I8	1H80[A,B]1KTW[A,B]3LMW[A,B]	Bacteria	8	GH82
+Ι-carrageenase (CgiA)	3.2.1.157	pubmed	Alteromonas sp. ATCC 43554 / Alteromonas fortis	AAW20550.1	Q9F5I8	1H80[A,B]1KTW[A,B]3LMW[A,B]	Bacteria	8	GH82
+Ι-carrageenase (CgiA;CgiA_Ce)	3.2.1.157	pubmed	Cellulophaga sp. QY3	AEV89930.1	M1EU02		Bacteria	8	GH82
+Ι-carrageenase (CgiB;CgiB_Ce)	3.2.1.157	pubmed	Cellulophaga sp. QY3	AGN70890.1	R9UQG9		Bacteria	8	GH82
+Ι-carrageenase (CgiF)	3.2.1.157	pubmed	Flavobacterium sp. YS-80-122	APX55175.1	A0A1W5QBK3		Bacteria	8	GH82
+Ι-carrageenase (CgiA)	3.2.1.157	pubmed	Microbulbifer thermotolerans JAMB-A94(T)	BAJ40863.1	E3W9G3		Bacteria	8	GH82
+Ι-carrageenase (CgiA)	3.2.1.157	pubmed	Microbulbifer thermotolerans JAMB-A94(T)	BAK08904.1	E3W9G3		Bacteria	8	GH82
+?-carrageenase  (Cgi82A; Cgi82A_Wf; AXE80_00300)	3.2.1.157	pubmed	Wenyingzhuangia fucanilytica CZ1127	ANW94827.1	A0A1B1Y261		Bacteria	8	GH82
+Ι-carrageenase (CgiA; zobellia_4265)	3.2.1.157	pubmed	Zobellia galactanivorans DsijT	CAZ98400.1	Q9F284		Bacteria	8	GH82
+Ι-carrageenase (CgiA; zobellia_4265)	3.2.1.157	pubmed	Zobellia galactanivorans DsijT	AAW20551.1	Q9F284		Bacteria	8	GH82
+Ι-carrageenase (CgiA; zobellia_4265)	3.2.1.157	pubmed	Zobellia galactanivorans DsijT	CAC07822.1	Q9F284		Bacteria	8	GH82
+l-carrageenase (CglA)	3.2.1.162	pubmed	Pseudoalteromonas carrageenovora PSC	CAL37005.1	Q0JRK4		Bacteria	3	GH150
+l-carrageenase (CglA)	3.2.1.162	pubmed	Pseudoalteromonas sp. CL19	BAF35571.1	Q05JY7		Bacteria	3	GH150
+β-glucuronidase (ACP_2665;AcGlcA79A) (GlcA79A)	3.2.1.31	pubmed	Acidobacterium capsulatum ATCC 51196	ACO32043.1	C1F2K5	3VNY[A]3VNZ[A]3VO0[A]5G0M[A]5G0Q[A]5L77[A]7PSH[A]7PSI[A]7PSJ[A]7PSK[A]	Bacteria	15	GH79
+heparanase / endo-β-glucuronidase (BpHep;DP46_278)	3.2.1.166	pubmed	Burkholderia pseudomallei BEK	AIO87434.1	Q63T97	5BWI[A,B]7PR9[A,B]7PRB[A,B]	Bacteria	15	GH79
+Chondroitin ABC lyase (BT_3328; BT3328)	4.2.2.20	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO78434.1	Q8A2H7		Bacteria	2	PL29
+hyaluronate lyase (BcellWH2_02524; BACWH2_2353)	4.2.2.1	pubmed	Bacteroides cellulosilyticus WH2	ALJ59763.1	A0A0N7IFB8		Bacteria	2	PL30
+hyaluronate lyase (BcellWH2_02524; BACWH2_2353)	4.2.2.1	pubmed	Bacteroides cellulosilyticus WH2	WP_029426181.1	A0A0N7IFB8		Bacteria	2	PL30
+endo-hyaluronan lyase (BcellWH2_04512; BACWH2_4253)	4.2.2.1	pubmed	Bacteroides cellulosilyticus WH2	ALJ61728.1	A0A0P0GKX0		Bacteria	6	PL33
+endo-gellan lyase (OPIT5_09595)	4.2.2.25	pubmed	Opitutaceae bacterium TAV5	AHF90411.1	W0J0V6		Bacteria	6	PL33
+endo-chondroitin sulfate lyase (OPIT5_11155)	4.2.2.20	pubmed	Opitutaceae bacterium TAV5	AHF90672.1	W0IWV0		Bacteria	6	PL33
+endo-gellan lyase (OPIT5_12920)	4.2.2.25	pubmed	Opitutaceae bacterium TAV5	AHF90976.1	W0J2L2		Bacteria	6	PL33
+chondroitin AC lyase (BFO_2291)	4.2.2.5	pubmed	Tannerella forsythia 92A2	AEW20097.1			Bacteria	6	PL33
+hyaluronidase (Hyl; HAase-B)	4.2.2.1	pubmed	Bacillus sp. A50	AHB61202.1	W5RSC1		Bacteria	30	PL8
+xanthan lyase (BXL; Xly)	4.2.2.12	pubmed	Bacillus sp. GL1	BAB21059.1	Q9AQS0	1J0M[A]1J0N[A]1X1H[A]1X1I[A]1X1J[A]2E22[A]2E24[A]	Bacteria	30	PL8
+chondroitin sulfate lyase AC (CslA)	4.2.2.5	pubmed	Bacteroides stercoris HJ-15	ABW87764.1	A9Y5J0		Bacteria	30	PL8
+BT3324	4.2.2.20	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO78430.1	Q8A2I1		Bacteria	30	PL8
+BT3324	4.2.2.20	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_812236.1	Q8A2I1		Bacteria	30	PL8
+chondroitin sulfate ABC lyase	4.2.2.20	pubmed	Bacteroides thetaiotaomicron WAL2926	ABV21364.1	C5G6D7	2Q1F[A,B]	Bacteria	30	PL8
+PPA0380 (hyaluronate lyase)	4.2.2.1	doi	Cutibacterium acnes KPA171202	AAT82132.1	P0CZ01		Bacteria	30	PL8
+chondroitin AC lyase (CslA;ChonAC)	4.2.2.5	pubmed	Flavobacterium columnare G4	AAX07421.1	Q5EC33		Bacteria	30	PL8
+heparinase (Hep)	4.2.2.7	pubmed	Niallia circulans	BAB91369.1	Q8KKH9		Bacteria	30	PL8
+xanthan lyase (XL; XalA)	4.2.2.12	pubmed	Paenibacillus alginolyticus XL-1	AAG24953.1	Q9F8Q9		Bacteria	30	PL8
+xanthan lyase (PXL)	4.2.2.12	pubmed	Paenibacillus nanensis	AXR85425.1	A0A3S7RW91A0A493R6T1	6F2P[A]	Bacteria	30	PL8
+chondroitin AC lyase (CslA;ChnAC;Phep_0786)	4.2.2.5	pubmed	Pedobacter heparinus DSM 2366	ACU03008.1	Q59288	1CB8[A]1HM2[A]1HM3[A]1HMU[A]1HMW[A]	Bacteria	30	PL8
+chondroitin AC lyase (CslA;ChnAC;Phep_0786)	4.2.2.5	pubmed	Pedobacter heparinus DSM 2366	AAC83383.1	Q59288	1CB8[A]1HM2[A]1HM3[A]1HMU[A]1HMW[A]	Bacteria	30	PL8
+chondroitin ABC lyase I / chondroitinase ABC (ChABC)	4.2.2.20	pubmed	Proteus vulgaris	2109195AABE23097.1	P59807	1HN0[A]7EIP[A]7EIQ[A]7EIR[A]7EIS[A]	Bacteria	30	PL8
+chondroitin ABC lyase I / chondroitinase ABC (ChABC)	4.2.2.20	pubmed	Proteus vulgaris	ACN04689.1	P59807	1HN0[A]7EIP[A]7EIQ[A]7EIR[A]7EIS[A]	Bacteria	30	PL8
+chondroitin ABC lyase I / chondroitinase ABC (ChABC)	4.2.2.20	pubmed	Proteus vulgaris	ACQ12496.1	P59807	1HN0[A]7EIP[A]7EIQ[A]7EIR[A]7EIS[A]	Bacteria	30	PL8
+chondroitin ABC lyase I / chondroitinase ABC (ChABC)	4.2.2.20	pubmed	Proteus vulgaris	ACQ12497.1	P59807	1HN0[A]7EIP[A]7EIQ[A]7EIR[A]7EIS[A]	Bacteria	30	PL8
+chondroitin ABC lyase I / chondroitinase ABC (ChABC)	4.2.2.20	pubmed	Proteus vulgaris	ACW17440.1	P59807	1HN0[A]7EIP[A]7EIQ[A]7EIR[A]7EIS[A]	Bacteria	30	PL8
+chondroitin ABC lyase I / chondroitinase ABC (ChABC)	4.2.2.20	pubmed	Proteus vulgaris	ACW17441.1	P59807	1HN0[A]7EIP[A]7EIQ[A]7EIR[A]7EIS[A]	Bacteria	30	PL8
+chondroitin ABC lyase I / chondroitinase ABC (ChABC)	4.2.2.20	pubmed	Proteus vulgaris	ACY01450.1	P59807	1HN0[A]7EIP[A]7EIQ[A]7EIR[A]7EIS[A]	Bacteria	30	PL8
+chondroitin ABC lyase II (ChABCII)	4.2.2.20	pubmed	Proteus vulgaris ATCC 6896	AAB43333.1	C7S340	cryst	Bacteria	30	PL8
+chondroitin ABC lyase II (ChABCII)	4.2.2.20	pubmed	Proteus vulgaris ATCC 6896	ABU46331.1	C7S340	cryst	Bacteria	30	PL8
+hyaluronate lyase (HysA)	4.2.2.1	pubmed	Staphylococcus aureus 8325-4	AAA82984.1	Q59801		Bacteria	30	PL8
+hyaluronate lyase (HylB)	4.2.2.1	pubmed	Streptococcus agalactiae 4755	CAA75865.1	O86478		Bacteria	30	PL8
+hyaluronate lyase (HylB;SaHyl;Gbs1270)	4.2.2.1	pubmed	Streptococcus agalactiae NEM316	CAD46929.1	Q53591	1F1S[A]1I8Q[A]1LXM[A]	Bacteria	30	PL8
+hyaluronate lyase (HylB;SaHyl;Gbs1270)	4.2.2.1	pubmed	Streptococcus agalactiae NEM316	AAA56749.1	Q53591	1F1S[A]1I8Q[A]1LXM[A]	Bacteria	30	PL8
+hyaluronate lyase (HylB;SaHyl;Gbs1270)	4.2.2.1	pubmed	Streptococcus agalactiae NEM316	NP_735714.1	Q53591	1F1S[A]1I8Q[A]1LXM[A]	Bacteria	30	PL8
+hyaluronate lyase	4.2.2.1	pubmed	Streptococcus constellatus subsp. constellatus ATCC 27823	AAK67165.1	Q934I5		Bacteria	30	PL8
+hyaluronidase (Hyl)	4.2.2.1	doi	Streptococcus equi subsp. zooepidemicus CVCC23362	ABV69920.1	A8HJR5		Bacteria	30	PL8
+hyaluronate lyase	4.2.2.1	pubmed	Streptococcus intermedius ATCC 27335	AAK67167.1	Q934I4		Bacteria	30	PL8
+hyaluronate lyase (HysA)	4.2.2.1	pubmed	Streptococcus pneumoniae R6	AAK99090.1	Q54873Q8CWU3	1C82[A]1EGU[A]1F9G[A]1LOH[A]1LXK[A]1N7N[A]1N7O[A]1N7P[A]1N7Q[A]1N7R[A]1OJM[A]1OJN[A]1OJO[A]1OJP[A]1W3Y[A]2BRP[A]2BRV[X]2BRW[A,B]	Bacteria	30	PL8
+hyaluronate lyase (HysA)	4.2.2.1	pubmed	Streptococcus pneumoniae R6	AAA53685.1	Q54873Q8CWU3	1C82[A]1EGU[A]1F9G[A]1LOH[A]1LXK[A]1N7N[A]1N7O[A]1N7P[A]1N7Q[A]1N7R[A]1OJM[A]1OJN[A]1OJO[A]1OJP[A]1W3Y[A]2BRP[A]2BRV[X]2BRW[A,B]	Bacteria	30	PL8
+hyaluronate lyase (HysA)	4.2.2.1	pubmed	Streptococcus pneumoniae R6	AAA53686.1	Q54873Q8CWU3	1C82[A]1EGU[A]1F9G[A]1LOH[A]1LXK[A]1N7N[A]1N7O[A]1N7P[A]1N7Q[A]1N7R[A]1OJM[A]1OJN[A]1OJO[A]1OJP[A]1W3Y[A]2BRP[A]2BRV[X]2BRW[A,B]	Bacteria	30	PL8
+hyaluronate lyase (HysA)	4.2.2.1	pubmed	Streptococcus pneumoniae R6	AAT16666.1	Q54873Q8CWU3	1C82[A]1EGU[A]1F9G[A]1LOH[A]1LXK[A]1N7N[A]1N7O[A]1N7P[A]1N7Q[A]1N7R[A]1OJM[A]1OJN[A]1OJO[A]1OJP[A]1W3Y[A]2BRP[A]2BRV[X]2BRW[A,B]	Bacteria	30	PL8
+hyaluronate lyase (HysA)	4.2.2.1	pubmed	Streptococcus pneumoniae R6	ACK14456.1	Q54873Q8CWU3	1C82[A]1EGU[A]1F9G[A]1LOH[A]1LXK[A]1N7N[A]1N7O[A]1N7P[A]1N7Q[A]1N7R[A]1OJM[A]1OJN[A]1OJO[A]1OJP[A]1W3Y[A]2BRP[A]2BRV[X]2BRW[A,B]	Bacteria	30	PL8
+hyaluronate lyase (HysA)	4.2.2.1	pubmed	Streptococcus pneumoniae R6	ACW45175.1	Q54873Q8CWU3	1C82[A]1EGU[A]1F9G[A]1LOH[A]1LXK[A]1N7N[A]1N7O[A]1N7P[A]1N7Q[A]1N7R[A]1OJM[A]1OJN[A]1OJO[A]1OJP[A]1W3Y[A]2BRP[A]2BRV[X]2BRW[A,B]	Bacteria	30	PL8
+hyaluronate lyase (HysA)	4.2.2.1	pubmed	Streptococcus pneumoniae R6	NP_357880.1	Q54873Q8CWU3	1C82[A]1EGU[A]1F9G[A]1LOH[A]1LXK[A]1N7N[A]1N7O[A]1N7P[A]1N7Q[A]1N7R[A]1OJM[A]1OJN[A]1OJO[A]1OJP[A]1W3Y[A]2BRP[A]2BRV[X]2BRW[A,B]	Bacteria	30	PL8
+hyaluronate lyase (Hyl;SpHyl;SP0314)	4.2.2.1	pubmed	Streptococcus pneumoniae TIGR4	AAK74491.1	Q54873		Bacteria	30	PL8
+hyaluronate lyase (Hyl;SpHyl;SP0314)	4.2.2.1	pubmed	Streptococcus pneumoniae TIGR4	NP_344851.1	Q54873		Bacteria	30	PL8
+hyaluronate lyase (HylA)	4.2.2.1	pubmed	Streptococcus pyogenes	AAF29533.1	Q9L7W9		Bacteria	30	PL8
+HylA	4.2.2.1	pubmed	Streptococcus suis P5/11/88	CAC87663.1	Q8VLQ7		Bacteria	30	PL8
+hyaluronidase (HylA)	4.2.2.1	pubmed	Streptococcus suis SEROTYPE 7	CAC87662.1	Q8VLQ8		Bacteria	30	PL8
+hyaluronate lyase (PL8Hyal;SCO5534;SC1C2.15)	4.2.2.1	pubmed	Streptomyces coelicolor A3(2)	CAA19982.1	O86516	2WCO[A]2WDA[A]2X03[A,B]	Bacteria	30	PL8
+hyaluronate lyase (PL8Hyal;SCO5534;SC1C2.15)	4.2.2.1	pubmed	Streptomyces coelicolor A3(2)	NP_629668.1	O86516	2WCO[A]2WDA[A]2X03[A,B]	Bacteria	30	PL8
+glycosaminoglycan lyase / eliminase (HCLase)	4.2.2.14.2.2.5	pubmedpubmed	Vibrio sp. FC509	AIL54323.1	A0A077ERI8		Bacteria	30	PL8
+heparinase III / heparin lyase III (HepIII)	4.2.2.8	pubmed	Bacteroides stercoris HJ-15	ACT66689.1	C7EXL6		Bacteria	5	PL12
+lyase cleaving heparin, heparan sulfate and desulfated heparin (HepIII; BT4662)	4.2.2.74.2.2.8	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	AAO79767.1	Q89YR9	4FNV[A]	Bacteria	5	PL12
+lyase cleaving heparin, heparan sulfate and desulfated heparin (HepIII; BT4662)	4.2.2.74.2.2.8	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	NP_813573.1	Q89YR9	4FNV[A]	Bacteria	5	PL12
+lyase cleaving heparin, heparan sulfate and desulfated heparin (Hep III; BT4657; BT_4657)	4.2.2.74.2.2.8	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	AAO79762.1	Q89YS4	5JMD[A]5JMF[A]	Bacteria	5	PL12
+lyase cleaving heparin, heparan sulfate and desulfated heparin (Hep III; BT4657; BT_4657)	4.2.2.74.2.2.8	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	NP_813568.1	Q89YS4	5JMD[A]5JMF[A]	Bacteria	5	PL12
+heparin-sulfate lyase / heparinase III (HepC;Phep_3797)	4.2.2.8	pubmed	Pedobacter heparinus DSM 2366	ACU05988.1	C6XUY0Q59289	4MMH[A]4MMI[A]	Bacteria	5	PL12
+heparin-sulfate lyase / heparinase III (HepC;Phep_3797)	4.2.2.8	pubmed	Pedobacter heparinus DSM 2366	AAB18278.1	C6XUY0Q59289	4MMH[A]4MMI[A]	Bacteria	5	PL12
+heparin-sulfate lyase / heparinase III (HepC;Phep_3797)	4.2.2.8	pubmed	Pedobacter heparinus DSM 2366	ACH00306.1	C6XUY0Q59289	4MMH[A]4MMI[A]	Bacteria	5	PL12
+heparin-sulfate lyase / heparinase III (HepC;Phep_3797)	4.2.2.8	pubmed	Pedobacter heparinus DSM 2366	ACK26501.1	C6XUY0Q59289	4MMH[A]4MMI[A]	Bacteria	5	PL12
+heparin lyase I / heparinase I (HepI)	4.2.2.7	pubmed	Bacteroides stercoris HJ-15	ADL62736.1	E1AP31		Bacteria	4	PL13
+lyase cleaving heparin and heparan sulfate (hepI; BT4675; BT_4675)	4.2.2.7	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO79780.1	Q89YQ6	3IKW[A]3ILR[A]3IMN[A]3IN9[A]3INA[A]	Bacteria	4	PL13
+lyase cleaving heparin and heparan sulfate (hepI; BT4675; BT_4675)	4.2.2.7	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_813586.1	Q89YQ6	3IKW[A]3ILR[A]3IMN[A]3IN9[A]3INA[A]	Bacteria	4	PL13
+heparin lyase I / heparinase I (HepA)	4.2.2.7	pubmed	Pedobacter heparinus	AAA24920.1	Q05819		Bacteria	4	PL13
+heparin lyase I / heparinase I (HepA)	4.2.2.7	pubmed	Pedobacter heparinus	AAY06538.1	Q05819		Bacteria	4	PL13
+heparin lyase I / heparinase I (HepA)	4.2.2.7	pubmed	Pedobacter heparinus	ABJ17171.1	Q05819		Bacteria	4	PL13
+heparin lyase I / heparinase I (HepA)	4.2.2.7	pubmed	Pedobacter heparinus	ACW20419.1	Q05819		Bacteria	4	PL13
+exotype alginate lyase (Atu3025)	4.2.2.26	pubmed	Agrobacterium fabrum str. C58	AAL43841.1	A9CEJ9	3A0O[A,B]3AFL[A]	Bacteria	8	PL15
+exotype alginate lyase (Atu3025)	4.2.2.26	pubmed	Agrobacterium fabrum str. C58	AAK90358.1	A9CEJ9	3A0O[A,B]3AFL[A]	Bacteria	8	PL15
+exotype alginate lyase (Atu3025)	4.2.2.26	pubmed	Agrobacterium fabrum str. C58	NP_357573.1	A9CEJ9	3A0O[A,B]3AFL[A]	Bacteria	8	PL15
+exotype alginate lyase (Atu3025)	4.2.2.26	pubmed	Agrobacterium fabrum str. C58	NP_533525.1	A9CEJ9	3A0O[A,B]3AFL[A]	Bacteria	8	PL15
+heparin-sulfate lyase (BcellWH2_01709;BACWH2_1592;HepB)	4.2.2.74.2.2.8	pubmedpubmed	Bacteroides cellulosilyticus WH2	ALJ58962.1	A0A0P0GDH6		Bacteria	8	PL15
+heparin lyase I	4.2.2.7	doi	Bacteroides intestinalis DSM 17393	WP_007659809.1	B3C5J6	6LJA[A]6LJL[A]	Bacteria	8	PL15
+lyase cleaving heparin, heparan sulfate and desulfated heparin (Hep II; BT4652)	4.2.2.74.2.2.8	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	AAO79757.1	Q89YS9		Bacteria	8	PL15
+alginate lyase (A1-IV')	4.2.2.3	pubmed	Sphingomonas sp. A1	BAD90006.1	Q5DWP2		Bacteria	8	PL15
+oligo alginate lyase (A1-IV;Oal)	4.2.2.26	pubmed	Sphingomonas sp. A1	BAB03319.1	Q9KWT4		Bacteria	8	PL15
+oligoalginate lyase (polyG-/polyM-specific) (OalA;V12B01_24239)	4.2.2.26	pubmed	Vibrio splendidus 12B01	EAP93067.1	A3UWR0		Bacteria	8	PL15
+acharan sulfate lyase 1/2 / heparin lyase II / heparanase II (AlsI;Als2;HepII)	4.2.2.74.2.2.84.2.2.-	pubmedpubmedpubmed	Bacteroides stercoris HJ-15	ACN29695.1	C0JBW5		Bacteria	3	PL21
+heparin lyase II / heparinase II (HepB;Phep_2408)	4.2.2.74.2.2.8	pubmedpubmed	Pedobacter heparinus DSM 2366	ACU04612.1	C6XZB6Q46080	2FUQ[A,B]2FUT[A,B]3E7J[A,B]3E80[A,B,C]	Bacteria	3	PL21
+heparin lyase II / heparinase II (HepB;Phep_2408)	4.2.2.74.2.2.8	pubmedpubmed	Pedobacter heparinus DSM 2366	AAB18277.1	C6XZB6Q46080	2FUQ[A,B]2FUT[A,B]3E7J[A,B]3E80[A,B,C]	Bacteria	3	PL21
+heparin lyase II / heparinase II (HepB;Phep_2408)	4.2.2.74.2.2.8	pubmedpubmed	Pedobacter heparinus DSM 2366	ABJ17170.1	C6XZB6Q46080	2FUQ[A,B]2FUT[A,B]3E7J[A,B]3E80[A,B,C]	Bacteria	3	PL21
+heparin lyase II / heparinase II (HepB;Phep_2408)	4.2.2.74.2.2.8	pubmedpubmed	Pedobacter heparinus DSM 2366	ACW20418.1	C6XZB6Q46080	2FUQ[A,B]2FUT[A,B]3E7J[A,B]3E80[A,B,C]	Bacteria	3	PL21
+alginate lyase (MASE_04135)	4.2.2.114.2.2.-	pubmedpubmed	Alteromonas macleodii ATCC 27126	AFS36376.1			Bacteria	23	PL6
+poly-(MG)-lyase / MG-specific alginate lyase (MASE_04180)	4.2.2.-	pubmed	Alteromonas macleodii ATCC 27126	AFS36385.1			Bacteria	23	PL6
+alginate lyase (Celly_0294)	4.2.2.114.2.2.-	pubmedpubmed	Cellulophaga lytica DSM 7489	ADY28129.1	F0RHM0		Bacteria	23	PL6
+alginate lyase (Nonul_2381)	4.2.2.114.2.2.-	pubmedpubmed	Nonlabens ulvanivorans PLR	KEZ92913.1	A0A084JVC9		Bacteria	23	PL6
+alginate lyase (polyG-specific) (AlyGC)	4.2.2.11	pubmed	Paraglaciecola chathamensis S18K6T	WP_007984897.1	A0A1S4NYD7A0A1S4NYD8A0A656LHA2	5GKD[A,B,C,D]5GKQ[A,B]	Bacteria	23	PL6
+poly-(MG)-lyase / MG-specific alginate lyase 	 (Phep_3223)	4.2.2.-	pubmed	Pedobacter heparinus DSM 2366	ACU05418.1	C6Y3X5		Bacteria	23	PL6
+chondroitinase B (CslB;ChnB;Phep_0789)	4.2.2.19	pubmed	Pedobacter heparinus DSM 2366	ACU03011.1	Q46079	1DBG[A]1DBO[A]1OFL[A]1OFM[A]	Bacteria	23	PL6
+chondroitinase B (CslB;ChnB;Phep_0789)	4.2.2.19	pubmed	Pedobacter heparinus DSM 2366	AAC83384.1	Q46079	1DBG[A]1DBO[A]1OFL[A]1OFM[A]	Bacteria	23	PL6
+chondroitinase B (CslB;ChnB;Phep_0789)	4.2.2.19	pubmed	Pedobacter heparinus DSM 2366	AAE46726.1	Q46079	1DBG[A]1DBO[A]1OFL[A]1OFM[A]	Bacteria	23	PL6
+chondroitinase B (CslB;ChnB;Phep_0789)	4.2.2.19	pubmed	Pedobacter heparinus DSM 2366	ABC06960.1	Q46079	1DBG[A]1DBO[A]1OFL[A]1OFM[A]	Bacteria	23	PL6
+chondroitinase B (CslB;ChnB;Phep_0789)	4.2.2.19	pubmed	Pedobacter heparinus DSM 2366	ABJ38857.1	Q46079	1DBG[A]1DBO[A]1OFL[A]1OFM[A]	Bacteria	23	PL6
+chondroitinase B (CslB;ChnB;Phep_0789)	4.2.2.19	pubmed	Pedobacter heparinus DSM 2366	ACK03140.1	Q46079	1DBG[A]1DBO[A]1OFL[A]1OFM[A]	Bacteria	23	PL6
+poly(α-L-guluronate) lyase / G-specific alginate lyase (Patl_3640)	4.2.2.11	pubmed	Pseudoalteromonas atlantica T6c	ABG42142.1	Q15PP6	7O77[A]7O7T[A]	Bacteria	23	PL6
+alginate lyase (Patl_3659)	4.2.2.114.2.2.-	pubmedpubmed	Pseudoalteromonas atlantica T6c	ABG42161.1	Q15PM7		Bacteria	23	PL6
+alginate lyase (AlyP)	4.2.2.3	pubmed	Pseudomonas sp. OS-ALG-9	BAA01182.1	Q06365		Bacteria	23	PL6
+poly(α-L-guluronate) lyase / G-specific alginate lyase (Pedsa_0631)	4.2.2.11	pubmed	Pseudopedobacter saltans DSM 12145	ADY51207.1	F0S7Y6		Bacteria	23	PL6
+chondroitinase B (Pedsa3807;Pedsa_3807)	4.2.2.19	pubmed	Pseudopedobacter saltans DSM 12145	ADY54336.1	F0S763	7O78[A,B]	Bacteria	23	PL6
+alginate lyase (Pedsa_0632)	4.2.2.114.2.2.-	pubmedpubmed	Pseudopedobacter saltans DSM 12145	ADY51208.1	F0S7Y7	7O7A[A,B]7O84[A,B]	Bacteria	23	PL6
+poly-(MG)-lyase / MG-specific alginate lyase (Pedsa_3628)	4.2.2.-	pubmed	Pseudopedobacter saltans DSM 12145	ADY54157.1	F0S4Y3	7O79[A]	Bacteria	23	PL6
+alginate lyase (Rmar_1165)	4.2.2.114.2.2.-	pubmedpubmed	Rhodothermus marinus DSM 4252	ACY48055.1	D0MHU7		Bacteria	23	PL6
+poly-(MG)-lyase / MG-specific alginate lyase (Rmar_1386)	4.2.2.-	pubmed	Rhodothermus marinus DSM 4252	ACY48275.1	D0MIG7		Bacteria	23	PL6
+poly-(MG)-lyase / MG-specific alginate lyase (Sde_0034)	4.2.2.-	pubmed	Saccharophagus degradans 2-40	ABD79298.1	Q21PT1		Bacteria	23	PL6
+poly-(MG)-lyase / MG-specific alginate lyase (Sde_0034)	4.2.2.-	pubmed	Saccharophagus degradans 2-40	ACK10568.1	Q21PT1		Bacteria	23	PL6
+oligoalginate lyase (polyG-block specific) (OalS6;AlgS6)	4.2.2.26	pubmed	Shewanella sp. Kz7	AHC69713.1	W8DQS7		Bacteria	23	PL6
+polyMG-specific alginate lyase (AlyMG)	4.2.2.-	pubmed	Stenotrophomonas maltophilia KJ-2 / KCTC32000	AFC88009.1	I6P4V6		Bacteria	23	PL6
+poly-(MG)-lyase / MG-specific alginate lyase (SVEN_0074)	4.2.2.-	pubmed	Streptomyces venezuelae ATCC 10712	CCA53362.1	F2R485		Bacteria	23	PL6
+poly-(MG)-lyase / MG-specific alginate lyase (SVEN_0074)	4.2.2.-	pubmed	Streptomyces venezuelae ATCC 10712	QER97009.1	F2R485		Bacteria	23	PL6
+PolyG-specific alginate lyase	4.2.2.11	pubmed	Vibrio splendidus	WP_116871951.1	A0A2S7V3I3	5Z9T[A,B]6A40[A]6ITG[A,B]7BZ0[A]	Bacteria	23	PL6
+ulvan, heparan sulfate and chondroitin sulfate lyase (BN863_22180)	4.2.2.204.2.2.84.2.2.-	pubmedpubmedpubmed	Formosa agariphila KMM 3901	CDF79930.1	T2KMH5		Bacteria	2	PL37
+β-agarase (AgaA;Aga86)	3.2.1.81	pubmed	Cellvibrio sp. OA-2007	BAG48880.1	B3IXL6		Bacteria	12	GH86
+β-agarase (Aga4383)	3.2.1.81	doi	Flammeovirga pacifica WPAGA1	AIA22721.1	A0A059XJH4		Bacteria	12	GH86
+β-agarase (Aga4383)	3.2.1.81	doi	Flammeovirga pacifica WPAGA1	ART27998.1	A0A059XJH4		Bacteria	12	GH86
+β-agarase (agaJ9)	3.2.1.81	pubmed	Gayadomonas joobiniege	WP_017446561.1			Bacteria	12	GH86
+β-agarase (AgaO)	3.2.1.81	pubmed	Microbulbifer thermotolerans JAMB-A94	BAD86832.1	Q5KTI5		Bacteria	12	GH86
+β-agarase (AgaO)	3.2.1.81	pubmed	Microbulbifer thermotolerans JAMB-A94	BAK08903.1	Q5KTI5		Bacteria	12	GH86
+exo-type β-agarase (Aga1)	3.2.1.81	pubmed	Paenibacillus sp. SSG-1	BAT46645.1	A0A0U4ZSX2		Bacteria	12	GH86
+exo-type β-agarase (Aga1)	3.2.1.81	pubmed	Paenibacillus sp. SSG-1	AML39432.1	A0A0U4ZSX2		Bacteria	12	GH86
+β-porphyranase (BpGH86A;BACPLE_01693)	3.2.1.178	pubmed	Phocaeicola plebeius DSM 17135	EDY95427.1	B5CY96	4AW7[A]	Bacteria	12	GH86
+β-agarase II (AgrA;Patl_2341)	3.2.1.81	pubmed	Pseudoalteromonas atlantica T6c	ABG40858.1	P13734Q15TD0		Bacteria	12	GH86
+β-agarase II (AgrA;Patl_2341)	3.2.1.81	pubmed	Pseudoalteromonas atlantica T6c	A32261AAA25696.1	P13734Q15TD0		Bacteria	12	GH86
+endo-β-agarase C (AgaC;Sde_2650) (Aga86C)	3.2.1.81	pubmed	Saccharophagus degradans 2-40	ABD81910.1	Q21HB9		Bacteria	12	GH86
+β-agarase II / E (AgaE;Sde_2655) (Aga86E)	3.2.1.81	doi	Saccharophagus degradans 2-40	ABD81915.1	Q21HB4		Bacteria	12	GH86
+β-agarase (Aga86A; Aga86A_W)	3.2.1.81	pubmed	Wenyingzhuangia sp. OF219	QDQ19054.1			Bacteria	12	GH86
+chondroitin lyase / chondroitinase (ODV-E66;AcODV-E66)	4.2.2.-	pubmed	Autographa californica nucleopolyhedrovirus	AAA66676.1	Q00704	3VSM[A]	Viruses	3	PL23
+chondroitin lyase / chondroitinase (ODV-E66;BmODV-E66;Bmnpvgp039)	4.2.2.-	pubmed	Bombyx mori nucleopolyhedrovirus	AAC63721.1	O92413		Viruses	3	PL23
+chondroitin lyase / chondroitinase (ODV-E66;BmODV-E66;Bmnpvgp039)	4.2.2.-	pubmed	Bombyx mori nucleopolyhedrovirus	NP_047452.1	O92413		Viruses	3	PL23
+unsaturated glucuronyl hydrolase (Ugl)	3.2.1.179	pubmed	Bacillus sp. GL1	BAA84216.1	Q9RC92	1VD5[A]2AHF[A,B]2AHG[A,B]2D5J[A,B]2FUZ[A]2FV0[A,B]2FV1[A,B]	Bacteria	10	GH88
+d-4,5-unsaturated uronyl hydrolase cleaving on d-4,5-unsaturated heparin disaccharides lacking O2 sulfation (BT4658)	3.2.1.-	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO79763.1	Q89YS3		Bacteria	10	GH88
+d-4,5-unsaturated uronyl hydrolase cleaving on d-4,5-unsaturated heparin disaccharides lacking O2 sulfation (BT4658)	3.2.1.-	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_813569.1	Q89YS3		Bacteria	10	GH88
+d-4,5-unsaturated β-glucuronyl hydrolase (Ugl;UGL;CPF_0400)	3.2.1.-	pubmed	Clostridium perfringens ATCC 13124	ABG82476.1	A0A0H2YP09Q0TU33		Bacteria	10	GH88
+[ulvan] unsaturated glucuronyl hydrolase (BN863_21900)	3.2.1.-	pubmed	Formosa agariphila KMM 3901	CDF79902.1	T2KLZ3		Bacteria	10	GH88
+d-4,5-unsaturated β-glucuronidase / unsaturated glucuronyl hydrolase (UGL;Phep_2830)	3.2.1.-	pubmed	Pedobacter heparinus DSM 2366	ACU05029.1	C6Y1N7	3WIW[A]	Bacteria	10	GH88
+unsaturated glucuronyl hydrolase (Ugl;Gbs1889)	3.2.1.180	pubmed	Streptococcus agalactiae NEM316	CAD47548.1	Q8E372	2ZZR[A]3ANI[A]3ANJ[A]3ANK[A]3VXD[A,B,C,D]3WUX[A]	Bacteria	10	GH88
+unsaturated glucuronyl hydrolase (Ugl;Gbs1889)	3.2.1.180	pubmed	Streptococcus agalactiae NEM316	NP_736323.1	Q8E372	2ZZR[A]3ANI[A]3ANJ[A]3ANK[A]3VXD[A,B,C,D]3WUX[A]	Bacteria	10	GH88
+unsaturated glucuronyl hydrolase (Ugl;spr0292)	3.2.1.180	pubmed	Streptococcus pneumoniae R6	AAK99096.1	Q8DR77		Bacteria	10	GH88
+unsaturated glucuronyl hydrolase (Ugl;spr0292)	3.2.1.180	pubmed	Streptococcus pneumoniae R6	NP_357886.1	Q8DR77		Bacteria	10	GH88
+unsaturated glucuronyl hydrolase (Ugl;SPy0632 )	3.2.1.180	pubmed	Streptococcus pyogenes M1 GAS SF370	AAK33600.1	Q9A0T3		Bacteria	10	GH88
+unsaturated glucuronyl hydrolase (Ugl;SPy0632 )	3.2.1.180	pubmed	Streptococcus pyogenes M1 GAS SF370	NP_268879.1	Q9A0T3		Bacteria	10	GH88
+d-4,5-unsaturated β-glucuronyl hydrolase (BFO_2285)	3.2.1.-	pubmed	Tannerella forsythia 92A2	AEW20531.1			Bacteria	10	GH88
+α-neoagarobiose hydrolase (NABH; AgaWH117)	3.2.1.159	pubmed	Agarivorans gilvus WH0801	AHM94173.1			Bacteria	12	GH117
+α-neoagarooligosaccharide hydrolase (AgaNash)	3.2.1.159	pubmed	Cellvibrio sp. OA-2007	BAQ55620.2	A0A0D5ZYJ2		Bacteria	12	GH117
+α-1,3-L-neoagarooligasaccharide hydrolase (Ahg558)	3.2.1.159	pubmed	Gayadomonas joobiniege	WP_017446786.1			Bacteria	12	GH117
+β-galactofuranosidase (FbacS_010100003501)	3.2.1.146	pubmed	Ochrovirga pacifica	WP_010134686.1			Bacteria	12	GH117
+α-1,3-(3,6-anhydro)-L-galactosidase / α-neoagaro-oligosaccharide hydrolase (Ph1615)	3.2.1.159	pubmed	Paraglaciecola hydrolytica S66	QEP52090.1			Bacteria	12	GH117
+α-1,3-3,6-anhydro-L-galactosidase (BpGH117;BACPLE_01671)	3.2.1.159	pubmed	Phocaeicola plebeius DSM 17135	EDY95405.1	B5CY74	4AK5[A,B]4AK6[A,B]4AK7[A,B]	Bacteria	12	GH117
+α-1,3-L-neoagarobiase F / α-1,3-L-neoagarobiose hydrolase (NABH;Sde_2657) (Aga117F)	3.2.1.159	doi	Saccharophagus degradans 2-40	ABD81917.1	Q21HB2	3R4Y[A,B]3R4Z[A,B]	Bacteria	12	GH117
+neoagaroligosaccharide hydrolase / α-neoagarobiose hydrolase (ScJC117; Sco3481)	3.2.1.159	pubmed	Streptomyces coelicolor A3(2)	CAB61805.1	Q9RKF6		Bacteria	12	GH117
+neoagaroligosaccharide hydrolase / α-neoagarobiose hydrolase (ScJC117; Sco3481)	3.2.1.159	pubmed	Streptomyces coelicolor A3(2)	NP_627684.1	Q9RKF6		Bacteria	12	GH117
+α-1,3-L-(3,6-anhydro)-galactosidase / α-neoagarobiose hydrolase (AhgA;ZgAhgA;Zg4663;zobellia_4663)	3.2.1.159	pubmed	Zobellia galactanivorans DsijT	CAZ98798.1	F0V1E3	3P2N[A,B]	Bacteria	12	GH117
+α-1,3-L-(3,6-anhydro)-galactosidase / α-neoagarobiose hydrolase (AhgA;ZgAhgA;Zg4663;zobellia_4663)	3.2.1.159	pubmed	Zobellia galactanivorans DsijT	CBM41465.1	F0V1E3	3P2N[A,B]	Bacteria	12	GH117
+exo-α-1,3-(3,6-anhydro)-L-galactosidase (Zg3615;zobellia_3615)	3.2.1.159	pubmed	Zobellia galactanivorans DsijT	CAZ97753.1	F0V1E2	4U6D[A,B]	Bacteria	12	GH117
+exo-α-1,3-(3,6-anhydro)-L-galactosidase (Zg3615;zobellia_3615)	3.2.1.159	pubmed	Zobellia galactanivorans DsijT	CBM41462.1	F0V1E2	4U6D[A,B]	Bacteria	12	GH117

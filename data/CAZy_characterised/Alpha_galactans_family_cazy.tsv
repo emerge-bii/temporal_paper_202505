@@ -1,0 +1,13 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+endo-α-1,4-N-acetylgalactosaminidase (α-1,4-galactosaminogalactan hydrolase; PelA; PA3064)	3.2.1.-	pubmed	Pseudomonas aeruginosa PAO1	AAG06452.1	Q9HZE4	5TCB[A]5TSY[A]	Bacteria	2	GH166
+exo-α-galactosidase variant A (GlaA)	3.2.1.-	pubmed	Bacteroides fragilis	CAJ33350.1	Q5L7M8		Bacteria	9	GH110
+α-galactosidase (BF4251) (Gal110A)	3.2.1.22	pubmed	Bacteroides fragilis NCTC 9343	CAH09922.1	Q5L7M8		Bacteria	9	GH110
+α-1,3-galactosidase (GlaB;BF0845) (Gal110B)	3.2.1.-	pubmed	Bacteroides fragilis NCTC 9343	CAJ33351.1	Q5LGZ8		Bacteria	9	GH110
+α-1,3-galactosidase (GlaB;BF0845) (Gal110B)	3.2.1.-	pubmed	Bacteroides fragilis NCTC 9343	CAH06588.1	Q5LGZ8		Bacteria	9	GH110
+α-galactosidase (GlaA;BT3160;BT_3160) (Gal110A)	3.2.1.22	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO78266.1	Q8A2Z5		Bacteria	9	GH110
+α-galactosidase (GlaA;BT3160;BT_3160) (Gal110A)	3.2.1.22	pubmed	Bacteroides thetaiotaomicron VPI-5482	CAJ33352.1	Q8A2Z5		Bacteria	9	GH110
+α-1,3-galactosidase (GlaB;BT4251;BT_4251) (Gal110B)	3.2.1.-	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO79356.1	Q89ZX0		Bacteria	9	GH110
+α-1,3-galactosidase (GlaB;BT4251;BT_4251) (Gal110B)	3.2.1.-	pubmed	Bacteroides thetaiotaomicron VPI-5482	CAJ33353.1	Q89ZX0		Bacteria	9	GH110
+α-galactosidase (AgaBb)	3.2.1.-	pubmed	Bifidobacterium bifidum JCM 1254	BAM76380.1	L8B3G2		Bacteria	9	GH110
+α-galactosidase (Gla;SAV7268) (Gal110A)	3.2.1.22	pubmed	Streptomyces avermitilis MA-4680 = NBRC 14893	CAJ33349.1	Q826C5		Bacteria	9	GH110
+α-galactosidase (Gla;SAV7268) (Gal110A)	3.2.1.22	pubmed	Streptomyces avermitilis MA-4680 = NBRC 14893	BAC74979.1	Q826C5		Bacteria	9	GH110

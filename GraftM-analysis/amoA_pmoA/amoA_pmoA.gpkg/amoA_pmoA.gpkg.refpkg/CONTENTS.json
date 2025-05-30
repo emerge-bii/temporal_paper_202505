@@ -1,0 +1,29 @@
+{
+    "metadata": {
+        "create_date": "2022-06-20 15:42:18",
+        "format_version": "1.1",
+        "locus": "/tmp/tmpbortwm6a/combined"
+    },
+    "files": {
+        "phylo_model": "phylo_model_2oe4s7y.json",
+        "aln_fasta": "combined_deduplicated_aligned.fasta",
+        "seq_info": "combined_seqinfo.csv",
+        "taxonomy": "combined_taxonomy.csv",
+        "tree": "graftm_ztyt4ll.tree",
+        "tree_stats": "graftm3yjwuye1.tree_log"
+    },
+    "md5": {
+        "phylo_model": "0fc6f604a31a3404573efac26733437e",
+        "aln_fasta": "3b4d3ffc36402f5257ee9c214967cd9b",
+        "seq_info": "1929c68a9bb4e1ad915ab7cfa417e374",
+        "taxonomy": "6f85de729348956e266b9c8c01dd99bb",
+        "tree": "02c4afd58a1d0644170879cc0144965a",
+        "tree_stats": "ee6f0706aef5a6e91be028dbc4ad2df5"
+    },
+    "log": [
+        "Stripped refpkg (removed 0 files)",
+        "Loaded initial files into empty refpkg"
+    ],
+    "rollback": null,
+    "rollforward": null
+}

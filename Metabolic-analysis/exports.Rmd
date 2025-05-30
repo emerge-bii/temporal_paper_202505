@@ -1,0 +1,235 @@
+---
+title: "Exports"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+library(ggupset)
+library(cowplot)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+##########################
+### Save pathway calls ###
+##########################
+product_refined %>%
+  filter(call) %>%
+  select(genome, subpathway) %>%
+  arrange(genome, subpathway) %>%
+  write_csv(here("data", "MAG_pathway_calls.csv"))
+
+#######################
+### Specialisations ###
+#######################
+specialisations %>%
+  write_csv(here("data", "MAG_specialisations.csv"))
+
+#############################
+### Compare cluster calls ###
+#############################
+rep_product_refined <- product_refined %>%
+  left_join(genome_clusters) %>%
+  filter(genome == representative) %>%
+  select(-genome) %>%
+  rename(rep_call = call)
+
+comb_product_refined <- product_refined %>%
+  left_join(genome_clusters) %>%
+  filter(genome != representative) %>%
+  left_join(rep_product_refined) %>%
+  group_by(representative, subpathway) %>%
+  summarise(call = any(call), rep_call = first(rep_call)) %>%
+  mutate(diff = map2_chr(rep_call, call, str_c))
+
+comb_product_refined %>%
+  group_by(diff) %>%
+  summarise(n = n())
+
+comb_product_refined %>%
+  filter(!rep_call, call) %>%
+  group_by(subpathway) %>%
+  summarise(n = n()) %>%
+  ggplot(aes(reorder(subpathway, desc(n)), n)) +
+  geom_col() +
+  ylab("Counts of false-in-representative to true-in-cluster") +
+  coord_flip() +
+  theme_cowplot() +
+  theme(axis.title.y = element_blank())
+ggsave(here("Metabolic-analysis", "rep_call_changes.png"), dpi = 900, height = 8, width = 12)
+
+comb_product_refined %>%
+  filter(!rep_call, call) %>%
+  left_join(
+    trimmed_mean$rel_abund %>%
+      pivot_longer(-genome, names_to = "temporal_sample_id", values_to = "rel_abund") %>%
+      left_join(sample_metadata %>% select(temporal_sample_id, Habitat__)) %>%
+      filter(!is.na(Habitat__)) %>%
+      group_by(genome, Habitat__) %>%
+      summarise(rel_abund = mean(rel_abund)),
+    by = c("representative" = "genome")
+    ) %>%
+  filter(!is.na(rel_abund)) %>%
+  group_by(subpathway, Habitat__) %>%
+  summarise(n = sum(rel_abund)) %>%
+  ggplot(aes(reorder(subpathway, desc(n), FUN = sum), n)) +
+  geom_col() +
+  facet_grid(cols = vars(Habitat__)) +
+  ylab("Summed mean relative abundance of false-in-representative to true-in-cluster") +
+  coord_flip() +
+  theme_cowplot() +
+  theme(axis.title.y = element_blank())
+ggsave(here("Metabolic-analysis", "rep_call_changes_rel.png"), dpi = 900, height = 8, width = 12)
+
+#############################
+### CAZy overlap analysis ###
+#############################
+cazy_info <- cazy_definitions %>%
+  select(subpathway, cazy_id) %>%
+  distinct() %>%
+  mutate(weight = 1) %>%
+  # Mucin genes have low prevalence in our dataset
+  filter(subpathway != "Mucin")
+
+cazy_prevalence <- distillate %>%
+  filter(gene_id %in% cazy_definitions$cazy_id, call > 0) %>%
+  select(cazy_id = gene_id, genome) %>%
+  distinct() %>%
+  right_join(cazy_info) %>%
+  left_join(
+    product_refined %>%
+      filter(str_detect(subpathway, "CAZy")) %>%
+      mutate(subpathway = str_remove(subpathway, "CAZy-"))
+  ) %>%
+  filter(call) %>%
+  mutate(
+    cazy_id = str_c(cazy_id, genome, sep = "_"),
+    weight = 1
+    ) %>%
+  select(subpathway, cazy_id, weight)
+
+cazy_expression <- metaT_pathways %>%
+  filter(pathway == "CAZy") %>%
+  select(genome, cazy_id = label_id, subpathway, tpm) %>%
+  distinct() %>%
+  group_by(genome, cazy_id, subpathway) %>%
+  summarise(tpm = first(tpm)) %>%
+  ungroup() %>%
+  left_join(
+    product_refined %>%
+      filter(str_detect(subpathway, "CAZy")) %>%
+      mutate(subpathway = str_remove(subpathway, "CAZy-"))
+  ) %>%
+  filter(call) %>%
+  mutate(cazy_id = str_c(cazy_id, genome, sep = "_")) %>%
+  select(subpathway, cazy_id, weight = tpm)
+
+plot_cazy_upset <- function(filename, info = cazy_info) {
+  print(
+    info %>%
+      group_by(cazy_id) %>%
+      summarise(weight = first(weight), n = n()) %>%
+      group_by(n > 1) %>%
+      summarise(weight = sum(weight))
+  )
+
+  upset_plot <- info %>%
+    group_by(cazy_id) %>%
+    summarise(subpathways = list(subpathway), weight = first(weight)) %>%
+    ggplot(aes(x = subpathways, weight = weight)) +
+    geom_bar() +
+    scale_x_upset(order_by = "degree", n_intersections = 50, n_sets = 18) +
+    xlab("Intersections") +
+    ylab("Overlapping count")
+
+  count_plot <- info %>%
+    select(subpathway) %>%
+    count(subpathway) %>%
+    mutate(subpathway = fct_reorder(as.factor(subpathway), n)) %>%
+    ggplot(aes(y = n, x = subpathway)) +
+    geom_col() +
+    coord_flip() +
+    scale_y_reverse() +
+    xlab("") +
+    ylab("") +
+    theme(axis.ticks.y = element_blank(), axis.text.y = element_blank())
+
+  side_plot <- cowplot::plot_grid(NULL, count_plot + theme(plot.margin = unit(c(1, -5, -5, 1), "pt")), ncol = 1, rel_heights = c(1.4, 1))
+  cowplot::plot_grid(side_plot, upset_plot, nrow = 1, rel_widths = c(1, 3))
+
+  ggsave(filename, path = here("Metabolic-analysis"), dpi = 900, height = 8, width = 12)
+}
+
+plot_cazy_upset("cazy_upset.png")
+plot_cazy_upset("cazy_upset_prevalence.png", info = cazy_prevalence)
+plot_cazy_upset("cazy_upset_tpm.png", info = cazy_expression)
+
+#####################################################
+### Filter CAZy calls with only overlapping genes ###
+#####################################################
+cazy_overlap <- cazy_definitions %>%
+  select(subpathway, cazy_id) %>%
+  distinct() %>%
+  group_by(cazy_id) %>%
+  count() %>%
+  filter(n > 1)
+
+pathway_overlap <- product_refined %>%
+  filter(call, startsWith(subpathway, "CAZy")) %>%
+  select(-call) %>%
+  mutate(subpathway = str_remove(subpathway, "CAZy-")) %>%
+  left_join(cazy_definitions) %>%
+  mutate(overlap = map_lgl(cazy_id, ~ . %in% cazy_overlap$cazy_id)) %>%
+  left_join(distillate %>% select(genome, cazy_id = gene_id, call)) %>%
+  filter(call > 0) %>%
+  group_by(genome, subpathway) %>%
+  summarise(nonoverlap = any(!overlap))
+
+pathway_overlap %>%
+  group_by(nonoverlap) %>%
+  count()
+
+pathway_overlap %>%
+  rename(keep = nonoverlap) %>%
+  group_by(subpathway, keep) %>%
+  summarise(n = n()) %>%
+  ggplot(aes(reorder(subpathway, desc(n), FUN = sum), n, fill = keep)) +
+  geom_col() +
+  scale_fill_manual(breaks = c(TRUE, FALSE), values = c(colour_brewer$blue, colour_brewer$red)) +
+  ylab("Pathway counts") +
+  coord_flip() +
+  theme_cowplot() +
+  theme(axis.title.y = element_blank())
+ggsave(here("Metabolic-analysis", "remove_overlap_only_pathways.png"), dpi = 900, height = 8, width = 12)
+
+#########################################
+### Save gene_ids for GraftM analysis ###
+#########################################
+graftm_kegg_ids <- c(
+  "K11180", # dsrA (reductive/oxidative)
+  "K11181", # dsrB (reductive/oxidative)
+  "K00370", # narG/nxrA
+  "K00371", # narH/nxrB
+  "K10944", # pmoA/amoA
+  "K10945", # pmoB/amoB
+  "K10946", # pmoC/amoC
+  "K04561", # norZ/norB
+  "K00399", # mcrA
+  "K00401", # mcrB
+  "K00402"  # mcrG
+)
+
+annotations <- read_dram_annotations(filename = "all_annotations_raw.tsv") %>%
+  filter(ko_id %in% graftm_kegg_ids)
+
+annotations %>%
+  left_join(genome_info %>% select(genome, taxonomy)) %>%
+  select(ko_id, gene_id, taxonomy) %>%
+  arrange(ko_id, gene_id) %>%
+  write_tsv(here("data", "gene_ids_for_GraftM.tsv"))
+```

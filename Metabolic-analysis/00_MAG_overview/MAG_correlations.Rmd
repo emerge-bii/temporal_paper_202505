@@ -1,0 +1,444 @@
+---
+title: "MAG correlations"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  error = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center")
+
+library(cowplot)
+library(propr)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+
+main_dir <- here("Metabolic-analysis", "00_MAG_overview")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("palsa", "bog", "fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+```
+
+# Correlation of genomes across samples
+
+```{r correlations}
+output_dir <- here(main_dir, "correlations")
+dir.create(output_dir, recursive = TRUE)
+
+# Calculate Rho correlations
+calculate_rho <- function(sample_ids = sample_metadata$temporal_sample_id) {
+  comb_df <- trimmed_mean$rel_abund %>%
+    select(genome, all_of(sample_ids)) %>%
+    pivot_longer(-genome, names_to = "temporal_sample_id", values_to = "rel_abund") %>%
+    pivot_wider(names_from = genome, values_from = rel_abund)
+
+  comb_rho <- comb_df %>%
+    select(-temporal_sample_id) %>%
+    # Filter out genomes with >90% zero abundance
+    select(where(~ sum(. != 0) > length(.) / 10)) %>%
+    # Box-Cox tranformation strategy for zeros
+    propr(metric = "rho", alpha = 0.5)
+
+  comb_cutoffs <- updateCutoffs(comb_rho, cutoff = seq(0.05, 0.95, 0.05), ncores = 20)
+  chosen_cutoff <- comb_cutoffs@fdr %>%
+    as_tibble() %>%
+    filter(FDR < 0.05) %>%
+    slice(1) %>%
+    `$`(cutoff)
+
+  comb_clr <- comb_rho@logratio %>%
+    as_tibble() %>%
+    mutate(temporal_sample_id = comb_df$temporal_sample_id) %>%
+    pivot_longer(-temporal_sample_id, names_to = "genome", values_to = "clr_abund") %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, Habitat__))
+
+  comb_propo_unfiltered <- comb_rho@matrix %>%
+    as_tibble() %>%
+    mutate(genome1 = comb_rho@matrix %>% rownames()) %>%
+    pivot_longer(-genome1, names_to = "genome2", values_to = "rho") %>%
+    # Remove visa versa correlations
+    mutate(
+      diff = map2_chr(genome1, genome2,
+        ~ c(.x, .y) %>% sort() %>% str_c(collapse = "=")
+      )) %>%
+    distinct(diff, .keep_all = TRUE)
+
+  comb_propo <- comb_propo_unfiltered %>%
+    # updateCutoffs is only valid for positive values of rho
+    filter(rho > chosen_cutoff, genome1 != genome2)
+
+  return(list("comb_propo" = comb_propo, "comb_clr" = comb_clr, "chosen_cutoff" = chosen_cutoff,
+              "comb_rho" = comb_rho, "comb_propo_unfiltered" = comb_propo_unfiltered))
+}
+
+rho_all_habitat <- calculate_rho()
+rho_palsa <- sample_metadata %>% filter(Habitat__ == "Palsa") %>% `$`(temporal_sample_id) %>% calculate_rho()
+rho_bog <- sample_metadata %>% filter(Habitat__ == "Bog") %>% `$`(temporal_sample_id) %>% calculate_rho()
+rho_fen <- sample_metadata %>% filter(Habitat__ == "Fen") %>% `$`(temporal_sample_id) %>% calculate_rho()
+
+find_high_corr <- function(genome, num_out = 10, df = rho_all_habitat$comb_propo,
+                           palsa = rho_palsa$comb_propo, bog = rho_bog$comb_propo, fen = rho_fen$comb_propo) {
+  df %>%
+    arrange(desc(rho)) %>%
+    filter(str_detect(diff, genome)) %>%
+    slice_head(n = num_out) %>%
+    left_join(palsa %>% rename(rho_palsa = rho)) %>%
+    left_join(bog %>% rename(rho_bog = rho)) %>%
+    left_join(fen %>% rename(rho_fen = rho)) %>%
+    filter(!is.na(rho_palsa) | !is.na(rho_bog) | !is.na(rho_fen)) %>%
+    mutate(other_genome = map_chr(diff, str_remove_all, pattern = str_c(genome, "|="))) %>%
+    left_join(genome_info %>% select(other_genome = genome, taxonomy))
+}
+
+create_corr_plot <- function(sym_1, sym_2, abund = rho_all_habitat$comb_clr,
+  corr = rho_all_habitat$comb_propo, corr_palsa = rho_palsa$comb_propo, corr_bog = rho_bog$comb_propo, corr_fen = rho_fen$comb_propo) {
+  sym_df <- abund %>%
+    filter(genome %in% c(sym_1, sym_2)) %>%
+    mutate(genome = map_chr(genome, ~ ifelse(. == sym_1, "one", "two"))) %>%
+    pivot_wider(names_from = genome, values_from = clr_abund)
+
+  annotation <- str_c(
+    str_c("overall rho = ", corr %>% filter(str_detect(diff, sym_1), str_detect(diff, sym_2)) %>% `$`(rho) %>% round(2)),
+    str_c("palsa rho = ", corr_palsa %>% filter(str_detect(diff, sym_1), str_detect(diff, sym_2)) %>% `$`(rho) %>% round(2)),
+    str_c("bog rho = ", corr_bog %>% filter(str_detect(diff, sym_1), str_detect(diff, sym_2)) %>% `$`(rho) %>% round(2)),
+    str_c("fen rho = ", corr_fen %>% filter(str_detect(diff, sym_1), str_detect(diff, sym_2)) %>% `$`(rho) %>% round(2)),
+    sep = "; "
+    )
+
+  sym_df %>%
+    ggplot(aes(one, two, colour = Habitat__)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE, colour = "black") +
+    geom_hline(yintercept = 0, colour = "black") +
+    geom_vline(xintercept = 0, colour = "black") +
+    scale_colour_manual(values = colour_habitat, breaks = str_to_title(habitat_levels)) +
+    xlab(sym_1) +
+    ylab(sym_2) +
+    labs(caption = annotation) +
+    theme_cowplot()
+
+  filename <- c(sym_1, sym_2) %>%
+    str_c(collapse = "=") %>%
+    str_c(".png")
+  ggsave(filename, path = output_subdir, dpi = 900)
+}
+
+# Save significant correlations
+rho_all_habitat$comb_propo_unfiltered %>%
+  left_join(rho_palsa$comb_propo %>% rename(rho_palsa = rho)) %>%
+  left_join(rho_bog$comb_propo %>% rename(rho_bog = rho)) %>%
+  left_join(rho_fen$comb_propo %>% rename(rho_fen = rho)) %>%
+  select(-diff) %>%
+  mutate(overall_sig = rho > rho_all_habitat$chosen_cutoff & (!is.na(rho_palsa) | !is.na(rho_bog) | !is.na(rho_fen))) %>%
+  write_csv(here(output_dir, "MAG_correlations.csv"))
+
+####################################
+### Hydrogenotrophic methanogens ###
+####################################
+output_subdir <- here(output_dir, "hydrogenotrophic_methanogens")
+dir.create(output_subdir, recursive = TRUE)
+
+# Methanoflorens stordalenmirensis/Acidoflorens stordalenmirensis
+find_high_corr("PLGY01")
+create_corr_plot("PLGY01", "20170700_S25_26") # 1st (A. stor)
+create_corr_plot("PLGY01", "20140700_E22_12") # 2nd (Dormibacterota)
+create_corr_plot("PLGY01", "20110800_S1D_5") # 3rd (Actinobacteriota)
+
+# Methanoflorens crilli/Acidoflorens sp. 2
+find_high_corr("PMEE01") # No significant correlations
+create_corr_plot("PMEE01", "20100900_E1D_10") # (A. sp. 2)
+create_corr_plot("PMEE01", "20110800_E1D_1") # 1st in habitats (Chloroflexota)
+create_corr_plot("PMEE01", "20120600_E1D_53") # 2nd in habitats (Bacteroidota)
+
+# 20120700_S1D_59
+find_high_corr("20120700_S1D_59")
+create_corr_plot("20120700_S1D_59", "20120700_S1D_13") # 1st (Acidobacteriota)
+create_corr_plot("20120700_S1D_59", "20120700_S1D_41") # 2nd (Acidobacteriota)
+create_corr_plot("20120700_S1D_59", "20120700_S1D_85") # 3rd (Verrucomicrobiota)
+
+################################
+### Acetoclastic methanogens ###
+################################
+output_subdir <- here(output_dir, "acetoclastic_methanogens")
+dir.create(output_subdir, recursive = TRUE)
+
+
+# 3300037104_19
+find_high_corr("3300037104_19")
+create_corr_plot("3300037104_19", "20160700_E13_6") # 1st (Desulfobacterota)
+create_corr_plot("3300037104_19", "20150700_E34_11") # 2nd (Desulfobacterota)
+create_corr_plot("3300037104_19", "20120600_E3D_29") # 1st in habitats (Bacteroidota)
+
+# PMNG01
+find_high_corr("PMNG01")
+create_corr_plot("PMNG01", "20120600_E2D_9") # 1st (Gemmatimonadota)
+create_corr_plot("PMNG01", "20100900_E1D_10") # 2nd (Acidobacteriota)
+
+#######################
+### Terracidiphilus ###
+#######################
+output_subdir <- here(output_dir, "terracidiphilus")
+dir.create(output_subdir, recursive = TRUE)
+
+
+# 20120800_E1D_14
+find_high_corr("20120800_E1D_14")
+create_corr_plot("20120800_E1D_14", "20110800_S2M_3") # 1st (Acidobacteriota)
+create_corr_plot("20120800_E1D_14", "20140700_E14_11") # 2nd (Actinobacteriota)
+create_corr_plot("20120800_E1D_14", "20110600_S1D_17") # 3rd (Acidobacteriota)
+
+# 20120800_E3X_27
+find_high_corr("20120800_E3X_27")
+create_corr_plot("20120800_E3X_27", "20170700_S25_26") # 1st (Acidobacteriota)
+create_corr_plot("20120800_E3X_27", "PLGY01") # 2nd (Halobacteriota)
+create_corr_plot("20120800_E3X_27", "20110800_S1D_5") # 3rd (Actinobacteriota)
+create_corr_plot("20120800_E3X_27", "20120700_S1X_2") # 4th (Acidobacteriota)
+
+####################
+### Changshengia ###
+####################
+output_subdir <- here(output_dir, "changshengia")
+dir.create(output_subdir, recursive = TRUE)
+
+
+# 10 Changshengia genus reps; 22 non-Changshengia Dormibacterota reps
+changshengia_clade_ws2018 <- c("PNAN01", "PLJM01", "PNAG01", "PKVF01", "PLYZ01", "PKVN01", "PLZA01", "PMOL01", "PLCX01", "PKXZ01", "PLOF01", "PLBU01", "PMRE01", "PLYD01", "PNBE01", "PKYW01", "PKXE01", "PLNE01", "PKWB01", "PMTE01", "PLAK01", "PLWW01", "PKZG01", "PMYJ01", "PKZZ01", "PLDZ01", "PMUQ01", "PKXL01", "PMFC01", "PMGH01", "PLTQ01", "PLCQ01", "PLXN01", "PLAX01", "PLDE01", "PLCL01", "PMAJ01", "PLTL01", "PKYV01", "PLXL01", "PLKC01", "PMPA01", "PLFT01", "PKVS01", "PLAW01", "PLDL01", "PKXR01")
+
+changshengia_genomes <- genome_info %>%
+  filter(str_detect(taxonomy, "g__UBA8260")) %>%
+  `$`(genome)
+changshengia_reps <- genome_clusters %>%
+  filter(genome %in% changshengia_genomes) %>%
+  distinct(representative) %>%
+  `$`(representative)
+
+# 20140700_E22_12
+find_high_corr("20140700_E22_12")
+create_corr_plot("20140700_E22_12", "PLGY01") # 1st (M. stor)
+create_corr_plot("20140700_E22_12", "20110800_S1M_17") # 2nd (Actinobacteriota)
+create_corr_plot("20140700_E22_12", "20170700_S25_9") # 3rd (Acidobacteriota)
+
+# 20130700_C2X_13
+find_high_corr("20130700_C2X_13")
+create_corr_plot("20130700_C2X_13", "20120800_E1D_18") # 1st (Acidobacteriota)
+
+# 20150700_S23_3
+find_high_corr("20150700_S23_3")
+create_corr_plot("20150700_S23_3", "20170700_S24_14") # 1st (Acidobacteriota)
+
+# 20120500_P26_8
+find_high_corr("20120500_P26_8")
+create_corr_plot("20120500_P26_8", "PLXS01") # 1st (Verrucomicrobiota)
+
+# 20110800_E2D_15
+find_high_corr("20110800_E2D_15")
+create_corr_plot("20110800_E2D_15", "20120500_P26_8") # 1st (Dormibacterota)
+create_corr_plot("20110800_E2D_15", "20120500_P26_5") # 2nd (Acidobacteriota)
+create_corr_plot("20110800_E2D_15", "20120700_P3D_12") # 3rd (Acidobacteriota)
+
+# PLNE01
+find_high_corr("PLNE01")
+create_corr_plot("PLNE01", "20120500_P26_8") # 1st (Dormibacterota)
+create_corr_plot("PLNE01", "20170700_S34_25") # 2nd (Desulfobacterota)
+create_corr_plot("PLNE01", "20120700_S1D_13") # 3rd (Acidobacteriota)
+
+# Bog.None.R3.T0.JGI.BFC.metaspades_bin.148_73.61_7.22
+find_high_corr("Bog.None.R3.T0.JGI.BFC.metaspades_bin.148_73.61_7.22") # No significant correlations
+
+#####################
+### Methanotrophs ###
+#####################
+output_subdir <- here(output_dir, "methanotrophs")
+dir.create(output_subdir, recursive = TRUE)
+
+# Gammaproteobacteria/Methylococcales/Methylomonadaceae
+# MB2/Gammaproteobacteria_fen_1212/PMJA01
+find_high_corr("20120600_E3D_8")
+create_corr_plot("20120600_E3D_8", "20120600_E2D_33") # 1st (Actinobacteriota)
+create_corr_plot("20120600_E3D_8", "20120600_E2D_24") # 2nd (Actinobacteriota)
+create_corr_plot("20120600_E3D_8", "20120600_E1D_34") # 3rd (Proteobacteria)
+
+# Alphaproteobacteria/Rhizobiales/Beijerinckiaceae/Methylocella
+# USC1/Alphaproteobacteria_bog_942/PLUZ01; USC2/Alphaproteobacteria_bog_920/PMEX01
+find_high_corr("20130700_S1X_7")
+create_corr_plot("20130700_S1X_7", "20110700_S3M_15") # 1st (Acidobacteriota)
+create_corr_plot("20130700_S1X_7", "20160700_S33_6") # 2nd (Proteobacteria)
+create_corr_plot("20130700_S1X_7", "20150700_S23_2") # 3rd (Proteobacteria)
+
+# Alphaproteobacteria/Rhizobiales/Beijerinckiaceae/Methylocystis
+# MC1/Alphaproteobacteria_bog_906/PLAI01
+find_high_corr("20140700_S12_15")
+create_corr_plot("20140700_S12_15", "Bog.Unlabelled.R3.T3.F3.JGI.BFC.metaspades_bin.2_81.64_4.58") # 1st (Proteobacteria)
+create_corr_plot("20140700_S12_15", "Bog.None.R2.T0.trimmomatic.megahit_bin.358_96.68_6.10") # 2nd (Proteobacteria)
+
+# Gammaproteobacteria/Steroidobacterales/Steroidobacteraceae/PALSA-1196
+# 20120600_P3M_5
+find_high_corr("20120600_P3M_5")
+create_corr_plot("20120600_P3M_5", "20110700_P1S_10") # 1st (Actinobacteriota)
+create_corr_plot("20120600_P3M_5", "20120600_P3M_2") # 2nd (Acidobacteriota)
+create_corr_plot("20120600_P3M_5", "PMST01") # 3rd (Proteobacteria)
+
+####################################
+### Dylan's M. stor correlations ###
+####################################
+output_subdir <- here(output_dir, "dylan")
+dir.create(output_subdir, recursive = TRUE)
+
+create_corr_plot("PLGY01", "20110700_S2D_21")
+create_corr_plot("PLGY01", "20110800_E3D_9")
+create_corr_plot("PLGY01", "20110800_S1D_14")
+create_corr_plot("PLGY01", "20110800_S1D_5")
+create_corr_plot("PLGY01", "20110800_S1M_17")
+create_corr_plot("PLGY01", "20120700_S1D_89")
+create_corr_plot("PLGY01", "20120700_S1X_2")
+create_corr_plot("PLGY01", "20140700_E22_12")
+create_corr_plot("PLGY01", "20140700_S15_2")
+create_corr_plot("PLGY01", "20160700_S15_2")
+create_corr_plot("PLGY01", "20170700_S24_10")
+create_corr_plot("PLGY01", "20170700_S25_25")
+create_corr_plot("PLGY01", "20170700_S25_26")
+create_corr_plot("PLGY01", "20170700_S25_36")
+create_corr_plot("PLGY01", "20170700_S25_9")
+create_corr_plot("PLGY01", "20170700_S34_41")
+create_corr_plot("PLGY01", "3300036888_6")
+create_corr_plot("PLGY01", "3300037175_6")
+create_corr_plot("PLGY01", "PLGF01")
+create_corr_plot("PLGY01", "PLNV01")
+
+create_corr_plot("20170700_S25_26", "20110700_S2D_21")
+create_corr_plot("20170700_S25_26", "20110800_E3D_9")
+create_corr_plot("20170700_S25_26", "20110800_S1D_14")
+create_corr_plot("20170700_S25_26", "20110800_S1D_5")
+create_corr_plot("20170700_S25_26", "20110800_S1M_17")
+create_corr_plot("20170700_S25_26", "20120700_S1X_2")
+create_corr_plot("20170700_S25_26", "20170700_S24_10")
+create_corr_plot("20170700_S25_26", "20170700_S25_1")
+create_corr_plot("20170700_S25_26", "20170700_S25_38")
+create_corr_plot("20170700_S25_26", "20170700_S25_9")
+create_corr_plot("20170700_S25_26", "PLGY01")
+
+########################
+### Misc comparisons ###
+########################
+output_subdir <- here(output_dir, "other")
+dir.create(output_subdir, recursive = TRUE)
+
+find_high_corr("=", num_out = Inf)
+create_corr_plot("20110800_S1S_1", "20110800_S3S_12") # 1st (Actinobacteriota; Eremiobacterota)
+create_corr_plot("20160700_E13_6", "20120800_E3S_15") # 2nd (Desulfobacterota; Bacteroidota)
+create_corr_plot("20160700_E33_2", "20120600_E1D_53") # 3rd (Chloroflexota; Bacteroidota)
+create_corr_plot("20120700_P3D_102", "20120800_E3S_6") # 4th (Acidobacteriota; Acidobacteriota)
+create_corr_plot("20120600_E3D_49", "20120600_E3D_50") # 5th (Actinobacteriota; Bacteroidota)
+create_corr_plot("3300036929_5", "3300037085_4") # 6th (Verrucomicrobiota; Verrucomicrobiota)
+create_corr_plot("PMMV01", "20170700_S35_8") # 7th (Methanobacteriota; Thermoproteota)
+create_corr_plot("20111000_E3D_3", "3300036929_5") # 8th (Verrucomicrobiota; Chloroflexota)
+create_corr_plot("20110700_P3S_5", "20120600_P2M_5") # 9th (Acidobacteriota; Acidobacteriota)
+create_corr_plot("20160700_E33_2", "3300036929_5") # 10th (Chloroflexota; Verrucomicrobiota)
+
+#############
+### CP/TP ###
+#############
+output_subdir <- here(output_dir, "cp-tp")
+dir.create(output_subdir, recursive = TRUE)
+
+find_high_corr("20120700_S3D_8")
+find_high_corr("20140700_S36_11")
+create_corr_plot("20120700_S3D_8", "20140700_S36_11")
+
+cp_genomes <- genome_clusters %>% filter(representative == "20120700_S3D_8") %>% `$`(genome)
+tp_genomes <- genome_clusters %>% filter(representative == "20140700_S36_11") %>% `$`(genome)
+
+trimmed_mean$rel_abund %>%
+  pivot_longer(-genome, names_to = "temporal_sample_id", values_to = "rel_abund") %>%
+  filter(genome %in% c(cp_genomes, tp_genomes)) %>%
+  filter(rel_abund > 0) %>%
+  arrange(desc(rel_abund))
+
+#####################
+### Bathyarchaeia ###
+#####################
+output_subdir <- here(output_dir, "bathyarchaeia")
+dir.create(output_subdir, recursive = TRUE)
+
+# 20120600_E3D_36
+find_high_corr("20120600_E3D_36")
+create_corr_plot("20120600_E3D_36", "20120600_E3D_13") # 1st (Bacteroidota)
+create_corr_plot("20120600_E3D_36", "PMCI01") # 2nd (Desulfobacterota)
+create_corr_plot("20120600_E3D_36", "20110800_E1S_5") # 3rd (Halobacteriota)
+
+# 20120700_S1D_12
+find_high_corr("20120700_S1D_12")
+create_corr_plot("20120700_S1D_12", "20120700_S1D_97") # 1st (Desulfobacterota)
+create_corr_plot("20120700_S1D_12", "20120700_S1D_103") # 2nd (Planctomycetota)
+
+# 20120700_S1D_70
+find_high_corr("20120700_S1D_70")
+create_corr_plot("20120700_S1D_70", "20120700_S1D_24") # 1st (Planctomycetota)
+create_corr_plot("20120700_S1D_70", "20120700_S1D_103") # 2nd (Planctomycetota)
+
+# 20170700_S35_8
+find_high_corr("20170700_S35_8")
+create_corr_plot("20170700_S35_8", "PMMV01") # 1st (Methanobacteriota)
+create_corr_plot("20170700_S35_8", "PMAZ01") # 2nd (Thermoproteota)
+create_corr_plot("20170700_S35_8", "20120600_E3D_2") # 3rd (Acidobacteriota)
+
+# 3300038519_6
+find_high_corr("3300038519_6")
+create_corr_plot("3300038519_6", "20170700_S35_8") # 1st (Thermoproteota)
+create_corr_plot("3300038519_6", "PMAZ01") # 2nd (Thermoproteota)
+create_corr_plot("3300038519_6", "PMBA01") # 3rd (Acidobacteriota)
+create_corr_plot("3300038519_6", "20130700_C1D_10") # 4th (Myxococcota)
+
+# PMAZ01
+find_high_corr("PMAZ01")
+create_corr_plot("PMAZ01", "PMMV01") # 1st (Methanobacteriota)
+create_corr_plot("PMAZ01", "20120600_E3D_25") # 2nd (Actinobacteriota)
+create_corr_plot("PMAZ01", "20110800_E1S_5") # 3rd (Halobacteriota)
+
+######################################
+### Equivalent syntrophic partners ###
+######################################
+output_subdir <- here(output_dir, "partnerships")
+dir.create(output_subdir, recursive = TRUE)
+
+# create set of family-level taxonomies for each genome-genome pair with significant correlation within each habitat
+family_taxonomy <- genome_info %>% select(genome, taxonomy) %>% mutate(taxonomy = str_extract(taxonomy, ".*(?=;g__)"))
+get_taxonomy_pairs <- function(df, habitat) {
+  df %>%
+    left_join(family_taxonomy, by = c("genome1" = "genome")) %>%
+    rename(taxonomy1 = taxonomy) %>%
+    left_join(family_taxonomy, by = c("genome2" = "genome")) %>%
+    rename(taxonomy2 = taxonomy) %>%
+    distinct(taxonomy1, taxonomy2) %>%
+    mutate(!!habitat := TRUE)
+}
+
+taxonomy_palsa <- rho_palsa$comb_propo %>%
+  get_taxonomy_pairs("palsa")
+taxonomy_bog <- rho_bog$comb_propo %>%
+  get_taxonomy_pairs("bog")
+taxonomy_fen <- rho_fen$comb_propo %>%
+  get_taxonomy_pairs("fen")
+
+taxonomy_all <- taxonomy_palsa %>%
+  full_join(taxonomy_bog, by = c("taxonomy1", "taxonomy2")) %>%
+  full_join(taxonomy_fen, by = c("taxonomy1", "taxonomy2"))
+
+taxonomy_all %>% group_by(palsa, bog, fen) %>% summarise(n = n())
+```

@@ -1,0 +1,304 @@
+---
+title: "SingleM appraise summary"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  error = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center")
+
+library(cowplot)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+output_dir <- here("SingleM-analysis", "summary")
+dir.create(output_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+
+habitat_levels <- c("Palsa", "Bog", "Fen", "Collapsed Palsa")
+habitat_labels <- c("palsa", "bog", "fen", "collapsed")
+
+depth_groups <- c(-Inf, 1, 5, 10, 20, 30, 40, 50, 60, 70)
+depth_levels <- c("1", "5", "10", "20", "30", "40", "50", "60", "70")
+depth_labels <- c("1", "5", "10", "20", "30", "40", "50", "60", "70")
+
+year_levels <- c(2011, 2012, 2013, 2014, 2015, 2016, 2017)
+year_labels <- c(11, 12, 13, 14, 15, 16, 17)
+
+
+singlem_appraise_summary <- singlem_appraise_summary %>%
+  left_join(sample_metadata, by = "temporal_sample_id") %>%
+  mutate(
+    habitat = factor(Habitat__, levels = habitat_levels),
+    depthcm = cut(DepthMin__, depth_groups, labels = depth_levels),
+    depthcm = factor(depthcm, levels = depth_levels),
+    year    = factor(Year__, levels = year_levels),
+  ) %>%
+  filter(!is.na(habitat))
+
+bar_plot_layers <- list(
+  stat_summary(fun=mean, geom="bar", colour=colour_brewer$grey, fill=colour_brewer$blue, size=1),
+  stat_summary(fun.data=mean_sdl, fun.args=list(mult=1), geom="errorbar", size=1, colour=colour_brewer$grey, width=0.5),
+  scale_x_discrete(breaks = habitat_levels, labels = habitat_labels),
+  scale_y_continuous(expand = expansion(mult = c(0, .1)), limits = c(0, 100)),
+  theme_cowplot()
+)
+```
+
+# Input data
+
+254 read files from habitat samples (61 palsa, 74 bog, 76 fen, 10 carex, 18 collapsed palsa and 15 outer collapsed palsa).
+1,076 assemblies from 2010-2017 set (379), JGI set (368) and SIP experiments (329 metaspades or megahit).
+13,290 bins with estimated >=70\% completeness and <10\% contamination from Woodcroft 2018 (1,529), Cronin 2021 (4,419), JGI (787) and SIP experiments (6,555).
+And 1,806 dereplicated bins at 95\%
+
+Analysed using SingleM pipe/appraise with 59 marker genes generated from GTDB r202 (S3.metapackage_20211007.smpkg).
+Against assemblies filtered for >2.5kb or >10kb contigs and against transcripts generated from bins by prodigal.
+
+
+# Genus level matching
+
+```{r genus}
+genus_data <- singlem_appraise_summary %>%
+  filter(level == "genus")
+
+genus_2500_contigs_all_bins <- genus_data %>%
+  filter(contig_type == 2500, bin_type == "all")
+
+genus_10000_contigs_derep95_bins <- genus_data %>%
+  filter(contig_type == 10000, bin_type == "derep95")
+
+genus_summary <- genus_data %>%
+  group_by(contig_type, bin_type, habitat) %>%
+  summarise(
+    mean_assembled = mean(percent_assembled),
+    mean_binned = mean(percent_binned))
+
+genus_global_summary <- genus_data %>%
+  group_by(contig_type, bin_type) %>%
+  summarise(
+    mean_assembled = mean(percent_assembled),
+    mean_binned = mean(percent_binned))
+```
+
+Genus level (89\% identity) matching of marker identified sequences from read files to MAGs was done with SingleM appraise.
+
+A majority of the sequences from the reads were found in the contigs, with a global average of 74\% in contigs >2.5kb and 54\% in contigs >10kb (Figure \@ref(fig:genus-2500-assembled) and \@ref(fig:genus-10000-assembled)).
+The lowest habitat was fen, with 60\% and 39\% representation and the highest was bog/collapsed palsa with 85\% and 66\% representation.
+
+A majority of the sequences were also found in the MAGs, with a global average of 74\% across all MAGs and 73\% over the 95\% dereplicated MAGs (Figure \@ref(fig:genus-all-binned) and \@ref(fig:genus-derep95-binned)).
+The lowest habitat was also fen, with 59\% and 58\% representation and the highest was bog with 88\% and 86% representation.
+
+(ref:genus-2500-assembled) __Percent assembled in >2.5kb contigs from Genus level matching averaged across samples and marker genes.__ Columns are mean ± standard deviation.
+
+```{r genus-2500-assembled, fig.cap='(ref:genus-2500-assembled)'}
+genus_2500_contigs_all_bins %>%
+  ggplot(aes(habitat, percent_assembled)) +
+  bar_plot_layers +
+  ylab("Average percent assembled")
+ggsave("genus_2500_contigs.png", path = output_dir, dpi = 900)
+```
+
+(ref:genus-10000-assembled) __Percent assembled in >10kb contigs from Genus level matching averaged across samples and marker genes.__ Columns are mean ± standard deviation.
+
+```{r genus-10000-assembled, fig.cap='(ref:genus-10000-assembled)'}
+genus_10000_contigs_derep95_bins %>%
+  ggplot(aes(habitat, percent_assembled)) +
+  bar_plot_layers +
+  ylab("Average percent assembled")
+ggsave("genus_10000_contigs.png", path = output_dir, dpi = 900)
+```
+
+
+(ref:genus-all-binned) __Percent binned in all MAGs from Genus level matching averaged across samples and marker genes.__ Columns are mean ± standard deviation.
+
+```{r genus-all-binned, fig.cap='(ref:genus-all-binned)'}
+genus_2500_contigs_all_bins %>%
+  ggplot(aes(habitat, percent_binned)) +
+  bar_plot_layers +
+  ylab("Average percent binned")
+ggsave("genus_all_bins.png", path = output_dir, dpi = 900)
+```
+
+(ref:genus-derep95-binned) __Percent binned in Derep 95% MAGs from Genus level matching averaged across samples and marker genes.__ Columns are mean ± standard deviation.
+
+```{r genus-derep95-binned, fig.cap='(ref:genus-derep95-binned)'}
+genus_10000_contigs_derep95_bins %>%
+  ggplot(aes(habitat, percent_binned)) +
+  bar_plot_layers +
+  ylab("Average percent binned")
+ggsave("genus_derep95_bins.png", path = output_dir, dpi = 900)
+```
+
+
+# Exact matching
+
+```{r species}
+species_data <- singlem_appraise_summary %>%
+  filter(level == "species")
+
+species_2500_contigs_all_bins <- species_data %>%
+  filter(contig_type == 2500, bin_type == "all")
+
+species_10000_contigs_derep95_bins <- species_data %>%
+  filter(contig_type == 10000, bin_type == "derep95")
+
+species_summary <- species_data %>%
+  group_by(contig_type, bin_type, habitat) %>%
+  summarise(
+    mean_assembled = mean(percent_assembled),
+    mean_binned = mean(percent_binned))
+
+species_global_summary <- species_data %>%
+  group_by(contig_type, bin_type) %>%
+  summarise(
+    mean_assembled = mean(percent_assembled),
+    mean_binned = mean(percent_binned))
+```
+
+Exact matching of marker identified sequences from read files to MAGs was done with SingleM appraise.
+
+The exact matching had a large drop from genus-level, with a global average of 47\% in contigs >2.5kb and 29\% in contigs >10kb (Figure \@ref(fig:species-2500-assembled) and \@ref(fig:species-10000-assembled)).
+The lowest habitat was fen, with 33\% and 17\% representation and the highest was bog with 64\% and 43\% representation.
+
+The MAGs representation also dipped, with a global average of 43\% across all MAGs and 36\% over the 95\% dereplicated MAGs (Figure \@ref(fig:species-all-binned) and \@ref(fig:species-derep95-binned)).
+The lowest habitat was also fen, with 28\% and 24\% representation and the highest was bog with 66\% and 56% representation.
+
+(ref:species-2500-assembled) __Percent assembled in >2.5kb contigs from Exact level matching averaged across samples and marker genes.__ Columns are mean ± standard deviation.
+
+```{r species-2500-assembled, fig.cap='(ref:species-2500-assembled)'}
+species_2500_contigs_all_bins %>%
+  ggplot(aes(habitat, percent_assembled)) +
+  bar_plot_layers +
+  ylab("Average percent assembled")
+ggsave("species_2500_contigs.png", path = output_dir, dpi = 900)
+```
+
+(ref:species-10000-assembled) __Percent assembled in >10kb contigs from Exact level matching averaged across samples and marker genes.__ Columns are mean ± standard deviation.
+
+```{r species-10000-assembled, fig.cap='(ref:species-10000-assembled)'}
+species_10000_contigs_derep95_bins %>%
+  ggplot(aes(habitat, percent_assembled)) +
+  bar_plot_layers +
+  ylab("Average percent assembled")
+ggsave("species_10000_contigs.png", path = output_dir, dpi = 900)
+```
+
+
+(ref:species-all-binned) __Percent binned in all MAGs from Exact level matching averaged across samples and marker genes.__ Columns are mean ± standard deviation.
+
+```{r species-all-binned, fig.cap='(ref:species-all-binned)'}
+species_2500_contigs_all_bins %>%
+  ggplot(aes(habitat, percent_binned)) +
+  bar_plot_layers +
+  ylab("Average percent binned")
+ggsave("species_all_bins.png", path = output_dir, dpi = 900)
+```
+
+(ref:species-derep95-binned) __Percent binned in Derep 95% MAGs from Exact level matching averaged across samples and marker genes.__ Columns are mean ± standard deviation.
+
+```{r species-derep95-binned, fig.cap='(ref:species-derep95-binned)'}
+species_10000_contigs_derep95_bins %>%
+  ggplot(aes(habitat, percent_binned)) +
+  bar_plot_layers +
+  ylab("Average percent binned")
+ggsave("species_derep95_bins.png", path = output_dir, dpi = 900)
+```
+
+# Depth stratification
+
+```{r genus-depth}
+depth_data <- genus_2500_contigs_all_bins %>%
+  filter(!is.na(depthcm), habitat %in% c("Palsa", "Bog", "Fen"))
+
+
+depth_genus_summary <- depth_data %>%
+  group_by(contig_type, bin_type, habitat, depthcm) %>%
+  summarise(
+    mean_assembled = mean(percent_assembled),
+    mean_binned = mean(percent_binned))
+```
+
+There are only minor differences in genus-level representation with >2.5kb contigs and all MAGs when the habitats are stratified by depth.
+Surface (1-4cm) bog samples had only 75\% contig and 73% MAG representation, whereas other bog samples had 84-90\% and 86-95\%.
+Surface (1-4cm) and mid (5-9cm) fen samples also had lower representation, at 53-59\% contig and 49-58\% MAG representation compared to 62-65\% and 62-67\%.
+
+(ref:genus-depth-binned) __Percent binned from Genus level matching split by depth averaged across samples and marker genes.__ Columns are mean ± standard deviation.
+
+```{r genus-depth-binned, fig.cap='(ref:genus-depth-binned)'}
+depth_data %>%
+  ggplot(aes(depthcm, percent_binned)) +
+  bar_plot_layers +
+  facet_grid(cols = vars(habitat)) +
+  scale_x_discrete(breaks = depth_levels, labels = depth_labels) +
+  xlab("Starting depth (cm)") +
+  ylab("Average percent binned")
+ggsave("genus_depth_all_bins.png", path = output_dir, dpi = 900)
+```
+
+
+# Time stratification
+
+```{r genus-time}
+time_data <- genus_2500_contigs_all_bins %>%
+  filter(!is.na(year), !is.na(Month__), habitat %in% c("Palsa", "Bog", "Fen"))
+
+
+time_genus_summary <- time_data %>%
+  group_by(contig_type, bin_type, habitat, year, Month__) %>%
+  summarise(
+    mean_assembled = mean(percent_assembled),
+    mean_binned = mean(percent_binned))
+```
+
+There are no discernable differences in genus-level representation with >2.5kb contigs and all MAGs when the habitats are stratified by year.
+
+(ref:genus-time-binned) __Percent binned from Genus level matching split by year averaged across samples, depths and marker genes.__ Columns are mean ± standard deviation.
+
+```{r genus-time-binned, fig.cap='(ref:genus-time-binned)'}
+time_data %>%
+  ggplot(aes(year, percent_binned)) +
+  bar_plot_layers +
+  facet_grid(cols = vars(habitat)) +
+  scale_x_discrete(breaks = year_levels, labels = year_labels) +
+  xlab("Year (20XX)") +
+  ylab("Average percent binned")
+ggsave("genus_year_all_bins.png", path = output_dir, dpi = 900)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

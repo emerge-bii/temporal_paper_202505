@@ -1,0 +1,1 @@
+{"graftm_package_version": 3, "align_hmm": "graftm_nus90if.hmm", "search_hmms": ["graftmgqexa5p1_search.hmm"], "refpkg": "GH23_draft.gpkg.refpkg", "trusted_cutoff": false, "range": 803.5564749146309, "unaligned_sequence_database": "graftmvq7i0d9_.faa", "diamond_database": "GH23.dmnd"}

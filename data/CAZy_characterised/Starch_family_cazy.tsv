@@ -1,0 +1,1289 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+pullulanase (ApuA;Pul-Dm;Desmu_0653)	3.2.1.41		Desulfurococcus mucosus DSM 2162	AAG31033.1	E8R8Y5Q9HHB0		Archaea	100	GH13
+pullulanase (ApuA;Pul-Dm;Desmu_0653)	3.2.1.41		Desulfurococcus mucosus DSM 2162	ADV64961.1	E8R8Y5Q9HHB0		Archaea	100	GH13
+α-amylase (AmyH)	3.2.1.1	pubmed	Haloarcula hispanica DSM 4426	CAI64586.1	Q4A3E0		Archaea	100	GH13
+α-amylase (MalA)	3.2.1.1		Haloarcula japonica TR-1	BAM75337.1	L8B068		Archaea	100	GH13
+α-cyclomaltodextrin glucanotransferase (Cgt)	2.4.1.19		Haloferax mediterranei	CAI46245.1	Q53I75		Archaea	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ;MTH)	3.2.1.141		Metallosphaera hakonensis JCM 8857	AAR18372.1	Q6SZP6		Archaea	100	GH13
+maltooligosyltrehalose synthase (TreY;MTS)	5.4.99.15		Metallosphaera hakonensis JCM 8857	AAR18371.1	Q6SZP7		Archaea	100	GH13
+maltotriose-forming α-amylase	3.2.1.13.2.1.116	pubmedpubmed	Natronococcus sp. Ah-36	BAA05516.1	Q60224		Archaea	100	GH13
+trehalose synthase (PTO0069)	5.4.99.16		Picrophilus torridus DSM 9790	AAT42654.1	Q6L2Z7		Archaea	100	GH13
+trehalose synthase (PTO0069)	5.4.99.16		Picrophilus torridus DSM 9790	CBF79071.1	Q6L2Z7		Archaea	100	GH13
+α-amylase / cyclomaltodextrinase (PFTA; PF1939) (Amy13)	3.2.1.13.2.1.54	pubmedpubmed	Pyrococcus furiosus DSM 3638	AAL82063.1	Q8TZP8	4AEF[A,B]	Archaea	100	GH13
+α-amylase / cyclomaltodextrinase (PFTA; PF1939) (Amy13)	3.2.1.13.2.1.54	pubmedpubmed	Pyrococcus furiosus DSM 3638	CAZ78721.1	Q8TZP8	4AEF[A,B]	Archaea	100	GH13
+α-amylase / cyclomaltodextrinase (PFTA; PF1939) (Amy13)	3.2.1.13.2.1.54	pubmedpubmed	Pyrococcus furiosus DSM 3638	NP_579668.1	Q8TZP8	4AEF[A,B]	Archaea	100	GH13
+β-cyclodextrin glucanotransferase (PfCgt;PF0478;PF0478*)	2.4.1.19		Pyrococcus furiosus DSM 3638	ABA33720.1	Q3HUR2Q8U3I8		Archaea	100	GH13
+β-cyclodextrin glucanotransferase (PfCgt;PF0478;PF0478*)	2.4.1.19		Pyrococcus furiosus DSM 3638	AAL80602.1	Q3HUR2Q8U3I8		Archaea	100	GH13
+β-cyclodextrin glucanotransferase (PfCgt;PF0478;PF0478*)	2.4.1.19		Pyrococcus furiosus DSM 3638	ABA30024.1	Q3HUR2Q8U3I8		Archaea	100	GH13
+β-cyclodextrin glucanotransferase (PfCgt;PF0478;PF0478*)	2.4.1.19		Pyrococcus furiosus DSM 3638	ABA30025.1	Q3HUR2Q8U3I8		Archaea	100	GH13
+β-cyclodextrin glucanotransferase (PfCgt;PF0478;PF0478*)	2.4.1.19		Pyrococcus furiosus DSM 3638	NP_578207.1	Q3HUR2Q8U3I8		Archaea	100	GH13
+α-amylase (AmyA; PFA; PF0477)	3.2.1.1	pubmed	Pyrococcus furiosus DSM 3638	NP_578206.1	O08452Q8U3I9		Archaea	100	GH13
+α-amylase (AmyA; PFA; PF0477)	3.2.1.1	pubmed	Pyrococcus furiosus DSM 3638	AAB67705.1	O08452Q8U3I9		Archaea	100	GH13
+α-amylase (AmyA; PFA; PF0477)	3.2.1.1	pubmed	Pyrococcus furiosus DSM 3638	AAC45663.1	O08452Q8U3I9		Archaea	100	GH13
+α-amylase (AmyA; PFA; PF0477)	3.2.1.1	pubmed	Pyrococcus furiosus DSM 3638	AAL80601.1	O08452Q8U3I9		Archaea	100	GH13
+α-amylase (AmyA)	3.2.1.1		Pyrococcus woesei	AAD54338.1	Q7LYT7Q9P9L0	1MWO[A]1MXD[A]1MXG[A]	Archaea	100	GH13
+α-amylase (AmyA)	3.2.1.1		Pyrococcus woesei	AAF44693.1	Q7LYT7Q9P9L0	1MWO[A]1MXD[A]1MXG[A]	Archaea	100	GH13
+α-amylase (AmyA)	3.2.1.1		Pyrococcus woesei	ACH26211.1	Q7LYT7Q9P9L0	1MWO[A]1MXD[A]1MXG[A]	Archaea	100	GH13
+glycogen debranching enzyme (TreX)	2.4.1.253.2.1.68		Saccharolobus shibatae B12	AAM81590.1	Q8NKQ3		Archaea	100	GH13
+glycogen debranching enzyme (TreX)	2.4.1.253.2.1.68		Saccharolobus shibatae B12	QXJ29377.1	Q8NKQ3		Archaea	100	GH13
+maltooligosyltrehalose synthase (SsTDFE; TreY; J5U23_02247)	5.4.99.15	pubmed	Saccharolobus shibatae B12	AAM81591.1	Q7LYV2Q9UWN8	5ZCR[A,B]	Archaea	100	GH13
+maltooligosyltrehalose synthase (SsTDFE; TreY; J5U23_02247)	5.4.99.15	pubmed	Saccharolobus shibatae B12	AAF17554.1	Q7LYV2Q9UWN8	5ZCR[A,B]	Archaea	100	GH13
+maltooligosyltrehalose synthase (SsTDFE; TreY; J5U23_02247)	5.4.99.15	pubmed	Saccharolobus shibatae B12	QXJ29378.1	Q7LYV2Q9UWN8	5ZCR[A,B]	Archaea	100	GH13
+maltooligosyl trehalose trehalohydrolase (SsTFE ; TreZ; J5U23_02244)	3.2.1.141	pubmed	Saccharolobus shibatae B12	AAM81589.1	Q7LYV3Q9UWN9		Archaea	100	GH13
+maltooligosyl trehalose trehalohydrolase (SsTFE ; TreZ; J5U23_02244)	3.2.1.141	pubmed	Saccharolobus shibatae B12	AAF17553.1	Q7LYV3Q9UWN9		Archaea	100	GH13
+maltooligosyl trehalose trehalohydrolase (SsTFE ; TreZ; J5U23_02244)	3.2.1.141	pubmed	Saccharolobus shibatae B12	QXJ29375.1	Q7LYV3Q9UWN9		Archaea	100	GH13
+α-amylase / maltooligosyltrehalose trehalohydrolase (GTHase)	3.2.1.13.2.1.141		Saccharolobus solfataricus KM1	AAR46454.1	Q55088	1EH9[A]1EHA[A]3VGB[A]3VGD[A]3VGE[A]3VGF[A]3VGG[A]3VGH[A]	Archaea	100	GH13
+α-amylase / maltooligosyltrehalose trehalohydrolase (GTHase)	3.2.1.13.2.1.141		Saccharolobus solfataricus KM1	BAA11010.1	Q55088	1EH9[A]1EHA[A]3VGB[A]3VGD[A]3VGE[A]3VGF[A]3VGG[A]3VGH[A]	Archaea	100	GH13
+glycosyltrehalose-producing enzyme	5.4.99.15		Saccharolobus solfataricus KM1	BAA11008.1	Q55262		Archaea	100	GH13
+maltooligosyltrehalose synthase (TreY;SSO2095)	5.4.99.15		Saccharolobus solfataricus P2	AAK42274.1	P95869Q7LX98		Archaea	100	GH13
+maltooligosyltrehalose synthase (TreY;SSO2095)	5.4.99.15		Saccharolobus solfataricus P2	CAA69505.1	P95869Q7LX98		Archaea	100	GH13
+maltooligosyltrehalose synthase (TreY;SSO2095)	5.4.99.15		Saccharolobus solfataricus P2	NP_343484.1	P95869Q7LX98		Archaea	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ;MTHase;SSO2093;c06020)	3.2.1.141		Saccharolobus solfataricus P2	AAK42272.1	P95867		Archaea	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ;MTHase;SSO2093;c06020)	3.2.1.141		Saccharolobus solfataricus P2	CAA69503.1	P95867		Archaea	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ;MTHase;SSO2093;c06020)	3.2.1.141		Saccharolobus solfataricus P2	CAC23737.1	P95867		Archaea	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ;MTHase;SSO2093;c06020)	3.2.1.141		Saccharolobus solfataricus P2	NP_343482.1	P95867		Archaea	100	GH13
+isoamylase / 4-α-glucanotransferase (TreX;SSO2094;GlgX;ORF-c06_004;c06021)	2.4.1.253.2.1.68		Saccharolobus solfataricus P2	AAK42273.1	P95868Q7LX99	2VNC[A,B]2VR5[A,B]2VUY[A,B]7EAV[A,B]	Archaea	100	GH13
+isoamylase / 4-α-glucanotransferase (TreX;SSO2094;GlgX;ORF-c06_004;c06021)	2.4.1.253.2.1.68		Saccharolobus solfataricus P2	CAA69504.1	P95868Q7LX99	2VNC[A,B]2VR5[A,B]2VUY[A,B]7EAV[A,B]	Archaea	100	GH13
+isoamylase / 4-α-glucanotransferase (TreX;SSO2094;GlgX;ORF-c06_004;c06021)	2.4.1.253.2.1.68		Saccharolobus solfataricus P2	CAC23738.1	P95868Q7LX99	2VNC[A,B]2VR5[A,B]2VUY[A,B]7EAV[A,B]	Archaea	100	GH13
+isoamylase / 4-α-glucanotransferase (TreX;SSO2094;GlgX;ORF-c06_004;c06021)	2.4.1.253.2.1.68		Saccharolobus solfataricus P2	NP_343483.1	P95868Q7LX99	2VNC[A,B]2VR5[A,B]2VUY[A,B]7EAV[A,B]	Archaea	100	GH13
+maltogenic α-amylase / cyclomaltodextrinase (MA;SmMA;Smar_0613)	3.2.1.1333.2.1.54		Staphylothermus marinus F1	ABN69720.1	A3DM60	4AEE[A,B]	Archaea	100	GH13
+α-amylase/maltooligosyltrehalose trehalohydrolase (TreZ)	3.2.1.13.2.1.141		Sulfolobus acidocaldarius	BAA11011.1	Q53641		Archaea	100	GH13
+α-amylase/maltooligosyltrehalose trehalohydrolase (TreZ)	3.2.1.13.2.1.141		Sulfolobus acidocaldarius	BAA11863.1	Q53641		Archaea	100	GH13
+maltooligosyltrehalose synthase (TreY;MTSase)	5.4.99.15		Sulfolobus acidocaldarius	BAA11009.1	Q53688	1IV8[A]	Archaea	100	GH13
+maltooligosyltrehalose synthase (TreY;MTSase)	5.4.99.15		Sulfolobus acidocaldarius	BAA11865.1	Q53688	1IV8[A]	Archaea	100	GH13
+isoamylase (TreX)	3.2.1.68		Sulfolobus acidocaldarius ATCC33909	BAA11864.1	O05152		Archaea	100	GH13
+pullulanase type III (PulhA;Pul-Ta)	3.2.1.41		Thermococcus aggregans	CAB94218.1	Q9P9A0		Archaea	100	GH13
+pullulanase type III (PulhA;Pul-Ta)	3.2.1.41		Thermococcus aggregans	CAZ78888.1	Q9P9A0		Archaea	100	GH13
+cyclomaltodextrinase (CD;TcCD;CL1_0884)	3.2.1.54		Thermococcus cleftensis	AFL95089.1	I3ZTQ5		Archaea	100	GH13
+α-amylase (Amy)	3.2.1.1		Thermococcus hydrothermalis AL662	AAC97877.1	O93647O93648		Archaea	100	GH13
+α-amylase (Amy)	3.2.1.1		Thermococcus hydrothermalis AL662	AAC97878.1	O93647O93648		Archaea	100	GH13
+α-amylase (Amy)	3.2.1.1		Thermococcus hydrothermalis AL662	ACH26213.1	O93647O93648		Archaea	100	GH13
+β-cyclodextrin glucanotransferase (Cgt;TK-cgt;TK2172)	2.4.1.19		Thermococcus kodakarensis KOD1	BAB78538.1	Q8X268		Archaea	100	GH13
+β-cyclodextrin glucanotransferase (Cgt;TK-cgt;TK2172)	2.4.1.19		Thermococcus kodakarensis KOD1	BAD86361.1	Q8X268		Archaea	100	GH13
+β-cyclodextrin glucanotransferase (Cgt;TK-cgt;TK2172)	2.4.1.19		Thermococcus kodakarensis KOD1	CAT70763.1	Q8X268		Archaea	100	GH13
+cyclodextrinase (CDase-Tk;TK1770)	3.2.1.54		Thermococcus kodakarensis KOD1	BAD85959.1	Q5JJ59		Archaea	100	GH13
+cyclodextrinase (CDase-Tk;TK1770)	3.2.1.54		Thermococcus kodakarensis KOD1	CAT70564.1	Q5JJ59		Archaea	100	GH13
+amylopullulanase / pullulanase type III (Pul-Tk;TK-PUL;TK0977)	3.2.1.13.2.1.41		Thermococcus kodakarensis KOD1	BAD85166.1	Q5JID9	5OT1[A]	Archaea	100	GH13
+amylopullulanase / pullulanase type III (Pul-Tk;TK-PUL;TK0977)	3.2.1.13.2.1.41		Thermococcus kodakarensis KOD1	CAT69621.1	Q5JID9	5OT1[A]	Archaea	100	GH13
+amylopullulanase / pullulanase type III (Pul-Tk;TK-PUL;TK0977)	3.2.1.13.2.1.41		Thermococcus kodakarensis KOD1	CAZ78793.1	Q5JID9	5OT1[A]	Archaea	100	GH13
+α-amylase (ApkA;TK1884)	3.2.1.1	doi	Thermococcus kodakarensis KOD1	BAA21130.1	O33476Q5JER7		Archaea	100	GH13
+α-amylase (ApkA;TK1884)	3.2.1.1	doi	Thermococcus kodakarensis KOD1	ACH26210.1	O33476Q5JER7		Archaea	100	GH13
+α-amylase (ApkA;TK1884)	3.2.1.1	doi	Thermococcus kodakarensis KOD1	BAD86073.1	O33476Q5JER7		Archaea	100	GH13
+α-amylase (ApkA;TK1884)	3.2.1.1	doi	Thermococcus kodakarensis KOD1	CAT70635.1	O33476Q5JER7		Archaea	100	GH13
+cyclomaltodextrinase (Tocd;TON_1796)	3.2.1.54		Thermococcus onnurineus NA1	ACJ17286.1	B6YV58		Archaea	100	GH13
+α-amylase (TO_Amyl;TON_1660)	3.2.1.1		Thermococcus onnurineus NA1	ABA26948.1	B6YUG5Q2QC88		Archaea	100	GH13
+α-amylase (TO_Amyl;TON_1660)	3.2.1.1		Thermococcus onnurineus NA1	ACJ17150.1	B6YUG5Q2QC88		Archaea	100	GH13
+α-amylase (BD5031)	3.2.1.1		Thermococcus sp. AEPII 1a	AAM48113.1	Q8NKR4		Archaea	100	GH13
+α-amylase (BD5031)	3.2.1.1		Thermococcus sp. AEPII 1a	ACH26099.1	Q8NKR4		Archaea	100	GH13
+α-cyclodextrin glucanotransferase (CgtA)	2.4.1.19		Thermococcus sp. B1001	BAA88217.1	Q9UWN2		Archaea	100	GH13
+α-cyclodextrin glucanotransferase (CgtA)	2.4.1.19		Thermococcus sp. B1001	BAB18101.1	Q9UWN2		Archaea	100	GH13
+α-cyclodextrin glucanotransferase (CgtA)	2.4.1.19		Thermococcus sp. B1001	CAZ78889.1	Q9UWN2		Archaea	100	GH13
+cyclomaltodextrinase (CdnA)	3.2.1.1333.2.1.54		Thermococcus sp. B1001	BAB18100.1	Q9HHC8		Archaea	100	GH13
+cyclomaltodextrinase (CdnA)	3.2.1.1333.2.1.54		Thermococcus sp. B1001	CAZ78887.1	Q9HHC8		Archaea	100	GH13
+α-amylase (BD5064)	3.2.1.1		Thermococcus sp. GU5L5	AAM48112.1	Q8NKR5		Archaea	100	GH13
+α-amylase (BD5064)	3.2.1.1		Thermococcus sp. GU5L5	ACH26098.1	Q8NKR5		Archaea	100	GH13
+α-amylase (THJA)	3.2.1.1		Thermococcus sp. HJ21	ABU98335.1	B4X9V8		Archaea	100	GH13
+α-amylase	3.2.1.1		Thermococcus sp. Rt3	AAB87860.1	O50200		Archaea	100	GH13
+α-amylase	3.2.1.1		Thermococcus sp. Rt3	ACH26212.1	O50200		Archaea	100	GH13
+α-amylase (Amy)	3.2.1.1		Thermococcus thioreducens	AAT11125.1	Q66SB4		Archaea	100	GH13
+maltogenic α-amylase / cyclomaltodextrinase (TfMA;Tpen_1458)	3.2.1.1333.2.1.54		Thermofilum pendens Hrk 5	ABL78855.1	A1S075		Archaea	100	GH13
+maltogenic α-amylase (TpMA;TVG0226058)	3.2.1.133		Thermoplasma volcanium GSS1	BAB59359.1	Q97C86		Archaea	100	GH13
+maltogenic α-amylase (TpMA;TVG0226058)	3.2.1.133		Thermoplasma volcanium GSS1	CAZ78693.1	Q97C86		Archaea	100	GH13
+maltogenic α-amylase (TpMA;TVG0226058)	3.2.1.133		Thermoplasma volcanium GSS1	NP_110736.1	Q97C86		Archaea	100	GH13
+acarbose resistent α-amylase (AcbE;ACPL_3683)	3.2.1.1		Actinoplanes sp. SE50/110	AEV84578.1	G8SLW4Q27GR6Q9K5L6		Bacteria	100	GH13
+acarbose resistent α-amylase (AcbE;ACPL_3683)	3.2.1.1		Actinoplanes sp. SE50/110	CAC02970.1	G8SLW4Q27GR6Q9K5L6		Bacteria	100	GH13
+acarbose resistent α-amylase (AcbE;ACPL_3683)	3.2.1.1		Actinoplanes sp. SE50/110	CAJ81030.1	G8SLW4Q27GR6Q9K5L6		Bacteria	100	GH13
+acarbose resistent α-amylase (AcbE;ACPL_3683)	3.2.1.1		Actinoplanes sp. SE50/110	SLM00378.1	G8SLW4Q27GR6Q9K5L6		Bacteria	100	GH13
+acarviosyltransferase (AcbD; ACPL_3684)	2.4.1.-	pubmed	Actinoplanes sp. SE50/110	CAC02971.1	Q27GR5Q9K5L5		Bacteria	100	GH13
+acarviosyltransferase (AcbD; ACPL_3684)	2.4.1.-	pubmed	Actinoplanes sp. SE50/110	AAE37556.1	Q27GR5Q9K5L5		Bacteria	100	GH13
+acarviosyltransferase (AcbD; ACPL_3684)	2.4.1.-	pubmed	Actinoplanes sp. SE50/110	AEV84579.1	Q27GR5Q9K5L5		Bacteria	100	GH13
+acarviosyltransferase (AcbD; ACPL_3684)	2.4.1.-	pubmed	Actinoplanes sp. SE50/110	CAJ81031.1	Q27GR5Q9K5L5		Bacteria	100	GH13
+acarviosyltransferase (AcbD; ACPL_3684)	2.4.1.-	pubmed	Actinoplanes sp. SE50/110	SLM00379.1	Q27GR5Q9K5L5		Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16		Actinoplanes sp. SN223/29	ABV26719.1	A8QX00		Bacteria	100	GH13
+malto-oligosyltrehalose synthase (TreY)	5.4.99.15		Actinoplanes sp. SN223/29	ABV26725.1	A8QX07		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ)	3.2.1.141		Actinoplanes sp. SN223/29	ABV26726.1	A8QX08		Bacteria	100	GH13
+α-amylase	3.2.1.1	pubmed	Aeromonas hydrophila JMP636	AAA21936.1	P22630		Bacteria	100	GH13
+α-amylase (AmyA)	3.2.1.1	pubmed	Aeromonas hydrophila MCC-1	AAA21016.1	P41131		Bacteria	100	GH13
+amylase-pullulanase (Amy;Aaci_2874)	3.2.1.13.2.1.41	pubmedpubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	ACV59878.1	C8WUR2Q06307		Bacteria	100	GH13
+amylase-pullulanase (Amy;Aaci_2874)	3.2.1.13.2.1.41	pubmedpubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	CAA44638.1	C8WUR2Q06307		Bacteria	100	GH13
+amylase-pullulanase (Amy;Aaci_2874)	3.2.1.13.2.1.41	pubmedpubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	CAZ78868.1	C8WUR2Q06307		Bacteria	100	GH13
+cyclomaltodextrinase (CdaA;Aaci_2869)	3.2.1.54	pubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	ACV59873.1	C8WUQ7Q9WX32		Bacteria	100	GH13
+cyclomaltodextrinase (CdaA;Aaci_2869)	3.2.1.54	pubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	CAB40078.1	C8WUQ7Q9WX32		Bacteria	100	GH13
+cyclomaltodextrinase (CdaA;Aaci_2869)	3.2.1.54	pubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	CAB65655.1	C8WUQ7Q9WX32		Bacteria	100	GH13
+cyclomaltodextrinase (CdaA;Aaci_2869)	3.2.1.54	pubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	CAY02967.1	C8WUQ7Q9WX32		Bacteria	100	GH13
+cyclomaltodextrinase (CdaA;Aaci_2869)	3.2.1.54	pubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	CAZ78890.1	C8WUQ7Q9WX32		Bacteria	100	GH13
+α-amylase	3.2.1.1		Alicyclobacillus sp. 18711	AWX66236.1	A0A3P8MUS3	6GXV[A,B]6GYA[A,B,C,D]	Bacteria	100	GH13
+α-amylase (AmyA4)	3.2.1.1		Alicyclobacillus sp. A4 / CGMCC 3147	ADZ99363.1	F2VRZ2		Bacteria	100	GH13
+maltogenic α-amylase (Mag1;BleG1_0772)	3.2.1.54	pubmed	Alkalihalobacillus lehensis G1	AHW51935.1	X5CPN2		Bacteria	100	GH13
+maltogenic α-amylase (Mag1;BleG1_0772)	3.2.1.54	pubmed	Alkalihalobacillus lehensis G1	AIC93380.1	X5CPN2		Bacteria	100	GH13
+α-glucosidase (Amy112) (partial)	3.2.1.21	doi	Alkalihalophilus pseudofirmus 703	AQS95354.1			Bacteria	100	GH13
+α-amylase (Amy703;Amy)	3.2.1.1		Alkalihalophilus pseudofirmus 703	AGT54942.1	A0A023I4U3		Bacteria	100	GH13
+α-amylase (Amy1;AmyA;AmyB)	3.2.1.1		Alkalimonas amylolytica N10	AAQ01675.1	Q6WUB6		Bacteria	100	GH13
+α-amylase (AmySTU)	3.2.1.1		Alteromonas macleodii B7	AGT20491.1	V9P2Q6		Bacteria	100	GH13
+amylosucrase (Amas)	2.4.1.4		Alteromonas macleodii KCTC 2957	BAG82876.1	B6F2H1		Bacteria	100	GH13
+pullulanase (PulAg)	3.2.1.41		Anaerobranca gottschalkii	AAS47565.1	Q6QHE9		Bacteria	100	GH13
+β-cyclodextrin glycosyltransferase (CGTase)	2.4.1.19		Anaerobranca gottschalkii	CAH61550.1	Q5ZEQ7		Bacteria	100	GH13
+α-amylase (AmyB)	3.2.1.1		Anaerobranca gottschalkii	AAW32490.1	Q5I943		Bacteria	100	GH13
+α-amylase (AmyB)	3.2.1.1		Anaerobranca gottschalkii	CAZ78873.1	Q5I943		Bacteria	100	GH13
+α-amylase (AmyA)	3.2.1.1		Anaerobranca gottschalkii	AAW32491.1	Q5I942		Bacteria	100	GH13
+1,4-α-glucan branching enzyme (GlgB)	2.4.1.18	pubmed	Anaerobranca gottschalkii	CAJ38414.1	Q3BJY5		Bacteria	100	GH13
+pullulanase	3.2.1.41		Anaerobranca horikoshii	AAP45012.1	Q6XQ00		Bacteria	100	GH13
+cyclomaltodextrinase (Cda13;Amy98)	3.2.1.54		Anoxybacillus flavithermus	AAX29991.1	Q5BLZ6		Bacteria	100	GH13
+cyclomaltodextrinase (Cda13;Amy98)	3.2.1.54		Anoxybacillus flavithermus	CAY02963.1	Q5BLZ6		Bacteria	100	GH13
+cyclomaltodextrinase (Cda13;Amy98)	3.2.1.54		Anoxybacillus flavithermus	CAZ78871.1	Q5BLZ6		Bacteria	100	GH13
+α-amylase (AFA;AMY1048)	3.2.1.1		Anoxybacillus flavithermus	CAL14744.1			Bacteria	100	GH13
+maltogenic α-amylase (ADTA)	3.2.1.133	pubmed	Anoxybacillus sp. DT3-1	AFI49456.1	I1VWI0		Bacteria	100	GH13
+α-amylase (AGXA)	3.2.1.1	pubmed	Anoxybacillus sp. GXS-BL	AEQ38578.1			Bacteria	100	GH13
+pullulanase type I (PulA)	3.2.1.41		Anoxybacillus sp. LM18-11	AEW23439.1	K9L0H1	3WDH[A]3WDI[A]3WDJ[A]	Bacteria	100	GH13
+α-amylase (ASKA)	3.2.1.1	pubmed	Anoxybacillus sp. SK3-4	AFI49455.1	I1VWH9	5A2A[A]5A2B[A]5A2C[A]	Bacteria	100	GH13
+branching enzyme (GlgB;Aq_722)	2.4.1.18	doi	Aquifex aeolicus VF5	AAC06895.1	O66936		Bacteria	100	GH13
+branching enzyme (GlgB;Aq_722)	2.4.1.18	doi	Aquifex aeolicus VF5	CAE51854.1	O66936		Bacteria	100	GH13
+branching enzyme (GlgB;Aq_722)	2.4.1.18	doi	Aquifex aeolicus VF5	NP_213496.1	O66936		Bacteria	100	GH13
+cyclic α-1,6-maltosyl-maltose hydrolase (CmmF)	3.2.1.-	pubmed	Arthrobacter globiformis M6	BAI67607.1	D2YYE1	5ZXG[A,B]6A0J[A]6A0K[A,B]6A0L[A]	Bacteria	100	GH13
+6-α-maltosyltransferase (CmmA)	2.4.1.-		Arthrobacter globiformis M6	BAE79266.1	Q2L6M1		Bacteria	100	GH13
+α-glucosidase (CmmB)	3.2.1.20		Arthrobacter globiformis M6	BAI67603.1	D2YYD7Q2L6M0		Bacteria	100	GH13
+α-glucosidase (CmmB)	3.2.1.20		Arthrobacter globiformis M6	BAE79267.1	D2YYD7Q2L6M0		Bacteria	100	GH13
+malto-oligosyltrehalose synthase (MTSase;TreY)	5.4.99.15		Arthrobacter ramosus S34	BAB40765.1	Q9AJN7	6LCU[A]6LCV[A]	Bacteria	100	GH13
+malto-oligosyltrehalose trehalohydrolase (MTHase;TreZ)	3.2.1.141		Arthrobacter ramosus S34	BAB40766.1	Q9AJN6		Bacteria	100	GH13
+maltooligosyltrehalose synthase (TreY)	5.4.99.15	pubmed	Arthrobacter sp. Q36	BAA09667.1	Q44315Q9LC79		Bacteria	100	GH13
+maltooligosyltrehalose synthase (TreY)	5.4.99.15	pubmed	Arthrobacter sp. Q36	BAA94843.1	Q44315Q9LC79		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ)	3.2.1.141		Arthrobacter sp. Q36	AAE13738.1	Q44316		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ)	3.2.1.141		Arthrobacter sp. Q36	AAE13730.1	Q44316		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ)	3.2.1.141		Arthrobacter sp. Q36	AAE15470.1	Q44316		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ)	3.2.1.141		Arthrobacter sp. Q36	AAE15478.1	Q44316		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ)	3.2.1.141		Arthrobacter sp. Q36	BAA09668.1	Q44316		Bacteria	100	GH13
+α-amylase (fragment)	3.2.1.1		Bacillus acidicola TSAS1	AEW07376.1	J9PQD2		Bacteria	100	GH13
+pullulanase (PulB)	3.2.1.41	doi	Bacillus acidopullulyticus	CAC60158.1			Bacteria	100	GH13
+pullulanase (PulB)	3.2.1.41	doi	Bacillus acidopullulyticus	AAX00709.1			Bacteria	100	GH13
+pullulanase (PulB)	3.2.1.41	doi	Bacillus acidopullulyticus	ACK18365.1			Bacteria	100	GH13
+pullulanase (PulB)	3.2.1.41	doi	Bacillus acidopullulyticus	CAX87016.1			Bacteria	100	GH13
+pullulanase (PulB)	3.2.1.41	doi	Bacillus acidopullulyticus	CAZ67879.1			Bacteria	100	GH13
+pullulanase (PulB)	3.2.1.41	doi	Bacillus acidopullulyticus	CAZ67880.1			Bacteria	100	GH13
+pullulanase (PulA;BaPul13A) (Pul13A)	3.2.1.41		Bacillus acidopullulyticus	CAC60156.1		2WAN[A]	Bacteria	100	GH13
+pullulanase (PulA;BaPul13A) (Pul13A)	3.2.1.41		Bacillus acidopullulyticus	AAX00707.1		2WAN[A]	Bacteria	100	GH13
+pullulanase (PulA;BaPul13A) (Pul13A)	3.2.1.41		Bacillus acidopullulyticus	ACK18363.1		2WAN[A]	Bacteria	100	GH13
+pullulanase (PulA;BaPul13A) (Pul13A)	3.2.1.41		Bacillus acidopullulyticus	CAX87014.1		2WAN[A]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAA22191.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAE12381.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAE13947.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAE37101.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAE59727.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAE62349.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAN20003.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAN27445.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAN99911.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAP02211.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAR63623.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAR76030.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAS26291.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	AAY72173.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	ABJ43095.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	ABJ43099.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	ABN29369.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	ACK07344.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	ACP75069.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	ACS10035.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	ACW26904.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	CAA01489.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	CAA23430.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	CAC16484.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	CAC88551.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	CAD19035.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	CAD20678.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	CAD26702.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	CAD67517.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase (Amy1;AmyQ;BAA)	3.2.1.1	pubmed	Bacillus amyloliquefaciens	CAD88112.1	P00692	3BH4[A,B]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Bacillus amyloliquefaciens ATCC 23842	ADE44086.1	D5KR60		Bacteria	100	GH13
+branching-enzyme (GlgB)	2.4.1.18	pubmed	Bacillus caldolyticus	CAA78440.1	P30537		Bacteria	100	GH13
+oligo-α-1,6-glucosidase (MalL)	3.2.1.10	pubmed	Bacillus cereus ATCC 7064	CAA37583.1	P21332	1UOK[A]	Bacteria	100	GH13
+α-amylase (BCA)	3.2.1.1	pubmed	Bacillus cereus GUF8	ABY86223.1	B0LVG1		Bacteria	100	GH13
+type II pullulanase A (PulA)	3.2.1.41		Bacillus cereus GXBC-3	AFP89962.1	J7H570		Bacteria	100	GH13
+type I pullulanase C (PulC)	3.2.1.41		Bacillus cereus GXBC-3	AFP89964.1	J7H7V3		Bacteria	100	GH13
+type I pullulanase B (PulB)	3.2.1.41		Bacillus cereus GXBC-3	AFP89963.1	J7H256		Bacteria	100	GH13
+pullulanase	3.2.1.41	doi	Bacillus cereus OPF-0031	AFJ04510.1	R4I4I6		Bacteria	100	GH13
+branching enzyme	2.4.1.18		Bacillus cereus Q	BAE96028.1	Q1AQI6		Bacteria	100	GH13
+amylopullulanase (PulA) (partial)	3.2.1.41		Bacillus deramificans T89.117D	AAE10887.1			Bacteria	100	GH13
+pullulanase (BFLpu)	3.2.1.41		Bacillus flavocaldarius KP1228	BAB18516.1	Q9F236		Bacteria	100	GH13
+oligo-α-1,6-glucosidase	3.2.1.10		Bacillus flavocaldarius KP1228	BAB18518.1	Q9F237		Bacteria	100	GH13
+oligo-α-1,6-glucosidase	3.2.1.10		Bacillus flavocaldarius KP1228	CBF79207.1	Q9F237		Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	AAE13946.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	AAE37100.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	AAE59726.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	AAE62348.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	AAN27444.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	AAP02210.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	AAR63628.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	AAR76029.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	AAS26290.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	ABA38471.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	ABJ43094.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	ABN29368.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	ACK07343.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	ACP75068.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	ACS10034.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	ACW26903.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	CAD38134.1			Bacteria	100	GH13
+Sequence from patent	3.2.1.1		Bacillus licheniformis	CAD67516.1			Bacteria	100	GH13
+α-amylase (Am-Lich)	3.2.1.1		Bacillus licheniformis	AAE12380.1			Bacteria	100	GH13
+α-amylase	3.2.1.1		Bacillus licheniformis	AAE12379.1			Bacteria	100	GH13
+α-amylase	3.2.1.1		Bacillus licheniformis	ABA38472.1			Bacteria	100	GH13
+α-amylase	3.2.1.1		Bacillus licheniformis	ACS10033.1			Bacteria	100	GH13
+a/β-cyclodextrin glucanotransferase (CgtA)	2.4.1.19	pubmed	Bacillus licheniformis	CAA33763.1	P14014		Bacteria	100	GH13
+maltogenic α-amylase (BLMA) (frameshift)	3.2.1.133	pubmed	Bacillus licheniformis	CAA47612.1	Q04977		Bacteria	100	GH13
+α-amylase (AmyL)	3.2.1.1		Bacillus licheniformis 44MB82/G	AGR34077.1	Q208A7		Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	AAA22226.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	AAA22193.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	AAA22240.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	AAN99913.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	AAO26743.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	AAT46561.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	ACM17155.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	CAA01355.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	CAA03075.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	CAA26981.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	CAC16483.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	CAC88550.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	CAD19034.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	CAD20677.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	CAD26701.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	CAD26706.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	CAD88111.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+α-amylase (AmyA;AmyL;AmyS;BLA)	3.2.1.1	pubmed	Bacillus licheniformis 584 / ATCC 27811	CAV31708.1	P06278Q208A7Q6GWE2	1BLI[A]1BPL[A,B]1OB0[A]1VJS[A]	Bacteria	100	GH13
+amylase	3.2.1.1		Bacillus licheniformis ATCC 9945a	AEM05860.1	I3P686	6TOY[A]6TOZ[A]6TP0[A]6TP1[A]6TP2[A]	Bacteria	100	GH13
+α-amylase (AmyL)	3.2.1.1		Bacillus licheniformis B0204	ABD66592.1	Q208A7		Bacteria	100	GH13
+α-amylase (thermostable)	3.2.1.1		Bacillus licheniformis CICC 10181	ACN88150.1	C0LZX2		Bacteria	100	GH13
+trehalose-6-P hydrolase (TreA;BlTreA;BLi00797;BL03069)	3.2.1.93		Bacillus licheniformis DSM 13 = ATCC 14580	AAU39732.1	Q65MI2	5BRP[A,B,C,D]5BRQ[A,B,C,D]	Bacteria	100	GH13
+trehalose-6-P hydrolase (TreA;BlTreA;BLi00797;BL03069)	3.2.1.93		Bacillus licheniformis DSM 13 = ATCC 14580	AAU22384.1	Q65MI2	5BRP[A,B,C,D]5BRQ[A,B,C,D]	Bacteria	100	GH13
+trehalose-6-P hydrolase (TreA;BlTreA;BLi00797;BL03069)	3.2.1.93		Bacillus licheniformis DSM 13 = ATCC 14580	CBF79089.1	Q65MI2	5BRP[A,B,C,D]5BRQ[A,B,C,D]	Bacteria	100	GH13
+α-amylase (Amy;BLi00656;BL00499)	3.2.1.1		Bacillus licheniformis DSM 13 = ATCC 14580	AAU39594.1	Q65MX0		Bacteria	100	GH13
+α-amylase (Amy;BLi00656;BL00499)	3.2.1.1		Bacillus licheniformis DSM 13 = ATCC 14580	AAU22245.1	Q65MX0		Bacteria	100	GH13
+α-amylase (AmyB)	3.2.1.1		Bacillus licheniformis MD1	CAH10338.1	P06278Q6GWE2		Bacteria	100	GH13
+α-amylase	3.2.1.1		Bacillus licheniformis NCIB8061	AAE12384.1			Bacteria	100	GH13
+α-amylase (AmyN)	3.2.1.1		Bacillus licheniformis NH1	ABL75259.1	A1YR25		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19	pubmed	Bacillus ohbensis C-1400	BAA14289.2	P27036		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19	pubmed	Bacillus ohbensis C-1400	I39805	P27036		Bacteria	100	GH13
+α-amylase (AmyL;BaLi_c07450)	3.2.1.1		Bacillus paralicheniformis ATCC 9945a	AGN35141.1			Bacteria	100	GH13
+cyclomaltodextrinase (CDI5;BspCMD)	3.2.1.54	pubmed	Bacillus sp. (in: Bacteria)	AAA92925.1	Q59226	1EA9[C]	Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19	pubmed	Bacillus sp. (in: Bacteria) 17-1	AAA22310.1	P30921		Bacteria	100	GH13
+α-amylase (BAA)	3.2.1.1	pubmed	Bacillus sp. (in: Bacteria) 195	BAA22082.1	O24781		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19	pubmed	Bacillus sp. (in: Bacteria) 38-2	AAA22309.1	P09121		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19	pubmed	Bacillus sp. (in: Bacteria) 38-2	BAA00077.1	P09121		Bacteria	100	GH13
+cyclodextrinase	3.2.1.54	pubmed	Bacillus sp. (in: Bacteria) A2-5A	BAA31576.1	O82982		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19	pubmed	Bacillus sp. (in: Bacteria) A2-5A	BAA31539.1	O82984		Bacteria	100	GH13
+α-glucosidase with high transglucosylation activity (BspAG13_31A)	3.2.1.20	pubmed	Bacillus sp. (in: Bacteria) AHU2216	BBB94188.1	A0A2Z5WH92	5ZCB[A]5ZCC[A]5ZCD[A]5ZCE[A]	Bacteria	100	GH13
+maltohexaose-forming amylase (G6-amylase)	3.2.1.98	pubmed	Bacillus sp. (in: Bacteria) H-167	CAA39096.1	Q45574		Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	AAR68734.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	AAN99906.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	AAR63625.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	AAV01045.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	ABE15847.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	ABI05897.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	ABY03536.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	ACS10038.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	ACW26917.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	BAA32431.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	CAD35985.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	CAD38135.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline α-amylase (AmyK)	3.2.1.1		Bacillus sp. (in: Bacteria) KSM-1378	CAV31709.1	O82839	2DIE[A]	Bacteria	100	GH13
+alkaline amylase-pullulanase	3.2.1.1	pubmed	Bacillus sp. (in: Bacteria) KSM-1378	AAS36537.1	P70983		Bacteria	100	GH13
+alkaline amylase-pullulanase	3.2.1.1	pubmed	Bacillus sp. (in: Bacteria) KSM-1378	AAS36538.1	P70983		Bacteria	100	GH13
+alkaline amylase-pullulanase	3.2.1.1	pubmed	Bacillus sp. (in: Bacteria) KSM-1378	BAA11332.1	P70983		Bacteria	100	GH13
+alkaline amylase-pullulanase	3.2.1.41	pubmed	Bacillus sp. (in: Bacteria) KSM-1378	AAS36537.1	P70983		Bacteria	100	GH13
+alkaline amylase-pullulanase	3.2.1.41	pubmed	Bacillus sp. (in: Bacteria) KSM-1378	AAS36539.1	P70983		Bacteria	100	GH13
+alkaline amylase-pullulanase	3.2.1.41	pubmed	Bacillus sp. (in: Bacteria) KSM-1378	BAA11332.1	P70983		Bacteria	100	GH13
+α-glucosidase	3.2.1.20	pubmed	Bacillus sp. (in: Bacteria) SAM1606	CAA54266.1	Q45517		Bacteria	100	GH13
+α-glucosidase	3.2.1.20	pubmed	Bacillus sp. (in: Bacteria) SAM1606	CBF79159.1	Q45517		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19	pubmed	Bacillus sp. 1011	AAA22308.1	P05618	1D7F[A]1DED[A]1I75[A]1PAM[A]1UKQ[A,B]1UKS[A,B]1UKT[A,B]1V3J[A,B]1V3K[A,B]1V3L[A,B]1V3M[A,B]	Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19		Bacillus sp. 20RF	AEL33336.1	G0ZI10		Bacteria	100	GH13
+maltohexaose-forming amylase	3.2.1.98	pubmed	Bacillus sp. 707	AAA22231.1	P19571	1WP6[A]1WPC[A]2D3L[A]2D3N[A]	Bacteria	100	GH13
+maltohexaose-forming amylase	3.2.1.98	pubmed	Bacillus sp. 707	AAE59728.1	P19571	1WP6[A]1WPC[A]2D3L[A]2D3N[A]	Bacteria	100	GH13
+maltohexaose-forming amylase	3.2.1.98	pubmed	Bacillus sp. 707	AAE62350.1	P19571	1WP6[A]1WPC[A]2D3L[A]2D3N[A]	Bacteria	100	GH13
+maltohexaose-forming amylase	3.2.1.98	pubmed	Bacillus sp. 707	AAP02212.1	P19571	1WP6[A]1WPC[A]2D3L[A]2D3N[A]	Bacteria	100	GH13
+maltohexaose-forming amylase	3.2.1.98	pubmed	Bacillus sp. 707	AAR63620.1	P19571	1WP6[A]1WPC[A]2D3L[A]2D3N[A]	Bacteria	100	GH13
+maltohexaose-forming amylase	3.2.1.98	pubmed	Bacillus sp. 707	AAS26292.1	P19571	1WP6[A]1WPC[A]2D3L[A]2D3N[A]	Bacteria	100	GH13
+maltohexaose-forming amylase	3.2.1.98	pubmed	Bacillus sp. 707	AAY06019.1	P19571	1WP6[A]1WPC[A]2D3L[A]2D3N[A]	Bacteria	100	GH13
+maltohexaose-forming amylase	3.2.1.98	pubmed	Bacillus sp. 707	AAY72174.1	P19571	1WP6[A]1WPC[A]2D3L[A]2D3N[A]	Bacteria	100	GH13
+maltohexaose-forming amylase	3.2.1.98	pubmed	Bacillus sp. 707	ACK07346.1	P19571	1WP6[A]1WPC[A]2D3L[A]2D3N[A]	Bacteria	100	GH13
+maltohexaose-forming amylase	3.2.1.98	pubmed	Bacillus sp. 707	ACP75071.1	P19571	1WP6[A]1WPC[A]2D3L[A]2D3N[A]	Bacteria	100	GH13
+maltohexaose-forming amylase	3.2.1.98	pubmed	Bacillus sp. 707	ACS10032.1	P19571	1WP6[A]1WPC[A]2D3L[A]2D3N[A]	Bacteria	100	GH13
+maltohexaose-forming amylase	3.2.1.98	pubmed	Bacillus sp. 707	ACW26905.1	P19571	1WP6[A]1WPC[A]2D3L[A]2D3N[A]	Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19		Bacillus sp. 8SB	AEL33337.1	G0ZI11		Bacteria	100	GH13
+α-amylase (AmyL)	3.2.1.1	pubmed	Bacillus sp. AAH-31	BAN63122.1	S6BGD1		Bacteria	100	GH13
+isoamylase / pullulanase type I (BsIam; PulA1)	3.2.1.413.2.1.68	pubmedpubmed	Bacillus sp. CICIM 263	AGA03915.1	L0C9D3		Bacteria	100	GH13
+α-glucosidase	3.2.1.20		Bacillus sp. DG0303	AAF71997.1	Q9L872		Bacteria	100	GH13
+oligo-α-1,6-glucosidase	3.2.1.10	doi	Bacillus sp. F5	BAA00534.1	P29093		Bacteria	100	GH13
+g-cyclomaltdextrin glucanotransferase (CgtS)	2.4.1.19		Bacillus sp. G-825-6	BAE87038.1	Q25CB6		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase	2.4.1.19		Bacillus sp. G1-2004	AAV38118.2	Q5U9V9		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19		Bacillus sp. I-5	AAR32682.1	Q6S3E3		Bacteria	100	GH13
+maltopentaose-producing α-amylase (Amy204)	3.2.1.-		Bacillus sp. JAMB-204	BAF03567.1	Q0KKZ7		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase	2.4.1.19	doi	Bacillus sp. KC201	BAA02380.1	Q59239		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase	2.4.1.19	doi	Bacillus sp. KC201	2009322A	Q59239		Bacteria	100	GH13
+α-amylase (PRK09441) (fragment)	3.2.1.1		Bacillus sp. KR-8104	AAW29920.1	Q5MB94		Bacteria	100	GH13
+α-amylase (Kra2;PKA)	3.2.1.1		Bacillus sp. KR8104	ACD93218.3	B3GQD0	3DC0[A]	Bacteria	100	GH13
+α-amylase (Kra2;PKA)	3.2.1.1		Bacillus sp. KR8104	ACD93218.2	B3GQD0	3DC0[A]	Bacteria	100	GH13
+neopullulanase	3.2.1.135	pubmed	Bacillus sp. KSM-1876	BAA02521.1	Q57482		Bacteria	100	GH13
+α-amylase (AmyK38)	3.2.1.1		Bacillus sp. KSM-K38	CAC39917.1	Q93I48	1UD2[A]1UD3[A]1UD4[A]1UD5[A]1UD6[A]1UD8[A]	Bacteria	100	GH13
+α-amylase (AmyK38)	3.2.1.1		Bacillus sp. KSM-K38	AAN18958.1	Q93I48	1UD2[A]1UD3[A]1UD4[A]1UD5[A]1UD6[A]1UD8[A]	Bacteria	100	GH13
+α-amylase (AmyK38)	3.2.1.1		Bacillus sp. KSM-K38	AAV01046.1	Q93I48	1UD2[A]1UD3[A]1UD4[A]1UD5[A]1UD6[A]1UD8[A]	Bacteria	100	GH13
+α-amylase (AmyK38)	3.2.1.1		Bacillus sp. KSM-K38	ABA16539.1	Q93I48	1UD2[A]1UD3[A]1UD4[A]1UD5[A]1UD6[A]1UD8[A]	Bacteria	100	GH13
+α-amylase (AmyK38)	3.2.1.1		Bacillus sp. KSM-K38	ABI05896.1	Q93I48	1UD2[A]1UD3[A]1UD4[A]1UD5[A]1UD6[A]1UD8[A]	Bacteria	100	GH13
+α-amylase (AmyK38)	3.2.1.1		Bacillus sp. KSM-K38	ABY03537.1	Q93I48	1UD2[A]1UD3[A]1UD4[A]1UD5[A]1UD6[A]1UD8[A]	Bacteria	100	GH13
+α-amylase (AmyK38)	3.2.1.1		Bacillus sp. KSM-K38	ACS10039.1	Q93I48	1UD2[A]1UD3[A]1UD4[A]1UD5[A]1UD6[A]1UD8[A]	Bacteria	100	GH13
+α-amylase (AmyK38)	3.2.1.1		Bacillus sp. KSM-K38	BAB71820.1	Q93I48	1UD2[A]1UD3[A]1UD4[A]1UD5[A]1UD6[A]1UD8[A]	Bacteria	100	GH13
+α-amylase (AmyK38)	3.2.1.1		Bacillus sp. KSM-K38	CAD35986.1	Q93I48	1UD2[A]1UD3[A]1UD4[A]1UD5[A]1UD6[A]1UD8[A]	Bacteria	100	GH13
+α-amylase (AmyK38)	3.2.1.1		Bacillus sp. KSM-K38	CAD38133.1	Q93I48	1UD2[A]1UD3[A]1UD4[A]1UD5[A]1UD6[A]1UD8[A]	Bacteria	100	GH13
+α-amylase (AmyK38)	3.2.1.1		Bacillus sp. KSM-K38	CAJ00040.1	Q93I48	1UD2[A]1UD3[A]1UD4[A]1UD5[A]1UD6[A]1UD8[A]	Bacteria	100	GH13
+α-amylase (AmyK38)	3.2.1.1		Bacillus sp. KSM-K38	CAJ28078.1	Q93I48	1UD2[A]1UD3[A]1UD4[A]1UD5[A]1UD6[A]1UD8[A]	Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19		Bacillus sp. NR5 UPM	ADY17981.1	F1DPT1		Bacteria	100	GH13
+α-amylase (Amy)	3.2.1.1	pubmed	Bacillus sp. TS-23	AAA63900.1	Q59222		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase	2.4.1.19		Bacillus sp. TS1-1	AAV38117.1	Q5U9W0		Bacteria	100	GH13
+maltogenic amylase (MAUS149)	3.2.1.133		Bacillus sp. US149	CAL64396.1	A7DWA8		Bacteria	100	GH13
+α-amylase (BMW-amylase)	3.2.1.1		Bacillus sp. WHO	ABU54057.1	A7U965		Bacteria	100	GH13
+maltogenic α-amylase	3.2.1.133	doi	Bacillus sp. WPD616	AAX85453.1	Q52PU5		Bacteria	100	GH13
+α-amylase (AmyF)	3.2.1.1		Bacillus sp. WS06	AAX84031.1	Q4Z8Q4		Bacteria	100	GH13
+α-amylase (AmyF)	3.2.1.1		Bacillus sp. WS06	CAZ78870.1	Q4Z8Q4		Bacteria	100	GH13
+amylase-pullulanase (AapT)	3.2.1.13.2.1.41	pubmedpubmed	Bacillus sp. XAL601	BAA05832.1	Q45643		Bacteria	100	GH13
+α-amylase (Amy;BYXA)	3.2.1.1		Bacillus sp. YX / YX-1	ABW87262.1	A9YDD9		Bacteria	100	GH13
+oligosaccharide-producing multifunctional amylase (OPMA-N)	3.2.1.135		Bacillus sp. ZW2531-1	ABY71030.1	B0FZ47		Bacteria	100	GH13
+α-amylase	3.2.1.1	pubmed	Bacillus subtilis 2633	CAA30643.1	Q45520	1BAG[A]1UA7[A]	Bacteria	100	GH13
+α-amylase (Amy28)	3.2.1.1		Bacillus subtilis A28	AFQ31615.1	J9QPI9		Bacteria	100	GH13
+α-amylase (AmyE)	3.2.1.1		Bacillus subtilis BF7658	ACK37366.1	B8Y1H0		Bacteria	100	GH13
+α-amylase (Amy7C;Amy7D) (fragment)	3.2.1.1		Bacillus subtilis CN7	AFC90847.1	H9B4I9		Bacteria	100	GH13
+α-amylase	3.2.1.1		Bacillus subtilis HA401	AAT01440.1	Q6PMJ3		Bacteria	100	GH13
+oligo-α-1,6-glucosidase	3.2.1.10		Bacillus subtilis HB002	AAG23399.1	Q9F4G4		Bacteria	100	GH13
+oligo-α-1,6-glucosidase	3.2.1.10		Bacillus subtilis HB002	CBF79210.1	Q9F4G4		Bacteria	100	GH13
+α-amylase (AmyE)	3.2.1.1		Bacillus subtilis KCC103	ABW34932.1	A8VWC5		Bacteria	100	GH13
+α-amylase	3.2.1.1		Bacillus subtilis natto IAM1212	AAA22194.1	Q45516		Bacteria	100	GH13
+α-amylase (AmyE;AmyA;BSU03040)	3.2.1.1	pubmed	Bacillus subtilis subsp. subtilis str. 168	BAA08938.1	P00691		Bacteria	100	GH13
+α-amylase (AmyE;AmyA;BSU03040)	3.2.1.1	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY91586.1	P00691		Bacteria	100	GH13
+α-amylase (AmyE;AmyA;BSU03040)	3.2.1.1	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR80240.1	P00691		Bacteria	100	GH13
+α-amylase (AmyE;AmyA;BSU03040)	3.2.1.1	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR84453.1	P00691		Bacteria	100	GH13
+α-amylase (AmyE;AmyA;BSU03040)	3.2.1.1	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAA23437.1	P00691		Bacteria	100	GH13
+α-amylase (AmyE;AmyA;BSU03040)	3.2.1.1	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAA26086.1	P00691		Bacteria	100	GH13
+α-amylase (AmyE;AmyA;BSU03040)	3.2.1.1	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB12098.1	P00691		Bacteria	100	GH13
+α-amylase (AmyE;AmyA;BSU03040)	3.2.1.1	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB12098.2	P00691		Bacteria	100	GH13
+α-amylase (AmyE;AmyA;BSU03040)	3.2.1.1	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_388186.1	P00691		Bacteria	100	GH13
+α-1,6-glucosidase (MalL;YvdL;BSU34560)	3.2.1.10	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB15461.1	A0A6M4JPF4O06994	4M56[A,B]4M8U[A]4MAZ[A]4MB1[A]5WCZ[A,B]7LV6[A]	Bacteria	100	GH13
+α-1,6-glucosidase (MalL;YvdL;BSU34560)	3.2.1.10	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY94772.1	A0A6M4JPF4O06994	4M56[A,B]4M8U[A]4MAZ[A]4MB1[A]5WCZ[A,B]7LV6[A]	Bacteria	100	GH13
+α-1,6-glucosidase (MalL;YvdL;BSU34560)	3.2.1.10	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR83490.1	A0A6M4JPF4O06994	4M56[A,B]4M8U[A]4MAZ[A]4MB1[A]5WCZ[A,B]7LV6[A]	Bacteria	100	GH13
+α-1,6-glucosidase (MalL;YvdL;BSU34560)	3.2.1.10	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR87705.1	A0A6M4JPF4O06994	4M56[A,B]4M8U[A]4MAZ[A]4MB1[A]5WCZ[A,B]7LV6[A]	Bacteria	100	GH13
+α-1,6-glucosidase (MalL;YvdL;BSU34560)	3.2.1.10	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB08041.1	A0A6M4JPF4O06994	4M56[A,B]4M8U[A]4MAZ[A]4MB1[A]5WCZ[A,B]7LV6[A]	Bacteria	100	GH13
+α-1,6-glucosidase (MalL;YvdL;BSU34560)	3.2.1.10	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_391336.1	A0A6M4JPF4O06994	4M56[A,B]4M8U[A]4MAZ[A]4MB1[A]5WCZ[A,B]7LV6[A]	Bacteria	100	GH13
+maltogenic α-amylase / neopullulanase (YvdF;BSU34620)	3.2.1.133	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB08035.1	A0A6M4JPH5O06988		Bacteria	100	GH13
+maltogenic α-amylase / neopullulanase (YvdF;BSU34620)	3.2.1.133	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY94778.1	A0A6M4JPH5O06988		Bacteria	100	GH13
+maltogenic α-amylase / neopullulanase (YvdF;BSU34620)	3.2.1.133	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR83496.1	A0A6M4JPH5O06988		Bacteria	100	GH13
+maltogenic α-amylase / neopullulanase (YvdF;BSU34620)	3.2.1.133	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR87711.1	A0A6M4JPH5O06988		Bacteria	100	GH13
+maltogenic α-amylase / neopullulanase (YvdF;BSU34620)	3.2.1.133	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB15467.1	A0A6M4JPH5O06988		Bacteria	100	GH13
+maltogenic α-amylase / neopullulanase (YvdF;BSU34620)	3.2.1.133	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_391342.1	A0A6M4JPH5O06988		Bacteria	100	GH13
+pullulanase type I / glycogen-debranching enzyme (AmyX;BSU29930)	3.2.1.41	pubmed	Bacillus subtilis subsp. subtilis str. 168	AAC00283.1	A0A6M4JN50C0SPA0O34587	2E8Y[A,B]2E8Z[A,B]2E9B[A,B]	Bacteria	100	GH13
+pullulanase type I / glycogen-debranching enzyme (AmyX;BSU29930)	3.2.1.41	pubmed	Bacillus subtilis subsp. subtilis str. 168	ACH14984.1	A0A6M4JN50C0SPA0O34587	2E8Y[A,B]2E8Z[A,B]2E9B[A,B]	Bacteria	100	GH13
+pullulanase type I / glycogen-debranching enzyme (AmyX;BSU29930)	3.2.1.41	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY94319.1	A0A6M4JN50C0SPA0O34587	2E8Y[A,B]2E8Z[A,B]2E9B[A,B]	Bacteria	100	GH13
+pullulanase type I / glycogen-debranching enzyme (AmyX;BSU29930)	3.2.1.41	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR83021.1	A0A6M4JN50C0SPA0O34587	2E8Y[A,B]2E8Z[A,B]2E9B[A,B]	Bacteria	100	GH13
+pullulanase type I / glycogen-debranching enzyme (AmyX;BSU29930)	3.2.1.41	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR87236.1	A0A6M4JN50C0SPA0O34587	2E8Y[A,B]2E8Z[A,B]2E9B[A,B]	Bacteria	100	GH13
+pullulanase type I / glycogen-debranching enzyme (AmyX;BSU29930)	3.2.1.41	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB14971.1	A0A6M4JN50C0SPA0O34587	2E8Y[A,B]2E8Z[A,B]2E9B[A,B]	Bacteria	100	GH13
+pullulanase type I / glycogen-debranching enzyme (AmyX;BSU29930)	3.2.1.41	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB14971.2	A0A6M4JN50C0SPA0O34587	2E8Y[A,B]2E8Z[A,B]2E9B[A,B]	Bacteria	100	GH13
+pullulanase type I / glycogen-debranching enzyme (AmyX;BSU29930)	3.2.1.41	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_390871.1	A0A6M4JN50C0SPA0O34587	2E8Y[A,B]2E8Z[A,B]2E9B[A,B]	Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreA;BSU07810)	3.2.1.93	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB12610.1	A0A6M3Z8J1P39795		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreA;BSU07810)	3.2.1.93	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY92070.1	A0A6M3Z8J1P39795		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreA;BSU07810)	3.2.1.93	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR80734.1	A0A6M3Z8J1P39795		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreA;BSU07810)	3.2.1.93	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR84947.1	A0A6M3Z8J1P39795		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreA;BSU07810)	3.2.1.93	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAA56495.1	A0A6M3Z8J1P39795		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreA;BSU07810)	3.2.1.93	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAA91015.1	A0A6M3Z8J1P39795		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreA;BSU07810)	3.2.1.93	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_388662.1	A0A6M3Z8J1P39795		Bacteria	100	GH13
+α-amylase (Amy)	3.2.1.1		Bacillus subtilis SUH4-2	AAF14358.1	A8W7J1Q9R9H7		Bacteria	100	GH13
+α-amylase (Amy)	3.2.1.1		Bacillus subtilis SUH4-2	ABW75769.1	A8W7J1Q9R9H7		Bacteria	100	GH13
+maltogenic amylase (BbmA)	3.2.1.133		Bacillus subtilis SUH4-2	AAF23874.1	Q9R9H8		Bacteria	100	GH13
+α-amylase	3.2.1.1	pubmed	Bacillus subtilis X-23	BAA31528.1	O82953		Bacteria	100	GH13
+α-amylase	3.2.1.1	pubmed	Bacillus subtilis XL8	QBC17803.1	A0A411J1E3		Bacteria	100	GH13
+maltogenic amylase (BTMA)	3.2.1.1333.2.1.54		Bacillus thermoalkalophilus ET2	AAT94159.1	Q68KL3		Bacteria	100	GH13
+α-glucosidase activity on pNP-α-D-maltopyranoside (BcellWH2_05530;BACWH2_5225; TvaII)	3.2.1.20	pubmed	Bacteroides cellulosilyticus WH2	ALJ62728.1	A0A0P0GJC2		Bacteria	100	GH13
+α-glucosidase activity on pNP-α-D-maltopyranoside (BcellWH2_05530;BACWH2_5225; TvaII)	3.2.1.20	pubmed	Bacteroides cellulosilyticus WH2	WP_029428030.1	A0A0P0GJC2		Bacteria	100	GH13
+neopullulanase (SusA; BT3704; BT_3704)	3.2.1.135	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO78809.1	P71093Q8A1G0		Bacteria	100	GH13
+neopullulanase (SusA; BT3704; BT_3704)	3.2.1.135	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAC44670.1	P71093Q8A1G0		Bacteria	100	GH13
+neopullulanase (SusA; BT3704; BT_3704)	3.2.1.135	pubmed	Bacteroides thetaiotaomicron VPI-5482	CAZ78747.1	P71093Q8A1G0		Bacteria	100	GH13
+neopullulanase (SusA; BT3704; BT_3704)	3.2.1.135	pubmed	Bacteroides thetaiotaomicron VPI-5482	CAZ78867.1	P71093Q8A1G0		Bacteria	100	GH13
+neopullulanase (SusA; BT3704; BT_3704)	3.2.1.135	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_812615.1	P71093Q8A1G0		Bacteria	100	GH13
+α-amylase / neopullulanase (SusG; BT3698; BT_3698) (outer membrane)	3.2.1.1	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	AAO78803.1	Q45772Q8A1G3	3K8K[A,B]3K8L[A,B]3K8M[A,B]6BS6[A,B]	Bacteria	100	GH13
+α-amylase / neopullulanase (SusG; BT3698; BT_3698) (outer membrane)	3.2.1.1	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	AAB42174.1	Q45772Q8A1G3	3K8K[A,B]3K8L[A,B]3K8M[A,B]6BS6[A,B]	Bacteria	100	GH13
+α-amylase / neopullulanase (SusG; BT3698; BT_3698) (outer membrane)	3.2.1.1	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	CAZ78746.1	Q45772Q8A1G3	3K8K[A,B]3K8L[A,B]3K8M[A,B]6BS6[A,B]	Bacteria	100	GH13
+α-amylase / neopullulanase (SusG; BT3698; BT_3698) (outer membrane)	3.2.1.1	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	NP_812609.1	Q45772Q8A1G3	3K8K[A,B]3K8L[A,B]3K8M[A,B]6BS6[A,B]	Bacteria	100	GH13
+α-amylase / neopullulanase (SusG; BT3698; BT_3698) (outer membrane)	3.2.1.1	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	AAO78803.1	Q45772Q8A1G3	3K8K[A,B]3K8L[A,B]3K8M[A,B]6BS6[A,B]	Bacteria	100	GH13
+α-amylase / neopullulanase (SusG; BT3698; BT_3698) (outer membrane)	3.2.1.1	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	AAB42174.1	Q45772Q8A1G3	3K8K[A,B]3K8L[A,B]3K8M[A,B]6BS6[A,B]	Bacteria	100	GH13
+α-amylase / neopullulanase (SusG; BT3698; BT_3698) (outer membrane)	3.2.1.1	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	CAZ78746.1	Q45772Q8A1G3	3K8K[A,B]3K8L[A,B]3K8M[A,B]6BS6[A,B]	Bacteria	100	GH13
+α-amylase / neopullulanase (SusG; BT3698; BT_3698) (outer membrane)	3.2.1.1	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	NP_812609.1	Q45772Q8A1G3	3K8K[A,B]3K8L[A,B]3K8M[A,B]6BS6[A,B]	Bacteria	100	GH13
+pullulanase (PulI; BT1663; BT_1663)	3.2.1.41	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO76770.1	P71095Q8A762		Bacteria	100	GH13
+pullulanase (PulI; BT1663; BT_1663)	3.2.1.41	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAC44685.1	P71095Q8A762		Bacteria	100	GH13
+pullulanase (PulI; BT1663; BT_1663)	3.2.1.41	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_810576.1	P71095Q8A762		Bacteria	100	GH13
+branching enzyme (GlgB)	2.4.1.18		Bergeriella denitrificans	AAF04747.1	Q9RQI5		Bacteria	100	GH13
+branching enzyme (GlgB)	2.4.1.18		Bergeriella denitrificans	AAQ32649.1	Q9RQI5		Bacteria	100	GH13
+branching enzyme (GlgB)	2.4.1.18		Bergeriella denitrificans	AAT15256.1	Q9RQI5		Bacteria	100	GH13
+branching enzyme (GlgB)	2.4.1.18		Bergeriella denitrificans	CAC22097.1	Q9RQI5		Bacteria	100	GH13
+α-glucosidase (CG400_06090)	3.2.1.20	pubmed	Bifidobacteriaceae bacterium NR017	RFT33048.1			Bacteria	100	GH13
+α-glucosidase (AglB;AglA;BAD_0452)	3.2.1.20	pubmed	Bifidobacterium adolescentis ATCC 15703	AAL05573.1	A1A0K0Q93CA0		Bacteria	100	GH13
+α-glucosidase (AglB;AglA;BAD_0452)	3.2.1.20	pubmed	Bifidobacterium adolescentis ATCC 15703	BAF39233.1	A1A0K0Q93CA0		Bacteria	100	GH13
+α-glucosidase (AglB;AglA;BAD_0452)	3.2.1.20	pubmed	Bifidobacterium adolescentis ATCC 15703	CBF79196.1	A1A0K0Q93CA0		Bacteria	100	GH13
+sucrose phosphorylase (SucP;SP;BaSP)	2.4.1.7		Bifidobacterium adolescentis DSM 20083	AAO33821.1	A0ZZH6Q84HQ2	1R7A[A,B]2GDU[A,B]2GDV[A,B]5C8B[B]5M9X[B]5MAN[B]5MB2[B]6FME[A,B]	Bacteria	100	GH13
+oligo α-glucosidase (AglA)	3.2.1.10	pubmed	Bifidobacterium adolescentis DSM 20083	AAK27723.1	Q9AF93		Bacteria	100	GH13
+α-amylase (AmyB)	3.2.1.1		Bifidobacterium adolescentis INT-57	AAP69820.1	Q5JB42		Bacteria	100	GH13
+α-1,6-glucosidase 1 (Agl1; Bbr_1855)	3.2.1.103.2.1.20		Bifidobacterium breve UCC2003	ACM89182.1	C0JP82		Bacteria	100	GH13
+α-1,6-glucosidase 1 (Agl1; Bbr_1855)	3.2.1.103.2.1.20		Bifidobacterium breve UCC2003	ABE96517.1	C0JP82		Bacteria	100	GH13
+α-1,6-glucosidase 2 (Agl2; Bbr_0559)	3.2.1.103.2.1.20		Bifidobacterium breve UCC2003	ACM89183.1	C0JP83		Bacteria	100	GH13
+α-1,6-glucosidase 2 (Agl2; Bbr_0559)	3.2.1.103.2.1.20		Bifidobacterium breve UCC2003	ABE95255.1	C0JP83		Bacteria	100	GH13
+bifunctional amylopullulanase (ApuB;Bbr_0123)	3.2.1.41		Bifidobacterium breve UCC2003	AAY89038.1	F9Y041Q0R5Z4		Bacteria	100	GH13
+bifunctional amylopullulanase (ApuB;Bbr_0123)	3.2.1.41		Bifidobacterium breve UCC2003	ABE94835.1	F9Y041Q0R5Z4		Bacteria	100	GH13
+bifunctional amylopullulanase (ApuB;Bbr_0123)	3.2.1.1		Bifidobacterium breve UCC2003	AAY89038.1	F9Y041Q0R5Z4		Bacteria	100	GH13
+bifunctional amylopullulanase (ApuB;Bbr_0123)	3.2.1.1		Bifidobacterium breve UCC2003	ABE94835.1	F9Y041Q0R5Z4		Bacteria	100	GH13
+sucrose phosphorylase (Spl;BL0536)	2.4.1.7		Bifidobacterium longum NCC2705	AAN24362.1	Q8G6U7		Bacteria	100	GH13
+sucrose phosphorylase (Spl;BL0536)	2.4.1.7		Bifidobacterium longum NCC2705	NP_695726.1	Q8G6U7		Bacteria	100	GH13
+sucrose phosphorylase (SplP)	2.4.1.7		Bifidobacterium longum SJ32	AAO84039.1	Q84BY1		Bacteria	100	GH13
+sucrose phosphorylase (Spl)	2.4.1.7		Bifidobacterium longum subsp. longum JCM 1217	BAF62433.1	A5A8M5		Bacteria	100	GH13
+maltotriose-forming α-amylase	3.2.1.13.2.1.116		Brachybacterium sp. LB25	BAE94180.1	Q1JUA3		Bacteria	100	GH13
+β-cyclodextrin glycosyltransferase (Cgt)	2.4.1.19	pubmed	Brevibacillus brevis CD162	AAB65420.1	O30565		Bacteria	100	GH13
+maltooligosyltrehalose synthase (TreY;BvMts)	5.4.99.15	pubmed	Brevibacterium helvolum	AAB95368.1	O52519		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ;BvMth)	3.2.1.141	pubmed	Brevibacterium helvolum	AAB95369.1	O52520		Bacteria	100	GH13
+sucrose isomerase / trehalulose synthase (MutB)	5.4.99.11		Burkholderia ubonensis subsp. mesacidophila MX-45	ABC33903.1	M1E1F3M1E1F6M1E1F7Q2PS28	1ZJA[A,B]1ZJB[A,B]2PWD[A,B]2PWE[A,B]2PWF[A,B,C,D]2PWG[A,B]2PWH[A,B]4GI6[A,B]4GI8[A,B]4GI9[A,B]4GIA[A,B]4GIN[A]4GO8[A,B]4GO9[A,B]4H2C[A]4H7V[A,B]4H8H[A,B]4H8U[A,B]4H8V[A,B]4HA1[A,B]	Bacteria	100	GH13
+sucrose isomerase / trehalulose synthase (MutB)	5.4.99.11		Burkholderia ubonensis subsp. mesacidophila MX-45	AAY69574.1	M1E1F3M1E1F6M1E1F7Q2PS28	1ZJA[A,B]1ZJB[A,B]2PWD[A,B]2PWE[A,B]2PWF[A,B,C,D]2PWG[A,B]2PWH[A,B]4GI6[A,B]4GI8[A,B]4GI9[A,B]4GIA[A,B]4GIN[A]4GO8[A,B]4GO9[A,B]4H2C[A]4H7V[A,B]4H8H[A,B]4H8U[A,B]4H8V[A,B]4HA1[A,B]	Bacteria	100	GH13
+sucrose isomerase / trehalulose synthase (MutB)	5.4.99.11		Burkholderia ubonensis subsp. mesacidophila MX-45	ABT00107.1	M1E1F3M1E1F6M1E1F7Q2PS28	1ZJA[A,B]1ZJB[A,B]2PWD[A,B]2PWE[A,B]2PWF[A,B,C,D]2PWG[A,B]2PWH[A,B]4GI6[A,B]4GI8[A,B]4GI9[A,B]4GIA[A,B]4GIN[A]4GO8[A,B]4GO9[A,B]4H2C[A]4H7V[A,B]4H8H[A,B]4H8U[A,B]4H8V[A,B]4HA1[A,B]	Bacteria	100	GH13
+sucrose isomerase / trehalulose synthase (MutB)	5.4.99.11		Burkholderia ubonensis subsp. mesacidophila MX-45	ACO05018.1	M1E1F3M1E1F6M1E1F7Q2PS28	1ZJA[A,B]1ZJB[A,B]2PWD[A,B]2PWE[A,B]2PWF[A,B,C,D]2PWG[A,B]2PWH[A,B]4GI6[A,B]4GI8[A,B]4GI9[A,B]4GIA[A,B]4GIN[A]4GO8[A,B]4GO9[A,B]4H2C[A]4H7V[A,B]4H8H[A,B]4H8U[A,B]4H8V[A,B]4HA1[A,B]	Bacteria	100	GH13
+sucrose isomerase / trehalulose synthase (MutB)	5.4.99.11		Burkholderia ubonensis subsp. mesacidophila MX-45	CAF32995.1	M1E1F3M1E1F6M1E1F7Q2PS28	1ZJA[A,B]1ZJB[A,B]2PWD[A,B]2PWE[A,B]2PWF[A,B,C,D]2PWG[A,B]2PWH[A,B]4GI6[A,B]4GI8[A,B]4GI9[A,B]4GIA[A,B]4GIN[A]4GO8[A,B]4GO9[A,B]4H2C[A]4H7V[A,B]4H8H[A,B]4H8U[A,B]4H8V[A,B]4HA1[A,B]	Bacteria	100	GH13
+palatinase / trehalulose hydrolase (MutA)	3.2.1.103.2.1.-		Burkholderia ubonensis subsp. mesacidophila MX-45	CAA02858.1	C1K2X6		Bacteria	100	GH13
+palatinase / trehalulose hydrolase (MutA)	3.2.1.103.2.1.-		Burkholderia ubonensis subsp. mesacidophila MX-45	AAE36430.1	C1K2X6		Bacteria	100	GH13
+palatinase / trehalulose hydrolase (MutA)	3.2.1.103.2.1.-		Burkholderia ubonensis subsp. mesacidophila MX-45	AAY69575.1	C1K2X6		Bacteria	100	GH13
+palatinase / trehalulose hydrolase (MutA)	3.2.1.103.2.1.-		Burkholderia ubonensis subsp. mesacidophila MX-45	ACO05017.1	C1K2X6		Bacteria	100	GH13
+palatinase / trehalulose hydrolase (MutA)	3.2.1.103.2.1.-		Burkholderia ubonensis subsp. mesacidophila MX-45	ACO05017.2	C1K2X6		Bacteria	100	GH13
+α-amylase (AmyA) (Amy13B)	3.2.1.1		Butyrivibrio fibrisolvens 16/4	CAE17325.1	Q70JA8V5ISH0		Bacteria	100	GH13
+α-amylase (AmyA) (Amy13B)	3.2.1.1		Butyrivibrio fibrisolvens 16/4	CBK74052.1	Q70JA8V5ISH0		Bacteria	100	GH13
+α-amylase (AmyA)	3.2.1.1	pubmed	Butyrivibrio fibrisolvens H17C	AAA23005.1	P30269		Bacteria	100	GH13
+branching-enzyme (GlgB)	2.4.1.18	pubmed	Butyrivibrio fibrisolvens H17C	AAA23007.1	P30539		Bacteria	100	GH13
+α-maltosyltransferase (MTase;Athe_0143;cbes0143)	2.4.1.-		Caldicellulosiruptor bescii DSM 6725	ACM59297.1	B9MLT9		Bacteria	100	GH13
+[retaining] α-1,4-glucan branching enzyme (Athe_0558)	2.4.1.18		Caldicellulosiruptor bescii DSM 6725	ACM59684.1			Bacteria	100	GH13
+pullulanase type I (PulA)	3.2.1.41	pubmed	Caldicellulosiruptor saccharolyticus	AAB06264.1	Q59319		Bacteria	100	GH13
+sucrose hydrolase (SucB; CcSH; CCNA_01193)	3.2.1.48	pubmed	Caulobacter vibrioides NA1000	ACL94658.2			Bacteria	100	GH13
+sucrose hydrolase (SucB; CcSH; CCNA_01193)	3.2.1.48	pubmed	Caulobacter vibrioides NA1000	ACL94658.1			Bacteria	100	GH13
+sucrose hydrolase (SucB; CcSH; CCNA_01193)	3.2.1.48	pubmed	Caulobacter vibrioides NA1000	YP_002516566.2			Bacteria	100	GH13
+α-amylase (AmyA;AmyP;CAP0168)	3.2.1.1	pubmed	Clostridium acetobutylicum ATCC 824	AAD47072.1	P23671		Bacteria	100	GH13
+α-amylase (AmyA;AmyP;CAP0168)	3.2.1.1	pubmed	Clostridium acetobutylicum ATCC 824	AAA63759.1	P23671		Bacteria	100	GH13
+α-amylase (AmyA;AmyP;CAP0168)	3.2.1.1	pubmed	Clostridium acetobutylicum ATCC 824	AAA63759.2	P23671		Bacteria	100	GH13
+α-amylase (AmyA;AmyP;CAP0168)	3.2.1.1	pubmed	Clostridium acetobutylicum ATCC 824	AAK76913.1	P23671		Bacteria	100	GH13
+α-amylase (AmyA;AmyP;CAP0168)	3.2.1.1	pubmed	Clostridium acetobutylicum ATCC 824	NP_149331.1	P23671		Bacteria	100	GH13
+maltogenic α-amylase (CoMA)	3.2.1.133	pubmed	Corallococcus sp. EGB	AVC05420.1	A0A2L1CF09		Bacteria	100	GH13
+maltohexaose-forming α-amylase (AmyM)	3.2.1.98	pubmed	Corallococcus sp. EGB	AII00648.1	A0A076EBZ6		Bacteria	100	GH13
+isoamylase (GlgX;Cgl2107;cg2310)	3.2.1.68		Corynebacterium glutamicum ATCC 13032	BAB99500.1	Q8NNT0		Bacteria	100	GH13
+isoamylase (GlgX;Cgl2107;cg2310)	3.2.1.68		Corynebacterium glutamicum ATCC 13032	ACC05670.1	Q8NNT0		Bacteria	100	GH13
+isoamylase (GlgX;Cgl2107;cg2310)	3.2.1.68		Corynebacterium glutamicum ATCC 13032	ACH05486.1	Q8NNT0		Bacteria	100	GH13
+isoamylase (GlgX;Cgl2107;cg2310)	3.2.1.68		Corynebacterium glutamicum ATCC 13032	ACH05487.1	Q8NNT0		Bacteria	100	GH13
+isoamylase (GlgX;Cgl2107;cg2310)	3.2.1.68		Corynebacterium glutamicum ATCC 13032	CAC25858.1	Q8NNT0		Bacteria	100	GH13
+isoamylase (GlgX;Cgl2107;cg2310)	3.2.1.68		Corynebacterium glutamicum ATCC 13032	CAC25859.1	Q8NNT0		Bacteria	100	GH13
+isoamylase (GlgX;Cgl2107;cg2310)	3.2.1.68		Corynebacterium glutamicum ATCC 13032	CAF20443.1	Q8NNT0		Bacteria	100	GH13
+isoamylase (GlgX;Cgl2107;cg2310)	3.2.1.68		Corynebacterium glutamicum ATCC 13032	CAK31208.1	Q8NNT0		Bacteria	100	GH13
+isoamylase (GlgX;Cgl2107;cg2310)	3.2.1.68		Corynebacterium glutamicum ATCC 13032	CAK31209.1	Q8NNT0		Bacteria	100	GH13
+isoamylase (GlgX;Cgl2107;cg2310)	3.2.1.68		Corynebacterium glutamicum ATCC 13032	CCH25246.1	Q8NNT0		Bacteria	100	GH13
+isoamylase (GlgX;Cgl2107;cg2310)	3.2.1.68		Corynebacterium glutamicum ATCC 13032	NP_601306.1	Q8NNT0		Bacteria	100	GH13
+maltooligosyl trehalose synthase (TreY;CgI2118;cg2323)	5.4.99.15	pubmed	Corynebacterium glutamicum ATCC 13032	BAB99511.1	Q8NNR9		Bacteria	100	GH13
+maltooligosyl trehalose synthase (TreY;CgI2118;cg2323)	5.4.99.15	pubmed	Corynebacterium glutamicum ATCC 13032	ABY16668.1	Q8NNR9		Bacteria	100	GH13
+maltooligosyl trehalose synthase (TreY;CgI2118;cg2323)	5.4.99.15	pubmed	Corynebacterium glutamicum ATCC 13032	CAD43536.1	Q8NNR9		Bacteria	100	GH13
+maltooligosyl trehalose synthase (TreY;CgI2118;cg2323)	5.4.99.15	pubmed	Corynebacterium glutamicum ATCC 13032	CAF20454.1	Q8NNR9		Bacteria	100	GH13
+maltooligosyl trehalose synthase (TreY;CgI2118;cg2323)	5.4.99.15	pubmed	Corynebacterium glutamicum ATCC 13032	CCH25257.1	Q8NNR9		Bacteria	100	GH13
+maltooligosyl trehalose synthase (TreY;CgI2118;cg2323)	5.4.99.15	pubmed	Corynebacterium glutamicum ATCC 13032	NP_601318.1	Q8NNR9		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase(TreZ;Cgl2125;cg2333)	3.2.1.141		Corynebacterium glutamicum ATCC 13032	BAB99519.1	Q8NNR1		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase(TreZ;Cgl2125;cg2333)	3.2.1.141		Corynebacterium glutamicum ATCC 13032	ACK11454.1	Q8NNR1		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase(TreZ;Cgl2125;cg2333)	3.2.1.141		Corynebacterium glutamicum ATCC 13032	CAC25671.1	Q8NNR1		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase(TreZ;Cgl2125;cg2333)	3.2.1.141		Corynebacterium glutamicum ATCC 13032	CAD43537.1	Q8NNR1		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase(TreZ;Cgl2125;cg2333)	3.2.1.141		Corynebacterium glutamicum ATCC 13032	CAD88152.1	Q8NNR1		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase(TreZ;Cgl2125;cg2333)	3.2.1.141		Corynebacterium glutamicum ATCC 13032	CAF20463.1	Q8NNR1		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase(TreZ;Cgl2125;cg2333)	3.2.1.141		Corynebacterium glutamicum ATCC 13032	CCH25265.1	Q8NNR1		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase(TreZ;Cgl2125;cg2333)	3.2.1.141		Corynebacterium glutamicum ATCC 13032	NP_601327.2	Q8NNR1		Bacteria	100	GH13
+α-1,4-glucan branching enzyme (BE3;cceBE3;cce_1806)	2.4.1.18		Crocosphaera subtropica ATCC 51142	ACB51156.1	B1WZK4		Bacteria	100	GH13
+α-1,4-glucan branching enzyme (GlgB;BE1;cceBE1;cce_2248)	2.4.1.18		Crocosphaera subtropica ATCC 51142	ACB51598.1	B1WPM8	5GQU[A]5GQV[A]5GQW[A]5GQX[A]5GQY[A]5GQZ[A]5GR0[A]5GR1[A]5GR2[A]5GR3[A]5GR4[A]5GR5[A]5GR6[A]6KLF[A]	Bacteria	100	GH13
+α-1,4-glucan branching enzyme (BE2;cceBE2;cce_4595)	2.4.1.18		Crocosphaera subtropica ATCC 51142	ACB53943.1	B1WVF3		Bacteria	100	GH13
+1,4-α-glucan branching enzyme (Glgb2)	2.4.1.18		Cyanobacterium sp. NBRC 102756	ABO93392.1	A4UU35		Bacteria	100	GH13
+1,4-α-glucan branching enzyme (Glgb3)	2.4.1.18		Cyanobacterium sp. NBRC 102756	ABO93393.1	A4UU36		Bacteria	100	GH13
+α-amylase (RSDA) (raw-starch-digesting)	3.2.1.1		Cytophaga sp.	AAF00567.1	Q9RQT8		Bacteria	100	GH13
+trehalose synthase (TreS;Deide_07350)	5.4.99.16		Deinococcus deserti VCD115	ACO45593.1	C1D169		Bacteria	100	GH13
+glycogen branching enzyme (GlgB;GBE;DgGBE;Dgeo_0981)	2.4.1.18		Deinococcus geothermalis DSM 11300	ABF45281.1	Q1IZQ3		Bacteria	100	GH13
+amylosucrase (DgAS; Dgeo_0572)	2.4.1.4	pubmed	Deinococcus geothermalis DSM 11300	ABF44874.1	Q1J0W0	3UCQ[A]3UER[A]	Bacteria	100	GH13
+amylosucrase (DgAS; Dgeo_0572)	2.4.1.4	pubmed	Deinococcus geothermalis DSM 11300	YP_604043.1	Q1J0W0	3UCQ[A]3UER[A]	Bacteria	100	GH13
+malto-oligosyltrehalose trehalohydrolase (DR0464)	3.2.1.141		Deinococcus radiodurans R1	AAF10042.1	Q9RX51	2BHU[A]2BHY[A]2BHZ[A]2BXY[A]2BXZ[A]2BY0[A]2BY1[A]2BY2[A]2BY3[A]	Bacteria	100	GH13
+malto-oligosyltrehalose trehalohydrolase (DR0464)	3.2.1.141		Deinococcus radiodurans R1	ANC72786.1	Q9RX51	2BHU[A]2BHY[A]2BHZ[A]2BXY[A]2BXZ[A]2BY0[A]2BY1[A]2BY2[A]2BY3[A]	Bacteria	100	GH13
+malto-oligosyltrehalose trehalohydrolase (DR0464)	3.2.1.141		Deinococcus radiodurans R1	NP_294187.1	Q9RX51	2BHU[A]2BHY[A]2BHZ[A]2BXY[A]2BXZ[A]2BY0[A]2BY1[A]2BY2[A]2BY3[A]	Bacteria	100	GH13
+amylosucrase (AS;DrAS;DR0933)	2.4.1.4		Deinococcus radiodurans R1	AAF10510.1	Q9RVT9	4AYS[A]	Bacteria	100	GH13
+amylosucrase (AS;DrAS;DR0933)	2.4.1.4		Deinococcus radiodurans R1	ANC71873.1	Q9RVT9	4AYS[A]	Bacteria	100	GH13
+amylosucrase (AS;DrAS;DR0933)	2.4.1.4		Deinococcus radiodurans R1	NP_294657.1	Q9RVT9	4AYS[A]	Bacteria	100	GH13
+glycogen branching enzyme (GlgB;DR_1848;DR1848)	2.4.1.18		Deinococcus radiodurans R1	AAF11402.1	Q9RTB7		Bacteria	100	GH13
+glycogen branching enzyme (GlgB;DR_1848;DR1848)	2.4.1.18		Deinococcus radiodurans R1	ANC71059.1	Q9RTB7		Bacteria	100	GH13
+glycogen branching enzyme (GlgB;DR_1848;DR1848)	2.4.1.18		Deinococcus radiodurans R1	NP_295571.1	Q9RTB7		Bacteria	100	GH13
+trehalose synthase (DrTS;DR2036)	5.4.99.16		Deinococcus radiodurans R1	AAF11586.1	I3NX86Q9RST7	4TVU[A,B,C,D,E,F,G,H]4WF7[A,B,C,D]5GTV[A,B,C,D]5GTW[A,B,C,D]5YKB[A,B,C,D]	Bacteria	100	GH13
+trehalose synthase (DrTS;DR2036)	5.4.99.16		Deinococcus radiodurans R1	AEJ36289.1	I3NX86Q9RST7	4TVU[A,B,C,D,E,F,G,H]4WF7[A,B,C,D]5GTV[A,B,C,D]5GTW[A,B,C,D]5YKB[A,B,C,D]	Bacteria	100	GH13
+trehalose synthase (DrTS;DR2036)	5.4.99.16		Deinococcus radiodurans R1	ANC70889.1	I3NX86Q9RST7	4TVU[A,B,C,D,E,F,G,H]4WF7[A,B,C,D]5GTV[A,B,C,D]5GTW[A,B,C,D]5YKB[A,B,C,D]	Bacteria	100	GH13
+trehalose synthase (DrTS;DR2036)	5.4.99.16		Deinococcus radiodurans R1	CAZ78703.1	I3NX86Q9RST7	4TVU[A,B,C,D,E,F,G,H]4WF7[A,B,C,D]5GTV[A,B,C,D]5GTW[A,B,C,D]5YKB[A,B,C,D]	Bacteria	100	GH13
+trehalose synthase (DrTS;DR2036)	5.4.99.16		Deinococcus radiodurans R1	CBF78903.1	I3NX86Q9RST7	4TVU[A,B,C,D,E,F,G,H]4WF7[A,B,C,D]5GTV[A,B,C,D]5GTW[A,B,C,D]5YKB[A,B,C,D]	Bacteria	100	GH13
+trehalose synthase (DrTS;DR2036)	5.4.99.16		Deinococcus radiodurans R1	NP_295759.1	I3NX86Q9RST7	4TVU[A,B,C,D,E,F,G,H]4WF7[A,B,C,D]5GTV[A,B,C,D]5GTW[A,B,C,D]5YKB[A,B,C,D]	Bacteria	100	GH13
+glycogen branching enzyme (GlgB)	2.4.1.18		Dickeya chrysanthemi PY35	AAN64024.1	B0F2B5Q8GQC5		Bacteria	100	GH13
+glycogen branching enzyme (GlgB)	2.4.1.18		Dickeya chrysanthemi PY35	ABY54975.1	B0F2B5Q8GQC5		Bacteria	100	GH13
+α-amylase 2 (AmyB)	3.2.1.1	pubmed	Dictyoglomus thermophilum	CAA31586.1	P14898		Bacteria	100	GH13
+α-amylase 2 (AmyB)	3.2.1.1	pubmed	Dictyoglomus thermophilum	CAZ78892.1	P14898		Bacteria	100	GH13
+α-amylase 3 (AmyC)	3.2.1.1	pubmed	Dictyoglomus thermophilum	CAA34072.1	P14899		Bacteria	100	GH13
+α-amylase 3 (AmyC)	3.2.1.1	pubmed	Dictyoglomus thermophilum	CAZ78893.1	P14899		Bacteria	100	GH13
+α-amylase 3 (AmyC)	3.2.1.1	pubmed	Dictyoglomus thermophilum	CBF79228.1	P14899		Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16		Enterobacter hormaechei 7	ACI16355.1	B6E9W1		Bacteria	100	GH13
+sucrose isomerase (EsI)	5.4.99.11		Enterobacter sp. FMB-1	ACF42098.1	B5ABD8		Bacteria	100	GH13
+α-glucosidase (PalZ)	3.2.1.20		Erwinia rhapontici DSM 4484	AAK28739.1	Q9AI60		Bacteria	100	GH13
+α-glucosidase (PalZ)	3.2.1.20		Erwinia rhapontici DSM 4484	CAC69267.1	Q9AI60		Bacteria	100	GH13
+α-glucosidase (PalZ)	3.2.1.20		Erwinia rhapontici DSM 4484	CAC69279.1	Q9AI60		Bacteria	100	GH13
+α-glucosidase (PalZ)	3.2.1.20		Erwinia rhapontici DSM 4484	CBF79203.1	Q9AI60		Bacteria	100	GH13
+oligo-α-glucosidase / palatinase (PalQ)	3.2.1.103.2.1.-		Erwinia rhapontici DSM 4484	AAK28737.1	Q9AI62		Bacteria	100	GH13
+oligo-α-glucosidase / palatinase (PalQ)	3.2.1.103.2.1.-		Erwinia rhapontici DSM 4484	CAC69265.1	Q9AI62		Bacteria	100	GH13
+oligo-α-glucosidase / palatinase (PalQ)	3.2.1.103.2.1.-		Erwinia rhapontici DSM 4484	CAC69271.1	Q9AI62		Bacteria	100	GH13
+oligo-α-glucosidase / palatinase (PalQ)	3.2.1.103.2.1.-		Erwinia rhapontici DSM 4484	CBF79205.1	Q9AI62		Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Erwinia rhapontici NX-5 / DSM 4484	AAK28735.1	D9MPF2Q9AI64	4HOW[A]4HOX[A]4HOZ[A]4HP5[A]4HPH[A]	Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Erwinia rhapontici NX-5 / DSM 4484	AAY69569.1	D9MPF2Q9AI64	4HOW[A]4HOX[A]4HOZ[A]4HP5[A]4HPH[A]	Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Erwinia rhapontici NX-5 / DSM 4484	ACW35803.1	D9MPF2Q9AI64	4HOW[A]4HOX[A]4HOZ[A]4HP5[A]4HPH[A]	Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Erwinia rhapontici NX-5 / DSM 4484	ADJ56407.2	D9MPF2Q9AI64	4HOW[A]4HOX[A]4HOZ[A]4HP5[A]4HPH[A]	Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Erwinia rhapontici NX-5 / DSM 4484	CAC69266.1	D9MPF2Q9AI64	4HOW[A]4HOX[A]4HOZ[A]4HP5[A]4HPH[A]	Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Erwinia rhapontici NX-5 / DSM 4484	CAC69272.1	D9MPF2Q9AI64	4HOW[A]4HOX[A]4HOZ[A]4HP5[A]4HPH[A]	Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Erwinia rhapontici NX-5 / DSM 4484	CAC69285.1	D9MPF2Q9AI64	4HOW[A]4HOX[A]4HOZ[A]4HP5[A]4HPH[A]	Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Erwinia rhapontici NX-5 / DSM 4484	CAF32986.1	D9MPF2Q9AI64	4HOW[A]4HOX[A]4HOZ[A]4HP5[A]4HPH[A]	Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Erwinia rhapontici NX-5 / DSM 4484	CAF32987.1	D9MPF2Q9AI64	4HOW[A]4HOX[A]4HOZ[A]4HP5[A]4HPH[A]	Bacteria	100	GH13
+isomaltulose synthase	5.4.99.11		Erwinia rhapontici WAC2928	AAP57084.1	Q6XNK5		Bacteria	100	GH13
+isomaltulose synthase	5.4.99.11		Erwinia rhapontici WAC2928	ACR90553.1	Q6XNK5		Bacteria	100	GH13
+branching-enzyme (EcBE;GlgB;EcE24377A_3911)	2.4.1.18		Escherichia coli O139:H28 str. E24377A	ABV17243.1	A7ZSW5P07762	5E6Y[A,B,C,D]5E6Z[A,B,C,D]5E70[A,B,C,D]	Bacteria	100	GH13
+α-amylase (MalS;b3571)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AAB18548.1	P25718		Bacteria	100	GH13
+α-amylase (MalS;b3571)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC76595.1	P25718		Bacteria	100	GH13
+α-amylase (MalS;b3571)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AIZ93631.1	P25718		Bacteria	100	GH13
+α-amylase (MalS;b3571)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	ALI38743.1	P25718		Bacteria	100	GH13
+α-amylase (MalS;b3571)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AMC96456.1	P25718		Bacteria	100	GH13
+α-amylase (MalS;b3571)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AUG18278.1	P25718		Bacteria	100	GH13
+α-amylase (MalS;b3571)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AVI53735.1	P25718		Bacteria	100	GH13
+α-amylase (MalS;b3571)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AYG17489.1	P25718		Bacteria	100	GH13
+α-amylase (MalS;b3571)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	CAA41740.1	P25718		Bacteria	100	GH13
+α-amylase (MalS;b3571)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	NP_418028.1	P25718		Bacteria	100	GH13
+α-amylase 2 (AmyAl;EAMY)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC74994.1	P26612		Bacteria	100	GH13
+α-amylase 2 (AmyAl;EAMY)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AAA23810.1	P26612		Bacteria	100	GH13
+α-amylase 2 (AmyAl;EAMY)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AAA82575.1	P26612		Bacteria	100	GH13
+α-amylase 2 (AmyAl;EAMY)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AIZ90980.1	P26612		Bacteria	100	GH13
+α-amylase 2 (AmyAl;EAMY)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	ALI40306.1	P26612		Bacteria	100	GH13
+α-amylase 2 (AmyAl;EAMY)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AMC94904.1	P26612		Bacteria	100	GH13
+α-amylase 2 (AmyAl;EAMY)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AUG16689.1	P26612		Bacteria	100	GH13
+α-amylase 2 (AmyAl;EAMY)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AVI56440.1	P26612		Bacteria	100	GH13
+α-amylase 2 (AmyAl;EAMY)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	AYG19026.1	P26612		Bacteria	100	GH13
+α-amylase 2 (AmyAl;EAMY)	3.2.1.1	pubmed	Escherichia coli str. K-12 substr. MG1655	NP_416437.1	P26612		Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	AIZ92452.1	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	AAA16112.1	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	AAB40159.1	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC73506.1	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC73506.2	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	ALI41788.1	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	AMC97641.1	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	AUG15189.1	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	AVI54934.1	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	AYG20468.1	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	CAA42498.1	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	CAY02912.1	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	CAZ78690.1	P21517	5BN7[A]	Bacteria	100	GH13
+α-glucosidase Z (EO53_16270;MalZ;b0403)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. MG1655	NP_414937.1	P21517	5BN7[A]	Bacteria	100	GH13
+branching-enzyme (GlgB;EcoBE;b3432)	2.4.1.18	pubmed	Escherichia coli str. K-12 substr. MG1655	AAA23872.1	P07762	1M7X[A]3O7Y[A,B,C,D]3O7Z[A,B,C,D]4LPC[A,B,C,D]4LQ1[A,B,C,D]	Bacteria	100	GH13
+branching-enzyme (GlgB;EcoBE;b3432)	2.4.1.18	pubmed	Escherichia coli str. K-12 substr. MG1655	AAA58230.1	P07762	1M7X[A]3O7Y[A,B,C,D]3O7Z[A,B,C,D]4LPC[A,B,C,D]4LQ1[A,B,C,D]	Bacteria	100	GH13
+branching-enzyme (GlgB;EcoBE;b3432)	2.4.1.18	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC76457.1	P07762	1M7X[A]3O7Y[A,B,C,D]3O7Z[A,B,C,D]4LPC[A,B,C,D]4LQ1[A,B,C,D]	Bacteria	100	GH13
+branching-enzyme (GlgB;EcoBE;b3432)	2.4.1.18	pubmed	Escherichia coli str. K-12 substr. MG1655	ABX94236.1	P07762	1M7X[A]3O7Y[A,B,C,D]3O7Z[A,B,C,D]4LPC[A,B,C,D]4LQ1[A,B,C,D]	Bacteria	100	GH13
+branching-enzyme (GlgB;EcoBE;b3432)	2.4.1.18	pubmed	Escherichia coli str. K-12 substr. MG1655	AIZ89568.1	P07762	1M7X[A]3O7Y[A,B,C,D]3O7Z[A,B,C,D]4LPC[A,B,C,D]4LQ1[A,B,C,D]	Bacteria	100	GH13
+branching-enzyme (GlgB;EcoBE;b3432)	2.4.1.18	pubmed	Escherichia coli str. K-12 substr. MG1655	ALI38888.1	P07762	1M7X[A]3O7Y[A,B,C,D]3O7Z[A,B,C,D]4LPC[A,B,C,D]4LQ1[A,B,C,D]	Bacteria	100	GH13
+branching-enzyme (GlgB;EcoBE;b3432)	2.4.1.18	pubmed	Escherichia coli str. K-12 substr. MG1655	AMC96315.1	P07762	1M7X[A]3O7Y[A,B,C,D]3O7Z[A,B,C,D]4LPC[A,B,C,D]4LQ1[A,B,C,D]	Bacteria	100	GH13
+branching-enzyme (GlgB;EcoBE;b3432)	2.4.1.18	pubmed	Escherichia coli str. K-12 substr. MG1655	AUG18135.1	P07762	1M7X[A]3O7Y[A,B,C,D]3O7Z[A,B,C,D]4LPC[A,B,C,D]4LQ1[A,B,C,D]	Bacteria	100	GH13
+branching-enzyme (GlgB;EcoBE;b3432)	2.4.1.18	pubmed	Escherichia coli str. K-12 substr. MG1655	AVI53591.1	P07762	1M7X[A]3O7Y[A,B,C,D]3O7Z[A,B,C,D]4LPC[A,B,C,D]4LQ1[A,B,C,D]	Bacteria	100	GH13
+branching-enzyme (GlgB;EcoBE;b3432)	2.4.1.18	pubmed	Escherichia coli str. K-12 substr. MG1655	AYG17626.1	P07762	1M7X[A]3O7Y[A,B,C,D]3O7Z[A,B,C,D]4LPC[A,B,C,D]4LQ1[A,B,C,D]	Bacteria	100	GH13
+branching-enzyme (GlgB;EcoBE;b3432)	2.4.1.18	pubmed	Escherichia coli str. K-12 substr. MG1655	CAP11381.1	P07762	1M7X[A]3O7Y[A,B,C,D]3O7Z[A,B,C,D]4LPC[A,B,C,D]4LQ1[A,B,C,D]	Bacteria	100	GH13
+branching-enzyme (GlgB;EcoBE;b3432)	2.4.1.18	pubmed	Escherichia coli str. K-12 substr. MG1655	NP_417890.1	P07762	1M7X[A]3O7Y[A,B,C,D]3O7Z[A,B,C,D]4LPC[A,B,C,D]4LQ1[A,B,C,D]	Bacteria	100	GH13
+isoamylase (GlgX;b3431)	3.2.1.68	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC76456.1	P15067	2WSK[A]	Bacteria	100	GH13
+isoamylase (GlgX;b3431)	3.2.1.68	pubmed	Escherichia coli str. K-12 substr. MG1655	AAA58229.1	P15067	2WSK[A]	Bacteria	100	GH13
+isoamylase (GlgX;b3431)	3.2.1.68	pubmed	Escherichia coli str. K-12 substr. MG1655	AAA98735.1	P15067	2WSK[A]	Bacteria	100	GH13
+isoamylase (GlgX;b3431)	3.2.1.68	pubmed	Escherichia coli str. K-12 substr. MG1655	AIZ89569.1	P15067	2WSK[A]	Bacteria	100	GH13
+isoamylase (GlgX;b3431)	3.2.1.68	pubmed	Escherichia coli str. K-12 substr. MG1655	ALI38889.1	P15067	2WSK[A]	Bacteria	100	GH13
+isoamylase (GlgX;b3431)	3.2.1.68	pubmed	Escherichia coli str. K-12 substr. MG1655	AMC96314.1	P15067	2WSK[A]	Bacteria	100	GH13
+isoamylase (GlgX;b3431)	3.2.1.68	pubmed	Escherichia coli str. K-12 substr. MG1655	AUG18134.1	P15067	2WSK[A]	Bacteria	100	GH13
+isoamylase (GlgX;b3431)	3.2.1.68	pubmed	Escherichia coli str. K-12 substr. MG1655	AVI53590.1	P15067	2WSK[A]	Bacteria	100	GH13
+isoamylase (GlgX;b3431)	3.2.1.68	pubmed	Escherichia coli str. K-12 substr. MG1655	AYG17627.1	P15067	2WSK[A]	Bacteria	100	GH13
+isoamylase (GlgX;b3431)	3.2.1.68	pubmed	Escherichia coli str. K-12 substr. MG1655	CAP11380.1	P15067	2WSK[A]	Bacteria	100	GH13
+isoamylase (GlgX;b3431)	3.2.1.68	pubmed	Escherichia coli str. K-12 substr. MG1655	NP_417889.1	P15067	2WSK[A]	Bacteria	100	GH13
+glucosylglycerate phosphorylase (GGaP; YcjM; b1309)	2.4.1.352	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC74391.2	P76041		Bacteria	100	GH13
+glucosylglycerate phosphorylase (GGaP; YcjM; b1309)	2.4.1.352	pubmed	Escherichia coli str. K-12 substr. MG1655	AIZ91576.1	P76041		Bacteria	100	GH13
+glucosylglycerate phosphorylase (GGaP; YcjM; b1309)	2.4.1.352	pubmed	Escherichia coli str. K-12 substr. MG1655	ALI40912.1	P76041		Bacteria	100	GH13
+glucosylglycerate phosphorylase (GGaP; YcjM; b1309)	2.4.1.352	pubmed	Escherichia coli str. K-12 substr. MG1655	AMC98520.1	P76041		Bacteria	100	GH13
+glucosylglycerate phosphorylase (GGaP; YcjM; b1309)	2.4.1.352	pubmed	Escherichia coli str. K-12 substr. MG1655	AUG16088.1	P76041		Bacteria	100	GH13
+glucosylglycerate phosphorylase (GGaP; YcjM; b1309)	2.4.1.352	pubmed	Escherichia coli str. K-12 substr. MG1655	AVI55828.1	P76041		Bacteria	100	GH13
+glucosylglycerate phosphorylase (GGaP; YcjM; b1309)	2.4.1.352	pubmed	Escherichia coli str. K-12 substr. MG1655	AYG19612.1	P76041		Bacteria	100	GH13
+glucosylglycerate phosphorylase (GGaP; YcjM; b1309)	2.4.1.352	pubmed	Escherichia coli str. K-12 substr. MG1655	NP_415825.2	P76041		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC)	3.2.1.93	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC77196.1	P28904		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC)	3.2.1.93	pubmed	Escherichia coli str. K-12 substr. MG1655	AAA24225.1	P28904		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC)	3.2.1.93	pubmed	Escherichia coli str. K-12 substr. MG1655	AAA97136.1	P28904		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC)	3.2.1.93	pubmed	Escherichia coli str. K-12 substr. MG1655	AAC43382.1	P28904		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC)	3.2.1.93	pubmed	Escherichia coli str. K-12 substr. MG1655	AIZ92996.1	P28904		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC)	3.2.1.93	pubmed	Escherichia coli str. K-12 substr. MG1655	ALI38108.1	P28904		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC)	3.2.1.93	pubmed	Escherichia coli str. K-12 substr. MG1655	AMC97092.1	P28904		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC)	3.2.1.93	pubmed	Escherichia coli str. K-12 substr. MG1655	AUG18922.1	P28904		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC)	3.2.1.93	pubmed	Escherichia coli str. K-12 substr. MG1655	AVI54385.1	P28904		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC)	3.2.1.93	pubmed	Escherichia coli str. K-12 substr. MG1655	AYG20987.1	P28904		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC)	3.2.1.93	pubmed	Escherichia coli str. K-12 substr. MG1655	NP_418660.1	P28904		Bacteria	100	GH13
+maltodextrin glucosidase (MalZ)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. W3110	BAE76183.1	P21517		Bacteria	100	GH13
+maltodextrin glucosidase (MalZ)	3.2.1.20	pubmed	Escherichia coli str. K-12 substr. W3110	APC50696.1	P21517		Bacteria	100	GH13
+maltogenic α-amylase (EUR_01860)	3.2.1.133	pubmed	[Eubacterium] rectale DSM 17629	CBK89424.1	D6E1Y4	7JJN[A,B]	Bacteria	100	GH13
+multidomain α-amylase (EUR_21100) (cell-wall anchored)	3.2.1.1		[Eubacterium] rectale DSM 17629	CBK91127.1	D6DYI9		Bacteria	100	GH13
+g-cyclodextrin glucanotransferase (Cgt)	2.4.1.19		Evansella clarkii 7364	BAH14968.1	B9A1J6Q8L3E0	4JCM[A]	Bacteria	100	GH13
+g-cyclodextrin glucanotransferase (Cgt)	2.4.1.19		Evansella clarkii 7364	ABC06412.1	B9A1J6Q8L3E0	4JCM[A]	Bacteria	100	GH13
+g-cyclodextrin glucanotransferase (Cgt)	2.4.1.19		Evansella clarkii 7364	BAB91217.1	B9A1J6Q8L3E0	4JCM[A]	Bacteria	100	GH13
+g-cyclodextrin glucanotransferase (Cgt)	2.4.1.19		Evansella clarkii 7364	BAB91217.2	B9A1J6Q8L3E0	4JCM[A]	Bacteria	100	GH13
+g-cyclodextrin glucanotransferase (Cgt)	2.4.1.19		Evansella clarkii 7364	CAD87625.1	B9A1J6Q8L3E0	4JCM[A]	Bacteria	100	GH13
+g-cyclodextrin-specific cyclodextrinase (Cda)	3.2.1.54		Evansella clarkii 7364	BAH14969.1	B9A1J7		Bacteria	100	GH13
+pullulanase (Pul3YH5)	3.2.1.41		Exiguobacterium acetylicum a1 / YH5	AFL46505.1	I3WU34		Bacteria	100	GH13
+α-glucosidase (EsOgl; Exig_1739)	3.2.1.20	pubmed	Exiguobacterium sibiricum 255-15	ACB61191.1			Bacteria	100	GH13
+α-glucosidase (EsOgl; Exig_1739)	3.2.1.20	pubmed	Exiguobacterium sibiricum 255-15	CAZ78848.1			Bacteria	100	GH13
+α-amylase (AmyH)	3.2.1.1		Exiguobacterium sp. DAU5	AFZ41193.1	M4I6P6		Bacteria	100	GH13
+α-amylase (Amy-E) (partial)	3.2.1.1	pubmed	Exiguobacterium sp. Sh3	AIW80140.1	A0A0A0WA73		Bacteria	100	GH13
+pullulanase (Pul-SH3)	3.2.1.41		Exiguobacterium sp. Sh3	AJG04842.1	A0A0B5JT51		Bacteria	100	GH13
+pullulanase I (PulA)	3.2.1.41	pubmed	Fervidobacterium pennivorans Ven5	AAD30387.1	Q9XDB5	cryst	Bacteria	100	GH13
+isoamylase (Iam)	3.2.1.68	pubmed	Flavobacterium sp.	AAB63356.1	O32611		Bacteria	100	GH13
+cyclomaltodextrinase (CDase; FspCMD)	3.2.1.54	doi	Flavobacterium sp. 92	CAD32957.1	Q8KKG0	1H3G[A,B]3EDD[A,B]3EDE[A,B]3EDF[A,B]3EDJ[A,B]3EDK[A,B]	Bacteria	100	GH13
+pullulanase (GK2827)	3.2.1.41		Geobacillus kaustophilus HTA426	BAD77112.1	Q5KW24		Bacteria	100	GH13
+α-glucosidase (Gsj)	3.2.1.20		Geobacillus sp. HTA-462	BAE48285.1	Q33E90	2ZE0[A]	Bacteria	100	GH13
+α-amylase (AmyP)	3.2.1.1		Geobacillus sp. POT5	ABL77406.1	A8QL62		Bacteria	100	GH13
+α-amylase (Am-Stearo)	3.2.1.1		Geobacillus stearothermophilus	AAE12382.1			Bacteria	100	GH13
+pullulanase (PulT)	3.2.1.41	pubmed	Geobacillus stearothermophilus	1808262A			Bacteria	100	GH13
+α-amylase (Ami;Amy;AmyUS100)	3.2.1.1	pubmed	Geobacillus stearothermophilus  US100 / ATCC 31195	AAB86961.1	G0LY26O31193Q9KWY6		Bacteria	100	GH13
+α-amylase (Ami;Amy;AmyUS100)	3.2.1.1	pubmed	Geobacillus stearothermophilus  US100 / ATCC 31195	AAN99912.1	G0LY26O31193Q9KWY6		Bacteria	100	GH13
+α-amylase (Ami;Amy;AmyUS100)	3.2.1.1	pubmed	Geobacillus stearothermophilus  US100 / ATCC 31195	ACH26104.1	G0LY26O31193Q9KWY6		Bacteria	100	GH13
+α-amylase (Ami;Amy;AmyUS100)	3.2.1.1	pubmed	Geobacillus stearothermophilus  US100 / ATCC 31195	CAB93517.1	G0LY26O31193Q9KWY6		Bacteria	100	GH13
+α-amylase (Ami;Amy;AmyUS100)	3.2.1.1	pubmed	Geobacillus stearothermophilus  US100 / ATCC 31195	CCB84710.1	G0LY26O31193Q9KWY6		Bacteria	100	GH13
+branching-enzyme (GlgB)	2.4.1.18	pubmed	Geobacillus stearothermophilus 1503-4R	AAA22482.1	P30538		Bacteria	100	GH13
+α-amylase / high-molecular-mass amylase (Hmma;HmwA)	3.2.1.1		Geobacillus stearothermophilus ATCC 12980	ABR26448.1	A6N9J4		Bacteria	100	GH13
+α-glucosidase / exo-α-1,4-glucosidase	3.2.1.20	pubmed	Geobacillus stearothermophilus ATCC12016	BAA12704.1	P94451		Bacteria	100	GH13
+α-glucosidase / exo-α-1,4-glucosidase	3.2.1.20	pubmed	Geobacillus stearothermophilus ATCC12016	CBF79155.1	P94451		Bacteria	100	GH13
+maltogenic α-amylase (BSuA;Novamyl)	3.2.1.133	pubmed	Geobacillus stearothermophilus C599	ABA38666.1	P19531	1QHO[A]1QHP[A]	Bacteria	100	GH13
+maltogenic α-amylase (BSuA;Novamyl)	3.2.1.133	pubmed	Geobacillus stearothermophilus C599	AAA22233.1	P19531	1QHO[A]1QHP[A]	Bacteria	100	GH13
+maltogenic α-amylase (BSuA;Novamyl)	3.2.1.133	pubmed	Geobacillus stearothermophilus C599	AAY11155.1	P19531	1QHO[A]1QHP[A]	Bacteria	100	GH13
+maltogenic α-amylase (BSuA;Novamyl)	3.2.1.133	pubmed	Geobacillus stearothermophilus C599	ALJ77020.1	P19531	1QHO[A]1QHP[A]	Bacteria	100	GH13
+maltogenic α-amylase (BSuA;Novamyl)	3.2.1.133	pubmed	Geobacillus stearothermophilus C599	CAL60144.1	P19531	1QHO[A]1QHP[A]	Bacteria	100	GH13
+maltogenic α-amylase (BSuA;Novamyl)	3.2.1.133	pubmed	Geobacillus stearothermophilus C599	CAZ67881.1	P19531	1QHO[A]1QHP[A]	Bacteria	100	GH13
+α-glucan branching enzyme (GlgB) (fragment)	2.4.1.18		Geobacillus stearothermophilus CU21	CAA79749.1	Q59243		Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAA22235.2	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAA22227.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAA22241.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAE13948.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAE37102.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAE59725.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAE62347.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAN20004.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAN27446.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAP02209.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAR63624.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAS26289.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAY06018.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	AAY72171.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	ABJ43096.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	ABN29370.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	ACK07342.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	ACP75067.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	ACW26902.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	CAA26547.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	CAC16485.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	CAC88549.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	CAD19033.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	CAD20676.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	CAD26700.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+α-amylase (AmyS)	3.2.1.1	pubmed	Geobacillus stearothermophilus DY5 / PHI300 / NZ-3	CAD67515.1	P06279	1HVX[A]4UZU[A]	Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt;BsCgt)	2.4.1.19	doi	Geobacillus stearothermophilus ET1	AAD00555.1	Q9ZAQ0		Bacteria	100	GH13
+maltogenic α-amylase (BSMA)	3.2.1.133	pubmed	Geobacillus stearothermophilus ET1	AAC46346.1	Q45490		Bacteria	100	GH13
+α-amylase	3.2.1.1	doi	Geobacillus stearothermophilus GRE1	ABC18196.1			Bacteria	100	GH13
+neopullulanase	3.2.1.135		Geobacillus stearothermophilus IMA6503	AAK15003.1	Q9AIV2		Bacteria	100	GH13
+a/β-cyclodextrin glucanotransferase (Cgt;CgtS;Aga2)	2.4.1.19	pubmed	Geobacillus stearothermophilus No. 2 / NO2	CAA41770.1	P31797	1CYG[A]	Bacteria	100	GH13
+a/β-cyclodextrin glucanotransferase (Cgt;CgtS;Aga2)	2.4.1.19	pubmed	Geobacillus stearothermophilus No. 2 / NO2	CAA41771.1	P31797	1CYG[A]	Bacteria	100	GH13
+a/β-cyclodextrin glucanotransferase (Cgt;CgtS;Aga2)	2.4.1.19	pubmed	Geobacillus stearothermophilus No. 2 / NO2	CAA41772.1	P31797	1CYG[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Geobacillus stearothermophilus TISTR 329	AAU10478.1	Q66T78		Bacteria	100	GH13
+branching-enzyme (GlgB)	2.4.1.18	pubmed	Geobacillus stearothermophilus TRBE14	BAA19588.1	Q59242		Bacteria	100	GH13
+cyclomaltodextrinase / neopullulanase (NplT;BsCMD)	3.2.1.1353.2.1.54	pubmed	Geobacillus stearothermophilus TRS40	AAA22622.1	P38940	1J0H[A,B]1J0I[A,B]1J0J[A,B]1J0K[A,B]	Bacteria	100	GH13
+amylopullulanase (ApuTS)	3.2.1.13.2.1.41		Geobacillus stearothermophilus TS-23	AAG44799.1	Q9EZZ4		Bacteria	100	GH13
+amylopullulanase (ApuTS)	3.2.1.13.2.1.41		Geobacillus stearothermophilus TS-23	CAZ78886.1	Q9EZZ4		Bacteria	100	GH13
+α-amylase (GA)	3.2.1.1		Geobacillus thermodenitrificans LH8	ABX83871.1	A9UJ60		Bacteria	100	GH13
+α-amylase (GTA;GTCCBUS3UF5_7870)	3.2.1.1		Geobacillus thermoleovorans CCB_US3_UF5	AEV18110.1	G8N704	4E2O[A]	Bacteria	100	GH13
+amylopullulanase (Apu;Apu105;Gt-Apu)	3.2.1.13.2.1.41		Geobacillus thermoleovorans NP33	AFI70750.1	I1WWV6		Bacteria	100	GH13
+α-amylase II (Amy2;Gt-AmyII)	3.2.1.13.2.1.133		Geobacillus thermoleovorans NP54	AFK08971.1	I3QII4		Bacteria	100	GH13
+maltogenic-amylase (Amy3;Gt-Mamy)	3.2.1.133		Geobacillus thermoleovorans NP54	AFM43699.1	I6RE37		Bacteria	100	GH13
+α-amylase (Amy;Gt-Amy)	3.2.1.1		Geobacillus thermoleovorans NP54	AFC87833.1	J9PXA2		Bacteria	100	GH13
+α-amylase (AmyA) (raw-starch digesting)	3.2.1.13.2.1.133		Geobacillus thermoleovorans subsp. stromboliensis Pizzo	ADG45817.1	D6R179		Bacteria	100	GH13
+pullulanase type I (Orf1)	3.2.1.41		Geobacillus thermoleovorans US105	CAC85704.1	Q8GJ67		Bacteria	100	GH13
+α-amylase I (AmyI) (alkaline;thermostable)	3.2.1.1		Halalkalibacterium halodurans 38C-2-1	BAF93484.1	A8QWV3		Bacteria	100	GH13
+α-amylase G-6 (BH0413)	3.2.1.98		Halalkalibacterium halodurans C-125	BAB04132.1	Q9KFR4		Bacteria	100	GH13
+α-amylase G-6 (BH0413)	3.2.1.98		Halalkalibacterium halodurans C-125	NP_241279.1	Q9KFR4		Bacteria	100	GH13
+maltohexaose-forming α-amylase (Amy 34)	3.2.1.98		Halalkalibacterium halodurans LBK 34	AAS99099.1	Q5GIA5		Bacteria	100	GH13
+maltotetraose-producing α-amylase (AmyA) (alkaline, thermotolerant)	3.2.1.60	doi	Halalkalibacterium halodurans MS-2-5	BAG70894.1	B5MEM6		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19		Halalkalibacterium halodurans US193	CAL25733.1	Q0JW31		Bacteria	100	GH13
+α-amylase (AmyH)	3.2.1.1		Halomonas meridiana DSM 5425	CAB92963.1	Q9L4I9		Bacteria	100	GH13
+α-glucosidase (AglA; HaG)	3.2.1.20	pubmed	Halomonas sp. H11	BAL49684.1	H3K096	3WY1[A,B]3WY2[A,B]3WY3[A,B]3WY4[A,B]	Bacteria	100	GH13
+α-amylase A (AmyA;Hore_14740)	3.2.1.1		Halothermothrix orenii H 168	AAN52525.1	B8CY54Q8GPL8	1Q76[nd]1WML[nd]1WZA[A]	Bacteria	100	GH13
+α-amylase A (AmyA;Hore_14740)	3.2.1.1		Halothermothrix orenii H 168	ACL70223.1	B8CY54Q8GPL8	1Q76[nd]1WML[nd]1WZA[A]	Bacteria	100	GH13
+α-amylase A (AmyA;Hore_14740)	3.2.1.1		Halothermothrix orenii H 168	CAZ78883.1	B8CY54Q8GPL8	1Q76[nd]1WML[nd]1WZA[A]	Bacteria	100	GH13
+α-amylase A (AmyA;Hore_14740)	3.2.1.1		Halothermothrix orenii H 168	CBF79188.1	B8CY54Q8GPL8	1Q76[nd]1WML[nd]1WZA[A]	Bacteria	100	GH13
+α-amylase B (AmyB)	3.2.1.1		Halothermothrix orenii H 168	ACL70573.1	B8CZ54	3BC9[A]3BCD[A]3BCF[A]	Bacteria	100	GH13
+branching-enzyme	2.4.1.18		Kitasatospora aureofaciens	AAA67437.1	P52980		Bacteria	100	GH13
+pullulanase (PulA)	3.2.1.41	doi	Klebsiella aerogenes W70	AAA25124.1	P07811		Bacteria	100	GH13
+pullulanase (PulA)	3.2.1.41	doi	Klebsiella aerogenes W70	AAR52613.1	P07811		Bacteria	100	GH13
+cyclodextrinase (CymH)	3.2.1.54	pubmed	Klebsiella oxytoca M5A1	CAA60007.1	Q48398		Bacteria	100	GH13
+cyclodextrinase (CymH)	3.2.1.54	pubmed	Klebsiella oxytoca M5A1	CAY02962.1	Q48398		Bacteria	100	GH13
+cyclodextrinase (CymH)	3.2.1.54	pubmed	Klebsiella oxytoca M5A1	CAZ78869.1	Q48398		Bacteria	100	GH13
+maltohexaose-forming α-amylase (AmyG6)	3.2.1.98		Klebsiella pneumoniae	BAA88434.1	Q9RHR1		Bacteria	100	GH13
+α-cyclodextrin glucanotransferase (Cgt)	2.4.1.19	pubmed	Klebsiella pneumoniae M5a1	AAA25059.1	P08704		Bacteria	100	GH13
+α-cyclodextrin glucanotransferase (Cgt)	2.4.1.19	pubmed	Klebsiella pneumoniae M5a1	AAE32693.1	P08704		Bacteria	100	GH13
+α-cyclodextrin glucanotransferase (Cgt)	2.4.1.19	pubmed	Klebsiella pneumoniae M5a1	AAP61132.1	P08704		Bacteria	100	GH13
+α-cyclodextrin glucanotransferase (Cgt)	2.4.1.19	pubmed	Klebsiella pneumoniae M5a1	AAP61133.1	P08704		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC;KP1_0530)	3.2.1.93		Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044	BAG86620.1	B6ZN43C4X1I2		Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreC;KP1_0530)	3.2.1.93		Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044	BAH61402.1	B6ZN43C4X1I2		Bacteria	100	GH13
+pullulanase A (PulA)	3.2.1.41	pubmed	Klebsiella pneumoniae UNF5023	CAA36431.1	P07206	2FGZ[A]2FH6[A]2FH8[A]2FHB[A]2FHC[A]2FHF[A]	Bacteria	100	GH13
+pullulanase A (PulA)	3.2.1.41	pubmed	Klebsiella pneumoniae UNF5023	AAA61976.1	P07206	2FGZ[A]2FH6[A]2FH8[A]2FHB[A]2FHC[A]2FHF[A]	Bacteria	100	GH13
+pullulanase A (PulA)	3.2.1.41	pubmed	Klebsiella pneumoniae UNF5023	ACH14985.1	P07206	2FGZ[A]2FH6[A]2FH8[A]2FHB[A]2FHC[A]2FHF[A]	Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Klebsiella sp. LX3	AAK82938.1	Q8KR84	1M53[A]	Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Klebsiella sp. LX3	CAF32992.1	Q8KR84	1M53[A]	Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Klebsiella sp. LX3	CAF32993.1	Q8KR84	1M53[A]	Bacteria	100	GH13
+isomaltulose synthase (PalI)	5.4.99.11		Klebsiella sp. LX3	CBF79192.1	Q8KR84	1M53[A]	Bacteria	100	GH13
+sucrose isomerase (PalI)	5.4.99.11	doi	Klebsiella sp. NK33-98-8	AAM96902.1	Q4L2Q1		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ)	3.2.1.141		Kocuria rosea QS412	AAY83363.1	Q4JQI8		Bacteria	100	GH13
+α-amylase (Amy;KVA)	3.2.1.1	pubmed	Kocuria varians ATCC 21971	BAJ52728.1	E5RKQ5		Bacteria	100	GH13
+cyclomaltodextrinase (Cda13;Amy80)	3.2.1.54		Laceyella sacchari	AAX29990.1	Q5BLZ7		Bacteria	100	GH13
+cyclomaltodextrinase (Cda13;Amy80)	3.2.1.54		Laceyella sacchari	CAY02964.1	Q5BLZ7		Bacteria	100	GH13
+cyclomaltodextrinase (Cda13;Amy80)	3.2.1.54		Laceyella sacchari	CAZ78872.1	Q5BLZ7		Bacteria	100	GH13
+α-amylase (AmyA)	3.2.1.1	pubmed	Lacticaseibacillus manihotivorans LMG 18010T	AAD45245.1	O85007Q9XCV8		Bacteria	100	GH13
+α-amylase (AmyA)	3.2.1.1	pubmed	Lacticaseibacillus manihotivorans LMG 18010T	AAC24760.1	O85007Q9XCV8		Bacteria	100	GH13
+α-amylase	3.2.1.1	pubmed	Lactiplantibacillus plantarum A6	AAC45780.1	O06915		Bacteria	100	GH13
+amylopullulanase (ApuA)	3.2.1.13.2.1.41		Lactiplantibacillus plantarum L137	BAF93906.1	A9EEQ2B3Y970		Bacteria	100	GH13
+amylopullulanase (ApuA)	3.2.1.13.2.1.41		Lactiplantibacillus plantarum L137	BAG67031.1	A9EEQ2B3Y970		Bacteria	100	GH13
+sucrose phosphorylase (LaSP;GtfA2;LBA1437)	2.4.1.7		Lactobacillus acidophilus NCFM	AAO21868.1	G1UB42Q7WWP8		Bacteria	100	GH13
+sucrose phosphorylase (LaSP;GtfA2;LBA1437)	2.4.1.7		Lactobacillus acidophilus NCFM	AAV43262.1	G1UB42Q7WWP8		Bacteria	100	GH13
+sucrose phosphorylase (LaSP;GtfA2;LBA1437)	2.4.1.7		Lactobacillus acidophilus NCFM	ACK31408.1	G1UB42Q7WWP8		Bacteria	100	GH13
+oligo-α-1,6-glucosidase (LaGH13_31A; LBA0264)	3.2.1.10	pubmed	Lactobacillus acidophilus NCFM	AAV42157.1	Q5FMB7	4AIE[A]	Bacteria	100	GH13
+maltogenic α-amylase (LaGH13_20; MalN; LBA1871)	3.2.1.133	pubmed	Lactobacillus acidophilus NCFM	AAV43671.1	Q5FI03		Bacteria	100	GH13
+α-1,4-glucosyltransferase (LaGH13_31B; MalL; LBA1872)	3.2.1.12.4.1.161	pubmedpubmed	Lactobacillus acidophilus NCFM	AAV43672.1	Q5FI02	6Y9T[A,B]	Bacteria	100	GH13
+α-1,4-glucosyltransferase (LaGH13_31B; MalL; LBA1872)	3.2.1.12.4.1.161	pubmedpubmed	Lactobacillus acidophilus NCFM	ACC31273.1	Q5FI02	6Y9T[A,B]	Bacteria	100	GH13
+α-1,4-glucosyltransferase (LaGH13_31B; MalL; LBA1872)	3.2.1.12.4.1.161	pubmedpubmed	Lactobacillus acidophilus NCFM	ACS07503.1	Q5FI02	6Y9T[A,B]	Bacteria	100	GH13
+α-1,4-glucosyltransferase (LaGH13_31B; MalL; LBA1872)	3.2.1.12.4.1.161	pubmedpubmed	Lactobacillus acidophilus NCFM	ACS09974.1	Q5FI02	6Y9T[A,B]	Bacteria	100	GH13
+LBA1014 (TreC;La1014)	3.2.1.93		Lactobacillus acidophilus NCFM	AAV42863.1	Q5FKB1		Bacteria	100	GH13
+LBA1014 (TreC;La1014)	3.2.1.93		Lactobacillus acidophilus NCFM	ACH26473.1	Q5FKB1		Bacteria	100	GH13
+α-amylase (AmyA)	3.2.1.1	pubmed	Lactobacillus amylovorus NRRL B-45	AAC45781.1	A4ULJ3Q48502Q79AD6		Bacteria	100	GH13
+α-amylase (AmyA)	3.2.1.1	pubmed	Lactobacillus amylovorus NRRL B-45	ABO77965.1	A4ULJ3Q48502Q79AD6		Bacteria	100	GH13
+α-amylase (AmyA)	3.2.1.1	pubmed	Lactobacillus amylovorus NRRL B-45	CAA56557.1	A4ULJ3Q48502Q79AD6		Bacteria	100	GH13
+maltogenic α-amylase (LgMA;Lgas02001568)	3.2.1.133		Lactobacillus gasseri ATCC 33323 = JCM 1131	ZP_00047084.1	Q046J8		Bacteria	100	GH13
+maltogenic α-amylase (Lgma;LGAS_0215)	3.2.1.133		Lactobacillus gasseri ATCC 33323 = JCM 1131	ABJ59624.1	Q046J8		Bacteria	100	GH13
+isoamylase (Iam1)	3.2.1.68	doi	Lederbergia lenta JNU3	AGL34022.1	A0A075BIV0		Bacteria	100	GH13
+sucrose phosphorylase (LmSPase)	2.4.1.7	pubmed	Leuconostoc mesenteroides ATCC 12291	BAA14344.1	Q59495		Bacteria	100	GH13
+sucrose phosphorylase (742sp)	2.4.1.7		Leuconostoc mesenteroides B-742	ABS59292.1	B2BS85		Bacteria	100	GH13
+sucrose phosphorylase	2.4.1.7		Leuconostoc mesenteroides NO. 165	2207198A			Bacteria	100	GH13
+sucrose phosphorylase (LmSP1)	2.4.1.7		Leuconostoc mesenteroides NRRL B-1149	AAX33736.1	Q14EH6		Bacteria	100	GH13
+sucrose phosphorylase (ScrP)	2.4.1.7		Limosilactobacillus reuteri LTH5448	AGK37834.1	M9ZS93		Bacteria	100	GH13
+α-1,6-glucosidase (Lmo0184)	3.2.1.20		Listeria monocytogenes EGD-e	NP_463715.1	Q8YAE6	5DO8[A,B,C]	Bacteria	100	GH13
+α-1,6-glucosidase (Lmo0184)	3.2.1.20		Listeria monocytogenes EGD-e	CAC98399.1	Q8YAE6	5DO8[A,B,C]	Bacteria	100	GH13
+α-1,6-glucosidase (Lmo0184)	3.2.1.20		Listeria monocytogenes EGD-e	CAZ78714.1	Q8YAE6	5DO8[A,B,C]	Bacteria	100	GH13
+cyclodextrinase (CDase)	3.2.1.54	pubmed	Lysinibacillus sphaericus E-244	CAA44454.1	Q08341		Bacteria	100	GH13
+cyclodextrinase (CDase)	3.2.1.54	pubmed	Lysinibacillus sphaericus E-244	CAY02969.1	Q08341		Bacteria	100	GH13
+cyclodextrinase (CDase)	3.2.1.54	pubmed	Lysinibacillus sphaericus E-244	CAZ78898.1	Q08341		Bacteria	100	GH13
+HP15_2853	2.4.1.359		Marinobacter adhaerens HP15	ADP98617.1	E4PMA5		Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16		Meiothermus ruber CBS-01	ACA35051.1	B1PK99		Bacteria	100	GH13
+glucosylglycerate phosphorylase (MSGGaP;Mesil_0665)	2.4.1.352	pubmed	Meiothermus silvanus DSM 9946	ADH62582.1	D7BAR0		Bacteria	100	GH13
+amylosucrase (MFAS;Mfla_2611)	2.4.1.4	pubmed	Methylobacillus flagellatus KT	ABE50875.1	Q1GY12		Bacteria	100	GH13
+α-glucan 1,4-α-maltohexaosidase (AmyB;MaAmyB)	3.2.1.98	pubmed	Microbacterium aurum B8.A	AOF40721.1	A0A1B3IKE0		Bacteria	100	GH13
+α-amylase (AmyA;MaAmyA)	3.2.1.1	pubmed	Microbacterium aurum B8A	AKG25402.1	A0A0G2T4B5		Bacteria	100	GH13
+maltotriose-producing α-amylase (AmyA)	3.2.1.116		Microbulbifer thermotolerans DAU221	AID53183.1	A0A0A0Q4S7A0A143HRA0		Bacteria	100	GH13
+maltotriose-producing α-amylase (AmyA)	3.2.1.116		Microbulbifer thermotolerans DAU221	AMX04264.1	A0A0A0Q4S7A0A143HRA0		Bacteria	100	GH13
+α-amylase	3.2.1.1	pubmed	Micrococcus sp. 207	CAA39321.1	Q06812		Bacteria	100	GH13
+pullulanase type I (AmyA1)	3.2.1.41		mixed culture bacterium AmyA1	AGW21593.1	U3MXZ5		Bacteria	100	GH13
+α-1,4-glucan: phosphate α-maltosyltransferase (GlgE;Rv1327c)	2.4.99.16		Mycobacterium tuberculosis H37Rv	CAA98091.2	P9WQ16P9WQ17	4U33[A,B,C,D,E,F]4U3C[A,B,C,D,E,F]	Bacteria	100	GH13
+α-1,4-glucan: phosphate α-maltosyltransferase (GlgE;Rv1327c)	2.4.99.16		Mycobacterium tuberculosis H37Rv	AFN49234.1	P9WQ16P9WQ17	4U33[A,B,C,D,E,F]4U3C[A,B,C,D,E,F]	Bacteria	100	GH13
+α-1,4-glucan: phosphate α-maltosyltransferase (GlgE;Rv1327c)	2.4.99.16		Mycobacterium tuberculosis H37Rv	CCP44085.1	P9WQ16P9WQ17	4U33[A,B,C,D,E,F]4U3C[A,B,C,D,E,F]	Bacteria	100	GH13
+branching-enzyme (GlgB;Rv1326c)	2.4.1.18	pubmed	Mycobacterium tuberculosis H37Rv	CAA98090.1	P9WN45Q10625	3K1D[A]	Bacteria	100	GH13
+branching-enzyme (GlgB;Rv1326c)	2.4.1.18	pubmed	Mycobacterium tuberculosis H37Rv	AFN49233.1	P9WN45Q10625	3K1D[A]	Bacteria	100	GH13
+branching-enzyme (GlgB;Rv1326c)	2.4.1.18	pubmed	Mycobacterium tuberculosis H37Rv	CCP44084.1	P9WN45Q10625	3K1D[A]	Bacteria	100	GH13
+branching-enzyme (GlgB;Rv1326c)	2.4.1.18	pubmed	Mycobacterium tuberculosis H37Rv	NP_215842.1	P9WN45Q10625	3K1D[A]	Bacteria	100	GH13
+trehalose synthase (TreS;MtTS;Rv0126;RVBD_0126)	5.4.99.16	pubmed	Mycobacterium tuberculosis H37Rv	CAB09454.1	O07176P9WQ19	4LXF[A,B]	Bacteria	100	GH13
+trehalose synthase (TreS;MtTS;Rv0126;RVBD_0126)	5.4.99.16	pubmed	Mycobacterium tuberculosis H37Rv	AFN47974.1	O07176P9WQ19	4LXF[A,B]	Bacteria	100	GH13
+trehalose synthase (TreS;MtTS;Rv0126;RVBD_0126)	5.4.99.16	pubmed	Mycobacterium tuberculosis H37Rv	CCP42851.1	O07176P9WQ19	4LXF[A,B]	Bacteria	100	GH13
+trehalose synthase (TreS;MtTS;Rv0126;RVBD_0126)	5.4.99.16	pubmed	Mycobacterium tuberculosis H37Rv	NP_214640.1	O07176P9WQ19	4LXF[A,B]	Bacteria	100	GH13
+trehalose synthase (TreS;MsTS;MSMEG_6515)	5.4.99.16		Mycolicibacterium smegmatis MC2 155	ABK71531.1	A0R6E0	3ZO9[A,B]3ZOA[A,B]5JY7[A,B,C,D,E,F,G,H]	Bacteria	100	GH13
+trehalose synthase (TreS;MsTS;MSMEG_6515)	5.4.99.16		Mycolicibacterium smegmatis MC2 155	AFP42769.1	A0R6E0	3ZO9[A,B]3ZOA[A,B]5JY7[A,B,C,D,E,F,G,H]	Bacteria	100	GH13
+trehalose synthase (TreS;MsTS;MSMEG_6515)	5.4.99.16		Mycolicibacterium smegmatis MC2 155	AIU11490.1	A0R6E0	3ZO9[A,B]3ZOA[A,B]5JY7[A,B,C,D,E,F,G,H]	Bacteria	100	GH13
+α-1,4-glucan: phosphate α-maltosyltransferase  (GlgE;KEK_12948)	2.4.99.16		Mycolicibacterium thermoresistibile ATCC 19527	EHI11807.1	G7CL00	5CGM[A,B]5CIM[A,B]5CJ5[A,B]	Bacteria	100	GH13
+MYPU_6440	3.2.1.41		Mycoplasmopsis pulmonis UAB CTIP	CAC13817.1	Q98PS5		Bacteria	100	GH13
+MYPU_6440	3.2.1.41		Mycoplasmopsis pulmonis UAB CTIP	NP_326475.1	Q98PS5		Bacteria	100	GH13
+isoamylase	3.2.1.68	pubmed	Myroides odoratus	BAA82695.1	Q9RM63		Bacteria	100	GH13
+amylosucrase (Ams; NpAS)	2.4.1.4	pubmed	Neisseria polysaccharea ATCC 43768	AAT15258.1	E2PEX2Q9ZEU2	1G5A[A]1JG9[A]1JGI[A]1MVY[A]1MW0[A]1MW1[A]1MW2[A]1MW3[A]1S46[A]1ZS2[A]3UEQ[A]4FLO[A]4FLQ[A]4FLR[A]4FLS[A]	Bacteria	100	GH13
+amylosucrase (Ams; NpAS)	2.4.1.4	pubmed	Neisseria polysaccharea ATCC 43768	AAW13710.1	E2PEX2Q9ZEU2	1G5A[A]1JG9[A]1JGI[A]1MVY[A]1MW0[A]1MW1[A]1MW2[A]1MW3[A]1S46[A]1ZS2[A]3UEQ[A]4FLO[A]4FLQ[A]4FLR[A]4FLS[A]	Bacteria	100	GH13
+amylosucrase (Ams; NpAS)	2.4.1.4	pubmed	Neisseria polysaccharea ATCC 43768	ACK26675.1	E2PEX2Q9ZEU2	1G5A[A]1JG9[A]1JGI[A]1MVY[A]1MW0[A]1MW1[A]1MW2[A]1MW3[A]1S46[A]1ZS2[A]3UEQ[A]4FLO[A]4FLQ[A]4FLR[A]4FLS[A]	Bacteria	100	GH13
+amylosucrase (Ams; NpAS)	2.4.1.4	pubmed	Neisseria polysaccharea ATCC 43768	CAA03058.1	E2PEX2Q9ZEU2	1G5A[A]1JG9[A]1JGI[A]1MVY[A]1MW0[A]1MW1[A]1MW2[A]1MW3[A]1S46[A]1ZS2[A]3UEQ[A]4FLO[A]4FLQ[A]4FLR[A]4FLS[A]	Bacteria	100	GH13
+amylosucrase (Ams; NpAS)	2.4.1.4	pubmed	Neisseria polysaccharea ATCC 43768	CAA03083.1	E2PEX2Q9ZEU2	1G5A[A]1JG9[A]1JGI[A]1MVY[A]1MW0[A]1MW1[A]1MW2[A]1MW3[A]1S46[A]1ZS2[A]3UEQ[A]4FLO[A]4FLQ[A]4FLR[A]4FLS[A]	Bacteria	100	GH13
+amylosucrase (Ams; NpAS)	2.4.1.4	pubmed	Neisseria polysaccharea ATCC 43768	CAA09772.1	E2PEX2Q9ZEU2	1G5A[A]1JG9[A]1JGI[A]1MVY[A]1MW0[A]1MW1[A]1MW2[A]1MW3[A]1S46[A]1ZS2[A]3UEQ[A]4FLO[A]4FLQ[A]4FLR[A]4FLS[A]	Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19	pubmed	Niallia circulans 251	CAA55023.1	P43379	1CDG[A]1CGV[A]1CGW[A]1CGX[A]1CGY[A]1CXE[A]1CXF[A]1CXH[A]1CXI[A]1CXK[A]1CXL[A]1D3C[A]1DTU[A]1EO5[A]1EO7[A]1KCK[A]1KCL[A]1OT1[A]1OT2[A]1PEZ[A]1PJ9[A]1TCM[A,B]2CXG[A]2DIJ[A]	Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (CGTase)	2.4.1.19	pubmed	Niallia circulans 8	CAA48401.1	P30920	1CGT[A]1CGU[A]3CGT[A]4CGT[A]5CGT[A]6CGT[A]7CGT[A]8CGT[A]9CGT[A]	Bacteria	100	GH13
+α-1,6-cyclomaltopentaose-forming glucanotransferase (IgtY)	2.4.1.-		Niallia circulans AM7	BAF37283.1	A0P8W9		Bacteria	100	GH13
+a/β-cyclodextrin glycosyltransferase	2.4.1.19		Niallia circulans DF 9R	ACF42340.2	C4MH58		Bacteria	100	GH13
+a/β-cyclodextrin glycosyltransferase	2.4.1.19		Niallia circulans DF 9R	ACF42340.1	C4MH58		Bacteria	100	GH13
+α-amylase	3.2.1.1	pubmed	Niallia circulans F-2	AAA22229.1	P08137		Bacteria	100	GH13
+β-cyclodextrin glycosyltransferase	2.4.1.19	pubmed	Niallia circulans STB01	AIS84204.1	A0A097CPM3		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ)	3.2.1.141		Nostoc flagelliforme	ADM32915.1	E1ANS4		Bacteria	100	GH13
+maltooligosyltrehalose synthase (TreY)	5.4.99.15		Nostoc punctiforme IAM M-15	BAG85337.1	B6ZIV0		Bacteria	100	GH13
+maltooligosyltrehalose trehalohydrolase (TreZ)	3.2.1.141		Nostoc punctiforme IAM M-15	BAG85336.1	B6ZIU9		Bacteria	100	GH13
+debranching enzyme (Npun_R6073)	3.2.1.41		Nostoc punctiforme PCC 73102	ACC84362.1	B2IUW9	2WC7[A]2WCS[A]2WKG[A]	Bacteria	100	GH13
+debranching enzyme (Npun_R6073)	3.2.1.41		Nostoc punctiforme PCC 73102	CAY02945.1	B2IUW9	2WC7[A]2WCS[A]2WKG[A]	Bacteria	100	GH13
+debranching enzyme (Npun_R6073)	3.2.1.41		Nostoc punctiforme PCC 73102	CAZ78799.1	B2IUW9	2WC7[A]2WCS[A]2WKG[A]	Bacteria	100	GH13
+α-amylase (Amy1)	3.2.1.1		Nostoc sp. PCC 7119	CAQ30277.1	B1VK33		Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16		Paenarthrobacter aurescens CGMCC 1.1892	ACL80570.1	B8YM30		Bacteria	100	GH13
+pulullanase type I (PulA;PbPulA)	3.2.1.41		Paenibacillus barengoltzii CAU904	AJP16551.1	A0A0C5GWS2	5WVQ[A]5WVS[A]5WVT[A]5WW1[A]5WW2[A]5WWA[A]5WWB[A]6JEQ[A]6JFJ[A]6JFX[A]6JHF[A]6JHG[A]6JHH[A]6JHI[A]	Bacteria	100	GH13
+pulullanase type I (PulA;PbPulA)	3.2.1.41		Paenibacillus barengoltzii CAU904	WP_016313728.1	A0A0C5GWS2	5WVQ[A]5WVS[A]5WVT[A]5WW1[A]5WW2[A]5WWA[A]5WWB[A]6JEQ[A]6JFJ[A]6JFX[A]6JHF[A]6JHG[A]6JHH[A]6JHI[A]	Bacteria	100	GH13
+a/β-cyclodextrin glucanotranferase (Cgt) (fragment)	2.4.1.19		Paenibacillus graminis MC22.13	ACA01964.1	B2XY82		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase (CGTase)	2.4.1.19		Paenibacillus illinoisensis ZY-08 / ZY-8	ACO70966.1	C9WB02		Bacteria	100	GH13
+α-cyclodextrin glucanotransferase	2.4.1.19		Paenibacillus macerans 602-1	AGT21379.1	P04830S5ZJ19	3WMS[A]6L2H[A]	Bacteria	100	GH13
+α-cyclodextrin glucanotransferase (CD;Cgt;CgtM)	2.4.1.19	pubmed	Paenibacillus macerans IAM1243/ IB7 / IFO 3490 (NRRL B-388) / JFB05-01 (CCTCC M203062)	CAA41773.1	O52766P04830	4JCL[A]6AIJ[A]	Bacteria	100	GH13
+α-cyclodextrin glucanotransferase (CD;Cgt;CgtM)	2.4.1.19	pubmed	Paenibacillus macerans IAM1243/ IB7 / IFO 3490 (NRRL B-388) / JFB05-01 (CCTCC M203062)	AAA22298.1	O52766P04830	4JCL[A]6AIJ[A]	Bacteria	100	GH13
+α-cyclodextrin glucanotransferase (CD;Cgt;CgtM)	2.4.1.19	pubmed	Paenibacillus macerans IAM1243/ IB7 / IFO 3490 (NRRL B-388) / JFB05-01 (CCTCC M203062)	AAC04359.1	O52766P04830	4JCL[A]6AIJ[A]	Bacteria	100	GH13
+β-cyclodextrin glycosyltransferase  (CGTase)	2.4.1.19		Paenibacillus pabuli US132	CAO05752.1	B1VC16		Bacteria	100	GH13
+multidomain α-amylase / β-amylase	3.2.1.1	pubmed	Paenibacillus polymyxa	AAA85446.1	P21543		Bacteria	100	GH13
+multidomain α-amylase / β-amylase	3.2.1.1	pubmed	Paenibacillus polymyxa	CAA68344.1	P21543		Bacteria	100	GH13
+α-amylase (formerly neopullulanase)	3.2.1.13.2.1.135	pubmedpubmed	Paenibacillus polymyxa CECT 155	AAD05199.1	Q9ZAP8		Bacteria	100	GH13
+α-amylase (formerly neopullulanase)	3.2.1.13.2.1.135	pubmedpubmed	Paenibacillus polymyxa CECT 155	CAZ78891.1	Q9ZAP8		Bacteria	100	GH13
+pullulanase type I (PulN)	3.2.1.41		Paenibacillus polymyxa Nws-pp2	AIE88189.1	A0A075FE92		Bacteria	100	GH13
+cyclodextrinase	3.2.1.54		Paenibacillus sp. A11	AAO47386.1	Q84AP9		Bacteria	100	GH13
+cyclodextrinase	3.2.1.54		Paenibacillus sp. A11	CAY02965.1	Q84AP9		Bacteria	100	GH13
+cyclodextrinase	3.2.1.54		Paenibacillus sp. A11	CAZ78882.1	Q84AP9		Bacteria	100	GH13
+β-cyclodextrin glucanotransferase	2.4.1.19		Paenibacillus sp. A11	AAG31622.1	Q9F5W3		Bacteria	100	GH13
+cyclodextrin glucanotransferase	2.4.1.19	doi	Paenibacillus sp. JB-13	ACB71089.1	B2D1U4		Bacteria	100	GH13
+α-amylase / neopullulanase (Npl)	3.2.1.1		Paenibacillus sp. KCTC8848P	AAL07400.1	Q93C66		Bacteria	100	GH13
+α-amylase / neopullulanase (Npl)	3.2.1.1		Paenibacillus sp. KCTC8848P	CAZ78884.1	Q93C66		Bacteria	100	GH13
+α-amylase / neopullulanase (Npl)	3.2.1.1		Paenibacillus sp. KCTC8848P	CBF79194.1	Q93C66		Bacteria	100	GH13
+isomaltulose synthase	5.4.99.11		Pantoea dispersa UQ68J	AAP57083.1	Q6XNK6		Bacteria	100	GH13
+maltogenic amylase (MA;GcaTK4MA)	3.2.1.133	doi	Parageobacillus caldoxylosilyticus TK4	ACN79585.1	C0LZ63		Bacteria	100	GH13
+α-glucoside phosphorylase	2.4.1.-	pubmed	Parageobacillus thermoglucosidasius	WP_042384192.1			Bacteria	100	GH13
+oligo-α-1,6-glucosidase (MalL)	3.2.1.10	pubmed	Parageobacillus thermoglucosidasius KP1006	BAA01368.1	P29094		Bacteria	100	GH13
+oligo-α-1,6-glucosidase (MalL)	3.2.1.10	pubmed	Parageobacillus thermoglucosidasius KP1006	CBF79249.1	P29094		Bacteria	100	GH13
+sucrose isomerase (PCSI;SIase)	5.4.99.11		Pectobacterium carotovorum KKH 3-1	AGT14432.1	S5YEW8		Bacteria	100	GH13
+isoamylase (GlgX)	3.2.1.68		Pectobacterium carotovorum subsp. carotovorum LY34	ABV71062.1	A9XZV3C0JID0		Bacteria	100	GH13
+isoamylase (GlgX)	3.2.1.68		Pectobacterium carotovorum subsp. carotovorum LY34	ACN29676.1	A9XZV3C0JID0		Bacteria	100	GH13
+glycogen branching enzyme (GlgB)	2.4.1.18		Pectobacterium carotovorum subsp. carotovorum LY34	ACN29675.1	C0JIC9		Bacteria	100	GH13
+sucrose phosphorylase	2.4.1.7	doi	Pelomonas saccharophila IAM 14368	AAD40317.1	Q9XBR0		Bacteria	100	GH13
+maltotetraose-forming amylase (MTA;PSA)	3.2.1.60	pubmed	Pelomonas saccharophila IAM1504	CAA34708.1	P22963	6IWK[A]6IYG[A]6J3X[A]6JQB[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (MTA;PSA)	3.2.1.60	pubmed	Pelomonas saccharophila IAM1504	ABN31435.1	P22963	6IWK[A]6IYG[A]6J3X[A]6JQB[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (MTA;PSA)	3.2.1.60	pubmed	Pelomonas saccharophila IAM1504	ABN31436.1	P22963	6IWK[A]6IYG[A]6J3X[A]6JQB[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (MTA;PSA)	3.2.1.60	pubmed	Pelomonas saccharophila IAM1504	ABN31437.1	P22963	6IWK[A]6IYG[A]6J3X[A]6JQB[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (MTA;PSA)	3.2.1.60	pubmed	Pelomonas saccharophila IAM1504	ABN31438.1	P22963	6IWK[A]6IYG[A]6J3X[A]6JQB[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (MTA;PSA)	3.2.1.60	pubmed	Pelomonas saccharophila IAM1504	ABN31439.1	P22963	6IWK[A]6IYG[A]6J3X[A]6JQB[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (MTA;PSA)	3.2.1.60	pubmed	Pelomonas saccharophila IAM1504	ABN31440.1	P22963	6IWK[A]6IYG[A]6J3X[A]6JQB[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (MTA;PSA)	3.2.1.60	pubmed	Pelomonas saccharophila IAM1504	ABN31441.1	P22963	6IWK[A]6IYG[A]6J3X[A]6JQB[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (MTA;PSA)	3.2.1.60	pubmed	Pelomonas saccharophila IAM1504	ABN31443.1	P22963	6IWK[A]6IYG[A]6J3X[A]6JQB[A]	Bacteria	100	GH13
+[retaining] α-1,4-glucan branching enzyme (Pmob_1316)	2.4.1.18	pubmed	Petrotoga mobilis SJ95	ABX32021.1			Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16	doi	Pimelobacter sp. R48	BAA11303.1	P72235		Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16	doi	Pimelobacter sp. R48	CBF79254.1	P72235		Bacteria	100	GH13
+α-amylase	3.2.1.1		Pontibacillus sp. ZY	AXV43605.1	A0A385FPX0		Bacteria	100	GH13
+α-amylase	3.2.1.1	pubmed	Priestia megaterium NCIB 11568	CAA30247.1	P20845		Bacteria	100	GH13
+α-amylase	3.2.1.1	pubmed	Priestia megaterium NCIB 11568	ACH26139.1	P20845		Bacteria	100	GH13
+α-amylase	3.2.1.1	pubmed	Priestia megaterium NCIB 11568	CAZ78896.1	P20845		Bacteria	100	GH13
+α-amylase	3.2.1.1	pubmed	Priestia megaterium NCIB 11568	CBF79230.1	P20845		Bacteria	100	GH13
+α-amylase (Bman2)	3.2.1.1	doi	Priestia megaterium NL3	AWO14641.1	A0A2U8ZUR1		Bacteria	100	GH13
+exo-acting α-amylase (BmaN1)	3.2.1.133	pubmed	Priestia megaterium NL3	AGT45938.1	T1SIF2		Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16		Propionibacterium freudenreichii subsp. shermanii NIZO B365	ABC88240.1	A1XGB1A4FTT7		Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16		Propionibacterium freudenreichii subsp. shermanii NIZO B365	AAV63798.1	A1XGB1A4FTT7		Bacteria	100	GH13
+sucrose isomerase (SmuA)	5.4.99.11		Protaminobacter rubrum CBS 547.77	CAF32988.1	D0VX20	3GBD[A]3GBE[A]	Bacteria	100	GH13
+sucrose isomerase (SmuA)	5.4.99.11		Protaminobacter rubrum CBS 547.77	AAE36427.1	D0VX20	3GBD[A]3GBE[A]	Bacteria	100	GH13
+sucrose isomerase (SmuA)	5.4.99.11		Protaminobacter rubrum CBS 547.77	AAY69568.1	D0VX20	3GBD[A]3GBE[A]	Bacteria	100	GH13
+sucrose isomerase (SmuA)	5.4.99.11		Protaminobacter rubrum CBS 547.77	AAY69572.1	D0VX20	3GBD[A]3GBE[A]	Bacteria	100	GH13
+sucrose isomerase (SmuA)	5.4.99.11		Protaminobacter rubrum CBS 547.77	ACW35802.1	D0VX20	3GBD[A]3GBE[A]	Bacteria	100	GH13
+sucrose isomerase (SmuA)	5.4.99.11		Protaminobacter rubrum CBS 547.77	ACW35805.1	D0VX20	3GBD[A]3GBE[A]	Bacteria	100	GH13
+sucrose isomerase (SmuA)	5.4.99.11		Protaminobacter rubrum CBS 547.77	CAF32985.1	D0VX20	3GBD[A]3GBE[A]	Bacteria	100	GH13
+amylosucrase (AcAS;Achl_3605)	2.4.1.4		Pseudarthrobacter chlorophenolicus A6	ACL41561.1	B8H6N5		Bacteria	100	GH13
+α-amylase	3.2.1.1		Pseudoalteromonas haloplanktis ANT/505	AAO72321.1	Q84CG0		Bacteria	100	GH13
+α-amylase (Amy;AHA)	3.2.1.1	pubmed	Pseudoalteromonas haloplanktis TAB23 / A23	CAA41481.1	P29957	1AQH[A]1AQM[A]1B0I[A]1G94[A]1G9H[A]1JD7[A]1JD9[A]1KXH[A]1L0P[A]	Bacteria	100	GH13
+psychrophilic α-amylase	3.2.1.1	pubmed	Pseudoalteromonas sp. 2-3	AHM24948.1	W8SKF6		Bacteria	100	GH13
+isoamylase (Iam;IsoA)	3.2.1.68	doi	Pseudomonas amyloderamosa SB-15	AAA25854.1	P10342	1BF2[A]	Bacteria	100	GH13
+isoamylase (Iam;IsoA)	3.2.1.68	doi	Pseudomonas amyloderamosa SB-15	CAA31754.1	P10342	1BF2[A]	Bacteria	100	GH13
+trehalose-6-phosphate hydrolase (TreA)	3.2.1.93		Pseudomonas fluorescens ATCC 17400	AAG31032.1	Q9F8X2		Bacteria	100	GH13
+isoamylase (Iam)	3.2.1.68	pubmed	Pseudomonas sp.	AAA25855.1	P26501		Bacteria	100	GH13
+isoamylase (Iam)	3.2.1.68	pubmed	Pseudomonas sp.	AAQ71617.1	P26501		Bacteria	100	GH13
+isoamylase (Iam)	3.2.1.68	pubmed	Pseudomonas sp.	AAQ71618.1	P26501		Bacteria	100	GH13
+isoamylase (Iam)	3.2.1.68	pubmed	Pseudomonas sp.	CAA00929.1	P26501		Bacteria	100	GH13
+α-amylase (AmyP)	3.2.1.1		Pseudomonas sp. 7193	CAM98700.1	A5CVD5		Bacteria	100	GH13
+α-amylase 1 (Amy1) (alkaline resistant)	3.2.1.1	URL	Pseudomonas sp. KFCC10818	AAA86836.1	Q52414		Bacteria	100	GH13
+α-amylase 2 (Amy2)	3.2.1.1	doi	Pseudomonas sp. KFCC10818	AAA86835.1	Q52413		Bacteria	100	GH13
+α-amylase 4 (Amy4)	3.2.1.1		Pseudomonas sp. KFCC10818	AAK17994.1	Q9AGG4		Bacteria	100	GH13
+α-amylase 3 (Amy3)	3.2.1.1		Pseudomonas sp. KFCC10818	AAK17993.1	Q9AGG5		Bacteria	100	GH13
+maltopentaose-forming α-amylase (frameshift)	3.2.1.-	pubmed	Pseudomonas sp. KO-8940	BAA01600.1	Q52516		Bacteria	100	GH13
+pullulanase	3.2.1.41		Pullulanibacillus naganoensis	AAQ80298.1	G9JLV4		Bacteria	100	GH13
+pullulanase	3.2.1.41		Pullulanibacillus naganoensis	AAQ80294.1	G9JLV4		Bacteria	100	GH13
+pullulanase	3.2.1.41		Pullulanibacillus naganoensis	AAQ80299.1	G9JLV4		Bacteria	100	GH13
+pullulanase	3.2.1.41		Pullulanibacillus naganoensis	AAQ80300.1	G9JLV4		Bacteria	100	GH13
+pullulanase	3.2.1.41		Pullulanibacillus naganoensis	AEV53626.1	G9JLV4		Bacteria	100	GH13
+α-glucosidase (QsGH13)	3.2.1.20	pubmed	Qipengyuania seohaensis SW-135	WP_232725784.1		7VOH[A,B]	Bacteria	100	GH13
+pullulanase (PulA;HMPREF9690_00740)	3.2.1.41	pubmed	Raoultella ornithinolytica 10-5246	EHT13411.1		2YOC[A,B]	Bacteria	100	GH13
+isomaltulose synthase	5.4.99.11		Raoultella planticola	AAP57085.1	Q6XKX6		Bacteria	100	GH13
+isomaltulose synthase	5.4.99.11		Raoultella planticola	CBF79174.1	Q6XKX6		Bacteria	100	GH13
+trehalose synthase (TreS;ROP_61000)	5.4.99.16	pubmed	Rhodococcus opacus B4	BAH54347.1	C1AZS6		Bacteria	100	GH13
+isoamylase	3.2.1.68		Rhodothermus marinus	AAN89211.1			Bacteria	100	GH13
+isoamylase	3.2.1.68		Rhodothermus marinus	AAE45696.1			Bacteria	100	GH13
+isoamylase	3.2.1.68		Rhodothermus marinus	AAE45700.1			Bacteria	100	GH13
+isoamylase	3.2.1.68		Rhodothermus marinus	AAN89215.1			Bacteria	100	GH13
+branching enzyme (GlgB;RoBE)	2.4.1.18		Rhodothermus marinus JCM9785	BAB69858.1	Q93HU3	6JOY[A]	Bacteria	100	GH13
+branching enzyme (GlgB;RoBE)	2.4.1.18		Rhodothermus marinus JCM9785	AAR45540.1	Q93HU3	6JOY[A]	Bacteria	100	GH13
+α-amylase (AmyB) (Amy13A)	3.2.1.1		Roseburia sp. A2-194	CAJ20070.1	Q3LB10		Bacteria	100	GH13
+α-amylase (BaqA)	3.2.1.1		Rossellomorea aquimaris MKSC 6.2	AER68125.1	G8IJA7		Bacteria	100	GH13
+α-amylase (RBL263_00780; Amy5)	3.2.1.1	pubmed	Ruminococcus bromii L2-63	SPE91476.1	D4L684	7JJT[A]	Bacteria	100	GH13
+α-amylase (RBL263_00780; Amy5)	3.2.1.1	pubmed	Ruminococcus bromii L2-63	CBL15129.1	D4L684	7JJT[A]	Bacteria	100	GH13
+pullulanase (RBR_10980;Amy10)	3.2.1.41	pubmed	Ruminococcus bromii L2-63	CBL15393.1	D4L6Z8		Bacteria	100	GH13
+pullulanase (RBR_13560;Amy12)	3.2.1.41	pubmed	Ruminococcus bromii L2-63	CBL15610.1	D4L7L5	7LSA[A]7LSR[A]7LST[A]7LSU[A]	Bacteria	100	GH13
+sucrose 6(F)-phosphate phosphorylas (RUGNEv3_61221;SucP)	2.4.1.329	pubmed	Ruminococcus gnavus E1	CCA61958.1	G4T4R6		Bacteria	100	GH13
+α-glucosidase activity on pNP-α-D-maltopyranoside (Sde_0556) (Amy13A)	3.2.1.20	pubmed	Saccharophagus degradans 2-40	ABD79820.1	Q21NA9		Bacteria	100	GH13
+sucrose isomerase	5.4.99.11	doi	Serratia plymuthica ATCC 15928	CAF32996.1			Bacteria	100	GH13
+sucrose isomerase	5.4.99.11	doi	Serratia plymuthica ATCC 15928	CAF32990.1			Bacteria	100	GH13
+glucosylglycerate phosphorylase (GGaP; Spith_0877)	2.4.1.352	pubmed	Spirochaeta thermophila DSM 6578	AEJ61152.1	G0GBS4		Bacteria	100	GH13
+α-1,4-glucosidase (MalA)	3.2.1.20	pubmed	Staphylococcus xylosus	CAA55409.1	Q60015		Bacteria	100	GH13
+pullulanase type I (Sap;BibA;SAG1216;SAG_1216)	3.2.1.41		Streptococcus agalactiae 2603V/R	AAN00098.1	Q8DZ94		Bacteria	100	GH13
+pullulanase type I (Sap;BibA;SAG1216;SAG_1216)	3.2.1.41		Streptococcus agalactiae 2603V/R	NP_688225.1	Q8DZ94		Bacteria	100	GH13
+α-amylase I (AmyA;Amy I)	3.2.1.1	pubmed	Streptococcus equinus 148	BAA24177.1	O50582		Bacteria	100	GH13
+α-amylase II (Amy II)	3.2.1.1		Streptococcus equinus 148	BAA24178.1	O50583		Bacteria	100	GH13
+α-amylase	3.2.1.1		Streptococcus equinus JB1	AAA97431.1	Q53786		Bacteria	100	GH13
+dextran α-1,6-glucosidase (DexB;SmDG)	3.2.1.70	pubmed	Streptococcus mutans ATCC 25175	BAE79634.1	Q2HWU5Q99040	2ZIC[A]2ZID[A]	Bacteria	100	GH13
+dextran α-1,6-glucosidase (DexB)	3.2.1.70	pubmed	Streptococcus mutans INGBRITT	AAA26939.1	Q99040		Bacteria	100	GH13
+sucrose phosphorylase (GftA;SmSP)	2.4.1.7		Streptococcus mutans INGBRITT / GS5	CAA30846.1	P10249		Bacteria	100	GH13
+sucrose phosphorylase (GftA;SmSP)	2.4.1.7		Streptococcus mutans INGBRITT / GS5	AAA26937.1	P10249		Bacteria	100	GH13
+α-amylase (intracellular) (Amy)	3.2.1.1		Streptococcus mutans LT11	AAC35010.1	O68875		Bacteria	100	GH13
+sucrose phosphorylase (GtfA;SMU.881)	2.4.1.7		Streptococcus mutans UA159	AAN58596.1	P10249		Bacteria	100	GH13
+sucrose phosphorylase (GtfA;SMU.881)	2.4.1.7		Streptococcus mutans UA159	NP_721290.1	P10249		Bacteria	100	GH13
+α-amylase (AmyA;SMU.1590)	3.2.1.1		Streptococcus mutans UA159	AAN59233.1	Q8DT08		Bacteria	100	GH13
+α-amylase (AmyA;SMU.1590)	3.2.1.1		Streptococcus mutans UA159	NP_721927.1	Q8DT08		Bacteria	100	GH13
+pullulanase (SpuA)	3.2.1.41		Streptococcus pneumoniae 3.B	AAG33958.1	Q9F930		Bacteria	100	GH13
+glycogen-degrading enzyme (SpuA;PulA;SP0268)	3.2.1.68	pubmed	Streptococcus pneumoniae TIGR4	AAK74446.1	A0A0H2UNG0Q97SQ7	2YA0[A]2YA1[A]2YA2[A]	Bacteria	100	GH13
+glycogen-degrading enzyme (SpuA;PulA;SP0268)	3.2.1.68	pubmed	Streptococcus pneumoniae TIGR4	AAQ38066.1	A0A0H2UNG0Q97SQ7	2YA0[A]2YA1[A]2YA2[A]	Bacteria	100	GH13
+glycogen-degrading enzyme (SpuA;PulA;SP0268)	3.2.1.68	pubmed	Streptococcus pneumoniae TIGR4	AAT16713.1	A0A0H2UNG0Q97SQ7	2YA0[A]2YA1[A]2YA2[A]	Bacteria	100	GH13
+glycogen-degrading enzyme (SpuA;PulA;SP0268)	3.2.1.68	pubmed	Streptococcus pneumoniae TIGR4	AAY71712.1	A0A0H2UNG0Q97SQ7	2YA0[A]2YA1[A]2YA2[A]	Bacteria	100	GH13
+glycogen-degrading enzyme (SpuA;PulA;SP0268)	3.2.1.68	pubmed	Streptococcus pneumoniae TIGR4	ABA33035.1	A0A0H2UNG0Q97SQ7	2YA0[A]2YA1[A]2YA2[A]	Bacteria	100	GH13
+glycogen-degrading enzyme (SpuA;PulA;SP0268)	3.2.1.68	pubmed	Streptococcus pneumoniae TIGR4	ACK14503.1	A0A0H2UNG0Q97SQ7	2YA0[A]2YA1[A]2YA2[A]	Bacteria	100	GH13
+glycogen-degrading enzyme (SpuA;PulA;SP0268)	3.2.1.68	pubmed	Streptococcus pneumoniae TIGR4	ACW45222.1	A0A0H2UNG0Q97SQ7	2YA0[A]2YA1[A]2YA2[A]	Bacteria	100	GH13
+glycogen-degrading enzyme (SpuA;PulA;SP0268)	3.2.1.68	pubmed	Streptococcus pneumoniae TIGR4	NP_344806.1	A0A0H2UNG0Q97SQ7	2YA0[A]2YA1[A]2YA2[A]	Bacteria	100	GH13
+MGAS10750_Spy1875 (DexS)	3.2.1.93		Streptococcus pyogenes MGAS10750	ABF38825.1	Q1J4B1		Bacteria	100	GH13
+cyclomaltodextrin glucanotransferase (AmyA;M5005_Spy_1065)	2.4.1.19		Streptococcus pyogenes MGAS5005	AAZ51683.1			Bacteria	100	GH13
+Spy49_1626c (PulA)	3.2.1.41		Streptococcus pyogenes NZ131	ACI61883.1	A0A0H3C2B1B5XIM1Q8KLP1		Bacteria	100	GH13
+Spy49_1626c (PulA)	3.2.1.41		Streptococcus pyogenes NZ131	CAD32942.1	A0A0H3C2B1B5XIM1Q8KLP1		Bacteria	100	GH13
+bifunctional amylopullulanase (ApuA;SSU1849)	3.2.1.1	pubmed	Streptococcus suis P1/7	CAR47543.1	C5VVZ9		Bacteria	100	GH13
+bifunctional amylopullulanase (ApuA;SSU1849)	3.2.1.41	pubmed	Streptococcus suis P1/7	CAR47543.1	C5VVZ9		Bacteria	100	GH13
+α-amylase	3.2.1.1		Streptomyces albus	AAA96317.1	Q53633		Bacteria	100	GH13
+α-amylase (SAV5981)	3.2.1.1		Streptomyces avermitilis MA-4680 = NBRC 14893	BAC73693.1	Q82AS5		Bacteria	100	GH13
+α-amylase (SAV5981)	3.2.1.1		Streptomyces avermitilis MA-4680 = NBRC 14893	NP_827158.1	Q82AS5		Bacteria	100	GH13
+α-1,4-glucan: phosphate α-maltosyltransferase I (GlgE;SCO5443;SC6A11.19C)	2.4.99.16	pubmed	Streptomyces coelicolor A3(2)	CAB72419.1	Q9L1K2	3ZSS[A,B,C,D]3ZST[A,B]3ZT5[A,B,C,D]3ZT6[A,B,C,D]3ZT7[A,B,C,D]4CN1[A,B]4CN4[A,B]4CN6[A,B]4U2Y[A,B]4U2Z[A,B]4U31[A,B]5CVS[A,B]5LGV[A,B]5LGW[A,B]5VSJ[A,B]5VT4[A,B,C,D]7MEL[A,B]7MGY[A,B]	Bacteria	100	GH13
+α-1,4-glucan: phosphate α-maltosyltransferase I (GlgE;SCO5443;SC6A11.19C)	2.4.99.16	pubmed	Streptomyces coelicolor A3(2)	CAA04600.1	Q9L1K2	3ZSS[A,B,C,D]3ZST[A,B]3ZT5[A,B,C,D]3ZT6[A,B,C,D]3ZT7[A,B,C,D]4CN1[A,B]4CN4[A,B]4CN6[A,B]4U2Y[A,B]4U2Z[A,B]4U31[A,B]5CVS[A,B]5LGV[A,B]5LGW[A,B]5VSJ[A,B]5VT4[A,B,C,D]7MEL[A,B]7MGY[A,B]	Bacteria	100	GH13
+α-1,4-glucan: phosphate α-maltosyltransferase I (GlgE;SCO5443;SC6A11.19C)	2.4.99.16	pubmed	Streptomyces coelicolor A3(2)	NP_629581.1	Q9L1K2	3ZSS[A,B,C,D]3ZST[A,B]3ZT5[A,B,C,D]3ZT6[A,B,C,D]3ZT7[A,B,C,D]4CN1[A,B]4CN4[A,B]4CN6[A,B]4U2Y[A,B]4U2Z[A,B]4U31[A,B]5CVS[A,B]5LGV[A,B]5LGW[A,B]5VSJ[A,B]5VT4[A,B,C,D]7MEL[A,B]7MGY[A,B]	Bacteria	100	GH13
+branching enzyme I  (GlgBI;SC6A11.16c;SCO5440)	2.4.1.18		Streptomyces coelicolor A3(2)	CAA58314.1	Q59833		Bacteria	100	GH13
+branching enzyme I  (GlgBI;SC6A11.16c;SCO5440)	2.4.1.18		Streptomyces coelicolor A3(2)	CAB72416.1	Q59833		Bacteria	100	GH13
+branching enzyme I  (GlgBI;SC6A11.16c;SCO5440)	2.4.1.18		Streptomyces coelicolor A3(2)	NP_629578.1	Q59833		Bacteria	100	GH13
+branching enzyme II (GlgBII;SC4G10.11c;SCO7332)	2.4.1.18		Streptomyces coelicolor A3(2)	CAB92878.1	Q59832		Bacteria	100	GH13
+branching enzyme II (GlgBII;SC4G10.11c;SCO7332)	2.4.1.18		Streptomyces coelicolor A3(2)	CAA52109.1	Q59832		Bacteria	100	GH13
+branching enzyme II (GlgBII;SC4G10.11c;SCO7332)	2.4.1.18		Streptomyces coelicolor A3(2)	NP_631386.1	Q59832		Bacteria	100	GH13
+α-amylase (Amy)	3.2.1.1		Streptomyces griseus IMRU3570	CAA40798.1	P30270		Bacteria	100	GH13
+α-amylase	3.2.1.1		Streptomyces hygroscopicus	AAA26698.1	P08486		Bacteria	100	GH13
+α-amylase (Aml)	3.2.1.1		Streptomyces limosus ATCC 19778	AAA88554.1	P09794		Bacteria	100	GH13
+α-amylase (Aml;AmlA)	3.2.1.1		Streptomyces lividans TK21	CAA73926.1	O86876		Bacteria	100	GH13
+α-amylase (AmlB)	3.2.1.1	pubmed	Streptomyces lividans TK24	CAB06622.1	P97179		Bacteria	100	GH13
+α-amylase (Amy; AmlA)	3.2.1.1	pubmed	Streptomyces lividans TK24	CAA49759.1	Q05884		Bacteria	100	GH13
+α-amylase (AmlC)	3.2.1.1	pubmed	Streptomyces lividans TK24	CAB06816.1	P96992		Bacteria	100	GH13
+α-amylase	3.2.1.1		Streptomyces sp. TO1	CAA73775.1	O65947		Bacteria	100	GH13
+α-amylase (Amy)	3.2.1.1		Streptomyces sp. WL6	AAA82875.1	Q59964		Bacteria	100	GH13
+α-amylase	3.2.1.1		Streptomyces thermoviolaceus CUB74	AAA26697.1	P27350		Bacteria	100	GH13
+SVEN_5096 (TreS)	5.4.99.16		Streptomyces venezuelae ATCC 10712	CCA58382.1	F2R410		Bacteria	100	GH13
+SVEN_5096 (TreS)	5.4.99.16		Streptomyces venezuelae ATCC 10712	QES01365.1	F2R410		Bacteria	100	GH13
+SVEN_5097 (GlgE)	2.4.99.16		Streptomyces venezuelae ATCC 10712	CCA58383.1	F2R411		Bacteria	100	GH13
+SVEN_5097 (GlgE)	2.4.99.16		Streptomyces venezuelae ATCC 10712	QES01366.1	F2R411		Bacteria	100	GH13
+α-amylase (Aml)	3.2.1.1	pubmed	Streptomyces venezuelae ATCC 15068	AAB36561.1	A0A5P2AWP4P22998		Bacteria	100	GH13
+α-amylase (Aml)	3.2.1.1	pubmed	Streptomyces venezuelae ATCC 15068	QES22595.1	A0A5P2AWP4P22998		Bacteria	100	GH13
+Glycogen debranching enzyme (GlgX;AQF52_6078)	3.2.1.68	pubmed	Streptomyces venezuelae ATCC 15439	ALO11671.1		7U39[A,B,C,D,E,F,G,H,I,J,K,L]7U3A[A,B,C,D]7U3B[A,B,C,D,E,F,G,H]7U3D[A,B,C,D]	Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16		Stutzerimonas stutzeri CJ38	AAF26837.1	Q9LAS5		Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16		Stutzerimonas stutzeri CJ38	AAW06912.1	Q9LAS5		Bacteria	100	GH13
+maltotetraose-forming amylase (AmyP)	3.2.1.60	pubmed	Stutzerimonas stutzeri MO-19	AAA25707.1	P13507Q6LDL4	1AMG[nd]1GCY[A]1JDA[A]1JDC[A]1JDD[A]1QI3[A]1QI4[A]1QI5[A]1QPK[A]2AMG[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (AmyP)	3.2.1.60	pubmed	Stutzerimonas stutzeri MO-19	ABN31444.1	P13507Q6LDL4	1AMG[nd]1GCY[A]1JDA[A]1JDC[A]1JDD[A]1QI3[A]1QI4[A]1QI5[A]1QPK[A]2AMG[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (AmyP)	3.2.1.60	pubmed	Stutzerimonas stutzeri MO-19	ABN31445.1	P13507Q6LDL4	1AMG[nd]1GCY[A]1JDA[A]1JDC[A]1JDD[A]1QI3[A]1QI4[A]1QI5[A]1QPK[A]2AMG[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (AmyP)	3.2.1.60	pubmed	Stutzerimonas stutzeri MO-19	ABN31446.1	P13507Q6LDL4	1AMG[nd]1GCY[A]1JDA[A]1JDC[A]1JDD[A]1QI3[A]1QI4[A]1QI5[A]1QPK[A]2AMG[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (AmyP)	3.2.1.60	pubmed	Stutzerimonas stutzeri MO-19	ABN31447.1	P13507Q6LDL4	1AMG[nd]1GCY[A]1JDA[A]1JDC[A]1JDD[A]1QI3[A]1QI4[A]1QI5[A]1QPK[A]2AMG[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (AmyP)	3.2.1.60	pubmed	Stutzerimonas stutzeri MO-19	ABN31448.1	P13507Q6LDL4	1AMG[nd]1GCY[A]1JDA[A]1JDC[A]1JDD[A]1QI3[A]1QI4[A]1QI5[A]1QPK[A]2AMG[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (AmyP)	3.2.1.60	pubmed	Stutzerimonas stutzeri MO-19	ABN31449.1	P13507Q6LDL4	1AMG[nd]1GCY[A]1JDA[A]1JDC[A]1JDD[A]1QI3[A]1QI4[A]1QI5[A]1QPK[A]2AMG[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (AmyP)	3.2.1.60	pubmed	Stutzerimonas stutzeri MO-19	ABN31450.1	P13507Q6LDL4	1AMG[nd]1GCY[A]1JDA[A]1JDC[A]1JDD[A]1QI3[A]1QI4[A]1QI5[A]1QPK[A]2AMG[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (AmyP)	3.2.1.60	pubmed	Stutzerimonas stutzeri MO-19	ABN31451.1	P13507Q6LDL4	1AMG[nd]1GCY[A]1JDA[A]1JDC[A]1JDD[A]1QI3[A]1QI4[A]1QI5[A]1QPK[A]2AMG[A]	Bacteria	100	GH13
+maltotetraose-forming amylase (AmyP)	3.2.1.60	pubmed	Stutzerimonas stutzeri MO-19	ABN31452.1	P13507Q6LDL4	1AMG[nd]1GCY[A]1JDA[A]1JDC[A]1JDD[A]1QI3[A]1QI4[A]1QI5[A]1QPK[A]2AMG[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	CAD26699.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	AAE12377.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	AAE59724.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	AAE59730.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	AAE62346.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	AAE62352.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	AAP02208.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	AAP02214.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	AAS26288.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	AAS26294.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	AAY06017.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	AAY72170.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	AAY72176.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	ACK07341.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	ACP75066.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	ACS10037.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	ACW26901.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	CAC88548.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	CAD19032.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	CAD20675.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Sutcliffiella halmapala	CAD67514.1		1W9X[A]2GJP[A]2GJR[A]	Bacteria	100	GH13
+isoamylase (GlgX;Synpcc7942_0086)	3.2.1.68		Synechococcus elongatus PCC 7942 = FACHB-805	ABB56118.1	Q31S51		Bacteria	100	GH13
+α-1,4-glucan branching enzyme (ScoBE;Synpcc7942_1085)	2.4.1.18	doi	Synechococcus elongatus PCC 7942 = FACHB-805	ABB57115.1	P16954		Bacteria	100	GH13
+amylosucrase (AmsA;1986-orf;AMS;SYNPCC7002_A0885)	2.4.1.4		Synechococcus sp. PCC 7002	ACA98889.1	B1XIU7		Bacteria	100	GH13
+amylosucrase (AmsA;1986-orf;AMS;SYNPCC7002_A0885)	2.4.1.4		Synechococcus sp. PCC 7002	CDL67995.1	B1XIU7		Bacteria	100	GH13
+α-amylase (AmyTV1;AmyE)	3.2.1.1		Thermoactinomyces vulgaris K94	CAA49465.1	Q60051		Bacteria	100	GH13
+α-amylase (AmyTV1;AmyE)	3.2.1.1		Thermoactinomyces vulgaris K94	CAZ78876.1	Q60051		Bacteria	100	GH13
+α-amylase I (TVA I)	3.2.1.1		Thermoactinomyces vulgaris R-47	BAA02471.1	Q60053	1IZJ[A]1IZK[A]1JI1[A,B]1UH2[A]1UH3[A]1UH4[A]2D0F[A]2D0G[A]2D0H[A]5Z0T[A,B]5Z0U[A]	Bacteria	100	GH13
+α-amylase I (TVA I)	3.2.1.1		Thermoactinomyces vulgaris R-47	CAY02971.1	Q60053	1IZJ[A]1IZK[A]1JI1[A,B]1UH2[A]1UH3[A]1UH4[A]2D0F[A]2D0G[A]2D0H[A]5Z0T[A,B]5Z0U[A]	Bacteria	100	GH13
+α-amylase I (TVA I)	3.2.1.1		Thermoactinomyces vulgaris R-47	CAZ78902.1	Q60053	1IZJ[A]1IZK[A]1JI1[A,B]1UH2[A]1UH3[A]1UH4[A]2D0F[A]2D0G[A]2D0H[A]5Z0T[A,B]5Z0U[A]	Bacteria	100	GH13
+cyclomaltodextrinase / neopullulanase (TVA II;TvCMD)	3.2.1.1353.2.1.54		Thermoactinomyces vulgaris R-47	BAA02473.1	Q08751Q7DI93	1BVZ[A,B]1G1Y[A,B]1JF5[A,B]1JF6[A,B]1JI2[A,B]1JIB[A,B]1JL8[A,B]1VB9[A,B]1VFK[A,B]1VFM[A,B]1VFO[A,B]1VFU[A,B]1WZK[A,B]1WZL[A,B]1WZM[A,B]2D2O[A,B]3A6O[A,B]	Bacteria	100	GH13
+cyclomaltodextrinase / neopullulanase (TVA II;TvCMD)	3.2.1.1353.2.1.54		Thermoactinomyces vulgaris R-47	BAA97040.1	Q08751Q7DI93	1BVZ[A,B]1G1Y[A,B]1JF5[A,B]1JF6[A,B]1JI2[A,B]1JIB[A,B]1JL8[A,B]1VB9[A,B]1VFK[A,B]1VFM[A,B]1VFO[A,B]1VFU[A,B]1WZK[A,B]1WZL[A,B]1WZM[A,B]2D2O[A,B]3A6O[A,B]	Bacteria	100	GH13
+cyclomaltodextrinase / neopullulanase (TVA II;TvCMD)	3.2.1.1353.2.1.54		Thermoactinomyces vulgaris R-47	BAB40638.1	Q08751Q7DI93	1BVZ[A,B]1G1Y[A,B]1JF5[A,B]1JF6[A,B]1JI2[A,B]1JIB[A,B]1JL8[A,B]1VB9[A,B]1VFK[A,B]1VFM[A,B]1VFO[A,B]1VFU[A,B]1WZK[A,B]1WZL[A,B]1WZM[A,B]2D2O[A,B]3A6O[A,B]	Bacteria	100	GH13
+cyclomaltodextrinase / neopullulanase (TVA II;TvCMD)	3.2.1.1353.2.1.54		Thermoactinomyces vulgaris R-47	CAY02972.1	Q08751Q7DI93	1BVZ[A,B]1G1Y[A,B]1JF5[A,B]1JF6[A,B]1JI2[A,B]1JIB[A,B]1JL8[A,B]1VB9[A,B]1VFK[A,B]1VFM[A,B]1VFO[A,B]1VFU[A,B]1WZK[A,B]1WZL[A,B]1WZM[A,B]2D2O[A,B]3A6O[A,B]	Bacteria	100	GH13
+cyclomaltodextrinase / neopullulanase (TVA II;TvCMD)	3.2.1.1353.2.1.54		Thermoactinomyces vulgaris R-47	CAZ78903.1	Q08751Q7DI93	1BVZ[A,B]1G1Y[A,B]1JF5[A,B]1JF6[A,B]1JI2[A,B]1JIB[A,B]1JL8[A,B]1VB9[A,B]1VFK[A,B]1VFM[A,B]1VFO[A,B]1VFU[A,B]1WZK[A,B]1WZL[A,B]1WZM[A,B]2D2O[A,B]3A6O[A,B]	Bacteria	100	GH13
+cyclodextrinase (CDase)	3.2.1.54	pubmed	Thermoanaerobacter ethanolicus ATCC 33223 / 39E	AAA23219.1	P29964		Bacteria	100	GH13
+cyclodextrinase (CDase)	3.2.1.54	pubmed	Thermoanaerobacter ethanolicus ATCC 33223 / 39E	CAY02970.1	P29964		Bacteria	100	GH13
+cyclodextrinase (CDase)	3.2.1.54	pubmed	Thermoanaerobacter ethanolicus ATCC 33223 / 39E	CAZ78899.1	P29964		Bacteria	100	GH13
+amylase-pullulanase (Apu;Apu-Te;TrAPU;Teth39_2173)	3.2.1.13.2.1.41	pubmedpubmed	Thermoanaerobacter pseudethanolicus ATCC 33223	ABY95795.1	P38939P38939		Bacteria	100	GH13
+amylase-pullulanase (Apu;Apu-Te;TrAPU;Teth39_2173)	3.2.1.13.2.1.41	pubmedpubmed	Thermoanaerobacter pseudethanolicus ATCC 33223	AAA23201.1	P38939P38939		Bacteria	100	GH13
+amylase-pullulanase (Apu;Apu-Te;TrAPU;Teth39_2173)	3.2.1.13.2.1.41	pubmedpubmed	Thermoanaerobacter pseudethanolicus ATCC 33223	AAV00812.1	P38939P38939		Bacteria	100	GH13
+α-cyclodextrin glucanotransferase (Cgt)	2.4.1.19		Thermoanaerobacter sp. 5K	AJE25826.1	A0A0C4WYD9		Bacteria	100	GH13
+a/β-cyclodextrin glucanotransferase	2.4.1.19		Thermoanaerobacter sp. ATCC 53627	CAJ84380.1			Bacteria	100	GH13
+a/β-cyclodextrin glucanotransferase (Cgt)	2.4.1.19		Thermoanaerobacter sp. P4	AJE25827.1	A0A0C4WMI5		Bacteria	100	GH13
+amylase-pullulanase (Apu)	3.2.1.13.2.1.41		Thermoanaerobacter thermohydrosulfuricus	AAA23205.1	P16950		Bacteria	100	GH13
+amylase-pullulanase (Apu)	3.2.1.13.2.1.41		Thermoanaerobacter thermohydrosulfuricus	CAZ78897.1	P16950		Bacteria	100	GH13
+amylase-pullulanase (Apu;Apu-Ts)	3.2.1.13.2.1.41		Thermoanaerobacterium saccharolyticum B6A-RI	AAA19800.1	P36905		Bacteria	100	GH13
+amylopullulanase (Apu;Apu-Ts)  (partial)	3.2.1.13.2.1.41		Thermoanaerobacterium saccharolyticum NTOU1	ACR15165.1	C5IGQ7		Bacteria	100	GH13
+sucrose 6(F)-phosphate phosphorylase (SPP;TtSPP;Tthe_1921)	2.4.1.329		Thermoanaerobacterium thermosaccharolyticum DSM 571	ADL69407.1	D9TT09	6S9V[A,B]	Bacteria	100	GH13
+amylase-pullulanase (AmyB)	3.2.1.13.2.1.41		Thermoanaerobacterium thermosulfurigenes EM1	AAB00841.1	P38536		Bacteria	100	GH13
+a/β-cyclodextrin glucanotransferase (AmyA)	2.4.1.19	pubmed	Thermoanaerobacterium thermosulfurigenes EM1	AAB00845.1	P26827	1A47[A]1CIU[A]3BMV[A]3BMW[A]	Bacteria	100	GH13
+trehalose synthase (TreS; TtTS; Tter_0330)	5.4.99.16	pubmed	Thermobaculum terrenum ATCC BAA-798	ACZ41252.1	D1CE96	5X7U[A]	Bacteria	100	GH13
+maltotriose-producing α-amylase (Tfa;Amy13)	3.2.1.13.2.1.116		Thermobifida fusca NTU22	ABF13430.1	Q1KLC8		Bacteria	100	GH13
+trehalose synthase (TreS;Tfu_0584)	5.4.99.16		Thermobifida fusca YX	AAZ54622.1	Q47SE5		Bacteria	100	GH13
+trehalose synthase (TreS;Tfu_0584)	5.4.99.16		Thermobifida fusca YX	CAZ78814.1	Q47SE5		Bacteria	100	GH13
+trehalose synthase (TreS;Tfu_0584)	5.4.99.16		Thermobifida fusca YX	CBF79133.1	Q47SE5		Bacteria	100	GH13
+isoamylase (Tfu_1891)	3.2.1.68		Thermobifida fusca YX	AAZ55924.1	Q47NP5		Bacteria	100	GH13
+α-amylase (Tam)	3.2.1.1		Thermomonospora curvata	CAA41881.1	P29750		Bacteria	100	GH13
+α-glucosidase  / exo-α-1,4-glucosidase (AglA)	3.2.1.20	pubmed	Thermomonospora curvata	AAA57313.1	Q60027		Bacteria	100	GH13
+4-α-glucanotransferase (Mgt;TM0364)	2.4.1.25		Thermotoga maritima MSB8	CAA90693.1	G4FHS6P80099Q60035	1LWH[A,B]1LWJ[A,B]	Bacteria	100	GH13
+4-α-glucanotransferase (Mgt;TM0364)	2.4.1.25		Thermotoga maritima MSB8	AAD35451.1	G4FHS6P80099Q60035	1LWH[A,B]1LWJ[A,B]	Bacteria	100	GH13
+4-α-glucanotransferase (Mgt;TM0364)	2.4.1.25		Thermotoga maritima MSB8	AGL49287.1	G4FHS6P80099Q60035	1LWH[A,B]1LWJ[A,B]	Bacteria	100	GH13
+4-α-glucanotransferase (Mgt;TM0364)	2.4.1.25		Thermotoga maritima MSB8	AHD17874.1	G4FHS6P80099Q60035	1LWH[A,B]1LWJ[A,B]	Bacteria	100	GH13
+4-α-glucanotransferase (Mgt;TM0364)	2.4.1.25		Thermotoga maritima MSB8	AKE28162.1	G4FHS6P80099Q60035	1LWH[A,B]1LWJ[A,B]	Bacteria	100	GH13
+4-α-glucanotransferase (Mgt;TM0364)	2.4.1.25		Thermotoga maritima MSB8	NP_228175.1	G4FHS6P80099Q60035	1LWH[A,B]1LWJ[A,B]	Bacteria	100	GH13
+4-α-glucanotransferase / maltosyltransferase (MTase;TM0767)	2.4.1.252.4.1.-		Thermotoga maritima MSB8	AAD35849.1	G4FD56O33838Q9S5X2	1GJU[A]1GJW[A]	Bacteria	100	GH13
+4-α-glucanotransferase / maltosyltransferase (MTase;TM0767)	2.4.1.252.4.1.-		Thermotoga maritima MSB8	AGL49693.1	G4FD56O33838Q9S5X2	1GJU[A]1GJW[A]	Bacteria	100	GH13
+4-α-glucanotransferase / maltosyltransferase (MTase;TM0767)	2.4.1.252.4.1.-		Thermotoga maritima MSB8	AHD17478.1	G4FD56O33838Q9S5X2	1GJU[A]1GJW[A]	Bacteria	100	GH13
+4-α-glucanotransferase / maltosyltransferase (MTase;TM0767)	2.4.1.252.4.1.-		Thermotoga maritima MSB8	AKE28548.1	G4FD56O33838Q9S5X2	1GJU[A]1GJW[A]	Bacteria	100	GH13
+4-α-glucanotransferase / maltosyltransferase (MTase;TM0767)	2.4.1.252.4.1.-		Thermotoga maritima MSB8	CAA04525.1	G4FD56O33838Q9S5X2	1GJU[A]1GJW[A]	Bacteria	100	GH13
+4-α-glucanotransferase / maltosyltransferase (MTase;TM0767)	2.4.1.252.4.1.-		Thermotoga maritima MSB8	NP_228576.1	G4FD56O33838Q9S5X2	1GJU[A]1GJW[A]	Bacteria	100	GH13
+α-amylase (AmyA;TM1840;Tmari_1848) (Amy13A)	3.2.1.1		Thermotoga maritima MSB8	CAA72194.1	G4FGM5P96107Q9S5Y2		Bacteria	100	GH13
+α-amylase (AmyA;TM1840;Tmari_1848) (Amy13A)	3.2.1.1		Thermotoga maritima MSB8	AAD36902.1	G4FGM5P96107Q9S5Y2		Bacteria	100	GH13
+α-amylase (AmyA;TM1840;Tmari_1848) (Amy13A)	3.2.1.1		Thermotoga maritima MSB8	AGL50772.1	G4FGM5P96107Q9S5Y2		Bacteria	100	GH13
+α-amylase (AmyA;TM1840;Tmari_1848) (Amy13A)	3.2.1.1		Thermotoga maritima MSB8	AHD18270.1	G4FGM5P96107Q9S5Y2		Bacteria	100	GH13
+α-amylase (AmyA;TM1840;Tmari_1848) (Amy13A)	3.2.1.1		Thermotoga maritima MSB8	AKE29589.1	G4FGM5P96107Q9S5Y2		Bacteria	100	GH13
+α-amylase (AmyA;TM1840;Tmari_1848) (Amy13A)	3.2.1.1		Thermotoga maritima MSB8	CAZ78695.1	G4FGM5P96107Q9S5Y2		Bacteria	100	GH13
+α-amylase (AmyA;TM1840;Tmari_1848) (Amy13A)	3.2.1.1		Thermotoga maritima MSB8	CBF78892.1	G4FGM5P96107Q9S5Y2		Bacteria	100	GH13
+α-amylase (AmyA;TM1840;Tmari_1848) (Amy13A)	3.2.1.1		Thermotoga maritima MSB8	NP_229636.1	G4FGM5P96107Q9S5Y2		Bacteria	100	GH13
+α-amylase (AmyB;TM1650) (Amy13B)	3.2.1.1		Thermotoga maritima MSB8	AAD36717.1	Q9X1Y3R4P3U1		Bacteria	100	GH13
+α-amylase (AmyB;TM1650) (Amy13B)	3.2.1.1		Thermotoga maritima MSB8	AGL50583.1	Q9X1Y3R4P3U1		Bacteria	100	GH13
+α-amylase (AmyB;TM1650) (Amy13B)	3.2.1.1		Thermotoga maritima MSB8	AHD18453.1	Q9X1Y3R4P3U1		Bacteria	100	GH13
+α-amylase (AmyB;TM1650) (Amy13B)	3.2.1.1		Thermotoga maritima MSB8	AKE29408.1	Q9X1Y3R4P3U1		Bacteria	100	GH13
+α-amylase (AmyB;TM1650) (Amy13B)	3.2.1.1		Thermotoga maritima MSB8	NP_229450.1	Q9X1Y3R4P3U1		Bacteria	100	GH13
+cyclomaltodextrinase (AglB;TM1835)	3.2.1.54		Thermotoga maritima MSB8	AAD36898.1	G4FGM1Q9X2F4		Bacteria	100	GH13
+cyclomaltodextrinase (AglB;TM1835)	3.2.1.54		Thermotoga maritima MSB8	AGL50768.1	G4FGM1Q9X2F4		Bacteria	100	GH13
+cyclomaltodextrinase (AglB;TM1835)	3.2.1.54		Thermotoga maritima MSB8	AHD18274.1	G4FGM1Q9X2F4		Bacteria	100	GH13
+cyclomaltodextrinase (AglB;TM1835)	3.2.1.54		Thermotoga maritima MSB8	AKE29585.1	G4FGM1Q9X2F4		Bacteria	100	GH13
+cyclomaltodextrinase (AglB;TM1835)	3.2.1.54		Thermotoga maritima MSB8	CAY02913.1	G4FGM1Q9X2F4		Bacteria	100	GH13
+cyclomaltodextrinase (AglB;TM1835)	3.2.1.54		Thermotoga maritima MSB8	CAZ78694.1	G4FGM1Q9X2F4		Bacteria	100	GH13
+cyclomaltodextrinase (AglB;TM1835)	3.2.1.54		Thermotoga maritima MSB8	NP_229632.1	G4FGM1Q9X2F4		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	AAD36907.1	G4FGN0O33840		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	AAM56795.1	G4FGN0O33840		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	ABJ38302.1	G4FGN0O33840		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	ABJ38322.1	G4FGN0O33840		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	ACW20067.1	G4FGN0O33840		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	ACW20078.1	G4FGN0O33840		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	AGL50777.1	G4FGN0O33840		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	AHD18265.1	G4FGN0O33840		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	AKE29594.1	G4FGN0O33840		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	CAA04522.1	G4FGN0O33840		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	CAH68696.1	G4FGN0O33840		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	CAT81460.1	G4FGN0O33840		Bacteria	100	GH13
+pullulanase (PulA;Tm1845) (Pul13A)	3.2.1.41		Thermotoga maritima MSB8	NP_229641.1	G4FGN0O33840		Bacteria	100	GH13
+4-α-glucanotransferase (MgtA)	2.4.1.25		Thermotoga neapolitana	CAA08864.1	O86956		Bacteria	100	GH13
+4-α-glucanotransferase (MgtA)	2.4.1.25		Thermotoga neapolitana	CAZ78901.1	O86956		Bacteria	100	GH13
+cyclomaltodextrinase glucanotransferase (MalA;AglB)	3.2.1.54		Thermotoga neapolitana	CAA08867.1	O86959		Bacteria	100	GH13
+cyclomaltodextrinase glucanotransferase (MalA;AglB)	3.2.1.54		Thermotoga neapolitana	CAY02961.1	O86959		Bacteria	100	GH13
+cyclomaltodextrinase glucanotransferase (MalA;AglB)	3.2.1.54		Thermotoga neapolitana	CAZ78866.1	O86959		Bacteria	100	GH13
+α-amylase (AmyE; CTN_0781)	3.2.1.1	pubmed	Thermotoga neapolitana DSM 4359	ADN95584.1			Bacteria	100	GH13
+α-amylase (AmyE; CTN_0781)	3.2.1.1	pubmed	Thermotoga neapolitana DSM 4359	ACM22957.1			Bacteria	100	GH13
+maltogenic α-amylase (AmyB;CTN_0737)	3.2.1.133		Thermotoga neapolitana DSM 4359	ACM22913.1	B5ARZ9B9K7I0	4GKL[A,B]	Bacteria	100	GH13
+maltogenic α-amylase (AmyB;CTN_0737)	3.2.1.133		Thermotoga neapolitana DSM 4359	ACF75909.1	B5ARZ9B9K7I0	4GKL[A,B]	Bacteria	100	GH13
+pullulanase (PulA)	3.2.1.41		Thermotoga neapolitana KCCM 41025	ACN58254.1	C0LLG9		Bacteria	100	GH13
+α-amylase (Tpet_0965)	3.2.1.1		Thermotoga petrophila RKU-1	ABQ46983.1	A0A059TXD8A5ILB0	5M99[A,B]	Bacteria	100	GH13
+α-amylase (Tpet_0965)	3.2.1.1		Thermotoga petrophila RKU-1	AHZ45717.1	A0A059TXD8A5ILB0	5M99[A,B]	Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16		Thermus aquaticus ATCC 33923	BAA19934.1	O06458		Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16		Thermus caldophilus GK24	AAD50660.3	Q9RA59		Bacteria	100	GH13
+trehalose synthase (TreS)	5.4.99.16		Thermus caldophilus GK24	AAD50660.1	Q9RA59		Bacteria	100	GH13
+[retaining] oligo-α-1,6-glucosidase	3.2.1.10		Thermus caldophilus GK24	AAD50603.1	Q9RA62		Bacteria	100	GH13
+[retaining] oligo-α-1,6-glucosidase	3.2.1.10		Thermus caldophilus GK24	CBF79218.1	Q9RA62		Bacteria	100	GH13
+cyclomaltodextrinase / maltogenic α-amylase (ThCMD;ThMA)	3.2.1.1333.2.1.54	pubmedpubmed	Thermus sp. IM6501	AAC15072.1	O69007	1GVI[A]1SMA[A]	Bacteria	100	GH13
+pullulanase (Pul)	3.2.1.41		Thermus sp. IM6501	AAC15073.1	O69008		Bacteria	100	GH13
+α,α-trehalase (TTC0107)	3.2.1.103.2.1.28	pubmedpubmed	Thermus thermophilus HB27	AAS80455.1	Q72LF2		Bacteria	100	GH13
+α,α-trehalase (TTC0107)	3.2.1.103.2.1.28	pubmedpubmed	Thermus thermophilus HB27	CBF79062.1	Q72LF2		Bacteria	100	GH13
+α,α-trehalase (TTC0107)	3.2.1.103.2.1.28	pubmedpubmed	Thermus thermophilus HB27	YP_004082.1	Q72LF2		Bacteria	100	GH13
+pullulanase (TTHpu;TTC1198) (fragment)	3.2.1.41	pubmed	Thermus thermophilus HB27	AAS81540.1	Q72ID4		Bacteria	100	GH13
+pullulanase (TTHpu;TTC1198) (fragment)	3.2.1.41	pubmed	Thermus thermophilus HB27	CAZ78778.1	Q72ID4		Bacteria	100	GH13
+pullulanase (TTHpu;TTC1198) (fragment)	3.2.1.41	pubmed	Thermus thermophilus HB27	YP_005167.1	Q72ID4		Bacteria	100	GH13
+oligo-α-1,6-glucosidase (TTHA0481)	3.2.1.10		Thermus thermophilus HB8	BAD70304.1	Q5MCN6Q5SL12		Bacteria	100	GH13
+oligo-α-1,6-glucosidase (TTHA0481)	3.2.1.10		Thermus thermophilus HB8	AAW21751.1	Q5MCN6Q5SL12		Bacteria	100	GH13
+trehalose synthase (TTHA0478)	5.4.99.16		Thermus thermophilus HB8	BAD70301.1	Q5MCN4Q5SL15		Bacteria	100	GH13
+trehalose synthase (TTHA0478)	5.4.99.16		Thermus thermophilus HB8	AAW21753.1	Q5MCN4Q5SL15		Bacteria	100	GH13
+pullulanase (Pul)	3.2.1.41		Thermus thermophilus HB8	BAB62095.1	Q7DI19		Bacteria	100	GH13
+trehalose synthase (TreS;TtTS)	5.4.99.16		Thermus thermophilus HJ6	ABW87308.1	A8WAD0		Bacteria	100	GH13
+α-glucosidase (TtAG)	3.2.1.20		Thermus thermophilus TC11	AKA95141.1	A0A0E3N392		Bacteria	100	GH13
+sucrose phosphorylase	2.4.1.7		uncultured bacterium	ACJ83248.1	B8Y3Y0		Bacteria	100	GH13
+α-amylase (AmyA)	3.2.1.1		uncultured bacterium	AAP49335.1	Q6XR91		Bacteria	100	GH13
+α-amylase (AmyA)	3.2.1.1		uncultured bacterium	CBF79177.1	Q6XR91		Bacteria	100	GH13
+α-1,4-glucan branching enzyme (AmyB)	2.4.1.18		uncultured bacterium	AAP70397.1	Q6XE44		Bacteria	100	GH13
+α-amylase (AmyM)	3.2.1.1		uncultured bacterium	AAQ89599.1	Q6TXT5		Bacteria	100	GH13
+α-amylase (AmyM)	3.2.1.1		uncultured bacterium	ALJ10569.1	Q6TXT5		Bacteria	100	GH13
+α-amylase (AmyM)	3.2.1.1		uncultured bacterium	CAZ78880.1	Q6TXT5		Bacteria	100	GH13
+α-amylase (AmyM)	3.2.1.1		uncultured bacterium	CBF79168.1	Q6TXT5		Bacteria	100	GH13
+α-amylase (AmyP; Amy-1E)	3.2.1.1	pubmed	uncultured bacterium	AEM89278.1	D9MZ14	5H05[A,B,C,D]5H06[A,B,C,D]	Bacteria	100	GH13
+α-amylase (AmyP; Amy-1E)	3.2.1.1	pubmed	uncultured bacterium	ADK21254.1	D9MZ14	5H05[A,B,C,D]5H06[A,B,C,D]	Bacteria	100	GH13
+α-amylase (Amy13A)	3.2.1.1		uncultured bacterium	CCD30600.1	I7I8P3		Bacteria	100	GH13
+amylopullulanase (Ss4;PulSS4)	3.2.1.41		uncultured bacterium	AGL50935.1	R4NSY4		Bacteria	100	GH13
+amylopullulanase (Ss4;PulSS4)	3.2.1.1		uncultured bacterium	AGL50935.1	R4NSY4		Bacteria	100	GH13
+cyclodextrinase (Amy1)	3.2.1.54		uncultured bacterium	ACA48223.1	B1PHW8		Bacteria	100	GH13
+neopullulanase (Amy29)	3.2.1.135		uncultured bacterium	ACA48224.1	B1PHW9		Bacteria	100	GH13
+cyclodextrinase (Amy132)	3.2.1.54		uncultured bacterium	ACA48225.1	B1PHX0		Bacteria	100	GH13
+amylase (PLA;AmyPL)	3.2.1.1		uncultured bacterium	AHB39934.1	A0A096X8F5		Bacteria	100	GH13
+a/β-cyclodextrin glycosyltransferase (Cgt13;CspCGT13)	2.4.1.19		uncultured Carboxydocella sp.	AIL25792.1	A0A077D499		Bacteria	100	GH13
+cyclomaltodextrinase (CdaA) (Cda13A)	3.2.1.54		uncultured soil bacterium	ABA39290.1	Q3HW59		Bacteria	100	GH13
+maltopentaose-forming amylase A-180	3.2.1.-	pubmed	unidentified bacterium UGO163/26 / DSM 5853	CAA37453.1	Q03658		Bacteria	100	GH13
+α-amylase (Amy63)	3.2.1.1		Vibrio alginolyticus 129-63	ALP73597.1	A0A0S2UQL4		Bacteria	100	GH13
+glycogen branching enzyme (GBE;VvGBE;VVM_00156;VVMO6_03058)	2.4.1.18		Vibrio vulnificus MO6-24/O	ADV88080.1			Bacteria	100	GH13
+reducing-end specific α-glucosidase (WcAG)	3.2.1.-	pubmed	Weissella cibaria BBK-1	UGA57824.1		7D9B[A]7D9C[A]7DCG[A]7DCH[A]7EHH[A]7EHI[A]	Bacteria	100	GH13
+oligo-α-1,6-glucosidase (MalL)	3.2.1.10	pubmed	Weizmannia coagulans ATCC7050	BAA11354.1	Q45101		Bacteria	100	GH13
+sucrose hydrolase (SUH; XaSH)	3.2.1.48	pubmed	Xanthomonas axonopodis pv. glycines 8RA	AAQ93678.1	Q6UVM5	3CZE[A]3CZG[A]3CZK[A]3CZL[A]	Bacteria	100	GH13
+α-amylase	3.2.1.1		Xanthomonas campestris	AAA27591.1	Q56791Q847N0		Bacteria	100	GH13
+α-amylase	3.2.1.1		Xanthomonas campestris	AAO62080.1	Q56791Q847N0		Bacteria	100	GH13
+α-amylase	3.2.1.1		Xanthomonas campestris K-11151	BAA07401.1	Q60102		Bacteria	100	GH13
+α-amylase	3.2.1.1		Xanthomonas campestris K-11151	CAZ78877.1	Q60102		Bacteria	100	GH13
+α-amylase	3.2.1.1		Xanthomonas campestris K-11151	CBF79165.1	Q60102		Bacteria	100	GH13
+α-amylase (Amy)	3.2.1.1		Xanthomonas campestris pv. campestris str. ATCC 33913	AAM40063.1	Q7CLU8		Bacteria	100	GH13
+α-amylase (Amy)	3.2.1.1		Xanthomonas campestris pv. campestris str. ATCC 33913	NP_636139.1	Q7CLU8		Bacteria	100	GH13
+sucrose hydrolase (SuxB;XCC3359)	3.2.1.48	pubmed	Xanthomonas campestris pv. campestris str. ATCC 33913	AAM42629.1	Q8P5I2	2WPG[A]	Bacteria	100	GH13
+sucrose hydrolase (SuxB;XCC3359)	3.2.1.48	pubmed	Xanthomonas campestris pv. campestris str. ATCC 33913	NP_638705.1	Q8P5I2	2WPG[A]	Bacteria	100	GH13
+α-transglucosidase (XgtA)	2.4.1.-3.2.1.20	doidoi	Xanthomonas campestris WU-9701	BAC87873.1	Q76LB0	6AAV[A,B]	Bacteria	100	GH13
+α-transglucosidase (XgtA)	2.4.1.-3.2.1.20	doidoi	Xanthomonas campestris WU-9701	CBF79179.1	Q76LB0	6AAV[A,B]	Bacteria	100	GH13
+sucrose hydrolase (XAC3490)	3.2.1.48	pubmed	Xanthomonas citri pv. citri str. 306	AAM38333.1	Q8PGX2		Bacteria	100	GH13
+sucrose hydrolase (XAC3490)	3.2.1.48	pubmed	Xanthomonas citri pv. citri str. 306	NP_643797.1	Q8PGX2		Bacteria	100	GH13
+α-1,4-glucan branching enzyme (GlgB;YPO3942)	2.4.1.18		Yersinia pestis CO92	CAC93404.1	Q8ZA75		Bacteria	100	GH13
+α-1,4-glucan branching enzyme (GlgB;YPO3942)	2.4.1.18		Yersinia pestis CO92	CAL22523.1	Q8ZA75		Bacteria	100	GH13
+α-1,4-glucan branching enzyme (GlgB;YPO3942)	2.4.1.18		Yersinia pestis CO92	NP_407383.1	Q8ZA75		Bacteria	100	GH13
+α-1,4-glucan branching enzyme (GlgB;y3886)	2.4.1.18		Yersinia pestis KIM10+	AAM87431.1	Q8ZA75		Bacteria	100	GH13
+α-1,4-glucan branching enzyme (GlgB;y3886)	2.4.1.18		Yersinia pestis KIM10+	NP_671180.1	Q8ZA75		Bacteria	100	GH13
+α-amylase (AmyZ2;ZPR_2815)	3.2.1.1		Zunongwangia profunda SM-A87	ADF53135.1	D5BG22		Bacteria	100	GH13
+α-amylase (AmyZ; ZPR_2816)	3.2.1.1	pubmed	Zunongwangia profunda SM-A87	ADF53136.1	D5BG23		Bacteria	100	GH13
+β-amylase (SpoII)	3.2.1.2	pubmed	Bacillus cereus VAR. MYCOIDES	BAA34650.1	P36924Q9Z4N9	1B90[A]1B9Z[A]1ITC[A]1ITD[nd]1ITJ[nd]1J0Y[A,B,C,D]1J0Z[A,B,C,D]1J10[A,B,C,D]1J11[A,B,C,D]1J12[A,B,C,D]1J18[A]1VEM[A]1VEN[A]1VEO[A]1VEP[A]5BCA[A,B,C,D]	Bacteria	27	GH14
+β-amylase (SpoII)	3.2.1.2	pubmed	Bacillus cereus VAR. MYCOIDES	BAA75890.1	P36924Q9Z4N9	1B90[A]1B9Z[A]1ITC[A]1ITD[nd]1ITJ[nd]1J0Y[A,B,C,D]1J0Z[A,B,C,D]1J10[A,B,C,D]1J11[A,B,C,D]1J12[A,B,C,D]1J18[A]1VEM[A]1VEN[A]1VEO[A]1VEP[A]5BCA[A,B,C,D]	Bacteria	27	GH14
+β-amylase	3.2.1.2	pubmed	Niallia circulans NCIB 11033	CAA68578.1	P06547		Bacteria	27	GH14
+multidomain α-amylase / β-amylase	3.2.1.2	pubmedpubmed	Paenibacillus polymyxa	AAA85446.1	P21543	3VOC[A]	Bacteria	27	GH14
+multidomain α-amylase / β-amylase	3.2.1.2	pubmedpubmed	Paenibacillus polymyxa	CAA68344.1	P21543	3VOC[A]	Bacteria	27	GH14
+β-amylase	3.2.1.2	URL	Paenibacillus sp. KCTC8848P	AAK69489.1	Q934J0		Bacteria	27	GH14
+β-amylase (BamM;BMD_0357)	3.2.1.2	pubmed	Priestia megaterium DSM 319	CAB61483.1	D5D9K6Q9RM92		Bacteria	27	GH14
+β-amylase (BamM;BMD_0357)	3.2.1.2	pubmed	Priestia megaterium DSM 319	ADF37268.1	D5D9K6Q9RM92		Bacteria	27	GH14
+β-amylase	3.2.1.2	pubmed	Thermoanaerobacterium thermosulfurigenes EM1	AAA23204.1	P19584		Bacteria	27	GH14
+4-α-glucanotransferase (formerly cyclodextrin glucanotransferase)	2.4.1.25	pubmed	Archaeoglobus fulgidus 7324 / DSM8774	ABW95829.1	A9QMB3		Archaea	29	GH57
+amylopullulanase (CMApu;Cmaq_1371)	3.2.1.413.2.1.54	doidoi	Caldivirga maquilingensis IC-167	ABW02197.1	A8M8X8		Archaea	29	GH57
+amylopullulanase (DApu)	3.2.1.41	pubmed	Desulfurococcus amylolyticus	WP_042667248.1			Archaea	29	GH57
+α-amylase (MJ1611)	3.2.1.1	pubmed	Methanocaldococcus jannaschii DSM 2661	AAB99631.1	Q59006		Archaea	29	GH57
+α-amylase (MJ1611)	3.2.1.1	pubmed	Methanocaldococcus jannaschii DSM 2661	NP_248621.1	Q59006		Archaea	29	GH57
+4-α-glucanotransferase  (AmyA; PfuAmyGT; PF0272) (Amy57A)	2.4.1.25	pubmed	Pyrococcus furiosus DSM 3638	NP_578001.1	P49067		Archaea	29	GH57
+4-α-glucanotransferase  (AmyA; PfuAmyGT; PF0272) (Amy57A)	2.4.1.25	pubmed	Pyrococcus furiosus DSM 3638	AAA72035.1	P49067		Archaea	29	GH57
+4-α-glucanotransferase  (AmyA; PfuAmyGT; PF0272) (Amy57A)	2.4.1.25	pubmed	Pyrococcus furiosus DSM 3638	AAL80396.1	P49067		Archaea	29	GH57
+amylopullulanase (Apu; PFAPU; Apu-Pf; PF1935; PF1935*) (Amy57B)	3.2.1.13.2.1.41	pubmedpubmed	Pyrococcus furiosus DSM 3638	NP_579664.1			Archaea	29	GH57
+amylopullulanase (Apu; PFAPU; Apu-Pf; PF1935; PF1935*) (Amy57B)	3.2.1.13.2.1.41	pubmedpubmed	Pyrococcus furiosus DSM 3638	AAB71229.1			Archaea	29	GH57
+amylopullulanase (Apu; PFAPU; Apu-Pf; PF1935; PF1935*) (Amy57B)	3.2.1.13.2.1.41	pubmedpubmed	Pyrococcus furiosus DSM 3638	AAL82059.1			Archaea	29	GH57
+amylopullulanase (Apu; PFAPU; Apu-Pf; PF1935; PF1935*) (Amy57B)	3.2.1.13.2.1.41	pubmedpubmed	Pyrococcus furiosus DSM 3638	ABA33719.1			Archaea	29	GH57
+β-amylase or maltogenic α-amylase (PF0870)	3.2.1.133	pubmed	Pyrococcus furiosus DSM 3638	AAL80994.1	Q8U2G5		Archaea	29	GH57
+β-amylase or maltogenic α-amylase (PF0870)	3.2.1.133	pubmed	Pyrococcus furiosus DSM 3638	NP_578599.1	Q8U2G5		Archaea	29	GH57
+α-galactosidase (GalA;PF0444) (Gal57)	3.2.1.22	doi	Pyrococcus furiosus DSM 3638	AAG28455.1	E7FHU9Q9HHB5		Archaea	29	GH57
+α-galactosidase (GalA;PF0444) (Gal57)	3.2.1.22	doi	Pyrococcus furiosus DSM 3638	AAL80568.1	E7FHU9Q9HHB5		Archaea	29	GH57
+α-galactosidase (GalA;PF0444) (Gal57)	3.2.1.22	doi	Pyrococcus furiosus DSM 3638	NP_578173.1	E7FHU9Q9HHB5		Archaea	29	GH57
+glycogen branching enzyme (GBE;PhGBE;PH1386)	2.4.1.183.2.1.1	pubmedpubmed	Pyrococcus horikoshii OT3	BAA30492.1	O50094	5WU7[A,B]	Archaea	29	GH57
+glycogen branching enzyme (GBE;PhGBE;PH1386)	2.4.1.183.2.1.1	pubmedpubmed	Pyrococcus horikoshii OT3	NP_143265.1	O50094	5WU7[A,B]	Archaea	29	GH57
+maltose-forming α-amylase (PSMA;Py04_0872)	3.2.1.133	pubmed	Pyrococcus sp. ST04	AFK22464.1	I3RE04		Archaea	29	GH57
+α-amylase (AmyA;SSO1172)	3.2.1.1	pubmed	Saccharolobus solfataricus P2	AAK41420.1	Q97YY0		Archaea	29	GH57
+α-amylase (AmyA;SSO1172)	3.2.1.1	pubmed	Saccharolobus solfataricus P2	NP_342630.1	Q97YY0		Archaea	29	GH57
+bifunctional amylopullulanase cyclomaltodextrinase (Apu-Sm;SMApu;Smar_1407) (intracellular)	3.2.1.413.2.1.54	pubmedpubmed	Staphylothermus marinus F1	ABN70497.1	A3DPD7	7E1Y[A,B,C,D,E,F,G,H]	Archaea	29	GH57
+α-amylase (AmyA;Saci_1162)	3.2.1.13.2.1.41	pubmed	Sulfolobus acidocaldarius DSM 639	AAY80509.1	Q4J9M2		Archaea	29	GH57
+maltose-forming α-amylase (TCMA;CL1_0868)	3.2.1.133	pubmed	Thermococcus cleftensis	AFL95073.1	I3ZTN9		Archaea	29	GH57
+amylopullulanase (ApuA)	3.2.1.41	pubmed	Thermococcus hydrothermalis AL662	AAD28552.1	Q9Y8I8		Archaea	29	GH57
+amylopullulanase (Apu-Tk;TK1774)	3.2.1.41	doi	Thermococcus kodakarensis KOD1	BAD85963.1	Q5JJ55		Archaea	29	GH57
+amylopullulanase (Apu-Tk;TK1774)	3.2.1.41	doi	Thermococcus kodakarensis KOD1	CAT69104.1	Q5JJ55		Archaea	29	GH57
+branching enzyme (TkGBE;TK1436)	2.4.1.18	pubmed	Thermococcus kodakarensis KOD1	BAD85625.1	Q5JDJ7	3N8T[A]3N92[A]3N98[A]	Archaea	29	GH57
+branching enzyme (TkGBE;TK1436)	2.4.1.18	pubmed	Thermococcus kodakarensis KOD1	CAT71088.1	Q5JDJ7	3N8T[A]3N92[A]3N98[A]	Archaea	29	GH57
+4-α-glucanotransferase (GtpK;TK1809)	2.4.1.25	doi	Thermococcus kodakarensis KOD1	BAA22062.1	O32450		Archaea	29	GH57
+4-α-glucanotransferase (GtpK;TK1809)	2.4.1.25	doi	Thermococcus kodakarensis KOD1	BAD85998.1	O32450		Archaea	29	GH57
+4-α-glucanotransferase (GtpK;TK1809)	2.4.1.25	doi	Thermococcus kodakarensis KOD1	CAT70994.1	O32450		Archaea	29	GH57
+amylopullulanase (Apu)	3.2.1.13.2.1.41	pubmedpubmed	Thermococcus litoralis	BAC10983.1	Q8NKS8		Archaea	29	GH57
+4-α-glucanotransferase (Jgt)	2.4.1.25	pubmed	Thermococcus litoralis	BAA22063.1	O32462	1K1W[A]1K1X[A,B]1K1Y[A,B]	Archaea	29	GH57
+[retaining] 4-α-glucanotransferase / amylomaltase (TonAmyGT; TON_1716)	2.4.1.25	pubmed	Thermococcus onnurineus NA1	ACJ17206.1			Archaea	29	GH57
+amylopullulanase (TsiApu;Apu-Ts)	3.2.1.13.2.1.41	pubmedpubmed	Thermococcus sp. HJ21	ACJ03924.1	B6SED6		Archaea	29	GH57
+amylopullulanase (TPApu; Tpen_0210)	3.2.1.41	pubmed	Thermofilum pendens Hrk 5	ABL77620.1			Archaea	29	GH57
+4-α-glucanotransferase / α-amylase A (AmyA)	2.4.1.25	pubmed	Dictyoglomus thermophilum	CAA30735.1	P09961		Bacteria	29	GH57
+[retaining] α-1,4-glucan branching enzyme (Pmob_0588)	2.4.1.18	pubmed	Petrotoga mobilis SJ95	ABX31322.1			Bacteria	29	GH57
+[retaining] α-1,4-glucan branching enzyme / α-amylase (AmyC; GBE; TM1438)	2.4.1.183.2.1.1	pubmedpubmed	Thermotoga maritima MSB8	AHD18669.1	R4P360	2B5D[X]	Bacteria	29	GH57
+[retaining] α-1,4-glucan branching enzyme / α-amylase (AmyC; GBE; TM1438)	2.4.1.183.2.1.1	pubmedpubmed	Thermotoga maritima MSB8	AGL50368.1	R4P360	2B5D[X]	Bacteria	29	GH57
+[retaining] α-1,4-glucan branching enzyme / α-amylase (AmyC; GBE; TM1438)	2.4.1.183.2.1.1	pubmedpubmed	Thermotoga maritima MSB8	AKE29197.1	R4P360	2B5D[X]	Bacteria	29	GH57
+[retaining] α-1,4-glucan branching enzyme / α-amylase (AmyC; GBE; TM1438)	2.4.1.183.2.1.1	pubmedpubmed	Thermotoga maritima MSB8	QFD27285.1	R4P360	2B5D[X]	Bacteria	29	GH57
+glycogen branching enzyme (GBE;TTHA1902;TT1467)	2.4.1.18	pubmed	Thermus thermophilus HB8	BAD71725.1	Q5SH28	1UFA[A]3P0B[A]	Bacteria	29	GH57
+α-amylase (Amy_GH57)	3.2.1.1	pubmed	uncultured bacterium	AEC23345.1	F4ZW71		Bacteria	29	GH57
+α-amylase (IgtZ)	3.2.1.1	pubmed	Niallia circulans AM7	BAF37284.1	A0P8X0		Bacteria	2	GH119
+amylase (CPF_2247)	3.2.1.1	pubmed	Clostridium perfringens ATCC 13124	ABG82272.1	A0A0H2YP60Q0TNX0	3REN[A,B]	Bacteria	2	GH126
+glucoamylase (MGA; MJ1610)	3.2.1.3	pubmed	Methanocaldococcus jannaschii DSM 2661	AAB99630.1	Q59005		Archaea	76	GH15
+glucoamylase (MGA; MJ1610)	3.2.1.3	pubmed	Methanocaldococcus jannaschii DSM 2661	NP_248620.1	Q59005		Archaea	76	GH15
+glucoamylase (PTO1492)	3.2.1.3	doi	Picrophilus torridus DSM 9790	AAT44077.1	Q6KYX5		Archaea	76	GH15
+glucoamylase (Ssg; Sso0990)	3.2.1.3	pubmed	Saccharolobus solfataricus P2	AAK41262.1	Q97ZD0		Archaea	76	GH15
+glucoamylase (Ssg; Sso0990)	3.2.1.3	pubmed	Saccharolobus solfataricus P2	NP_342472.1	Q97ZD0		Archaea	76	GH15
+trehalase (Saci_1816)	3.2.1.28	pubmed	Sulfolobus acidocaldarius DSM 639	AAY81122.1			Archaea	76	GH15
+trehalase (SaTreH1; SA1816; Saci1816)	3.2.1.28	pubmed	Sulfolobus acidocaldarius NBRC 15157	BBA94969.1			Archaea	76	GH15
+trehalase (SaTreH2;SA1250;Saci1250)	3.2.1.28	pubmed	Sulfolobus acidocaldarius NBRC 15157	BBA94968.1			Archaea	76	GH15
+glucoamylase (STGA;ST0815)	3.2.1.3	URLURL	Sulfurisphaera tokodaii str. 7	BAB65828.1	F9VN95Q973T2		Archaea	76	GH15
+glucoamylase (STGA;ST0815)	3.2.1.3	URLURL	Sulfurisphaera tokodaii str. 7	BAK54392.1	F9VN95Q973T2		Archaea	76	GH15
+glucoamylase (STGA;ST0815)	3.2.1.3	URLURL	Sulfurisphaera tokodaii str. 7	NP_376719.1	F9VN95Q973T2		Archaea	76	GH15
+trehalase (Ta0286)	3.2.1.28	pubmed	Thermoplasma acidophilum 122-1B2	BAR87974.1	A0A0G4DCS1		Archaea	76	GH15
+glucoamylase (TaGA;Ta0342)	3.2.1.3	pubmed	Thermoplasma acidophilum DSM 1728	CAC11486.1	Q9HL88		Archaea	76	GH15
+glucoamylase (TaGA;Ta0342)	3.2.1.3	pubmed	Thermoplasma acidophilum DSM 1728	NP_393821.1	Q9HL88		Archaea	76	GH15
+trehalase (TVG1381191; TVN1315)	3.2.1.28	pubmed	Thermoplasma volcanium GSS1	NP_111834.1	A0A0G4DBK0Q978S7		Archaea	76	GH15
+trehalase (TVG1381191; TVN1315)	3.2.1.28	pubmed	Thermoplasma volcanium GSS1	BAB60480.1	A0A0G4DBK0Q978S7		Archaea	76	GH15
+trehalase (TVG1381191; TVN1315)	3.2.1.28	pubmed	Thermoplasma volcanium GSS1	BAR87973.1	A0A0G4DBK0Q978S7		Archaea	76	GH15
+glucodextranase (G1d)	3.2.1.70	pubmed	Arthrobacter globiformis I42	BAA90671.1	Q9LBQ9	1UG9[A]1ULV[A]	Bacteria	76	GH15
+glucodextranase (G1d)	3.2.1.70	pubmed	Arthrobacter globiformis I42	BAB20416.1	Q9LBQ9	1UG9[A]1ULV[A]	Bacteria	76	GH15
+glucodextranase (Gld)	3.2.1.70	pubmed	Arthrobacter globiformis T-3044	BAA13597.1	P70745		Bacteria	76	GH15
+glucoamylase (GA; TtcGA; TTE1813)	3.2.1.3	pubmed	Caldanaerobacter subterraneus subsp. tengcongensis MB4	AAM25005.1	Q8R917		Bacteria	76	GH15
+glucoamylase (GA; TtcGA; TTE1813)	3.2.1.3	pubmed	Caldanaerobacter subterraneus subsp. tengcongensis MB4	NP_623401.1	Q8R917		Bacteria	76	GH15
+glucoamylase (GA;CcGA;CauloGA;MalS;Cc2282)	3.2.1.3	pubmed	Caulobacter vibrioides CB15	AAK24253.1	Q9A613W8VKE3		Bacteria	76	GH15
+glucoamylase (GA;CcGA;CauloGA;MalS;Cc2282)	3.2.1.3	pubmed	Caulobacter vibrioides CB15	BAO51876.1	Q9A613W8VKE3		Bacteria	76	GH15
+glucoamylase (GA;CcGA;CauloGA;MalS;Cc2282)	3.2.1.3	pubmed	Caulobacter vibrioides CB15	NP_421085.1	Q9A613W8VKE3		Bacteria	76	GH15
+glucoamylase (CGA)	3.2.1.3	pubmed	Clostridium sp. G0005	BAA02251.1	P29761		Bacteria	76	GH15
+glucoamylase	3.2.1.3	doi	Clostridium thermoamylolyticum ATCC 29251	BAC80264.2	Q765N4		Bacteria	76	GH15
+glucoamylase (GlucaM)	3.2.1.3	pubmed	Corallococcus coralloides EGB	AKM12417.1			Bacteria	76	GH15
+dextran dextrinase (DDase; DDext; DDin) (extracellular;intracellular)	2.4.1.2	pubmed	Gluconobacter oxydans ATCC 11894	BAS29771.1	A0A0M5MSC0		Bacteria	76	GH15
+isomaltose glucohydrolase (IGHase; Kfla_1896)	3.2.1.205	pubmed	Kribbella flavida DSM 17836	ADB30990.1	D2PPM8	5Z3A[A]5Z3B[A]5Z3C[A]5Z3D[A]5Z3E[A]5Z3F[A]7C24[A]7C25[A]7C26[A]7C27[A]	Bacteria	76	GH15
+glucoamylase (GamA; LegY; lpp0489)	3.2.1.3	pubmed	Legionella pneumophila str. Paris	CAH11637.1	Q5X7W6		Bacteria	76	GH15
+α,α-trehalase (MSMEG_4535;MSMEG4528)	3.2.1.28	pubmed	Mycolicibacterium smegmatis MC2 155	ABK72415.1	A0R0W9		Bacteria	76	GH15
+α,α-trehalase (MSMEG_4535;MSMEG4528)	3.2.1.28	pubmed	Mycolicibacterium smegmatis MC2 155	AFP40876.1	A0R0W9		Bacteria	76	GH15
+α,α-trehalase (MSMEG_4535;MSMEG4528)	3.2.1.28	pubmed	Mycolicibacterium smegmatis MC2 155	AIU09606.1	A0R0W9		Bacteria	76	GH15
+glucoamylase (SdGA; GlyNAX; Sde_0600)	3.2.1.3	pubmed	Saccharophagus degradans 2-40	ABD79864.1			Bacteria	76	GH15
+glucoamylase (VldI)	3.2.1.3	pubmed	Streptomyces hygroscopicus subsp. limoneus KCCM 11405	ABC67273.1	Q15JF7		Bacteria	76	GH15
+glucoamylase (TGA)	3.2.1.3	pubmed	Thermoactinomyces vulgaris R-47	BAA97041.1	Q9KWR2	cryst	Bacteria	76	GH15
+glucoamylase (TGA)	3.2.1.3	pubmed	Thermoactinomyces vulgaris R-47	BAB40639.1	Q9KWR2	cryst	Bacteria	76	GH15
+glucoamylase (TeGA)	3.2.1.3	pubmed	Thermoanaerobacter ethanolicus	WP_003871318.1			Bacteria	76	GH15
+glucoamylase (TeGA)	3.2.1.3	pubmed	Thermoanaerobacter ethanolicus	EGD50618.1			Bacteria	76	GH15
+cycloisomaltooligosaccharide glucanotransferase + isomaltooligosaccharide 6-α-glucosyltransferase (TtCITase)	2.4.1.2	doi	Thermoanaerobacter thermocopriae	WP_028992696.1			Bacteria	76	GH15
+glucoamylase (Ga1)	3.2.1.3	doi	Thermoanaerobacterium thermosaccharolyticum ATCC 7956	AAC24003.1	O85672	1LF6[A]1LF9[A]	Bacteria	76	GH15
+glucoamylase (Ga1)	3.2.1.3	doi	Thermoanaerobacterium thermosaccharolyticum ATCC 7956	ABJ38330.1	O85672	1LF6[A]1LF9[A]	Bacteria	76	GH15
+glucoamylase (Ga1)	3.2.1.3	doi	Thermoanaerobacterium thermosaccharolyticum ATCC 7956	ACW20095.1	O85672	1LF6[A]1LF9[A]	Bacteria	76	GH15

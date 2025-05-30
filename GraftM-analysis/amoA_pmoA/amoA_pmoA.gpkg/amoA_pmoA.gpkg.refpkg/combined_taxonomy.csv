@@ -1,0 +1,15 @@
+tax_id,parent_id,rank,tax_name,root,rank_0
+Root,Root,root,Root,Root,
+amoA_Archaea,Root,rank_0,amoA_Archaea,Root,amoA_Archaea
+pmoA_Mixed,Root,rank_0,pmoA_Mixed,Root,pmoA_Mixed
+pmoA_Mixed_2,Root,rank_0,pmoA_Mixed_2,Root,pmoA_Mixed_2
+pmoA_Betaproteobacteria,Root,rank_0,pmoA_Betaproteobacteria,Root,pmoA_Betaproteobacteria
+amoA_Mixed,Root,rank_0,amoA_Mixed,Root,amoA_Mixed
+pmoA_Methylomirabilota,Root,rank_0,pmoA_Methylomirabilota,Root,pmoA_Methylomirabilota
+pmoA_Verrucomicrobia,Root,rank_0,pmoA_Verrucomicrobia,Root,pmoA_Verrucomicrobia
+amoA_Gammaproteobacteria,Root,rank_0,amoA_Gammaproteobacteria,Root,amoA_Gammaproteobacteria
+pmoA_Rhizobiales,Root,rank_0,pmoA_Rhizobiales,Root,pmoA_Rhizobiales
+pmoA_Methylococcales,Root,rank_0,pmoA_Methylococcales,Root,pmoA_Methylococcales
+pmoA_Mixed_3,Root,rank_0,pmoA_Mixed_3,Root,pmoA_Mixed_3
+amoA_Nitrospirae,Root,rank_0,amoA_Nitrospirae,Root,amoA_Nitrospirae
+amoA_Betaproteobacteria,Root,rank_0,amoA_Betaproteobacteria,Root,amoA_Betaproteobacteria

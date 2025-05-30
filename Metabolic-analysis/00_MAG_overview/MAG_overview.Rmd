@@ -1,0 +1,454 @@
+---
+title: "MAG overview"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  error = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center")
+
+library(ggnewscale)
+library(ggh4x)
+library(propr)
+library(cowplot)
+library(vegan)
+library(ape)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+
+main_dir <- here("Metabolic-analysis", "00_MAG_overview")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("Palsa", "Bog", "Fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+shape_habitat  <- c(22, 21, 24)
+fill_habitat   <- colour_habitat
+
+depth_levels <- c("0-9", "10-19", "20-29", "30-39")
+depth_labels <- c("0", "10", "20", "30")
+fill_depth   <- RColorBrewer::brewer.pal(5, "YlOrBr")[-1]
+colour_depth <- fill_depth
+
+year_levels <- c(2011, 2012, 2013, 2014, 2015, 2016, 2017)
+year_labels <- c(1, 2, 3, 4, 5, 6, 7)
+fill_year   <- RColorBrewer::brewer.pal(7, "BuPu")
+colour_year <- fill_year
+
+phylum_levels <- c(
+  # Bacteria
+  "p__Acidobacteriota",
+  "p__Actinobacteriota",
+  "p__Bacteroidota",
+  "p__Chloroflexota",
+  "p__Desulfobacterota",
+  "p__Eremiobacterota",
+  "p__Proteobacteria",
+  "p__Verrucomicrobiota",
+  # Archaea
+  "p__Halobacteriota",
+  "p__Methanobacteriota",
+  "p__Thermoplasmatota",
+  "p__Thermoproteota",
+  "other"
+)
+phylum_labels <- c(
+  # Bacteria
+  "Acidobacteriota",
+  "Actinobacteriota",
+  "Bacteroidota",
+  "Chloroflexota",
+  "Desulfobacterota",
+  "Eremiobacterota",
+  "Proteobacteria",
+  "Verrucomicrobiota",
+  # Archaea
+  "Halobacteriota",
+  "Methanobacteriota",
+  "Thermoplasmatota",
+  "Thermoproteota",
+  "other"
+)
+colour_phylum <- c(RColorBrewer::brewer.pal(12, "Set3"), "white")
+fill_phylum <- colour_phylum
+
+set.seed(42)
+```
+
+```{wrangling}
+rel_abund <- trimmed_mean$rel_abund %>%
+  select(genome, all_of(sample_metadata$temporal_sample_id)) %>%
+  pivot_longer(-genome, names_to = "temporal_sample_id", values_to = "rel_abund")
+```
+
+## Ordination figures
+```{r ordination-wrangling}
+output_dir <- here(main_dir, "ordinations")
+dir.create(output_dir, recursive = TRUE)
+
+########################################
+### Bray-Curtis dissimilarity matrix ###
+########################################
+get_dis_matrix <- function(rel_abund) {
+  dis_matrix <- rel_abund %>%
+    t() %>%
+    vegdist(method = "bray")
+
+  return(dis_matrix)
+}
+
+dis_matrix <- trimmed_mean$rel_abund %>%
+    select(all_of(sample_metadata$temporal_sample_id)) %>%
+    get_dis_matrix()
+
+dis_matrix_palsa <- trimmed_mean$rel_abund %>%
+  select(all_of(
+    sample_metadata %>%
+      filter(Habitat__ == "Palsa") %>%
+      `$`(temporal_sample_id)
+    )) %>%
+  get_dis_matrix()
+
+dis_matrix_bog <- trimmed_mean$rel_abund %>%
+  select(all_of(
+    sample_metadata %>%
+      filter(Habitat__ == "Bog") %>%
+      `$`(temporal_sample_id)
+    )) %>%
+  get_dis_matrix()
+
+dis_matrix_fen <- trimmed_mean$rel_abund %>%
+  select(all_of(
+    sample_metadata %>%
+      filter(Habitat__ == "Fen") %>%
+      `$`(temporal_sample_id)
+    )) %>%
+  get_dis_matrix()
+
+
+#############
+### Stats ###
+#############
+abund_stats <- adonis2(dis_matrix ~ Habitat__ * DepthLumping * Year__, data = sample_metadata, by = "terms")
+```
+
+```{r ordination-figure-pcoa}
+abund_pcoa_raw <- pcoa(dis_matrix)
+eig_values <- abund_pcoa_raw$values$Relative_eig[1:3] %>%
+  round(3)
+abund_pcoa <- as_tibble(abund_pcoa_raw$vectors, rownames = "sample") %>%
+  left_join(sample_metadata, by = c("sample" = "temporal_sample_id")) %>%
+  filter(!is.na(Habitat__))
+
+pc_name <- function(prefix, n, eig) {
+  name <- paste0(prefix, " [", 100 * eig[n], "%]")
+  return(name)
+}
+
+################
+### Plotting ###
+################
+pcoa_plotting_layers <- list(
+  geom_point(),
+  stat_ellipse(type = "t", geom = "polygon", alpha = 1/10, colour = NA),
+  stat_ellipse(type = "norm", linetype = 2, colour = "black"),
+  scale_shape_manual(values = shape_habitat, breaks = habitat_levels),
+  scale_colour_manual(values = colour_habitat, breaks = habitat_levels),
+  scale_fill_manual(values = fill_habitat, breaks = habitat_levels),
+  theme_bw()
+)
+
+abund_pcoa %>%
+  ggplot(aes(Axis.1, Axis.2, shape = Habitat__, colour = Habitat__, fill = Habitat__)) +
+  pcoa_plotting_layers +
+  xlab(pc_name("PCoA", 1, eig_values)) +
+  ylab(pc_name("PCoA", 2, eig_values))
+ggsave("pcoa_12.png", path = output_dir, dpi = 900)
+
+abund_pcoa %>%
+  ggplot(aes(Axis.3, Axis.2, shape = Habitat__, colour = Habitat__, fill = Habitat__)) +
+  pcoa_plotting_layers +
+  xlab(pc_name("PCoA", 3, eig_values)) +
+  ylab(pc_name("PCoA", 2, eig_values))
+ggsave("pcoa_23.png", path = output_dir, dpi = 900)
+```
+
+```{r ordination-figure-nmds}
+plot_nmds_habitat <- function(dis_matrix, habitat) {
+  abund_nmds_raw <- metaMDS(dis_matrix)
+  stress <- abund_nmds_raw$stress %>%
+    round(2)
+  abund_nmds <- as_tibble(abund_nmds_raw$points, rownames = "sample") %>%
+    left_join(sample_metadata, by = c("sample" = "temporal_sample_id")) %>%
+    filter(!is.na(Habitat__))
+
+  ################
+  ### Plotting ###
+  ################
+  nmds_plotting_layers <- list(
+    stat_ellipse(type = "t", geom = "polygon", alpha = 1/10, colour = NA),
+    stat_ellipse(type = "norm", linetype = 2, colour = "black"),
+    scale_shape_manual(name = "Habitat", values = shape_habitat, breaks = habitat_levels),
+    scale_colour_manual(name = "Habitat", values = colour_habitat, breaks = habitat_levels),
+    scale_fill_manual(name = "Habitat", values = fill_habitat, breaks = habitat_levels),
+    annotation_custom(grid::textGrob(label = paste("stress:", stress), x = unit(0.8, "npc"), y = unit(0.1, "npc"), hjust = 0)),
+    theme_bw()
+  )
+
+  abund_nmds %>%
+    ggplot(aes(MDS1, MDS2, shape = Habitat__, colour = Habitat__, fill = Habitat__)) +
+    nmds_plotting_layers +
+    geom_point()
+  ggsave(str_c("nmds", habitat, "12.png", sep = "_"), path = output_dir, dpi = 900)
+
+  abund_nmds %>%
+    ggplot(aes(MDS1, MDS2, shape = Habitat__, fill = Habitat__)) +
+    nmds_plotting_layers +
+    new_scale_fill() +
+    geom_point(aes(shape = Habitat__, colour = NA, fill = DepthLumping)) +
+    scale_fill_manual(name = "Depth", values = colour_depth, breaks = depth_levels) +
+    guides(fill = guide_legend(override.aes = list(shape = 21)))
+  ggsave(str_c("nmds", habitat, "depth.png", sep = "_"), path = output_dir, dpi = 900)
+
+  abund_nmds %>%
+    ggplot(aes(MDS1, MDS2, shape = Habitat__, fill = Habitat__)) +
+    nmds_plotting_layers +
+    new_scale_fill() +
+    geom_point(aes(shape = Habitat__, colour = NA, fill = factor(Year__))) +
+    scale_fill_manual(name = "Year", values = colour_year, breaks = year_levels) +
+    guides(fill = guide_legend(override.aes = list(shape = 21)))
+  ggsave(str_c("nmds", habitat, "year.png", sep = "_"), path = output_dir, dpi = 900)
+}
+
+plot_nmds_habitat(dis_matrix, "")
+plot_nmds_habitat(dis_matrix_palsa, "palsa")
+plot_nmds_habitat(dis_matrix_bog, "bog")
+plot_nmds_habitat(dis_matrix_fen, "fen")
+```
+
+## Relative abundance overviews
+
+```{r rel-abund-overviews}
+output_dir <- here(main_dir, "heatmaps")
+dir.create(output_dir, recursive = TRUE)
+
+phyla_abund <- rel_abund %>%
+  left_join(taxonomy) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping, Year__)) %>%
+  mutate(
+    Domain = str_remove(Domain, "d__"),
+    Phylum_old = Phylum,
+    Phylum = map_chr(Phylum, ~ ifelse(. %in% phylum_levels, ., "other")),
+    Phylum = factor(Phylum, levels = phylum_levels, labels = phylum_labels),
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    Year__ = factor(Year__, levels = year_levels, labels = year_labels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+  )
+
+######################
+### Phylum heatmap ###
+######################
+phyla_abund %>%
+  mutate(
+    genome = factor(genome, levels = unique(genome)),
+    genome = fct_reorder(genome, str_c(Domain, Phylum, Class, Order, Family, Genus, Species))
+  ) %>%
+  ggplot(aes(x = temporal_sample_id, y = genome, fill = log10(rel_abund))) +
+  facet_nested(Domain + Phylum ~ Habitat__ + DepthLumping, scales = "free", space = "free_y", switch = "y", strip = strip_nested(size = "variable")) +
+  facetted_pos_scales(y = list(ROW %% 2 == 0 ~ scale_y_discrete(guide = guide_axis_manual(colour = "grey")))) +
+  geom_tile() +
+  scale_fill_distiller(palette = "Blues", na.value = "white", direction = 1) +
+  theme_cowplot() +
+  theme(
+    axis.text.y = element_blank(), axis.title.y = element_blank(), axis.ticks.y = element_blank(),
+    axis.text.x = element_blank(), axis.title.x = element_blank(), axis.ticks.x = element_blank(),
+    panel.spacing = unit(0, "lines"), strip.background = element_blank(),
+    strip.text.y.left = element_text(angle = 0), strip.placement = "outside",
+    legend.position = "bottom",
+    )
+
+ggsave("mag_heatmap.png", path = output_dir, dpi = 900)
+ggsave("mag_heatmap.svg", path = output_dir, dpi = 900)
+
+###############################
+### Phylum stacked bar plot ###
+###############################
+phyla_abund %>%
+  group_by(Phylum, Habitat__, DepthLumping, Year__, temporal_sample_id) %>%
+  summarise(rel_abund = sum(rel_abund)) %>%
+  summarise(rel_abund = mean(rel_abund)) %>%
+  ggplot(aes(Year__, rel_abund, fill = Phylum)) +
+  geom_col() +
+  facet_grid(
+    cols = vars(Habitat__),
+    rows = vars(DepthLumping)
+    ) +
+  scale_fill_manual("Phylum", values = fill_phylum, breaks = phylum_labels) +
+  xlab("Year") +
+  ylab("Relative abundance") +
+  theme_cowplot() +
+  theme(strip.background = element_blank())
+
+ggsave("phyla_stacked.png", path = output_dir, width = 7, height = 7, dpi = 900)
+ggsave("phyla_stacked.svg", path = output_dir, width = 7, height = 7, dpi = 900)
+
+#################################
+### Top MAGs stacked bar plot ###
+#################################
+top_mags <- phyla_abund %>%
+  group_by(Habitat__, DepthLumping, genome) %>%
+  summarise(rel_abund = mean(rel_abund)) %>%
+  slice_max(rel_abund, n = 10) %>%
+  select(-rel_abund) %>%
+  mutate(top_mag = TRUE)
+
+top_abund <- phyla_abund %>%
+  left_join(top_mags) %>%
+  filter(!is.na(top_mag)) %>%
+  group_by(Habitat__, DepthLumping, Year__, genome) %>%
+  summarise(rel_abund = mean(rel_abund))
+
+top_abund_plots <- top_abund %>%
+  mutate(
+    genome = ifelse(
+      str_detect(genome, "Bog.None.R3.T0.trimmomatic.megahit_bin.383_96.18_3.47"),
+      "Bog_383",
+      ifelse(
+        str_detect(genome, "Bog.None.R2.T0.JGI.BFC.metaspades_bin.84_100.00_0.00"),
+        "Bog_84",
+        genome
+    )),
+  ) %>%
+  group_by(Habitat__, DepthLumping) %>%
+  nest() %>%
+  ungroup() %>%
+  arrange(DepthLumping, Habitat__) %>%
+  mutate(
+    plot = pmap(
+      list(data, Habitat__, DepthLumping),
+      ~ ..1 %>%
+          ggplot(aes(Year__, rel_abund, fill = genome)) +
+          geom_col() +
+          scale_fill_brewer(palette = "Paired") +
+          xlab("Year") +
+          ylab("Relative abundance") +
+          ggtitle(str_c(..2, ..3, sep = " ")) +
+          theme_cowplot()
+  )) %>%
+  pull(plot)
+
+cowplot::plot_grid(plotlist = top_abund_plots, ncol = 3)
+
+ggsave("top_mags_stacked.png", path = output_dir, width = 20, height = 20, dpi = 600)
+ggsave("top_mags_stacked.svg", path = output_dir, width = 20, height = 20, dpi = 600)
+```
+
+## Relative evolutionary divergence - novel taxa representatives
+
+```{r relative-evolutionary-divergence}
+gtdb_bac <- read_tsv(here("data", "gtdbtk.bac120.summary.tsv"))
+gtdb_arch <- read_tsv(here("data", "gtdbtk.ar53.summary.tsv"))
+
+gtdb_r207_red_bac <- tribble(
+  ~rank, ~median,
+  "genus", 0.93,
+  "family", 0.76,
+  "order", 0.62,
+  "class", 0.45,
+  "phylum", 0.33,
+  ) %>%
+  mutate(
+    next_group = lag(median),
+    cutoff = map2_dbl(median, next_group, ~ mean(c(.x, .y)))
+    )
+
+gtdb_bac %>%
+  arrange(red_value) %>%
+  select(user_genome, classification, red_value) %>%
+  mutate(
+    family = red_value < (gtdb_r207_red_bac %>% filter(rank == "family") %>% pull(cutoff)),
+    order = red_value < (gtdb_r207_red_bac %>% filter(rank == "order") %>% pull(cutoff)),
+    class = red_value < (gtdb_r207_red_bac %>% filter(rank == "class") %>% pull(cutoff)),
+    phylum = red_value < (gtdb_r207_red_bac %>% filter(rank == "phylum") %>% pull(cutoff)),
+    cl_genus = str_detect(classification, ";g__;"),
+    cl_family = str_detect(classification, ";f__;"),
+    cl_order = str_detect(classification, ";o__;"),
+    cl_class = str_detect(classification, ";c__;"),
+    cl_phylum = str_detect(classification, ";p__;"),
+  ) %>%
+  summarise(
+    comp_family = mean(family == cl_family),
+    comp_order = mean(order == cl_order),
+    comp_class = mean(class == cl_class),
+    comp_phylum = mean(phylum == cl_phylum),
+    n = n(),
+    family = sum(family),
+    order = sum(order),
+    class = sum(class),
+    phylum = sum(phylum),
+    cl_genus = sum(cl_genus),
+    cl_family = sum(cl_family),
+    cl_order = sum(cl_order),
+    cl_class = sum(cl_class),
+    cl_phylum = sum(cl_phylum),
+  )
+
+gtdb_r207_red_arch <- tribble(
+  ~rank, ~median,
+  "genus", 0.91,
+  "family", 0.74,
+  "order", 0.52,
+  "class", 0.36,
+  "phylum", 0.23,
+  ) %>%
+  mutate(
+    next_group = lag(median),
+    cutoff = map2_dbl(median, next_group, ~ mean(c(.x, .y)))
+    )
+
+gtdb_arch %>%
+  arrange(red_value) %>%
+  select(user_genome, classification, red_value) %>%
+  mutate(
+    family = red_value < (gtdb_r207_red_arch %>% filter(rank == "family") %>% pull(cutoff)),
+    order = red_value < (gtdb_r207_red_arch %>% filter(rank == "order") %>% pull(cutoff)),
+    class = red_value < (gtdb_r207_red_arch %>% filter(rank == "class") %>% pull(cutoff)),
+    phylum = red_value < (gtdb_r207_red_arch %>% filter(rank == "phylum") %>% pull(cutoff)),
+    cl_genus = str_detect(classification, ";g__;"),
+    cl_family = str_detect(classification, ";f__;"),
+    cl_order = str_detect(classification, ";o__;"),
+    cl_class = str_detect(classification, ";c__;"),
+    cl_phylum = str_detect(classification, ";p__;"),
+  ) %>%
+  summarise(
+    comp_family = mean(family == cl_family),
+    comp_order = mean(order == cl_order),
+    comp_class = mean(class == cl_class),
+    comp_phylum = mean(phylum == cl_phylum),
+    n = n(),
+    family = sum(family),
+    order = sum(order),
+    class = sum(class),
+    phylum = sum(phylum),
+    cl_genus = sum(cl_genus),
+    cl_family = sum(cl_family),
+    cl_order = sum(cl_order),
+    cl_class = sum(cl_class),
+    cl_phylum = sum(cl_phylum),
+  )
+```

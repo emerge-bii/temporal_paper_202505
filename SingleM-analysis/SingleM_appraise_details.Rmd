@@ -1,0 +1,431 @@
+---
+title: "SingleM appraise details"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  error = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center")
+
+library(cowplot)
+library(vegan)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+output_dir <- here("SingleM-analysis", "details")
+dir.create(output_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+
+habitat_levels <- c("Palsa", "Bog", "Fen")
+habitat_labels <- c("palsa", "bog", "fen")
+habitat_colours <- c("#703C1B", "#058000", "#0001FF")
+
+depth_levels <- c("0-9", "20-29", "10-19", "30-39")
+depth_labels <- c("0", "20", "10", "30")
+fill_depth   <- RColorBrewer::brewer.pal(5, "YlOrBr")[-1]
+colour_depth <- fill_depth
+
+year_levels <- c(2011, 2012, 2013, 2014, 2015, 2016, 2017)
+year_labels <- c(1, 2, 3, 4, 5, 6, 7)
+fill_year   <- RColorBrewer::brewer.pal(7, "BuPu")
+colour_year <- fill_year
+
+phylum_levels <- c(
+  # Bacteria
+  "p__Acidobacteriota",
+  "p__Actinobacteriota",
+  "p__Bacteroidota",
+  "p__Chloroflexota",
+  "p__Desulfobacterota",
+  "p__Eremiobacterota",
+  "p__Proteobacteria",
+  "p__Verrucomicrobiota",
+  # Archaea
+  "p__Halobacteriota",
+  "p__Methanobacteriota",
+  "p__Thermoplasmatota",
+  "p__Thermoproteota",
+  "other"
+)
+phylum_labels <- c(
+  # Bacteria
+  "Acidobacteriota",
+  "Actinobacteriota",
+  "Bacteroidota",
+  "Chloroflexota",
+  "Desulfobacterota",
+  "Eremiobacterota",
+  "Proteobacteria",
+  "Verrucomicrobiota",
+  # Archaea
+  "Halobacteriota",
+  "Methanobacteriota",
+  "Thermoplasmatota",
+  "Thermoproteota",
+  "other"
+)
+colour_phylum <- c(RColorBrewer::brewer.pal(12, "Set3"), "white")
+fill_phylum <- colour_phylum
+
+singlem_otu_tables_metadata <- singlem_otu_tables %>%
+  left_join(sample_metadata, by = "temporal_sample_id") %>%
+  mutate(
+    habitat = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+    year    = factor(Year__, levels = year_levels),
+  ) %>%
+  left_join(read_counts, by = "temporal_sample_id") %>%
+  filter(!is.na(habitat))
+
+bar_plot_layers <- list(
+  stat_summary(fun=mean, geom="bar", colour=colour_brewer$grey, fill=colour_brewer$blue, linewidth=1),
+  stat_summary(fun.data=mean_sdl, fun.args=list(mult=1), geom="errorbar", linewidth=1, colour=colour_brewer$grey, width=0.5),
+  scale_x_discrete(breaks = habitat_levels, labels = habitat_labels),
+  scale_y_continuous(expand = expansion(mult = c(0, .1))),
+  theme_cowplot()
+)
+```
+
+## Input data
+
+254 read files from habitat samples (61 palsa, 74 bog, 76 fen, 10 carex, 18 collapsed palsa and 15 outer collapsed palsa).
+1,076 assemblies from 2010-2017 set (379), JGI set (368) and SIP experiments (329 metaspades or megahit).
+13,290 bins with estimated >=70\% completeness and <10\% contamination from Woodcroft 2018 (1,529), Cronin 2021 (4,419), JGI (787) and SIP experiments (6,555).
+And 1,806 dereplicated bins at 95\%
+
+Analysed using SingleM pipe/appraise with 59 marker genes generated from GTDB r202 (S3.metapackage_20211007.smpkg).
+Against assemblies filtered for >2.5kb or >10kb contigs and against transcripts generated from bins by prodigal.
+
+
+
+## Shannon diversity
+
+(ref:diversity) __Shannon diversity across habitats.__ Ordered by depth. Calculated from SingleM sequence hits rarefied to 100 sequences, excluding samples with <100 hits. Points are mean ± standard deviation.
+```{r diversity, fig.cap='(ref:diversity)'}
+set.seed(42)
+
+#########################
+### Shannon diversity ###
+#########################
+# Group hits by temporal_sample_id and marker gene
+# Exclude rows with < 100 hits
+# Sample 100 from each row and calculate Shannon diversity
+singlem_diversity <- singlem_otu_tables_metadata %>%
+  select(habitat, DepthLumping, temporal_sample_id, gene, sequence, num_hits) %>%
+  group_by(habitat, DepthLumping, temporal_sample_id, gene) %>%
+  nest() %>%
+  mutate(nseq = map_dbl(data, nrow)) %>%
+  filter(nseq >= 100) %>%
+  mutate(
+    sample = purrr::map(data, slice_sample, n = 100),
+    sample = purrr::map(sample,
+            ~ pivot_wider(., names_from = sequence, values_from = num_hits)),
+    diversity = map_dbl(sample, diversity, index = "shannon"),
+    evenness = map2_dbl(sample, diversity, ~ .y / log(specnumber(.x))) # Pielou's evenness
+    )
+
+id_levels <- singlem_diversity %>%
+  arrange(habitat, DepthLumping) %>%
+  `$`(temporal_sample_id) %>%
+  unique()
+
+singlem_hits_gene <- singlem_diversity %>%
+  filter(startsWith(gene, "S3.1."))
+
+# 235/235 samples have at least one marker gene with at least 100 hits
+# Average across marker genes within each sample
+point_plot_layers <- list(
+  stat_summary(fun = "mean"),
+  stat_summary(fun.data = "mean_sdl", geom = "errorbar"),
+  scale_colour_manual(values = habitat_colours, breaks = habitat_levels),
+  xlab("Samples"),
+  theme_cowplot(),
+  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
+)
+
+all_markers <- singlem_diversity %>%
+  ggplot(aes(x = factor(temporal_sample_id, levels = id_levels), y = diversity, fill = habitat, colour = habitat)) +
+  point_plot_layers +
+  ylab("rarefied Shannon diversity")
+all_markers
+ggsave("shannon_all_markers.png", path = output_dir, dpi = 900)
+
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.1.")), colour = "red", size = 0.5)
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.2.")), colour = "red", size = 0.5)
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.3.")), colour = "red", size = 0.5)
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.4.")), colour = "red", size = 0.5)
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.5.")), colour = "red", size = 0.5)
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.6.")), colour = "red", size = 0.5)
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.7.")), colour = "red", size = 0.5)
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.8.")), colour = "red", size = 0.5)
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.9.")), colour = "red", size = 0.5)
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.10.")), colour = "red", size = 0.5)
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.11.")), colour = "red", size = 0.5)
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.12.")), colour = "red", size = 0.5)
+#all_markers + geom_point(data = singlem_diversity %>% filter(startsWith(gene, "S3.13.")), colour = "red", size = 0.5)
+
+#########################
+### Pielou's evenness ###
+#########################
+# Group hits by temporal_sample_id and marker gene
+# Exclude rows with < 100 hits
+# calculate Pielou's evenness
+singlem_evenness <- singlem_otu_tables_metadata %>%
+  select(habitat, DepthLumping, temporal_sample_id, gene, sequence, num_hits) %>%
+  group_by(habitat, DepthLumping, temporal_sample_id, gene) %>%
+  nest() %>%
+  mutate(nseq = map_dbl(data, nrow)) %>%
+  filter(nseq >= 100) %>%
+  mutate(
+    sample = purrr::map(data,
+            ~ pivot_wider(., names_from = sequence, values_from = num_hits)),
+    diversity = map_dbl(sample, diversity, index = "shannon"),
+    evenness = map2_dbl(sample, diversity, ~ .y / log(specnumber(.x)))
+    )
+
+
+singlem_evenness %>%
+  ggplot(aes(x = factor(temporal_sample_id, levels = id_levels), y = evenness, fill = habitat, colour = habitat)) +
+  point_plot_layers +
+  ylab("rarefied Pielou's evenness")
+ggsave("pielou_all_markers.png", path = output_dir, dpi = 900)
+```
+
+
+## Major missing taxa
+
+```{r genus-missing}
+taxonomy_groups <- c("Root", "Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species")
+# Only include taxa found by at least min_gene_hits marker genes
+min_gene_hits <- 18
+# Group hits by whether or not Genus-level representative in all MAGs
+representative_col <- "all.genus.binned"
+# Only include hits with at least min_taxa_res resolution
+min_taxa_res <- "Phylum"
+
+hits_per_sample_per_gene <- singlem_otu_tables_metadata %>%
+  group_by(temporal_sample_id, gene) %>%
+  summarise(total_num_hits = sum(num_hits))
+
+taxa_analysis <- singlem_otu_tables_metadata %>%
+  separate(taxonomy, into = taxonomy_groups, sep = "; ") %>%
+  left_join(hits_per_sample_per_gene, by = c("temporal_sample_id", "gene")) %>%
+  filter(!is.na(.data[[min_taxa_res]])) %>%
+  group_by(across(all_of(representative_col)), habitat, temporal_sample_id, across(all_of(taxonomy_groups)), gene) %>%
+  summarise(num_hits = sum(num_hits), total_num_hits = first(total_num_hits)) %>%
+  mutate(rel_hits = map2_dbl(num_hits, total_num_hits, `/`)) %>%
+  summarise(avg_rel_hits = mean(rel_hits), avg_num_hits = mean(num_hits), n = n()) %>%
+  filter(n >= min_gene_hits)
+
+taxa_analysis_summary <- taxa_analysis %>%
+  group_by(across(all_of(representative_col)), habitat, Phylum) %>%
+  summarise(summed_hits = sum(avg_num_hits))
+```
+
+Found 5,822 taxa that do not have a Genus-level MAG representative with at least
+Phylum-level resolution and found by at least 18 marker genes (about half of total
+genes for each domain). 537 of these have Family-level resolution.
+
+Within the 5,822 taxa, some phyla had different proportions among those with and without
+Genus-level MAG representatives. Considering only the top 5 phyla among the unrepresented,
+Acidobacteriota and Actinobacteriota were generally overrepresented, whereas Planctomycetota
+and Patescibacteria were generally underrepresented. Additionally, Omnitrophota were
+underrepresented in Bog and Fen.
+
+Caveats: Taxa having and not having Genus-level MAG representatives are not equally sized groups
+(estimated at 3:1, i.e. 75%). Intepretation of the graph should be done keeping this in mind.
+
+<!--
+Top 5
+Common overrepresented: Acidobacteriota, Actinobacteriota
+Common underrepresented: Planctomycetota, Patescibacteria (both >75% Genus-level resolution)
+Bog top other underrepresented: Omnitrophota (also in Fen)
+
+
+Top 10
+Thermoproteota in Palsa
+Armatimonadota in Palsa
+
+Patescibacteria in Bog
+Armatimonadota in Bog
+Bdellovibrionota in Bog
+FCPU426 in Bog
+
+Nanoarchaeota in Fen
+Omnitrophota in Fen
+-->
+
+(ref:genus-missing-phyla) __Proportion of taxa hits from each Phyla grouped by presence of Genus-level MAG representative.__
+```{r genus-missing-phyla, fig.cap='(ref:genus-missing-phyla)', include=FALSE}
+repeating_palette <- RColorBrewer::brewer.pal(9, "Pastel1") %>%
+  rep(10)
+
+taxa_analysis_summary %>%
+  ggplot(aes(all.genus.binned, summed_hits, fill = Phylum)) +
+  facet_grid(cols = vars(habitat)) +
+  geom_col(position = position_fill()) +
+  scale_fill_manual(values = repeating_palette) +
+  xlab("Genus-level representative") +
+  ylab("Proportion of total hits (within group)") +
+  theme_cowplot() +
+  theme(legend.position = "None")
+ggsave("genus_missing_phyla_all.png", path = output_dir, dpi = 900)
+ggsave("genus_missing_phyla_all.svg", path = output_dir, dpi = 900)
+```
+
+
+(ref:genus-top-missing-phyla) __Proportion of top 5 unrepresented taxa hits from each Phyla grouped by presence of Genus-level MAG representative.__ Far fewer hits had Genus-level representatives in Patescibacteria (Palsa, Bog, Fen), Planctomycetota (Palsa, Bog, Fen) and Omnitrophota (Bog, Fen). Acidobacteriota and Actinobacteriota were overrepresented (Palsa, Bog, Fen).
+```{r genus-top-missing-phyla, fig.cap='(ref:genus-top-missing-phyla)'}
+# Keep only top 5 missing taxa within each group
+n_keep_phyla <- 5
+
+top_taxa_summary <- taxa_analysis_summary %>%
+  group_by(habitat, all.genus.binned) %>%
+  mutate(
+    rel_hits = map_dbl(summed_hits, ~ . / sum(summed_hits)),
+    all.genus.binned = as.integer(all.genus.binned)
+    )
+
+all_top_taxa <- top_taxa_summary %>%
+  pivot_wider(
+    id_cols = c(habitat, Phylum),
+    names_from = all.genus.binned,
+    names_prefix = "all.genus.binned",
+    values_from = rel_hits,
+    values_fill = 0) %>%
+  group_by(habitat) %>%
+  slice_max(order_by = all.genus.binned0, n = n_keep_phyla) %>%
+  `$`(Phylum) %>%
+  unique()
+
+top_taxa_summary %>%
+  filter(Phylum %in% all_top_taxa) %>%
+  mutate(all.genus.binned = factor(all.genus.binned)) %>%
+  ggplot(aes(all.genus.binned, rel_hits, fill = Phylum)) +
+  facet_grid(cols = vars(habitat)) +
+  geom_col() +
+  scale_x_discrete(breaks = c(0, 1), labels = c("no", "yes")) +
+  scale_fill_brewer(palette = "Pastel1") +
+  xlab("Genus-level representative") +
+  ylab("Proportion of total hits") +
+  theme_cowplot()
+ggsave("genus_missing_phyla.png", path = output_dir, dpi = 900)
+ggsave("genus_missing_phyla.svg", path = output_dir, dpi = 900)
+
+# taxa_analysis_summary %>%
+#   group_by(habitat) %>%
+#   mutate(
+#     rel_hits = map_dbl(summed_hits, ~ . / sum(summed_hits)),
+#     all.genus.binned = as.integer(all.genus.binned),
+#     all.genus.binned = factor(all.genus.binned)
+#     ) %>%
+#   filter(Phylum %in% all_top_taxa) %>%
+#   ggplot(aes(all.genus.binned, rel_hits, fill = Phylum)) +
+#   facet_grid(cols = vars(habitat)) +
+#   geom_col() +
+#   scale_x_discrete(breaks = c(0, 1), labels = c("no", "yes")) +
+#   scale_fill_brewer(palette = "Pastel1") +
+#   xlab("Genus-level representative") +
+#   ylab("Proportion of total hits") +
+#   theme_cowplot()
+# ggsave("genus_missing_phyla_scaled.png", path = output_dir, dpi = 900)
+```
+
+
+## Markers as % of total reads
+
+```{r read-counts, fig.cap='(ref:read-counts)'}
+read_count_analysis <- singlem_otu_tables_metadata %>%
+  group_by(year, habitat, DepthLumping, temporal_sample_id) %>%
+  summarise(read_count = min(read_count), marker_count = sum(num_hits)) %>%
+  mutate(percent_markers = map2_dbl(marker_count, read_count, ~ 100 * .x / .y))
+```
+
+(ref:read-counts-habitat) __Percentage of reads assigned to a SingleM marker gene averaged across samples.__ Columns are mean ± standard deviation.
+```{r read-counts-habitat, fig.cap='(ref:read-counts-habitat)'}
+read_count_analysis %>%
+  ggplot(aes(habitat, percent_markers)) +
+  bar_plot_layers +
+  ylab("Average percent marker gene")
+ggsave("marker_gene_habitat.png", path = output_dir, dpi = 900)
+```
+
+
+(ref:read-counts-year) __Percentage of reads assigned to a SingleM marker gene averaged across samples.__ Columns are mean ± standard deviation.
+```{r read-counts-year, fig.cap='(ref:read-counts-year)'}
+read_count_analysis %>%
+  ggplot(aes(year, percent_markers)) +
+  facet_wrap(vars(habitat)) +
+  bar_plot_layers +
+  ylab("Average percent marker gene")
+ggsave("marker_gene_year.png", path = output_dir, dpi = 900)
+```
+
+
+(ref:read-counts-depth) __Percentage of reads assigned to a SingleM marker gene averaged across samples.__ Columns are mean ± standard deviation.
+```{r read-counts-depth, fig.cap='(ref:read-counts-depth)'}
+read_count_analysis %>%
+  ggplot(aes(DepthLumping, percent_markers)) +
+  facet_wrap(vars(habitat)) +
+  bar_plot_layers +
+  ylab("Average percent marker gene")
+ggsave("marker_gene_depth.png", path = output_dir, dpi = 900)
+```
+
+## Taxonomy overviews
+
+```{r taxonomy-overviews}
+output_subdir <- here(output_dir, "heatmaps")
+dir.create(output_subdir, recursive = TRUE)
+
+singlem_abund <- singlem_otu_tables_metadata %>%
+  separate(taxonomy, c("Root", "Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), sep = "; ") %>%
+  mutate(
+    Domain = str_remove(Domain, "d__"),
+    Phylum_old = Phylum,
+    Phylum = map_chr(Phylum, ~ ifelse(. %in% phylum_levels, ., "other")),
+    Phylum = factor(Phylum, levels = phylum_levels, labels = phylum_labels),
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    Year__ = factor(Year__, levels = year_levels, labels = year_labels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+  )
+
+###############################
+### Phylum stacked bar plot ###
+###############################
+singlem_abund %>%
+  group_by(Habitat__, DepthLumping, Year__, temporal_sample_id, Phylum, gene) %>%
+  summarise(coverage = sum(coverage)) %>%
+  summarise(coverage = mean(coverage)) %>%
+  mutate(rel_abund = coverage / sum(coverage)) %>%
+  group_by(Habitat__, DepthLumping, Year__, Phylum) %>%
+  summarise(rel_abund = mean(rel_abund)) %>%
+  ggplot(aes(Year__, rel_abund, fill = Phylum)) +
+  geom_col() +
+  facet_grid(
+    cols = vars(Habitat__),
+    rows = vars(DepthLumping)
+    ) +
+  scale_fill_manual("Phylum", values = fill_phylum, breaks = phylum_labels) +
+  xlab("Year") +
+  ylab("Relative abundance") +
+  theme_cowplot() +
+  theme(strip.background = element_blank())
+
+ggsave("phyla_stacked.png", path = output_subdir, width = 7, height = 7, dpi = 900)
+ggsave("phyla_stacked.svg", path = output_subdir, width = 7, height = 7, dpi = 900)
+```

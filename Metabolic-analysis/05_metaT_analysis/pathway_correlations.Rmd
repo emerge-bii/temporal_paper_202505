@@ -1,0 +1,299 @@
+---
+title: "Pathway correlations"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  error = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center")
+
+library(cowplot)
+library(propr)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+
+main_dir <- here("Metabolic-analysis", "05_metaT_analysis")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("palsa", "bog", "fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+```
+
+# Correlation of pathway expression across samples
+
+```{r correlations}
+output_dir <- here(main_dir, "correlations")
+dir.create(output_dir, recursive = TRUE)
+
+# # Correlation Chitin and Xylan expression only for genomes encoding both
+# both_genomes <- product_refined %>%
+#   filter(subpathway %in% c("CAZy-Chitin", "CAZy-Xylans")) %>%
+#   pivot_wider(names_from = subpathway, values_from = call) %>%
+#   filter(`CAZy-Chitin`, `CAZy-Xylans`) %>%
+#   `$`(genome)
+
+# metaT_exp <- metaT_exp %>% filter(genome %in% both_genomes)
+
+# Calculate Rho correlations
+calculate_rho <- function(sample_ids = sample_metadata$temporal_sample_id, expression = metaT_exp) {
+  comb_df <- expression %>%
+    group_by(subpathway, temporal_sample_id) %>%
+    summarise(tpm = sum(tpm)) %>%
+    filter(temporal_sample_id %in% sample_ids) %>%
+    pivot_wider(names_from = subpathway, values_from = tpm, values_fill = 0)
+
+  comb_rho <- comb_df %>%
+    select(-temporal_sample_id) %>%
+    # Filter pathways with >75% zero abundance
+    select(where(~ sum(. != 0) > length(.) / 10)) %>%
+    # Box-Cox tranformation strategy for zeros
+    propr(metric = "rho", alpha = 0.5)
+
+  comb_cutoffs <- updateCutoffs(comb_rho, ncores = 20)
+  chosen_cutoff <- comb_cutoffs@fdr %>%
+    as_tibble() %>%
+    filter(FDR < 0.05) %>%
+    slice(1) %>%
+    `$`(cutoff)
+
+  comb_clr <- comb_rho@logratio %>%
+    as_tibble() %>%
+    mutate(temporal_sample_id = comb_df$temporal_sample_id) %>%
+    pivot_longer(-temporal_sample_id, names_to = "pathway", values_to = "clr_abund") %>%
+    left_join(sample_metadata %>% select(temporal_sample_id, Habitat__))
+
+  comb_propo_unfiltered <- comb_rho@matrix %>%
+    as_tibble() %>%
+    mutate(pathway1 = comb_rho@matrix %>% rownames()) %>%
+    pivot_longer(-pathway1, names_to = "pathway2", values_to = "rho") %>%
+    # Remove visa versa correlations
+    mutate(
+      diff = map2_chr(pathway1, pathway2,
+        ~ c(.x, .y) %>% sort() %>% str_c(collapse = "=")
+      )) %>%
+    distinct(diff, .keep_all = TRUE)
+
+  comb_propo <- comb_propo_unfiltered %>%
+    # updateCutoffs is only valid for positive values of rho
+    filter(rho > chosen_cutoff, pathway1 != pathway2)
+
+  return(list("comb_propo" = comb_propo, "comb_clr" = comb_clr, "chosen_cutoff" = chosen_cutoff,
+              "comb_rho" = comb_rho, "comb_propo_unfiltered" = comb_propo_unfiltered))
+}
+
+rho_all_habitat <- calculate_rho()
+rho_palsa <- sample_metadata %>% filter(Habitat__ == "Palsa") %>% `$`(temporal_sample_id) %>% calculate_rho()
+rho_bog <- sample_metadata %>% filter(Habitat__ == "Bog") %>% `$`(temporal_sample_id) %>% calculate_rho()
+rho_fen <- sample_metadata %>% filter(Habitat__ == "Fen") %>% `$`(temporal_sample_id) %>% calculate_rho()
+
+find_high_corr <- function(pathway, num_out = 10, df = rho_all_habitat$comb_propo,
+                           palsa = rho_palsa$comb_propo, bog = rho_bog$comb_propo, fen = rho_fen$comb_propo) {
+  df %>%
+    arrange(desc(rho)) %>%
+    filter(str_detect(diff, pathway)) %>%
+    slice_head(n = num_out) %>%
+    left_join(palsa %>% rename(rho_palsa = rho)) %>%
+    left_join(bog %>% rename(rho_bog = rho)) %>%
+    left_join(fen %>% rename(rho_fen = rho)) %>%
+    filter(!is.na(rho_palsa) | !is.na(rho_bog) | !is.na(rho_fen)) %>%
+    mutate(other_pathway = map_chr(diff, str_remove_all, pattern = str_c(pathway, "|=")))
+}
+
+create_corr_plot <- function(sym_1, sym_2, abund = rho_all_habitat$comb_clr,
+  corr = rho_all_habitat$comb_propo, corr_palsa = rho_palsa$comb_propo, corr_bog = rho_bog$comb_propo, corr_fen = rho_fen$comb_propo) {
+  sym_df <- abund %>%
+    filter(pathway %in% c(sym_1, sym_2)) %>%
+    mutate(pathway = map_chr(pathway, ~ ifelse(. == sym_1, "one", "two"))) %>%
+    pivot_wider(names_from = pathway, values_from = clr_abund)
+
+  annotation <- str_c(
+    str_c("overall rho = ", corr %>% filter(str_detect(diff, sym_1), str_detect(diff, sym_2)) %>% pull(rho) %>% round(2) %>% c("")),
+    str_c("palsa rho = ", corr_palsa %>% filter(str_detect(diff, sym_1), str_detect(diff, sym_2)) %>% pull(rho) %>% round(2) %>% c("")),
+    str_c("bog rho = ", corr_bog %>% filter(str_detect(diff, sym_1), str_detect(diff, sym_2)) %>% pull(rho) %>% round(2) %>% c("")),
+    str_c("fen rho = ", corr_fen %>% filter(str_detect(diff, sym_1), str_detect(diff, sym_2)) %>% pull(rho) %>% round(2) %>% c("")),
+    sep = "; "
+    )
+
+  sym_df %>%
+    ggplot(aes(one, two, colour = Habitat__)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE, colour = "black") +
+    geom_hline(yintercept = 0, colour = "black") +
+    geom_vline(xintercept = 0, colour = "black") +
+    scale_colour_manual(values = colour_habitat, breaks = str_to_title(habitat_levels)) +
+    xlab(sym_1) +
+    ylab(sym_2) +
+    labs(caption = annotation) +
+    theme_cowplot()
+
+  filename <- c(sym_1, sym_2) %>%
+    str_c(collapse = "=") %>%
+    str_c(".png")
+  ggsave(filename, path = output_subdir, dpi = 600, width = 7, height = 7)
+}
+
+######################
+### Methanogenesis ###
+######################
+output_subdir <- here(output_dir, "methanogenesis")
+dir.create(output_subdir, recursive = TRUE)
+
+# Hydrogenotrophic
+find_high_corr("hydrogenotrophic_methanogenesis-all")
+create_corr_plot("hydrogenotrophic_methanogenesis-all", "Wood_Ljungdahl-methanogen") # 1st
+create_corr_plot("hydrogenotrophic_methanogenesis-all", "acetoclastic_methanogenesis-all") # 2nd
+create_corr_plot("hydrogenotrophic_methanogenesis-all", "methylotrophic_methanogenesis-h2_indep") # 3rd
+
+# Acetoclastic
+find_high_corr("acetoclastic_methanogenesis-all")
+create_corr_plot("acetoclastic_methanogenesis-all", "hydrogenotrophic_methanogenesis-all") # 1st
+create_corr_plot("acetoclastic_methanogenesis-all", "Wood_Ljungdahl-methanogen") # 2nd
+create_corr_plot("acetoclastic_methanogenesis-all", "methylotrophic_methanogenesis-h2_indep") # 3rd
+
+############
+### CAZy ###
+############
+output_subdir <- here(output_dir, "CAZy")
+dir.create(output_subdir, recursive = TRUE)
+
+# Chitin
+find_high_corr("CAZy-Chitin")
+create_corr_plot("CAZy-Chitin", "CAZy-Starch") # 1st
+create_corr_plot("CAZy-Chitin", "CAZy-Mixed_Linkage_glucans") # 2nd
+create_corr_plot("CAZy-Chitin", "CAZy-Arabinose_cleavage") # 3rd
+create_corr_plot("CAZy-Chitin", "CAZy-Pectin") # 4th
+create_corr_plot("CAZy-Chitin", "CAZy-Xylans") # 5th
+create_corr_plot("CAZy-Chitin", "lactose_degradation-all") # Fen only
+create_corr_plot("CAZy-Chitin", "nitrogen_redox-nitrogen_fixation")
+
+################
+### Nitrogen ###
+################
+output_subdir <- here(output_dir, "nitrogen")
+dir.create(output_subdir, recursive = TRUE)
+
+# Nitrogen fixation
+find_high_corr("nitrogen_redox-nitrogen_fixation")
+# None
+
+##############
+### Sulfur ###
+##############
+output_subdir <- here(output_dir, "sulfur")
+dir.create(output_subdir, recursive = TRUE)
+
+# Sulfur oxidation
+find_high_corr("sulfur_redox-dissimilatory_sulfur_oxidation")
+# Sulfate reduction
+find_high_corr("sulfur_redox-dissimilatory_sulfate_reduction")
+create_corr_plot("sulfur_redox-dissimilatory_sulfate_reduction", "methylotrophic_methanogenesis-h2_indep") # 1st
+create_corr_plot("sulfur_redox-dissimilatory_sulfate_reduction", "Wood_Ljungdahl-methanogen") # 2nd
+create_corr_plot("sulfur_redox-dissimilatory_sulfate_reduction", "acetoclastic_methanogenesis-all") # requested
+create_corr_plot("sulfur_redox-dissimilatory_sulfate_reduction", "hydrogenotrophic_methanogenesis-all") # requested
+# All due to zeros
+```
+
+```{r kegg-correlations}
+output_dir <- here(main_dir, "correlations_kegg")
+dir.create(output_dir, recursive = TRUE)
+
+dram_annotations <- read_dram_annotations()
+
+metaT_data <- sample_metadata %>%
+  read_metaT_data(annotations = dram_annotations)
+
+interesting_genes <- tribble(
+  ~pathway, ~ko_id,
+  "urea_cycle", "K01948", # CPS1 (carbamoyl-phosphate synthase) - eukaryotic
+  "urea_cycle", "K00611",
+  "urea_cycle", "K01940",
+  "urea_cycle", "K01755",
+  "urea_cycle", "K14681",
+  "urea_cycle", "K01476",
+  "GS_GOGAT_assimilation", "K01915", # glnA (glutamine synthetase)
+  "GS_GOGAT_assimilation", "K00265", # gltB (glutamate synthase NADPH)
+  "GS_GOGAT_assimilation", "K00264", # GLT1 (glutamate synthase NADH) - eukaryotic
+  "GS_GOGAT_assimilation", "K00284", # GLU/gltS (glutamate synthase ferredoxin)
+  "glutamate_dehydrogenase", "K00260", # gudB/rocG (glutamate dehydrogenase NAD+)
+  "glutamate_dehydrogenase", "K15371", # GDH2 (glutamate dehydrogenase NAD+)
+  "glutamate_dehydrogenase", "K00261", # gdhA (glutamate dehydrogenase NAD(P)+)
+  "glutamate_dehydrogenase", "K00262", # gdhA (glutamate dehydrogenase NADP+)
+  "GlcNAc_processing", "K02777", # crr (sugar PTS EIIA; (outer)GlcNAc -> GlcNAc-6P)
+  "GlcNAc_processing", "K02804", # nagE (GlcNAc PTS EIIICBA; (outer)GlcNAc -> GlcNAc-6P)
+  "GlcNAc_processing", "K00884", # nagK (GlcNAc kinase; GlcNAc -> GlcNAc-6P)
+  "GlcNAc_processing", "K01443", # nagA (GlcNAc-6P deacetylase; GlcNAc-6P -> GlcN-6P)
+  "GlcNAc_processing", "K02564", # nagB (GlcN-6P deaminase; GlcN-6P -> Fru-6P)
+  "GlcNAc_processing", "K07102", # amgK (MurNAc 1-kinase; GlcNAc -> GlcNAc-1P)
+  "GlcNAc_processing", "K04042", # glmU (GlcNAc-1P N-acetyltransferase; GlcNAc-1P -> UDP-GlcNAc)
+  "GlcNAc_processing", "K00820"  # glmS (glutamine-fructose-6-phosphate transaminase; GlcNAc-6P + glutamate -> Fru-6P + glutamine)
+)
+
+metaT_kegg <- metaT_data %>%
+  left_join(interesting_genes) %>%
+  filter(!is.na(pathway)) %>%
+  mutate(subpathway = str_c(pathway, ko_id, sep = "-")) %>%
+  group_by(pathway, temporal_sample_id, genome, subpathway) %>%
+  summarise(tpm = sum(tpm))
+
+metaT_exp_kegg <- bind_rows(metaT_exp, metaT_kegg)
+
+rho_all_habitat_kegg <- calculate_rho(expression = metaT_exp_kegg)
+rho_palsa_kegg <- sample_metadata %>% filter(Habitat__ == "Palsa") %>% `$`(temporal_sample_id) %>% calculate_rho(expression = metaT_exp_kegg)
+rho_bog_kegg <- sample_metadata %>% filter(Habitat__ == "Bog") %>% `$`(temporal_sample_id) %>% calculate_rho(expression = metaT_exp_kegg)
+rho_fen_kegg <- sample_metadata %>% filter(Habitat__ == "Fen") %>% `$`(temporal_sample_id) %>% calculate_rho(expression = metaT_exp_kegg)
+
+create_corr_plot_kegg <- function(name1, name2) {
+  create_corr_plot(
+    sym_1 = name1,
+    sym_2 = name2,
+    abund = rho_all_habitat_kegg$comb_clr,
+    corr = rho_all_habitat_kegg$comb_propo,
+    corr_palsa = rho_palsa_kegg$comb_propo,
+    corr_bog = rho_bog_kegg$comb_propo,
+    corr_fen = rho_fen_kegg$comb_propo
+  )
+}
+
+############
+### CAZy ###
+############
+output_subdir <- here(output_dir, "CAZy")
+dir.create(output_subdir, recursive = TRUE)
+
+# Chitin
+find_high_corr("CAZy-Chitin", df = rho_all_habitat_kegg$comb_propo, palsa = rho_palsa_kegg$comb_propo, bog = rho_bog_kegg$comb_propo, fen = rho_fen_kegg$comb_propo)
+create_corr_plot_kegg("CAZy-Chitin", "CAZy-Xylans") # 1st
+create_corr_plot_kegg("CAZy-Chitin", "lactose_degradation-all") # Fen only
+create_corr_plot_kegg("CAZy-Chitin", "GS_GOGAT_assimilation-K00265") # Global only
+create_corr_plot_kegg("CAZy-Chitin", "urea_cycle-K01476") # Global only
+create_corr_plot_kegg("CAZy-Chitin", "glutamate_dehydrogenase-K00261") # Global only
+create_corr_plot_kegg("CAZy-Chitin", "GlcNAc_processing-K01443") # Global only
+create_corr_plot_kegg("CAZy-Chitin", "GlcNAc_processing-K04042") # Global only
+create_corr_plot_kegg("CAZy-Chitin", "GlcNAc_processing-K00820") # Global only
+
+############
+### Misc ###
+############
+output_subdir <- here(output_dir, "misc")
+dir.create(output_subdir, recursive = TRUE)
+
+create_corr_plot_kegg("GlcNAc_processing-K02777", "phosphorous_redox-phosphite_oxidation")
+create_corr_plot_kegg("GS_GOGAT_assimilation-K00265", "sulfur_redox-assimilatory_sulfate_reduction")
+create_corr_plot_kegg("GS_GOGAT_assimilation-K00284", "urea_degradation-all")
+```

@@ -1,0 +1,126 @@
+---
+title: "Amino acid frequency"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, error = FALSE, fig.width = 6, fig.asp = 0.618, out.width = "100%", fig.align = "center")
+
+library(cowplot)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+main_dir <- here("Metabolic-analysis", "07_amino_acid_frequency")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("Palsa", "Bog", "Fen")
+habitat_colour <- c("#703C1B", "#058000", "#0001FF")
+habitat_shape  <- c(15, 16, 17)
+habitat_fill   <- habitat_colour
+
+depth_levels <- c("0-9", "10-19", "20-29", "30-39")
+depth_labels <- c("0", "10", "20", "30")
+depth_fill   <- RColorBrewer::brewer.pal(5, "YlOrBr")[-1]
+depth_colour <- depth_fill
+
+year_levels <- c("2011", "2012", "2013", "2014", "2015", "2016", "2017")
+year_labels <- year_levels
+year_fill   <- RColorBrewer::brewer.pal(7, "OrRd")
+year_colour <- year_fill
+
+genome_set_levels <- c("gtdb", "emerge")
+genome_set_colour <- RColorBrewer::brewer.pal(3, "Set2")[-1]
+
+set.seed(42)
+```
+
+```{r wrangling}
+amino_acids <- tribble(
+  ~letter, ~name,
+  "*", "stop",
+  "X", "unknown",
+  "A", "alanine",
+  "R", "arginine",
+  "N", "asparagine",
+  "D", "aspartic_acid",
+  "C", "cysteine",
+  "E", "glutamic_acid",
+  "Q", "glutamine",
+  "G", "glycine",
+  "H", "histidine",
+  "I", "isoleucine",
+  "L", "leucine",
+  "K", "lysine",
+  "M", "methionine",
+  "F", "phenylalanine",
+  "P", "proline",
+  "S", "serine",
+  "T", "threonine",
+  "W", "tryptophan",
+  "Y", "tyrosine",
+  "V", "valine"
+)
+
+aa_data <- aa_frequency %>%
+  left_join(amino_acids, by = c("aa" = "letter")) %>%
+  filter(!aa %in% c("*", "X")) %>%
+  mutate(
+    genome = str_extract(genome, ".*(?=.faa)")
+  ) %>%
+  filter(genome %in% genome_clusters$representative | genome_set == "gtdb")
+
+aa_stats <- aa_data %>%
+  group_by(aa) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(
+    fit = map(data, ~ lm(freq ~ genome_set, data = .)),
+    tidy = map(fit, broom::tidy),
+    anova = map(fit, anova),
+    raw_pval = map_dbl(anova, ~ .x %>% broom::tidy() %>% `$`(p.value) %>% `[[`(1)),
+    pval = p.adjust(raw_pval, method = "fdr"),
+    sig = map_lgl(pval, ~ . < 0.05)
+  )
+
+ratio_data <- aa_data %>%
+  filter(aa %in% c("Q", "E")) %>%
+  select(-name) %>%
+  pivot_wider(names_from = aa, values_from = freq) %>%
+  mutate(ratio = Q / E)
+
+ratio_stats <- ratio_data %>%
+  nest() %>%
+  mutate(
+    fit = map(data, ~ lm(ratio ~ genome_set, data = .)),
+    tidy = map(fit, broom::tidy),
+    anova = map(fit, anova),
+    pval = map_dbl(anova, ~ .x %>% broom::tidy() %>% `$`(p.value) %>% `[[`(1)),
+  )
+```
+
+```{r plotting}
+aa_data %>%
+  mutate(genome_set = factor(genome_set, levels = genome_set_levels)) %>%
+  ggplot(aes(aa, freq, fill = genome_set)) +
+  geom_boxplot() +
+  scale_fill_manual(breaks = genome_set_levels, values = genome_set_colour) +
+  theme_cowplot()
+ggsave("aa_freq.png", path = main_dir, dpi = 600, width = 12, height = 7)
+
+ratio_data %>%
+  mutate(genome_set = factor(genome_set, levels = genome_set_levels)) %>%
+  ggplot(aes(genome_set, ratio, fill = genome_set)) +
+  geom_boxplot() +
+  ylab("Q/E ratio") +
+  scale_fill_manual(breaks = genome_set_levels, values = genome_set_colour) +
+  theme_cowplot()
+ggsave("aa_ratio.png", path = main_dir, dpi = 600, width = 12, height = 7)
+```

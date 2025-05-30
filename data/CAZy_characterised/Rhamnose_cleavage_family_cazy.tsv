@@ -1,0 +1,9 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+L-rhamnose-α-1,4-D-glucuronate lyase (BACCELL_00875)	4.2.2.-	pubmed	Bacteroides cellulosilyticus DSM 14838	EEF91483.1	E2N9D0	5NO8[A,B]5NOK[A,B]	Bacteria	4	PL27
+L-rhamnose-α-1,4-D-glucuronate lyase (BACFIN_07013)	4.2.2.-	pubmed	Bacteroides finegoldii DSM 17565	EEX45220.1	C9KXG7		Bacteria	4	PL27
+L-rhamnose-α-1,4-D-glucuronate lyase  (BT0263;BT_0263)	4.2.2.-	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO75370.1	Q8AB48		Bacteria	4	PL27
+ulvan lyase (BN863_22190)	4.2.2.-	pubmed	Formosa agariphila KMM 3901	WP_038530530.1	T2KNC2		Bacteria	4	PL28
+ulvan lyase (BN863_22190)	4.2.2.-	pubmed	Formosa agariphila KMM 3901	CDF79931.1	T2KNC2		Bacteria	4	PL28
+ulvan lyase (IL45_01510)	4.2.2.-	pubmed	Nonlabens ulvanivorans PLR	AEN28574.1	G8G2V6		Bacteria	4	PL28
+ulvan lyase (IL45_01510)	4.2.2.-	pubmed	Nonlabens ulvanivorans PLR	KEZ94332.1	G8G2V6		Bacteria	4	PL28
+ulvan lyase (IL45_01530)	4.2.2.-	pubmed	Nonlabens ulvanivorans PLR	KEZ94336.1	A0A084JZF2	6D2C[A,B]6D3U[A,B]	Bacteria	4	PL28

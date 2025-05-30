@@ -1,0 +1,13 @@
+# un-ignore pdf and png files (ignored from main directory)
+!*.pdf
+!*.png
+
+# MS Office temporary files
+~$*
+
+# directories to ignore for now (may un-ignore later)
+data/ANS/SMHI/
+
+# misc
+Suzanne_notes.txt
+results/check_summary_changes.xlsx

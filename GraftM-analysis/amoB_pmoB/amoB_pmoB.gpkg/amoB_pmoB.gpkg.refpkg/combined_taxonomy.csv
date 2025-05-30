@@ -1,0 +1,11 @@
+tax_id,parent_id,rank,tax_name,root,rank_0
+Root,Root,root,Root,Root,
+amoB_Archaea,Root,rank_0,amoB_Archaea,Root,amoB_Archaea
+amoB_Mixed,Root,rank_0,amoB_Mixed,Root,amoB_Mixed
+pmoB_Mixed,Root,rank_0,pmoB_Mixed,Root,pmoB_Mixed
+amoB_Nitrospirae,Root,rank_0,amoB_Nitrospirae,Root,amoB_Nitrospirae
+amoB_Betaproteobacteria,Root,rank_0,amoB_Betaproteobacteria,Root,amoB_Betaproteobacteria
+pmoB_Verrucomicrobia,Root,rank_0,pmoB_Verrucomicrobia,Root,pmoB_Verrucomicrobia
+pmoB_Betaproteobacteria,Root,rank_0,pmoB_Betaproteobacteria,Root,pmoB_Betaproteobacteria
+amoB_Gammaproteobacteria,Root,rank_0,amoB_Gammaproteobacteria,Root,amoB_Gammaproteobacteria
+pmoB_Methylococcales,Root,rank_0,pmoB_Methylococcales,Root,pmoB_Methylococcales

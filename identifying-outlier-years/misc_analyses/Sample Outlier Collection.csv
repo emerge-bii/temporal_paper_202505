@@ -1,0 +1,16 @@
+Sample ID,Sample ID 2,Data Source,Entire core impacted (of all the depths we have?),Why is this sample weird? (be as specific as you can),Person who added the sample to the outlier list,"Dataset generating ""weird"" data; i.e. MAGs, virus, sample metadata sheet + column of metadata, etc.",Notes
+715_P2_30-34,20150700_P25,Viral,1/4,"In ordination, it clusters with the bog samples",Adjie/Christine,vOTU (ordination made from bray-curtis distances on abundance table)),
+715_E1_20-24,,Microbial,2/3,Outlier cluster based on MAG abundances/Ordination that looks Bog-like,Dylan,MAG abundances,
+715_E1_30-34,,Microbial,2/3,Outlier cluster based on MAG abundances/Ordination that looks Bog-like,Dylan,MAG abundances,
+715_E2_10-14,,Microbial,1/4,Outlier cluster based on MAG abundances/Ordination that looks Bog-like,Dylan,MAG abundances,
+716_E2_1-5,,Microbial,3/3,Outlier cluster based on MAG abundances/Ordination that looks Bog-like,Dylan,MAG abundances,
+716_E2_10-14,,Microbial,3/3,Outlier cluster based on MAG abundances/Ordination that looks Bog-like,Dylan,MAG abundances,
+716_E2_20-24,,Microbial,3/3,Outlier cluster based on MAG abundances/Ordination that looks Bog-like,Dylan,MAG abundances,
+717_E1_1-5,,Microbial,3/4,Outlier cluster based on MAG abundances/Ordination that looks Bog-like,Dylan,MAG abundances,
+717_E1_10-14,,Microbial,3/4,Outlier cluster based on MAG abundances/Ordination that looks Bog-like,Dylan,MAG abundances,
+717_E1_30-34,,Microbial,3/4,Outlier cluster based on MAG abundances/Ordination that looks Bog-like,Dylan,MAG abundances,
+717_E3_20-24,,Microbial,1/4,"Outlier cluster based on MAG abundances/Ordination, clusters with Palsa",Dylan,MAG abundances,
+717_E1_20-24,20170700_E14,Viral,1/4*,"In ordination, it clusters with the bog samples",Adjie/Christine,vOTU (ordination made from bray-curtis distances on abundance table)),"*collectively with microbial + viral samples, all 4 samples in core contain outliers "
+717_E3_20-24,20170700_E34,Viral,1/4,"In ordination, it clusters with the palsa samples",Adjie/Christine,vOTU (ordination made from bray-curtis distances on abundance table)),generated from same sample as line 12
+717_P1_1-5,,Microbial,1/4,"This sample is a palsa sample who's pairwise comparisons in BetaNTI assembly metric are abnormally high. That is to say, they look more like Fen values of BetaNTI than palsa values. More specifically  this means that this sample has greater phylogenetic turnover than we'd expect by chance. And that is abnormal for a Palsa sample, which typically have less phylogenetic turnover than we'd expect by chance. ",Hannah,MAG abundances,Also seen in the ordinations - Dylan
+717_P1_1-5,20170700_P11,Viral,1/4,"In ordination, it clusters with the fen samples",Adjie/Christine,vOTU (ordination made from bray-curtis distances on abundance table)),generated from the same sample as 717_P1_1-5 (row 15)

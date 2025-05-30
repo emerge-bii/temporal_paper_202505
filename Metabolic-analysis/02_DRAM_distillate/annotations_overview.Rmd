@@ -1,0 +1,1282 @@
+---
+title: "Annotations overview"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  error = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center")
+
+library(ggnewscale)
+library(ggh4x)
+library(ggraph)
+library(igraph)
+library(betareg)
+library(broom)
+library(emmeans)
+library(vegan)
+library(ape)
+library(cowplot)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+main_dir <- here("Metabolic-analysis", "02_DRAM_distillate")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("Palsa", "Bog", "Fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+shape_habitat  <- c(22, 21, 24)
+fill_habitat   <- colour_habitat
+
+depth_levels <- c("0-9", "10-19", "20-29", "30-39")
+depth_labels <- c("0", "10", "20", "30")
+fill_depth   <- RColorBrewer::brewer.pal(5, "YlOrBr")[-1]
+colour_depth <- fill_depth
+
+year_levels <- c(2011, 2012, 2013, 2014, 2015, 2016, 2017)
+year_levels_fact <- c("2011", "2012", "2013", "2014", "2015", "2016", "2017")
+year_labels <- c(1, 2, 3, 4, 5, 6, 7)
+fill_year   <- RColorBrewer::brewer.pal(7, "BuPu")
+colour_year <- fill_year
+
+metapathway_levels <- metapathway_groups %>% `$`(metapath) %>% unique()
+colour_metapathway <- RColorBrewer::brewer.pal(10, "Set3")
+colour_metapathway[2] <- "#1d91c0" # Replace invisible yellow
+fill_metapathway <- colour_metapathway
+
+set.seed(42)
+
+transform_perc <- function(vec) {
+  # See Smithson & Verkuilen 2006 (https://doi.org/10.1037/1082-989X.11.1.54)
+  (vec * (length(vec) - 1) + 0.5) / length(vec)
+}
+```
+
+## Pathway analysis
+
+```{r pathway-nmds-wrangling}
+output_dir <- here(main_dir, "pathways")
+dir.create(output_dir, recursive = TRUE)
+
+########################################
+### Bray-Curtis dissimilarity matrix ###
+########################################
+as_matrix <- function(x) {
+  output <- as.matrix.data.frame(x[, -1])
+  rownames(output) <- x[[1]]
+  output
+}
+
+get_dis_matrix <- function(pathway_abundance_cumu) {
+  dis_matrix <- pathway_abundance_cumu %>%
+    as_matrix() %>%
+    vegdist(method = "bray")
+
+  return(dis_matrix)
+}
+
+dis_matrix <- get_dis_matrix(pathway_abundance_cumu)
+
+dis_matrix_palsa <- pathway_abundance_cumu %>%
+  left_join(
+    sample_metadata %>%
+      select(temporal_sample_id, Habitat__),
+    by = c("sample" = "temporal_sample_id")) %>%
+  filter(Habitat__ == "Palsa") %>%
+  select(-Habitat__) %>%
+  get_dis_matrix()
+
+dis_matrix_bog <- pathway_abundance_cumu %>%
+  left_join(
+    sample_metadata %>%
+      select(temporal_sample_id, Habitat__),
+    by = c("sample" = "temporal_sample_id")) %>%
+  filter(Habitat__ == "Bog") %>%
+  select(-Habitat__) %>%
+  get_dis_matrix()
+
+dis_matrix_fen <- pathway_abundance_cumu %>%
+  left_join(
+    sample_metadata %>%
+      select(temporal_sample_id, Habitat__),
+    by = c("sample" = "temporal_sample_id")) %>%
+  filter(Habitat__ == "Fen") %>%
+  select(-Habitat__) %>%
+  get_dis_matrix()
+
+#############
+### Stats ###
+#############
+abund_stats <- adonis2(dis_matrix ~ Habitat__ * DepthLumping * Year__, data = sample_metadata, by = "terms")
+```
+
+```{r pathway-nmds}
+plot_nmds_habitat <- function(dis_matrix, habitat) {
+  abund_nmds_raw <- metaMDS(dis_matrix)
+  stress <- abund_nmds_raw$stress %>%
+    round(2)
+  abund_nmds <- as_tibble(abund_nmds_raw$points, rownames = "sample") %>%
+    left_join(sample_metadata, by = c("sample" = "temporal_sample_id")) %>%
+    filter(!is.na(Habitat__))
+
+  ################
+  ### Plotting ###
+  ################
+  nmds_plotting_layers <- list(
+    stat_ellipse(type = "t", geom = "polygon", alpha = 1/10, colour = NA),
+    stat_ellipse(type = "norm", linetype = 2, colour = "black"),
+    scale_shape_manual(name = "Habitat", values = shape_habitat, breaks = habitat_levels),
+    scale_colour_manual(name = "Habitat", values = colour_habitat, breaks = habitat_levels),
+    scale_fill_manual(name = "Habitat", values = fill_habitat, breaks = habitat_levels),
+    annotation_custom(grid::textGrob(label = paste("stress:", stress), x = unit(0.8, "npc"), y = unit(0.1, "npc"), hjust = 0)),
+    theme_bw()
+  )
+
+  abund_nmds %>%
+    ggplot(aes(MDS1, MDS2, shape = Habitat__, colour = Habitat__, fill = Habitat__)) +
+    nmds_plotting_layers +
+    geom_point()
+  ggsave(str_c("nmds", "path", habitat, "12.png", sep = "_"), path = output_dir, dpi = 900)
+
+  abund_nmds %>%
+    ggplot(aes(MDS1, MDS2, shape = Habitat__, fill = Habitat__)) +
+    nmds_plotting_layers +
+    new_scale_fill() +
+    geom_point(aes(shape = Habitat__, colour = NA, fill = DepthLumping)) +
+    scale_fill_manual(name = "Depth", values = colour_depth, breaks = depth_levels) +
+    guides(fill = guide_legend(override.aes = list(shape = 21)))
+  ggsave(str_c("nmds", "path", habitat, "depth.png", sep = "_"), path = output_dir, dpi = 900)
+
+  abund_nmds %>%
+    ggplot(aes(MDS1, MDS2, shape = Habitat__, fill = Habitat__)) +
+    nmds_plotting_layers +
+    new_scale_fill() +
+    geom_point(aes(shape = Habitat__, colour = NA, fill = factor(Year__))) +
+    scale_fill_manual(name = "Year", values = colour_year, breaks = year_levels) +
+    guides(fill = guide_legend(override.aes = list(shape = 21)))
+  ggsave(str_c("nmds", "path", habitat, "year.png", sep = "_"), path = output_dir, dpi = 900)
+}
+
+plot_nmds_habitat(dis_matrix, "")
+plot_nmds_habitat(dis_matrix_palsa, "palsa")
+plot_nmds_habitat(dis_matrix_bog, "bog")
+plot_nmds_habitat(dis_matrix_fen, "fen")
+```
+
+```{r pathway-betareg}
+#################
+### Wrangling ###
+#################
+alpha <- 0.05
+
+stats_metadata <- sample_metadata %>%
+  select(temporal_sample_id, Habitat__, DepthLumping, Year__) %>%
+  mutate(
+    Year__ = factor(Year__, levels = year_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+    Habitat__ = factor(Habitat__, levels = habitat_levels)
+  )
+
+# Check missing data: remove depth lumps deeper than 40cm
+# stats_metadata %>%
+#   group_by(Habitat__, DepthLumping, Year__) %>%
+#   summarise(n = n()) %>%
+#   ungroup() %>%
+#   complete(DepthLumping, Year__, Habitat__) %>%
+#   print(n = Inf)
+
+stats_df <- pathway_abundance_cumu %>%
+  pivot_longer(-sample, names_to = "subpathway", values_to = "rel_abund") %>%
+  left_join(stats_metadata, by = c("sample" = "temporal_sample_id")) %>%
+  filter(!is.na(Habitat__))
+
+# Check 1/0 counts
+# stats_df %>%
+#   group_by(subpathway) %>%
+#   summarise(
+#     zero = sum(rel_abund == 0),
+#     one = sum(rel_abund == 1),
+#     other = sum(rel_abund > 0 & rel_abund < 1)
+#     ) %>%
+#   filter(zero > 0 | one > 0) %>%
+#   print(n = Inf)
+
+###############
+### Habitat ###
+###############
+# Add results to treemap
+# alpha diversity comparison to total habitat
+
+# Add results to boxplot
+# betareg between habitats
+# Likelihood ratio test between beta-distribution regression models with and without habitat parameter with FDR correction
+overall_df <- stats_df %>%
+  group_by(subpathway) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(
+    data = map(data, ~ .x %>% mutate(adj_abund = transform_perc(rel_abund))),
+    base_fit = map(data, ~ betareg(adj_abund ~ 1, link = "logit", data = .)),
+    fit = map(data, ~ betareg(adj_abund ~ Habitat__, link = "logit", data = .)),
+    tidy = map(fit, tidy),
+    lrt = map2(base_fit, fit, lmtest::lrtest),
+    raw_pval = map_dbl(lrt, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(2)),
+    pval = p.adjust(raw_pval, method = "fdr"),
+    sig = map_lgl(pval, ~ . < alpha)
+  )
+
+# alpha diversity comparison between habitats
+
+############################
+### Depth within Habitat ###
+############################
+# Add results to boxplot
+# betareg between depths
+# Likelihood ratio test between beta-distribution regression models with and without depth parameter nested within each Habitat with FDR correction
+
+habitat_df <- stats_df %>%
+  group_by(subpathway, Habitat__) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(count = map_dbl(data, ~ sum(.$rel_abund))) %>%
+  filter(count > 0) %>%
+  mutate(
+    data = map(data, ~ .x %>% mutate(adj_abund = transform_perc(rel_abund))),
+    base_fit = map(data, ~ betareg(adj_abund ~ 1, link = "logit", data = .)),
+    fit = map(data, ~ betareg(adj_abund ~ DepthLumping, link = "logit", data = .)),
+    tidy = map(fit, tidy),
+    lrt = map2(base_fit, fit, lmtest::lrtest),
+    raw_pval = map_dbl(lrt, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(2)),
+    pval = p.adjust(raw_pval, method = "fdr"),
+    sig = map_lgl(pval, ~ . < alpha)
+  )
+
+# Simple anova testing
+# stats_df %>%
+#   group_by(subpathway, Habitat__) %>%
+#   nest() %>%
+#   filter(subpathway == "nitrogen_redox-nitrogen_fixation") %>%
+#   mutate(
+#     fit = map(data, ~ lm(rel_abund ~ DepthLumping, data = .)),
+#     anova = map(fit, anova),
+#     pval = map_dbl(anova, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(1))
+#   )
+
+#################################
+### Year within Habitat-Depth ###
+#################################
+# Add results to dotplot
+# betareg between years
+# Likelihood ratio test between beta-distribution regression models with and without year parameter nested within each Habitat-depth with FDR correction
+
+habitat_depth_df <- stats_df %>%
+  group_by(subpathway, Habitat__, DepthLumping) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(count = map_dbl(data, ~ sum(.$rel_abund > 0))) %>%
+  filter(count > 1) %>%
+  mutate(
+    data = map(data, ~ .x %>% mutate(adj_abund = transform_perc(rel_abund))),
+    base_fit = map(data, ~ betareg(adj_abund ~ 1, link = "logit", data = .)),
+    fit = map(data, ~ betareg(adj_abund ~ Year__, link = "logit", data = .)),
+    tidy = map(fit, tidy),
+    lrt = map2(base_fit, fit, lmtest::lrtest),
+    raw_pval = map_dbl(lrt, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(2)),
+    pval = p.adjust(raw_pval, method = "fdr"),
+    sig = map_lgl(pval, ~ . < alpha)
+  )
+
+# Year as numeric
+habitat_depth_yearnum_df <- stats_df %>%
+  mutate(Year__ = map_dbl(Year__, ~ .x %>% paste() %>% as.numeric())) %>%
+  group_by(subpathway, Habitat__, DepthLumping) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(count = map_dbl(data, ~ sum(.$rel_abund > 0))) %>%
+  filter(count > 1) %>%
+  mutate(
+    data = map(data, ~ .x %>% mutate(adj_abund = transform_perc(rel_abund))),
+    base_fit = map(data, ~ betareg(adj_abund ~ 1, link = "logit", data = .)),
+    fit = map(data, ~ betareg(adj_abund ~ Year__, link = "logit", data = .)),
+    tidy = map(fit, tidy),
+    lrt = map2(base_fit, fit, lmtest::lrtest),
+    raw_pval = map_dbl(lrt, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(2)),
+    pval = p.adjust(raw_pval, method = "fdr"),
+    sig = map_lgl(pval, ~ . < alpha)
+  )
+
+# Which pathways (due to which lineages) are changing over time?
+# Plot fits for all pathways
+```
+
+## Reaction analysis
+
+```{r reaction-betareg}
+#################
+### Wrangling ###
+#################
+alpha <- 0.05
+
+stats_metadata <- sample_metadata %>%
+  select(temporal_sample_id, Habitat__, DepthLumping, Year__) %>%
+  mutate(
+    Year__ = factor(Year__, levels = year_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+    Habitat__ = factor(Habitat__, levels = habitat_levels)
+  )
+
+rstats_df <- reaction_abundance_cumu %>%
+  pivot_longer(-sample, names_to = "subpathway", values_to = "rel_abund") %>%
+  left_join(stats_metadata, by = c("sample" = "temporal_sample_id")) %>%
+  filter(!is.na(Habitat__))
+
+# Check 1/0 counts
+# stats_df %>%
+#   group_by(subpathway) %>%
+#   summarise(
+#     zero = sum(rel_abund == 0),
+#     one = sum(rel_abund == 1),
+#     other = sum(rel_abund > 0 & rel_abund < 1)
+#     ) %>%
+#   filter(zero > 0 | one > 0) %>%
+#   print(n = Inf)
+
+###############
+### Habitat ###
+###############
+# Add results to treemap
+# alpha diversity comparison to total habitat
+
+# Add results to boxplot
+# betareg between habitats
+# Likelihood ratio test between beta-distribution regression models with and without habitat parameter with FDR correction
+overall_df <- stats_df %>%
+  group_by(subpathway) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(
+    data = map(data, ~ .x %>% mutate(adj_abund = transform_perc(rel_abund))),
+    base_fit = map(data, ~ betareg(adj_abund ~ 1, link = "logit", data = .)),
+    fit = map(data, ~ betareg(adj_abund ~ Habitat__, link = "logit", data = .)),
+    tidy = map(fit, tidy),
+    lrt = map2(base_fit, fit, lmtest::lrtest),
+    raw_pval = map_dbl(lrt, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(2)),
+    pval = p.adjust(raw_pval, method = "fdr"),
+    sig = map_lgl(pval, ~ . < alpha)
+  )
+
+# alpha diversity comparison between habitats
+
+############################
+### Depth within Habitat ###
+############################
+# Add results to boxplot
+# betareg between depths
+# Likelihood ratio test between beta-distribution regression models with and without depth parameter nested within each Habitat with FDR correction
+
+habitat_df <- stats_df %>%
+  group_by(subpathway, Habitat__) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(count = map_dbl(data, ~ sum(.$rel_abund))) %>%
+  filter(count > 0) %>%
+  mutate(
+    data = map(data, ~ .x %>% mutate(adj_abund = transform_perc(rel_abund))),
+    base_fit = map(data, ~ betareg(adj_abund ~ 1, link = "logit", data = .)),
+    fit = map(data, ~ betareg(adj_abund ~ DepthLumping, link = "logit", data = .)),
+    tidy = map(fit, tidy),
+    lrt = map2(base_fit, fit, lmtest::lrtest),
+    raw_pval = map_dbl(lrt, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(2)),
+    pval = p.adjust(raw_pval, method = "fdr"),
+    sig = map_lgl(pval, ~ . < alpha)
+  )
+
+# Simple anova testing
+# stats_df %>%
+#   group_by(subpathway, Habitat__) %>%
+#   nest() %>%
+#   filter(subpathway == "nitrogen_redox-nitrogen_fixation") %>%
+#   mutate(
+#     fit = map(data, ~ lm(rel_abund ~ DepthLumping, data = .)),
+#     anova = map(fit, anova),
+#     pval = map_dbl(anova, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(1))
+#   )
+
+#################################
+### Year within Habitat-Depth ###
+#################################
+# Add results to dotplot
+# betareg between years
+# Likelihood ratio test between beta-distribution regression models with and without year parameter nested within each Habitat-depth with FDR correction
+
+habitat_depth_df <- stats_df %>%
+  group_by(subpathway, Habitat__, DepthLumping) %>%
+  nest() %>%
+  ungroup() %>%
+  mutate(count = map_dbl(data, ~ sum(.$rel_abund > 0))) %>%
+  filter(count > 1) %>%
+  mutate(
+    data = map(data, ~ .x %>% mutate(adj_abund = transform_perc(rel_abund))),
+    base_fit = map(data, ~ betareg(adj_abund ~ 1, link = "logit", data = .)),
+    fit = map(data, ~ betareg(adj_abund ~ Year__, link = "logit", data = .)),
+    tidy = map(fit, tidy),
+    lrt = map2(base_fit, fit, lmtest::lrtest),
+    raw_pval = map_dbl(lrt, ~ .x %>% tidy() %>% `$`(p.value) %>% `[[`(2)),
+    pval = p.adjust(raw_pval, method = "fdr"),
+    sig = map_lgl(pval, ~ . < alpha)
+  )
+
+# Which pathways (due to which lineages) are changing over time?
+# Plot fits for all pathways
+```
+
+## Summary diagrams
+
+```{r summary-diagrams}
+output_dir <- here(main_dir, "summaries")
+dir.create(output_dir, recursive = TRUE)
+
+phylum_levels <- c(
+  # Bacteria
+  "p__Acidobacteriota",
+  "p__Actinobacteriota",
+  "p__Bacteroidota",
+  "p__Chloroflexota",
+  "p__Desulfobacterota",
+  "p__Eremiobacterota",
+  "p__Proteobacteria",
+  "p__Verrucomicrobiota",
+  # Archaea
+  "p__Halobacteriota",
+  "p__Methanobacteriota",
+  "p__Thermoplasmatota",
+  "p__Thermoproteota",
+  "other"
+)
+phylum_labels <- c(
+  # Bacteria
+  "Acidobacteriota",
+  "Actinobacteriota",
+  "Bacteroidota",
+  "Chloroflexota",
+  "Desulfobacterota",
+  "Eremiobacterota",
+  "Proteobacteria",
+  "Verrucomicrobiota",
+  # Archaea
+  "Halobacteriota",
+  "Methanobacteriota",
+  "Thermoplasmatota",
+  "Thermoproteota",
+  "other"
+)
+colour_phylum <- c(RColorBrewer::brewer.pal(12, "Set3"), "white")
+fill_phylum <- colour_phylum
+
+create_combined_plot <- function(pathway, abund_df = pathway_abundance,
+  complete_metadata = sample_metadata, cumu_abund = pathway_abundance_cumu, stats = TRUE,
+  habitat_stats = overall_df, depth_stats = habitat_df, year_stats = habitat_depth_df) {
+  #############
+  ### Stats ###
+  #############
+  if (stats) {
+    habitat_diff <- habitat_stats %>%
+      filter(subpathway == !! pathway) %>%
+      select(sig) %>%
+      mutate(
+        Habitat__ = "Palsa",
+        DepthLumping = 1,
+        label = map_chr(sig, ~ ifelse(., "★", ""))
+        )
+
+    depth_diff <- depth_stats %>%
+      filter(subpathway == !! pathway) %>%
+      select(Habitat__, sig) %>%
+      mutate(
+        DepthLumping = 2.5,
+        label = map_chr(sig, ~ ifelse(., "★", ""))
+        )
+
+    year_diff <- year_stats %>%
+      filter(subpathway == !! pathway) %>%
+      select(Habitat__, DepthLumping, sig) %>%
+      mutate(
+        label = map_chr(sig, ~ ifelse(., "★", ""))
+        )
+  }
+
+  ################
+  ### Boxplots ###
+  ################
+  if (is.null(cumu_abund[[pathway]])) return()
+  box_plot <- cumu_abund %>%
+    left_join(complete_metadata, by = c("sample" = "temporal_sample_id")) %>%
+    ggplot(aes(x = DepthLumping, y = !! sym(pathway), fill = Habitat__)) +
+    geom_boxplot() +
+    facet_grid(cols = vars(factor(Habitat__, levels = habitat_levels))) +
+    scale_x_discrete(limits = depth_levels, labels = depth_labels) +
+    scale_y_sqrt(limits = c(0, 1), labels = scales::percent) +
+    scale_fill_manual(breaks = habitat_levels, values = colour_habitat) +
+    scale_colour_manual(breaks = habitat_levels, values = colour_habitat) +
+    xlab("Depth (cm)") +
+    ylab("Cumulative relative abundance") +
+    theme_cowplot() +
+    theme(legend.position = "none", strip.background = element_blank())
+
+  if (stats) {
+    box_plot <- box_plot +
+      geom_text(aes(label = label, y = 1), data = habitat_diff,
+                size = 7, family = "HiraKakuPro-W3") +
+      geom_text(aes(label = label, y = 1, colour = Habitat__), data = depth_diff,
+                size = 7, family = "HiraKakuPro-W3")
+  }
+
+  ####################
+  ### Treemap plot ###
+  ####################
+  metadata <- complete_metadata %>%
+    select(temporal_sample_id, Habitat__)
+
+  # Subset those with pathway call. Take mean of rel abund for each MAG within each habitat
+  path_abund <- abund_df %>%
+    filter(subpathway == !! pathway) %>%
+    left_join(metadata, by = c("sample" = "temporal_sample_id")) %>%
+    group_by(Habitat__, genome) %>%
+    summarise(rel_abund = mean(rel_abund)) %>%
+    filter(rel_abund != 0) %>%
+    left_join(taxonomy, by = "genome") %>%
+    mutate(Hab_Phyl = map2_chr(Habitat__, Phylum, str_c, sep = "--")) %>%
+    mutate(Hab_Phyl_Gen = map2_chr(Hab_Phyl, genome, str_c, sep = "--")) %>%
+    ungroup()
+
+  # Generate graph with genomes as nodes, hierarchy as edges
+  edges_df <- bind_rows(
+    path_abund %>%
+      select(from = Habitat__, to = Hab_Phyl),
+    path_abund %>%
+      select(from = Hab_Phyl, to = Hab_Phyl_Gen)) %>%
+    unique()
+
+  vertices_df <- path_abund %>%
+    select(Hab_Phyl_Gen, everything())
+
+  hierarchy_groups <- edges_df$from %>% unique()
+  for (g in hierarchy_groups) {
+    vertices_df <- vertices_df %>%
+      add_row(
+        Hab_Phyl_Gen = g,
+        rel_abund = 0,
+        Phylum = "other",
+        Habitat__ = str_extract(g, "[^-]+(?=--|$)")
+        )
+  }
+
+  vertices_df <- vertices_df %>%
+    mutate(Phylum = map_chr(Phylum, ~ ifelse(. %in% phylum_levels, ., "other")))
+
+  genome_graph <- graph_from_data_frame(edges_df, vertices = vertices_df)
+
+  treemap_subplot <- function(habitat = "", total_scale = 1, graph = genome_graph) {
+    ggraph_layers <- list(
+      scale_fill_manual("Phylum", values = colour_phylum, breaks = phylum_levels, labels = phylum_labels),
+      coord_fixed(),
+      theme_void(),
+      theme(legend.position = "none")
+    )
+
+    if (habitat == "") {
+      plot <- ggraph(graph, layout = "treemap", weight = rel_abund) +
+        geom_node_tile(aes(fill = factor(Phylum, levels = phylum_levels))) +
+        ggraph_layers +
+        theme(
+          legend.position = "bottom",
+          legend.margin = margin(b = 1, unit = "cm")
+          )
+    } else {
+      subgraph <- graph %>%
+        subgraph(V(graph)[Habitat__ == habitat])
+
+      if (subgraph %>% V() %>% length() == 0) {
+        return(ggplot() + theme_void())
+      }
+
+      rel_abund_scale <- V(subgraph)$rel_abund %>% sum() %>% sqrt()
+      scale <- total_scale / rel_abund_scale / 2
+      plot <- ggraph(subgraph, layout = "treemap", weight = rel_abund) +
+        geom_node_tile(aes(fill = factor(Phylum, levels = phylum_levels))) +
+        ggraph_layers +
+        xlim(.5 - scale, .5 + scale) +
+        ylim(.5 - scale, .5 + scale)
+    }
+
+    return(plot)
+  }
+
+  total_scale <- path_abund %>%
+    group_by(Habitat__) %>%
+    summarise(sum = sum(rel_abund)) %>%
+    `$`(sum) %>%
+    max() %>%
+    sqrt()
+
+  treemap_plot <- treemap_subplot()
+  palsa_treemap_plot <- treemap_subplot("Palsa", total_scale)
+  bog_treemap_plot <- treemap_subplot("Bog", total_scale)
+  fen_treemap_plot <- treemap_subplot("Fen", total_scale)
+
+  #####################
+  ### Temporal plot ###
+  #####################
+  temporal_plot <- cumu_abund %>%
+    left_join(complete_metadata, by = c("sample" = "temporal_sample_id")) %>%
+    mutate(Year__ = factor(Year__, levels = year_levels)) %>%
+    group_by(Habitat__, Year__, DepthLumping) %>%
+    summarise(mean_pathway = mean(!! sym(pathway))) %>%
+    ggplot(aes(x = DepthLumping, y = Year__, size = mean_pathway, colour = Habitat__)) +
+    geom_point(shape = 15) +
+    facet_grid(cols = vars(factor(Habitat__, levels = habitat_levels))) +
+    scale_x_discrete(limits = depth_levels, labels = depth_labels) +
+    scale_y_discrete(limits = year_levels_fact, labels = year_levels_fact) +
+    scale_colour_manual(breaks = habitat_levels, values = colour_habitat) +
+    scale_size_area(name = "Mean \nabund.", labels = scales::percent) +
+    xlab("Depth (cm)") +
+    ylab("Year") +
+    theme_cowplot() +
+    theme(strip.background = element_blank(), legend.position = "bottom") +
+    guides(colour = "none")
+
+  if (stats) {
+    temporal_plot <- temporal_plot +
+      geom_text(aes(label = label, y = 7.4), data = year_diff,
+                size = 7, family = "HiraKakuPro-W3")
+  }
+
+  #####################
+  ### Combine plots ###
+  #####################
+  treemap_plots <- plot_grid(
+    palsa_treemap_plot,
+    bog_treemap_plot,
+    fen_treemap_plot,
+    nrow = 1,
+    labels = c("Palsa", "Bog", "Fen"),
+    label_fontface = 1
+    )
+
+  left_plots <- plot_grid(
+    box_plot,
+    treemap_plots,
+    treemap_plot %>% get_legend(),
+    rel_heights = c(1, 1, .2),
+    ncol = 1
+    )
+
+  plot_grid(
+    left_plots,
+    temporal_plot,
+    rel_widths = c(1, .8),
+    nrow = 1
+    )
+
+  ggsave(paste0(pathway, ".png"), path = output_dir,
+         width = 12, height = 7, dpi = 900)
+}
+
+subpathways <- product_refined$subpathway %>% unique()
+for (subpathway in subpathways) {
+  print(subpathway)
+  create_combined_plot(subpathway)
+}
+
+reactions <- reaction_abundance$subpathway %>% unique()
+for (reaction in reactions) {
+  print(reaction)
+  create_combined_plot(
+    reaction,
+    abund_df = reaction_abundance,
+    cumu_abund = reaction_abundance_cumu,
+    stats = FALSE
+    )
+}
+
+create_combined_plot(
+  "all_genomes",
+  abund_df = pathway_abundance %>%
+    select(genome, sample, rel_abund) %>%
+    unique() %>%
+    mutate(subpathway = "all_genomes", call = TRUE),
+  cumu_abund = pathway_abundance_cumu %>%
+    select(sample) %>%
+    mutate(all_genomes = 1),
+  stats = FALSE
+  )
+```
+
+```{r pathway-heatmap}
+output_dir <- here(main_dir, "heatmaps")
+dir.create(output_dir, recursive = TRUE)
+
+pathway_abundance_cumu %>%
+  pivot_longer(-sample, names_to = "subpathway", values_to = "rel_abund") %>%
+  rename(temporal_sample_id = sample) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, Year__, DepthLumping)) %>%
+  left_join(metapathway_groups, by = "subpathway") %>%
+  mutate(
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels, labels = depth_labels),
+    metapath = factor(metapath, levels = unique(metapath))
+  ) %>%
+  ggplot(aes(x = temporal_sample_id, y = subpathway_label, fill = log10(rel_abund))) +
+  facet_nested(metapath ~ Habitat__ + DepthLumping, scales = "free", space = "free_y", switch = "y") +
+  geom_tile() +
+  scale_fill_distiller(palette = "Blues", na.value = "white", direction = 1) +
+  theme_cowplot() +
+  theme(
+    axis.text.x = element_blank(), axis.title.x = element_blank(), axis.ticks.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.spacing = unit(0, "lines"), strip.background = element_blank(),
+    strip.text.y.left = element_text(angle = 0), strip.placement = "outside",
+    legend.position = "bottom",
+    )
+
+ggsave("pathway_heatmap.png", path = output_dir, dpi = 900)
+```
+
+## Stability
+
+```{r temporal-stability-functions}
+pathway_stability <- function(metapath, input_df) {
+  df <- input_df %>%
+    filter(metapath == {{metapath}}) %>%
+    mutate(Year__ = factor(Year__, levels = year_levels, labels = year_labels))
+
+  metapath_label <- str_replace(metapath, " ", "_")
+
+  line_layers <- list(
+    geom_point(),
+    geom_line(),
+    scale_colour_manual(values = RColorBrewer::brewer.pal(11, "Paired")),
+    scale_y_continuous(limits = c(0, 1), expand = expansion(mult = c(0, 0))),
+    xlab("Year"),
+    ylab("Cumulative relative abundance"),
+    theme_cowplot()
+  )
+
+  df %>%
+    group_by(metapath, subpathway, Habitat__, Year__) %>%
+    summarise(rel_abund = mean(rel_abund)) %>%
+    ggplot(aes(Year__, rel_abund, colour = subpathway, group = subpathway)) +
+    facet_grid(cols = vars(Habitat__)) +
+    line_layers
+  ggsave(str_c(metapath_label, "_pathway_habitat.png"), path = output_dir, width = 12, height = 7, dpi = 900)
+
+  df %>%
+    group_by(metapath, subpathway, Habitat__, DepthLumping, Year__) %>%
+    summarise(rel_abund = mean(rel_abund)) %>%
+    ggplot(aes(Year__, rel_abund, colour = subpathway, group = subpathway)) +
+    facet_grid(cols = vars(Habitat__), rows = vars(DepthLumping)) +
+    line_layers
+  ggsave(str_c(metapath_label, "_pathway_depth.png"), path = output_dir, width = 12, height = 14, dpi = 900)
+}
+```
+
+```{r temporal-stability}
+output_dir <- here(main_dir, "stability")
+dir.create(output_dir, recursive = TRUE)
+
+###########################
+### Metapathway summary ###
+###########################
+metapath_abundance <- metapath_abundance %>%
+  left_join(sample_metadata %>% select(sample = temporal_sample_id, Habitat__, Year__, DepthLumping)) %>%
+  mutate(
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+    Year__ = factor(Year__, levels = year_levels),
+    metapath = factor(metapath, levels = metapathway_levels)
+  )
+
+line_layers <- list(
+  geom_point(),
+  geom_line(),
+  scale_colour_manual(values = colour_metapathway),
+  scale_y_continuous(limits = c(0, 1), expand = expansion(mult = c(0, 0))),
+  xlab("Year"),
+  ylab("Cumulative relative abundance"),
+  theme_cowplot()
+)
+
+metapath_abundance %>%
+  group_by(metapath, Habitat__, Year__) %>%
+  summarise(rel_abund = mean(rel_abund)) %>%
+  ggplot(aes(Year__, rel_abund, colour = metapath, group = metapath)) +
+  facet_grid(cols = vars(Habitat__)) +
+  line_layers
+ggsave("metapathway_habitat.png", path = output_dir, width = 12, height = 7, dpi = 900)
+
+metapath_abundance %>%
+  group_by(metapath, Habitat__, DepthLumping, Year__) %>%
+  summarise(rel_abund = mean(rel_abund)) %>%
+  ggplot(aes(Year__, rel_abund, colour = metapath, group = metapath)) +
+  facet_grid(cols = vars(Habitat__), rows = vars(DepthLumping)) +
+  line_layers
+ggsave("metapathway_habitat_depth.png", path = output_dir, width = 12, height = 14, dpi = 900)
+
+#######################
+### Pathway summary ###
+#######################
+path_abundance <- pathway_abundance %>%
+  left_join(metapathway_groups) %>%
+  group_by(metapath, subpathway, sample, genome) %>%
+  summarise(rel_abund = first(rel_abund)) %>%
+  group_by(metapath, subpathway, sample) %>%
+  summarise(rel_abund = sum(rel_abund)) %>%
+  left_join(sample_metadata %>% select(sample = temporal_sample_id, Habitat__, Year__, DepthLumping)) %>%
+  mutate(
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+    Year__ = factor(Year__, levels = year_levels),
+    metapath = factor(metapath, levels = metapathway_levels)
+  )
+
+path_abundance %>%
+  group_by(metapath, subpathway, Habitat__, Year__) %>%
+  summarise(rel_abund = mean(rel_abund)) %>%
+  ggplot(aes(Year__, rel_abund, colour = metapath, group = subpathway)) +
+  facet_grid(cols = vars(Habitat__)) +
+  line_layers
+ggsave("pathway_habitat.png", path = output_dir, width = 12, height = 7, dpi = 900)
+
+path_abundance %>%
+  group_by(metapath, subpathway, Habitat__, DepthLumping, Year__) %>%
+  summarise(rel_abund = mean(rel_abund)) %>%
+  ggplot(aes(Year__, rel_abund, colour = metapath, group = subpathway)) +
+  facet_grid(cols = vars(Habitat__), rows = vars(DepthLumping)) +
+  line_layers
+ggsave("pathway_habitat_depth.png", path = output_dir, width = 12, height = 14, dpi = 900)
+
+# Separate plots for each of the metapathways
+path_abundance %>%
+  ungroup() %>%
+  select(metapath) %>%
+  filter(!metapath %in% c("cazymes")) %>%
+  distinct() %>%
+  pull(metapath) %>%
+  map(pathway_stability, input_df = path_abundance)
+```
+
+```{r temporal-instability}
+output_dir <- here(main_dir, "instability")
+dir.create(output_dir, recursive = TRUE)
+
+# 10/13 are from Fen 30-39cm
+unstable_pathways <- habitat_depth_yearnum_df %>%
+  select(subpathway, Habitat__, DepthLumping, data, pval, sig) %>%
+  filter(sig) %>%
+  mutate(
+    fold_change = map_dbl(data, ~ max(.$adj_abund) / min(.$adj_abund)),
+    fold_change_no14 = map_dbl(data,
+      ~ 
+        .x %>% filter(Year__ != "2014") %>% pull(adj_abund) %>% max()
+        /
+        .x %>% filter(Year__ != "2014") %>% pull(adj_abund) %>% min()
+      ),
+    )
+
+chosen_subpathways <- tribble(
+  ~subpathway, ~label, ~direction,
+  "nitrogen_redox-nitrogen_fixation", "Nitrogen fixation", 1,
+  "xylose_degradation-isomerase_pathway", "Xylose degradation", 1,
+  "CAZy-Beta_mannan", "CAZy Beta mannan", 1,
+  "Calvin_Benson-all", "Calvin Benson", 1,
+  "butanoate_fermentation-acetyl_coa_pathway", "Butanoate fermentation", -1,
+  "propionate_fermentation-succinate_pathway", "Propionate fermentation", -1,
+  "ethanol_fermentation-all", "Ethanol fermentation", -1,
+  "galacturonic_acid_degradation-all", "Galacturonic acid deg.", -1,
+  "glycerol_degradation-glycerol", "Glycerol degradation", -1,
+  "reductive_glycine-acetyl_pathway", "Reductive glycine", -1,
+  #"acetogenesis-simple", "Acetogenesis", 0,
+  #"lactate_fermentation-all", "Lactate fermentation", 0,
+)
+
+#############################
+### Instability over time ###
+#############################
+unstable_abundance <- pathway_abundance %>%
+  inner_join(chosen_subpathways) %>%
+  left_join(metapathway_groups) %>%
+  group_by(metapath, subpathway, direction, sample, genome) %>%
+  summarise(rel_abund = first(rel_abund)) %>%
+  group_by(metapath, subpathway, direction, sample) %>%
+  summarise(rel_abund = sum(rel_abund)) %>%
+  left_join(sample_metadata %>% select(sample = temporal_sample_id, Habitat__, Year__, DepthLumping)) %>%
+  filter(
+    Habitat__ == "Fen",
+    DepthLumping == "30-39"
+  ) %>%
+  mutate(
+    Year__ = factor(Year__, levels = year_levels),
+    metapath = factor(metapath, levels = metapathway_levels),
+    subpathway = factor(subpathway, levels = chosen_subpathways$subpathway, labels = chosen_subpathways$label),
+    direction = factor(direction, levels = c(1, -1), labels = c("Increasing", "Decreasing"))
+  )
+
+unstable_abundance %>%
+  group_by(metapath, subpathway, direction, Year__) %>%
+  summarise(rel_abund = mean(rel_abund)) %>%
+  ggplot(aes(Year__, rel_abund, group = subpathway)) +
+  geom_point() +
+  geom_line() +
+  geom_text(aes(label = subpathway), data = . %>% filter(Year__ == 2017), nudge_x = 0.1, nudge_y = 0.01, hjust = "left") +
+  facet_grid(cols = vars(direction)) +
+  scale_x_discrete(expand = expansion(mult = c(0.03, 0.6))) +
+  scale_y_continuous(limits = c(0, 1), expand = expansion(mult = c(0, 0))) +
+  xlab("Year") +
+  ylab("Cumulative relative abundance") +
+  ggtitle("Changing abundances of microbes encoding pathways in 30-39cm Fen") +
+  theme_cowplot() +
+  theme(legend.position = "none")
+ggsave("unstable_time.png", path = output_dir, width = 12, height = 7, dpi = 600)
+
+###############################
+### Instability fold change ###
+###############################
+unstable_fold <- unstable_abundance %>%
+  group_by(metapath, subpathway, direction, Year__) %>%
+  summarise(rel_abund = mean(rel_abund)) %>%
+  arrange(subpathway, Year__) %>%
+  mutate(fold_change = log2(rel_abund / lag(rel_abund))) %>%
+  filter(!is.na(fold_change))
+
+unstable_fold %>%
+  ggplot(aes(fct_reorder(subpathway, fold_change, .fun = mean), fold_change, fill = direction)) +
+  stat_summary(fun = mean, geom = "bar") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  geom_point() +
+  scale_fill_manual(values = c("Increasing" = "#E69F00", "Decreasing" = "#56B4E9")) +
+  coord_flip() +
+  xlab("Pathway") +
+  ylab("log2 fold change (year-to-year)") +
+  ggtitle("Changing abundances of microbes encoding pathways in 30-39cm Fen") +
+  theme_cowplot() +
+  theme(legend.position = "none")
+ggsave("unstable_fold.png", path = output_dir, width = 12, height = 7, dpi = 600)
+```
+
+## Alternative respiration
+
+```{r alternative-respiration}
+output_dir <- here(main_dir, "alternative_respiration")
+dir.create(output_dir, recursive = TRUE)
+
+###############################
+### Alternative respiration ###
+###############################
+alternative_electron_acceptors <- c(
+  "nitrogen_redox-nitrate_reduction",
+  "nitrogen_redox-denitrification",
+  "nitrogen_redox-anammox",
+  "sulfur_redox-dissimilatory_sulfate_reduction",
+  "acetogenesis-simple",
+  "ethanol_fermentation-all",
+  "lactate_fermentation-all",
+  "propionate_fermentation-succinate_pathway",
+  "propionate_fermentation-acrylate_pathway",
+  "butanoate_fermentation-succinate_pathway",
+  "butanoate_fermentation-acetyl_coa_pathway",
+  "hydrogenotrophic_methanogenesis-all",
+  "acetoclastic_methanogenesis-all",
+  "methylotrophic_methanogenesis-h2_dep",
+  "methylotrophic_methanogenesis-h2_indep"
+)
+
+alt_paths <- product_refined %>%
+  filter(call, subpathway %in% alternative_electron_acceptors) %>%
+  select(-call)
+
+genome_alt <- genome_info %>%
+  select(genome, taxonomy = gtdb2_taxonomy) %>%
+  separate(taxonomy,
+            into = c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"),
+            sep = ";") %>%
+  left_join(alt_paths)
+
+tile_layers <- list(
+  geom_tile(),
+  scale_x_discrete(guide = "axis_nested"),
+  scale_y_discrete(guide = "axis_nested"),
+  scale_fill_manual(breaks = c(FALSE, TRUE), values = c("white", "black")),
+  theme_cowplot(),
+  theme(
+    legend.position = "none", axis.text.y = element_text(size = rel(0.8)),
+    axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size = rel(0.8)),
+    axis.title.x = element_blank(), axis.title.y = element_blank(),
+    )
+)
+
+genome_alt %>%
+  distinct(Domain, Phylum, subpathway) %>%
+  mutate(
+    call = TRUE,
+    Phylum = factor(Phylum),
+    subpathway = factor(subpathway, levels = alternative_electron_acceptors)
+    ) %>%
+  complete(Phylum, subpathway, fill = list(call = FALSE)) %>%
+  drop_na() %>%
+  left_join(metapathway_groups) %>%
+  ggplot(aes(x = interaction(Phylum, Domain), y = interaction(subpathway_label, metapath), fill = call)) +
+  tile_layers
+ggsave("phylum_alternative_respiration.png", path = output_dir, dpi = 600, width = 12, height = 7)
+
+genome_alt %>%
+  distinct(Domain, Phylum, Class, subpathway) %>%
+  mutate(
+    call = TRUE,
+    Phylum = factor(Phylum),
+    Class = factor(Class),
+    subpathway = factor(subpathway, levels = alternative_electron_acceptors)
+    ) %>%
+  complete(Phylum, Class, subpathway, fill = list(call = FALSE)) %>%
+  drop_na() %>%
+  left_join(metapathway_groups) %>%
+  ggplot(aes(x = interaction(Class, Phylum, Domain), y = interaction(subpathway_label, metapath), fill = call)) +
+  tile_layers +
+  theme(ggh4x.axis.nesttext.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+ggsave("class_alternative_respiration.png", path = output_dir, dpi = 600, width = 12, height = 7)
+
+###########################
+### Aerobic respiration ###
+###########################
+aerobic_respiration <- tribble(
+  ~metapath, ~complex_info, ~subpathway,
+  "slp", "Glycolysis (Embden-Meyerhof pathway), glucose => pyruvate", "glycolysis",
+  "slp", "Entner-Doudoroff pathway, glucose-6P => glyceraldehyde-3P + pyruvate", "entner_doudoroff",
+  "slp", "Pentose phosphate pathway (Pentose phosphate cycle)", "pentose_phosphate",
+  "slp", "Citrate cycle (TCA cycle, Krebs cycle)", "tca_cycle",
+  "etc_1", "Complex I: NAD(P)H:quinone oxidoreductase, chloroplasts and cyanobacteria", "complex_1",
+  "etc_1", "Complex I: NADH:quinone oxidoreductase, prokaryotes", "complex_1",
+  "etc_2", "Complex II: Fumarate reductase, prokaryotes", "complex_2",
+  "etc_2", "Complex II: Succinate dehydrogenase, prokaryotes", "complex_2",
+  "etc_3", "Complex III: Cytochrome bc1 complex respiratory unit", "complex_3",
+  "etc_3", "Complex III: Cytochrome bd ubiquinol oxidase", "complex_3",
+  "etc_4", "Complex IV High affinity: Cytochrome bd ubiquinol oxidase", "complex_4",
+  "etc_4", "Complex IV High affinity: Cytochrome c oxidase, cbb3-type", "complex_4",
+  "etc_4", "Complex IV Low affinity: Cytochrome c oxidase, prokaryotes", "complex_4",
+  "etc_4", "Complex IV Low affinity: Cytochrome o ubiquinol oxidase", "complex_4",
+  "etc_5", "Complex V: F-type ATPase, prokaryotes and chloroplasts", "complex_5",
+  "etc_5", "Complex V: V/A-type ATPase, prokaryotes" , "complex_5"
+)
+
+aerobe_paths <- dram_product %>%
+  left_join(aerobic_respiration) %>%
+  filter(call, !is.na(metapath))
+
+genome_aerobe_paths <- genome_info %>%
+  select(genome, taxonomy = gtdb2_taxonomy) %>%
+  separate(taxonomy,
+            into = c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"),
+            sep = ";") %>%
+  left_join(aerobe_paths)
+
+genome_aerobe_paths %>%
+  distinct(Domain, Phylum, metapath, subpathway) %>%
+  mutate(
+    call = TRUE,
+    Phylum = factor(Phylum),
+    subpathway = factor(subpathway, levels = unique(aerobic_respiration$subpathway)),
+    metapath = factor(metapath, levels = unique(aerobic_respiration$metapath), labels = c("substrate-level", "etc", "etc", "etc", "etc", "etc"))
+    ) %>%
+  complete(Phylum, metapath, subpathway, fill = list(call = FALSE)) %>%
+  drop_na() %>%
+  ggplot(aes(x = interaction(Phylum, Domain), y = interaction(subpathway, metapath), fill = call)) +
+  tile_layers
+ggsave("phylum_aerobic_respiration.png", path = output_dir, dpi = 600, width = 12, height = 7)
+
+genome_aerobe_paths %>%
+  distinct(Domain, Phylum, Class, metapath, subpathway) %>%
+  mutate(
+    call = TRUE,
+    Phylum = factor(Phylum),
+    Class = factor(Class),
+    subpathway = factor(subpathway, levels = unique(aerobic_respiration$subpathway)),
+    metapath = factor(metapath, levels = unique(aerobic_respiration$metapath), labels = c("substrate-level", "etc", "etc", "etc", "etc", "etc"))
+    ) %>%
+  complete(Phylum, Class, metapath, subpathway, fill = list(call = FALSE)) %>%
+  drop_na() %>%
+  ggplot(aes(x = interaction(Class, Phylum, Domain), y = interaction(subpathway, metapath), fill = call)) +
+  tile_layers +
+  theme(ggh4x.axis.nesttext.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+ggsave("class_aerobic_respiration.png", path = output_dir, dpi = 600, width = 12, height = 7)
+
+##########################################
+### Cumulative alternative respiration ###
+##########################################
+genome_alt %>%
+  group_by(genome) %>%
+  summarise(anaerobe = all(!is.na(subpathway))) %>%
+  write_csv(here(output_dir, "genome_anaerobe.csv"))
+
+cumu_alt_resp <- pathway_abundance %>%
+  filter(subpathway %in% alternative_electron_acceptors) %>%
+  group_by(sample, genome) %>%
+  summarise(rel_abund = first(rel_abund)) %>%
+  summarise(rel_abund = sum(rel_abund)) %>%
+  left_join(sample_metadata %>% select(sample = temporal_sample_id, Habitat__, DepthLumping, Year__))
+
+box_layers <- list(
+  geom_boxplot(),
+  facet_grid(cols = vars(Habitat__)),
+  scale_fill_manual(breaks = habitat_levels, values = colour_habitat),
+  theme_cowplot()
+)
+
+cumu_alt_resp %>%
+  mutate(
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels, labels = depth_labels)
+    ) %>%
+  ggplot(aes(DepthLumping, rel_abund, fill = Habitat__)) +
+  box_layers
+ggsave("cumu_alternative_respiration.png", path = output_dir, dpi = 600, width = 12, height = 7)
+
+######################################
+### Cumulative aerobic respiration ###
+######################################
+genome_aerobe <- aerobe_paths %>%
+  group_by(genome) %>%
+  summarise(
+    slp = sum(metapath == "slp"),
+    etc = metapath[metapath != "slp"] %>% unique() %>% length(),
+    aerobic = (slp > 0) && (etc > 2)
+  )
+
+genome_aerobe %>%
+  full_join(genome_info %>% select(genome)) %>%
+  replace_na(list(slp = 0, etc = 0, aerobic = FALSE)) %>%
+  write_csv(here(output_dir, "genome_aerobe.csv"))
+
+cumu_aer_resp <- trimmed_mean$rel_abund %>%
+  select(genome, all_of(sample_metadata$temporal_sample_id)) %>%
+  pivot_longer(-genome, names_to = "sample", values_to = "rel_abund") %>%
+  left_join(genome_aerobe %>% select(genome, aerobic)) %>%
+  filter(aerobic) %>%
+  group_by(sample) %>%
+  summarise(rel_abund = sum(rel_abund)) %>%
+  left_join(sample_metadata %>% select(sample = temporal_sample_id, Habitat__, DepthLumping, Year__))
+
+cumu_aer_resp %>%
+  mutate(
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels, labels = depth_labels)
+    ) %>%
+  ggplot(aes(DepthLumping, rel_abund, fill = Habitat__)) +
+  geom_boxplot() +
+  box_layers
+ggsave("cumu_aerobic_respiration.png", path = output_dir, dpi = 600, width = 12, height = 7)
+
+##########################################
+### Cumulative alternative respiration ###
+##########################################
+cumu_completeness <- trimmed_mean$rel_abund %>%
+  select(genome, all_of(sample_metadata$temporal_sample_id)) %>%
+  pivot_longer(-genome, names_to = "sample", values_to = "rel_abund") %>%
+  left_join(genome_info %>% select(genome, completeness)) %>%
+  mutate(rel_comp = rel_abund * completeness) %>%
+  group_by(sample) %>%
+  summarise(rel_comp = sum(rel_comp)) %>%
+  left_join(sample_metadata %>% select(sample = temporal_sample_id, Habitat__, DepthLumping, Year__))
+
+cumu_completeness %>%
+  mutate(
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels, labels = depth_labels)
+    ) %>%
+  ggplot(aes(DepthLumping, rel_comp, fill = Habitat__)) +
+  geom_boxplot() +
+  box_layers
+ggsave("cumu_completeness.png", path = output_dir, dpi = 600, width = 12, height = 7)
+```
+
+## Top MAGs per pathway
+
+```{r top-mags}
+output_dir <- here(main_dir, "top_mags")
+dir.create(output_dir, recursive = TRUE)
+
+top_mags <- pathway_abundance %>%
+  left_join(sample_metadata %>% select(sample = temporal_sample_id, Habitat__, DepthLumping, Year__)) %>%
+  group_by(Habitat__, DepthLumping, subpathway, genome) %>%
+  summarise(rel_abund = mean(rel_abund)) %>%
+  filter(rel_abund > 0) %>%
+  slice_max(rel_abund, n = 10) %>%
+  select(-rel_abund) %>%
+  mutate(top_mag = TRUE)
+
+shorter_names <- top_mags %>%
+  filter(str_length(genome) > 20) %>%
+  ungroup() %>%
+  distinct(genome) %>%
+  mutate(new_name = str_extract(genome, "^[^.]+") %>% str_c(row_number()))
+
+top_abund <- pathway_abundance %>%
+  left_join(sample_metadata %>% select(sample = temporal_sample_id, Habitat__, DepthLumping, Year__)) %>%
+  group_by(sample, subpathway) %>%
+  mutate(rel_abund = rel_abund / sum(rel_abund)) %>%
+  inner_join(top_mags) %>%
+  left_join(shorter_names) %>%
+  mutate(genome = coalesce(new_name, genome)) %>%
+  group_by(Habitat__, DepthLumping, Year__, subpathway, genome) %>%
+  summarise(rel_abund = mean(rel_abund))
+
+top_abund_plots <- top_abund %>%
+  mutate(
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+    Year__ = factor(Year__, levels = year_levels, labels = year_labels)
+  ) %>%
+  group_by(Habitat__, DepthLumping, subpathway) %>%
+  nest() %>%
+  ungroup() %>%
+  arrange(DepthLumping, Habitat__) %>%
+  mutate(
+    plot = pmap(
+      list(data, Habitat__, DepthLumping),
+      ~ ..1 %>%
+          ggplot(aes(Year__, rel_abund, fill = genome)) +
+          geom_col() +
+          scale_fill_brewer(palette = "Paired") +
+          xlab("Year") +
+          ylab("Relative abundance") +
+          ggtitle(str_c(..2, ..3, sep = " ")) +
+          theme_cowplot()
+  ))
+
+plot_top_abund <- function(plots, subpathway) {
+  plots %>%
+    filter(subpathway == {{subpathway}}) %>%
+    pull(plot) %>%
+    cowplot::plot_grid(plotlist = ., ncol = 3)
+
+  ggsave(str_c(subpathway, "_top_mags_stacked.png"), path = output_dir, width = 20, height = 20, dpi = 600)
+}
+
+top_abund_plots %>%
+  distinct(subpathway) %>%
+  pull(subpathway) %>%
+  map(~ plot_top_abund(top_abund_plots, .))
+```

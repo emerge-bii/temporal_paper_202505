@@ -1,0 +1,507 @@
+---
+title: "Redox cycles"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  error = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center")
+
+library(fluctuator)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+output_dir <- here("Metabolic-analysis", "03_redox_cycles")
+dir.create(output_dir, showWarnings = FALSE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("palsa", "bog", "fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+```
+
+```{r wrangling}
+rel_abund <- trimmed_mean$rel_abund %>%
+  pivot_longer(-genome, names_to = "sample", values_to = "rel_abund")
+
+subpathway_conversion <- pathway_abundance %>%
+  distinct(subpathway) %>%
+  separate(subpathway, sep = "-", into = c("pathway", "reaction"), remove = FALSE)
+
+reaction_prevalence <- bind_rows(
+    reaction_abundance %>%
+      select(pathway, reaction, sample, genome, rel_abund),
+    pathway_abundance %>%
+      left_join(subpathway_conversion) %>%
+      select(pathway, reaction, sample, genome, rel_abund),
+  ) %>%
+  left_join(
+    sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping, Year__),
+    by = c("sample" = "temporal_sample_id")
+    )
+
+# MetaTs
+reaction_expression <- bind_rows(
+    metaT_react %>%
+      mutate(reaction = as.character(reaction)) %>%
+      select(pathway, reaction, sample = temporal_sample_id, genome, tpm),
+    metaT_exp %>%
+      left_join(subpathway_conversion) %>%
+      select(pathway, reaction, sample = temporal_sample_id, genome, tpm),
+  )
+
+# sulfur_5 arrow: 13, (1 + 2 + 9)
+sulfur_5_data <- reaction_prevalence %>%
+  mutate(arrow = "sulfur_5") %>%
+  filter(pathway == "sulfur_redox", reaction %in% c("1", "2", "9", "13")) %>%
+  group_by(genome) %>%
+  filter("13" %in% reaction | all(c("1" %in% reaction, "2" %in% reaction, "9" %in% reaction))) %>%
+  left_join(reaction_expression, by = c("pathway", "reaction", "sample", "genome")) %>%
+  group_by(pathway, reaction, arrow, sample, genome, rel_abund, Habitat__, DepthLumping, Year__) %>%
+  # Using mean tpm since reaction 13 not present
+  summarise(tpm = mean(tpm))
+
+# nitrogen_4 arrow: 4, (5 + 6)
+nitrogen_4_data <- reaction_prevalence %>%
+  mutate(arrow = "nitrogen_4") %>%
+  filter(pathway == "nitrogen_redox", reaction %in% c("4", "5", "6")) %>%
+  group_by(genome) %>%
+  filter("4" %in% reaction | all(c("5" %in% reaction, "6" %in% reaction))) %>%
+  left_join(reaction_expression, by = c("pathway", "reaction", "sample", "genome")) %>%
+  group_by(pathway, reaction, arrow, sample, genome, rel_abund, Habitat__, DepthLumping, Year__) %>%
+  # Using mean tpm since reaction 4 not present
+  summarise(tpm = mean(tpm))
+
+# Each arrow is the summed rel abund of each MAG with the genomic potential for some involved reaction/s
+arrow_genome_prevalence <- tribble(
+  ~pathway, ~reaction, ~arrow,
+  # sulfur_1 arrow
+  "sulfur_redox", "dissimilatory_sulfate_reduction", "sulfur_1",
+  # sulfur_2_1 arrow
+  "sulfur_redox", "5", "sulfur_2_1",
+  # sulfur_2_2 arrow
+  "sulfur_redox", "11", "sulfur_2_2",
+  "sulfur_redox", "12", "sulfur_2_2",
+  "sulfur_redox", "13", "sulfur_2_2",
+  "sulfur_redox", "14", "sulfur_2_2",
+  # sulfur_3_1 and sulfur_3_2 arrows
+  "sulfur_redox", "10", "sulfur_3_1",
+  "sulfur_redox", "10", "sulfur_3_2",
+  # sulfur_4 arrow
+  "sulfur_redox", "11", "sulfur_4",
+  "sulfur_redox", "13", "sulfur_4",
+  "sulfur_redox", "14", "sulfur_4",
+  # sulfur_5 arrow - defined above
+  # "sulfur_redox", "1", "sulfur_5",
+  # "sulfur_redox", "2", "sulfur_5",
+  # "sulfur_redox", "9", "sulfur_5",
+  # "sulfur_redox", "13", "sulfur_5",
+  # nitrogen_1 arrow
+  "nitrogen_redox", "1", "nitrogen_1",
+  # nitrogen_2 arrow
+  "nitrogen_redox", "2", "nitrogen_2",
+  "nitrogen_redox", "15", "nitrogen_2",
+  # nitrogen_3 arrow
+  "nitrogen_redox", "3", "nitrogen_3",
+  # nitrogen_4 arrow - defined above
+  # "nitrogen_redox", "4", "nitrogen_4",
+  # "nitrogen_redox", "5", "nitrogen_4",
+  # "nitrogen_redox", "6", "nitrogen_4",
+  # nitrogen_5 arrow
+  "nitrogen_redox", "7", "nitrogen_5",
+  # nitrogen_6_1 and nitrogen_6_2 arrows
+  "nitrogen_redox", "anammox", "nitrogen_6_1",
+  "nitrogen_redox", "anammox", "nitrogen_6_2",
+  # nitrogen_7 arrow: 
+  "nitrogen_redox", "ammonia_oxidation", "nitrogen_7",
+  "nitrogen_redox", "comammox", "nitrogen_7",
+  # nitrogen_8 arrows:
+  "nitrogen_redox", "13", "nitrogen_8",
+  "nitrogen_redox", "14", "nitrogen_8",
+  "nitrogen_redox", "comammox", "nitrogen_8",
+  # carbon_1 arrow: methanotrophy
+  "carbon_redox", "dissimilatory_methanotrophy", "carbon_1",
+  # carbon_2 arrow: carbon fixation
+  "Wood_Ljungdahl", "methanogen", "carbon_2",
+  "Wood_Ljungdahl", "acetogen", "carbon_2",
+  "Calvin_Benson", "all", "carbon_2",
+  "Fuchs_Holo", "all", "carbon_2",
+  "HPHB_DCHB", "HPHB", "carbon_2",
+  "HPHB_DCHB", "DCHB", "carbon_2",
+  "rTCA", "all", "carbon_2",
+  "reductive_glycine", "serine_pathway", "carbon_2",
+  "reductive_glycine", "acetyl_pathway", "carbon_2",
+  # carbon_3 arrow: carbon degradation
+  "lactose_degradation", "all", "carbon_3",
+  "galactose_degradation", "all", "carbon_3",
+  "sucrose_degradation", "all", "carbon_3",
+  "fructose_degradation", "all", "carbon_3",
+  "mannose_degradation", "all", "carbon_3",
+  "fucose_degradation", "all", "carbon_3",
+  "galacturonic_acid_degradation", "all", "carbon_3",
+  "glycerol_degradation", "glycerone", "carbon_3",
+  "glycerol_degradation", "glycerol", "carbon_3",
+  "xylose_degradation", "isomerase_pathway", "carbon_3",
+  "xylose_degradation", "oxidoreductase_pathway", "carbon_3",
+  "xylose_degradation", "xylonate_hydratase_pathway", "carbon_3",
+  "xylose_degradation", "weimburg_dahms", "carbon_3",
+  # carbon_4 arrow: fermentation
+  "acetogenesis", "simple", "carbon_4",
+  "ethanol_fermentation", "all", "carbon_4",
+  "lactate_fermentation", "all", "carbon_4",
+  "propionate_fermentation", "succinate_pathway", "carbon_4",
+  "propionate_fermentation", "acrylate_pathway", "carbon_4",
+  "butanoate_fermentation", "acetyl_coa_pathway", "carbon_4",
+  # carbon_5 arrow: methanogenesis
+  "hydrogenotrophic_methanogenesis", "all", "carbon_5",
+  "methylotrophic_methanogenesis", "h2_indep", "carbon_5",
+  "methylotrophic_methanogenesis", "h2_dep", "carbon_5",
+  "acetoclastic_methanogenesis", "all", "carbon_5",
+  ) %>%
+  left_join(reaction_prevalence, by = c("pathway", "reaction"), relationship = "many-to-many") %>%
+  left_join(reaction_expression, by = c("pathway", "reaction", "sample", "genome"), relationship = "many-to-many") %>%
+  bind_rows(sulfur_5_data, nitrogen_4_data) %>%
+  replace_na(list(rel_abund = 0, tpm = 0)) %>%
+  # include each genome once per arrow for rel_abund
+  # sum across reactions per genome for tpm
+  group_by(arrow, sample, Habitat__, DepthLumping, Year__, genome) %>%
+  summarise(
+    rel_abund = first(rel_abund),
+    tpm = sum(tpm),
+    )
+
+arrow_prevalence <- arrow_genome_prevalence %>%
+  # sum of prevalence for genomes within each arrow
+  group_by(arrow, sample, Habitat__, DepthLumping, Year__) %>%
+  summarise(
+    prevalence = sum(rel_abund),
+    expression = sum(tpm),
+    )
+
+arrows <- arrow_prevalence %>%
+  ungroup() %>%
+  distinct(arrow)
+
+metaT_samples <- metaT_pathways %>%
+  distinct(temporal_sample_id) %>%
+  pull(temporal_sample_id)
+
+MAX_THICKNESS = 20
+update_arrow_widths <- function(arrow_prevalence_temp, datatype = "rel_abund") {
+  # Need to reload each time since it seems to modify in-place
+  redox_cycles_temp <- read_svg(here("data", "redox_cycles.svg")) %>%
+    set_attributes(
+      node_attr = "id",
+      node = c("path1012", "path923"),
+      attr = "transform",
+      pattern = "scale\\(1.1\\)",
+      replacement = "scale(0.5)"
+    )
+
+  if (datatype == "rel_abund") {
+    scale_name = "Relative abundance (%)"
+    thick_max <- arrow_prevalence_temp %>%
+      filter(abs(thickness - MAX_THICKNESS) < 0.01) %>%
+      slice_head(n = 1) %>%
+      pull(prevalence) * 100
+  } else if (datatype == "tpm") {
+    scale_name = "Transcripts (tpm)"
+    thick_max <- arrow_prevalence_temp %>%
+      filter(abs(thickness - MAX_THICKNESS) < 0.01) %>%
+      slice_head(n = 1) %>%
+      pull(expression)
+  }
+
+  thick_min <- round(thick_max / MAX_THICKNESS, 0)
+  thick_mid <- round(thick_max / MAX_THICKNESS * 10, 0)
+  thick_max <- round(thick_max, 0)
+
+  redox_cycles_temp <- redox_cycles_temp %>%
+      set_values(
+      node_attr = "id",
+      node = "scale_title",
+      value = scale_name
+      ) %>%
+      set_values(
+      node_attr = "id",
+      node = "minthick",
+      value = as.character(thick_min)
+      ) %>%
+      set_values(
+      node_attr = "id",
+      node = "midthick",
+      value = as.character(thick_mid)
+      ) %>%
+      set_values(
+      node_attr = "id",
+      node = "maxthick",
+      value = as.character(thick_max)
+      )
+
+  for (i in 1:nrow(arrow_prevalence_temp)) {
+    thickness <- arrow_prevalence_temp[i, ]$thickness
+    if (thickness == 0) thickness = 0.01
+    redox_cycles_temp <- redox_cycles_temp %>%
+      set_attributes(
+      node_attr = "id",
+      node = arrow_prevalence_temp[i, ]$arrow,
+      attr = "style",
+      pattern = "stroke-width:1px",
+      replacement = paste0("stroke-width:", arrow_prevalence_temp[i, ]$thickness)
+      )
+  }
+
+  missing_arrows <- arrows %>%
+    filter(!arrow %in% arrow_prevalence_temp$arrow)
+
+  for (arrow in missing_arrows$arrow) {
+    redox_cycles_temp <- redox_cycles_temp %>%
+      set_attributes(
+      node_attr = "id",
+      node = arrow,
+      attr = "style",
+      pattern = "stroke-width:1px",
+      replacement = "stroke-width:0.001"
+      )
+  }
+
+  return(redox_cycles_temp)
+}
+```
+
+## Overall figure
+```{r overall-figure}
+# Relative abundance
+mean_arrow_prevalence <- arrow_prevalence %>%
+  # mean of prevalence between samples
+  group_by(arrow) %>%
+  summarise(prevalence = mean(prevalence)) %>%
+  mutate(thickness = map_dbl(prevalence, ~ MAX_THICKNESS * . / max(prevalence)))
+
+redox_cycles_overview <- update_arrow_widths(mean_arrow_prevalence)
+write_svg(redox_cycles_overview, file = here(output_dir, "redox_cycles_overview.svg"))
+
+# Transcription
+mean_arrow_expression <- arrow_prevalence %>%
+  filter(sample %in% metaT_samples) %>%
+  # mean of prevalence between samples
+  group_by(arrow) %>%
+  summarise(expression = mean(expression)) %>%
+  mutate(thickness = map_dbl(expression, ~ MAX_THICKNESS * . / max(expression)))
+
+redox_cycles_overview <- update_arrow_widths(mean_arrow_expression, datatype = "tpm")
+write_svg(redox_cycles_overview, file = here(output_dir, "redox_cycles_overview_tpm.svg"))
+```
+
+## Habitat figures
+```{r habitat-figures}
+# Relative abundance
+habitat_arrow_prevalence <- arrow_prevalence %>%
+  # mean of prevalence between samples
+  group_by(Habitat__, arrow) %>%
+  summarise(prevalence = mean(prevalence)) %>%
+  mutate(thickness = map_dbl(prevalence, ~ MAX_THICKNESS * . / max(prevalence)))
+
+for (habitat in c("Palsa", "Bog", "Fen")) {
+  redox_cycles_out <- update_arrow_widths(
+    habitat_arrow_prevalence %>% filter(Habitat__ == !!habitat))
+
+  write_svg(redox_cycles_out, file = here(output_dir, paste0("redox_cycles_", habitat, ".svg")))
+}
+
+# Transcription
+habitat_arrow_expression <- arrow_prevalence %>%
+  filter(sample %in% metaT_samples) %>%
+  # mean of prevalence between samples
+  group_by(Habitat__, arrow) %>%
+  summarise(expression = mean(expression)) %>%
+  mutate(thickness = map_dbl(expression, ~ MAX_THICKNESS * . / max(expression)))
+
+for (habitat in c("Palsa", "Bog", "Fen")) {
+  redox_cycles_out <- update_arrow_widths(
+    habitat_arrow_expression %>% filter(Habitat__ == !!habitat), datatype = "tpm")
+
+  write_svg(redox_cycles_out, file = here(output_dir, paste0("redox_cycles_", habitat, "_tpm.svg")))
+}
+```
+
+## Depth figures
+```{r depth-figures}
+# Relative abundance
+suboutput_dir <- here(output_dir, "depth")
+dir.create(suboutput_dir, showWarnings = FALSE)
+
+depth_arrow_prevalence <- arrow_prevalence %>%
+  # mean of prevalence between samples
+  group_by(Habitat__, DepthLumping, arrow) %>%
+  summarise(prevalence = mean(prevalence)) %>%
+  mutate(thickness = map_dbl(prevalence, ~ MAX_THICKNESS * . / max(prevalence)))
+
+for (habitat in c("Palsa", "Bog", "Fen")) {
+  for (depth in c("0-9", "10-19", "20-29", "30-39")) {
+    redox_cycles_out <- update_arrow_widths(
+      depth_arrow_prevalence %>% filter(Habitat__ == !!habitat, DepthLumping == !!depth))
+
+    write_svg(redox_cycles_out, file = here(suboutput_dir, paste0("redox_cycles_", habitat, "_", depth, ".svg")))
+  }
+}
+
+# Transcription
+depth_arrow_expression <- arrow_prevalence %>%
+  filter(sample %in% metaT_samples) %>%
+  # mean of prevalence between samples
+  group_by(Habitat__, DepthLumping, arrow) %>%
+  summarise(expression = mean(expression)) %>%
+  mutate(thickness = map_dbl(expression, ~ MAX_THICKNESS * . / max(expression))) %>%
+  filter(!is.na(thickness))
+
+for (habitat in c("Palsa", "Bog", "Fen")) {
+  for (depth in c("0-9", "10-19", "20-29", "30-39")) {
+    arrow_prev <- depth_arrow_expression %>%
+      filter(Habitat__ == !!habitat, DepthLumping == !!depth)
+
+    if (nrow(arrow_prev) == 0) next
+    redox_cycles_out <- update_arrow_widths(arrow_prev, datatype = "tpm")
+
+    write_svg(redox_cycles_out, file = here(suboutput_dir, paste0("redox_cycles_", habitat, "_", depth, "_tpm.svg")))
+  }
+}
+```
+
+## Year figures
+```{r year-figures}
+# Relative abundance
+suboutput_dir <- here(output_dir, "year")
+dir.create(suboutput_dir, showWarnings = FALSE)
+
+year_arrow_prevalence <- arrow_prevalence %>%
+  # mean of prevalence between samples
+  group_by(Habitat__, Year__, arrow) %>%
+  summarise(prevalence = mean(prevalence)) %>%
+  mutate(thickness = map_dbl(prevalence, ~ MAX_THICKNESS * . / max(prevalence)))
+
+for (habitat in c("Palsa", "Bog", "Fen")) {
+  for (year in c(2011, 2012, 2013, 2014, 2015, 2016, 2017)) {
+    redox_cycles_out <- update_arrow_widths(
+      year_arrow_prevalence %>% filter(Habitat__ == !!habitat, Year__ == !!year))
+
+    write_svg(redox_cycles_out, file = here(suboutput_dir, paste0("redox_cycles_", habitat, "_", year, ".svg")))
+  }
+}
+
+# Transcription
+year_arrow_expression <- arrow_prevalence %>%
+  filter(sample %in% metaT_samples) %>%
+  # mean of prevalence between samples
+  group_by(Habitat__, Year__, arrow) %>%
+  summarise(expression = mean(expression)) %>%
+  mutate(thickness = map_dbl(expression, ~ MAX_THICKNESS * . / max(expression))) %>%
+  filter(!is.na(thickness))
+
+for (habitat in c("Palsa", "Bog", "Fen")) {
+  for (year in c(2011, 2012, 2015, 2016, 2017)) {
+    arrow_prev <- year_arrow_expression %>%
+      filter(Habitat__ == !!habitat, Year__ == !!year)
+
+    if (nrow(arrow_prev) == 0) next
+    redox_cycles_out <- update_arrow_widths(arrow_prev, datatype = "tpm")
+
+    write_svg(redox_cycles_out, file = here(suboutput_dir, paste0("redox_cycles_", habitat, "_", year, "_tpm.svg")))
+  }
+}
+```
+
+## WTD figures
+```{r wtd-figures}
+# Relative abundance
+suboutput_dir <- here(output_dir, "wtd")
+dir.create(suboutput_dir, showWarnings = FALSE)
+
+wtd_arrow_prevalence <- arrow_prevalence %>%
+  filter(Habitat__ == "Bog") %>%
+  left_join(sample_metadata %>% select(sample = temporal_sample_id, Samp_dist_WT)) %>%
+  mutate(above_WT = Samp_dist_WT < 0) %>%
+  # mean of prevalence between samples
+  group_by(above_WT, arrow) %>%
+  summarise(prevalence = mean(prevalence)) %>%
+  mutate(thickness = map_dbl(prevalence, ~ MAX_THICKNESS * . / max(prevalence)))
+
+redox_cycles_out <- update_arrow_widths(wtd_arrow_prevalence %>% filter(above_WT))
+write_svg(redox_cycles_out, file = here(suboutput_dir, "redox_cycles_above_wt.svg"))
+
+redox_cycles_out <- update_arrow_widths(wtd_arrow_prevalence %>% filter(!above_WT))
+write_svg(redox_cycles_out, file = here(suboutput_dir, "redox_cycles_below_wt.svg"))
+
+# Transcription
+wtd_arrow_expression <- arrow_prevalence %>%
+  filter(sample %in% metaT_samples) %>%
+  filter(Habitat__ == "Bog") %>%
+  left_join(sample_metadata %>% select(sample = temporal_sample_id, Samp_dist_WT)) %>%
+  mutate(above_WT = Samp_dist_WT < 0) %>%
+  # mean of prevalence between samples
+  group_by(above_WT, arrow) %>%
+  summarise(expression = mean(expression)) %>%
+  mutate(thickness = map_dbl(expression, ~ MAX_THICKNESS * . / max(expression)))
+
+redox_cycles_out <- update_arrow_widths(wtd_arrow_expression %>% filter(above_WT), datatype = "tpm")
+write_svg(redox_cycles_out, file = here(suboutput_dir, "redox_cycles_above_wt_tpm.svg"))
+
+redox_cycles_out <- update_arrow_widths(wtd_arrow_expression %>% filter(!above_WT), datatype = "tpm")
+write_svg(redox_cycles_out, file = here(suboutput_dir, "redox_cycles_below_wt_tpm.svg"))
+```
+
+## Persistent figures
+```{r persistent-figures}
+suboutput_dir <- here(output_dir, "persistent")
+dir.create(suboutput_dir, showWarnings = FALSE)
+
+persistent_only_arrow_prevalence <- arrow_genome_prevalence %>%
+  inner_join(persistent_modules) %>%
+  # sum of prevalence for genomes within each arrow
+  group_by(arrow, sample, Habitat__, DepthLumping, Year__) %>%
+  summarise(
+    prevalence = sum(rel_abund),
+    expression = sum(tpm),
+    )
+
+# Relative abundance
+persistent_arrow_prevalence <- persistent_only_arrow_prevalence %>%
+  # mean of prevalence between samples
+  group_by(Habitat__, arrow) %>%
+  summarise(prevalence = mean(prevalence)) %>%
+  mutate(thickness = map_dbl(prevalence, ~ MAX_THICKNESS * . / max(prevalence)))
+
+for (habitat in c("Palsa", "Bog", "Fen")) {
+  redox_cycles_out <- update_arrow_widths(
+    persistent_arrow_prevalence %>% filter(Habitat__ == !!habitat))
+
+  write_svg(redox_cycles_out, file = here(suboutput_dir, paste0("redox_cycles_persistent_", habitat, ".svg")))
+}
+
+# Transcription
+persistent_arrow_expression <- persistent_only_arrow_prevalence %>%
+  filter(sample %in% metaT_samples) %>%
+  # mean of prevalence between samples
+  group_by(Habitat__, arrow) %>%
+  summarise(expression = mean(expression)) %>%
+  mutate(thickness = map_dbl(expression, ~ MAX_THICKNESS * . / max(expression)))
+
+for (habitat in c("Palsa", "Bog", "Fen")) {
+  redox_cycles_out <- update_arrow_widths(
+    persistent_arrow_expression %>% filter(Habitat__ == !!habitat), datatype = "tpm")
+
+  write_svg(redox_cycles_out, file = here(suboutput_dir, paste0("redox_cycles_persistent_", habitat, "_tpm.svg")))
+}
+```

@@ -1,0 +1,286 @@
+---
+title: "Specialisations"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, error = FALSE, fig.width = 6, fig.asp = 0.618, out.width = "100%", fig.align = "center")
+
+library(ggraph)
+library(igraph)
+library(cowplot)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+main_dir <- here("Metabolic-analysis", "06_specialisations")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("Palsa", "Bog", "Fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+shape_habitat  <- c(15, 16, 17)
+fill_habitat   <- colour_habitat
+
+depth_levels <- c("0-9", "10-19", "20-29", "30-39")
+depth_labels <- c("0", "10", "20", "30")
+fill_depth   <- RColorBrewer::brewer.pal(5, "YlOrBr")[-1]
+colour_depth <- fill_depth
+
+year_levels <- c("2011", "2012", "2013", "2014", "2015", "2016", "2017")
+year_labels <- c("11", "12", "13", "14", "15", "16", "17")
+fill_year   <- RColorBrewer::brewer.pal(7, "OrRd")
+colour_year <- fill_year
+
+phylum_levels <- c(
+  # Bacteria
+  "p__Acidobacteriota",
+  "p__Actinobacteriota",
+  "p__Bacteroidota",
+  "p__Chloroflexota",
+  "p__Desulfobacterota",
+  "p__Eremiobacterota",
+  "p__Proteobacteria",
+  "p__Verrucomicrobiota",
+  # Archaea
+  "p__Halobacteriota",
+  "p__Methanobacteriota",
+  "p__Thermoplasmatota",
+  "p__Thermoproteota",
+  "other"
+)
+phylum_labels <- c(
+  # Bacteria
+  "Acidobacteriota",
+  "Actinobacteriota",
+  "Bacteroidota",
+  "Chloroflexota",
+  "Desulfobacterota",
+  "Eremiobacterota",
+  "Proteobacteria",
+  "Verrucomicrobiota",
+  # Archaea
+  "Halobacteriota",
+  "Methanobacteriota",
+  "Thermoplasmatota",
+  "Thermoproteota",
+  "other"
+)
+colour_phylum <- c(RColorBrewer::brewer.pal(12, "Set3"), "white")
+fill_phylum <- colour_phylum
+
+metapathway_levels <- metapathway_groups %>% arrange(metapath) %>% `$`(metapath) %>% unique()
+colour_metapathway <- RColorBrewer::brewer.pal(10, "Set3")
+fill_metapathway <- colour_metapathway
+
+c_special_levels <- c("generalist", "methanogen", "fermenter", "macromolecule_degrader", "methanotroph", "homoacetogen", "monomer_degrader", "other")
+c_special_colour <- RColorBrewer::brewer.pal(9, "Set1")[-8]
+c_special_fill <- special_colour
+
+n_special_levels <- c("nitrite_oxidiser", "nitrogen_fixer", "nitrate_reducer", "denitrifier", "other")
+n_special_colour <- RColorBrewer::brewer.pal(9, "Set1")[-5:-8]
+n_special_fill <- n_special_colour
+
+s_special_levels <- c("sulfur_oxidiser", "sulfate_reducer", "other")
+s_special_colour <- RColorBrewer::brewer.pal(9, "Set1")[-3:-8]
+s_special_fill <- s_special_colour
+
+set.seed(42)
+```
+
+```{r wrangling}
+rep_special <- specialisations %>%
+  left_join(genome_clusters) %>%
+  filter(genome == representative) %>%
+  replace_na(list(specialisation = "other", nitrogen_specialisation = "other", sulfur_specialisation = "other")) %>%
+  mutate(
+    specialisation = factor(specialisation, levels = special_levels),
+    nitrogen_specialisation = factor(nitrogen_specialisation, levels = n_special_levels),
+    sulfur_specialisation = factor(sulfur_specialisation, levels = s_special_levels)
+  )
+
+special_abund <- get_pathway_abundance(
+    rep_special %>% mutate(call = TRUE),
+    trimmed_mean$rel_abund,
+    sample_metadata$temporal_sample_id
+  ) %>%
+  left_join(sample_metadata %>% select(sample = temporal_sample_id, Habitat__, DepthLumping, Year__)) %>%
+  mutate(
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+    Year__ = factor(Year__, levels = year_levels)
+  )
+
+special_tpm <- get_pathway_abundance(
+    rep_special %>% mutate(call = TRUE),
+    metaT_genomes %>% pivot_wider(names_from = SampleID__, values_from = tpm),
+    metaT_genomes$SampleID__
+  ) %>%
+  left_join(sample_metadata %>% select(sample = SampleID__, Habitat__, DepthLumping, Year__)) %>%
+  mutate(
+    Habitat__ = factor(Habitat__, levels = habitat_levels),
+    DepthLumping = factor(DepthLumping, levels = depth_levels),
+    Year__ = factor(Year__, levels = year_levels)
+  )
+```
+
+```{r spec-summary-function}
+treemap_subplot <- function(graph, habitat = "", total_scale = 1, levels, fill) {
+  ggraph_layers <- list(
+    scale_fill_manual("Specialisation", values = fill, breaks = levels),
+    coord_fixed(),
+    theme_void(),
+    theme(legend.position = "none")
+  )
+
+  if (habitat == "") {
+    plot <- ggraph(graph, layout = "treemap", weight = rel_abund) +
+      geom_node_tile(aes(fill = special), linewidth = 1) +
+      ggraph_layers +
+      theme(
+        legend.position = "bottom",
+        legend.margin = margin(b = 1, unit = "cm")
+        )
+  } else {
+    subgraph <- graph %>%
+      subgraph(V(graph)[Habitat__ == habitat])
+
+    if (subgraph %>% V() %>% length() == 0) {
+      return(ggplot() + theme_void())
+    }
+
+    rel_abund_scale <- V(subgraph)$rel_abund %>% sum() %>% sqrt()
+    scale <- total_scale / rel_abund_scale / 2
+    plot <- ggraph(subgraph, layout = "treemap", weight = rel_abund) +
+      geom_node_tile(aes(fill = special), linewidth = 1) +
+      ggraph_layers +
+      xlim(.5 - scale, .5 + scale) +
+      ylim(.5 - scale, .5 + scale)
+  }
+
+  return(plot)
+}
+
+generate_graph <- function(df, specific_levels) {
+  base_df <- df %>%
+    filter(rel_abund != 0) %>%
+    mutate(Hab_Spec = map2_chr(Habitat__, special, str_c, sep = "--")) %>%
+    mutate(Hab_Spec_Gen = map2_chr(Hab_Spec, genome, str_c, sep = "--")) %>%
+    ungroup()
+
+  # Generate graph with genomes as nodes, hierarchy as edges
+  edges_df <- bind_rows(
+      base_df %>% select(from = Habitat__, to = Hab_Spec),
+      base_df %>% select(from = Hab_Spec, to = Hab_Spec_Gen)
+      ) %>%
+    unique()
+
+  vertices_df <- base_df %>%
+    select(Hab_Spec_Gen, everything())
+
+  hierarchy_groups <- edges_df$from %>% unique()
+  for (g in hierarchy_groups) {
+    vertices_df <- vertices_df %>%
+      add_row(
+        Hab_Spec_Gen = g,
+        rel_abund = 0,
+        special = "other",
+        Habitat__ = str_extract(g, "[^-]+(?=--|$)")
+        )
+  }
+
+  # vertices_df <- vertices_df %>%
+  #   mutate(special = map_chr(special, ~ ifelse(. %in% specific_levels, ., "other")))
+
+  graph_from_data_frame(edges_df, vertices = vertices_df)
+}
+
+spec_summary <- function(special, special_name, special_levels, special_fill) {
+  rep_special %>%
+    ggplot(aes({{special}}, fill = {{special}})) +
+    geom_bar() +
+    coord_flip() +
+    scale_fill_manual(values = special_fill, breaks = special_levels) +
+    theme_cowplot()
+  ggsave(here(output_dir, str_c(special_name, "_summary.png")), width = 12, height = 7, dpi = 600)
+
+  # plot stacked bars with fill of specialisation, of cumulative relative abundance per habitat (plus depth/year)
+  special_abund %>%
+    group_by(Habitat__, DepthLumping, Year__, {{special}}, sample) %>%
+    summarise(rel_abund = sum(rel_abund)) %>%
+    summarise(rel_abund = mean(rel_abund)) %>%
+    ggplot(aes(Year__, rel_abund, fill = {{special}})) +
+    geom_col() +
+    facet_grid(DepthLumping ~ Habitat__) +
+    xlab("Year") +
+    ylab("Relative abundance") +
+    scale_x_discrete(limits = year_levels, labels = year_labels) +
+    scale_fill_manual(values = special_fill, breaks = special_levels) +
+    theme_cowplot()
+  ggsave(here(output_dir, str_c(special_name, "_abund.png")), width = 12, height = 7, dpi = 600)
+
+  # plot stacked bars with fill of specialisation, of cumulative tpm per habitat (plus depth/year)
+  special_tpm %>%
+    group_by(Habitat__, DepthLumping, Year__, {{special}}, sample) %>%
+    summarise(rel_abund = sum(rel_abund)) %>%
+    summarise(rel_abund = mean(rel_abund)) %>%
+    ggplot(aes(Year__, rel_abund, fill = {{special}})) +
+    geom_col() +
+    facet_grid(DepthLumping ~ Habitat__) +
+    xlab("Year") +
+    ylab("Transcription (tpm)") +
+    scale_x_discrete(limits = year_levels[5:7], labels = year_labels[5:7]) +
+    scale_fill_manual(values = special_fill, breaks = special_levels) +
+    theme_cowplot()
+  ggsave(here(output_dir, str_c(special_name, "_tpm.png")), width = 12, height = 7, dpi = 600)
+
+  # plot treemap with fill of specialisation, of cumulative relative abundance per habitat (plus depth/year)
+  special_summary <- special_abund %>%
+    rename(special = {{special}}) %>%
+    group_by(Habitat__, special, genome) %>%
+    summarise(rel_abund = mean(rel_abund))
+
+  genome_graph <- generate_graph(special_summary)
+  total_scale <- special_summary %>%
+    group_by(Habitat__) %>%
+    summarise(sum = sum(rel_abund)) %>%
+    pull(sum) %>%
+    max() %>%
+    sqrt()
+
+  treemap_plot <- treemap_subplot(genome_graph, "", total_scale, special_levels, special_fill)
+  palsa_treemap_plot <- treemap_subplot(genome_graph, "Palsa", total_scale, special_levels, special_fill)
+  bog_treemap_plot <- treemap_subplot(genome_graph, "Bog", total_scale, special_levels, special_fill)
+  fen_treemap_plot <- treemap_subplot(genome_graph, "Fen", total_scale, special_levels, special_fill)
+  treemap_plots <- plot_grid(
+    palsa_treemap_plot,
+    bog_treemap_plot,
+    fen_treemap_plot,
+    nrow = 1,
+    labels = c("Palsa", "Bog", "Fen"),
+    label_fontface = 1
+    )
+  plot_grid(
+    treemap_plots,
+    treemap_plot %>% get_legend(),
+    nrow = 2,
+    rel_heights = c(1, .2)
+    )
+  ggsave(here(output_dir, str_c(special_name, "_abund_treemap.png")), width = 12, height = 7, dpi = 600)
+}
+```
+
+```{r spec-summary}
+output_dir <- here(main_dir, "specialisations")
+dir.create(output_dir, recursive = TRUE)
+
+spec_summary(specialisation, "carbon_specialisation", c_special_levels, c_special_fill)
+spec_summary(nitrogen_specialisation, "nitrogen_specialisation", n_special_levels, n_special_fill)
+spec_summary(sulfur_specialisation, "sulfur_specialisation", s_special_levels, s_special_fill)
+```

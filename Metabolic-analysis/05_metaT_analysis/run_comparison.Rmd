@@ -1,0 +1,94 @@
+---
+title: "MetaT run comparison"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, error = FALSE, fig.width = 6, fig.asp = 0.618, out.width = "100%", fig.align = "center")
+
+library(cowplot)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+main_dir <- here("Metabolic-analysis", "05_metaT_analysis")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("Palsa", "Bog", "Fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+shape_habitat  <- c(15, 16, 17)
+fill_habitat   <- colour_habitat
+
+depth_levels <- c("0-9", "10-19", "20-29", "30-39")
+depth_labels <- c("0", "10", "20", "30")
+fill_depth   <- RColorBrewer::brewer.pal(5, "YlOrBr")[-1]
+colour_depth <- fill_depth
+
+year_levels <- c("2011", "2012", "2013", "2014", "2015", "2016", "2017")
+year_labels <- year_levels
+fill_year   <- RColorBrewer::brewer.pal(7, "OrRd")
+colour_year <- fill_year
+
+metaT_data <- sample_metadata %>%
+  read_metaT_data(annotations = dram_annotations)
+
+set.seed(42)
+```
+
+## Compare McGivern and new JGI runs
+
+```{r comparison}
+output_dir <- here(main_dir, "run_comparison")
+dir.create(output_dir, recursive = TRUE)
+
+metaT_comp <- metaT_data %>%
+  left_join(sample_metadata %>% select(SampleID__, Year__)) %>%
+  filter(Year__ == 2016) %>%
+  pivot_wider(names_from = metaT_set, values_from = tpm) %>%
+  filter(!is.na(McGivern), !is.na(JGI)) %>%
+  ggplot(aes(McGivern, JGI)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, colour = "black") +
+  scale_x_log10() +
+  scale_y_log10() +
+  xlab("McGivern") +
+  ylab("JGI") +
+  theme_cowplot()
+ggsave("2016_comparison.png", path = output_dir, dpi = 900)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

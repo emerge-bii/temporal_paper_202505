@@ -1,0 +1,117 @@
+---
+title: "Supplementary"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+##########################
+### Supplementary Data ###
+##########################
+# 1: Genome metadata
+supp_data_1 <- genome_info %>%
+  select(genome, taxonomy = gtdb2_taxonomy, completeness, contamination, genome_set) %>%
+  left_join(genome_clusters) %>%
+  left_join(genome_sizes) %>%
+  left_join(
+    product_refined %>%
+      filter(call) %>%
+      group_by(genome) %>%
+      summarise(subpathway = str_c(subpathway, collapse=",")) %>%
+      select(genome, pathway_calls = subpathway)
+    ) %>%
+  left_join(specialisations)
+
+# 2: MAG abundances
+supp_data_2 <- trimmed_mean$rel_abund
+
+# 3: Alpha diversity per sample
+supp_data_3 <- singlem_alpha
+
+# 4: Alpha diversity against time per habitat
+supp_data_4 <- alpha_vs_year$alpha_habitat
+
+# 5: Alpha diversity against time per habitat-depth
+supp_data_5 <- alpha_vs_year$alpha_habitat_depth
+
+# 6: Metabolic abundances - metapathways
+supp_data_6 <- metapath_abundance %>%
+  pivot_wider(names_from = metapath, values_from = rel_abund)
+
+# 7: Metabolic abundances - pathways
+supp_data_7 <- pathway_abundance_cumu
+
+# 8: Metabolic abundances - reactions
+supp_data_8 <- reaction_abundance_cumu
+
+# 9: Metapathways vs ground temperature
+# supp_data_9 <- 
+
+# 10: Flowerplot - Correlations within MAGs
+supp_data_10 <- read_tsv(here("Metabolic-analysis", "04_copresence_network", "mags", "genome_copresence.tsv")) %>%
+  select(
+    pathway1 = x,
+    pathway2 = y,
+    `Pearson's product-moment correlation` = estimate,
+    statistic,
+    `p-value` = p.value,
+    `FDR adjusted p-value` = pval,
+  )
+
+# 11: Flowerplot - Correlations between MAGs (habitats)
+supp_data_11 <-  read_tsv(here("Metabolic-analysis", "04_copresence_network", "samples", "habitat_copresence.tsv")) %>%
+  select(
+    habitat,
+    pathway1 = x,
+    pathway2 = y,
+    `FDR-filtered rho correlation` = rho,
+  )
+
+# 12: Genus-level representation - habitat
+supp_data_12 <- singlem_appraise_summary %>%
+  filter(level == "genus", bin_type == "all") %>%
+  inner_join(sample_metadata %>% select(temporal_sample_id, Habitat__)) %>%
+  group_by(Habitat__) %>%
+  summarise(percent_binned = mean(percent_binned))
+
+# 13: Genus-level representation - samples
+supp_data_13 <- singlem_appraise_summary %>%
+  filter(level == "genus", bin_type == "all") %>%
+  inner_join(sample_metadata %>% select(temporal_sample_id)) %>%
+  select(temporal_sample_id, percent_binned)
+
+# 14: dbRDA
+supp_data_14 <- read_tsv(here("Metabolic-analysis", "08_RDA", "rda_model_info.tsv"))
+
+# 15: Methanogen specifics - metabolism
+supp_data_15 <- supp_data_1 %>%
+  filter(specialisation == "methanogen")
+
+# Export supp_data to different sheets in same excel file
+supp_data <- list(
+  `Genome metadata` = supp_data_1,
+  `MAG abundances` = supp_data_2,
+  `Alpha diversity per sample` = supp_data_3,
+  `Alpha diversity against time per habitat` = supp_data_4,
+  `Alpha diversity against time per habitat-depth` = supp_data_5,
+  `Metabolic abundances - metapathways` = supp_data_6,
+  `Metabolic abundances - pathways` = supp_data_7,
+  `Metabolic abundances - reactions` = supp_data_8,
+  # `Metapathways vs ground temperature` = supp_data_9,
+  `Flowerplot - Correlations within MAGs` = supp_data_10,
+  `Flowerplot - Correlations between MAGs (habitats)` = supp_data_11,
+  `Genus-level representation - habitat` = supp_data_12,
+  `Genus-level representation - samples` = supp_data_13,
+  `dbRDA` = supp_data_14,
+  `Methanogen specifics - metabolism` = supp_data_15
+  )
+writexl::write_xlsx(supp_data, here("supplementary_data.xlsx"))
+```

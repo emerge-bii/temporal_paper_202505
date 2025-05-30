@@ -1,0 +1,113 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+dextranase 1 (Dex1)	3.2.1.11	pubmed	Arthrobacter globiformis T-3044	BAA13596.1	P70744		Bacteria	13	GH49
+dextranase (Dex)	3.2.1.11	pubmed	Arthrobacter sp. CB-8	BAA00708.1	P39652		Bacteria	13	GH49
+dextranase	3.2.1.11	pubmed	Arthrobacter sp. KQ11 / Arthrobacter oxydans KQ11	AHZ97853.1	A0A059VLI3		Bacteria	13	GH49
+dextran 1,6-α-isomaltotriosidase (DexT)	3.2.1.95	pubmed	Brevibacterium fuscum var. dextranlyticum	BAA76382.1	Q9WXI3		Bacteria	13	GH49
+sulfated arabinan endo-1,4-β-L-arabinanase (BACPLE_00984)	3.2.1.-	pubmed	Phocaeicola plebeius DSM 17135	EDY96541.1	B5CW94		Bacteria	13	GH49
+sulfated arabinan endo-1,4-β-L-arabinanase (BACPLE_01008)	3.2.1.-	pubmed	Phocaeicola plebeius DSM 17135	EDY96565.1	B5CWB8		Bacteria	13	GH49
+dextranase (Dex2;AoD2;AODex)	3.2.1.11	doi	Pseudarthrobacter oxydans	AAX09503.1	A9UKG4		Bacteria	13	GH49
+dextranase (Dex2;AoD2;AODex)	3.2.1.11	doi	Pseudarthrobacter oxydans	ABF74611.1	A9UKG4		Bacteria	13	GH49
+Clocl_2445	3.2.1.55		Acetivibrio clariflavus DSM 19732	AEV69020.1			Bacteria	101	GH51
+α-L-arabinofuranosidase (AmAraf51; EFD62_11990)	3.2.1.55	pubmed	Acetivibrio mesophilus N2K1	RXE58498.1			Bacteria	101	GH51
+α-L-arabinofuranosidase 51A (Araf51;CtAraf51A;Cthe_2548) (Araf51A)	3.2.1.55	pubmed	Acetivibrio thermocellus ATCC 27405	ABN53749.1	A3DIH0	2C7F[A,B,C,D,E,F]2C8N[A,B,C,D,E,F]5O7Z[A,B,C,D,E,F]5O80[A,B,C,D,E,F]5O81[A,B,C,D,E,F]5O82[A,B,C,D,E,F]	Bacteria	101	GH51
+α-L-arabinofuranosidase 51A (Araf51;CtAraf51A;Cthe_2548) (Araf51A)	3.2.1.55	pubmed	Acetivibrio thermocellus ATCC 27405	ZP_00503782.1	A3DIH0	2C7F[A,B,C,D,E,F]2C8N[A,B,C,D,E,F]5O7Z[A,B,C,D,E,F]5O80[A,B,C,D,E,F]5O81[A,B,C,D,E,F]5O82[A,B,C,D,E,F]	Bacteria	101	GH51
+Clo1313_0133	3.2.1.55	pubmed	Acetivibrio thermocellus DSM 1313	ADU73229.1			Bacteria	101	GH51
+cellulase / xylanase (CelB;Aaci_0048)	3.2.1.43.2.1.8	pubmedpubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	ACV57112.1	C8WQ08Q84E48		Bacteria	101	GH51
+cellulase / xylanase (CelB;Aaci_0048)	3.2.1.43.2.1.8	pubmedpubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	CAD86595.1	C8WQ08Q84E48		Bacteria	101	GH51
+α-L-arabinofuranosidase (Ac-Abf51A) (Abf51A)	3.2.1.55	pubmed	Alicyclobacillus sp. A4	ALK02878.1	A0A0P0ISK8		Bacteria	101	GH51
+β-1,4-glucanase (CelA4) (acidic)	3.2.1.4	pubmed	Alicyclobacillus sp. A4	ADI82825.1	D7PI32		Bacteria	101	GH51
+endoglucanase (CelVA)	3.2.1.4	pubmed	Alicyclobacillus vulcanalis DSM 16176	CEH24710.1	A0A0F7TAS1		Bacteria	101	GH51
+α-L-arabinofuranosidase (Abf; AbfAC26Sari)	3.2.1.55	pubmed	Anoxybacillus kestanbolensis AC26SARI	ACB54691.1	B2D088		Bacteria	101	GH51
+α-L-arabinofuranosidase (AraB)	3.2.1.55	doi	Bacillus pumilus ARA	ABC55452.1	Q2MJP5		Bacteria	101	GH51
+α-L-arabinofuranosidase I (ArfA)	3.2.1.55	pubmed	Bacillus pumilus PS213	CAJ77816.1	Q2HPJ2		Bacteria	101	GH51
+α-L-arabinofuranosidase 1 (AbfA;BSU28720)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAA99595.1	A0A6M4JKK3P94531		Bacteria	101	GH51
+α-L-arabinofuranosidase 1 (AbfA;BSU28720)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY94201.1	A0A6M4JKK3P94531		Bacteria	101	GH51
+α-L-arabinofuranosidase 1 (AbfA;BSU28720)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR82899.1	A0A6M4JKK3P94531		Bacteria	101	GH51
+α-L-arabinofuranosidase 1 (AbfA;BSU28720)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR87114.1	A0A6M4JKK3P94531		Bacteria	101	GH51
+α-L-arabinofuranosidase 1 (AbfA;BSU28720)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAA61937.1	A0A6M4JKK3P94531		Bacteria	101	GH51
+α-L-arabinofuranosidase 1 (AbfA;BSU28720)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB14832.1	A0A6M4JKK3P94531		Bacteria	101	GH51
+α-L-arabinofuranosidase 1 (AbfA;BSU28720)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB14832.2	A0A6M4JKK3P94531		Bacteria	101	GH51
+α-L-arabinofuranosidase 1 (AbfA;BSU28720)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_390750.1	A0A6M4JKK3P94531		Bacteria	101	GH51
+α-L-arabinofuranosidase 2 (AbfA2;Abf2;Xsa;Asd;BSU28510)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAA99576.1	A0A6M3ZF61P94552		Bacteria	101	GH51
+α-L-arabinofuranosidase 2 (AbfA2;Abf2;Xsa;Asd;BSU28510)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	ABW70629.1	A0A6M3ZF61P94552		Bacteria	101	GH51
+α-L-arabinofuranosidase 2 (AbfA2;Abf2;Xsa;Asd;BSU28510)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY95537.1	A0A6M3ZF61P94552		Bacteria	101	GH51
+α-L-arabinofuranosidase 2 (AbfA2;Abf2;Xsa;Asd;BSU28510)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR82876.1	A0A6M3ZF61P94552		Bacteria	101	GH51
+α-L-arabinofuranosidase 2 (AbfA2;Abf2;Xsa;Asd;BSU28510)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR87091.1	A0A6M3ZF61P94552		Bacteria	101	GH51
+α-L-arabinofuranosidase 2 (AbfA2;Abf2;Xsa;Asd;BSU28510)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB14811.1	A0A6M3ZF61P94552		Bacteria	101	GH51
+α-L-arabinofuranosidase 2 (AbfA2;Abf2;Xsa;Asd;BSU28510)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB14811.2	A0A6M3ZF61P94552		Bacteria	101	GH51
+α-L-arabinofuranosidase 2 (AbfA2;Abf2;Xsa;Asd;BSU28510)	3.2.1.55	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_390729.1	A0A6M3ZF61P94552		Bacteria	101	GH51
+α-L-arabinofuranosidase 2 (AsdII)	3.2.1.55	pubmed	Bacteroides ovatus V975	AAA50393.1	Q59219		Bacteria	101	GH51
+α-L-arabinofuranosidase (BT0368)	3.2.1.55	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO75475.1	Q8AAU6		Bacteria	101	GH51
+α-L-arabinofuranosidase (BT0368)	3.2.1.55	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_809281.1	Q8AAU6		Bacteria	101	GH51
+α-L-arabinofuranosidase (BT0348)	3.2.1.55	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO75455.1	Q8AAW4		Bacteria	101	GH51
+α-L-arabinofuranosidase (BT0348)	3.2.1.55	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_809261.1	Q8AAW4		Bacteria	101	GH51
+α-L-arabinofuranosidase (XsA;AbfB;BAD_1205)	3.2.1.55	pubmed	Bifidobacterium adolescentis ATCC 15703	BAF39986.1	A1A2Q3		Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfB;BAD_1524)	3.2.1.55	pubmed	Bifidobacterium adolescentis ATCC 15703	BAF40305.1	A1A3M2		Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfB)	3.2.1.55	pubmed	Bifidobacterium longum B667	AAO84266.1	Q841V6Q8G554	2Y2W[A,B,C,D,E,F]	Bacteria	101	GH51
+α-L-arabinofuranosidase (AfuB;AfuB-H1)	3.2.1.55	pubmed	Bifidobacterium longum H-1	ADT80795.1	E7CY70		Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfA;AbfA1;BL0544)	3.2.1.55	pubmed	Bifidobacterium longum NCC2705	AAN24368.1	Q8G6U4		Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfA;AbfA1;BL0544)	3.2.1.55	pubmed	Bifidobacterium longum NCC2705	NP_695732.1	Q8G6U4		Bacteria	101	GH51
+arabinofuranosidase I (ArfI;CxAbf1)	3.2.1.55	pubmed	Breznakibacter xylanolyticus	AAC38456.1	O68278		Bacteria	101	GH51
+arabinofuranosidase II (ArfII;CxAbf2)	3.2.1.55	pubmed	Breznakibacter xylanolyticus	AAC38457.1	O68279		Bacteria	101	GH51
+α-L-arabinofuranosidase (CbAra51A;Athe_1103) (Ara51A)	3.2.1.55	pubmed	Caldicellulosiruptor bescii DSM 6725	ACM60204.1	B9MRA0		Bacteria	101	GH51
+α-L-arabinofuranosidase (CsAraf;Csac_1561)	3.2.1.55	pubmed	Caldicellulosiruptor saccharolyticus DSM 8903	ABP67153.1	A4XJR8		Bacteria	101	GH51
+α-L-arabinofuranosidase (AbF51)	3.2.1.55	pubmed	Caldicellulosiruptor sp. F32	WP_039765452.1			Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfCelf;Celf_3321)	3.2.1.55	pubmed	Cellulomonas fimi ATCC 484	AEE47435.1	F4H166		Bacteria	101	GH51
+α-L-arabinofuranosidase 51A (CJA_2769) (Abf51A)	3.2.1.55	pubmed	Cellvibrio japonicus Ueda107	ACE86344.1	B3PBK2Q93LE0		Bacteria	101	GH51
+α-L-arabinofuranosidase 51A (CJA_2769) (Abf51A)	3.2.1.55	pubmed	Cellvibrio japonicus Ueda107	AAK84947.1	B3PBK2Q93LE0		Bacteria	101	GH51
+α-L-arabinofuranosidase (ArfA)	3.2.1.55	pubmed	Clostridium cellulovorans	AAN05450.1	Q8GEE5		Bacteria	101	GH51
+endo-β-1,3(4)-glucanase (Fisuc_2081 / FSU_2610)	3.2.1.6	pubmed	Fibrobacter succinogenes subsp. succinogenes S85	ACX75668.1	C9RJF1		Bacteria	101	GH51
+endo-β-1,3(4)-glucanase (Fisuc_2081 / FSU_2610)	3.2.1.6	pubmed	Fibrobacter succinogenes subsp. succinogenes S85	ADL24926.1	C9RJF1		Bacteria	101	GH51
+endoglucanase 2 / F (Eg2;CelF;EgF;CBP-4;Fisuc_3111;FSU_0382) (Cel51A)	3.2.1.4	pubmed	Fibrobacter succinogenes subsp. succinogenes S85	AAC45377.1	C9RQE4P71329P77865		Bacteria	101	GH51
+endoglucanase 2 / F (Eg2;CelF;EgF;CBP-4;Fisuc_3111;FSU_0382) (Cel51A)	3.2.1.4	pubmed	Fibrobacter succinogenes subsp. succinogenes S85	ACX76691.1	C9RQE4P71329P77865		Bacteria	101	GH51
+endoglucanase 2 / F (Eg2;CelF;EgF;CBP-4;Fisuc_3111;FSU_0382) (Cel51A)	3.2.1.4	pubmed	Fibrobacter succinogenes subsp. succinogenes S85	ADL24814.1	C9RQE4P71329P77865		Bacteria	101	GH51
+endoglucanase 2 / F (Eg2;CelF;EgF;CBP-4;Fisuc_3111;FSU_0382) (Cel51A)	3.2.1.4	pubmed	Fibrobacter succinogenes subsp. succinogenes S85	BAA10965.1	C9RQE4P71329P77865		Bacteria	101	GH51
+α-L-arabinofuranosidase (FjArf51; Fjoh_3113)	3.2.1.55	pubmed	Flavobacterium johnsoniae UW101	ABQ06130.1			Bacteria	101	GH51
+α-L-arabinofuranosidase (LarbF;G11MC16DRAFT_1557)	3.2.1.55	pubmed	Geobacillus sp. G11MC16	EDY06090.1			Bacteria	101	GH51
+α-L-arabinofuranosidase (AbF;GAFase)	3.2.1.55	pubmed	Geobacillus sp. KCTC 3012	ABM68633.1	A8QJ85		Bacteria	101	GH51
+α-L-arabinofuranosidase (Abf2; Abf2Geo12)	3.2.1.55	doi	Geobacillus stearothermophilus 12	ALB24935.1	A0A0U2GPG6		Bacteria	101	GH51
+α-L-arabinofuranosidase (Abf1; Abf1Geo12)	3.2.1.55	doi	Geobacillus stearothermophilus 12	ALB24934.1	A0A0U2GPK2		Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfA;HUS_CDS35)	3.2.1.55	pubmed	Geobacillus stearothermophilus T-6 NCIMB 40222	AAD45520.2	B3EYN4Q9XBQ3	1PZ2[A,B]1PZ3[A,B]1QW8[A,B]1QW9[A,B]6SXU[AAA,BBB]6SXV[A,B]	Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfA;HUS_CDS35)	3.2.1.55	pubmed	Geobacillus stearothermophilus T-6 NCIMB 40222	AAB33652.1	B3EYN4Q9XBQ3	1PZ2[A,B]1PZ3[A,B]1QW8[A,B]1QW9[A,B]6SXU[AAA,BBB]6SXV[A,B]	Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfA;HUS_CDS35)	3.2.1.55	pubmed	Geobacillus stearothermophilus T-6 NCIMB 40222	ACE73682.1	B3EYN4Q9XBQ3	1PZ2[A,B]1PZ3[A,B]1QW8[A,B]1QW9[A,B]6SXU[AAA,BBB]6SXV[A,B]	Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfB;HUS_CDS33)	3.2.1.55	pubmed	Geobacillus stearothermophilus T-6 NCIMB 40222	ACE73681.1	B3EYN3Q9XBQ4		Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfB;HUS_CDS33)	3.2.1.55	pubmed	Geobacillus stearothermophilus T-6 NCIMB 40222	AAD45519.1	B3EYN3Q9XBQ4		Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfA)	3.2.1.55	doi	Geobacillus thermoleovorans IT-08	ABD48560.1	Q27R95		Bacteria	101	GH51
+α-L-arabinofuranosidase (HHT355_1549; ArfA)	3.2.1.55	pubmed	Herbinix hemicellulosilytica	CRZ34750.1			Bacteria	101	GH51
+α-L-arabinofuranosidase (HHT355_0845; ArfB)	3.2.1.55	pubmed	Herbinix hemicellulosilytica	CRZ34048.1			Bacteria	101	GH51
+α-L-arabinofuranosidase (Abf22-3)	3.2.1.55	pubmed	Leuconostoc sp. 22-3	AFD62907.1	H9BR50		Bacteria	101	GH51
+α-L-arabinofuranosidase 1 (Abf1)	3.2.1.55	pubmed	Levilactobacillus brevis DSMZ 20054	ADJ95770.1	D9J2Q3		Bacteria	101	GH51
+α-L-arabinofuranosidase 2 (Abf2)	3.2.1.55	pubmed	Levilactobacillus brevis DSMZ 20054	ADJ95771.1	D9J2Q4		Bacteria	101	GH51
+α-L-arabinofuranosidase (Abf;Xsa;OENOO_34003)	3.2.1.55	pubmed	Oenococcus oeni ATCC BAA-1163	ADJ95768.1	A0NHN5D9J2Q1		Bacteria	101	GH51
+α-L-arabinofuranosidase (Abf;Xsa;OENOO_34003)	3.2.1.55	pubmed	Oenococcus oeni ATCC BAA-1163	EAV39988.1	A0NHN5D9J2Q1		Bacteria	101	GH51
+α-L-arabinofuranosidase	3.2.1.55		Paenibacillus sp. DG-22	AIE12544.1			Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfA;THSAbf)	3.2.1.55	pubmed	Paenibacillus sp. HanTHS1	ABZ10760.1	B1A0T7		Bacteria	101	GH51
+α-L-arabinofuranosidase (Pjdr2_3019)	3.2.1.55	pubmed	Paenibacillus sp. JDR-2	ACT01665.1			Bacteria	101	GH51
+α-L-arabinofuroranosidase (Pjdr2_3599)	3.2.1.55	pubmed	Paenibacillus sp. JDR-2	ACT02231.1			Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfA; AbfATK4)	3.2.1.55	pubmed	Parageobacillus caldoxylosilyticus TK4	ABI34800.1	Q0GA82		Bacteria	101	GH51
+α-arabinofuranosidase (AbfA;Araf3054)	3.2.1.55	pubmed	Rhodanobacter ginsenosidimutans Gsoil3054T / KCTC 22231?/?DSM 21013	ADM26764.1	E1AXG3		Bacteria	101	GH51
+α-L-arabinofuranosidase 51A (Ara51A)	3.2.1.55	pubmed	Ruminococcus albus 8	AEE64774.1	E9SHS5		Bacteria	101	GH51
+α-L-arabinofuranosidase 51A (Ara51A)	3.2.1.55	pubmed	Ruminococcus albus 8	ZP_08160912.1	E9SHS5		Bacteria	101	GH51
+α-L-arabinofuranosidase I (AFase I)	3.2.1.55	pubmed	Streptomyces chartreusis GS901	BAA90771.1	P82593		Bacteria	101	GH51
+α-L-arabinofuranosidase (AbfA)	3.2.1.55	pubmed	Streptomyces lividans 66	AAA61708.1	P53627		Bacteria	101	GH51
+α-L-arabinofuranosidase (AFa)	3.2.1.55	pubmed	Streptomyces sp. I10-1	BAH02662.1	B6ZGN5		Bacteria	101	GH51
+α-L-arabinofuranosidase (ORF2125)	3.2.1.55	pubmed	Streptomyces sp. JHA19	BAS29530.1	A0A0K2SQX3		Bacteria	101	GH51
+α-L-arabinofuranosidase (Abf51S9)	3.2.1.55	pubmed	Streptomyces sp. S9 ACCC 41168	ACY69989.1	D1KTD5		Bacteria	101	GH51
+α-L-arabinofuranosidase (Tthe_0656)	3.2.1.55	doi	Thermoanaerobacterium thermosaccharolyticum DSM 571	ADL68215.1			Bacteria	101	GH51
+α-L-arabinofuranosidase (AbjA;AbfD3;G51;TxAbf)	3.2.1.55	pubmed	Thermobacillus xylanilyticus D3	CAA76421.2	O69262	2VRK[A,B,C]2VRQ[A,B,C]6ZT6[A,B,C]6ZT7[A,B,C]6ZT8[A,B,C]6ZT9[A,B,C]6ZTA[A,B,C]	Bacteria	101	GH51
+α-L-arabinofuranosidase (ArfB) (Arf51B)	3.2.1.55	pubmed	Thermoclostridium stercorarium NCIMB 11754	AAC28125.1	O08457		Bacteria	101	GH51
+α-L-arabinofuranosidase (AraA;TmAFase;TmAbf;Tm-AFase;TM0281)	3.2.1.55	pubmed	Thermotoga maritima MSB8	AAD35369.1	Q4R1J9Q9WYB7R4NNA3	3UG3[A,B,C,D,E,F]3UG4[A,B,C,D,E,F]3UG5[A,B,C,D,E,F]4ATW[A,B,C,D,E,F]	Bacteria	101	GH51
+α-L-arabinofuranosidase (AraA;TmAFase;TmAbf;Tm-AFase;TM0281)	3.2.1.55	pubmed	Thermotoga maritima MSB8	AGL49205.1	Q4R1J9Q9WYB7R4NNA3	3UG3[A,B,C,D,E,F]3UG4[A,B,C,D,E,F]3UG5[A,B,C,D,E,F]4ATW[A,B,C,D,E,F]	Bacteria	101	GH51
+α-L-arabinofuranosidase (AraA;TmAFase;TmAbf;Tm-AFase;TM0281)	3.2.1.55	pubmed	Thermotoga maritima MSB8	AHD17955.1	Q4R1J9Q9WYB7R4NNA3	3UG3[A,B,C,D,E,F]3UG4[A,B,C,D,E,F]3UG5[A,B,C,D,E,F]4ATW[A,B,C,D,E,F]	Bacteria	101	GH51
+α-L-arabinofuranosidase (AraA;TmAFase;TmAbf;Tm-AFase;TM0281)	3.2.1.55	pubmed	Thermotoga maritima MSB8	AKE28083.1	Q4R1J9Q9WYB7R4NNA3	3UG3[A,B,C,D,E,F]3UG4[A,B,C,D,E,F]3UG5[A,B,C,D,E,F]4ATW[A,B,C,D,E,F]	Bacteria	101	GH51
+α-L-arabinofuranosidase (AraA;TmAFase;TmAbf;Tm-AFase;TM0281)	3.2.1.55	pubmed	Thermotoga maritima MSB8	BAE02565.1	Q4R1J9Q9WYB7R4NNA3	3UG3[A,B,C,D,E,F]3UG4[A,B,C,D,E,F]3UG5[A,B,C,D,E,F]4ATW[A,B,C,D,E,F]	Bacteria	101	GH51
+α-L-arabinofuranosidase (AraA;TmAFase;TmAbf;Tm-AFase;TM0281)	3.2.1.55	pubmed	Thermotoga maritima MSB8	NP_228093.1	Q4R1J9Q9WYB7R4NNA3	3UG3[A,B,C,D,E,F]3UG4[A,B,C,D,E,F]3UG5[A,B,C,D,E,F]4ATW[A,B,C,D,E,F]	Bacteria	101	GH51
+α-L-arabinofuranosidase (AraF;Tpet_0631)	3.2.1.55	pubmed	Thermotoga petrophila RKU-1	ABQ46651.1	A5IKC8	3S2C[A,B,C,D,E,F,G,H,I,J,K,L]	Bacteria	101	GH51
+α-L-arabinofuranosidase D3	3.2.1.55	pubmed	uncultured bacterium	QBG80849.1			Bacteria	101	GH51
+α-L-arabinofuranosidase E3	3.2.1.55	pubmed	uncultured bacterium	QBG80848.1			Bacteria	101	GH51
+α-L-arabinofuranosidase H4	3.2.1.553.2.1.91	pubmedpubmed	uncultured bacterium	QBG80847.1			Bacteria	101	GH51
+endo-β-1,4-glucanase (SScel24;Lambda;Cel)	3.2.1.4	pubmed	uncultured bacterium	CAF22222.1	Q5NJL7		Bacteria	101	GH51
+cellulase (Lc-CelC)	3.2.1.4	pubmed	uncultured bacterium	AHL27896.1	W8PBI6		Bacteria	101	GH51
+XAC1286	3.2.1.55	pubmed	Xanthomonas citri pv. citri str. 306	AAM36157.1	Q8PMY9	6D25[A,B,C,D,E,F]	Bacteria	101	GH51
+XAC1286	3.2.1.55	pubmed	Xanthomonas citri pv. citri str. 306	NP_641621.1	Q8PMY9	6D25[A,B,C,D,E,F]	Bacteria	101	GH51
+α-L-arabinofuranosidase (XoAF;PXO_02260)	3.2.1.55	pubmed	Xanthomonas oryzae pv. oryzae PXO99A	ACD60479.1	A0A0K0GNJ2B2SJW2		Bacteria	101	GH51

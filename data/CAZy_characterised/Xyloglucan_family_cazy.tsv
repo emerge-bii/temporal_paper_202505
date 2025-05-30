@@ -1,0 +1,43 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+β-1,4-xyloglucan hydrolase / xyloglucanase (XghA) (Xgh74A)	3.2.1.151	pubmed	Acetivibrio thermocellus F7/YS	CAE51306.1	Q70DK5	2CN2[A,B,C,D]2CN3[A,B]	Bacteria	39	GH74
+endo-xyloglucanase (Athe_1860)	3.2.1.151	pubmed	Caldicellulosiruptor bescii DSM 6725	ACM60948.1	B9MKU0		Bacteria	39	GH74
+endo-xyloglucanase (Calla_0015)	3.2.1.151	pubmed	Caldicellulosiruptor lactoaceticus 6A	AEM72711.1	G2PV20		Bacteria	39	GH74
+endo-xyloglucanase (Calla_2311)	3.2.1.151	pubmed	Caldicellulosiruptor lactoaceticus 6A	AEM74844.1	G2PXX7	6P2M[A]	Bacteria	39	GH74
+endo-xyloglucanase (CJA_2477) (Gly74A)	3.2.1.151	pubmed	Cellvibrio japonicus Ueda107	ACE84745.1	B3PKK9	5FKQ[A,B]5FKR[A]5FKS[A]5FKT[A,B]	Bacteria	39	GH74
+xyloglucanase (Xeg)	3.2.1.151	pubmed	Jonesia DSM 14140	CAD58415.1			Bacteria	39	GH74
+endo-xyloglucanase (Niako_1751)	3.2.1.151	pubmed	Niastella koreensis GR20-10	AEV98114.1	G8TAF2	6P2L[A]	Bacteria	39	GH74
+endo-xyloglucanase (PBOR_14955)	3.2.1.151	pubmed	Paenibacillus borealis DSM 13188	AIQ58082.1	A0A089LB84		Bacteria	39	GH74
+endo-xyloglucanase (PGRAT_12815)	3.2.1.151	pubmed	Paenibacillus graminis DSM 15220	AIQ68396.1	A0A089M3R3	6P2N[A]	Bacteria	39	GH74
+endo-xyloglucanase (PjGH74)	3.2.1.151	pubmed	Paenibacillus jamilae	WP_063210590.1			Bacteria	39	GH74
+endo-xyloglucanase (PM3016_3674)	3.2.1.151	pubmed	Paenibacillus mucilaginosus 3016	AFC30493.1	H6NNW7		Bacteria	39	GH74
+endo-xyloglucanase (CD191_11325)	3.2.1.151	pubmed	Paenibacillus odorifer CBA7130	AWV33160.1		6MGJ[A,B,C,D,E,F,G,H]6MGK[A,B,C,D]6MGL[A]	Bacteria	39	GH74
+endo-xyloglucanase (PODO_11420)	3.2.1.151	pubmed	Paenibacillus odorifer DSM 15391	AIQ73809.1			Bacteria	39	GH74
+endo-xyloglucanase (PpGH74)	3.2.1.151	pubmed	Paenibacillus polymyxa	WP_019687396.1	A0A378XYI8		Bacteria	39	GH74
+xyloglucanase (XEG74) (Xeg74)	3.2.1.151	pubmed	Paenibacillus sp. KM21	BAE44527.1	Q3MUH7		Bacteria	39	GH74
+exo-xyloglucanase 74A (Ccel_1207) (Xgh74A)	3.2.1.151	pubmed	Ruminiclostridium cellulolyticum H10	ACL75564.1			Bacteria	39	GH74
+endo-xyloglucanase (Rumal_0030)	3.2.1.151	pubmed	Ruminococcus albus 7 = DSM 20455	ADU20593.1	E0L8C0E6UB52		Bacteria	39	GH74
+endo-xyloglucanase (Rumal_2744)	3.2.1.151	pubmed	Ruminococcus albus 7 = DSM 20455	ADU23213.1	E0L621E6UHD5		Bacteria	39	GH74
+xyloglucanase (GH74A;RUM_02790) (Xeg74A)	3.2.1.151	pubmed	Ruminococcus champanellensis 18P13 = JCM 17042	CBL16522.1	D4LA77		Bacteria	39	GH74
+endo-xyloglucanase (SatGH74)	3.2.1.151	pubmed	Streptomyces atroolivaceus	WP_033303664.1			Bacteria	39	GH74
+processive endoxyloglucanase (SaGH74A;SAV1856;SAV_1856)	3.2.1.151	pubmed	Streptomyces avermitilis MA-4680 = NBRC 14893	BAC69567.1	Q82M04		Bacteria	39	GH74
+processive endoxyloglucanase (SaGH74A;SAV1856;SAV_1856)	3.2.1.151	pubmed	Streptomyces avermitilis MA-4680 = NBRC 14893	NP_823032.1	Q82M04		Bacteria	39	GH74
+endoxyloglucanase (SaGH74B;SAV2574;SAV_2574)	3.2.1.151	pubmed	Streptomyces avermitilis MA-4680 = NBRC 14893	BAC70285.1	Q82K30		Bacteria	39	GH74
+endoxyloglucanase (SaGH74B;SAV2574;SAV_2574)	3.2.1.151	pubmed	Streptomyces avermitilis MA-4680 = NBRC 14893	NP_823750.1	Q82K30		Bacteria	39	GH74
+xyloglucan-specific endo-β-1,4-glucanase (SCO6545)	3.2.1.151	pubmed	Streptomyces coelicolor A3(2)	CAA20642.1	O86727		Bacteria	39	GH74
+xyloglucan-specific endo-β-1,4-glucanase (SCO6545)	3.2.1.151	pubmed	Streptomyces coelicolor A3(2)	NP_630626.1	O86727		Bacteria	39	GH74
+endo-xyloglucanase (M271_10845)	3.2.1.151	pubmed	Streptomyces rapamycinicus NRRL 5491	AGP53770.1	A0A0A0NH71	6P2O[A,B]	Bacteria	39	GH74
+endo-xyloglucanase (SVEN_2582)	3.2.1.151	pubmed	Streptomyces venezuelae ATCC 10712	CCA55868.1	F2R3M6		Bacteria	39	GH74
+endo-xyloglucanase (SVEN_2582)	3.2.1.151	pubmed	Streptomyces venezuelae ATCC 10712	QER99175.1	F2R3M6		Bacteria	39	GH74
+endo-xyloglucanase (SVEN_674	3.2.1.151	pubmed	Streptomyces venezuelae ATCC 10712	CCA60033.1	F2RHT9		Bacteria	39	GH74
+endo-xyloglucanase (SVEN_674	3.2.1.151	pubmed	Streptomyces venezuelae ATCC 10712	QES02760.1	F2RHT9		Bacteria	39	GH74
+xyloglucanase (Tfu_1612) (Xeg74)	3.2.1.151	pubmed	Thermobifida fusca YX	AAZ55647.1	Q47PH2		Bacteria	39	GH74
+xyloglucanase (Tfu_1612) (Xeg74)	3.2.1.151	pubmed	Thermobifida fusca YX	ZP_00056977.1	Q47PH2		Bacteria	39	GH74
+endo-β-1,4-glucanase (TM0305) (Cel74)	3.2.1.4	pubmed	Thermotoga maritima MSB8	AAD35393.1	Q9WYE1R4NXV8		Bacteria	39	GH74
+endo-β-1,4-glucanase (TM0305) (Cel74)	3.2.1.4	pubmed	Thermotoga maritima MSB8	AGL49229.1	Q9WYE1R4NXV8		Bacteria	39	GH74
+endo-β-1,4-glucanase (TM0305) (Cel74)	3.2.1.4	pubmed	Thermotoga maritima MSB8	AHD17931.1	Q9WYE1R4NXV8		Bacteria	39	GH74
+endo-β-1,4-glucanase (TM0305) (Cel74)	3.2.1.4	pubmed	Thermotoga maritima MSB8	AKE28106.1	Q9WYE1R4NXV8		Bacteria	39	GH74
+endo-β-1,4-glucanase (TM0305) (Cel74)	3.2.1.4	pubmed	Thermotoga maritima MSB8	NP_228117.1	Q9WYE1R4NXV8		Bacteria	39	GH74
+xyloglucanase (Xgh;Xcc-Xgh;XCC1752)	3.2.1.151	doi	Xanthomonas campestris pv. campestris str. ATCC 33913	AAM41043.1	Q8P9U5	7KN8[A,B]	Bacteria	39	GH74
+xyloglucanase (Xgh;Xcc-Xgh;XCC1752)	3.2.1.151	doi	Xanthomonas campestris pv. campestris str. ATCC 33913	NP_637119.1	Q8P9U5	7KN8[A,B]	Bacteria	39	GH74
+endo-xyloglucanase (XAC1770;CelA)	3.2.1.151	doi	Xanthomonas citri pv. citri str. 306	AAM36634.1	Q8PLM5		Bacteria	39	GH74
+endo-xyloglucanase (XAC1770;CelA)	3.2.1.151	doi	Xanthomonas citri pv. citri str. 306	NP_642098.1	Q8PLM5		Bacteria	39	GH74

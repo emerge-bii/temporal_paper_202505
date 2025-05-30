@@ -1,0 +1,368 @@
+---
+title: "Calculate expression through pathway/reaction definitions"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, error = FALSE, fig.width = 6, fig.asp = 0.618, out.width = "100%", fig.align = "center")
+
+library(cowplot)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+main_dir <- here("Metabolic-analysis", "05_metaT_analysis")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("Palsa", "Bog", "Fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+shape_habitat  <- c(15, 16, 17)
+fill_habitat   <- colour_habitat
+
+depth_levels <- c("0-9", "10-19", "20-29", "30-39")
+depth_labels <- c("0", "10", "20", "30")
+fill_depth   <- RColorBrewer::brewer.pal(5, "YlOrBr")[-1]
+colour_depth <- fill_depth
+
+year_levels <- c("2011", "2012", "2013", "2014", "2015", "2016", "2017")
+year_labels <- year_levels
+fill_year   <- RColorBrewer::brewer.pal(7, "OrRd")
+colour_year <- fill_year
+
+set.seed(42)
+```
+
+```{r recursion-function}
+recurse_calc <- function(def, data, p = FALSE) {
+  global_brackets <- function(string) {
+    curr_level <- 1
+    string_split <- string %>%
+      str_sub(2L, -2L) %>%
+      str_split("") %>%
+      `[[`(1)
+
+    for (char in string_split) {
+      if (char == ')') curr_level <- curr_level - 1
+      else if (char == '(') curr_level <- curr_level + 1
+      if (curr_level == 0) return(FALSE)
+    }
+
+    return(TRUE)
+  }
+
+  split_into_steps <- function(string, delim = ",") {
+    curr_level <- 0
+    sep <- c()
+    string_split <- str_split(string, "")[[1]]
+
+    for (i in seq_along(string_split)) {
+      if (string_split[[i]] == "(") curr_level <- curr_level + 1
+      if (string_split[[i]] == ")") curr_level <- curr_level - 1
+
+      if (curr_level == 0 & string_split[[i]] == delim) sep <- c(sep, i)
+    }
+
+    starts <- c(1, sep + 1)
+    ends <- c(sep - 1, -1)
+
+    return(str_sub(string, starts, ends))
+  }
+
+  # If not "," in string, split by "+|(|)" return mean tpm for each label (NA => 0)
+  if (!str_detect(def, ",")) {
+    # print(str_c("floor: ", def))
+    value <- tibble(label = str_split(def, "\\+|\\(|\\)")[[1]]) %>%
+      filter(label != "") %>%
+      distinct(label) %>%
+      left_join(data, by = "label") %>%
+      replace_na(list(tpm = 0)) %>%
+      `$`(tpm) %>%
+      mean()
+
+    # print(value)
+    return(value)
+  }
+
+  # ElseIf start/end "()" at same level, remove "()", and delve
+  if (str_detect(def, "^\\(.*\\)$") & global_brackets(def)) {
+    # print(str_c("brackets: ", def))
+    value <- str_sub(def, 2L, -2L) %>%
+      recurse_calc(data)
+
+    # print(value)
+    return(value)
+  }
+
+  # ElseIf "," at highest level, (account for "," outside of "()") and delve
+  split_def <- def %>%
+    split_into_steps()
+  if (length(split_def) != 1) {
+    # print(str_c("commas: ", def))
+    value <- split_def %>%
+      map_dbl(recurse_calc, data) %>%
+      sum()
+
+    # print(value)
+    return(value)
+  }
+
+  # Else (account for "+" outside of "()") and delve
+  # print(str_c("plusses: ", def))
+  value <- def %>%
+    split_into_steps("+") %>%
+    map_dbl(recurse_calc, data) %>%
+    mean()
+
+  # print(value)
+  return(value)
+}
+
+test_data <- tibble(
+  label = c(1, 3, 5, 7),
+  tpm = c(1, 3, 5, 7)
+  )
+class(test_data[[1]]) <- "character"
+
+tribble(
+  ~def, ~expected,
+  "1+2", 0.5,
+  "1+3", 2,
+  "1+2,3", 3.5,
+  "1+2,1", 1.5,
+  "1,2+3,4", 2.5,
+  "1+2,3+4+5", 3.166,
+  "1+2+3,4+5,6+7,8", 7.333,
+  "(1+2),(3+4)", 2,
+  "(1+2),(3)", 3.5,
+  "1+(2+3,5)+6+7", 3.625,
+  "1+(3,5+7)", 5
+  ) %>%
+  mutate(
+    observed = map_dbl(def, recurse_calc, test_data),
+    diff = map2_dbl(expected, observed, `-`)
+  )
+
+reaction_calc <- function(raw, def) {
+  data <- raw %>%
+    select(label = label_id, tpm)
+
+  return(recurse_calc(def, data))
+}
+
+pathway_calc <- function(raw, def) {
+  data <- raw %>%
+    select(label = reaction, tpm)
+
+  return(recurse_calc(def, data))
+}
+```
+
+```{r pathway-expression}
+# nest genes associated with each reaction and join reaction definition
+# apply function to summarise tpm via definition
+# nest reactions associated with each subpathway (duplicates possible - join pathway_definitions first?) and join pathway definition
+# apply function to summarise tpm via definition
+# produce pathway expression for each subpathway for each genome for each sample
+
+reaction_cazy <- cazy_definitions %>%
+  group_by(pathway, subpathway, reaction) %>%
+  summarise(definition = str_c(cazy_id, sep = ",", collapse = ",")) %>%
+  mutate(reaction = map2_chr(subpathway, reaction, str_c, sep = "-")) %>%
+  ungroup()
+
+reaction_exp <- read_tsv(here("data", "DRAM_product_refined_resources", "custom_input_modules", "EMERGE_pathways_module.tsv")) %>%
+  mutate(reaction = map_chr(module_name, str_extract, "(?<=number:)[:digit:]+")) %>%
+  select(pathway = complex, reaction, definition) %>%
+  bind_rows(reaction_cazy %>% select(-subpathway)) %>%
+  mutate(
+    definition = pmap_chr(
+      list(pathway, reaction, definition),
+      ~ case_when(
+        # Original definition:                                 (K02588+K02586+K02591+K02585+K02587+K02592+K15790+K04488),(K22899+K22898+K22896+K22897+K02585+K02592+K22903),(K02588+K00531+K02586+K02591+K02585+K04488)
+        # ==> K02592 removed from vnf definition due to high overlap with nif
+        ..1 == "nitrogen_redox" & ..2 == 7                  ~ "K02585+((K02588+K02586+K02591+K04488+(K02587+K02592+K15790,K00531)),(K22899+K22898+K22896+K22897+K22903))",
+        # Original definition:                                 (K17222+K17223+K17224+K17225+K17226+K17227+K22622),(K17224+K17226+K17227),(K17223+K17226+K17227),(K17224+K17225+K22622)
+        # ==> soxB + soxCD and soxB + soxAX + soxYZ are each sufficient, so encoding both could allow both pathways simultaneously
+        ..1 == "sulfur_redox" & ..2 == 10                   ~ "K17224+(K17222+K17223+K17226+K17227,K17225+K22622)",
+        # Original definition:                                 K01427,(K01428+K01429+K01430),(K01428+K14048)
+        ..1 == "urea_degradation" & ..2 == 1                ~ "K01427,K01428+(K01429+K01430,K14048)",
+        # Original definition:                                 K00122,(K05299+K15022),(K00123+K22515),(K08348+K08349+K08350),(K00123+K00124+K00127)
+        ..1 == "carbon_redox" & ..2 == 7                    ~ "K00122,(K05299+K15022),(K00123+(K22515,K00124+K00127)),(K08348+K08349+K08350)",
+        # Original definition:                                 (K00163+K00627),(K00161+K00162+K00627),(K00169+K00170+K00171+K00172),(K00169+K00170+K00171+K00189),(K03737),(K00174+K00175),(K00656)
+        ..1 == "acetogenesis" & ..2 == 1                    ~ "((K00163,K00161+K00162)+K00627),(K00169+K00170+K00171+(K00172,K00189)),K03737,(K00174+K00175),K00656",
+        # Original definition:                                 (K00163+K00627),(K00161+K00162+K00627),(K00169+K00170+K00171+K00172),(K00169+K00170+K00171+K00189),(K03737),(K00174+K00175),(K00656)
+        ..1 == "ethanol_fermentation" & ..2 == 1            ~ "((K00163,K00161+K00162)+K00627),(K00169+K00170+K00171+(K00172,K00189)),K03737,(K00174+K00175),K00656",
+        # Original definition:                                 (K00163+K00627),(K00161+K00162+K00627),(K00169+K00170+K00171+K00172),(K00169+K00170+K00171+K00189),(K03737),(K00174+K00175),(K00656)
+        ..1 == "butanoate_fermentation" & ..2 == 14         ~ "((K00163,K00161+K00162)+K00627),(K00169+K00170+K00171+(K00172,K00189)),K03737,(K00174+K00175),K00656",
+        # Original definition:                                 (K02793+K02795+K02796),(K02794+K02795+K02796)
+        ..1 == "mannose_degradation" & ..2 == 2             ~ "(K02793,K02794)+K02795+K02796",
+        # Original definition:                                 (K00200+K00201+K00202+K00203+K11261+K00205),(K00200+K00201+K00202+K00203+K11261+K11260),(K00200+K00201+K00202+K00203+K11261+K00204)
+        ..1 == "hydrogenotrophic_methanogenesis" & ..2 == 1 ~ "K00200+K00201+K00202+K00203+K11261+(K00205,K11260,K00204)",
+        # Original definition:                                 (K00200+K00201+K00202+K00203+K11261+K00205),(K00200+K00201+K00202+K00203+K11261+K11260),(K00200+K00201+K00202+K00203+K11261+K00204)
+        ..1 == "methylotrophic_methanogenesis" & ..2 == 12  ~ "K00200+K00201+K00202+K00203+K11261+(K00205,K11260,K00204)",
+        # Original definition:                                 (K00200+K00201+K00202+K00203+K11261+K00205),(K00200+K00201+K00202+K00203+K11261+K11260),(K00200+K00201+K00202+K00203+K11261+K00204)
+        ..1 == "Wood_Ljungdahl" & ..2 == 3                  ~ "K00200+K00201+K00202+K00203+K11261+(K00205,K11260,K00204)",
+        # Original definition:                                 (K01962+K01963+K02160),(K01962+K18472+K02160)
+        ..1 == "HPHB_DCHB" & ..2 == 8                       ~ "K01962+(K01963,K18472)+K02160",
+        # Original definition:                                 (K00169+K00170+K00171+K00172),(K00169+K00170+K00171+K00189),(K03737)
+        ..1 == "reductive_glycine" & ..2 == 11              ~ "(K00169+K00170+K00171+(K00172,K00189)),K03737",
+        # Original definition:                                 GH121,GH127,GH137,GH142,GH146,GH54,GH62,GH2
+        # ==> GH146 and GH127 are called together for 1021/1069 genes
+        ..2 == "Arabinose_cleavage-Arabinose_Oligo_cleavage"~ "GH121,GH127+GH146,GH137,GH142,GH54,GH62,GH2",
+        TRUE ~ ..3
+      )
+    )
+  )
+
+pathway_cazy <- reaction_cazy %>%
+  group_by(pathway, subpathway) %>%
+  summarise(definition = str_c(reaction, collapse = "+")) %>%
+  mutate(subpathway = map2_chr(pathway, subpathway, str_c, sep = "-"))
+
+pathway_exp <- read_tsv(here("data", "DRAM_product_refined_resources", "pathways_refined.tsv")) %>%
+  select(pathway, subpathway, definition = reaction) %>%
+  mutate(
+    subpathway = map_chr(subpathway, str_replace, "dependent$", "dep"),
+    subpathway = map2_chr(pathway, subpathway, str_c, sep = "-")
+  ) %>%
+  bind_rows(pathway_cazy) %>%
+  mutate(
+    definition = pmap_chr(
+      list(subpathway, definition),
+      ~ case_when(
+        # Original definition:                                   1+2,1+3+15
+        ..1 == "nitrogen_redox-nitrate_reduction"             ~ "1+(2,3+15)",
+        # Original definition:                                   3+4,3+5+6
+        ..1 == "nitrogen_redox-denitrification"               ~ "3+(4,5+6)",
+        # Original definition:                                   1+2+3,1+2+3+4+5
+        # ==> 3 and 3+4+5 are redundant
+        ..1 == "sulfur_redox-dissimilatory_sulfate_reduction" ~ "1+2+(3,4+5)",
+        # Original definition:                                   1+2+3,3+5,1+6,4
+        # ==> 5 is least called, so will have least impact when overestimated
+        ..1 == "acetogenesis-all"                             ~ "1+(2+3,6),5,4",
+        # Original definition:                                   1+2+3,3+4
+        ..1 == "ethanol_fermentation-all"                     ~ "(1+2,4)+3",
+        # Original definition:                                   6+7+8+9+10+11,6+7+8+9+10+12+13
+        ..1 == "butanoate_fermentation-succinate_pathway"     ~ "6+7+8+9+10+(11,12+13)",
+        # Original definition:                                   14+15+16+17+10+11,14+15+16+17+10+12+13
+        ..1 == "butanoate_fermentation-acetyl_coa_pathway"    ~ "14+15+16+17+10+(11,12+13)",
+        # Original definition:                                   1+3,2+3
+        ..1 == "mannose_degradation-all"                      ~ "(1,2)+3",
+        # Original definition:                                   1+4+5+6+7+8,2+3+4+5+6+7+8
+        ..1 == "acetoclastic_methanogenesis-all"              ~ "(1,2+3)+4+5+6+7+8",
+        # Original definition:                                   1+6+7,2+6+7,3+6+7,4+6+7,5+6+7
+        ..1 == "methylotrophic_methanogenesis-h2_dep"         ~ "(1,2,3,4,5)+6+7",
+        # Original definition:                                   1+6+7+8+9+10+11+12,2+6+7+8+9+10+11+12,3+6+7+8+9+10+11+12,4+6+7+8+9+10+11+12,5+6+7+8+9+10+11+12
+        ..1 == "methylotrophic_methanogenesis-h2_indep"       ~ "(1,2,3,4,5)+6+7+8+9+10+11+12",
+        # Original definition:                                   1+2+3+4+7+8+11,1+2+3+4+7+9+10+11
+        ..1 == "reductive_glycine-acetyl_pathway"             ~ "1+2+3+4+7+(8,9+10)+11",
+        TRUE ~ ..2
+      )
+    )
+  )
+
+###################################
+### Run recursive summarisation ###
+###################################
+metaT_react <- metaT_pathways %>%
+  mutate(
+    reaction = pmap_chr(
+      list(pathway, subpathway, reaction),
+      ~ case_when(
+        ..1 == "CAZy" ~ str_c(..2, ..3, sep = "-"),
+        TRUE ~ ..3
+        )
+      ),
+    subpathway = map2_chr(pathway, subpathway, str_c, sep = "-")
+    ) %>%
+  group_by(SampleID__, genome, pathway, subpathway, reaction) %>%
+  nest() %>%
+  left_join(reaction_exp) %>%
+  mutate(
+    tpm = map2_dbl(data, definition, reaction_calc)
+  )
+
+metaT_exp <- metaT_react %>%
+  group_by(SampleID__, genome, pathway, subpathway) %>%
+  nest() %>%
+  left_join(pathway_exp) %>%
+  mutate(
+    tpm = map2_dbl(data, definition, pathway_calc)
+  )
+
+# Save pathway tpm
+metaT_exp %>%
+  left_join(product_refined, by = c("genome", "subpathway")) %>%
+  filter(!is.na(call), call) %>%
+  select(SampleID__, genome, subpathway, tpm) %>%
+  arrange(SampleID__, genome, subpathway) %>%
+  write_csv(here(v7_metaT_processed_directory, "metaT_pathway_exp.csv"))
+
+metaT_react %>%
+  left_join(product %>% select(genome, pathway, reaction, call), by = c("genome", "pathway", "reaction")) %>%
+  filter(!is.na(call), call) %>%
+  ungroup() %>%
+  select(SampleID__, genome, pathway, reaction, tpm) %>%
+  arrange(SampleID__, genome, pathway, reaction) %>%
+  write_csv(here(v7_metaT_processed_directory, "metaT_reaction_exp.csv"))
+```
+
+
+```{r checking}
+# Check for duplicate genes/reactions within definitions to manually cleanup
+reaction_exp %>%
+  separate_rows(definition, sep = "\\(|\\)|\\+|,") %>%
+  filter(definition != "") %>%
+  group_by(pathway, reaction, definition) %>%
+  filter(n() > 1) %>%
+  ungroup() %>%
+  distinct(pathway, reaction) %>%
+  left_join(reaction_exp)
+
+pathway_exp %>%
+  separate_rows(definition, sep = "\\(|\\)|\\+|,") %>%
+  filter(definition != "") %>%
+  group_by(pathway, subpathway, definition) %>%
+  filter(n() > 1) %>%
+  ungroup() %>%
+  distinct(pathway, subpathway) %>%
+  left_join(pathway_exp)
+
+# There is extensive overlap of cazy_id calls on the same gene
+# Most are GH127 + GH146, which are called together for 96% of their genes
+# This pair accounts for 1021 of 1341 overlaps
+# All other overlaps were <=10% of their genes
+cazy_overlap <- metaT_pathways %>%
+  select(gene_id, cazy_id) %>%
+  filter(!is.na(cazy_id)) %>%
+  separate_rows(cazy_id) %>%
+  distinct() %>%
+  filter(!grepl("^[0-9]", cazy_id)) %>%
+  left_join(
+    reaction_cazy %>%
+      separate_rows(definition) %>%
+      rename(cazy_id = definition)
+  ) %>%
+  filter(!is.na(pathway)) %>%
+  group_by(pathway, subpathway, reaction, gene_id) %>%
+  summarise(n = n(), cazy_id = str_c(sort(cazy_id), collapse = ",")) %>%
+  arrange(desc(n)) %>%
+  filter(n > 1) %>%
+  group_by(reaction, cazy_id) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n)) %>%
+  mutate(
+    pattern = map_chr(cazy_id, str_replace, ",", "|"),
+    n_total = map_int(pattern,
+      ~ metaT_pathways %>% filter(str_detect(cazy_id, pattern = .x)) %>% group_by(gene_id) %>% summarise() %>% nrow()
+    ),
+    percent = map2_dbl(n, n_total, ~ 100 * .x / .y)
+  )
+```

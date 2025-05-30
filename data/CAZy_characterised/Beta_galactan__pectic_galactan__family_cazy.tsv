@@ -1,0 +1,161 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+endo-β-1,4-galactanase (IaGal;Igag_0688)	3.2.1.89	pubmed	Ignisphaera aggregans DSM 17230	ADM27518.1		7OSK[A,B]	Archaea	24	GH53
+endo-β-1,4-galactanase (BlGal;YvfO;BL00263;BLi04276)	3.2.1.89	pubmed	Bacillus licheniformis DSM 13 = ATCC 14580	AAU25711.1	Q62NF0Q65CX5	1R8L[A,B]1UR0[A,B]1UR4[A,B]2CCR[A,B]2GFT[A,B]2J74[A,B]	Bacteria	24	GH53
+endo-β-1,4-galactanase (BlGal;YvfO;BL00263;BLi04276)	3.2.1.89	pubmed	Bacillus licheniformis DSM 13 = ATCC 14580	AAO31370.1	Q62NF0Q65CX5	1R8L[A,B]1UR0[A,B]1UR4[A,B]2CCR[A,B]2GFT[A,B]2J74[A,B]	Bacteria	24	GH53
+endo-β-1,4-galactanase (BlGal;YvfO;BL00263;BLi04276)	3.2.1.89	pubmed	Bacillus licheniformis DSM 13 = ATCC 14580	AAU43089.1	Q62NF0Q65CX5	1R8L[A,B]1UR0[A,B]1UR4[A,B]2CCR[A,B]2GFT[A,B]2J74[A,B]	Bacteria	24	GH53
+endo-β-1,4-galactanase (BlGal;YvfO;BL00263;BLi04276)	3.2.1.89	pubmed	Bacillus licheniformis DSM 13 = ATCC 14580	ACS08442.1	Q62NF0Q65CX5	1R8L[A,B]1UR0[A,B]1UR4[A,B]2CCR[A,B]2GFT[A,B]2J74[A,B]	Bacteria	24	GH53
+galactanase (GalA;YvfO;BSU34120)	3.2.1.89	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB08009.1	A0A6M3ZGT1O07013		Bacteria	24	GH53
+galactanase (GalA;YvfO;BSU34120)	3.2.1.89	pubmed	Bacillus subtilis subsp. subtilis str. 168	AAO31373.1	A0A6M3ZGT1O07013		Bacteria	24	GH53
+galactanase (GalA;YvfO;BSU34120)	3.2.1.89	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY94731.1	A0A6M3ZGT1O07013		Bacteria	24	GH53
+galactanase (GalA;YvfO;BSU34120)	3.2.1.89	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR83447.1	A0A6M3ZGT1O07013		Bacteria	24	GH53
+galactanase (GalA;YvfO;BSU34120)	3.2.1.89	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR87662.1	A0A6M3ZGT1O07013		Bacteria	24	GH53
+galactanase (GalA;YvfO;BSU34120)	3.2.1.89	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB15417.2	A0A6M3ZGT1O07013		Bacteria	24	GH53
+galactanase (GalA;YvfO;BSU34120)	3.2.1.89	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_391292.1	A0A6M3ZGT1O07013		Bacteria	24	GH53
+endo-β-1,4-galactanase (BtGH53;BT4668;BT_4668)	3.2.1.89	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO79773.1	Q89YR3	6GP5[A,B]6GPA[A,B]	Bacteria	24	GH53
+endo-β-1,4-galactanase (BtGH53;BT4668;BT_4668)	3.2.1.89	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_813579.1	Q89YR3	6GP5[A,B]6GPA[A,B]	Bacteria	24	GH53
+endogalactanase (GalA;Bbr_0422_galA;Bbr_0422)	3.2.1.89	pubmed	Bifidobacterium breve UCC2003	ACO06241.1	C1J0P1		Bacteria	24	GH53
+endogalactanase (GalA;Bbr_0422_galA;Bbr_0422)	3.2.1.89	pubmed	Bifidobacterium breve UCC2003	ABE95120.1	C1J0P1		Bacteria	24	GH53
+endogalactanase (GalA;Bbr_0422_galA;Bbr_0422)	3.2.1.89	pubmed	Bifidobacterium breve UCC2003	ADO51669.1	C1J0P1		Bacteria	24	GH53
+endogalactanase (YvfO;BL0257)	3.2.1.89	pubmed	Bifidobacterium longum NCC2705	AAN24099.1	Q8G7K7		Bacteria	24	GH53
+endogalactanase (YvfO;BL0257)	3.2.1.89	pubmed	Bifidobacterium longum NCC2705	NP_695463.1	Q8G7K7		Bacteria	24	GH53
+endo-β-1,4-galactanase (GalA;GanA;CJA_0497) (Gal53A-2)	3.2.1.89	pubmed	Cellvibrio japonicus Ueda107	ACE83887.1	B3PIY6P48841		Bacteria	24	GH53
+endo-β-1,4-galactanase (GalA;GanA;CJA_0497) (Gal53A-2)	3.2.1.89	pubmed	Cellvibrio japonicus Ueda107	CAA62990.1	B3PIY6P48841		Bacteria	24	GH53
+endo-β-1,4-galactanase (GanA;Dda3937_02392)	3.2.1.89	pubmed	Dickeya dadantii 3937	ADM99400.1	E0SM65		Bacteria	24	GH53
+endo-β-1,4-galactanase (GanA;Gan53A) (extracellular)	3.2.1.89	pubmed	Geobacillus stearothermophilus T-6	AEH26456.2	F8TRX1		Bacteria	24	GH53
+endo-β-1,4-galactanase (GanA;Gan53A) (extracellular)	3.2.1.89	pubmed	Geobacillus stearothermophilus T-6	AEH26456.1	F8TRX1		Bacteria	24	GH53
+endo-β-1,4-galactanase (TM1201;Tmari_1208)	3.2.1.89	pubmed	Thermotoga maritima MSB8	AAD36276.1	Q9X0S8R4P0K5		Bacteria	24	GH53
+endo-β-1,4-galactanase (TM1201;Tmari_1208)	3.2.1.89	pubmed	Thermotoga maritima MSB8	AGL50132.1	Q9X0S8R4P0K5		Bacteria	24	GH53
+endo-β-1,4-galactanase (TM1201;Tmari_1208)	3.2.1.89	pubmed	Thermotoga maritima MSB8	AHD18892.1	Q9X0S8R4P0K5		Bacteria	24	GH53
+endo-β-1,4-galactanase (TM1201;Tmari_1208)	3.2.1.89	pubmed	Thermotoga maritima MSB8	AKE28977.1	Q9X0S8R4P0K5		Bacteria	24	GH53
+endo-β-1,4-galactanase (TM1201;Tmari_1208)	3.2.1.89	pubmed	Thermotoga maritima MSB8	NP_229006.1	Q9X0S8R4P0K5		Bacteria	24	GH53
+exo-β-glucosaminidase (BglC;PH0511.1;PH0511)	3.2.1.165	pubmed	Pyrococcus horikoshii OT3	BAA29599.1	O58247	5GSL[A,B]	Archaea	70	GH35
+exo-β-glucosaminidase (BglC;PH0511.1;PH0511)	3.2.1.165	pubmed	Pyrococcus horikoshii OT3	NP_142480.1	O58247	5GSL[A,B]	Archaea	70	GH35
+exo-β-glucosaminidase (GlmA;GlmATK;TK-Glm;TK1754)	3.2.1.165	pubmed	Thermococcus kodakarensis KOD1	BAC82164.1	Q76HN4	5GSM[A,B]	Archaea	70	GH35
+exo-β-glucosaminidase (GlmA;GlmATK;TK-Glm;TK1754)	3.2.1.165	pubmed	Thermococcus kodakarensis KOD1	BAD85943.1	Q76HN4	5GSM[A,B]	Archaea	70	GH35
+exo-β-glucosaminidase (GlmA;GlmATK;TK-Glm;TK1754)	3.2.1.165	pubmed	Thermococcus kodakarensis KOD1	CAT72344.1	Q76HN4	5GSM[A,B]	Archaea	70	GH35
+β-galactosidase (Amuc_0771)	3.2.1.23	pubmed	Akkermansia muciniphila ATCC BAA-835	ACD04606.1	B2UQ71		Bacteria	70	GH35
+β-galactosidase (Amuc_0771)	3.2.1.23	pubmed	Akkermansia muciniphila ATCC BAA-835	QTD81396.1	B2UQ71		Bacteria	70	GH35
+β-galactosidase	3.2.1.23	pubmed	Arthrobacter sp.	AAC45218.1	P96567		Bacteria	70	GH35
+β-galactosidase (BT4160;BT_4160)	3.2.1.23	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO79265.1	Q8A061		Bacteria	70	GH35
+β-galactosidase (BT4160;BT_4160)	3.2.1.23	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_813071.1	Q8A061		Bacteria	70	GH35
+β-galactosidase (BgaC)	3.2.1.23	pubmed	Carnobacterium maltaromaticum	AAL27306.1	Q93DW7		Bacteria	70	GH35
+β-galactosidase 35A (CjBgl35A;CJA_2707) (Bgl35A)	3.2.1.23	pubmed	Cellvibrio japonicus Ueda107	ACE85180.1	B3PBE0	4D1I[A,B,C,D,E,F,G,H]4D1J[A,B,C,D,E,F,G,H]5JAW[A,B,C,D,E,F,G,H]6TBF[A,B,C,D,E,F,G,H]6TBG[A,B,C,D,E,F,G,H]6TBH[A,B,C,D,E,F,G,H]6TBI[A,B,C,D,E,F,G,H]6TBJ[A,B,C,D,E,F,G,H]6TBK[A,B,C,D,E,F,G,H]	Bacteria	70	GH35
+sophorohydrolase / β-1,2-glucooligosaccharide:β-glucosyltransferase (IALB_1185)	3.2.1.2142.4.1.-	pubmedpubmed	Ignavibacterium album JCM 16511	AFH48896.1		7VKW[A,B]7VKX[A,B]7VKY[A,B]7VKZ[A,B]7VL0[A,B]7VL1[A,B]7VL2[A,B]7VL3[A,B]7VL4[A,B]7VL5[A,B]7VL6[A,B]7VL7[A,B]7X87[A,B]	Bacteria	70	GH35
+β-galactosidase (BgaC;β-gal-3)	3.2.1.23	pubmed	Niallia circulans ATCC 31382	BAA21669.1	O31341	4MAD[A,B]	Bacteria	70	GH35
+β-galactosidase; β-D-fucosidase (GalF)	3.2.1.233.2.1.38	pubmedpubmed	Paenibacillus thiaminolyticus	CAZ44333.1	C7U109		Bacteria	70	GH35
+β-galactosidase (BgaC;SPD0065;SPD_0065)	3.2.1.23	pubmed	Streptococcus pneumoniae D39	ABJ55509.1	A0A0H2ZQE5Q04N11		Bacteria	70	GH35
+β-1,3-galactosidase (BgaC)	3.2.1.233.2.1.-	pubmedpubmed	Streptococcus pneumoniae R6	AAK98863.1	Q8DRL4		Bacteria	70	GH35
+β-1,3-galactosidase (BgaC)	3.2.1.233.2.1.-	pubmedpubmed	Streptococcus pneumoniae R6	NP_357653.1	Q8DRL4		Bacteria	70	GH35
+β-1,3-galactosidase (BgaC;SP0060)	3.2.1.23	pubmed	Streptococcus pneumoniae TIGR4	AAK74249.1	A0A0H2UN19Q97T90	4E8C[A,B]4E8D[A,B]	Bacteria	70	GH35
+β-1,3-galactosidase (BgaC;SP0060)	3.2.1.23	pubmed	Streptococcus pneumoniae TIGR4	NP_344609.1	A0A0H2UN19Q97T90	4E8C[A,B]4E8D[A,B]	Bacteria	70	GH35
+β-galactosidase (BgaC;SSU05_0449)	3.2.1.233.2.1.-	pubmedpubmed	Streptococcus suis 05ZYH33	ABP89415.1	A4VTH6		Bacteria	70	GH35
+β-galactosidase 35A (Bga35A; BgA; Cst_c22720)	3.2.1.23	pubmed	Thermoclostridium stercorarium subsp. stercorarium DSM 8532	AGC69232.1			Bacteria	70	GH35
+β-galactosidase 35A (Bga35A; BgA; Cst_c22720)	3.2.1.23	pubmed	Thermoclostridium stercorarium subsp. stercorarium DSM 8532	AGI40203.1			Bacteria	70	GH35
+β-galactosidase (Gal35I;GalC)	3.2.1.23	pubmed	Xanthomonas campestris pv. campestris	AAP86763.1	Q6X1E5		Bacteria	70	GH35
+β-galactosidase (GalD)	3.2.1.23	pubmed	Xanthomonas campestris pv. campestris	ABA39423.1	Q0H932		Bacteria	70	GH35
+β-galactosidase (XC1214; XC_1214)	3.2.1.23	pubmed	Xanthomonas campestris pv. campestris str. 8004	AAY48283.1			Bacteria	70	GH35
+β-galactosidase (Bga;NixL;XCC2895)	3.2.1.23	pubmed	Xanthomonas campestris pv. campestris str. ATCC 33913	AAM42167.1	Q8P6S0		Bacteria	70	GH35
+β-galactosidase (Bga;NixL;XCC2895)	3.2.1.23	pubmed	Xanthomonas campestris pv. campestris str. ATCC 33913	NP_638243.1	Q8P6S0		Bacteria	70	GH35
+β-galactosidase (XAC1772)	3.2.1.23	doi	Xanthomonas citri pv. citri str. 306	AAM36636.1	Q8PLM3	7KMN[A]7KMO[A]	Bacteria	70	GH35
+β-galactosidase (XAC1772)	3.2.1.23	doi	Xanthomonas citri pv. citri str. 306	NP_642100.1	Q8PLM3	7KMN[A]7KMO[A]	Bacteria	70	GH35
+β-galactosidase (BGA;BgaX)	3.2.1.23	pubmed	Xanthomonas phaseoli pv. manihotis	AAC41485.1	P48982		Bacteria	70	GH35
+β-galactosidase (BgaH)	3.2.1.23	pubmed	Haloferax lucentense SB1	AAB40123.2	P94804		Archaea	69	GH42
+β-galactosidase (Bga;Hlac_2868)	3.2.1.23	pubmed	Halorubrum lacusprofundi ATCC 49239	ACM58428.1	B9LW38	6LVW[A]	Archaea	69	GH42
+β-galactosidase (GalB;LacB;Bgly;Aaci_2891)	3.2.1.23	pubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	ACV59895.1	C8WV58Q06GJ1Q0R5R5		Bacteria	69	GH42
+β-galactosidase (GalB;LacB;Bgly;Aaci_2891)	3.2.1.23	pubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	AAZ81841.1	C8WV58Q06GJ1Q0R5R5		Bacteria	69	GH42
+β-galactosidase (GalB;LacB;Bgly;Aaci_2891)	3.2.1.23	pubmed	Alicyclobacillus acidocaldarius subsp. acidocaldarius DSM 446	ABI84370.1	C8WV58Q06GJ1Q0R5R5		Bacteria	69	GH42
+β-galactosidase	3.2.1.23	pubmed	Arthrobacter sp. 32c	ACU00913.1	C7ASJ5		Bacteria	69	GH42
+β-galactosidase 12 (LacG)  (possible fragment)	3.2.1.23	pubmed	Arthrobacter sp. B7	AAA75601.1	Q44233		Bacteria	69	GH42
+β-galactosidase (GalB)	3.2.1.23	pubmed	Arthrobacter sp. ON14	ADJ18282.1	D9IU57		Bacteria	69	GH42
+β-galactosidase (LacA;BLi04277;BL00264)	3.2.1.23	pubmed	Bacillus licheniformis DSM 13 = ATCC 14580	AAU43090.1	Q65CX4		Bacteria	69	GH42
+β-galactosidase (LacA;BLi04277;BL00264)	3.2.1.23	pubmed	Bacillus licheniformis DSM 13 = ATCC 14580	AAU25712.1	Q65CX4		Bacteria	69	GH42
+β-galactosidase (LacA;BLi04277;BL00264)	3.2.1.23	pubmed	Bacillus licheniformis DSM 13 = ATCC 14580	ACP63807.1	Q65CX4		Bacteria	69	GH42
+β-galactosidase (BglZQ)	3.2.1.23	pubmed	Bacillus licheniformis ZQ1-8	AHW49175.1	X5D2S6		Bacteria	69	GH42
+β-galactosidase, partial (Gal42)	3.2.1.23	pubmed	Bacillus sp. (in: Bacteria) BY02	QSJ03389.1			Bacteria	69	GH42
+β-galactosidase (LacA)	3.2.1.23	URL	Bacillus subtilis G1	ACB72733.1	B2LUM2		Bacteria	69	GH42
+β-galactosidase (YesZ;BSU07080)	3.2.1.23	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB12527.1	A0A6M3Z8Q4O31529		Bacteria	69	GH42
+β-galactosidase (YesZ;BSU07080)	3.2.1.23	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY91999.1	A0A6M3Z8Q4O31529		Bacteria	69	GH42
+β-galactosidase (YesZ;BSU07080)	3.2.1.23	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR80664.1	A0A6M3Z8Q4O31529		Bacteria	69	GH42
+β-galactosidase (YesZ;BSU07080)	3.2.1.23	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR84877.1	A0A6M3Z8Q4O31529		Bacteria	69	GH42
+β-galactosidase (YesZ;BSU07080)	3.2.1.23	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_388589.1	A0A6M3Z8Q4O31529		Bacteria	69	GH42
+β-galactosidase (LacA;YvfN;BSU34130)	3.2.1.23	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB15418.1	O07012		Bacteria	69	GH42
+β-galactosidase (LacA;YvfN;BSU34130)	3.2.1.23	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY94732.1	O07012		Bacteria	69	GH42
+β-galactosidase (LacA;YvfN;BSU34130)	3.2.1.23	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR83448.1	O07012		Bacteria	69	GH42
+β-galactosidase (LacA;YvfN;BSU34130)	3.2.1.23	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR87663.1	O07012		Bacteria	69	GH42
+β-galactosidase (LacA;YvfN;BSU34130)	3.2.1.23	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB08008.1	O07012		Bacteria	69	GH42
+β-galactosidase (LacA;YvfN;BSU34130)	3.2.1.23	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_391293.1	O07012		Bacteria	69	GH42
+β-galactosidase (BgaB; BgalII)	3.2.1.23	pubmed	Bifidobacterium adolescentis DSM 20083	AAR24113.1	A1A399Q5J883	5VYM[A,B]	Bacteria	69	GH42
+β-galactosidase (Bg42-106)	3.2.1.23	pubmed	Bifidobacterium animalis B106	AGH68883.1	S4U4B5		Bacteria	69	GH42
+β-1,6/β-1,3-galactosidase (BlGal42A;Balac_0484) (Gal42A)	3.2.1.23	pubmed	Bifidobacterium animalis subsp. lactis Bl-04	ACS45863.1	C6A6W5	4UNI[A,B,C]4UOQ[A,B,C]4UOZ[A,B,C]	Bacteria	69	GH42
+α-L-arabinopyranosidase (Balac_0053)	3.2.1.-	pubmed	Bifidobacterium animalis subsp. lactis Bl-04	ACS45449.1	A0A2H4A2Z3C6A5Q1	5XB7[A,B,C,D,E,F]	Bacteria	69	GH42
+β-galactosidase (B216_08266;BBBF_1344)	3.2.1.23	pubmed	Bifidobacterium bifidum ATCC 29521 = JCM 1255 = DSM 20456	BAQ98551.1	K2I5J0		Bacteria	69	GH42
+β-galactosidase (B216_08266;BBBF_1344)	3.2.1.23	pubmed	Bifidobacterium bifidum ATCC 29521 = JCM 1255 = DSM 20456	EKE50024.1	K2I5J0		Bacteria	69	GH42
+β-galactosidase P2 (BbgII)	3.2.1.23	pubmed	Bifidobacterium bifidum NCIMB 41171	ABP87597.1	A5A2I5		Bacteria	69	GH42
+β-galactosidase (BbgII;LacZ2;BBIF_1313)	3.2.1.23	pubmed	Bifidobacterium bifidum S17	ADO53518.1	E3EPA1	4UCF[A,B,C]4UZS[A,B,C]	Bacteria	69	GH42
+β-galactosidase (Bgal;GalA;LacA)	3.2.1.23	pubmed	Bifidobacterium breve ATCC 15698 / B24	AAU00556.1	Q68GW3		Bacteria	69	GH42
+β-galactosidase (GalG;Lacz4;Bbr_0420_galG;Bbr_0420)	3.2.1.23	pubmed	Bifidobacterium breve UCC2003	ABE95118.1	F9Y1U6		Bacteria	69	GH42
+β-galactosidase (GalG;Lacz4;Bbr_0420_galG;Bbr_0420)	3.2.1.23	pubmed	Bifidobacterium breve UCC2003	ADO51667.1	F9Y1U6		Bacteria	69	GH42
+β-galactosidase (GosG;Lacz5;Bbr_0529_gosG;Bbr_0529)	3.2.1.23	pubmed	Bifidobacterium breve UCC2003	ABE95226.1			Bacteria	69	GH42
+β-1,4-galactosidase (Bbry_0422)	3.2.1.23	pubmed	Bifidobacterium breve Yakult	BAR71185.1	A0A0F7QXK8		Bacteria	69	GH42
+β-galactosidase (LacA1;BLD_0926)	3.2.1.23	URL	Bifidobacterium longum DJO10A	ACD98372.1	B3DTA3		Bacteria	69	GH42
+β-galactosidase 42A (Blon_2016) (Bga42A)	3.2.1.23	pubmed	Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088	ACJ53083.1	B7GUD7		Bacteria	69	GH42
+β-galactosidase 42B (Blon_2123) (Bga42B)	3.2.1.23	pubmed	Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088	ACJ53184.1	B7GUN8		Bacteria	69	GH42
+β-galactosidase 42C (Blon_2416) (Bga42C)	3.2.1.23	pubmed	Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088	ACJ53470.1	B7GNW4		Bacteria	69	GH42
+β-galactosidase (INF1)	3.2.1.23	pubmed	Bifidobacterium longum subsp. infantis DSM20088	CAC14567.1	Q9F4C8		Bacteria	69	GH42
+β-galactosidase III (β-GalIII)	3.2.1.23	pubmed	Bifidobacterium longum subsp. infantis HL96	AAL02053.1	Q93GI5		Bacteria	69	GH42
+β-galactosidase (B8809_0321)	3.2.1.23	pubmed	Bifidobacterium longum subsp. longum NCIMB8809	ALO71994.1			Bacteria	69	GH42
+β-galactosidase (Csac_1018)	3.2.1.23	pubmed	Caldicellulosiruptor saccharolyticus DSM 8903	ABP66632.1	A4XI97		Bacteria	69	GH42
+β-galactosidase (BgaB)	3.2.1.23	pubmed	Carnobacterium maltaromaticum	AAF16519.1	Q9RFN0		Bacteria	69	GH42
+β-galactosidase / α-L-arabinopyranosidase (BgaA)	3.2.1.233.2.1.-	pubmedpubmed	Clostridium cellulovorans	AAN05452.1	D9SM34Q8GEE3		Bacteria	69	GH42
+β-galactosidase (Pbg)	3.2.1.23	pubmed	Clostridium perfringens	BAA08485.1	Q0TUR6Q59312Q79A09		Bacteria	69	GH42
+β-galactosidase (Pbg)	3.2.1.23	pubmed	Clostridium perfringens	CAA66274.1	Q0TUR6Q59312Q79A09		Bacteria	69	GH42
+β-galactosidase (Dgeo_2829)	3.2.1.23	pubmed	Deinococcus geothermalis DSM 11300	ABF44258.1	Q1J2M6		Bacteria	69	GH42
+β-galactosidase (Dgeo_2829)	3.2.1.23	pubmed	Deinococcus geothermalis DSM 11300	YP_594332.1	Q1J2M6		Bacteria	69	GH42
+β-galactosidase / exo-β-1,4-galactanase (GanB;LacB;Dda3937_02393)	3.2.1.23	pubmed	Dickeya dadantii 3937	ADM99399.1	E0SM64		Bacteria	69	GH42
+β-galactosidase (Dtur_0505)	3.2.1.23	pubmed	Dictyoglomus turgidum DSM 6724	ACK41798.1	B8E215		Bacteria	69	GH42
+β-galactosidase I (BgaB)	3.2.1.23	pubmed	Geobacillus stearothermophilus KVE39	AAA22262.1	P19668		Bacteria	69	GH42
+β-galactosidase (GanB;Gan42B) (intracellular)	3.2.1.23	pubmed	Geobacillus stearothermophilus T-6	AEH26455.1	F8TRX0	4OIF[A,B,C]4OJY[A,B,C]5DFA[A,B,C]	Bacteria	69	GH42
+β-galactosidase (GalC168)	3.2.1.23	pubmed	Isoptericola sp. 168	ACV30341.1	C7T4Z3		Bacteria	69	GH42
+β-galactosidase (BgaB)	3.2.1.23	pubmed	Klebsiella pneumoniae 285	AEA30144.1	F2X2W6		Bacteria	69	GH42
+β-galactosidase (LacA)	3.2.1.23	pubmed	Lactobacillus acidophilus FUA3191	CAZ66938.1	C6H178		Bacteria	69	GH42
+β-galactosidase (LacZ;LBA1462)	3.2.1.23	pubmed	Lactobacillus acidophilus NCFM	ACC38288.1	Q5FJ41Q5FJ41		Bacteria	69	GH42
+β-galactosidase (LacZ;LBA1462)	3.2.1.23	pubmed	Lactobacillus acidophilus NCFM	AAV43283.1	Q5FJ41Q5FJ41		Bacteria	69	GH42
+β-galactosidase (LacZ;LBA1462)	3.2.1.23	pubmed	Lactobacillus acidophilus NCFM	CAN87410.1	Q5FJ41Q5FJ41		Bacteria	69	GH42
+β-galactosidase (bg42-164)	3.2.1.23	URL	Lactobacillus sp. B164	AFC88544.1	H8Y676		Bacteria	69	GH42
+β-galactosidase	3.2.1.23	pubmed	Marinomonas sp. ef1	WP_100635792.1	A0A6P3CWF7	6Y2K[A]	Bacteria	69	GH42
+β-galactosidase (BgaB)	3.2.1.23	pubmed	Niallia circulans G1	AAA22260.1	Q45093		Bacteria	69	GH42
+β-galactosidase (Bcα-β-Gal)	3.2.1.23	pubmed	Niallia circulans subsp. alkalophilus	QCG73672.1	A0A4D6T0U7	3TTS[B,C,D,E,F]3TTY[A,B,C,D,E,F]3TTS[A]	Bacteria	69	GH42
+β-galactosidase (BgaP1)	3.2.1.23	pubmed	Paenibacillus sp. K1	ACE62913.1	B3VBH7		Bacteria	69	GH42
+β-galactosidase (BgaP)	3.2.1.23	pubmed	Planococcus sp. L4	ABI64125.1	Q09HN2	cryst	Bacteria	69	GH42
+β-galactosidase (BgaA)	3.2.1.23	pubmed	Planococcus sp. SOS Orange	AAF75984.1	Q9KI47		Bacteria	69	GH42
+β-galactosidase (Achl_3125)	3.2.1.23	pubmed	Pseudarthrobacter chlorophenolicus A6	ACL41086.1	B8HFB8		Bacteria	69	GH42
+β-galactosidase (R-β-Gal)	3.2.1.23	pubmed	Rahnella sp. R3	AJC52391.1	A0A0B4U8I5	5E9A[A,B,C,D,E,F]	Bacteria	69	GH42
+β-galactosidase 42A (Ccel_2451) (Gal42A)	3.2.1.23	pubmed	Ruminiclostridium cellulolyticum H10	ACL76780.1			Bacteria	69	GH42
+β-galactosidase (BgalC;TM1195)	3.2.1.23	doi	Thermotoga maritima MSB8	AAD36270.1	Q56306Q9X0S2R4NSB2		Bacteria	69	GH42
+β-galactosidase (BgalC;TM1195)	3.2.1.23	doi	Thermotoga maritima MSB8	AAA50596.1	Q56306Q9X0S2R4NSB2		Bacteria	69	GH42
+β-galactosidase (BgalC;TM1195)	3.2.1.23	doi	Thermotoga maritima MSB8	AGL50126.1	Q56306Q9X0S2R4NSB2		Bacteria	69	GH42
+β-galactosidase (BgalC;TM1195)	3.2.1.23	doi	Thermotoga maritima MSB8	AHD18898.1	Q56306Q9X0S2R4NSB2		Bacteria	69	GH42
+β-galactosidase (BgalC;TM1195)	3.2.1.23	doi	Thermotoga maritima MSB8	AKE28971.1	Q56306Q9X0S2R4NSB2		Bacteria	69	GH42
+β-galactosidase (BgalC;TM1195)	3.2.1.23	doi	Thermotoga maritima MSB8	NP_229000.1	Q56306Q9X0S2R4NSB2		Bacteria	69	GH42
+β-galactosidase (BgalB;TM0310)	3.2.1.23	doi	Thermotoga maritima MSB8	AAD35398.1	Q9WYE6R4NXW2		Bacteria	69	GH42
+β-galactosidase (BgalB;TM0310)	3.2.1.23	doi	Thermotoga maritima MSB8	AGL49234.1	Q9WYE6R4NXW2		Bacteria	69	GH42
+β-galactosidase (BgalB;TM0310)	3.2.1.23	doi	Thermotoga maritima MSB8	AHD17926.1	Q9WYE6R4NXW2		Bacteria	69	GH42
+β-galactosidase (BgalB;TM0310)	3.2.1.23	doi	Thermotoga maritima MSB8	AKE28111.1	Q9WYE6R4NXW2		Bacteria	69	GH42
+β-galactosidase (BgalB;TM0310)	3.2.1.23	doi	Thermotoga maritima MSB8	NP_228122.1	Q9WYE6R4NXW2		Bacteria	69	GH42
+β-galactosidase (Tnap_1577)	3.2.1.23	doi	Thermotoga naphthophila RKU-10	ADA67652.1	D2C4J8		Bacteria	69	GH42
+β-galactosidase (BgaA)	3.2.1.23	doi	Thermus oshimai DSM 12092	ACV87364.1	C9EF70		Bacteria	69	GH42
+β-galactosidase (A4-β-Gal)	3.2.1.23	pubmed	Thermus sp. A4	BAA28362.1	O69315	1KWG[A]1KWK[A]	Bacteria	69	GH42
+β-galactosidase (BgaA)	3.2.1.23	pubmed	Thermus sp. IB-21	AAN05443.1	Q8GEA9		Bacteria	69	GH42
+β-galactosidase	3.2.1.23	pubmed	Thermus sp. T2	CAB07810.1	O54315		Bacteria	69	GH42
+β-galactosidase	3.2.1.23	doi	Thermus thermophilus KNOUC112	ABI35985.1	Q0GA06		Bacteria	69	GH42
+β-galactosidase (Zd410)	3.2.1.23	pubmed	uncultured bacterium	ADD69785.1	D4NYL2		Bacteria	69	GH42
+β-galactosidase (Gal308) (thermostable)	3.2.1.23	pubmed	uncultured bacterium	AFD21844.1	H9BEW4		Bacteria	69	GH42
+β-galactosidase (BgaP412)	3.2.1.23	pubmed	uncultured bacterium	AFD29748.1	H9BYJ8		Bacteria	69	GH42
+β-galactosidase (LacZ)	3.2.1.23	pubmed	Weizmannia coagulans DSM 1	ADF47156.1	D5JGG0		Bacteria	69	GH42
+β-galactosidase (BcGalB; E2E33_010705)	3.2.1.23	pubmed	Weizmannia coagulans MA-13	MBF8418755.1			Bacteria	69	GH42
+β-galactosidase (BcBga)	3.2.1.23	pubmed	Weizmannia coagulans NL01	AKB91764.1			Bacteria	69	GH42
+thermostable galactosidase (Act)	3.2.1.23	doi	Weizmannia coagulans T242	AFC88037.1			Bacteria	69	GH42
+endo-β-1,4-galactanase (BcellWH2_01294)	3.2.1.89	pubmed	Bacteroides cellulosilyticus	WP_029428318.1	A0A0N7IEW7		Bacteria	4	GH147
+β-galactosidase (BACOVA_05493; Bovatus_04881)	3.2.1.23	pubmed	Bacteroides ovatus ATCC 8483	ALJ49469.1			Bacteria	4	GH147
+endo-β-1,4-galactanase (HMPREF9010_03540)	3.2.1.89	pubmed	Bacteroides sp. 3_1_23	EFI37897.1	D7K5P2		Bacteria	4	GH147
+β-galactosidase (Lac161_10)	3.2.1.23	pubmed	uncultured bacterium Lac161	AGW45555.1	A0A059Q9K8		Bacteria	2	GH165

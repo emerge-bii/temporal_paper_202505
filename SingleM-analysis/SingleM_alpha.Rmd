@@ -1,0 +1,129 @@
+---
+title: "SingleM alpha"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, error = FALSE, fig.width = 6, fig.asp = 0.618, out.width = "100%", fig.align = "center")
+
+library(cowplot)
+library(tidyverse)
+library(here)
+source(here("setup.R"))
+
+map <- purrr::map
+main_dir <- here("SingleM-analysis", "alpha")
+dir.create(main_dir, recursive = TRUE)
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("Palsa", "Bog", "Fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+shape_habitat  <- c(22, 21, 24)
+fill_habitat   <- colour_habitat
+
+depth_levels <- c("0-9", "10-19", "20-29", "30-39")
+depth_labels <- c("0", "10", "20", "30")
+fill_depth   <- RColorBrewer::brewer.pal(5, "YlOrBr")[-1]
+colour_depth <- fill_depth
+
+year_levels <- c("2011", "2012", "2013", "2014", "2015", "2016", "2017")
+year_labels <- year_levels
+fill_year   <- RColorBrewer::brewer.pal(7, "BuPu")
+colour_year <- fill_year
+
+set.seed(42)
+```
+
+```{r representation}
+# Genus-level representation table
+singlem_genus <- singlem_otu_tables %>%
+  select(temporal_sample_id, coverage, all.genus.binned) %>%
+  group_by(temporal_sample_id, all.genus.binned) %>%
+  summarise(coverage = sum(coverage)) %>%
+  pivot_wider(names_from = all.genus.binned, values_from = coverage) %>%
+  mutate(prop_genus = `1` / (`0` + `1`)) %>%
+  select(temporal_sample_id, prop_genus) %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping, Year__)) %>%
+  filter(!is.na(Habitat__))
+
+# Habitat
+singlem_genus %>%
+  group_by(Habitat__) %>%
+  summarise(prop_genus = mean(prop_genus)) %>%
+  mutate(perc_genus = round(prop_genus * 100, 1))
+
+# Habitat-depth
+singlem_genus %>%
+  group_by(Habitat__, DepthLumping) %>%
+  summarise(prop_genus = mean(prop_genus)) %>%
+  mutate(perc_genus = round(prop_genus * 100, 1))
+
+# Habitat-depth-year
+singlem_genus %>%
+  group_by(Habitat__, DepthLumping, Year__) %>%
+  summarise(prop_genus = mean(prop_genus)) %>%
+  mutate(perc_genus = round(prop_genus * 100, 1))
+
+# Samples
+singlem_genus %>%
+  select(temporal_sample_id, prop_genus) %>%
+  mutate(perc_genus = round(prop_genus * 100, 1))
+```
+
+```{r alpha}
+singlem_alpha %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, DepthLumping, Year__)) %>%
+  filter(!is.na(Habitat__)) %>%
+  select(Habitat__, DepthLumping, Year__, temporal_sample_id, richness, shannon, pielou, simpson, invsimpson)
+
+# Habitat-depth plots
+alpha_plot <- singlem_alpha %>%
+  pivot_longer(-c(temporal_sample_id), names_to = "alpha_stat", values_to = "alpha_val") %>%
+  left_join(sample_metadata %>% select(temporal_sample_id, Habitat__, Year__, DepthLumping)) %>%
+  filter(!is.na(Habitat__))
+
+plot_alpha <- function(stat, ylabel, filename, df = alpha_plot) {
+  df <- df %>% filter(alpha_stat == stat)
+
+  plot <- df %>%
+    mutate(
+      Habitat__ = factor(Habitat__, levels = habitat_levels),
+      DepthLumping = factor(DepthLumping, levels = depth_levels, label = depth_labels)
+    ) %>%
+    ggplot(aes(x = DepthLumping, y = alpha_val, fill = Habitat__)) +
+    geom_boxplot(outlier.shape = NA) +
+    geom_jitter() +
+    facet_grid(cols = vars(Habitat__)) +
+    scale_colour_manual(values = colour_habitat, breaks = habitat_levels) +
+    xlab("Depth (cm)") +
+    ylab(ylabel) +
+    theme_cowplot() +
+    theme(legend.position = "none")
+
+  print(plot)
+  ggsave(filename, path = main_dir, width = 12, height = 7, dpi = 600)
+
+  return(plot)
+}
+
+richness_plot <- plot_alpha("richness", "Richness", "habitat_richness.png")
+shannon_plot <- plot_alpha("shannon", "Shannon diversity", "habitat_shannon.png")
+pielou_plot <- plot_alpha("pielou", "Pielou's evenness", "habitat_pielou.png")
+simpson_plot <- plot_alpha("simpson", "Simpson", "habitat_simpson.png")
+invsimpson_plot <- plot_alpha("invsimpson", "Inverse Simpson", "habitat_invsimpson.png")
+
+combined_plot <- plot_grid(
+  richness_plot,
+  shannon_plot,
+  pielou_plot,
+  ncol = 3,
+  labels = "AUTO"
+  )
+combined_plot
+ggsave("habitat_alpha.png", path = main_dir, width = 12, height = 7, dpi = 600)
+```

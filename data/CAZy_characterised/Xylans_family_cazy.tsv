@@ -1,0 +1,304 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+xylanase A or U / acetylxylan esterase (XynA;XynU;CtCE4;LX4) (Xyn11A)	3.2.1.8	pubmed	Acetivibrio thermocellus F1 / YS	AAC04579.1	O52780O87119		Bacteria	100	GH11
+xylanase A or U / acetylxylan esterase (XynA;XynU;CtCE4;LX4) (Xyn11A)	3.2.1.8	pubmed	Acetivibrio thermocellus F1 / YS	BAA33543.1	O52780O87119		Bacteria	100	GH11
+xylanase (DIU60_09020)	3.2.1.8	pubmed	Actinomycetia bacterium	PZN45477.1		7EO6[A,B]	Bacteria	100	GH11
+xylanase (XynA)	3.2.1.8	pubmed	Bacillus amyloliquefaciens CH51	ADK92885.1	E0YL13		Bacteria	100	GH11
+endo-β-1,4-xylanase (Xyn11)	3.2.1.8	doi	Bacillus licheniformis I5	ABF61784.1	A5H0S3		Bacteria	100	GH11
+xylanase (Xyn11)	3.2.1.8	pubmed	Bacillus licheniformis MS5-14	ACF05486.1	B5SYI8		Bacteria	100	GH11
+xylanase (XynA;BaLi_c05970)	3.2.1.8	pubmed	Bacillus paralicheniformis ATCC 9945a	AGN35000.1			Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Bacillus pumilus	AAS18312.1	P00694Q5EFR9Q8RMN7		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Bacillus pumilus	AAM08361.1	P00694Q5EFR9Q8RMN7		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Bacillus pumilus	AAS31735.1	P00694Q5EFR9Q8RMN7		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Bacillus pumilus	AAW78222.1	P00694Q5EFR9Q8RMN7		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Bacillus pumilus	ABH92519.1	P00694Q5EFR9Q8RMN7		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Bacillus pumilus	ACQ19009.1	P00694Q5EFR9Q8RMN7		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Bacillus pumilus	ACR92614.1	P00694Q5EFR9Q8RMN7		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Bacillus pumilus	CAA25278.1	P00694Q5EFR9Q8RMN7		Bacteria	100	GH11
+β-xylanase (XynA)	3.2.1.8	pubmed	Bacillus pumilus ARA	ADK27486.1	E2IHA1		Bacteria	100	GH11
+xylanase (XylP)	3.2.1.8	URL	Bacillus pumilus HY-20	ACU56779.1	C8CB65		Bacteria	100	GH11
+endo-β-1,4-xylanase (Xyl;Xyl687)	3.2.1.8	pubmed	Bacillus pumilus MK001	AFK33222.1	I3RYY0		Bacteria	100	GH11
+xylanase	3.2.1.8	pubmed	Bacillus pumilus PJ19	ABI93796.1	Q06RH9		Bacteria	100	GH11
+xylanase (XynA)	3.2.1.8	pubmed	Bacillus pumilus XY1	ABM54186.1	P00694Q5EFR9		Bacteria	100	GH11
+endo-β-1,4-xylanase A (XynA;XynB)	3.2.1.8	pubmed	Bacillus sp. (in: Bacteria)	AAD10834.1	Q9ZB36		Bacteria	100	GH11
+xylanase J (XynJ)	3.2.1.8	pubmed	Bacillus sp. 41M-1	BAA82316.1	Q9RC94	2DCJ[A,B]2DCK[A]6KJL[A,B]6KKA[A,B]	Bacteria	100	GH11
+xylanase J (XynJ)	3.2.1.8	pubmed	Bacillus sp. 41M-1	AAS31755.1	Q9RC94	2DCJ[A,B]2DCK[A]6KJL[A,B]6KKA[A,B]	Bacteria	100	GH11
+endo-β-1,4-xylanase A (XynA;XG)	3.2.1.8	pubmed	Bacillus sp. BP-7	CAD60654.1	Q84F19		Bacteria	100	GH11
+xylanase (XynHB)	3.2.1.8	doi	Bacillus sp. HBP8	AAX54695.1	Q58G72		Bacteria	100	GH11
+xylanase (ATBXYL-C;XylC1;XylC2;XylC3)	3.2.1.8	pubmed	Bacillus sp. NCL 87-6-10	AEP40124.1	G4XQJ9G4XQK0G4XQK1Q7SIE3	2F6B[A,B]	Bacteria	100	GH11
+xylanase (ATBXYL-C;XylC1;XylC2;XylC3)	3.2.1.8	pubmed	Bacillus sp. NCL 87-6-10	AEP40122.1	G4XQJ9G4XQK0G4XQK1Q7SIE3	2F6B[A,B]	Bacteria	100	GH11
+xylanase (ATBXYL-C;XylC1;XylC2;XylC3)	3.2.1.8	pubmed	Bacillus sp. NCL 87-6-10	AEP40123.1	G4XQJ9G4XQK0G4XQK1Q7SIE3	2F6B[A,B]	Bacteria	100	GH11
+xylanase (Xyn11A-LC) (Xyn11A)	3.2.1.8	pubmed	Bacillus sp. SN5	AGL92443.1	V9NCQ7	4IXL[A,B]	Bacteria	100	GH11
+xylanase S (XynS)	3.2.1.8	URL	Bacillus sp. YA-14	CAA41783.1	Q59256		Bacteria	100	GH11
+xylanase (XynY)	3.2.1.8	URL	Bacillus sp. YA-335	CAA41784.1	Q59257		Bacteria	100	GH11
+xylanase	3.2.1.8	pubmed	Bacillus sp. YJ6	ACR47980.1	C5MTD6		Bacteria	100	GH11
+xylanase	3.2.1.8	pubmed	Bacillus subtilis AK1	ABA64459.1	Q3HLJ4		Bacteria	100	GH11
+β-1,4-xylanase (XylA)	3.2.1.8	pubmed	Bacillus subtilis AMX-4	ACT79298.1	C7F433		Bacteria	100	GH11
+endoxylanase	3.2.1.8	pubmed	Bacillus subtilis AQ1	ACV40160.1	D7F2D8		Bacteria	100	GH11
+xylanase (halotolerant) (partial)	3.2.1.8	doi	Bacillus subtilis cho40	ADN03187.1	E0YTQ6		Bacteria	100	GH11
+xylanase (LC9)	3.2.1.8	pubmed	Bacillus subtilis Lucky9	ANC94865.1			Bacteria	100	GH11
+endo-β-1,4-xylanase (XylB)	3.2.1.8	pubmed	Bacillus subtilis MW10	AAZ17393.1	P18429Q45VU1		Bacteria	100	GH11
+xylanase (Xyl)	3.2.1.8	pubmed	Bacillus subtilis R5 / Bacillus subtilis M015	BAH28803.1	B9ZZN9		Bacteria	100	GH11
+xylanase (Xyl)	3.2.1.8	pubmed	Bacillus subtilis R5 / Bacillus subtilis M015	ACX32454.1	B9ZZN9		Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAB13776.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	AAA22897.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	AAB84458.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	AAM08359.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	ABH92520.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	ACK26682.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	ACQ19010.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	ACR92566.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	AIY93198.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR81879.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	AQR86093.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	CAA84276.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase A (XynA;BsxA;BsXynA;BSU18840)	3.2.1.8	pubmed	Bacillus subtilis subsp. subtilis str. 168	NP_389765.1	A0A6M4JHE2P18429Q59254Q8RMN9	1AXK[A]1XXN[A]2B45[X]2B46[X]2DCY[A,B,C,D,E]2DCZ[A,B]2QZ3[A,B]2Z79[A,B]3EXU[A,B]5K9Y[A,B]	Bacteria	100	GH11
+xylanase (XylB8)	3.2.1.8	pubmed	bacterium enrichment culture clone Xyl8B8	AFH35005.1	H9ZGD1		Bacteria	100	GH11
+xylanase (Calkro_0081) (Xyn11A)	3.2.1.8	doi	Caldicellulosiruptor kronotskyensis 2002	ADQ44997.1	E4SCE2		Bacteria	100	GH11
+xylanase (XynA;Ca_GH11)	3.2.1.8	pubmed	Caldicellulosiruptor sp. F32	AFO70072.1	I7DIS4		Bacteria	100	GH11
+xylanase D (XynD)	3.2.1.8	pubmed	Caldicellulosiruptor sp. Rt69B.1	CAE84532.1	O52375		Bacteria	100	GH11
+xylanase D (XynD)	3.2.1.8	pubmed	Caldicellulosiruptor sp. Rt69B.1	AAB95327.1	O52375		Bacteria	100	GH11
+xylanase D (XynD)	3.2.1.8	pubmed	Caldicellulosiruptor sp. Rt69B.1	CAA03088.1	O52375		Bacteria	100	GH11
+xylanase D / 11A (XynD;XylD;Xyl11A) (Xyn11A)	3.2.1.8	pubmed	Cellulomonas fimi 221	CAA54145.1	P54865		Bacteria	100	GH11
+endo-β-1,4-xylanase (XynI) (fragment)	3.2.1.8	pubmed	Cellulomonas flavigena CDBB-531	CAH03685.3	Q14ST6Q9AG99		Bacteria	100	GH11
+endo-β-1,4-xylanase (XynI) (fragment)	3.2.1.8	pubmed	Cellulomonas flavigena CDBB-531	AAK15536.1	Q14ST6Q9AG99		Bacteria	100	GH11
+xylanase (XIB;XylXib;ClXyn11A) (Xyn11A)	3.2.1.8	pubmed	Cellulomonas flavigena CDBB-531	CAJ57849.1	A2AWV8		Bacteria	100	GH11
+xylanase D / 11B (CJA_3762) (Xyn11B)	3.2.1.8	pubmed	Cellvibrio japonicus Ueda107	ACE85524.1	B3PIN0Q8VP72		Bacteria	100	GH11
+xylanase D / 11B (CJA_3762) (Xyn11B)	3.2.1.8	pubmed	Cellvibrio japonicus Ueda107	AAL57754.1	B3PIN0Q8VP72		Bacteria	100	GH11
+xylanase E / 11A (XynE;CJA_3763) (Xyn11A)	3.2.1.8	pubmed	Cellvibrio japonicus Ueda107	ACE84179.1	B3PIN1Q59674		Bacteria	100	GH11
+xylanase E / 11A (XynE;CJA_3763) (Xyn11A)	3.2.1.8	pubmed	Cellvibrio japonicus Ueda107	CAA88763.1	B3PIN1Q59674		Bacteria	100	GH11
+xylanase A (XylA)	3.2.1.8	pubmed	Cellvibrio mixtus	CAA88761.1	Q59300		Bacteria	100	GH11
+endo-β-1,4-xylanase	3.2.1.8	pubmed	Clostridium beijerinckii G117	AIO05795.1	A0A088SQN4		Bacteria	100	GH11
+xylanase A (XynA;Clocel_2295)	3.2.1.8	pubmed	Clostridium cellulovorans 743B	AAN32825.1	D9SP57Q8GH59		Bacteria	100	GH11
+xylanase A (XynA;Clocel_2295)	3.2.1.8	pubmed	Clostridium cellulovorans 743B	ADL52022.1	D9SP57Q8GH59		Bacteria	100	GH11
+xylanase B (XynB)	3.2.1.8	pubmed	Clostridium saccharobutylicum P262	AAA23287.1	P17137		Bacteria	100	GH11
+xylanase B (XynB)	3.2.1.8	pubmed	Clostridium saccharobutylicum P262	AAS31738.1	P17137		Bacteria	100	GH11
+xylanase B (XynB)	3.2.1.8	pubmed	Clostridium saccharobutylicum P262	ACR92615.1	P17137		Bacteria	100	GH11
+xylanase 11A (Xyn11A)	3.2.1.8	pubmed	Cytobacillus firmus	AAQ83579.1	Q6U894		Bacteria	100	GH11
+xylanase (Xyn11A)	3.2.1.8	doi	Cytobacillus firmus K-1	AAQ14588.1	Q71S35		Bacteria	100	GH11
+xylanase B (XynB;XynB3;229B)	3.2.1.8	pubmed	Dictyoglomus thermophilum RT46B.1	AAC46361.1	P77853	1F5J[A,B]	Bacteria	100	GH11
+Fisuc_2442 / FSU_3006	3.2.1.8	pubmed	Fibrobacter succinogenes subsp. succinogenes S85	ACX76028.1	C9RLL3		Bacteria	100	GH11
+Fisuc_2442 / FSU_3006	3.2.1.8	pubmed	Fibrobacter succinogenes subsp. succinogenes S85	ADL25314.1	C9RLL3		Bacteria	100	GH11
+xylanase C (XynC;Fisuc_0362;FSU_0777) (Xyn11C)	3.2.1.8	pubmedpubmed	Fibrobacter succinogenes subsp. succinogenes S85	AAA21848.1	P35811		Bacteria	100	GH11
+xylanase C (XynC;Fisuc_0362;FSU_0777) (Xyn11C)	3.2.1.8	pubmedpubmed	Fibrobacter succinogenes subsp. succinogenes S85	AAS31753.1	P35811		Bacteria	100	GH11
+xylanase C (XynC;Fisuc_0362;FSU_0777) (Xyn11C)	3.2.1.8	pubmedpubmed	Fibrobacter succinogenes subsp. succinogenes S85	ACX73974.1	P35811		Bacteria	100	GH11
+xylanase C (XynC;Fisuc_0362;FSU_0777) (Xyn11C)	3.2.1.8	pubmedpubmed	Fibrobacter succinogenes subsp. succinogenes S85	ADL26842.1	P35811		Bacteria	100	GH11
+xylanase C (XynC;Fisuc_0362;FSU_0777) (Xyn11C)	3.2.1.8	pubmedpubmed	Fibrobacter succinogenes subsp. succinogenes S85	AAA21848.1	P35811		Bacteria	100	GH11
+xylanase C (XynC;Fisuc_0362;FSU_0777) (Xyn11C)	3.2.1.8	pubmedpubmed	Fibrobacter succinogenes subsp. succinogenes S85	AAS31753.1	P35811		Bacteria	100	GH11
+xylanase C (XynC;Fisuc_0362;FSU_0777) (Xyn11C)	3.2.1.8	pubmedpubmed	Fibrobacter succinogenes subsp. succinogenes S85	ACX73974.1	P35811		Bacteria	100	GH11
+xylanase C (XynC;Fisuc_0362;FSU_0777) (Xyn11C)	3.2.1.8	pubmedpubmed	Fibrobacter succinogenes subsp. succinogenes S85	ADL26842.1	P35811		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Geobacillus stearothermophilus 236	AAB72117.1	P45705	cryst	Bacteria	100	GH11
+xylanase (BH0899) (Xyn11A)	3.2.1.8	pubmed	Halalkalibacterium halodurans C-125	BAB04618.1	Q9KEF3		Bacteria	100	GH11
+xylanase (BH0899) (Xyn11A)	3.2.1.8	pubmed	Halalkalibacterium halodurans C-125	CAJ29666.1	Q9KEF3		Bacteria	100	GH11
+xylanase (BH0899) (Xyn11A)	3.2.1.8	pubmed	Halalkalibacterium halodurans C-125	NP_241765.1	Q9KEF3		Bacteria	100	GH11
+endo-1,4-β-xylanhydrolase (XynNt) (Xyn11A)	3.2.1.8	pubmed	Halalkalibacterium halodurans MIR32	AAO12276.1	Q79MJ7Q9KEF3		Bacteria	100	GH11
+endo-β-1,4-xylanase (HHT355_1576; XynE)	3.2.1.8	pubmed	Herbinix hemicellulosilytica	CRZ34777.1			Bacteria	100	GH11
+endo-β-1,4-xylanase (HHT355_0285; XynF)	3.2.1.8	pubmed	Herbinix hemicellulosilytica	CRZ33495.1			Bacteria	100	GH11
+xylanase (XynB;KSE_59480)	3.2.1.8	pubmed	Kitasatospora setae KM-6054	BAJ31718.1	E4N0N4		Bacteria	100	GH11
+endo-β-1,4-xylanase (Xyn11Nx)	3.2.1.8	pubmed	Nesterenkonia xinjiangensis YIM 70097 / CCTCC AA001025	ACY70399.1	D1KJJ7		Bacteria	100	GH11
+xylanase A (XlnA;BcX)	3.2.1.8	pubmed	Niallia circulans	AAS31723.1	P09850P18429Q8RMN8	1BCX[A]1BVV[A]1C5H[A]1C5I[A]1HV0[A]1HV1[A]1XNB[A]1XNC[A]2B42[B]2BVV[A]3HD8[B,D]3LB9[A,B,C]3VZJ[A,B,C,D]3VZK[A,B]3VZL[A,B,C,D]3VZM[A]3VZN[A,B]3VZO[A]	Bacteria	100	GH11
+xylanase A (XlnA;BcX)	3.2.1.8	pubmed	Niallia circulans	AAM08360.1	P09850P18429Q8RMN8	1BCX[A]1BVV[A]1C5H[A]1C5I[A]1HV0[A]1HV1[A]1XNB[A]1XNC[A]2B42[B]2BVV[A]3HD8[B,D]3LB9[A,B,C]3VZJ[A,B,C,D]3VZK[A,B]3VZL[A,B,C,D]3VZM[A]3VZN[A,B]3VZO[A]	Bacteria	100	GH11
+xylanase A (XlnA;BcX)	3.2.1.8	pubmed	Niallia circulans	AAS31734.1	P09850P18429Q8RMN8	1BCX[A]1BVV[A]1C5H[A]1C5I[A]1HV0[A]1HV1[A]1XNB[A]1XNC[A]2B42[B]2BVV[A]3HD8[B,D]3LB9[A,B,C]3VZJ[A,B,C,D]3VZK[A,B]3VZL[A,B,C,D]3VZM[A]3VZN[A,B]3VZO[A]	Bacteria	100	GH11
+xylanase A (XlnA;BcX)	3.2.1.8	pubmed	Niallia circulans	ABH92518.1	P09850P18429Q8RMN8	1BCX[A]1BVV[A]1C5H[A]1C5I[A]1HV0[A]1HV1[A]1XNB[A]1XNC[A]2B42[B]2BVV[A]3HD8[B,D]3LB9[A,B,C]3VZJ[A,B,C,D]3VZK[A,B]3VZL[A,B,C,D]3VZM[A]3VZN[A,B]3VZO[A]	Bacteria	100	GH11
+xylanase A (XlnA;BcX)	3.2.1.8	pubmed	Niallia circulans	ACK26680.1	P09850P18429Q8RMN8	1BCX[A]1BVV[A]1C5H[A]1C5I[A]1HV0[A]1HV1[A]1XNB[A]1XNC[A]2B42[B]2BVV[A]3HD8[B,D]3LB9[A,B,C]3VZJ[A,B,C,D]3VZK[A,B]3VZL[A,B,C,D]3VZM[A]3VZN[A,B]3VZO[A]	Bacteria	100	GH11
+xylanase A (XlnA;BcX)	3.2.1.8	pubmed	Niallia circulans	ACQ19008.1	P09850P18429Q8RMN8	1BCX[A]1BVV[A]1C5H[A]1C5I[A]1HV0[A]1HV1[A]1XNB[A]1XNC[A]2B42[B]2BVV[A]3HD8[B,D]3LB9[A,B,C]3VZJ[A,B,C,D]3VZK[A,B]3VZL[A,B,C,D]3VZM[A]3VZN[A,B]3VZO[A]	Bacteria	100	GH11
+xylanase A (XlnA;BcX)	3.2.1.8	pubmed	Niallia circulans	ACR92575.1	P09850P18429Q8RMN8	1BCX[A]1BVV[A]1C5H[A]1C5I[A]1HV0[A]1HV1[A]1XNB[A]1XNC[A]2B42[B]2BVV[A]3HD8[B,D]3LB9[A,B,C]3VZJ[A,B,C,D]3VZK[A,B]3VZL[A,B,C,D]3VZM[A]3VZN[A,B]3VZO[A]	Bacteria	100	GH11
+xylanase A (XlnA;BcX)	3.2.1.8	pubmed	Niallia circulans	CAA30553.1	P09850P18429Q8RMN8	1BCX[A]1BVV[A]1C5H[A]1C5I[A]1HV0[A]1HV1[A]1XNB[A]1XNC[A]2B42[B]2BVV[A]3HD8[B,D]3LB9[A,B,C]3VZJ[A,B,C,D]3VZK[A,B]3VZL[A,B,C,D]3VZM[A]3VZN[A,B]3VZO[A]	Bacteria	100	GH11
+xylanase (Xyn11E)	3.2.1.8	pubmed	Paenibacillus barcinonensis BP-23	AHC74025.1	V9TXH2		Bacteria	100	GH11
+xylanase X (XylX)	3.2.1.8	doi	Paenibacillus campinasensis BL11	ABB77852.1	Q2I6W5		Bacteria	100	GH11
+xylanase (XynG1-1;XynG1-1b43;XynG1-1b43cc16)	3.2.1.8	pubmed	Paenibacillus campinasensis G1-1 / CGMCC 5023	AEI54132.1	F8UMP6M4N7N5M4N7S8		Bacteria	100	GH11
+xylanase (XynG1-1;XynG1-1b43;XynG1-1b43cc16)	3.2.1.8	pubmed	Paenibacillus campinasensis G1-1 / CGMCC 5023	AGG82433.1	F8UMP6M4N7N5M4N7S8		Bacteria	100	GH11
+xylanase (XynG1-1;XynG1-1b43;XynG1-1b43cc16)	3.2.1.8	pubmed	Paenibacillus campinasensis G1-1 / CGMCC 5023	AGG82434.1	F8UMP6M4N7N5M4N7S8		Bacteria	100	GH11
+xylanase 11A (Xyn11A)	3.2.1.8	pubmed	Paenibacillus curdlanolyticus B-6	ADB54799.1	D3GKE3		Bacteria	100	GH11
+endo-β-1,4-xylanase (Xyn)	3.2.1.8	pubmed	Paenibacillus polymyxa PPL-3	ADK47978.1	E1AHZ6		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Paenibacillus sp. DG-22	ABI96991.1	A4GG22		Bacteria	100	GH11
+endo-xylanase (Xyn1)	3.2.1.8	URL	Paenibacillus sp. HY8	ABD66557.1	A3QRI7		Bacteria	100	GH11
+endo-β-1,4-xylanase (partial) (Xyl11D)	3.2.1.8	pubmed	Paenibacillus sp. ICGEB2008 / MTCC 5639	AEB00656.1	G0YA74		Bacteria	100	GH11
+Pjdr2_4664 (Xyn)	3.2.1.8	pubmed	Paenibacillus sp. JDR-2	ACT03278.1	C6D8U8		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	doi	Paenibacillus sp. KCTC8848P	AAG23526.1	Q9F9B9		Bacteria	100	GH11
+xylanase 1 (Xyn1)	3.2.1.8	pubmed	Paenibacillus sp. W-61	BAE93061.1	Q1XGE6		Bacteria	100	GH11
+xylanase 1 (Xyn1)	3.2.1.8	pubmed	Paenibacillus sp. W-61	BAF49080.1	Q1XGE6		Bacteria	100	GH11
+1,4-betα-xylanase (GH11XynB;AMS66_16445)	3.2.1.8	doi	Paenibacillus xylanivorans	KOY15336.1	A0A0M9BNX9	7KV0[A,B]	Bacteria	100	GH11
+endo-1,4-β-xylanase T (XynT) (Xyn11A)	3.2.1.8	doi	Pseudobutyrivibrio xylanivorans TYPE STRAIN: MZ5	CAD65888.2	P83513		Bacteria	100	GH11
+endo-1,4-β-xylanase T (XynT) (Xyn11A)	3.2.1.8	doi	Pseudobutyrivibrio xylanivorans TYPE STRAIN: MZ5	CAD65888.1	P83513		Bacteria	100	GH11
+β-1,4-xylanase (AxnA)	3.2.1.8	doi	Pseudomonas sp. ND137	BAB79287.1			Bacteria	100	GH11
+xylanase (P32a,Ccel_0750) (Xyn11A)	3.2.1.8	pubmed	Ruminiclostridium cellulolyticum H10	ACL75128.1	B8I7X1		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Ruminococcus albus	AAA85198.1	Q52644		Bacteria	100	GH11
+xylanase B (XynB)	3.2.1.8	doi	Ruminococcus albus	BAB39493.1	Q9AJB4		Bacteria	100	GH11
+endo-β-1,4-xylanase 11D (Xyn11D)	3.2.1.8	pubmed	Ruminococcus albus 8	AEE64769.1	F6LP81		Bacteria	100	GH11
+endo-β-1,4-xylanase 11D (Xyn11D)	3.2.1.8	pubmed	Ruminococcus albus 8	ZP_08160424.1	F6LP81		Bacteria	100	GH11
+endo-β-1,4-xylanase 11E (Xyn11E)	3.2.1.8	pubmed	Ruminococcus albus 8	AEE64770.1	E9SA77		Bacteria	100	GH11
+endo-β-1,4-xylanase 11E (Xyn11E)	3.2.1.8	pubmed	Ruminococcus albus 8	ZP_08158180.1	E9SA77		Bacteria	100	GH11
+endo-β-1,4-xylanase 11F (Xyn11F)	3.2.1.8	pubmed	Ruminococcus albus 8	AEE64771.1	E9S8N5		Bacteria	100	GH11
+endo-β-1,4-xylanase 11F (Xyn11F)	3.2.1.8	pubmed	Ruminococcus albus 8	ZP_08157788.1	E9S8N5		Bacteria	100	GH11
+xylanase (GH11A-CE;RUM_23130) (Xyn11A)	3.2.1.8	pubmed	Ruminococcus champanellensis 18P13 = JCM 17042	CBL18305.1	D4LFB0		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Ruminococcus flavefaciens 17	AAS31752.1	P29126		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Ruminococcus flavefaciens 17	ABH92523.1	P29126		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Ruminococcus flavefaciens 17	ACQ19013.1	P29126		Bacteria	100	GH11
+xylanase A (XynA)	3.2.1.8	pubmed	Ruminococcus flavefaciens 17	CAA77476.1	P29126		Bacteria	100	GH11
+xylanase D / lichenase (XynD)	3.2.1.8	pubmed	Ruminococcus flavefaciens 17	AAB26620.1	Q53317Q9S310		Bacteria	100	GH11
+xylanase D / lichenase (XynD)	3.2.1.8	pubmed	Ruminococcus flavefaciens 17	CAB51934.1	Q53317Q9S310		Bacteria	100	GH11
+xylanase (BadX;Xyl11)	3.2.1.8	pubmed	Salipaludibacillus agaradhaerens AC13	CAB42305.1	Q7SIE2Q7SIE3	1H4G[A,B]1H4H[A,B,C,D]1QH6[A,B]1QH7[A,B]	Bacteria	100	GH11
+xylanase (BadX;Xyl11)	3.2.1.8	pubmed	Salipaludibacillus agaradhaerens AC13	ABE26517.1	Q7SIE2Q7SIE3	1H4G[A,B]1H4H[A,B,C,D]1QH6[A,B]1QH7[A,B]	Bacteria	100	GH11
+xylanase (BadX;Xyl11)	3.2.1.8	pubmed	Salipaludibacillus agaradhaerens AC13	ABE26518.1	Q7SIE2Q7SIE3	1H4G[A,B]1H4H[A,B,C,D]1QH6[A,B]1QH7[A,B]	Bacteria	100	GH11
+xylanase (BadX;Xyl11)	3.2.1.8	pubmed	Salipaludibacillus agaradhaerens AC13	CAA03091.1	Q7SIE2Q7SIE3	1H4G[A,B]1H4H[A,B,C,D]1QH6[A,B]1QH7[A,B]	Bacteria	100	GH11
+xylanase (XSC738;SCO0105;SCJ11.34c)	3.2.1.8	pubmed	Streptomyces coelicolor A3(2)	CAB52919.1	Q9RI72		Bacteria	100	GH11
+xylanase (XSC738;SCO0105;SCJ11.34c)	3.2.1.8	pubmed	Streptomyces coelicolor A3(2)	NP_624448.1	Q9RI72		Bacteria	100	GH11
+xylanase (XlnB;SCO2292)	3.2.1.8	pubmed	Streptomyces coelicolor A3(2)	CAB61738.1	Q9RKN6		Bacteria	100	GH11
+xylanase (XlnB;SCO2292)	3.2.1.8	pubmed	Streptomyces coelicolor A3(2)	NP_626540.1	Q9RKN6		Bacteria	100	GH11
+xylanase B (XlnB;XlnB1;XlnB2)	3.2.1.8	pubmed	Streptomyces lividans 1326	AAC06114.2	P26515	5EJ3[A,B]	Bacteria	100	GH11
+xylanase B (XlnB;XlnB1;XlnB2)	3.2.1.8	pubmed	Streptomyces lividans 1326	AAS31736.1	P26515	5EJ3[A,B]	Bacteria	100	GH11
+xylanase B (XlnB;XlnB1;XlnB2)	3.2.1.8	pubmed	Streptomyces lividans 1326	ABH92525.1	P26515	5EJ3[A,B]	Bacteria	100	GH11
+xylanase B (XlnB;XlnB1;XlnB2)	3.2.1.8	pubmed	Streptomyces lividans 1326	ACQ19015.1	P26515	5EJ3[A,B]	Bacteria	100	GH11
+xylanase C (XlnC)	3.2.1.8	pubmed	Streptomyces lividans 1326	AAA26836.1	P26220		Bacteria	100	GH11
+xylanase C (XlnC)	3.2.1.8	pubmed	Streptomyces lividans 1326	AAS31737.1	P26220		Bacteria	100	GH11
+xylanase C (XlnC)	3.2.1.8	pubmed	Streptomyces lividans 1326	ABH92526.1	P26220		Bacteria	100	GH11
+xylanase C (XlnC)	3.2.1.8	pubmed	Streptomyces lividans 1326	ACQ19016.1	P26220		Bacteria	100	GH11
+xylanase C (XlnC)	3.2.1.8	pubmed	Streptomyces lividans 1326	CAA01768.1	P26220		Bacteria	100	GH11
+xylanase TB (XynB;XynTB) (partial)	3.2.1.8	doi	Streptomyces olivaceoviridis A1	ABF02144.1	A4K8J7		Bacteria	100	GH11
+β-xylanase (SoXyn11B)	3.2.1.8	pubmed	Streptomyces olivaceoviridis E-86	BCL01310.1		7DFM[A,B,C,D]7DFN[A,B,C,D]7DFO[A,B,C,D,E,F,G,H,I]	Bacteria	100	GH11
+xylanase (Gxyn1;GXYN;SoxB)	3.2.1.8	doi	Streptomyces olivaceoviridis E-86	CAC19491.1	Q9EW89		Bacteria	100	GH11
+xylanase (XynA)	3.2.1.8	doi	Streptomyces rameus L2001	AFW21197.1	K7UAM8		Bacteria	100	GH11
+xylanase	3.2.1.8	pubmed	Streptomyces sp. EC3	CAA56935.1	Q56013		Bacteria	100	GH11
+xylobiose-producing xylanase (XynBS27)	3.2.1.8	pubmed	Streptomyces sp. S27	ACF57948.1	D1FNQ6		Bacteria	100	GH11
+xylanase (Xyl1)	3.2.1.8	pubmed	Streptomyces sp. S38	CAA67143.1	Q59962	1HIX[A]	Bacteria	100	GH11
+xylanase (XynBS9)	3.2.1.8	pubmed	Streptomyces sp. S9	ACF57947.1	D7EZJ3		Bacteria	100	GH11
+endo-β-1,4-xylanase (XynSW1)	3.2.1.8	pubmed	Streptomyces sp. SWU10	BAK39579.1	F7J663		Bacteria	100	GH11
+xylanase (XynSW3)	3.2.1.8	pubmed	Streptomyces sp. SWU10	BAK53483.1	F8WSY7		Bacteria	100	GH11
+xylanase II (StXII)	3.2.1.8	pubmed	Streptomyces thermoviolaceus OPC-520	BAA19778.1	Q76BV2		Bacteria	100	GH11
+xylanase II (StXII)	3.2.1.8	pubmed	Streptomyces thermoviolaceus OPC-520	BAD02383.1	Q76BV2		Bacteria	100	GH11
+endoxylanase (StxI;STX I) (fragment)	3.2.1.8	pubmed	Streptomyces thermovulgaris NTU-88	ABF72145.1	B2KJ43		Bacteria	100	GH11
+xylanase (SvxA)	3.2.1.8	doi	Streptomyces viridosporus T7A	AAF09501.1	Q9RMH9		Bacteria	100	GH11
+xylanase (SvxA)	3.2.1.8	doi	Streptomyces viridosporus T7A	ACR92599.1	Q9RMH9		Bacteria	100	GH11
+endo-β-1,4-xylanase (XynC;Tsac_0897)	3.2.1.8	pubmed	Thermoanaerobacterium saccharolyticum JW/SL-YS485	AFK85913.1	I3VTR8		Bacteria	100	GH11
+xylanase (Xyl11;Xyl20;Tx-Xyn;TxXYN;Tx-Xyl;Tx-Xyn11;G11)	3.2.1.8	pubmed	Thermobacillus xylanilyticus D3	CAJ87325.1	Q14RS0	cryst	Bacteria	100	GH11
+endo-β-1,4-xylanase (Xyl11;TfGH11)	3.2.1.8	pubmed	Thermobifida fusca NTU22	AAV64879.1	Q5RZ98	3ZSE[A]	Bacteria	100	GH11
+xylanase A (XynA;TfxA;Tfu_1213) (Xyl11A = Xyn11A)	3.2.1.8	pubmed	Thermobifida fusca YX	AAA21480.1	Q47QL8Q56265		Bacteria	100	GH11
+xylanase A (XynA;TfxA;Tfu_1213) (Xyl11A = Xyn11A)	3.2.1.8	pubmed	Thermobifida fusca YX	AAZ55251.1	Q47QL8Q56265		Bacteria	100	GH11
+xylanase A (XynA;TfxA;Tfu_1213) (Xyl11A = Xyn11A)	3.2.1.8	pubmed	Thermobifida fusca YX	ABH92528.1	Q47QL8Q56265		Bacteria	100	GH11
+xylanase A (XynA;TfxA;Tfu_1213) (Xyl11A = Xyn11A)	3.2.1.8	pubmed	Thermobifida fusca YX	ACK26690.1	Q47QL8Q56265		Bacteria	100	GH11
+xylanase A (XynA;TfxA;Tfu_1213) (Xyl11A = Xyn11A)	3.2.1.8	pubmed	Thermobifida fusca YX	ACQ19018.1	Q47QL8Q56265		Bacteria	100	GH11
+xylanase A (XynA;TfxA;Tfu_1213) (Xyl11A = Xyn11A)	3.2.1.8	pubmed	Thermobifida fusca YX	ACR92600.1	Q47QL8Q56265		Bacteria	100	GH11
+endo-β-1,4-xylanase (ThXyn11A;Xyn11-1) (Xyn11A)	3.2.1.8	pubmed	Thermobifida halotolerans YIM 90462	AEH04392.1	I3NRT9		Bacteria	100	GH11
+xylanase (XynA;XylA)	3.2.1.8	pubmed	Thermoclostridium stercorarium F-9	BAA02584.1	P33558		Bacteria	100	GH11
+xylanase (XynA;XylA)	3.2.1.8	pubmed	Thermoclostridium stercorarium F-9	AAR39822.1	P33558		Bacteria	100	GH11
+xylanase (XynA;XylA)	3.2.1.8	pubmed	Thermoclostridium stercorarium F-9	AAS31751.1	P33558		Bacteria	100	GH11
+xylanase (XynA;XylA)	3.2.1.8	pubmed	Thermoclostridium stercorarium F-9	ABH92522.1	P33558		Bacteria	100	GH11
+xylanase (XynA;XylA)	3.2.1.8	pubmed	Thermoclostridium stercorarium F-9	ACQ19012.1	P33558		Bacteria	100	GH11
+xylanase A (XynA) (Xyn11A)	3.2.1.8	pubmed	Thermoclostridium stercorarium NCIMB 11754	CAD48307.1	Q8GJ44		Bacteria	100	GH11
+xylanase 11A (Xyn11A; XynA; Cst_c19320)	3.2.1.8	pubmed	Thermoclostridium stercorarium subsp. stercorarium DSM 8532	AGI39894.1			Bacteria	100	GH11
+xylanase 11A (Xyn11A; XynA; Cst_c19320)	3.2.1.8	pubmed	Thermoclostridium stercorarium subsp. stercorarium DSM 8532	AGC68909.1			Bacteria	100	GH11
+endo-β-1,4-xylanase (XynA;Xyn;NfXyn;NfXyn11) (Xyn11A)	3.2.1.8	pubmed	Thermopolyspora flexuosa DSM43186 / ATCC35864	CAD48747.1	Q8GMV7	1M4W[A]3B5L[B]3MF6[A]3MF9[A]3MFA[A]3MFC[A]	Bacteria	100	GH11
+endo-β-1,4-xylanase (XynA;Xyn;NfXyn;NfXyn11) (Xyn11A)	3.2.1.8	pubmed	Thermopolyspora flexuosa DSM43186 / ATCC35864	AAO97628.1	Q8GMV7	1M4W[A]3B5L[B]3MF6[A]3MF9[A]3MFA[A]3MFC[A]	Bacteria	100	GH11
+endo-β-1,4-xylanase (XynA;Xyn;NfXyn;NfXyn11) (Xyn11A)	3.2.1.8	pubmed	Thermopolyspora flexuosa DSM43186 / ATCC35864	AAQ80269.1	Q8GMV7	1M4W[A]3B5L[B]3MF6[A]3MF9[A]3MFA[A]3MFC[A]	Bacteria	100	GH11
+endo-β-1,4-xylanase (XynA;Xyn;NfXyn;NfXyn11) (Xyn11A)	3.2.1.8	pubmed	Thermopolyspora flexuosa DSM43186 / ATCC35864	AAS23965.1	Q8GMV7	1M4W[A]3B5L[B]3MF6[A]3MF9[A]3MFA[A]3MFC[A]	Bacteria	100	GH11
+endo-β-1,4-xylanase (XynA;Xyn;NfXyn;NfXyn11) (Xyn11A)	3.2.1.8	pubmed	Thermopolyspora flexuosa DSM43186 / ATCC35864	ACC29940.1	Q8GMV7	1M4W[A]3B5L[B]3MF6[A]3MF9[A]3MFA[A]3MFC[A]	Bacteria	100	GH11
+endo-β-1,4-xylanase (Xyl1; GH11A)	3.2.1.8	pubmed	uncultured bacterium	AMO13185.1			Bacteria	100	GH11
+xylanase (X0012;Xyn12)	3.2.1.8	pubmed	uncultured bacterium	ADD82898.1	D4PAK8	5GV1[A]5GY8[A]5GY9[A,B]5GYA[A,B]5GYB[A]5GYC[A]5GYE[A]5GYF[A]5GYG[A,B]5GYH[A]5GYI[A]	Bacteria	100	GH11
+endo-β-1,4-xylanase (XYL7746)	3.2.1.8	pubmed	uncultured bacterium	AAQ90180.2	Q6TLP3		Bacteria	100	GH11
+endo-β-1,4-xylanase (XYL7746)	3.2.1.8	pubmed	uncultured bacterium	ABX94901.1	Q6TLP3		Bacteria	100	GH11
+endo-β-1,4-xylanase (XYL7746)	3.2.1.8	pubmed	uncultured bacterium	ABX94905.1	Q6TLP3		Bacteria	100	GH11
+endo-β-1,4-xylanase (NtSymX11)	3.2.1.8	pubmed	uncultured bacterium	BBF66812.1			Bacteria	100	GH11
+xylanase (XynR8) (partial)	3.2.1.8	pubmed	uncultured bacterium	ADN44273.1	E2JFA2		Bacteria	100	GH11
+endo-β-1,4-xylanase (XYL6419)	3.2.1.8	pubmed	uncultured bacterium	AAS85782.1	Q6QHA2		Bacteria	100	GH11
+endo-β-1,4-xylanase (XYL6807)	3.2.1.8	pubmed	uncultured bacterium	AAS85783.1	Q6QHA1		Bacteria	100	GH11
+endo-β-1,4-xylanase (XYL6805)	3.2.1.8	pubmed	uncultured bacterium	AAS85784.1	Q6QHA0		Bacteria	100	GH11
+endo-β-1,4-xylanase (Xyl6E7)	3.2.1.8	pubmed	uncultured bacterium	ADU33366.1	E7CR60		Bacteria	100	GH11
+xylanase (Xyn22)	3.2.1.8	pubmed	uncultured bacterium	QHI00070.1			Bacteria	100	GH11
+xylanase (Xyl1;XYL1G3-ORF22)	3.2.1.8	pubmed	uncultured bacterium	AEV59726.1	G9BYA7		Bacteria	100	GH11
+endo-β-1,4-xylanase (PW8)	3.2.1.8	doi	uncultured bacterium	ABI94366.1	A2T401		Bacteria	100	GH11
+endo-β-1,4-xylanase (XYL7)	3.2.1.8	doi	uncultured bacterium	AHX56799.1	A0A023R755		Bacteria	100	GH11
+xylanase (EvXyn11fl) (Xyn11)	3.2.1.8	pubmed	uncultured bacterium	ACB87630.1	B2LWN3	2VGD[A]2VUJ[A]2VUL[A]	Bacteria	100	GH11
+xylanase (Xyn11A)	3.2.1.8	pubmed	Xylanimicrobium pachnodae	AAD54767.1	Q9RQB8		Bacteria	100	GH11
+corn-bran specific endo-β-1,4-xylanase (BACOVA_03433; Bovatus_03729)	3.2.1.8	pubmed	Bacteroides ovatus ATCC 8483	ALJ48334.1	A7M006		Bacteria	7	GH98
+corn-bran specific endo-β-1,4-xylanase (BACOVA_03433; Bovatus_03729)	3.2.1.8	pubmed	Bacteroides ovatus ATCC 8483	EDO10800.1	A7M006		Bacteria	7	GH98
+blood group A- and B-cleaving endo-β-galactosidase (Endo-ABase;EabC)	3.2.1.102	pubmed	Clostridium perfringens ATCC 10543	AAR84225.1	Q6RUF5Q8XNK4		Bacteria	7	GH98
+blood group A- and B-cleaving endo-β-galactosidase (Cpe0329)	3.2.1.102	pubmed	Clostridium perfringens str. 13	BAB80035.1	Q8XNK4		Bacteria	7	GH98
+blood group A- and B-cleaving endo-β-galactosidase (Cpe0329)	3.2.1.102	pubmed	Clostridium perfringens str. 13	NP_561245.1	Q8XNK4		Bacteria	7	GH98
+blood-group endo-β-1,4-galactosidase (RgGH98;FXV78_04990)	3.2.1.102	pubmed	[Ruminococcus] gnavus ATCC 29149 JCM6515	QEI31357.1		7PMO[A,B]7Q1W[A]7Q20[A,B]	Bacteria	7	GH98
+endo-β-1,4-galactosidase (CGSSp3BS71_10403;Sp3GH98;EABase) (blood-group A/B-antigen-specific)	3.2.1.102	pubmed	Streptococcus pneumoniae SP3-BS71	EDK74349.1	A0A0H2UKY3A0A0H2UKY4A5LBQ0C1CB04	2WMI[A,B]2WMJ[A,B]2WMK[A,B]4D6C[A]4D6D[A]4D6E[A]4D6F[A]4D6G[A]4D6H[A]4D6I[A]4D6J[A]4D71[A]4D72[A]	Bacteria	7	GH98
+endo-β-1,4-galactosidase (SP_2159;SP2159;Sp4GH98) (LewisY-specific)	3.2.1.102	pubmed	Streptococcus pneumoniae TIGR4	AAK76213.1	A0A0H2US34Q97N96	2WMF[A]2WMG[A]2WMH[A]	Bacteria	7	GH98
+endo-β-1,4-galactosidase (SP_2159;SP2159;Sp4GH98) (LewisY-specific)	3.2.1.102	pubmed	Streptococcus pneumoniae TIGR4	AAY71778.1	A0A0H2US34Q97N96	2WMF[A]2WMG[A]2WMH[A]	Bacteria	7	GH98
+endo-β-1,4-galactosidase (SP_2159;SP2159;Sp4GH98) (LewisY-specific)	3.2.1.102	pubmed	Streptococcus pneumoniae TIGR4	NP_346573.1	A0A0H2US34Q97N96	2WMF[A]2WMG[A]2WMH[A]	Bacteria	7	GH98
+3-O-α-D-galactosyl-α-L-arabinofuranosidase (BLGA_00340)	3.2.1.215	pubmed	Bifidobacterium longum subsp. longum JCM 7052	BBV22623.1	A0A7I6W7X7		Bacteria	31	GH39
+β-1,4-xylosidase (CoXylA;Calow_0126)	3.2.1.37	pubmed	Caldicellulosiruptor owensensis OL	ADQ03734.1	E4Q2A6		Bacteria	31	GH39
+β-xylosidase B (XynB;Orf5)	3.2.1.37	pubmed	Caldicellulosiruptor saccharolyticus	AAA23063.1	P23552		Bacteria	31	GH39
+β-xylosidase B (XynB;Orf5)	3.2.1.37	pubmed	Caldicellulosiruptor saccharolyticus	AAB87376.1	P23552		Bacteria	31	GH39
+β-xylosidase D (XynD)	3.2.1.37	pubmed	Caldicellulosiruptor saccharolyticus	AAB87373.1	O30428		Bacteria	31	GH39
+β-xylosidase (XynD;Csac_2409)	3.2.1.37	pubmed	Caldicellulosiruptor saccharolyticus DSM 8903	ABP67986.1	A4XM51		Bacteria	31	GH39
+β-xylosidase (XynD;Csac_2409)	3.2.1.37	pubmed	Caldicellulosiruptor saccharolyticus DSM 8903	ABP67986.2	A4XM51		Bacteria	31	GH39
+β-xylosidase II (XynB2;CcXynB2;CC2357)	3.2.1.37	pubmed	Caulobacter vibrioides CB15	AAK24328.1	Q9A5U0	4EKJ[A]4M29[A]	Bacteria	31	GH39
+β-xylosidase II (XynB2;CcXynB2;CC2357)	3.2.1.37	pubmed	Caulobacter vibrioides CB15	NP_421160.1	Q9A5U0	4EKJ[A]4M29[A]	Bacteria	31	GH39
+β-xylosidase (Xln-DT)	3.2.1.37	pubmed	Dictyoglomus thermophilum DSM 3960	ARO76324.1			Bacteria	31	GH39
+β-xylosidase (DtXyl; DICTH_1792)	3.2.1.37	pubmed	Dictyoglomus thermophilum H-6-12	ACI18502.1	B5YB78	6YYH[A,B]6YYI[A,B]	Bacteria	31	GH39
+[ulvan] endo-α-L-rhamnosidase (BN863_22200)	3.2.1.-	pubmed	Formosa agariphila KMM 3901	CDF79932.1	T2KM23		Bacteria	31	GH39
+β-xylosidase	3.2.1.37	pubmed	Geobacillus sp. WSUCF1	WP_020755811.1	A0A1V9CR85S7STZ0		Bacteria	31	GH39
+β-xylosidase (XynB;XynB1;HUS_CDS69)	3.2.1.37	pubmed	Geobacillus stearothermophilus T-6 NCIMB 40222	ABI49941.1	Q9ZFM2	1W91[A,B,C,D,E,F,G,H]2BFG[A,B,C,D,E,F,G,H]2BS9[A,B,C,D,E,F,G,H]	Bacteria	31	GH39
+β-xylosidase (XynB;XynB1;HUS_CDS69)	3.2.1.37	pubmed	Geobacillus stearothermophilus T-6 NCIMB 40222	AAC98129.1	Q9ZFM2	1W91[A,B,C,D,E,F,G,H]2BFG[A,B,C,D,E,F,G,H]2BS9[A,B,C,D,E,F,G,H]	Bacteria	31	GH39
+β-xylosidase (BHXyl39;Bxyl;BH1068)	3.2.1.37	pubmed	Halalkalibacterium halodurans C-125	BAB04787.1	Q9KDZ3		Bacteria	31	GH39
+β-xylosidase (BHXyl39;Bxyl;BH1068)	3.2.1.37	pubmed	Halalkalibacterium halodurans C-125	NP_241934.1	Q9KDZ3		Bacteria	31	GH39
+exopolysaccharide Psl biosynthetic/hydrolytic enzyme (PslG;PA2237)	3.2.1.21	pubmed	Pseudomonas aeruginosa PAO1	AAG05625.1	Q9I1N2	4ZN2[A,B,C,D]5BX9[A]5BXA[A]	Bacteria	31	GH39
+exopolysaccharide Psl biosynthetic/hydrolytic enzyme (PslG;PA2237)	3.2.1.21	pubmed	Pseudomonas aeruginosa PAO1	NP_250927.1	Q9I1N2	4ZN2[A,B,C,D]5BX9[A]5BXA[A]	Bacteria	31	GH39
+xylan 1,4-β-xylosidase (SlXyn39; Slin_3934)	3.2.1.37	pubmed	Spirosoma linguale DSM 74	ADB39924.1			Bacteria	31	GH39
+β-xylosidase (XynB)	3.2.1.37	pubmed	Thermoanaerobacterium saccharolyticum B6A-RI	AAA27369.1	P36906	1PX8[A,B]1UHV[A,B,C,D]	Bacteria	31	GH39
+β-xylosidase (XylB;Tsac_1452)	3.2.1.37	pubmed	Thermoanaerobacterium saccharolyticum JW/SL-YS485	AFK86459.1	I3VVB4O30360		Bacteria	31	GH39
+β-xylosidase (XylB;Tsac_1452)	3.2.1.37	pubmed	Thermoanaerobacterium saccharolyticum JW/SL-YS485	AAB68820.1	I3VVB4O30360		Bacteria	31	GH39
+β-xylosidase A (BxlA) (Bxl39A)	3.2.1.37	pubmed	Thermoclostridium stercorarium NCIMB 11745	CAD48308.1	Q8GJ43		Bacteria	31	GH39
+β-xylosidase (Bxl39A; BxlA; Cst_c08910)	3.2.1.37	pubmed	Thermoclostridium stercorarium subsp. stercorarium DSM 8532	AGI38931.1			Bacteria	31	GH39
+β-xylosidase (Bxl39A; BxlA; Cst_c08910)	3.2.1.37	pubmed	Thermoclostridium stercorarium subsp. stercorarium DSM 8532	AGC67890.1			Bacteria	31	GH39
+Xyl21	3.2.1.37	doi	uncultured bacterium	APG32530.1	A0A1L3GYC8		Bacteria	31	GH39
+xylan 1,4-β-xylosidase (XylP81;QPG93045.1) (fragment)	3.2.1.37	pubmed	uncultured bacterium	QPG93045.1			Bacteria	31	GH39
+β-xylosidase (XynB; XacXynB; XAC4058)	3.2.1.37	pubmed	Xanthomonas citri pv. citri str. 306	AAM38893.1	Q8PFC5	6UQJ[A]	Bacteria	31	GH39
+β-xylosidase (XynB; XacXynB; XAC4058)	3.2.1.37	pubmed	Xanthomonas citri pv. citri str. 306	NP_644357.1	Q8PFC5	6UQJ[A]	Bacteria	31	GH39
+β-xylosidase B (XysB)	3.2.1.37	pubmed	Aeromonas caviae ME-1	BAA74507.1	Q9Z487		Bacteria	10	GH52
+exo-β-1,4-xylosidase (Xyn;GsXyn)	3.2.1.37	pubmed	Geobacillus stearothermophilus 1A05583	AGE34479.1	M1GNL7		Bacteria	10	GH52
+β-xylosidase (XylA)	3.2.1.37	pubmed	Geobacillus stearothermophilus 21	BAA05667.1	P45702		Bacteria	10	GH52
+β-xylosidase 22 (ET31_03040)	3.2.1.37	doi	Geobacillus stearothermophilus 22	KFL17027.1			Bacteria	10	GH52
+β-xylosidase (XynB2;Xyn52B2;β-X;LbX;HUS_CDS60)	3.2.1.37	pubmed	Geobacillus stearothermophilus T-6 NCIMB 40222	CAC29083.1	Q09LZ0Q9AL84Q9ZFM9	4RHH[A,B,C,D]	Bacteria	10	GH52
+β-xylosidase (XynB2;Xyn52B2;β-X;LbX;HUS_CDS60)	3.2.1.37	pubmed	Geobacillus stearothermophilus T-6 NCIMB 40222	AAC98122.1	Q09LZ0Q9AL84Q9ZFM9	4RHH[A,B,C,D]	Bacteria	10	GH52
+β-xylosidase (XynB2;Xyn52B2;β-X;LbX;HUS_CDS60)	3.2.1.37	pubmed	Geobacillus stearothermophilus T-6 NCIMB 40222	ABI49956.1	Q09LZ0Q9AL84Q9ZFM9	4RHH[A,B,C,D]	Bacteria	10	GH52
+β-xylosidase (BH2114)	3.2.1.37	doi	Halalkalibacterium halodurans C-125	BAB05833.1	Q9KB21		Bacteria	10	GH52
+β-xylosidase (BH2114)	3.2.1.37	doi	Halalkalibacterium halodurans C-125	NP_242980.1	Q9KB21		Bacteria	10	GH52
+β-xylosidase (XylA)	3.2.1.37	doi	Paenibacillus sp. DG-22	ABV46494.1	B6C867		Bacteria	10	GH52
+β-xylosidase (GT2_24_00240)	3.2.1.37	pubmed	Parageobacillus thermoglucosidasius NBRC 107763 / TM242	GAJ44942.1	A0A067XG64	4C1O[A]4C1P[A]	Bacteria	10	GH52
+β-xylosidase (XylD;Tsac_1451)	3.2.1.37	pubmed	Thermoanaerobacterium saccharolyticum JW/SL-YS485	AFK86458.1	I3VVB3		Bacteria	10	GH52
+β-xylosidase B (XylB;BAD_0299)	3.2.1.37	pubmed	Bifidobacterium adolescentis ATCC 15703	BAF39080.1	A1A047		Bacteria	3	GH120
+β-xylosidase (XylC;Tsac_0939)	3.2.1.37	pubmed	Thermoanaerobacterium saccharolyticum JW/SL-YS485	ABM68042.1	A2ICH1	3VST[A,B,C,D]3VSU[A,B,C,D]3VSV[A,B,C,D]	Bacteria	3	GH120
+β-xylosidase (XylC;Tsac_0939)	3.2.1.37	pubmed	Thermoanaerobacterium saccharolyticum JW/SL-YS485	AFK85955.1	A2ICH1	3VST[A,B,C,D]3VSU[A,B,C,D]3VSV[A,B,C,D]	Bacteria	3	GH120
+xylan α-1,2-(4-O-methyl)-glucuronidase / α-glucuronidase (AxyAgu115A; AXY_23000)	3.2.1.131	pubmed	Amphibacillus xylanus NBRC 15112	BAM48432.1	K0J4X5	6NPS[A,B]	Bacteria	9	GH115
+α-glucuronidase (BoAgu115A;BACOVA_03449;Bovatus_03743) (Agu115A)	3.2.1.131	pubmed	Bacteroides ovatus ATCC 8483	EDO10816.1	A7M022	4C90[A,B]4C91[A,B]	Bacteria	9	GH115
+[arabinogalactan] 4-O-methyl-α-glucuronidase (BtGH115A;BT2958;BT_2958) (GH115A)	3.2.1.-	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO78064.1	Q8A3J6	5BY3[A]	Bacteria	9	GH115
+[arabinogalactan] 4-O-methyl-α-glucuronidase (BtGH115A;BT2958;BT_2958) (GH115A)	3.2.1.-	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_811870.1	Q8A3J6	5BY3[A]	Bacteria	9	GH115
+xylan α-1,2-glucuronidase (RiAgu115A;ROSINTL182_08195) (Agu115A)	3.2.1.131	pubmed	Roseburia intestinalis L1-82	EEU99942.1	C7GE43		Bacteria	9	GH115
+xylan α-glucuronidase (SdeAgu115A;Sde_1755) (Agu115A=Glu115A)	3.2.1.131	pubmed	Saccharophagus degradans 2-40	ABD81015.1	Q21JW4	4ZMH[A,B]	Bacteria	9	GH115
+xylan α-1,2-(4-O-methyl)-glucuronidase / α-glucuronidase (SSDG_01527T0, SpGlcA115A)	3.2.1.131	pubmed	Streptomyces pristinaespiralis ATCC 25486	WP_005320908.1	A0A0M4DBW4B5H8Y8	cryst	Bacteria	9	GH115
+α-glucuronidase (Xyg)	3.2.1.139	pubmed	Aeromonas caviae ME-1	BAA74508.1	Q9Z486		Bacteria	27	GH67
+α-glucuronidase (BiAgu67A;BACINT_04205) (Agu67A)	3.2.1.139	pubmed	Bacteroides intestinalis DSM 17393	EDV05062.1	B3CES4		Bacteria	27	GH67
+xylan α-1,2-glucuronidase / α-glucuronidase (PUL-XylS;BoGH67;BACOVA_04385;Bovatus_01723)	3.2.1.131	pubmed	Bacteroides ovatus ATCC 8483	EDO10005.1	A7M2P8		Bacteria	27	GH67
+α-glucuronidase (ORF0540) (Agu67A)	3.2.1.131	pubmed	Caldanaerobius polysaccharolyticus KMCJ	AFM44650.1	I6QTZ4		Bacteria	27	GH67
+α-glucuronidase (Cb909;CbAgu67A;Athe_0854) (Agu67A)	3.2.1.139	pubmed	Caldicellulosiruptor bescii DSM 6725	ACM59969.1	B9MQL5		Bacteria	27	GH67
+xylan α-1,2-glucuronidase / α-glucuronidase (CjGlcA67A;CJA_2887) (Gla67A=GlcA67A)	3.2.1.131	pubmed	Cellvibrio japonicus Ueda107	ACE83468.1	B3PC73Q8VP74	1GQI[A,B]1GQJ[A,B]1GQK[A,B]1GQL[A,B]1H41[A,B]	Bacteria	27	GH67
+xylan α-1,2-glucuronidase / α-glucuronidase (CjGlcA67A;CJA_2887) (Gla67A=GlcA67A)	3.2.1.131	pubmed	Cellvibrio japonicus Ueda107	AAL57752.1	B3PC73Q8VP74	1GQI[A,B]1GQJ[A,B]1GQK[A,B]1GQL[A,B]1H41[A,B]	Bacteria	27	GH67
+α-glucuronidase (GlcA67A)	3.2.1.139	pubmed	Cellvibrio mixtus	AAL57753.1	Q8VP73		Bacteria	27	GH67
+α-glucuronidase (LaGl;Dtur_1714)	3.2.1.139	pubmed	Dictyoglomus turgidum DSM 6724	ACK42986.1	B8E3B2		Bacteria	27	GH67
+α-glucuronidase 22 (?ET31_03015)	3.2.1.131	doi	Geobacillus stearothermophilus 22	KFL17022.1			Bacteria	27	GH67
+α-glucuronidase (AguA)	3.2.1.139	pubmed	Geobacillus stearothermophilus 236	AAG09715.1	Q9F920		Bacteria	27	GH67
+α-glucuronidase (AguA)	3.2.1.139	pubmed	Geobacillus stearothermophilus T-1	AAL32057.1	Q8VVD2	1K9D[A]1L8N[A]1MQQ[A]	Bacteria	27	GH67
+xylan α-1,2-glucuronidase / α-glucuronidase (AguA;HUS_CDS68)	3.2.1.131	pubmed	Geobacillus stearothermophilus T-6 NCIMB 40222	ABI49940.1	Q09LY5Q9ZFM3	1K9E[A]1K9F[A]1MQP[A]1MQR[A]	Bacteria	27	GH67
+xylan α-1,2-glucuronidase / α-glucuronidase (AguA;HUS_CDS68)	3.2.1.131	pubmed	Geobacillus stearothermophilus T-6 NCIMB 40222	AAC98128.2	Q09LY5Q9ZFM3	1K9E[A]1K9F[A]1MQP[A]1MQR[A]	Bacteria	27	GH67
+α-glucuronidase (BhGlcA67; BH1061)	3.2.1.139	pubmed	Halalkalibacterium halodurans C-125	BAB04780.1			Bacteria	27	GH67
+α-glucuronidase (BhGlcA67; BH1061)	3.2.1.139	pubmed	Halalkalibacterium halodurans C-125	NP_241927.1			Bacteria	27	GH67
+α-glucuronidase (AguA)	3.2.1.139	pubmed	Paenibacillus curdlanolyticus B-6	AIW62944.1	A0A0A0V7L5		Bacteria	27	GH67
+α-glucuronidase (AguA;Pjdr2_1323)	3.2.1.139	pubmed	Paenibacillus sp. JDR-2	ABV90485.1	A9QDR9		Bacteria	27	GH67
+α-glucuronidase (AguA;Pjdr2_1323)	3.2.1.139	pubmed	Paenibacillus sp. JDR-2	ACS99998.1	A9QDR9		Bacteria	27	GH67
+α-glucuronidase (XynF;Orf0393;PBR_0398;00393-GPBOY) (Agu67A)	3.2.1.139	pubmed	Prevotella bryantii B14	ADI70674.1	D7SFH0Q8GBY2		Bacteria	27	GH67
+α-glucuronidase (XynF;Orf0393;PBR_0398;00393-GPBOY) (Agu67A)	3.2.1.139	pubmed	Prevotella bryantii B14	CAD21014.1	D7SFH0Q8GBY2		Bacteria	27	GH67
+xylan α-1,2-glucuronidase 67A (Agu67A)	3.2.1.131	pubmed	Ruminococcus albus 8	AEE64776.1	E9SDL4		Bacteria	27	GH67
+xylan α-1,2-glucuronidase 67A (Agu67A)	3.2.1.131	pubmed	Ruminococcus albus 8	ZP_08159559.1	E9SDL4		Bacteria	27	GH67
+α-glucuronidase (AguA;TM0055)	3.2.1.1313.2.1.139	pubmedpubmed	Thermotoga maritima MSB8	AAD35149.1	G4FGX0P96105		Bacteria	27	GH67
+α-glucuronidase (AguA;TM0055)	3.2.1.1313.2.1.139	pubmedpubmed	Thermotoga maritima MSB8	AGL48978.1	G4FGX0P96105		Bacteria	27	GH67
+α-glucuronidase (AguA;TM0055)	3.2.1.1313.2.1.139	pubmedpubmed	Thermotoga maritima MSB8	AHD18175.1	G4FGX0P96105		Bacteria	27	GH67
+α-glucuronidase (AguA;TM0055)	3.2.1.1313.2.1.139	pubmedpubmed	Thermotoga maritima MSB8	AKE27864.1	G4FGX0P96105		Bacteria	27	GH67
+α-glucuronidase (AguA;TM0055)	3.2.1.1313.2.1.139	pubmedpubmed	Thermotoga maritima MSB8	CAA70702.1	G4FGX0P96105		Bacteria	27	GH67
+α-glucuronidase (AguA;TM0055)	3.2.1.1313.2.1.139	pubmedpubmed	Thermotoga maritima MSB8	NP_227871.1	G4FGX0P96105		Bacteria	27	GH67
+α-glucuronidase (Deg75;DEG75)	3.2.1.131	pubmed	uncultured bacterium	AFJ94648.1	I2E7L0		Bacteria	27	GH67
+α-glucuronidase (rum630-AG;RUM630-AG)	3.2.1.139	pubmed	uncultured rumen bacterium	AFE48530.1	H9A0B2		Bacteria	27	GH67

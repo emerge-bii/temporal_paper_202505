@@ -1,0 +1,95 @@
+Protein Name	EC#	Reference	Organism	GenBank	Uniprot	PDB/3D	Taxonomy	Nrow_before_sepGenbank	FamilyName
+endo-α-1,4-L-fucanase (FFA2)	3.2.1.212	pubmed	Formosa algae	WP_057784219.1			Bacteria	13	GH107
+endo-α-1,4-L-fucoidanase (Fhf2)	3.2.1.212	pubmed	Formosa haliotis	WP_066217784.1			Bacteria	13	GH107
+endo-α-1,4-L-fucanase (Fhf1)	3.2.1.212	pubmed	Formosa haliotis	WP_066217780.1			Bacteria	13	GH107
+sulfated fucan endo-α-1,4-L-fucanase (α-1,4-L-endofucoidanase; FcnA; MfFcnA)	3.2.1.212	pubmed	Mariniflexile fucanivorans	CAI47003.1	Q08I46	6DLH[A]6DMS[A]6DNS[A]	Bacteria	13	GH107
+endo-α-1,3-L-fucanase (Mef2)	3.2.1.211	pubmed	Muricauda eckloniae	WP_055392200.1			Bacteria	13	GH107
+endo-fucoidan hydrolase (FcnA; P19DFcnA)	3.2.1.212	pubmed	Psychromonas sp. SW19D	AYF59292.1			Bacteria	13	GH107
+endo-fucoidan hydrolase (FcnA; P5AFcnA)	3.2.1.212	pubmed	Psychromonas sp. SW5A	AYF59291.1	A0A452CSY7	6M8N[A]	Bacteria	13	GH107
+sulfated fucan endo-α-1,4-L-fucanase (Fp277)	3.2.1.212	pubmed	uncultured bacterium	AYC81239.1	A0A386CB26		Bacteria	13	GH107
+sulfated fucan endo-α-1,4-L-fucanase (Fp279)	3.2.1.212	pubmed	uncultured bacterium	AYC81240.1	A0A386CB32		Bacteria	13	GH107
+sulfated fucan endo-α-1,4-L-fucanase (Fp273)	3.2.1.212	pubmed	uncultured bacterium	AYC81238.1	A0A386CB34		Bacteria	13	GH107
+endo-α-1,4-L-fucoidanase (FWf2; AXE80_07310)	3.2.1.212	pubmed	Wenyingzhuangia fucanilytica CZ1127	ANW96098.1			Bacteria	13	GH107
+endo-α-1,4-L-fucoidanase (FWf1; AXE80_07305)	3.2.1.212	pubmed	Wenyingzhuangia fucanilytica CZ1127	ANW96097.1			Bacteria	13	GH107
+α-L-fucosidase (Blon_0346)	3.2.1.51	pubmed	Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088	ACJ51470.1	B7GU29		Bacteria	4	GH151
+α-L-fucosidase (ALfuk2;Iso2)	3.2.1.51	pubmed	Paenibacillus thiaminolyticus	CCF76527.1	K0JCW6	6TVK[A]	Bacteria	4	GH151
+α-L-fucosidase (Mfuc3)	3.2.1.51	pubmed	uncultured bacterium	AIC77300.1	A0A068B1E8		Bacteria	4	GH151
+α-L-fucosidase (FucA1;SSO11867 + SSO3060)	3.2.1.51	pubmed	Saccharolobus solfataricus P2	AAK43159.1	Q97UG1Q97UG2		Archaea	54	GH29
+α-L-fucosidase (FucA1;SSO11867 + SSO3060)	3.2.1.51	pubmed	Saccharolobus solfataricus P2	AAK43160.1	Q97UG1Q97UG2		Archaea	54	GH29
+α-L-fucosidase (FucA1;SSO11867 + SSO3060)	3.2.1.51	pubmed	Saccharolobus solfataricus P2	CAC24067.1	Q97UG1Q97UG2		Archaea	54	GH29
+α-L-fucosidase (FucA1;SSO11867 + SSO3060)	3.2.1.51	pubmed	Saccharolobus solfataricus P2	NP_344369.1	Q97UG1Q97UG2		Archaea	54	GH29
+α-L-fucosidase (FucA1;SSO11867 + SSO3060)	3.2.1.51	pubmed	Saccharolobus solfataricus P2	NP_344370.1	Q97UG1Q97UG2		Archaea	54	GH29
+α-L-fucosidase (BF0028)	3.2.1.51	pubmed	Bacteroides fragilis NCTC 9343	CAH05807.1	Q5LJ69		Bacteria	54	GH29
+α-L-fucosidase (BF0810)	3.2.1.51	pubmed	Bacteroides fragilis NCTC 9343	CAH06554.1	Q5LH32		Bacteria	54	GH29
+α-L-fucosidase (BF3242)	3.2.1.51	pubmed	Bacteroides fragilis NCTC 9343	CAH08937.1	Q5LAD6		Bacteria	54	GH29
+α-1,3-L-fucosidase (BF3591)	3.2.1.1113.2.1.-	pubmedpubmed	Bacteroides fragilis NCTC 9343	CAH09273.1	Q5L9F5		Bacteria	54	GH29
+α-L-fucosidase (BT1625)	3.2.1.51	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO76732.1	Q8A7A0		Bacteria	54	GH29
+α-L-fucosidase (BT1625)	3.2.1.51	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_810538.1	Q8A7A0		Bacteria	54	GH29
+α-1,3/1,4-L-fucosidase / α-galactosidase (BT2192; BT_2192)	3.2.1.1113.2.1.-	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	AAO77299.1	Q8A5P6	3EYP[A,B]4OUE[A,B]4OZO[A,B]	Bacteria	54	GH29
+α-1,3/1,4-L-fucosidase / α-galactosidase (BT2192; BT_2192)	3.2.1.1113.2.1.-	pubmedpubmed	Bacteroides thetaiotaomicron VPI-5482	NP_811105.1	Q8A5P6	3EYP[A,B]4OUE[A,B]4OZO[A,B]	Bacteria	54	GH29
+α-L-fucosidase (Fuc2970; BtFuc2970; BT2970; BT_2970)	3.2.1.51	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO78076.1	Q8A3I4	2WVS[A,B,C,D]2WVT[A,B]2WVU[A,B,C,D]2WVV[A,B,C,D]2XIB[A,B,C,D]2XII[A,B]4J27[A,B]4J28[A,B]4JFS[A,B]4JFT[A,B]4JFU[A,B]4JFV[A,B,C,D]4JFW[A,B,C,D]4JL1[A,B]4JL2[A,B]4PCS[A,B,C,D]4PCT[A,B,C,D]4PEE[A,B,C,D]4WSJ[A,B,C,D]4WSK[A,B,C,D]5HDR[A,B,C,D]5I5R[A,B,C,D]6HZY[A,B]	Bacteria	54	GH29
+α-L-fucosidase (Fuc2970; BtFuc2970; BT2970; BT_2970)	3.2.1.51	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_811882.1	Q8A3I4	2WVS[A,B,C,D]2WVT[A,B]2WVU[A,B,C,D]2WVV[A,B,C,D]2XIB[A,B,C,D]2XII[A,B]4J27[A,B]4J28[A,B]4JFS[A,B]4JFT[A,B]4JFU[A,B]4JFV[A,B,C,D]4JFW[A,B,C,D]4JL1[A,B]4JL2[A,B]4PCS[A,B,C,D]4PCT[A,B,C,D]4PEE[A,B,C,D]4WSJ[A,B,C,D]4WSK[A,B,C,D]5HDR[A,B,C,D]5I5R[A,B,C,D]6HZY[A,B]	Bacteria	54	GH29
+BT4136	3.2.1.51	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO79241.1	Q8A085		Bacteria	54	GH29
+BT4136	3.2.1.51	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_813047.1	Q8A085		Bacteria	54	GH29
+α-1,3/4-L-fucosidase (AfcB;BbAfcB)	3.2.1.1113.2.1.-	pubmedpubmed	Bifidobacterium bifidum JCM 1254	BAH80310.1	C5NS94		Bacteria	54	GH29
+α-1,3/1,4-L-fucosidase (BiAfcB;Blon_2336)	3.2.1.513.2.1.1113.2.1.-	pubmedpubmedpubmed	Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088	ACJ53394.1	B7GNN8	3MO4[A,B]3UES[A,B]3UET[A,B]	Bacteria	54	GH29
+α-L-fucosidase (Blon_0248)	3.2.1.51	pubmed	Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088	ACJ51376.1	B7GTT5		Bacteria	54	GH29
+α-1,6-L-fucosidase (Blon_0426)	3.2.1.513.2.1.127	pubmedpubmed	Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088	ACJ51546.1	B7GN40		Bacteria	54	GH29
+α-1,3/1,4-L-fucosidase (Afc2;CPF_2130)	3.2.1.1113.2.1.-	pubmedpubmed	Clostridium perfringens ATCC 13124	ABG83106.1	A0A0H2YQI3Q0TP82		Bacteria	54	GH29
+[N-glycan] core α-1,3-L-fucosidase I (cFase I; M876_10910)	3.2.1.1113.2.1.-	pubmedpubmed	Elizabethkingia anophelis FMS-007	AKH95075.1			Bacteria	54	GH29
+[N-glycan] core α-1,3-L-fucosidase I (cFase I; M876_10910)	3.2.1.1113.2.1.-	pubmedpubmed	Elizabethkingia anophelis FMS-007	WP_047034007.1			Bacteria	54	GH29
+α-1,6-L-fucosidase A (AlfA;LCABL_20390)	3.2.1.127	pubmed	Lacticaseibacillus casei BL23	CAQ67115.1	B3W8U6		Bacteria	54	GH29
+α-L-fucosidase B (AlfB;LCABL_28270)	3.2.1.1113.2.1.-	pubmedpubmed	Lacticaseibacillus casei BL23	CAQ67877.1	B3WB08		Bacteria	54	GH29
+α-1,6-L-fucosidase C (AlfC;LCABL_29340)	3.2.1.127	pubmed	Lacticaseibacillus casei BL23	CAQ67984.1	B3WBB5		Bacteria	54	GH29
+α-L-fucosidase (aLfuk1)	3.2.1.51	pubmed	Paenibacillus thiaminolyticus	CBM40947.1	E3PQQ9	6GN6[A,B,C,D,E,F]	Bacteria	54	GH29
+α-1,3-galactosidase active on porphyrooligosaccharides desulfated at the non-reducing end (BpGH29; BACPLE_01702)	3.2.1.-	doi	Phocaeicola plebeius DSM 17135	EDY95436.1		7LJJ[A]7LK7[A]7LNP[A,B,C,D]7SNK[A]	Bacteria	54	GH29
+α-1,4-fucosidase (RiFuc29; EEG94253.1+EEG94252.1)	3.2.1.1113.2.1.-	pubmedpubmed	Roseburia inulinivorans DSM 16841	EEG94252.1	C0FT23C0FT24		Bacteria	54	GH29
+α-1,4-fucosidase (RiFuc29; EEG94253.1+EEG94252.1)	3.2.1.1113.2.1.-	pubmedpubmed	Roseburia inulinivorans DSM 16841	EEG94253.1	C0FT23C0FT24		Bacteria	54	GH29
+α-L-fucosidase (RUMGNA_03833; RGna_04325)	3.2.1.51	pubmed	[Ruminococcus] gnavus ATCC 29149	QHB22774.1			Bacteria	54	GH29
+CDL26_02305	3.2.1.1113.2.1.-	pubmedpubmed	Ruminococcus gnavus RJX1124	PLT74914.1	A0A2N5PIE7	6TR3[A]6TR4[A,B]	Bacteria	54	GH29
+α-L-fucosidase (SlFuc29; Slin_1127)	3.2.1.51	pubmed	Spirosoma linguale DSM 74	ADB37178.1			Bacteria	54	GH29
+α-1,3/1,4-L-fucosidase (SpGH29;SP_2146)	3.2.1.1113.2.1.-	pubmedpubmed	Streptococcus pneumoniae TIGR4	AAK76203.1	A0A0H2US78Q97NA6	6OR4[A,B]6ORF[A,B]6ORG[A,B]6ORH[A,B]	Bacteria	54	GH29
+α-1,3/1,4-L-fucosidase (SpGH29;SP_2146)	3.2.1.1113.2.1.-	pubmedpubmed	Streptococcus pneumoniae TIGR4	ABA35887.1	A0A0H2US78Q97NA6	6OR4[A,B]6ORF[A,B]6ORG[A,B]6ORH[A,B]	Bacteria	54	GH29
+α-1,3/1,4-L-fucosidase (SpGH29;SP_2146)	3.2.1.1113.2.1.-	pubmedpubmed	Streptococcus pneumoniae TIGR4	NP_346563.1	A0A0H2US78Q97NA6	6OR4[A,B]6ORF[A,B]6ORG[A,B]6ORH[A,B]	Bacteria	54	GH29
+α-1,3/1,4-L-fucosidase	3.2.1.1113.2.1.-	pubmedpubmed	Streptomyces sp. 142	AAD10477.1	Q9Z4I9		Bacteria	54	GH29
+α-1,2-L-fucosidase (Fuc1;TfFuc1;BFO_2737)	3.2.1.63	pubmed	Tannerella forsythia 92A2	AEW21393.1	G8UMQ6		Bacteria	54	GH29
+α-L-fucosidase (TmaFuc;TM0306;Tmari_0304)	3.2.1.51	pubmed	Thermotoga maritima MSB8	AAD35394.1	G4FHM0Q9WYE2	1HL8[A,B]1HL9[A,B]1ODU[A,B]2WSP[A,B]2ZWY[A,B]2ZWZ[A,B]2ZX5[A,B]2ZX6[A,B]2ZX7[A,B]2ZX8[A,B]2ZX9[A,B]2ZXA[A,B]2ZXB[A,B]2ZXD[A,B]	Bacteria	54	GH29
+α-L-fucosidase (TmaFuc;TM0306;Tmari_0304)	3.2.1.51	pubmed	Thermotoga maritima MSB8	AGL49230.1	G4FHM0Q9WYE2	1HL8[A,B]1HL9[A,B]1ODU[A,B]2WSP[A,B]2ZWY[A,B]2ZWZ[A,B]2ZX5[A,B]2ZX6[A,B]2ZX7[A,B]2ZX8[A,B]2ZX9[A,B]2ZXA[A,B]2ZXB[A,B]2ZXD[A,B]	Bacteria	54	GH29
+α-L-fucosidase (TmaFuc;TM0306;Tmari_0304)	3.2.1.51	pubmed	Thermotoga maritima MSB8	AHD17930.1	G4FHM0Q9WYE2	1HL8[A,B]1HL9[A,B]1ODU[A,B]2WSP[A,B]2ZWY[A,B]2ZWZ[A,B]2ZX5[A,B]2ZX6[A,B]2ZX7[A,B]2ZX8[A,B]2ZX9[A,B]2ZXA[A,B]2ZXB[A,B]2ZXD[A,B]	Bacteria	54	GH29
+α-L-fucosidase (TmaFuc;TM0306;Tmari_0304)	3.2.1.51	pubmed	Thermotoga maritima MSB8	AKE28107.1	G4FHM0Q9WYE2	1HL8[A,B]1HL9[A,B]1ODU[A,B]2WSP[A,B]2ZWY[A,B]2ZWZ[A,B]2ZX5[A,B]2ZX6[A,B]2ZX7[A,B]2ZX8[A,B]2ZX9[A,B]2ZXA[A,B]2ZXB[A,B]2ZXD[A,B]	Bacteria	54	GH29
+α-L-fucosidase (TmaFuc;TM0306;Tmari_0304)	3.2.1.51	pubmed	Thermotoga maritima MSB8	NP_228118.1	G4FHM0Q9WYE2	1HL8[A,B]1HL9[A,B]1ODU[A,B]2WSP[A,B]2ZWY[A,B]2ZWZ[A,B]2ZX5[A,B]2ZX6[A,B]2ZX7[A,B]2ZX8[A,B]2ZX9[A,B]2ZXA[A,B]2ZXB[A,B]2ZXD[A,B]	Bacteria	54	GH29
+α-L-fucosidase (GH29)	3.2.1.51	pubmed	uncultured bacterium	AMO13190.1			Bacteria	54	GH29
+α-1,4-fucosidase (Fp231)	3.2.1.-	pubmed	uncultured bacterium	QTJ01947.1			Bacteria	54	GH29
+α-1,2/3-fucosidase (Fp239)	3.2.1.633.2.1.111	pubmedpubmed	uncultured bacterium	QTJ01948.1			Bacteria	54	GH29
+α-1,6-fucosidase (Fp284)	3.2.1.127	pubmed	uncultured bacterium	QTJ01951.1			Bacteria	54	GH29
+α-fucosidase (Fp251)	3.2.1.51	pubmed	uncultured bacterium	QTJ01950.1			Bacteria	54	GH29
+α-fucosidase (Fp240)	3.2.1.51	pubmed	uncultured bacterium	QTJ01949.1			Bacteria	54	GH29
+α-L-fucosidase (Mfuc5)	3.2.1.51	pubmed	uncultured bacterium	AIC77302.1	A0A068B2Y3		Bacteria	54	GH29
+α-L-fucosidase (Mfuc1)	3.2.1.51	pubmed	uncultured bacterium	AIC77298.1	A0A068B780		Bacteria	54	GH29
+α-L-fucosidase (Mfuc2)	3.2.1.51	pubmed	uncultured bacterium	AIC77299.1	A0A068B4L8		Bacteria	54	GH29
+α-L-fucosidase (Mfuc4)	3.2.1.51	pubmed	uncultured bacterium	AIC77301.1	A0A068B3H5		Bacteria	54	GH29
+α-L-fucosidase (Mfuc6)	3.2.1.51	pubmed	uncultured bacterium	AIC77303.1	A0A068B783		Bacteria	54	GH29
+α-L-fucosidase (Mfuc7)	3.2.1.51	pubmed	uncultured bacterium	AIC77304.1	A0A068B4M2		Bacteria	54	GH29
+VEJY3_11310	3.2.1.51	pubmed	Vibrio sp. EJY3	AEX22740.1		7DB5[A]	Bacteria	54	GH29
+fucosidase 1 (Alf1; Alf1_Wf; AXE80_08860)	3.2.1.51	pubmed	Wenyingzhuangia fucanilytica CZ1127	ANW96380.1	A0A1B1NX89		Bacteria	54	GH29
+fucosidase 1 (Alf1; Alf1_Wf; AXE80_08860)	3.2.1.51	pubmed	Wenyingzhuangia fucanilytica CZ1127	ANS88313.1	A0A1B1NX89		Bacteria	54	GH29
+[N-glycan] α-1,3-L-fucosidase (NixE;FucA1;XCC2888)	3.2.1.51	pubmed	Xanthomonas campestris pv. campestris str. ATCC 33913	AAM42160.1	Q8P6S7		Bacteria	54	GH29
+[N-glycan] α-1,3-L-fucosidase (NixE;FucA1;XCC2888)	3.2.1.51	pubmed	Xanthomonas campestris pv. campestris str. ATCC 33913	NP_638236.1	Q8P6S7		Bacteria	54	GH29
+[xyloglucan] α-1,2-L-fucosidase (BfGH95; HMPREF9446_01800)	3.2.1.63	pubmed	Bacteroides fluxus YIT 12057	EGF57198.1			Bacteria	17	GH95
+α-L-galactosidase (BACOVA_03438; Bovatus_03734)	3.2.1.-	pubmed	Bacteroides ovatus ATCC 8483	ALJ48339.1	A7M011	4UFC[A,B]	Bacteria	17	GH95
+α-L-galactosidase (BACOVA_03438; Bovatus_03734)	3.2.1.-	pubmed	Bacteroides ovatus ATCC 8483	EDO10805.1	A7M011	4UFC[A,B]	Bacteria	17	GH95
+α-L-galactosidase (cleaves L-Galp-α-1,2-D-GlcpA; BT1010)	3.2.1.-	pubmed	Bacteroides thetaiotaomicron VPI-5482	AAO76117.1	Q8A907		Bacteria	17	GH95
+α-L-galactosidase (cleaves L-Galp-α-1,2-D-GlcpA; BT1010)	3.2.1.-	pubmed	Bacteroides thetaiotaomicron VPI-5482	NP_809923.1	Q8A907		Bacteria	17	GH95
+[xyloglucan] α-1,2-L-fucosidase (BuGH95; BACUNI_00326)	3.2.1.63	pubmed	Bacteroides uniformis ATCC 8492	EDO56039.1			Bacteria	17	GH95
+α-1,2-L-fucosidase (AfcA; AfuA; BbAfcA)	3.2.1.63	pubmed	Bifidobacterium bifidum JCM 1254	AAQ72464.1	Q6JV24	2EAB[A,B]2EAC[A,B]2EAD[A,B]2EAE[A]	Bacteria	17	GH95
+α-1,2-L-fucosidase (Blon_2335)	3.2.1.63	pubmed	Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088	ACJ53393.1	B7GNN7		Bacteria	17	GH95
+α-L-fucosidase 95A (CjAfc95A;CJA_2710) (Afc95A)	3.2.1.63	pubmed	Cellvibrio japonicus Ueda107	ACE83895.1	B3PBE3		Bacteria	17	GH95
+α-1,2-L-fucosidase (Afc3;CPF_2129)	3.2.1.63	pubmed	Clostridium perfringens ATCC 13124	ABG82552.1	A0A0H2YQB3Q0TP83		Bacteria	17	GH95
+[xyloglucan] α-1,2-L-fucosidase (DgGH95; HMPREF9455_00301)	3.2.1.63	pubmed	Dysgonomonas gadei ATCC BAA-286	EGJ99268.1			Bacteria	17	GH95
+α-1,2-fucosidase (RiFuc95; EEG94251.1+EEG94250.1+EEG94249.1)	3.2.1.63	pubmed	Roseburia inulinivorans DSM 16841	EEG94249.1	C0FT20		Bacteria	17	GH95
+α-1,2-fucosidase (RiFuc95; EEG94251.1+EEG94250.1+EEG94249.1)	3.2.1.63	pubmed	Roseburia inulinivorans DSM 16841	EEG94250.1	C0FT20		Bacteria	17	GH95
+α-L-fucosidase (RUMGNA_00842; RGna_14480)	3.2.1.513.2.1.63	pubmedpubmed	[Ruminococcus] gnavus ATCC 29149	QHB24557.1			Bacteria	17	GH95
+α-1,2-L-fucosidase (SpGH95;SP_1654)	3.2.1.63	pubmed	Streptococcus pneumoniae TIGR4	AAK75733.1	A0A0H2UR14		Bacteria	17	GH95
+α-1,2-L-fucosidase (SpGH95;SP_1654)	3.2.1.63	pubmed	Streptococcus pneumoniae TIGR4	NP_346093.1	A0A0H2UR14		Bacteria	17	GH95
+α-1,2-L-fucosidase (XAC1774)	3.2.1.63	doi	Xanthomonas citri pv. citri str. 306	AAM36638.1	Q8PLM1	7KMQ[A,B]	Bacteria	17	GH95
+α-1,2-L-fucosidase (XAC1774)	3.2.1.63	doi	Xanthomonas citri pv. citri str. 306	NP_642102.1	Q8PLM1	7KMQ[A,B]	Bacteria	17	GH95
