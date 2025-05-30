@@ -1,3 +1,14 @@
+This is the public-facing version of the private repository https://github.com/emerge-bii/temporal_paper, which was originally copied on 2025-05-30 @ 12:59 EDT, retaining all the original contents except for the exclusion of data files with sharing restrictions (those paths are listed in this repository's .gitignore).
+
+The following people contributed to the original code: 
+
+* [Samuel Aroney](https://github.com/AroneyS)
+* [Hannah Holland-Moritz](https://github.com/hhollandmoritz)
+* [Suzanne Hodgkins](https://github.com/shodgkins)
+* [Derek Smith](https://github.com/thiolovinglife)
+* [Benjamin Woodcroft](https://github.com/wwood)
+* [Sarah Bagby](https://github.com/scbagby)
+
 # Setup
 
 ## Create conda environment
