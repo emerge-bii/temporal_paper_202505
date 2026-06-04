@@ -1,4 +1,4 @@
-# Scripts and infrastructure for the EMERGE temporal paper
+# Scripts and infrastructure for "Stable states in an unstable landscape: microbial resistance at the front line of climate change"
 
 This is the public-facing version of the private repository <https://github.com/emerge-bii/temporal_paper>, which was originally copied on 2025-05-30 @ 12:59 EDT, retaining all the original contents except for the exclusion of data files with sharing restrictions (those paths are listed in this repository's .gitignore).
 
@@ -59,3 +59,7 @@ Separate analysis subfolders for each type.
 ### Cazyme Scraper
 
 If you plan to use the cazyme scraper, it will need to run in it's own conda environment. Instructions for installation of this environment and use of the script can be found in the [cazyme_scraper repository](https://github.com/hhollandmoritz/cazyme_scraper/tree/09c0d9d1fa99cfc12d075597c77ff3b4f56768ba).
+
+## Citation
+
+Stable states in an unstable landscape: microbial resistance at the front line of climate change. Dylan R. Cronin, Hannah Holland-Moritz, Derek A. Smith, Samuel T. N. Aroney, Suzanne B. Hodgkins, Mikayla Borton, Yueh-Fen Li, Ahmed Zayed, Kieran Healy, Andreas Persson, IsoGenie Field & Analytic Teams 2010-2017, EMERGE Institute Coordinators, Malak M. Tfaily, Patrick Crill, Carmody K. McCalley, Kelly Wrighton, Ruth K. Varner, Gene W. Tyson, Ben J. Woodcroft, Sarah C. Bagby, Jessica Ernakovich, Virginia I. Rich. bioRxiv 2025.02.07.636677; doi: https://doi.org/10.1101/2025.02.07.636677.
