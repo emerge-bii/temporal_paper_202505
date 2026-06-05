@@ -4,6 +4,8 @@ This directory contains scripts for visualizing carbon and nitrogen metabolic ve
 
 The analyses combine pathway calls, MAG metadata, specialization assignments, VIP membership tables, and environmental correlations to generate figures describing overlap between carbon- and nitrogen-cycling potential.
 
+Figures in the final manuscript are exclusively generated from CN_Versatility.R, the other scripts are left in for completeness-sake.
+
 ## Directory contents
 
 ```text
