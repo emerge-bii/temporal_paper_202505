@@ -1,0 +1,788 @@
+genome	taxonomy	completeness	contamination
+3300028769_5	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rhodoferax;s__	77.42	0.82
+3300030049_8	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	89.33	3.45
+3300028769_6	d__Bacteria;p__Campylobacterota;c__Campylobacteria;o__Campylobacterales;f__Sulfurospirillaceae;g__Sulfurospirillum;s__	99.62	0.65
+3300028801_8	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__Palsa-1447 sp003140665	77.21	0.63
+3300028801_9	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	98.35	1.55
+3300036787_7	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	85.15	2.29
+3300028882_7	d__Bacteria;p__Planctomycetota;c__UBA11346;o__UBA11346;f__UBA11346;g__BOG-1363;s__BOG-1363 sp003136555	92.11	0.10
+3300022524_5	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	85.95	4.58
+3300022524_6	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	91.05	2.14
+3300030746_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	98.35	1.55
+3300030746_13	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	75.29	0.00
+3300036495_4	d__Bacteria;p__Acidobacteriota;c__Acidobacteriae;o__Acidobacteriales;f__Acidobacteriaceae;g__Terracidiphilus;s__	81.66	0.86
+3300036495_5	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	77.59	0.70
+3300037218_7	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	70.95	8.11
+3300036495_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__FEN-979;g__FEN-979;s__	84.00	5.29
+3300028748_7	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	90.41	9.93
+3300023101_10	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__UBA183;g__BOG-1369;s__BOG-1369 sp003164815	88.35	0.32
+3300023101_11	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	77.40	1.84
+3300036895_6	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	80.97	0.68
+3300037103_10	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	95.92	1.96
+3300036895_8	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	98.88	2.25
+3300037172_11	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003138895	82.80	2.14
+3300037086_8	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__UBA5619;g__UBA5619;s__UBA5619 sp003141195	81.08	8.39
+3300028765_10	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	93.32	1.59
+3300037169_7	d__Bacteria;p__Acidobacteriota;c__Holophagae;o__Holophagales;f__Holophagaceae;g__Holophaga;s__Holophaga sp003165415	92.74	4.00
+3300030049_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	98.03	1.48
+3300031259_9	d__Bacteria;p__Acidobacteriota;c__Holophagae;o__Holophagales;f__Holophagaceae;g__Holophaga;s__	88.06	0.88
+3300037356_11	d__Bacteria;p__Firmicutes;c__Bacilli;o__RFN20;f__CAG-826;g__UBA4951;s__	92.13	0.00
+3300037342_8	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Chthoniobacterales;f__Chthoniobacteraceae;g__SXWH01;s__	87.49	3.74
+3300029980_3	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__;s__	88.76	9.49
+3300037167_8	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	92.39	1.96
+3300028766_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter;s__	98.92	1.52
+3300028766_4	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	93.58	1.32
+3300037222_12	d__Bacteria;p__Patescibacteria;c__Saccharimonadia;o__Saccharimonadales;f__UBA4665;g__UBA5150;s__	77.72	0.99
+3300029986_6	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	97.34	0.99
+3300037134_9	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Methylocystis;s__Methylocystis sp003134075	74.89	5.08
+3300029986_8	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	85.10	3.48
+3300029956_7	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	86.18	7.23
+3300028869_5	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rhodoferax;s__	82.58	0.97
+3300037165_5	d__Bacteria;p__Myxococcota;c__Polyangia;o__Polyangiales;f__Polyangiaceae;g__PMG-095;s__	86.11	6.64
+3300030491_2	d__Bacteria;p__Campylobacterota;c__Campylobacteria;o__Campylobacterales;f__Sulfurospirillaceae;g__Sulfurospirillum;s__	87.16	4.12
+3300037165_9	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__UBA5070;s__	90.11	2.36
+3300037165_8	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	79.39	3.42
+3300037221_4	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	91.55	3.38
+3300036930_9	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	88.77	5.52
+3300037084_9	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003158275	86.44	0.33
+3300037088_14	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9339;f__UBA9339;g__FEN-1226;s__FEN-1226 sp003142435	74.03	1.82
+3300037087_15	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__FEN-979;g__FEN-979;s__FEN-979 sp003142515	86.02	2.42
+3300037551_8	d__Archaea;p__Halobacteriota;c__Methanomicrobia;o__Methanomicrobiales;f__Methanoregulaceae;g__Methanoregula;s__	73.54	1.96
+3300037088_12	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__UBA5619;g__UBA5619;s__UBA5619 sp003141195	88.39	9.73
+3300037551_5	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	77.64	5.78
+3300037084_6	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	95.81	1.33
+3300036876_9	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__Bog-950;s__Bog-950 sp003165895	97.29	1.52
+3300028806_18	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	98.35	1.55
+3300037231_11	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Chitinophagaceae;g__UBA8621;s__	79.25	1.85
+3300037231_17	d__Bacteria;p__FCPU426;c__;o__;f__;g__;s__	79.87	0.56
+3300030506_9	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	78.42	1.41
+3300037231_15	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Bog-793;g__;s__	97.44	2.14
+3300037231_14	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Chitinophagaceae;g__Ferruginibacter;s__	98.52	1.06
+3300028745_15	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__UBA5070;s__	78.02	0.00
+3300028745_12	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	97.82	0.89
+3300028745_11	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Pseudomonadales;f__Moraxellaceae;g__;s__	90.17	1.42
+3300031788_20	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__Bog-1183;s__Bog-1183 sp003136635	75.46	5.19
+3300037049_8	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Palsa-1400;g__;s__	77.70	2.74
+3300037049_9	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Fen-1087;g__Fen-1087;s__Fen-1087 sp003161855	92.61	4.75
+3300036418_3	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__159R;s__	94.38	1.10
+3300023091_9	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	89.55	0.88
+3300030041_10	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	82.19	1.37
+3300030041_13	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__Nitrotoga;s__	84.51	1.37
+3300037201_5	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Palsa-1400;g__Palsa-1400;s__Palsa-1400 sp003140095	71.69	4.99
+3300037087_14	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA10030;g__Fen-1298;s__Fen-1298 sp003142575	97.80	3.73
+3300023088_9	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	96.15	0.43
+3300037349_11	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	91.55	0.68
+3300037087_17	d__Bacteria;p__Acidobacteriota;c__Thermoanaerobaculia;o__UBA5066;f__UBA5066;g__Fen-183;s__Fen-183 sp003152095	78.73	3.42
+3300023091_6	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Bog-793;g__Fen-455;s__Fen-455 sp003140595	92.71	5.56
+3300023091_7	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__PALSA-1006;s__	88.97	1.73
+3300037087_12	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__UBA5619;g__UBA5619;s__UBA5619 sp003141195	98.06	7.96
+3300030746_6	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Caulobacterales;f__Caulobacteraceae;g__BOG-935;s__	75.05	9.06
+3300037176_13	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__UBA183;g__BOG-1369;s__BOG-1369 sp003164815	73.79	0.97
+3300037176_12	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	93.30	1.03
+3300037104_21	d__Archaea;p__Halobacteriota;c__Methanomicrobia;o__Methanomicrobiales;f__Methanoregulaceae;g__Methanoregula;s__	75.03	2.61
+3300029982_6	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	98.03	0.99
+3300037095_5	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	95.16	0.68
+3300037198_9	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	78.12	2.75
+3300037091_14	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__PALSA-986;s__PALSA-986 sp003141855	88.63	2.80
+3300037132_8	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__;s__	93.97	1.29
+3300023075_4	d__Bacteria;p__Acidobacteriota;c__Holophagae;o__Holophagales;f__Holophagaceae;g__Geothrix;s__Geothrix sp003158505	74.42	0.23
+3300028874_12	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__Bog-1183;s__Bog-1183 sp003136635	85.39	5.12
+3300037180_6	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__Palsa-1447 sp003168315	89.73	0.38
+3300028874_16	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003138895	76.75	2.99
+3300037162_8	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	87.92	4.08
+3300036421_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.00
+3300028909_9	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	98.03	0.99
+3300037182_7	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	87.80	1.65
+3300037434_2	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__BOG-933 sp003165295	71.92	3.76
+3300036913_14	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	91.94	3.29
+3300036913_19	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__UBA11359;g__C7867-002;s__	80.46	0.16
+3300037182_9	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	91.37	2.22
+3300028862_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Prevotella;s__	86.62	0.94
+3300037134_11	d__Bacteria;p__Patescibacteria;c__Saccharimonadia;o__Saccharimonadales;f__UBA4665;g__BOG-1338;s__	71.91	3.81
+3300037138_9	d__Bacteria;p__Desulfobacterota_B;c__Binatia;o__Binatales;f__Binataceae;g__;s__	82.74	0.65
+3300037165_10	d__Bacteria;p__FCPU426;c__;o__;f__;g__;s__	82.30	0.85
+3300036878_7	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	96.15	0.43
+3300036878_6	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	96.45	0.68
+3300037387_2	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__UBA9935;g__Fen-1308;s__Fen-1308 sp003170655	95.91	7.63
+3300030014_3	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__Rahnella;s__Rahnella inusitata	83.29	0.59
+3300038458_11	d__Bacteria;p__Acidobacteriota;c__Aminicenantia;o__Aminicenantales;f__UBA4085;g__FEN-413;s__	80.60	3.47
+3300029982_11	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__Nitrotoga;s__	83.37	1.29
+3300037387_8	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	91.46	2.34
+3300029982_12	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Micavibrionales_A;f__;g__;s__	85.05	4.29
+3300029982_14	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__Bog-1183;s__Bog-1183 sp003136635	73.62	1.26
+3300036894_12	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6186;f__UBA6186;g__UBA6186;s__	77.03	0.78
+3300038463_12	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	78.80	1.23
+3300031726_9	d__Bacteria;p__Chloroflexota;c__Ktedonobacteria;o__Ktedonobacterales;f__Ktedonobacteraceae;g__Dictyobacter;s__	90.76	3.37
+3300037209_8	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	95.16	2.64
+3300024295_2	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	95.61	3.79
+3300031259_13	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodospirillales;f__Magnetospirillaceae;g__Telmatospirillum;s__	83.94	1.74
+3300031259_11	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	98.03	0.99
+3300037209_4	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__UBA9935;g__Fen-1308;s__Fen-1308 sp003170655	97.73	5.98
+3300037184_7	d__Bacteria;p__Spirochaetota;c__Spirochaetia;o__Treponematales;f__UBA8932;g__UBA1306;s__	78.16	3.71
+3300036911_5	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	97.91	4.62
+3300029985_7	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	98.03	0.99
+3300036911_7	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter;s__	82.80	0.00
+3300036911_6	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	98.69	0.60
+3300036911_9	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	84.22	5.14
+3300037233_10	d__Bacteria;p__Planctomycetota;c__Phycisphaerae;o__UBA1161;f__UBA1161;g__PALSA-1353;s__PALSA-1353 sp003153655	73.01	2.27
+3300028781_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	98.35	1.55
+3300037065_7	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA10030;g__Fen-1254;s__Fen-1254 sp003162695	95.61	4.10
+3300029985_12	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__Bog-1183;s__Bog-1183 sp003136635	75.99	3.61
+3300028866_8	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	74.02	0.23
+3300029986_4	d__Bacteria;p__Armatimonadota;c__Fimbriimonadia;o__Fimbriimonadales;f__Fimbriimonadaceae;g__Fimbriimonas;s__	73.53	7.87
+3300030687_9	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Caulobacterales;f__Caulobacteraceae;g__BOG-935;s__	84.23	9.23
+3300036427_2	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__159R;s__	87.00	2.30
+3300028866_7	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	73.63	5.25
+3300037065_9	d__Archaea;p__Methanobacteriota;c__Methanobacteria;o__Methanobacteriales;f__Methanobacteriaceae;g__Methanobacterium_A;s__Methanobacterium_A sp003161815	99.20	3.20
+3300030685_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Prevotella;s__	95.17	2.18
+3300037063_7	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__Bog-950;s__Bog-950 sp003165895	93.92	5.08
+3300037076_8	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__UBA5070;s__	97.74	0.00
+3300036429_2	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.00
+3300037063_9	d__Bacteria;p__Acidobacteriota;c__Holophagae;o__Holophagales;f__Holophagaceae;g__Holophaga;s__Holophaga sp003165415	79.00	0.88
+3300028783_15	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	72.18	2.40
+3300028783_14	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__UBA5070;s__	74.18	0.00
+3300037061_8	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__UBA9935;g__Fen-1308;s__Fen-1308 sp003170655	94.55	1.82
+3300037061_9	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	88.98	1.96
+3300028783_10	d__Bacteria;p__Planctomycetota;c__UBA11346;o__UBA11346;f__UBA11346;g__BOG-1363;s__BOG-1363 sp003136555	77.16	0.00
+3300028864_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Prevotella;s__	80.34	2.79
+3300028864_4	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__;s__	70.33	2.20
+3300037110_7	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-465;s__	92.38	0.94
+3300037110_6	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Bog-793;g__Fen-455;s__	88.60	6.84
+3300036886_22	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__Dehalococcoidales;f__RBG-16-60-22;g__Fen-1077;s__Fen-1077 sp003141235	84.16	0.99
+3300037162_6	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__UBA9935;g__Fen-1308;s__Fen-1308 sp003170655	92.17	3.69
+3300037241_7	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	99.32	3.04
+3300031027_10	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Methylacidiphilales;f__GAS474;g__;s__	79.29	6.08
+3300037340_7	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Chitinophagaceae;g__UBA8621;s__UBA8621 sp003136915	81.06	1.97
+3300030518_17	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003138895	84.19	2.66
+3300036894_10	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Methylocella;s__Methylocella sp003162995	70.95	2.11
+3300029992_12	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	83.19	2.20
+3300029920_6	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	82.37	4.75
+3300037428_10	d__Bacteria;p__Dormibacterota;c__Dormibacteria;o__UBA8260;f__Bog-877;g__Bog-877;s__Bog-877 sp003164475	77.33	2.16
+3300023091_10	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__PALSA-986;s__	86.05	3.27
+3300037101_7	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	91.79	0.63
+3300036889_9	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	89.80	1.74
+3300037216_7	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	75.76	4.40
+3300037261_7	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__Gemmatimonadaceae;g__UBA4720;s__UBA4720 sp003134685	98.90	4.50
+3300022824_1	d__Bacteria;p__Firmicutes_C;c__Negativicutes;o__Propionisporales;f__Pelosinaceae;g__;s__	96.84	6.22
+3300036382_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.81
+3300036885_13	d__Archaea;p__Halobacteriota;c__Methanomicrobia;o__Methanomicrobiales;f__Methanoregulaceae;g__Methanoregula;s__Methanoregula sp003170075	98.89	1.53
+3300037238_8	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	81.55	5.13
+3300036894_7	d__Bacteria;p__Eremiobacterota;c__Eremiobacteria;o__UBP12;f__UBA5184;g__Bog-1524;s__Bog-1524 sp003164045	86.82	4.73
+3300037091_12	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA10030;g__Fen-1298;s__Fen-1298 sp003142575	88.09	4.64
+3300037228_9	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Chitinophagaceae;g__UBA8621;s__UBA8621 sp003168265	98.77	0.49
+3300036885_17	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__Dehalococcoidales;f__RBG-16-60-22;g__Fen-1077;s__Fen-1077 sp003141235	72.68	0.99
+3300037256_4	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__Palsa-1447 sp003140665	78.54	2.32
+3300037228_7	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	98.65	6.15
+3300037158_6	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__Palsa-1447 sp003140665	97.26	9.25
+3300037360_6	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__Anaerolineales;f__EnvOPS12;g__UBA877;s__	88.36	5.08
+3300037360_7	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Roseiarcus;s__	83.06	9.79
+3300037168_6	d__Bacteria;p__Eremiobacterota;c__Eremiobacteria;o__UBP12;f__UBA5184;g__Bog-1524;s__Bog-1524 sp003164045	89.18	5.49
+3300037160_6	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Chitinophagaceae;g__UBA8621;s__UBA8621 sp003136915	87.96	2.98
+3300037160_5	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Palsa-688;g__;s__	86.32	5.04
+3300036887_6	d__Bacteria;p__Eremiobacterota;c__Eremiobacteria;o__UBP12;f__UBA5184;g__Bog-1524;s__Bog-1524 sp003164495	90.74	1.47
+3300037207_8	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__UBA183;g__BOG-1369;s__BOG-1369 sp003164815	98.06	0.00
+3300037156_11	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	91.49	6.45
+3300037156_10	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__AKYH767;f__Palsa-965;g__Palsa-965;s__	99.05	0.48
+3300037156_13	d__Bacteria;p__Elusimicrobiota;c__Elusimicrobia;o__UBA1565;f__UBA9628;g__GWA2-66-18;s__	91.76	1.56
+3300037156_12	d__Bacteria;p__Bacteroidota;c__Kapabacteria;o__Palsa-1295;f__Palsa-1295;g__;s__	92.15	1.37
+3300028650_4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__UBA1794;s__	86.31	1.26
+3300037176_7	d__Bacteria;p__Acidobacteriota;c__Holophagae;o__Holophagales;f__Holophagaceae;g__Holophaga;s__Holophaga sp003165415	81.19	1.75
+3300028776_13	d__Bacteria;p__Patescibacteria;c__Saccharimonadia;o__Saccharimonadales;f__UBA4665;g__UBA5150;s__	71.29	0.00
+3300037166_8	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	83.73	3.38
+3300030054_6	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__Ewingella;s__	79.23	1.77
+3300030054_5	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-465;s__Palsa-465 sp003165655	94.44	3.70
+3300037076_10	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__Anaerolineales;f__Anaerolineaceae;g__UBA700;s__	70.26	5.64
+3300037076_11	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__FEN-979;g__FEN-979;s__	96.24	1.61
+3300037076_16	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__PALSA-986;s__	99.07	5.61
+3300036887_8	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__Bog-950;s__Bog-950 sp003165895	71.29	0.03
+3300037076_18	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__Gallionella;s__Gallionella sp003153155	80.32	2.33
+3300031524_30	d__Bacteria;p__FCPU426;c__;o__;f__;g__;s__	100.00	2.25
+3300037222_7	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__Gallionella;s__Gallionella sp003153155	94.13	0.16
+3300037222_4	d__Bacteria;p__Cyanobacteria;c__Vampirovibrionia;o__Obscuribacterales;f__Obscuribacteraceae;g__PALSA-1081;s__PALSA-1081 sp003151275	94.68	9.39
+3300037087_21	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__Dehalococcoidales;f__RBG-16-60-22;g__Fen-1077;s__Fen-1077 sp003141235	72.19	5.36
+3300037087_20	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003170935	86.93	1.96
+3300030058_6	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-465;s__Palsa-465 sp003165655	94.66	2.42
+3300030058_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Chitinophagaceae;g__UBA8621;s__	76.41	2.08
+3300038457_7	d__Bacteria;p__Cyanobacteria;c__Vampirovibrionia;o__Obscuribacterales;f__Obscuribacteraceae;g__;s__	94.02	3.38
+3300037222_8	d__Bacteria;p__Eremiobacterota;c__Eremiobacteria;o__UBP12;f__UBA5184;g__Fen-1528;s__Fen-1528 sp003151115	98.15	0.00
+3300037139_5	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Caulobacterales;f__Caulobacteraceae;g__Palsa-881;s__	94.83	2.60
+3300037105_13	d__Bacteria;p__Planctomycetota;c__DG-23;o__SLPQ01;f__;g__;s__	81.43	1.82
+3300037402_4	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	80.51	7.36
+3300024238_2	d__Bacteria;p__Myxococcota;c__Polyangia;o__Palsa-1104;f__Fen-1088;g__Fen-1137;s__Fen-1137 sp003158735	87.10	2.83
+3300024238_3	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	97.67	3.30
+3300036879_4	d__Bacteria;p__Actinobacteriota;c__Actinomycetia;o__Streptosporangiales;f__Streptosporangiaceae;g__Bog-532;s__Bog-532 sp003164955	92.16	4.99
+3300036879_8	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	95.81	0.68
+3300028785_9	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	83.96	9.12
+3300037109_11	d__Bacteria;p__Caldisericota;c__Caldisericia;o__Cryosericales;f__Cryosericaceae;g__Cryosericum;s__	94.64	1.79
+3300036928_10	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__	85.61	3.85
+3300037109_19	d__Bacteria;p__Firmicutes;c__Bacilli;o__RFN20;f__CAG-826;g__UBA4951;s__	82.02	0.00
+3300037200_6	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Chitinophagaceae;g__UBA8621;s__UBA8621 sp003168265	95.81	0.49
+3300023228_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.00
+3300023090_6	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	85.13	3.92
+3300036419_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	99.46	0.00
+3300037094_8	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	95.61	2.81
+3300037185_11	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	83.61	6.18
+3300036930_15	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003155915	73.92	2.14
+3300037166_9	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__UBA5070;s__	89.01	0.61
+3300037185_12	d__Bacteria;p__Dormibacterota;c__Dormibacteria;o__UBA8260;f__UBA8260;g__UBA8260;s__UBA8260 sp003142035	87.31	0.93
+3300036930_10	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	96.15	0.43
+3300036930_12	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__UBA183;g__BOG-1369;s__BOG-1369 sp003164815	70.57	0.00
+3300039216_7	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__PALSA-1006;s__	99.52	1.96
+3300031244_4	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__Fibrobacterales;f__;g__;s__	72.61	5.49
+3300038461_5	d__Bacteria;p__Spirochaetota;c__Spirochaetia;o__Spirochaetales;f__Fen-1364;g__Fen-1364;s__	76.20	7.43
+3300038461_4	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__FEN-1185;s__	97.74	1.10
+3300031244_2	d__Bacteria;p__Firmicutes_A;c__Clostridia_A;o__Christensenellales;f__CAG-74;g__Firm-11;s__	76.83	0.81
+3300028731_7	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	98.35	0.55
+3300023248_8	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	83.75	6.59
+3300028774_4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Prevotella;s__	86.90	3.80
+3300030047_14	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__;s__	77.59	9.09
+3300023248_3	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	87.07	7.93
+3300036420_2	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.00
+3300023248_5	d__Bacteria;p__Acidobacteriota;c__Acidobacteriae;o__Acidobacteriales;f__Acidobacteriaceae;g__Terracidiphilus;s__	96.79	1.72
+3300028772_3	d__Bacteria;p__Campylobacterota;c__Campylobacteria;o__Campylobacterales;f__Sulfurospirillaceae;g__Sulfurospirillum;s__	83.94	0.51
+3300037206_8	d__Bacteria;p__Eremiobacterota;c__Eremiobacteria;o__UBP12;f__UBA5184;g__Bog-1524;s__Bog-1524 sp003164045	92.28	4.35
+3300037316_10	d__Bacteria;p__Dormibacterota;c__Dormibacteria;o__UBA8260;f__Bog-877;g__Bog-877;s__	85.91	0.93
+3300029992_13	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__UBA5070;s__	82.29	2.60
+3300036889_12	d__Archaea;p__Methanobacteriota;c__Methanobacteria;o__Methanobacteriales;f__Methanobacteriaceae;g__Methanobacterium_A;s__Methanobacterium_A sp003166335	86.89	0.10
+3300036417_4	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	93.12	3.27
+3300036889_10	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	93.58	2.81
+3300037225_18	d__Bacteria;p__Krumholzibacteriota;c__Krumholzibacteria;o__SSS58A;f__SSS58A;g__;s__	88.10	9.89
+3300028863_7	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	98.35	2.52
+3300037225_16	d__Bacteria;p__Desulfobacterota;c__Syntrophorhabdia;o__Syntrophorhabdales;f__WCHB1-27;g__;s__	72.46	3.36
+3300037142_10	d__Archaea;p__Thermoplasmatota;c__Thermoplasmata;o__UBA184;f__UBA184;g__;s__	95.20	3.20
+3300037225_15	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__GIF9;f__UBA5629;g__UBA1162;s__	96.70	0.00
+3300037225_13	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__;g__;s__	90.33	9.85
+3300037218_14	d__Bacteria;p__Dormibacterota;c__Dormibacteria;o__UBA8260;f__Bog-877;g__Bog-877;s__Bog-877 sp003133485	79.53	4.63
+3300029985_23	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__UBA11359;g__PALSA-1337;s__	76.57	3.37
+3300028779_7	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	85.59	0.87
+3300037090_7	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__Anaerolineales;f__EnvOPS12;g__UBA877;s__	88.47	2.91
+3300037115_9	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Bog-793;g__;s__	83.33	1.28
+3300037136_8	d__Archaea;p__Thermoplasmatota;c__Thermoplasmata;o__UBA184;f__UBA184;g__;s__	92.20	1.60
+3300037115_6	d__Bacteria;p__Desulfobacterota_B;c__Binatia;o__Binatales;f__Binataceae;g__Binatus;s__Binatus sp003135135	97.48	1.40
+3300036908_12	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	80.36	0.07
+3300036908_11	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	78.25	0.31
+3300036787_8	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	95.92	1.31
+3300036787_9	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Bog-793;g__;s__	85.47	1.28
+3300037208_6	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	86.38	3.32
+3300037208_8	d__Archaea;p__Methanobacteriota;c__Methanobacteria;o__Methanobacteriales;f__Methanobacteriaceae;g__Methanobacterium_A;s__Methanobacterium_A sp003166335	88.98	0.80
+3300037090_8	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__UBA5619;g__UBA5619;s__UBA5619 sp003141195	96.77	5.59
+3300036876_11	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Caulobacterales;f__Caulobacteraceae;g__BOG-938;s__BOG-938 sp003164925	81.82	1.89
+3300036876_12	d__Bacteria;p__Dependentiae;c__Babeliae;o__Babeliales;f__Babeliaceae;g__BOG-1370;s__BOG-1370 sp003165355	86.52	0.56
+3300037349_9	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	86.64	2.14
+3300037349_7	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Palsa-688;g__Fen-671;s__Fen-671 sp003166025	96.58	4.87
+3300037365_14	d__Archaea;p__Halobacteriota;c__Methanomicrobia;o__Methanomicrobiales;f__Methanoregulaceae;g__Methanoregula;s__	75.90	1.01
+3300028733_3	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__;s__	96.52	1.65
+3300037365_12	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA10030;g__Fen-1254;s__Fen-1254 sp003162695	78.45	8.91
+3300037095_8	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	96.63	1.19
+3300037095_7	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Bog-793;g__;s__	97.44	5.56
+3300037095_6	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	93.05	0.63
+3300028738_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Prevotella;s__	85.33	1.53
+3300037551_9	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	90.20	1.31
+3300037106_11	d__Archaea;p__Halobacteriota;c__Methanomicrobia;o__Methanomicrobiales;f__Methanoregulaceae;g__Methanoregula;s__	89.05	7.90
+3300038462_12	d__Archaea;p__Halobacteriota;c__Methanomicrobia;o__Methanomicrobiales;f__Methanoregulaceae;g__Methanoregula;s__	85.95	3.27
+3300036428_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.00
+3300037257_1	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Polaromonas;s__	89.37	4.09
+3300037107_8	d__Bacteria;p__Spirochaetota;c__Spirochaetia;o__Treponematales;f__UBA8932;g__UBA1306;s__	82.76	1.15
+3300029981_20	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__UBA11359;g__UBA6065;s__	76.31	6.90
+3300023101_9	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	85.96	6.81
+3300037207_11	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	89.92	1.31
+3300033823_5	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	96.45	2.62
+3300028762_14	d__Bacteria;p__Actinobacteriota;c__Actinomycetia;o__Actinomycetales;f__Microbacteriaceae;g__Glaciihabitans;s__	85.40	8.10
+3300030045_10	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	72.60	4.59
+3300037076_9	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rhodoferax;s__	96.11	1.72
+3300037091_8	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__UBA5619;g__UBA5619;s__UBA5619 sp003141195	98.06	7.31
+3300028762_12	d__Bacteria;p__Planctomycetota;c__UBA11346;o__UBA11346;f__UBA11346;g__BOG-1363;s__BOG-1363 sp003136555	85.28	0.00
+3300023101_7	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Methylocystis;s__Methylocystis sp003134075	75.40	2.48
+3300037262_8	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Solimicrobium;s__	96.70	1.34
+3300026368_2	d__Bacteria;p__Firmicutes;c__Bacilli;o__Lactobacillales;f__Lactobacillaceae;g__Lacticaseibacillus;s__Lacticaseibacillus paracasei	99.46	0.14
+3300026368_3	d__Archaea;p__Methanobacteriota;c__Methanobacteria;o__Methanobacteriales;f__Methanobacteriaceae;g__Methanobacterium_A;s__Methanobacterium_A sp003166335	83.20	1.05
+3300033827_5	d__Bacteria;p__Dormibacterota;c__Dormibacteria;o__UBA8260;f__UBA8260;g__UBA8260;s__UBA8260 sp003135255	91.38	9.40
+3300033827_7	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	83.66	1.99
+3300037255_5	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__Palsa-1447 sp003140665	80.82	2.05
+3300028759_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Chitinophagaceae;g__UBA8621;s__	74.11	3.26
+3300028776_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	97.19	3.29
+3300028759_9	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	98.35	1.55
+3300028082_4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	98.92	0.78
+3300028082_3	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__159R;s__	95.48	1.10
+3300022861_4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.00
+3300022861_5	d__Bacteria;p__Acidobacteriota;c__Holophagae;o__Holophagales;f__Holophagaceae;g__Holophaga;s__	72.46	0.95
+3300037099_8	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	100.00	3.93
+3300022861_2	d__Bacteria;p__Acidobacteriota;c__Acidobacteriae;o__Acidobacteriales;f__Koribacteraceae;g__TOLSYN;s__	73.90	7.31
+3300022861_3	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__159R;s__	97.67	1.10
+3300033823_4	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__UBA11358 sp003134375	93.05	8.25
+3300037076_20	d__Bacteria;p__Caldisericota;c__Caldisericia;o__Cryosericales;f__Cryosericaceae;g__Cryosericum;s__Cryosericum odellii	94.64	0.00
+3300033823_6	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	95.40	2.25
+3300033823_7	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	73.12	0.43
+3300037076_25	d__Bacteria;p__Patescibacteria;c__Saccharimonadia;o__UBA4664;f__UBA4664;g__UBA4664;s__	70.79	0.50
+3300037361_7	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__Sideroxydans;s__	76.51	5.02
+3300037361_6	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Nibricoccus;s__	97.26	6.16
+3300036886_19	d__Archaea;p__Halobacteriota;c__Methanomicrobia;o__Methanomicrobiales;f__Methanoregulaceae;g__Methanoregula;s__Methanoregula sp003141335	94.44	0.00
+3300038464_6	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	96.45	3.91
+3300038464_7	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	97.75	2.81
+3300037210_13	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Fen-1087;g__Fen-1087;s__	73.14	2.60
+3300038464_8	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	96.15	0.00
+3300022863_1	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__	98.29	1.28
+3300029986_10	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__Bog-1183;s__Bog-1183 sp003136635	73.39	1.26
+3300039216_12	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__;s__	83.33	1.29
+3300037140_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__Berkiellaceae;g__Berkiella;s__	86.02	1.72
+3300037394_5	d__Bacteria;p__Actinobacteriota;c__Actinomycetia;o__Streptosporangiales;f__Streptosporangiaceae;g__Palsa-506;s__	94.65	5.33
+3300033828_4	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Steroidobacterales;f__Steroidobacteraceae;g__FEN-1191;s__FEN-1191 sp003132025	96.56	9.04
+3300031261_17	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__Bog-1183;s__Bog-1183 sp003136635	72.75	3.46
+3300030057_3	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-465;s__Palsa-465 sp003165655	98.29	4.13
+3300037101_5	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	88.71	5.39
+3300030225_10	d__Bacteria;p__Myxococcota;c__Myxococcia;o__Myxococcales;f__40CM-4-68-19;g__;s__	88.64	0.97
+3300037097_3	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Acetobacterales;f__Acetobacteraceae;g__Palsa-883;s__	95.27	9.00
+3300037396_8	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Methylocystis;s__Methylocystis sp003134075	85.01	7.93
+3300037369_3	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-465;s__Palsa-465 sp003165655	97.44	5.25
+3300024233_2	d__Bacteria;p__Bacteroidota;c__Ignavibacteria;o__SJA-28;f__B-1AR;g__FEN-1257;s__FEN-1257 sp003135995	83.85	1.64
+3300028069_1	d__Bacteria;p__Acidobacteriota;c__Holophagae;o__Holophagales;f__Holophagaceae;g__Geothrix;s__Geothrix sp003158505	80.48	1.17
+3300029983_4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Prevotella;s__	79.85	1.12
+3300026450_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	73.99	0.00
+3300030506_7	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	98.03	0.99
+3300029995_5	d__Bacteria;p__Firmicutes_A;c__Clostridia;o__Lachnospirales;f__Lachnospiraceae;g__1XD8-76;s__	73.68	1.01
+3300029995_6	d__Bacteria;p__Campylobacterota;c__Campylobacteria;o__Campylobacterales;f__Sulfurospirillaceae;g__Sulfurospirillum;s__	85.84	8.86
+3300036929_8	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Fen-1087;g__Fen-1087;s__Fen-1087 sp003161855	77.08	0.90
+3300030011_11	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	86.03	0.89
+3300030011_13	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__UBA5070;s__	85.71	0.55
+3300037403_6	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	86.64	5.48
+3300023232_4	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Gaiellales;f__Gaiellaceae;g__Fen-549;s__Fen-549 sp003162055	73.39	4.02
+3300037403_4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__AKYH767;f__B-17BO;g__PALSA-968;s__	99.05	1.21
+3300023232_1	d__Bacteria;p__Firmicutes_A;c__Clostridia;o__Clostridiales;f__Clostridiaceae;g__Clostridium;s__	73.08	2.35
+3300036929_5	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	95.68	4.76
+3300023232_2	d__Bacteria;p__Myxococcota;c__Polyangia;o__Palsa-1104;f__Fen-1088;g__Fen-1137;s__Fen-1137 sp003158395	74.43	7.09
+3300028909_11	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	91.78	8.90
+3300023247_3	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__159R;s__	95.48	1.10
+3300023247_4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.18
+3300029998_4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Prevotella;s__	93.87	0.94
+3300029998_5	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__Fibrobacterales;f__;g__;s__	77.99	1.10
+3300038458_8	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__;g__;s__	82.52	9.80
+3300028574_6	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	89.90	2.74
+3300037054_6	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Caulobacterales;f__Caulobacteraceae;g__Palsa-881;s__	94.07	1.66
+3300037054_4	d__Bacteria;p__Elusimicrobiota;c__Elusimicrobia;o__UBA1565;f__UBA9628;g__PALSA-1176;s__	95.44	1.50
+3300037065_11	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	94.39	1.96
+3300031726_16	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rhodoferax;s__	98.81	0.97
+3300037171_5	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	96.45	1.33
+3300037171_6	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	96.15	2.14
+3300037171_7	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	91.31	2.55
+3300037171_8	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	85.27	2.81
+3300023060_1	d__Bacteria;p__Firmicutes_C;c__Negativicutes;o__Propionisporales;f__Pelosinaceae;g__;s__	78.62	3.89
+3300030041_15	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003138895	78.54	2.71
+3300036909_6	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__FEN-979;g__FEN-979;s__	86.90	1.14
+3300036909_8	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	95.16	4.55
+3300036909_9	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	98.88	2.31
+3300037449_11	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	71.95	1.12
+3300028736_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__UBA1402;g__UBA8389;s__	73.75	0.05
+3300036907_5	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	92.32	1.63
+3300036907_7	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	89.36	1.00
+3300028775_6	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-465;s__Palsa-465 sp003165655	96.15	3.28
+3300023088_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__Bog-950;s__Bog-950 sp003165895	76.68	1.99
+3300028795_9	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6186;f__UBA6186;g__;s__	85.95	0.00
+3300023088_6	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	94.52	1.00
+3300037117_10	d__Bacteria;p__Dormibacterota;c__Dormibacteria;o__UBA8260;f__Bog-877;g__Bog-877;s__Bog-877 sp003132265	75.87	3.09
+3300030041_12	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Micavibrionales_A;f__;g__;s__	84.12	7.02
+3300037233_9	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Chitinophagaceae;g__UBA8621;s__	98.77	1.48
+3300036717_11	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__Bog-1183;s__Bog-1183 sp003136635	81.60	2.79
+3300038474_10	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	91.89	3.29
+3300023068_5	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	90.25	5.43
+3300037102_11	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003158275	95.26	1.31
+3300037401_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__AKYH767;f__B-17BO;g__PALSA-968;s__	99.05	0.95
+3300037102_14	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__GWA1-40-21;g__Bog-1340;s__Bog-1340 sp003142075	82.33	1.12
+3300037401_5	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	86.64	9.22
+3300037349_10	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Methylocystis;s__Methylocystis sp003134075	81.03	6.35
+3300037087_10	d__Bacteria;p__Planctomycetota;c__Planctomycetes;o__Pirellulales;f__UBA11386;g__;s__	97.63	1.15
+3300037334_6	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__UBA9935;g__Fen-1308;s__Fen-1308 sp003170655	75.23	0.91
+3300037175_6	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	91.79	0.29
+3300037175_7	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	83.07	8.50
+3300030051_9	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Pseudomonadales;f__Moraxellaceae;g__;s__	74.14	0.00
+3300037402_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__AKYH767;f__B-17BO;g__PALSA-968;s__	99.05	1.43
+3300036881_8	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	86.78	0.32
+3300037175_8	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	96.15	0.43
+3300037175_9	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Bog-793;g__;s__	84.19	5.56
+3300038472_10	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Methylocella;s__	70.53	7.76
+3300037159_6	d__Bacteria;p__Myxococcota;c__Myxococcia;o__Myxococcales;f__Myxococcaceae;g__RPRB01;s__	92.83	0.65
+3300037223_12	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__Bog-1183;s__Bog-1183 sp003136635	78.10	6.59
+3300037223_13	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003138895	81.43	5.65
+3300037159_8	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__	95.58	2.64
+3300037157_4	d__Bacteria;p__Actinobacteriota;c__Actinomycetia;o__Streptosporangiales;f__Streptosporangiaceae;g__Palsa-506;s__	73.49	6.67
+3300037104_22	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__Dehalococcoidales;f__Dehalococcoidaceae;g__SURF-27;s__	91.75	0.00
+3300037091_17	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__Dehalococcoidales;f__Dehalococcoidaceae;g__SURF-27;s__	71.33	2.97
+3300037237_7	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Sphingobacteriales;f__Sphingobacteriaceae;g__Mucilaginibacter;s__	95.71	2.50
+3300031233_8	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-465;s__Palsa-465 sp003165655	87.39	9.60
+3300037091_13	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__FEN-979;g__FEN-979;s__FEN-979 sp003142515	88.71	0.81
+3300037176_11	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	83.20	3.44
+3300037091_11	d__Bacteria;p__Acidobacteriota;c__Acidobacteriae;o__;f__;g__;s__	83.71	2.56
+3300037091_10	d__Bacteria;p__Desulfobacterota;c__Desulfomonilia_A;o__UBA1062;f__UBA1062;g__;s__	93.29	0.00
+3300037216_11	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	90.63	3.27
+3300037171_10	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	93.30	1.31
+3300036887_9	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__UBA183;g__BOG-1369;s__BOG-1369 sp003164815	97.09	0.97
+3300036880_10	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__UBA183;g__BOG-1369;s__BOG-1369 sp003164815	71.28	0.00
+3300037101_6	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	92.65	1.31
+3300026451_4	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	83.04	2.50
+3300028572_5	d__Bacteria;p__Firmicutes_C;c__Negativicutes;o__Selenomonadales;f__Selenomonadaceae;g__Propionispira;s__	96.75	4.50
+3300028572_4	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Chromobacteriaceae;g__Paludibacterium;s__	94.94	7.36
+3300028572_3	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Herbaspirillum;s__	89.30	6.57
+3300036887_7	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Methylocystis;s__Methylocystis sp003134075	97.81	5.76
+3300026451_2	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Bog-793;g__Fen-455;s__Fen-455 sp003139355	73.98	4.62
+3300028740_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__UBA1402;g__UBA8389;s__	77.17	0.64
+3300037092_6	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	74.72	3.58
+3300037092_7	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	96.07	2.25
+3300036645_4	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003142095	98.29	8.78
+3300036885_9	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA10030;g__Fen-1298;s__Fen-1298 sp003142475	90.87	5.39
+3300036645_6	d__Bacteria;p__Desulfobacterota_B;c__Binatia;o__Binatales;f__Binataceae;g__Binatus;s__Binatus sp003135135	96.64	0.84
+3300036885_7	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__UBA5619;g__UBA5619;s__UBA5619 sp003141195	85.38	6.13
+3300037092_8	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	88.35	0.00
+3300037198_20	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__UBA11359;g__C7867-002;s__	73.97	0.00
+3300028798_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA7366;f__UBA7366;g__;s__	96.07	1.53
+3300030042_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA7366;f__UBA7366;g__;s__	92.91	2.11
+3300037063_14	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	81.83	0.81
+3300037063_15	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__UBA183;g__BOG-1369;s__BOG-1369 sp003164815	84.95	0.97
+3300037063_13	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Caulobacterales;f__Caulobacteraceae;g__BOG-938;s__BOG-938 sp003164925	87.99	1.46
+3300030042_16	d__Bacteria;p__Patescibacteria;c__Saccharimonadia;o__Saccharimonadales;f__UBA4665;g__UBA5150;s__	71.29	0.00
+3300037239_6	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-744;s__	77.56	2.14
+3300036883_7	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	96.15	8.12
+3300030225_9	d__Bacteria;p__Planctomycetota;c__UBA11346;o__UBA11346;f__UBA11346;g__BOG-1363;s__BOG-1363 sp003136555	85.60	1.08
+3300037239_2	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__UBA9935;g__Fen-1308;s__Fen-1308 sp003170655	97.22	2.00
+3300037359_13	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Chthoniobacterales;f__UBA6821;g__UBA6821;s__	86.69	0.00
+3300037359_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__PALSA-1006;s__	99.52	1.01
+3300037210_11	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	84.59	1.31
+3300037132_9	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__	87.10	9.35
+3300037359_15	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__UBA2241;f__UBA2241;g__Bog-752;s__Bog-752 sp003164655	73.92	1.08
+3300038474_7	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__UBA9935;g__Fen-1308;s__Fen-1308 sp003170655	96.82	6.67
+3300023075_3	d__Bacteria;p__Myxococcota;c__Polyangia;o__Palsa-1104;f__Fen-1088;g__Fen-1137;s__Fen-1137 sp003158395	91.16	4.84
+3300037449_9	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	96.15	0.43
+3300037449_5	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	96.45	1.33
+3300036717_9	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Methylocystis;s__Methylocystis sp003134075	88.16	6.27
+3300038474_8	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	80.52	4.52
+3300028746_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	98.35	1.55
+3300037562_7	d__Bacteria;p__Acidobacteriota;c__Holophagae;o__Holophagales;f__Holophagaceae;g__Holophaga;s__Holophaga sp003165415	93.32	1.75
+3300037148_8	d__Bacteria;p__Dormibacterota;c__Dormibacteria;o__UBA8260;f__Bog-877;g__;s__	76.85	2.31
+3300037200_7	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-744;s__	96.30	0.85
+3300036932_11	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__Anaerolineales;f__Anaerolineaceae;g__UBA6107;s__	74.70	3.64
+3300031788_22	d__Bacteria;p__FCPU426;c__;o__;f__;g__;s__	84.96	2.81
+3300037396_11	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	70.51	1.36
+3300037428_6	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	84.48	7.52
+3300037428_5	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	86.00	6.59
+3300037086_13	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__GIF9;f__UBA5629;g__UBA1162;s__UBA1162 sp003142375	88.97	2.31
+3300037225_21	d__Bacteria;p__Caldisericota;c__Caldisericia;o__Cryosericales;f__Cryosericaceae;g__Cryosericum;s__Cryosericum hinesii	91.07	0.00
+3300036880_13	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	78.77	0.65
+3300037225_25	d__Bacteria;p__Planctomycetota;c__Phycisphaerae;o__Sedimentisphaerales;f__Anaerohalophaeraceae;g__UBA12454;s__UBA12454 sp003142595	73.30	1.14
+3300037086_14	d__Bacteria;p__Omnitrophota;c__Omnitrophia;o__Omnitrophales;f__UBA2337;g__XYB12-FULL-50-7;s__XYB12-FULL-50-7 sp003140935	75.77	1.61
+3300036905_6	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Methylocystis;s__Methylocystis sp003134075	97.02	2.93
+3300037089_15	d__Bacteria;p__Omnitrophota;c__Omnitrophia;o__Omnitrophales;f__UBA2337;g__XYB12-FULL-50-7;s__XYB12-FULL-50-7 sp003140935	91.40	1.08
+3300036931_10	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA10030;g__Fen-1254;s__Fen-1254 sp003162695	97.25	7.19
+3300022849_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.00
+3300029919_3	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	80.89	1.37
+3300037089_16	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__PALSA-986;s__PALSA-986 sp003141855	74.08	4.67
+3300037089_14	d__Archaea;p__Halobacteriota;c__Methanomicrobia;o__Methanomicrobiales;f__Methanoregulaceae;g__Methanoregula;s__	100.00	0.00
+3300037064_8	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__UBA183;g__BOG-1369;s__BOG-1369 sp003164815	86.67	0.97
+3300037089_12	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__GIF9;f__UBA5629;g__UBA1162;s__	81.35	1.85
+3300037089_13	d__Bacteria;p__Planctomycetota;c__Phycisphaerae;o__Sedimentisphaerales;f__Anaerohalophaeraceae;g__Fen-1362;s__Fen-1362 sp003170415	98.86	6.82
+3300037356_9	d__Bacteria;p__Caldisericota;c__Caldisericia;o__Cryosericales;f__Cryosericaceae;g__Cryosericum;s__	92.86	1.79
+3300037356_8	d__Archaea;p__Halobacteriota;c__Methanomicrobia;o__Methanomicrobiales;f__Methanoregulaceae;g__Methanoregula;s__Methanoregula sp003157895	85.62	2.75
+3300037394_11	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Chthoniobacterales;f__UBA10450;g__Palsa-1382;s__Palsa-1382 sp003167365	80.62	7.43
+3300038459_14	d__Archaea;p__Halobacteriota;c__Methanosarcinia;o__Methanotrichales;f__Methanotrichaceae;g__Methanothrix;s__	76.80	0.05
+3300028746_9	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6186;f__UBA6186;g__;s__	81.88	0.00
+3300029994_8	d__Bacteria;p__Acidobacteriota;c__Holophagae;o__Holophagales;f__Holophagaceae;g__Holophaga;s__	85.29	6.54
+3300028854_8	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6186;f__UBA6186;g__UBA6186;s__	78.54	0.97
+3300037213_8	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA10030;g__Fen-1254;s__Fen-1254 sp003162695	87.14	9.89
+3300037213_7	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	87.43	5.01
+3300028854_4	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	79.64	0.89
+3300031525_30	d__Bacteria;p__Patescibacteria;c__Saccharimonadia;o__Saccharimonadales;f__UBA4665;g__;s__	72.22	2.31
+3300037095_16	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__GWA1-40-21;g__Bog-1340;s__Bog-1340 sp003142075	73.90	0.00
+3300038452_5	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Bog-793;g__;s__	85.47	0.85
+3300037049_11	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	91.16	2.12
+3300037049_16	d__Archaea;p__Micrarchaeota;c__Micrarchaeia;o__Micrarchaeales;f__Micrarchaeaceae;g__;s__	82.71	0.93
+3300037049_19	d__Bacteria;p__Patescibacteria;c__Microgenomatia;o__Shapirobacterales;f__UBA12405;g__UBA12158;s__	79.15	0.00
+3300037104_11	d__Bacteria;p__Spirochaetota;c__Spirochaetia;o__Spirochaetales;f__Fen-1364;g__Fen-1364;s__Fen-1364 sp003141795	99.20	2.53
+3300030492_5	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rhodoferax;s__	86.43	4.05
+3300030492_7	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Polaromonas;s__	70.90	4.67
+3300030492_6	d__Bacteria;p__Campylobacterota;c__Campylobacteria;o__Campylobacterales;f__Sulfurospirillaceae;g__Sulfurospirillum;s__	97.76	0.78
+3300028858_4	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__;s__	83.33	3.30
+3300037170_6	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	96.45	4.28
+3300028087_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.00
+3300028874_9	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Chromobacteriaceae;g__Paludibacterium;s__	89.53	1.21
+3300037108_6	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__Anaerolineales;f__EnvOPS12;g__UBA877;s__	88.18	5.91
+3300037108_7	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	78.72	4.40
+3300028871_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6186;f__UBA6186;g__;s__	85.37	0.00
+3300028871_12	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	98.35	1.55
+3300036906_9	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003158275	95.92	0.65
+3300036906_8	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	91.15	0.00
+3300037100_7	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__UBA11358 sp003139955	97.97	4.36
+3300037215_6	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	93.63	2.61
+3300037100_9	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003138895	81.93	8.97
+3300036906_7	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	73.15	2.33
+3300036906_6	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	93.56	2.25
+3300037227_9	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__Anaerolineales;f__Anaerolineaceae;g__UBA6107;s__	85.15	7.73
+3300037279_9	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	78.13	2.74
+3300037279_8	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	91.85	6.55
+3300037242_8	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	97.64	2.70
+3300037102_6	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003142095	98.28	7.05
+3300037102_7	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	94.84	9.52
+3300038461_13	d__Bacteria;p__Patescibacteria;c__ABY1;o__BM507;f__;g__;s__	75.58	1.12
+3300029993_8	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	80.30	5.26
+3300038461_16	d__Archaea;p__Micrarchaeota;c__Micrarchaeia;o__UBA10214;f__UBA10214;g__;s__	71.45	0.93
+3300037076_33	d__Bacteria;p__Patescibacteria;c__;o__;f__;g__;s__	70.83	0.93
+3300037076_30	d__Bacteria;p__Patescibacteria;c__Saccharimonadia;o__Saccharimonadales;f__UBA4665;g__GCA-2746885;s__	71.29	0.00
+3300028084_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.00
+3300031524_17	d__Bacteria;p__Planctomycetota;c__UBA11346;o__UBA11346;f__UBA11346;g__BOG-1363;s__BOG-1363 sp003136555	94.27	1.08
+3300037104_14	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__Gemmatimonadaceae;g__Fen-1247;s__Fen-1247 sp003155795	97.80	2.20
+3300031524_18	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Chitinophagaceae;g__UBA8621;s__	87.37	2.01
+3300028909_14	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__159R;s__	82.79	2.20
+3300036889_8	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	89.38	1.53
+3300028798_8	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6186;f__UBA6186;g__;s__	79.68	0.57
+3300033797_1	d__Bacteria;p__Myxococcota;c__Polyangia;o__Palsa-1104;f__Fen-1088;g__Fen-1137;s__Fen-1137 sp003170035	92.09	5.20
+3300037174_7	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	96.15	0.43
+3300028798_6	d__Bacteria;p__Planctomycetota;c__Phycisphaerae;o__UBA1161;f__UBA1161;g__;s__	75.36	5.68
+3300031244_7	d__Bacteria;p__Firmicutes_A;c__Clostridia_A;o__Christensenellales;f__CAG-138;g__UBA7703;s__	73.64	1.75
+3300029993_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	97.77	1.55
+3300030687_20	d__Bacteria;p__Patescibacteria;c__Saccharimonadia;o__Saccharimonadales;f__UBA4665;g__UBA5150;s__	71.29	0.99
+3300037141_6	d__Bacteria;p__Cyanobacteria;c__Vampirovibrionia;o__Obscuribacterales;f__Obscuribacteraceae;g__Ga0077546;s__	90.79	3.13
+3300036880_6	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003141095	81.69	4.84
+3300036880_7	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	96.45	1.33
+3300037156_8	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__Rahnella;s__Rahnella aquatilis_B	98.69	0.00
+3300030519_13	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodospirillales;f__Magnetospirillaceae;g__Telmatospirillum;s__	75.86	0.00
+3300030519_12	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Pseudomonadales;f__Moraxellaceae;g__;s__	92.11	1.76
+3300030519_10	d__Bacteria;p__Planctomycetota;c__UBA11346;o__UBA11346;f__UBA11346;g__BOG-1363;s__BOG-1363 sp003136555	83.24	0.00
+3300037176_9	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	96.45	1.97
+3300036413_1	d__Bacteria;p__Myxococcota;c__Polyangia;o__Palsa-1104;f__Fen-1088;g__Fen-1137;s__Fen-1137 sp003158395	81.04	9.25
+3300037132_22	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__GWA1-40-21;g__Bog-1340;s__Bog-1340 sp003142075	77.84	0.00
+3300036908_9	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	88.73	6.54
+3300036901_8	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Caulobacterales;f__Caulobacteraceae;g__Palsa-881;s__	86.62	3.34
+3300037214_10	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	78.19	2.80
+3300028747_4	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-465;s__Palsa-465 sp003165655	91.17	2.85
+3300037236_4	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	88.73	0.65
+3300037236_5	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	77.95	2.35
+3300037236_6	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	87.83	4.02
+3300037205_9	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Xanthobacteraceae;g__Pseudolabrys;s__	75.08	5.86
+3300022830_3	d__Archaea;p__Methanobacteriota;c__Methanobacteria;o__Methanobacteriales;f__Methanobacteriaceae;g__Methanobacterium_A;s__Methanobacterium_A sp003166335	83.75	0.49
+3300037106_12	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	84.14	1.96
+3300037207_10	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	72.10	0.90
+3300023254_2	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	90.05	1.10
+3300036888_6	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Roseiarcus;s__	96.08	1.36
+3300036888_7	d__Archaea;p__Methanobacteriota;c__Methanobacteria;o__Methanobacteriales;f__Methanobacteriaceae;g__Methanobacterium_A;s__Methanobacterium_A sp003166335	100.00	0.00
+3300036888_5	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	96.45	7.78
+3300023254_8	d__Bacteria;p__Firmicutes;c__Bacilli;o__RFN20;f__CAG-826;g__UBA4951;s__	88.76	1.12
+3300030005_3	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__Rahnella;s__Rahnella inusitata	98.37	0.89
+3300026450_4	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Gaiellales;f__Gaiellaceae;g__Fen-549;s__Fen-549 sp003162055	76.01	0.00
+3300039216_13	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__Anaerolineales;f__EnvOPS12;g__Fen-1038;s__Fen-1038 sp003141915	76.82	0.91
+3300039216_10	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Bog-793;g__Fen-455;s__Fen-455 sp003140595	71.51	4.32
+3300039216_11	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	94.73	3.91
+3300039216_16	d__Bacteria;p__FCPU426;c__;o__;f__;g__;s__	78.08	3.47
+3300037185_7	d__Bacteria;p__Spirochaetota;c__Spirochaetia;o__Treponematales;f__UBA8932;g__UBA1306;s__	89.66	1.15
+3300039216_14	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	87.83	1.12
+3300039216_15	d__Archaea;p__Halobacteriota;c__Methanomicrobia;o__Methanomicrobiales;f__Methanoregulaceae;g__Methanoregula;s__	91.18	2.61
+3300036886_9	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__UBA5619;g__UBA5619;s__UBA5619 sp003141195	95.48	4.73
+3300037196_12	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Sphingomonadales;f__Sphingomonadaceae;g__Novosphingobium;s__Novosphingobium sp001519055	70.53	2.67
+3300030508_10	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	77.96	3.22
+3300037108_10	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Palsa-688;g__Fen-671;s__Fen-671 sp003166025	83.16	0.85
+3300036884_7	d__Bacteria;p__Planctomycetota;c__Planctomycetes;o__Pirellulales;f__UBA11386;g__;s__	97.63	1.15
+3300036929_10	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	89.96	1.99
+3300037166_10	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	97.19	3.37
+3300037316_8	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__PALSA-457;s__	85.38	7.85
+3300030508_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	98.03	0.99
+3300038473_8	d__Bacteria;p__Elusimicrobiota;c__Elusimicrobia;o__F11;f__FEN-1173;g__FEN-1173;s__	95.51	0.37
+3300038473_6	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__UBA9935;g__Fen-1308;s__Fen-1308 sp003170655	80.32	2.88
+3300038473_7	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA6906;g__Fen-1260;s__Fen-1260 sp003162635	75.86	7.24
+3300037147_7	d__Bacteria;p__Acidobacteriota;c__Acidobacteriae;o__UBA7541;f__UBA7541;g__Palsa-360;s__	70.69	0.86
+3300037076_21	d__Bacteria;p__Elusimicrobiota;c__Endomicrobia;o__Endomicrobiales;f__;g__;s__	84.08	1.12
+3300038475_9	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	93.30	2.94
+3300037563_5	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	96.45	4.55
+3300036895_7	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__Palsa-1188;s__Palsa-1188 sp003160265	93.69	1.55
+3300038475_6	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	86.57	4.40
+3300037563_6	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	96.15	0.43
+3300037133_8	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	99.46	0.00
+3300037149_6	d__Bacteria;p__Armatimonadota;c__BOG-944;o__Capsulimonadales;f__BOG-944;g__BOG-944;s__	86.02	1.30
+3300037232_8	d__Bacteria;p__Eremiobacterota;c__Eremiobacteria;o__UBP12;f__UBA5184;g__Bog-1524;s__Bog-1524 sp003164045	84.48	0.00
+3300029994_13	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__UBA5070;s__	90.46	6.59
+3300037387_7	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Gaiellales;f__Gaiellaceae;g__Fen-549;s__Fen-549 sp003162055	90.52	1.72
+3300029994_14	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	81.24	0.87
+3300031524_22	d__Bacteria;p__Bdellovibrionota;c__Bdellovibrionia_A;o__UBA1018;f__UBA1018;g__;s__	78.95	1.75
+3300028746_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Chitinophagaceae;g__UBA8621;s__	70.59	5.67
+3300028780_11	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6186;f__UBA6186;g__;s__	83.82	0.00
+3300036903_6	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	92.91	4.22
+3300028780_14	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	98.35	1.55
+3300029982_10	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	94.64	0.89
+3300036436_3	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	74.68	1.63
+3300037155_13	d__Bacteria;p__Caldisericota;c__Caldisericia;o__Cryosericales;f__Cryosericaceae;g__Cryosericum;s__Cryosericum odellii	94.64	0.00
+3300030001_4	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__Fibrobacterales;f__;g__;s__	80.32	2.75
+3300036385_3	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	84.97	6.89
+3300037360_10	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	84.00	1.71
+3300037360_11	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__Anaerolineales;f__EnvOPS12;g__Fen-1038;s__Fen-1038 sp003141915	82.91	5.00
+3300037355_2	d__Bacteria;p__Acidobacteriota;c__Acidobacteriae;o__Acidobacteriales;f__Koribacteraceae;g__Bog-209;s__	71.37	9.90
+3300037155_16	d__Bacteria;p__Elusimicrobiota;c__Endomicrobia;o__Endomicrobiales;f__;g__;s__	73.60	3.35
+3300037129_8	d__Bacteria;p__Patescibacteria;c__Gracilibacteria;o__UM-FILTER-43-11;f__UM-FILTER-43-11;g__;s__	73.61	0.00
+3300037155_10	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__UBA8190;g__Palsa-661;s__Palsa-661 sp003151475	100.00	1.28
+3300037155_12	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__PALSA-986;s__	93.86	2.91
+3300028857_4	d__Bacteria;p__Firmicutes_A;c__Clostridia_A;o__Christensenellales;f__CAG-74;g__Firm-11;s__	82.33	0.34
+3300030044_8	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__Bog-1183;s__Bog-1183 sp003136635	80.36	7.21
+3300031788_10	d__Bacteria;p__Planctomycetota;c__UBA11346;o__UBA11346;f__UBA11346;g__BOG-1363;s__BOG-1363 sp003136555	94.27	1.08
+3300028857_5	d__Bacteria;p__Firmicutes_A;c__Clostridia_A;o__Christensenellales;f__CAG-138;g__UBA7703;s__	97.42	0.54
+3300031788_17	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	80.55	0.99
+3300030044_6	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	98.03	0.99
+3300030044_7	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	97.82	0.89
+3300037104_19	d__Archaea;p__Halobacteriota;c__Methanosarcinia;o__Methanotrichales;f__Methanotrichaceae;g__Methanothrix;s__	85.95	0.13
+3300036417_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__FEN-979;g__FEN-979;s__	80.14	3.59
+3300037549_15	d__Bacteria;p__FCPU426;c__;o__;f__;g__;s__	90.94	1.39
+3300037549_14	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__Nitrotoga;s__	77.02	2.68
+3300037549_16	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__Bog-756;s__	79.66	9.05
+3300037549_11	d__Bacteria;p__Acidobacteriota;c__Holophagae;o__Holophagales;f__Holophagaceae;g__Geothrix;s__	93.86	8.46
+3300037226_12	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__UBA9973;g__UBA9973;s__	78.42	0.16
+3300037549_13	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Polaromonas;s__	97.58	1.96
+3300037549_12	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Sphingomonadales;f__Sphingomonadaceae;g__Novosphingobium;s__	92.52	3.76
+3300033798_7	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	83.75	0.98
+3300031233_14	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	97.77	3.88
+3300037085_4	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	81.95	2.76
+3300033798_3	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__UBA9935;g__Fen-1308;s__Fen-1308 sp003170655	95.55	2.78
+3300036884_16	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__Dehalococcoidales;f__RBG-16-60-22;g__Fen-1077;s__Fen-1077 sp003141235	95.71	0.99
+3300036884_17	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__Nitrotoga;s__	88.03	0.71
+3300036884_11	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__UBA5619;g__UBA5619;s__UBA5619 sp003141195	96.77	6.02
+3300036884_13	d__Bacteria;p__Planctomycetota;c__Phycisphaerae;o__Sedimentisphaerales;f__Anaerohalophaeraceae;g__Fen-1362;s__Fen-1362 sp003170415	98.86	1.14
+3300036494_4	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	80.97	4.60
+3300030048_6	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__Fibrobacterales;f__;g__;s__	71.31	1.78
+3300037184_16	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__UBA11359;g__C7867-002;s__	76.85	0.00
+3300036494_2	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	83.69	5.20
+3300030048_8	d__Bacteria;p__Firmicutes_A;c__Clostridia_A;o__Christensenellales;f__CAG-74;g__Firm-11;s__	80.22	0.00
+3300037224_14	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Fen-1087;g__Fen-1087;s__Fen-1087 sp003161855	88.85	1.54
+3300028859_6	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	82.19	2.78
+3300028859_5	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	89.02	0.67
+3300037224_12	d__Bacteria;p__Spirochaetota;c__Spirochaetia;o__Treponematales;f__UBA8932;g__UBA1306;s__	89.66	2.87
+3300031837_24	d__Bacteria;p__Patescibacteria;c__Saccharimonadia;o__Saccharimonadales;f__UBA4665;g__UBA5150;s__	71.29	0.99
+3300037198_12	d__Bacteria;p__Desulfobacterota;c__Syntrophorhabdia;o__Syntrophorhabdales;f__Syntrophorhabdaceae;g__;s__	75.52	6.80
+3300030043_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA7366;f__UBA7366;g__;s__	89.75	1.72
+3300031837_21	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	80.50	2.40
+3300037090_15	d__Bacteria;p__Patescibacteria;c__Microgenomatia;o__Levybacterales;f__UBA12049;g__;s__	73.27	5.01
+3300037109_5	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__FEN-1185;s__	84.55	1.10
+3300037278_11	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	91.30	1.64
+3300037278_12	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	78.25	7.19
+3300036674_2	d__Bacteria;p__Acidobacteriota;c__Acidobacteriae;o__Acidobacteriales;f__Koribacteraceae;g__FEN-335;s__FEN-335 sp003154055	72.52	2.66
+3300037109_9	d__Bacteria;p__Planctomycetota;c__Phycisphaerae;o__Sedimentisphaerales;f__;g__;s__	90.91	2.38
+3300037109_8	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA10030;g__Fen-1298;s__	74.75	6.83
+3300037212_7	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA10030;g__Fen-1298;s__Fen-1298 sp003155495	83.41	4.92
+3300037212_4	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__UBA9935;g__Fen-1308;s__Fen-1308 sp003170655	79.51	3.64
+3300029916_2	d__Bacteria;p__Firmicutes_A;c__Clostridia;o__Clostridiales;f__Clostridiaceae;g__Clostridium;s__	79.35	1.37
+3300028767_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Prevotella;s__	94.05	0.94
+3300029981_9	d__Bacteria;p__Firmicutes_A;c__Clostridia_A;o__Christensenellales;f__CAG-138;g__UBA7703;s__	82.63	0.03
+3300037099_17	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__GWA1-40-21;g__Bog-1340;s__Bog-1340 sp003142075	78.96	0.00
+3300029981_7	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Prevotella;s__	79.57	2.35
+3300029981_4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Flavobacteriales;f__Crocinitomicaceae;g__Fluviicola;s__	72.16	2.68
+3300029981_5	d__Bacteria;p__Firmicutes_A;c__Clostridia_A;o__Christensenellales;f__CAG-74;g__Firm-11;s__	88.60	1.17
+3300037212_8	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003157595	74.29	1.72
+3300037243_8	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Acetobacterales;f__Acetobacteraceae;g__BOG-908;s__	84.76	1.74
+3300023258_5	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	93.12	4.16
+3300028795_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	98.35	1.55
+3300037103_6	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	96.63	2.25
+3300036383_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.00
+3300030687_11	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cytophagaceae;g__;s__	76.37	3.27
+3300037103_9	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	85.75	1.49
+3300037103_8	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003138355	95.30	2.99
+3300030687_17	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA7366;f__UBA7366;g__;s__	82.19	8.32
+3300030687_16	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA7366;f__UBA7366;g__;s__	89.75	1.34
+3300037040_8	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Methylocystis;s__	98.07	4.65
+3300037216_8	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA10030;g__Fen-1254;s__Fen-1254 sp003162695	94.38	4.88
+3300029988_10	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodospirillales;f__Magnetospirillaceae;g__Telmatospirillum;s__	75.63	1.99
+3300037353_10	d__Bacteria;p__Desulfobacterota_B;c__Binatia;o__Binatales;f__Binataceae;g__;s__	72.20	1.29
+3300037353_11	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__;s__	75.21	3.85
+3300030507_9	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	78.08	7.79
+3300030507_6	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	97.54	1.48
+3300038476_2	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Xanthobacteraceae;g__Bradyrhizobium;s__	83.31	9.86
+3300037064_10	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__Smithellaceae;g__Smithella;s__Smithella sp003139775	71.91	1.61
+3300030507_3	d__Bacteria;p__Armatimonadota;c__Fimbriimonadia;o__Fimbriimonadales;f__Fimbriimonadaceae;g__Fimbriimonas;s__	72.28	4.71
+3300037104_17	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__Gemmatimonadaceae;g__FEN-1250;s__FEN-1250 sp003142495	80.12	1.10
+3300038457_8	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__Bog-950;s__Bog-950 sp003165895	86.88	2.00
+3300038457_9	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Pedosphaeraceae;g__UBA11358;s__	88.47	9.80
+3300023258_3	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__Bog-793;g__Fen-455;s__Fen-455 sp003140595	92.88	9.06
+3300037276_6	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__BOG-933 sp003165295	84.18	3.94
+3300037276_7	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	72.07	2.19
+3300037276_8	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__UBA5070;f__UBA5070;g__UBA5070;s__	82.97	0.10
+3300037104_15	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__GIF9;f__UBA5629;g__UBA1162;s__	96.70	0.99
+3300038478_6	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Pedosphaerales;f__Palsa-1400;g__Palsa-1400;s__	78.36	9.26
+3300030673_9	d__Bacteria;p__Firmicutes_A;c__Clostridia_A;o__Christensenellales;f__CAG-74;g__Firm-11;s__	76.87	0.00
+3300037225_17	d__Bacteria;p__Planctomycetota;c__Phycisphaerae;o__Sedimentisphaerales;f__Anaerohalophaeraceae;g__Fen-1362;s__Fen-1362 sp003170415	98.86	1.14
+3300030673_4	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__Fibrobacterales;f__;g__;s__	92.67	3.91
+3300038463_10	d__Bacteria;p__Planctomycetota;c__UBA11346;o__UBA11346;f__UBA11346;g__BOG-1363;s__BOG-1363 sp003136555	94.27	1.08
+3300038463_13	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__Bog-1183;s__Bog-1183 sp003136635	82.77	3.43
+3300030673_7	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Prevotella;s__	93.99	2.01
+3300036931_14	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	89.29	2.01
+3300028775_9	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	95.64	0.55
+3300030004_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	98.03	0.99
+3300037107_9	d__Bacteria;p__Omnitrophota;c__Koll11;o__4484-171;f__4484-171;g__;s__	76.79	4.30
+3300023250_2	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Solirubrobacterales;f__Solirubrobacteraceae;g__Palsa-513;s__Palsa-513 sp003132505	80.73	1.70
+3300037107_7	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__FEN-1185;s__	99.94	4.95
+3300028873_8	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	98.03	0.99
+3300028070_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	99.46	0.00
+3300036886_18	d__Bacteria;p__Omnitrophota;c__Omnitrophia;o__Omnitrophales;f__UBA2337;g__XYB12-FULL-50-7;s__XYB12-FULL-50-7 sp003140935	91.40	1.08
+3300031261_13	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	94.20	0.54
+3300037101_9	d__Bacteria;p__Bacteroidota;c__Ignavibacteria;o__Ignavibacteriales;f__Ignavibacteriaceae;g__FEN-1297;s__FEN-1297 sp003142915	80.30	3.99
+3300037101_8	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	96.63	4.56
+3300031525_23	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__UBA183;g__BOG-1369;s__	92.16	6.31
+3300036886_12	d__Bacteria;p__Desulfobacterota;c__Desulfomonilia_A;o__UBA1062;f__UBA1062;g__;s__	84.30	1.31
+3300036886_13	d__Bacteria;p__Acidobacteriota;c__Acidobacteriae;o__;f__;g__;s__	82.85	2.56
+3300036886_10	d__Bacteria;p__Planctomycetota;c__FEN-1346;o__FEN-1346;f__FEN-1346;g__FEN-1346;s__	96.59	2.27
+3300036886_11	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA10030;g__Fen-1298;s__Fen-1298 sp003142575	95.34	4.64
+3300031525_28	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-41;g__PALSA-1004;s__	72.69	0.57
+3300036886_17	d__Bacteria;p__Eremiobacterota;c__Eremiobacteria;o__UBP12;f__UBA5184;g__Fen-1528;s__Fen-1528 sp003140855	99.07	0.93
+3300038464_14	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__GWA1-40-21;g__Bog-1340;s__Bog-1340 sp003142075	78.96	0.00
+3300038460_12	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	74.95	2.12
+3300036912_8	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	86.88	1.99
+3300036912_9	d__Bacteria;p__Planctomycetota;c__DG-23;o__SLPQ01;f__;g__;s__	79.35	3.99
+3300036914_4	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA6906;g__Fen-1273;s__Fen-1273 sp003161955	84.10	6.85
+3300036914_5	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	92.51	0.68
+3300036885_20	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	76.04	5.89
+3300033818_6	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Beijerinckiaceae;g__Methylocella;s__Methylocella sp003162995	81.35	0.78
+3300037066_8	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003138895	85.38	2.23
+3300030004_7	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	79.71	4.28
+3300030048_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Prevotella;s__	89.96	0.82
+3300030045_6	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	97.82	0.89
+3300038519_6	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__PALSA-986;s__	81.09	1.94
+3300037060_10	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	91.62	1.33
+3300023088_10	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	92.13	1.69
+3300023088_11	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	92.65	1.31
+3300037062_11	d__Archaea;p__Halobacteriota;c__Methanomicrobia;o__Methanomicrobiales;f__Methanoregulaceae;g__Methanoregula;s__	99.35	1.05
+3300037060_9	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__UBA183;g__BOG-1369;s__BOG-1369 sp003164815	95.07	1.94
+3300037062_13	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	93.63	2.78
+3300031902_23	d__Bacteria;p__Omnitrophota;c__Koll11;o__4484-171;f__4484-171;g__Fen-1317;s__Fen-1317 sp003154195	75.83	1.08
+3300029985_11	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	74.51	0.87
+3300036377_3	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	86.39	7.52
+3300030041_9	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Azospirillales;f__Azospirillaceae;g__BOG-933;s__	96.94	0.44
+3300030041_8	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	97.54	0.99
+3300036933_6	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__	76.50	6.41
+3300037358_12	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Chitinophagaceae;g__UBA8621;s__UBA8621 sp003168265	89.10	0.18
+3300036379_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.00
+3300037089_7	d__Bacteria;p__Desulfobacterota;c__Syntrophia;o__Syntrophales;f__UBA5619;g__UBA5619;s__UBA5619 sp003141195	96.77	8.39
+3300037196_14	d__Bacteria;p__Firmicutes_B;c__Syntrophomonadia;o__Thermacetogeniales;f__Palsa-1188;g__;s__	89.41	1.42
+3300037196_11	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__FEN-979;g__FEN-979;s__	94.61	0.81
+3300037196_10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__PALSA-1006;s__	98.63	2.24
+3300037196_13	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Acetobacterales;f__Acetobacteraceae;g__Acidocella;s__	76.24	0.00
+3300037155_22	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__UBA11359;g__;s__	73.97	0.19
+3300028747_9	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	98.35	1.55
+3300028747_8	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6186;f__UBA6186;g__;s__	81.01	0.58
+3300036427_3	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	100.00	0.81
+3300031837_16	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	97.77	1.55
+3300037208_13	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__UBA183;g__BOG-1369;s__BOG-1369 sp003164815	73.76	0.00
+3300031524_25	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003138895	80.57	7.69
+3300031524_24	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__LD1;g__UBA1941;s__UBA1941 sp003165135	82.74	0.99
+3300022877_3	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__159R;s__	93.86	1.10
+3300031524_28	d__Bacteria;p__FCPU426;c__Palsa-1180;o__Palsa-1180;f__Palsa-1180;g__Bog-1183;s__Bog-1183 sp003136635	72.68	3.49
+3300022877_5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Paludibacteraceae;g__Paludibacter_A;s__	83.87	0.00
+3300022877_4	d__Bacteria;p__Armatimonadota;c__BOG-944;o__Capsulimonadales;f__BOG-944;g__BOG-944;s__	70.79	0.29
+3300037062_9	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__Anaerolineales;f__EnvOPS12;g__Fen-1038;s__Fen-1038 sp003158885	92.73	6.55
+3300037365_7	d__Bacteria;p__Fibrobacterota;c__Chitinivibrionia;o__Chitinivibrionales;f__Chitinispirillaceae;g__;s__	88.76	4.95
+3300037164_15	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983;f__UBA11359;g__C7867-002;s__	73.78	0.00
+3300036879_11	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__UBA183;g__BOG-1369;s__BOG-1369 sp003164815	75.11	1.94
+3300036879_12	d__Archaea;p__Methanobacteriota;c__Methanobacteria;o__Methanobacteriales;f__Methanobacteriaceae;g__Methanobacterium_B;s__Methanobacterium_B sp003158115	88.53	0.84
+3300036884_20	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003170935	89.71	1.96
+3300037163_8	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003162175	83.92	6.54
+3300028560_5	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	74.16	4.28
+3300023254_4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__FEN-979;g__FEN-979;s__	89.16	3.85
+3300026366_1	d__Bacteria;p__Firmicutes_A;c__Clostridia;o__Clostridiales;f__Clostridiaceae;g__Clostridium_I;s__Clostridium_I akagii	94.25	7.26
+3300037060_5	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003141095	84.62	8.12
+3300037181_12	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__RAAP-2;g__RAAP-2;s__RAAP-2 sp003138895	75.85	1.28
+3300037132_15	d__Bacteria;p__Patescibacteria;c__ABY1;o__BM507;f__UBA12465;g__UBA12465;s__	83.08	3.37
+3300037132_13	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__PALSA-986;s__	93.46	2.34
+3300037132_12	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	98.88	2.43
+3300028566_5	d__Bacteria;p__Verrucomicrobiota;c__Verrucomicrobiae;o__Opitutales;f__Opitutaceae;g__Palsa-1447;s__	80.14	7.53
+3300037102_9	d__Bacteria;p__Goldbacteria;c__PGYV01;o__PGYV01;f__Palsa-1178;g__Bog-1181;s__Bog-1181 sp003159495	96.63	2.25
+3300031837_13	d__Bacteria;p__Bdellovibrionota;c__Bdellovibrionia_A;o__UBA1018;f__UBA1018;g__;s__	78.52	2.40
+3300037161_7	d__Archaea;p__Halobacteriota;c__Bog-38;o__Bog-38;f__Bog-38;g__Bog-38;s__Bog-38 sp003139855	86.71	3.27
+3300031837_19	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Berkiellales;f__;g__;s__	88.08	0.29
+3300030047_8	d__Bacteria;p__Fibrobacterota;c__Fibrobacteria;o__Fibrobacterales;f__;g__;s__	71.90	3.45
