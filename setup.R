@@ -20,15 +20,37 @@ v7_metaT_processed_directory <- here("data", "Emerge_metaTs_processed_v7")
 v1_aa_frequencies_directory <- here("data", "AA_frequencies_v1")
 
 # Memory saving? - should large intermediate objects be removed to save memory after they are no longer needed:
-memory_saving <- TRUE # default is false
+if (!exists("memory_saving")) {
+  memory_saving <- TRUE # default is True
+}
 
 read_genome_info <- function() {
+    woodcroft_file <- here(v1_mags_directory, "Field_bins", "Woodcroft_2018", "tax_complete_contam.txt")
+    if (!file.exists(woodcroft_file)) {
+        woodcroft_file <- here("data", "Woodcroft_2018_tax_complete_contam.txt")
+    }
+
+    cronin_file <- here(v1_mags_directory, "Field_bins", "Cronin_2021", "tax_complete_contam.txt")
+    if (!file.exists(cronin_file)) {
+        cronin_file <- here("data", "Cronin_2021_tax_complete_contam.txt")
+    }
+
+    sip_file <- here(v1_mags_directory, "SIP_bins", "tax_complete_contam.txt")
+    if (!file.exists(sip_file)) {
+        sip_file <- here("data", "SIP_bins_tax_complete_contam.txt")
+    }
+
+    jgi_file <- here(v1_mags_directory, "JGI_bins", "tax_complete_contam.txt")
+    if (!file.exists(jgi_file)) {
+        jgi_file <- here("data", "JGI_bins_tax_complete_contam.txt")
+    }
+
     d <- bind_rows(
-        read_tsv(here(v1_mags_directory, "Field_bins", "Woodcroft_2018", "tax_complete_contam.txt")) %>% mutate(genome_set = "Woodcroft_2018"),
-        read_tsv(here(v1_mags_directory, "Field_bins", "Cronin_2021", "tax_complete_contam.txt")) %>% mutate(genome_set = "Cronin_2021"),
-        read_tsv(here(v1_mags_directory, "SIP_bins", "tax_complete_contam.txt")) %>% mutate(genome_set = "SIP_bins"),
-        read_tsv(here(v1_mags_directory, "JGI_bins", "tax_complete_contam.txt")) %>% mutate(genome_set = "JGI_bins"),
-        )
+        read_tsv(woodcroft_file) %>% mutate(genome_set = "Woodcroft_2018"),
+        read_tsv(cronin_file) %>% mutate(genome_set = "Cronin_2021"),
+        read_tsv(sip_file) %>% mutate(genome_set = "SIP_bins"),
+        read_tsv(jgi_file) %>% mutate(genome_set = "JGI_bins"),
+    )
     return(d)
 }
 

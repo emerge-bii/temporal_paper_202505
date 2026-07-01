@@ -46,3 +46,15 @@ dependencies:
   - r-svglite
   - r-data.table
   - r-writexl
+  - bioconductor-phyloseq
+  - bioconductor-microbiome
+  - r-wgcna
+  - r-pls
+  - r-gplots
+  - r-ggpubr
+  - r-rmarkdown
+  - r-knitr
+  - r-multinet
+  - r-cairo
+  - r-readxl
+
