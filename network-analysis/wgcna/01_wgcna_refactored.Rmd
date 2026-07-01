@@ -1,0 +1,857 @@
+---
+title: "02_wgcna"
+author: "Dylan"
+date: '2022-05-20'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+if (!dir.exists("output")) {
+  dir.create("output", recursive = TRUE)
+}
+```
+
+#Load data and packages
+```{r load-data}
+
+library(ggplot2)
+library(phyloseq)
+library(ggpubr)
+library(dplyr)
+library(microbiome)
+library(vegan)
+library(reshape2)
+library(tidyr)
+library(stringr)
+library(tidyverse)     # tidyverse will pull in ggplot2, readr, other useful libraries
+library(WGCNA)    
+library(gplots)
+library(RColorBrewer)
+
+set.seed(1)
+
+# Set memory_saving to FALSE so setup.R does not delete input_counts_all
+memory_saving <- FALSE
+
+# Source setup.R to load all clean datasets and libraries (using cache if available)
+library(here)
+cache_path <- here("data", "setup_cache.RData")
+if (file.exists(cache_path)) {
+  load(cache_path)
+} else {
+  source(here("setup.R"))
+  save(input_counts_all, file = cache_path)
+}
+
+# 1. Use the input_counts_all$otu_table generated from setup.R
+otumat <- as.data.frame(input_counts_all$otu_table)
+rownames(otumat) <- otumat$genome
+otumat$genome <- NULL
+OTU <- otu_table(otumat, taxa_are_rows = TRUE)
+
+# 2. Use the metadata generated from setup.R
+md <- as.data.frame(input_counts_all$sample_metadata)
+md$metaG_JGI_NovaSeq__ <- md$temporal_sample_id
+rownames(md) <- md$metaG_JGI_NovaSeq__
+
+# Clean up / subset metadata: remove columns that aren't traits
+cols_to_remove <- c(
+  "SampleID__", "SampleID_old__", "Month__", "Core__", "image_url__", "DepthMin__", "metaG_JGI_HiSeq__", "FTIR__", 
+  "Weather_Conditions_on_Day_of_Coring", "UpdateDate__.DepthInfo", "Notes__.DepthInfo", "sample", "DepthLumping", 
+  "CoreGroup__", "Site__", "GPS__", "DepthCode__", "DepthMax__", "metaG_ACE__", "EEMS__",
+  "WTD.cm_neg_is_below_sfc__", "UpdateDate__.Biogeochemistry", "Notes__.Biogeochemistry", "temporal_sample_id", "Date__", "FieldSampling__", "pool.DOM", "pool.dD_CH4", "Phosphate.uM__",
+  "sd_AirTemperature_7d", "sd_AirTemperature_21d", "sd_AirTemperature_14d", "sd_AirTemperature_28d",
+  "sd_AirTemperature_growing", "sd_AirTemperature_all_growing", "n_AirTemperature_7d",
+  "n_AirTemperature_14d", "n_AirTemperature_21d", "n_AirTemperature_28d", "n_AirTemperature_growing",
+  "n_AirTemperature_all_growing", "ALD_detectable", "Outlier_status", "DepthID"
+)
+md <- md[, !(names(md) %in% cols_to_remove), drop = FALSE]
+
+md$Habitat__ <- factor(md$Habitat__)
+md$Habitat__ <- factor(md$Habitat__, levels(md$Habitat__)[c(3,1,2)])
+md$Year__ <- factor(md$Year__)
+sampledata <- sample_data(md)
+
+# 3. Use the taxonomy generated from setup.R
+tax <- as.data.frame(input_counts_all$taxonomy)
+rownames(tax) <- tax$genome
+tax$genome <- NULL
+tax <- as.matrix(tax)
+TAX <- tax_table(tax)
+
+physeq <- phyloseq(OTU, TAX)
+physeq <- merge_phyloseq(physeq, sampledata)
+summarize_phyloseq(physeq)
+
+physeq
+physeq = filter_taxa(physeq, function(x) sum(x) > 0, TRUE)
+physeq
+
+
+
+```
+
+
+```{r wgcna-functions}
+
+prepare_wgcna_data <- function(pseq, min_num_samples) {
+    otumat <- as(otu_table(pseq), "matrix")
+    otumat <- otumat[,order(colnames(otumat))]
+  
+    otumat[is.na(otumat)] <- 0
+    
+    sub <- as.data.frame(apply(otumat, 1, function(x)sum(x > 0)))
+    colnames(sub) <- c("Vals")
+    otumat <- as.data.frame(otumat)
+    otumat$Pops <- row.names(otumat)
+    sub <- subset(sub, Vals > min_num_samples)
+    otumat <- subset(otumat, Pops %in% row.names(sub))
+    otumat$Pops <- NULL
+    
+    data <- otumat
+    data <- t(data)
+    cov = decostand((data),method="hellinger")
+    gsg = goodSamplesGenes(cov, verbose = 3);
+    
+    if (!gsg$allOK)
+    {
+      if (sum(!gsg$goodGenes)>0)
+        printFlush(paste("Removing genes:", paste(names(data)[!gsg$goodGenes], collapse = ", ")));
+      if (sum(!gsg$goodSamples)>0)
+        printFlush(paste("Removing samples:", paste(rownames(data)[!gsg$goodSamples], collapse = ", ")));
+      cov = cov[gsg$goodSamples, gsg$goodGenes]
+    }
+    
+    Metadata<-md
+    rownames(Metadata)=Metadata$metaG_JGI_NovaSeq__
+    cov <- as.data.frame(cov)
+    cov$pops <- row.names(cov)
+    metadata_sub <- subset(Metadata, metaG_JGI_NovaSeq__ %in% row.names(cov))
+    cov_sub <- subset(cov, pops %in% Metadata$metaG_JGI_NovaSeq__)
+    Metadata <- metadata_sub
+    cov <- cov_sub
+    Metadata <- Metadata[order(Metadata$metaG_JGI_NovaSeq__),]
+    cov <- cov[order(cov$pops),]
+    Metadata$metaG_JGI_NovaSeq__ <- NULL
+    cov$pops <- NULL
+    
+    return(list(cov = cov, Metadata = Metadata))
+}
+
+build_wgcna_network <- function(cov, power_cov, habitat, save_outputs = FALSE, plot_dendrogram = FALSE) {
+    allowWGCNAThreads()
+    
+    net = blockwiseModules(cov, power = power_cov,
+                           TOMType = "signed", networkType = "signed",
+                           reassignThreshold = 0, mergeCutHeight = 0.01,
+                           numericLabels = TRUE, pamRespectsDendro = FALSE,
+                           saveTOMs = TRUE,
+                           saveTOMFileBase = file.path("output", "MAGs_TOM"), 
+                           verbose = 3, maxBlockSize = 1800)
+    table(net$colors)  
+    mergedColors = labels2colors(net$colors)
+    
+    clusterid <- as.data.frame(net$colors)
+    clusteridcolors <- as.data.frame(mergedColors)
+    rownames(clusteridcolors) <- rownames(clusterid)
+    clustermembership <- merge(clusterid,clusteridcolors, by='row.names')
+    row.names(clustermembership) <- clustermembership$Row.names
+    clustermembership$Row.names <- NULL
+    
+    if (save_outputs) {
+        write.csv(file=file.path("output", paste0(habitat,"_Module_membership.csv")),clustermembership) 
+    }
+    
+    if (plot_dendrogram) {
+        sizeGrWindow(12, 9)
+        plotDendroAndColors(net$dendrograms[[1]], mergedColors[net$blockGenes[[1]]],
+                            "Module colors",
+                            dendroLabels = FALSE, hang = 0.03,
+                            addGuide = TRUE, guideHang = 0.05)
+    }
+    
+    moduleLabels = net$colors
+    moduleColors = labels2colors(net$colors)
+    geneTree = net$dendrograms[[1]];
+    
+    MAGs_eig = moduleEigengenes(cov, moduleColors)$eigengenes
+    pops = orderMEs(MAGs_eig)
+    rownames(pops) <- rownames(cov)
+    
+    return(list(net = net, pops = pops, moduleColors = moduleColors, moduleLabels = moduleLabels, geneTree = geneTree))
+}
+
+run_wgcna <- function(pseq, min_num_samples, power_cov, habitat) {
+    prep <- prepare_wgcna_data(pseq, min_num_samples)
+    net_res <- build_wgcna_network(prep$cov, power_cov, habitat, save_outputs = TRUE, plot_dendrogram = TRUE)
+    pops <- net_res$pops
+    moduleLabels <- net_res$moduleLabels
+    moduleColors <- net_res$moduleColors
+    geneTree <- net_res$geneTree
+    save(pops, moduleLabels, moduleColors, geneTree, file = file.path("output", "MAGs_Module-networkConstruction-auto.RData"))
+    write.csv(file=file.path("output", paste0(habitat,".04.MAGs_Module_eigen_values.csv")), pops)
+    
+    nSamples = nrow(prep$cov)
+    moduleTraitCor = cor(net_res$pops, prep$Metadata, use = "p")
+    moduleTraitPvalue = corPvalueStudent(moduleTraitCor, nSamples)
+    
+    combined_table <- as.data.frame(matrix(nrow = nrow(moduleTraitCor), ncol = ncol(moduleTraitCor)))
+    colnames(combined_table) <- colnames(moduleTraitCor)
+    rownames(combined_table) <- rownames(moduleTraitCor)
+    
+    for (col in colnames(moduleTraitPvalue)) {
+      combined_table[[col]] <- paste0(
+        signif(moduleTraitCor[, col], 2), 
+        " (p=", 
+        signif(moduleTraitPvalue[, col], 2), 
+        ")"
+      )
+    }
+    write.csv(combined_table, file = file.path("output", paste0(habitat, "_Combined_ModuleTrait_Table.csv")), row.names = TRUE)
+
+    # Generate long-form table with multiple testing correction (BH)
+    p_vector <- as.vector(moduleTraitPvalue)
+    q_values <- p.adjust(p_vector, method = "BH", n = sum(!is.na(p_vector)))
+    modules <- rownames(moduleTraitCor)
+    traits <- colnames(moduleTraitCor)
+    
+    long_form <- data.frame(
+        Module = rep(modules, times = length(traits)),
+        Habitat = habitat,
+        Metadata_Parameter = rep(traits, each = length(modules)),
+        Correlation = as.vector(moduleTraitCor),
+        P_value = as.vector(moduleTraitPvalue),
+        Q_value = q_values,
+        stringsAsFactors = FALSE
+    )
+    write.csv(long_form, file = file.path("output", paste0(habitat, "_LongForm_ModuleTrait_Table.csv")), row.names = FALSE)
+
+    textMatrix = paste(signif(moduleTraitCor, 2), "\n(",signif(moduleTraitPvalue, 1), ")", sep = "")
+    dim(textMatrix) = dim(moduleTraitCor)
+    library(RColorBrewer)
+    pdf(file.path("output", paste0(habitat,".05.Module-trait relationships.pdf")),width=20,height=14)
+    par(mar=c(8,12,4,5))
+    labeledHeatmap(Matrix = moduleTraitCor,
+                   xLabels = names(prep$Metadata),
+                   yLabels = names(net_res$pops),
+                   ySymbols = substring(names(net_res$pops), 3),
+                   colorLabels = FALSE,
+                   colors = brewer.pal(11,"RdBu"),
+                   textMatrix = textMatrix,
+                   setStdMargins = FALSE,
+                   cex.text = .5,
+                   cex.lab = 1.2,
+                   zlim = c(-1,1),
+                   main = paste("Module-trait relationships"))
+    dev.off()
+}
+
+run_spls <- function(pseq, min_num_samples, power_cov, habitat, module, parameter) {
+    prep <- prepare_wgcna_data(pseq, min_num_samples)
+    net_res <- build_wgcna_network(prep$cov, power_cov, habitat, save_outputs = FALSE, plot_dendrogram = FALSE)
+    
+    nSamples = nrow(prep$cov)
+    moduleTraitCor = cor(net_res$pops, prep$Metadata, use = "p")
+    moduleTraitPvalue = corPvalueStudent(moduleTraitCor, nSamples)
+    textMatrix = paste(signif(moduleTraitCor, 2), "\n(",signif(moduleTraitPvalue, 1), ")", sep = "")
+    dim(textMatrix) = dim(moduleTraitCor)
+
+    weight <- as.data.frame(prep$Metadata[,parameter])
+    weight_t<- as.data.frame(weight)
+    rownames(weight_t) <- rownames(prep$cov)
+    
+    weight_t <-na.omit(weight_t)
+    cleannamesweight <- rownames(weight_t)
+    names(weight_t) = parameter
+    weight <- as.data.frame(weight_t)
+    MAGs_clean <- net_res$pops[rownames(weight_t),]
+    cov_clean <- prep$cov[rownames(weight_t),]
+    
+    modNames = substring(names(net_res$pops), 3)
+    geneModuleMembership = as.data.frame(cor(prep$cov, net_res$pops, use = "p"));
+    MMPvalue = as.data.frame(corPvalueStudent(as.matrix(geneModuleMembership), nSamples));
+    names(geneModuleMembership) = paste("MM", modNames, sep="");
+    names(MMPvalue) = paste("p.MM", modNames, sep="");
+    geneTraitSignificance = as.data.frame(cor(cov_clean, weight, use = "p"));
+    GSPvalue = as.data.frame(corPvalueStudent(as.matrix(geneTraitSignificance), nSamples));
+    names(geneTraitSignificance) = paste("GS.", names(weight), sep="");
+    names(GSPvalue) = paste("p.GS.", names(weight), sep="");
+    
+    column = match(module, modNames);
+    moduleGenes = net_res$moduleColors==module
+    pdf(file.path("output", paste0(habitat,".06.", module,"Module membership vs. population significance for", parameter,".pdf")),width=12,height=8)
+    par(mfrow=c(1,1))
+    par(mar=c(8,8,8,8))
+    verboseScatterplot(abs(geneModuleMembership[moduleGenes, column]),
+                       abs(geneTraitSignificance[moduleGenes, 1]),
+                       xlab = paste("Module Membership -", module),
+                       ylab = paste("Correlation to",parameter), lmFnc = lm,
+                       abline = TRUE, abline.color = 1, abline.lty = 1, 
+                       corFnc = "cor", corOptions = "use = 'p'", 
+                       main = paste("\n"),
+                       cex.main = 2, cex.lab = 2, cex.axis = 1.2, pch=21, bg=module, col="black")
+    dev.off()
+
+    MET = orderMEs(cbind(MAGs_clean, weight))
+    pdf(file.path("output", paste0(habitat,".07.Adjacency_trait_ME for", parameter,".pdf")))
+    par(cex = 1.0)
+    plotEigengeneNetworks(MET, paste("Eigengene dendrogram with ",parameter), marDendro = c(0,4,2,0),plotHeatmaps = FALSE)
+    par(cex = 1.0)
+    plotEigengeneNetworks(MET, paste("Eigengene adjacency heatmap with ",parameter), marHeatmap = c(3,4,2,2),plotDendrograms = FALSE, xLabelsAngle = 90)
+    dev.off()
+    
+    th_r2<-0.3 
+    subnetwork<-cov_clean[,moduleGenes]
+    subnetwork<- as.matrix(subnetwork)
+    
+    library("pls")
+    pls_result<-plsr(as.matrix(weight) ~ (subnetwork), validation="LOO",method="oscorespls")
+    r2_vector<-R2(pls_result)
+    max<-0
+    max_comp<--1
+    for (j in 1:length(r2_vector$val)){
+      if(r2_vector$val[j]>th_r2){
+        if(r2_vector$val[j]>max){
+          max<-r2_vector$val[j]
+          max_comp<-r2_vector$comp[j]
+        }
+      }
+    }
+    
+    source("http://mevik.net/work/software/VIP.R")
+    library(ggplot2)
+    print(paste(" the max r2 is ",max," corresponding to comp ",max_comp,sep=""))
+    if(max==0){
+      print ("No good correlation, we stop here")
+      df_3 <- NULL
+    }else {
+      print("Good correlation, we check the VIP !")
+      output<-file.path("output", paste0(habitat,".08.VIP_values_with_",parameter,module,".txt"))
+      vip_result<-VIP(pls_result)
+      vip_components<-sort(vip_result[max_comp,],decreasing=TRUE)[1:100]
+      for (i in 1:100){
+        cat(paste("Rank ",i," we have ",names(vip_components[i])," with a VIP of ",vip_components[i],"\n",sep=""),file=output,append=TRUE)
+      }
+      weight_2 <- as.data.frame(weight[!is.na(weight)])
+      rownames(weight_2) <-cleannamesweight
+      df<-data.frame(x=weight_2,y=pls_result$validation$pred[,,max_comp])
+      colnames(df)<-c("x","y")
+      cor.test(df$x,df$y)
+      df_2<-as.data.frame(as.double(cor(subnetwork, weight, use = "p")))
+      colnames(df_2)<-c("Radius")
+      rownames(df_2)<-colnames(subnetwork)
+      write.csv(df_2,file=file.path("output", paste0(habitat,".09.Normal_correlation",module, parameter,".txt")))
+      df_2<-cbind(Name=row.names(df_2),df_2)
+      table<-row.names(df_2)
+      df_2<-cbind(df_2,Axis=as.integer(c(1)))
+      df_3<-as.data.frame(as.double(vip_result[max_comp,]))
+      rownames(df_3)<-colnames(subnetwork)
+      colnames(df_3)<-c("Radius")
+      write.csv(df_3,file=file.path("output", paste0(habitat,".10.VIP_correlation",module, parameter,".txt")))
+      
+      lmp <- function (modelobject) {
+        if (class(modelobject) != "lm") stop("Not an object of class 'lm' ")
+        f <- summary(modelobject)$fstatistic
+        p <- pf(f[1],f[2],f[3],lower.tail=F)
+        attributes(p) <- NULL
+        return(p)
+      }
+      
+      regression <- lm(df$x~df$y)
+      pdf(file.path("output", paste0(habitat,".11.measured_vs_predicted_",module,"-vs-",parameter,".pdf")))
+      print(ggplot(data=df) + theme_bw() + geom_abline() + geom_smooth(aes(x=x,y=y),method=lm, se = FALSE) + 
+        xlab("Measured") + ylab("Predicted") + ggtitle(paste("Comparison of",parameter,"measured vs predicted for module",module)) + 
+        theme(plot.title = element_text(hjust = 0.5),axis.text=element_text(color="black",size=10),axis.title=element_text(color="black",size=15), axis.ticks=element_line(color="black"),panel.grid.major = element_blank(),panel.grid.minor = element_blank())+ 
+        geom_point(aes(x=x,y=y), size=2.5, shape=21, fill=module, color="black") +
+        scale_x_continuous(breaks = pretty(df$x, n=5)) +
+        scale_y_continuous(breaks = pretty(df$x, n=5)) +
+        annotate("text",x=Inf,y=-Inf,hjust=1.1,vjust=-0.5,label= paste("r2 =",format(round(summary(regression)$r.squared, 2), nsmall = 2) , "\n", "p-value =", format(round(lmp(regression), 2), nsmall = 2))))
+      dev.off()
+    }
+    
+    return(list(geneModuleMembership = geneModuleMembership, geneTraitSignificance = geneTraitSignificance, VIPtable = df_3))
+}
+
+determine_thresholding <- function(pseq, min_num_samples) {
+    prep <- prepare_wgcna_data(pseq, min_num_samples)
+    
+    sampleTree = hclust(dist(prep$cov), method = "average");
+    sizeGrWindow(12,9)
+    par(cex = 0.6);
+    par(mar = c(10,4,4,2))
+    plot(sampleTree, main = "Sample clustering to detect outliers", sub="", xlab="", cex.lab = 1.5,
+    cex.axis = 1.5, cex.main = 2)
+
+    input_mat = prep$cov
+    allowWGCNAThreads()
+    powers = c(c(1:10), seq(from = 12, to = 20, by = 2))
+    sft = pickSoftThreshold(
+      input_mat,
+      powerVector = powers,
+      verbose = 5,
+      networkType = "signed"
+      )
+    
+    par(mfrow = c(1,2));
+    par(mar = c(5,5,4,2));
+    cex1 = 0.9;
+    
+    plot(sft$fitIndices[, 1],
+         -sign(sft$fitIndices[, 3]) * sft$fitIndices[, 2],
+         xlab = "Soft Threshold (power)",
+         ylab = "Scale Free Topology Model Fit, signed R^2",
+         main = paste0("Scale independence - ", min_num_samples)
+    )
+    text(sft$fitIndices[, 1],
+         -sign(sft$fitIndices[, 3]) * sft$fitIndices[, 2],
+         labels = powers, cex = cex1, col = "red"
+    )
+    abline(h = 0.80, col = "red")
+    plot(sft$fitIndices[, 1],
+         sft$fitIndices[, 5],
+         xlab = "Soft Threshold (power)",
+         ylab = "Mean Connectivity",
+         type = "n",
+         main = paste0("Mean connectivity - ", min_num_samples)
+    )
+    text(sft$fitIndices[, 1],
+         sft$fitIndices[, 5],
+         labels = powers,
+         cex = cex1, col = "red")
+  
+}
+
+```{r palsa-thresholding}
+pseq <- subset_samples(physeq, (Habitat__ == "Palsa"))
+pdf(file.path("output", "Palsa_Thresholding.pdf"), width = 12, height = 9)
+for (i in 1:20) {
+  print(i)
+  determine_thresholding(pseq, i)
+}
+dev.off()
+```
+
+```{r palsa-wgcna}
+
+pseq <- subset_samples(physeq, (Habitat__ == "Palsa"))
+run_wgcna(pseq, min_num_samples = 10, power_cov = 14, "Palsa")
+
+```
+
+```{r bog-thresholding}
+pseq <- subset_samples(physeq, (Habitat__ == "Bog"))
+pdf(file.path("output", "Bog_Thresholding.pdf"), width = 12, height = 9)
+for (i in 1:20) {
+  print(i)
+  determine_thresholding(pseq, i)
+}
+dev.off()
+```
+
+```{r bog-wgcna}
+
+pseq <- subset_samples(physeq, (Habitat__ == "Bog"))
+run_wgcna(pseq, min_num_samples = 1, power_cov = 14, "Bog")
+vip_df = run_spls(pseq,  min_num_samples = 1, power_cov = 14, "Bog", module = "blue", parameter = "alphaC")
+vip_df = run_spls(pseq,  min_num_samples = 1, power_cov = 14, "Bog", module = "blue", parameter = "T_soil.deg_C")
+```
+
+
+```{r fen-thresholding}
+pseq <- subset_samples(physeq, (Habitat__ == "Fen"))
+pdf(file.path("output", "Fen_Thresholding.pdf"), width = 12, height = 9)
+for (i in 1:20) {
+   print(i)
+   determine_thresholding(pseq, i)
+}
+dev.off()
+```
+
+```{r fen-wgcna}
+
+pseq <- subset_samples(physeq, (Habitat__ == "Fen"))
+run_wgcna(pseq, min_num_samples = 6, power_cov = 12, "Fen")
+
+```
+
+```{r all-thresholding}
+pdf(file.path("output", "AllSamples_Thresholding.pdf"), width = 12, height = 9)
+for (i in 1:20) {
+  print(i)
+  determine_thresholding(physeq, i)
+}
+dev.off()
+```
+
+
+```{r all-wgcna}
+
+run_wgcna(physeq, min_num_samples = 9, power_cov = 16, "All")
+vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "lightgreen", parameter = "alphaC")
+
+# vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "lightgreen", parameter = "d13C_CO2__")
+# #vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "lightgreen", parameter = "CO2.mM__")
+# ##vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "brown", parameter = "DOC.mM__")
+# #vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "brown", parameter = "TN.mM__")
+
+```
+
+# <!-- ```
+# ```{r}
+
+# physeq_genus = tax_glom(physeq, "Genus")
+
+# for (i in 1:20) {
+#   print(i)
+#   determine_thresholding(physeq_genus, i)
+# }
+
+# run_wgcna(physeq_genus,1,7,"Genus")
+
+# run_spls(physeq_genus,1,7,"Genus","red","alphaC")
+# run_spls(physeq_genus,1,7,"Genus","red","DOC.mM__")
+# run_spls(physeq_genus,1,7,"Genus","red","TN.mM__")
+# run_spls(physeq_genus,1,7,"Genus","pink","Sulfate.uM__")
+# run_spls(physeq_genus,1,7,"Genus","turquoise","d13C_CH4__")
+# ```
+
+# ```{r}
+
+# physeq_genus_palsa = subset_samples(physeq_genus, Habitat__ == "Palsa")
+
+# for (i in 1:20) {
+#   print(i)
+#   determine_thresholding(physeq_genus_palsa, i)
+# }
+
+# run_wgcna(physeq_genus_palsa,1,7,"Genus.Palsa")
+# run_spls(physeq_genus_palsa,1,7,"Genus.Palsa","turquoise","d13C_CO2__")
+# run_spls(physeq_genus_palsa,1,7,"Genus.Palsa","turquoise","T_soil.deg_C")
+# run_spls(physeq_genus_palsa,1,7,"Genus.Palsa","green","CO2.percent") #no good correlation
+
+# ```
+
+# ```{r}
+
+# physeq_genus_bog = subset_samples(physeq_genus, Habitat__ == "Bog")
+
+# for (i in 1:20) {
+#   print(i)
+#   determine_thresholding(physeq_genus_bog, i)
+# }
+
+# run_wgcna(physeq_genus_bog,3,8,"Genus.Bog")
+
+# run_spls(physeq_genus_bog,3,8,"Genus.Bog","blue","N.percent__")
+# run_spls(physeq_genus_bog,3,8,"Genus.Bog","blue","d15N_peat__")
+# run_spls(physeq_genus_bog,3,8,"Genus.Bog","blue","DepthAvg__")
+
+# ```
+# ```{r}
+
+# physeq_genus_fen = subset_samples(physeq_genus, Habitat__ == "Fen")
+
+# for (i in 1:20) {
+#   print(i)
+#   determine_thresholding(physeq_genus_fen, i)
+# }
+
+# run_wgcna(physeq_genus_fen,1,12,"Genus.Fen")
+
+# run_spls(physeq_genus_fen,3,8,"Genus.Bog","blue","N.percent__")
+# #run_spls(physeq_genus_bog,3,8,"Genus.Bog","blue","d15N_peat__")
+# #run_spls(physeq_genus_bog,3,8,"Genus.Bog","blue","DepthAvg__")
+
+# ```
+
+
+# ```{r}
+# for (i in 1:20) {
+#   print(i)
+#   determine_thresholding(physeq, i)
+# }
+
+
+# ```
+
+
+# ```{r}
+
+# run_wgcna(physeq, min_num_samples = 9, power_cov = 16, "All")
+
+
+# ```
+
+# ```{r}
+
+
+# #browser()
+# #vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "lightgreen", parameter = "alphaC")
+# vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "lightgreen", parameter = "d13C_CO2__")
+# #vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "lightgreen", parameter = "CO2.mM__")
+# ##vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "brown", parameter = "DOC.mM__")
+# #vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "brown", parameter = "TN.mM__")
+# #vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "lightcyan", parameter = "pH_peat") #did not work
+# #vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "salmon", parameter = "CO2.percent") #did not work
+# #vip_df = run_spls(physeq,  min_num_samples = 9, power_cov = 16, "All", module = "turquoise", parameter = "d13C_CH4__")
+
+
+
+# vip_df <- subset(vip_df, Radius > 1)
+# temp2 <- merge(vip_df, tax, by = "row.names")
+
+# ```
+
+# ```{r}
+# pseq <- subset_samples(physeq, (Habitat__ == "Palsa"))
+# for (i in 1:20) {
+#   print(i)
+#   determine_thresholding(pseq, i)
+# }
+
+# ```
+
+# ```{r}
+
+# pseq <- subset_samples(physeq, (Habitat__ == "Palsa"))
+# run_wgcna(pseq, min_num_samples = 10, power_cov = 14, "Palsa")
+
+# ```
+
+
+# ```{r}
+
+
+# #vip_df = run_spls(pseq,  min_num_samples = 10, power_cov = 14, "Palsa", module = "blue", parameter = "d15N_peat__") #significant but ugly
+# #vip_df = run_spls(pseq,  min_num_samples = 10, power_cov = 14, "Palsa", module = "yellow", parameter = "C.percent__") #significant but ugly
+
+
+# #vip_df <- subset(vip_df, Radius > 1)
+# #temp2 <- merge(vip_df, tax, by = "row.names")
+
+# colors <- c("yellow","brown","red", "turquoise")#, "pink") #turquoise, red, pink
+
+# temp_lineages <- list()
+
+# for (c in colors){
+#   vip_df = run_spls(pseq,  min_num_samples = 10, power_cov = 14, "Palsa", module = c, parameter = "T_soil.deg_C")
+#   temp <- subset(vip_df, Radius > 1)
+#   temp_lineages[[c]] <- row.names(temp)
+# }
+
+# ```
+# ```{r}
+
+# test <- plyr::ldply(temp_lineages, rbind)
+# row.names(test) <- test$.id
+# test$.id <- NULL
+# test<- t(test)
+# test_palsa <- melt(test)
+# test_palsa$Habitat <- "Palsa"
+# test_palsa <- na.omit(test_palsa)
+# test_palsa$Var1 <- NULL
+# colnames(test_palsa) <- c("module","mag","habitat")
+# #write.csv(test,file="palsa_lineages_cor_temp.txt",quote=FALSE, row.names = FALSE)
+
+# ```
+
+# ```{r}
+# pseq <- subset_samples(physeq, (Habitat__ == "Bog"))
+# #run_wgcna(pseq, 8, 9, "Palsa")
+# for (i in 1:20) {
+#   print(i)
+#   determine_thresholding(pseq, i)
+# }
+
+# ```
+
+
+
+# ```{r}
+
+# pseq <- subset_samples(physeq, (Habitat__ == "Bog"))
+# run_wgcna(pseq, min_num_samples = 1, power_cov = 14, "Bog")
+
+# ```
+
+# ```{r}
+
+
+
+# #vip_df = run_spls(pseq,  min_num_samples = 1, power_cov = 14, "Bog", module = "blue", parameter = "N.percent__") #significant but not much data
+# #vip_df = run_spls(pseq,  min_num_samples = 1, power_cov = 14, "Bog", module = "blue", parameter = "CO2.mM__")
+# #vip_df = run_spls(pseq,  min_num_samples = 1, power_cov = 14, "Bog", module = "green", parameter = "dD_CH4__") #no good correlation -- from function output message
+# vip_df = run_spls(pseq,  min_num_samples = 1, power_cov = 14, "Bog", module = "blue", parameter = "alphaC")
+# #vip_df = run_spls(pseq,  min_num_samples = 1, power_cov = 14, "Bog", module = "blue", parameter = "d13C_CO2__")
+
+
+# #vip_df <- subset(vip_df, Radius > 1)
+# #temp2 <- merge(vip_df, tax, by = "row.names")
+
+# colors <- c("blue")#, "pink") #turquoise, red, pink
+
+# temp_lineages_bog <- list()
+
+# for (c in colors){
+#   vip_df = run_spls(pseq,  min_num_samples = 1, power_cov = 14, "Bog", module = c, parameter = "T_soil.deg_C")
+#   temp <- subset(vip_df, Radius > 1)
+#   temp_lineages_bog[[c]] <- row.names(temp)
+# }
+
+# ```
+
+# ```{r}
+
+# test <- plyr::ldply(temp_lineages_bog, rbind)
+# row.names(test) <- test$.id
+# test$.id <- NULL
+# test<- t(test)
+# test_bog <- melt(test)
+# test_bog$Habitat <- "Bog"
+# test_bog <- na.omit(test_bog)
+# test_bog$Var1 <- NULL
+# colnames(test_bog) <- c("module","mag","habitat")
+# #write.csv(test,file="bog_lineages_cor_temp.txt",quote=FALSE, row.names = FALSE)
+
+# ```
+
+
+# ```{r}
+# pseq <- subset_samples(physeq, (Habitat__ == "Fen"))
+# #run_wgcna(pseq, 8, 9, "Palsa")
+# for (i in 1:20) {
+#   print(i)
+#   determine_thresholding(pseq, i)
+# }
+
+# ```
+
+# ```{r}
+
+# pseq <- subset_samples(physeq, (Habitat__ == "Fen"))
+# run_wgcna(pseq, min_num_samples = 6, power_cov = 12, "Fen")
+
+# ```
+
+# ```{r}
+
+
+# #vip_df = run_spls(pseq,  min_num_samples = 6, power_cov = 12, "Fen", module = "brown", parameter = "median_AirTemperature_14d")
+# #vip_df = run_spls(pseq,  min_num_samples = 6, power_cov = 12, "Fen", module = "pink", parameter = "d13C_peat__")
+# #vip_df = run_spls(pseq,  min_num_samples = 6, power_cov = 12, "Fen", module = "blue", parameter = "N.percent__")
+# #vip_df = run_spls(pseq,  min_num_samples = 6, power_cov = 12, "Fen", module = "blue", parameter = "d15N_peat__")
+# vip_df = run_spls(pseq,  min_num_samples = 6, power_cov = 12, "Fen", module = "yellow", parameter = "C.percent__")
+# pseq = subset_samples(physeq, (Habitat__ == "Fen" & median_AirTemperature_14d < 14))
+# vip_df = run_spls(pseq,  min_num_samples = 6, power_cov = 12, "Fen", module = "brown", parameter = "median_AirTemperature_14d")
+
+# #vip_df <- subset(vip_df, Radius > 1)
+# #temp2 <- merge(vip_df, tax, by = "row.names")
+
+# colors <- c("turquoise")#, "pink") #turquoise, red, pink
+
+# temp_lineages_fen <- list()
+
+# for (c in colors){
+#   vip_df = run_spls(pseq,  min_num_samples = 6, power_cov = 12, "Fen", module = c, parameter = "T_soil.deg_C")
+#   temp <- subset(vip_df, Radius > 1)
+#   temp_lineages_fen[[c]] <- row.names(temp)
+# }
+
+# colors <- c("brown")#, "pink") #turquoise, red, pink
+
+
+# for (c in colors){
+#   vip_df = run_spls(pseq,  min_num_samples = 6, power_cov = 12, "Fen", module = c, parameter = "median_AirTemperature_14d")
+#   temp <- subset(vip_df, Radius > 1.5)
+#   temp_lineages_fen[[c]] <- row.names(temp)
+# }
+
+# ```
+
+# ```{r}
+# test <- plyr::ldply(temp_lineages_fen, rbind)
+# row.names(test) <- test$.id
+# test$.id <- NULL
+# test<- t(test)
+# test_fen <- melt(test)
+# test_fen$Habitat <- "Fen"
+# test_fen <- na.omit(test_fen)
+# test_fen$Var1 <- NULL
+# colnames(test_fen) <- c("module","mag","habitat")
+# #write.csv(test,file="fen_lineages_cor_temp.txt",quote=FALSE, row.names = FALSE)
+
+# ```
+
+
+# #Shallow samples
+# ```{r}
+# pseq <- subset_samples(physeq, (Habitat__ == "Bog" & (DepthAvg__ < 20)))
+# #run_wgcna(pseq, 8, 9, "Palsa")
+# for (i in 1:20) {
+#   print(i)
+#   determine_thresholding(pseq, i)
+# }
+
+# ```
+
+# ```{r}
+
+# run_wgcna(pseq, min_num_samples = 2, power_cov = 12, "Bog-shallow")
+
+# ```
+
+# ```{r}
+
+
+# vip_df = run_spls(pseq, min_num_samples = 18, power_cov = 8, "Fen", module = "brown", parameter = "median_AirTemperature_14d")
+# #vip_df = run_spls(pseq,  min_num_samples = 6, power_cov = 12, "Fen", module = "pink", parameter = "d13C_peat__")
+# #vip_df = run_spls(pseq,  min_num_samples = 6, power_cov = 12, "Fen", module = "blue", parameter = "N.percent__")
+# #vip_df = run_spls(pseq,  min_num_samples = 6, power_cov = 12, "Fen", module = "blue", parameter = "d15N_peat__")
+# #vip_df = run_spls(pseq,  min_num_samples = 6, power_cov = 12, "Fen", module = "yellow", parameter = "C.percent__")
+
+
+# vip_df <- subset(vip_df, Radius > 1)
+# temp2 <- merge(vip_df, tax, by = "row.names")
+
+# ```
+
+
+# ```{r}
+
+# library(ggpubr)
+
+# ```
+
+
+# ```{r}
+
+# temp <- subset(md, select = c("Habitat__","alphaC"))
+# temp <- na.omit(temp) 
+# print(ggplot(temp, aes(x = alphaC, color=Habitat__)) + geom_dotplot())
+
+
+# temp <- subset(md, select = c("Habitat__","d13C_CO2__"))
+# temp <- na.omit(temp) 
+# print(ggplot(temp, aes(x = d13C_CO2__, color=Habitat__)) + geom_dotplot())
+# ggboxplot(temp, x = "Habitat__", y = "d13C_CO2__") + stat_compare_means() + geom_jitter()
+
+
+# temp <- subset(md, select = c("Habitat__","CO2.mM__"))
+# temp <- na.omit(temp) 
+# print(ggplot(temp, aes(x = CO2.mM__, color=Habitat__)) + geom_dotplot())
+
+# temp <- subset(md, select = c("Habitat__","TN.mM__"))
+# temp <- na.omit(temp) 
+# print(ggplot(temp, aes(x = TN.mM__, color=Habitat__)) + geom_dotplot())
+
+# temp <- subset(md, select = c("Habitat__","DOC.mM__"))
+# temp <- na.omit(temp) 
+# print(ggplot(temp, aes(x = DOC.mM__, color=Habitat__)) + geom_dotplot())
+
+# temp <- subset(md, select = c("Habitat__","d13C_CH4__"))
+# temp <- na.omit(temp) 
+# print(ggplot(temp, aes(x = d13C_CH4__, color=Habitat__)) + geom_dotplot())
+
+
+# ```
