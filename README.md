@@ -6,6 +6,7 @@ The following people contributed to the original code:
 
 * [Samuel Aroney](https://github.com/AroneyS)
 * [Hannah Holland-Moritz](https://github.com/hhollandmoritz)
+* [Dylan Cronin](https://github.com/dylancronin)
 * [Suzanne Hodgkins](https://github.com/shodgkins)
 * [Derek Smith](https://github.com/thiolovinglife)
 * [Benjamin Woodcroft](https://github.com/wwood)
