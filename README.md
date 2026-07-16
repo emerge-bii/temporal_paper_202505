@@ -30,7 +30,7 @@ If you require packages not installed in the above environment, add them to temp
 Download from Zenodo at <doi:10.5281/zenodo.13901514> and <doi:10.5281/zenodo.20536110>.
 Create symlinks in `data` to the location of these files in your system.
 
-1. Emerge_MAGs_v1
+1. Emerge_MAGs_v1 #No longer an explicit requirement, although needed for the fasta files
 2. SingleM_otu_tables_v4
 3. EMERGE_distillate_v9
 4. DRAM_distillate_v2
