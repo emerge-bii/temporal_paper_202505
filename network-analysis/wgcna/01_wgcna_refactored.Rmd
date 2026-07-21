@@ -55,18 +55,11 @@ md <- as.data.frame(input_counts_all$sample_metadata)
 md$metaG_JGI_NovaSeq__ <- md$temporal_sample_id
 rownames(md) <- md$metaG_JGI_NovaSeq__
 
-# Clean up / subset metadata: remove columns that aren't traits
-cols_to_remove <- c(
-  "SampleID__", "SampleID_old__", "Month__", "Core__", "image_url__", "DepthMin__", "metaG_JGI_HiSeq__", "FTIR__", 
-  "Weather_Conditions_on_Day_of_Coring", "UpdateDate__.DepthInfo", "Notes__.DepthInfo", "sample", "DepthLumping", 
-  "CoreGroup__", "Site__", "GPS__", "DepthCode__", "DepthMax__", "metaG_ACE__", "EEMS__",
-  "WTD.cm_neg_is_below_sfc__", "UpdateDate__.Biogeochemistry", "Notes__.Biogeochemistry", "temporal_sample_id", "Date__", "FieldSampling__", "pool.DOM", "pool.dD_CH4", "Phosphate.uM__",
-  "sd_AirTemperature_7d", "sd_AirTemperature_21d", "sd_AirTemperature_14d", "sd_AirTemperature_28d",
-  "sd_AirTemperature_growing", "sd_AirTemperature_all_growing", "n_AirTemperature_7d",
-  "n_AirTemperature_14d", "n_AirTemperature_21d", "n_AirTemperature_28d", "n_AirTemperature_growing",
-  "n_AirTemperature_all_growing", "ALD_detectable", "Outlier_status", "DepthID"
+# Clean up / subset metadata: keep only the specified traits
+cols_to_keep <- c(
+  "metaG_JGI_NovaSeq__", "Year__", "Habitat__", "DepthAvg__", "ALD.cm__", "T_air.deg_C", "T_soil.deg_C", "O2.percent", "pH_porewater", "pH_peat", "BulkDensity", "percentWater_wt", "CH4.mM__", "CO2.mM__", "CH4.percent", "CO2.percent", "d13C_CH4__", "d13C_CO2__", "dD_CH4__", "dD_H2O", "d18O_H2O", "DOC.mM__", "TN.mM__", "Acetate.uM__", "Propionate.uM__", "Formate.uM__", "Sulfate.uM__", "Nitrate.uM__", "Ammonia.uM__", "C.percent__", "N.percent__", "d13C_peat__", "d15N_peat__", "samplingdate_min_AirTemperature", "samplingdate_max_AirTemperature", "samplingdate_mean_AirTemperature", "median_AirTemperature_7d", "median_AirTemperature_14d", "median_AirTemperature_21d", "median_AirTemperature_28d", "median_AirTemperature_growing", "median_AirTemperature_all_growing", "mean_AirTemperature_7d", "mean_AirTemperature_14d", "mean_AirTemperature_21d", "mean_AirTemperature_28d", "mean_AirTemperature_growing", "mean_AirTemperature_all_growing", "pct_time_below_WTD_21d", "pct_time_below_WTD_28d", "pct_time_below_WTD_growing", "pct_time_below_WTD_all_growing", "alphaC", "WTD", "ALD", "Min_ALD", "Min_PF_dist_from_sample", "DepthAvg__neg", "Samp_dist_WT"
 )
-md <- md[, !(names(md) %in% cols_to_remove), drop = FALSE]
+md <- md[, names(md) %in% cols_to_keep, drop = FALSE]
 
 md$Habitat__ <- factor(md$Habitat__)
 md$Habitat__ <- factor(md$Habitat__, levels(md$Habitat__)[c(3,1,2)])
@@ -212,7 +205,7 @@ run_wgcna <- function(pseq, min_num_samples, power_cov, habitat) {
 
     # Generate long-form table with multiple testing correction (BH)
     p_vector <- as.vector(moduleTraitPvalue)
-    q_values <- p.adjust(p_vector, method = "BH", n = sum(!is.na(p_vector)))
+    p_adj_values <- p.adjust(p_vector, method = "BH", n = sum(!is.na(p_vector)))
     modules <- rownames(moduleTraitCor)
     traits <- colnames(moduleTraitCor)
     
@@ -222,7 +215,7 @@ run_wgcna <- function(pseq, min_num_samples, power_cov, habitat) {
         Metadata_Parameter = rep(traits, each = length(modules)),
         Correlation = as.vector(moduleTraitCor),
         P_value = as.vector(moduleTraitPvalue),
-        Q_value = q_values,
+        p.adj = p_adj_values,
         stringsAsFactors = FALSE
     )
     write.csv(long_form, file = file.path("output", paste0(habitat, "_LongForm_ModuleTrait_Table.csv")), row.names = FALSE)

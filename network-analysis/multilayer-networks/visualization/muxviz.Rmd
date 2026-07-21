@@ -1,0 +1,540 @@
+---
+title: "muxviz"
+author: "Dylan Cronin"
+date: "2024-05-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+dir.create("Output", showWarnings = FALSE)
+```
+
+
+
+```{r}
+
+library(muxViz)
+library(igraph)
+library(RColorBrewer)
+library(viridis)
+library(rgl)
+
+
+
+```
+
+
+```{r}
+
+layer_files <- list(
+  "Input/layer1_palsa_unique.csv",
+  "Input/layer2_palsa_unique.csv",
+  "Input/layer3_palsa_unique.csv",
+  "Input/layer4_palsa_unique.csv",
+  "Input/layer5_palsa_unique.csv",
+  "Input/layer6_palsa_unique.csv",
+  "Input/layer7_palsa_unique.csv"
+)
+
+edge_lists <- lapply(layer_files, function(file) {
+  layer <- read.csv(file, header=FALSE)
+  colnames(layer) <- c("source", "target")
+  layer$source <- as.character(layer$source)
+  layer$target <- as.character(layer$target)
+  return(layer)
+})
+
+all_nodes <- sort(unique(unlist(lapply(edge_lists, function(edge_list) {
+  unique(c(edge_list$source, edge_list$target))
+}))))
+num_nodes <- length(all_nodes)
+
+adjacency_matrices <- lapply(edge_lists, function(edge_list) {
+  adj_matrix <- matrix(0, nrow=num_nodes, ncol=num_nodes)
+  rownames(adj_matrix) <- all_nodes
+  colnames(adj_matrix) <- all_nodes
+  for (i in 1:nrow(edge_list)) {
+    source <- edge_list$source[i]
+    target <- edge_list$target[i]
+    adj_matrix[source, target] <- 1
+    adj_matrix[target, source] <- 1
+  }
+  return(adj_matrix)
+})
+
+g.list <- lapply(adjacency_matrices, function(adj_matrix) {
+  graph_from_adjacency_matrix(adj_matrix, mode="undirected")
+})
+```
+
+
+<!-- ```{r}
+
+lay <- layoutMultiplex(g.list, layout="fr", ggplot.format=TRUE, box=FALSE)
+
+layer.colors <- brewer.pal(8, "Set2")
+
+#plot_multiplex3D(g.list, layer.layout=lay, layer.colors=layer.colors,
+#                 layer.shift.x=0.5, layer.space=2, layer.labels="auto",
+#                 layer.labels.cex=1.5, node.size.values="auto",
+#                 node.size.scale=0.8, show.aggregate=TRUE)
+
+#plot_multiplex(g.list, layer.colors, node.size.values = 0.1, edge.alpha = 0.1)
+palsa <- plot_multiplex(g.list, layer.colors, node.size.values = "auto", edge.alpha = 0.1, centrality.measure = "degree", min.size = 0, max.size = 0.5, node.alpha = 0.5, edge.colors = "black")
+
+``` -->
+
+```{r}
+library(ggraph)
+library(cowplot)
+lay <- layoutMultiplex(g.list, layout="mds", ggplot.format=TRUE, box=FALSE)
+
+layer.colors <- brewer.pal(8, "Set2")
+
+palsa <- plot_multiplex(g.list, layer.colors, node.size.values = "0.1", edge.alpha = 0.1, centrality.measure = "degree", min.size = 0, max.size = 0.1, node.alpha = 0.5, layout = lay, ggplot.format=TRUE, show.legend = FALSE, edge.colors = "black")
+
+
+```
+
+
+#Bog
+
+```{r}
+
+layer_files <- list(
+  "Input/layer1_bog_unique.csv",
+  "Input/layer2_bog_unique.csv",
+  "Input/layer3_bog_unique.csv",
+  "Input/layer4_bog_unique.csv",
+  "Input/layer5_bog_unique.csv",
+  "Input/layer6_bog_unique.csv",
+  "Input/layer7_bog_unique.csv"
+)
+
+edge_lists <- lapply(layer_files, function(file) {
+  layer <- read.csv(file, header=FALSE)
+  colnames(layer) <- c("source", "target")
+  layer$source <- as.character(layer$source)
+  layer$target <- as.character(layer$target)
+  return(layer)
+})
+
+all_nodes <- sort(unique(unlist(lapply(edge_lists, function(edge_list) {
+  unique(c(edge_list$source, edge_list$target))
+}))))
+num_nodes <- length(all_nodes)
+
+adjacency_matrices <- lapply(edge_lists, function(edge_list) {
+  adj_matrix <- matrix(0, nrow=num_nodes, ncol=num_nodes)
+  rownames(adj_matrix) <- all_nodes
+  colnames(adj_matrix) <- all_nodes
+  for (i in 1:nrow(edge_list)) {
+    source <- edge_list$source[i]
+    target <- edge_list$target[i]
+    adj_matrix[source, target] <- 1
+    adj_matrix[target, source] <- 1
+  }
+  return(adj_matrix)
+})
+
+g.list <- lapply(adjacency_matrices, function(adj_matrix) {
+  graph_from_adjacency_matrix(adj_matrix, mode="undirected")
+})
+```
+
+```{r}
+
+lay <- layoutMultiplex(g.list, layout="mds", ggplot.format=TRUE, box=FALSE)
+
+layer.colors <- brewer.pal(8, "Set2")
+
+plot_multiplex(g.list, layer.colors, node.size.values = "0.1", edge.alpha = 0.1, centrality.measure = "eigenvector", min.size = 0, max.size = 0.5, node.alpha = 0.5, layout = lay, ggplot.format=TRUE)
+
+
+```
+
+
+```{r}
+lay <- layoutMultiplex(g.list, layout="mds", ggplot.format=TRUE, box=FALSE)
+
+layer.colors <- brewer.pal(8, "Set2")
+
+bog <- plot_multiplex(g.list, layer.colors, node.size.values = "0.1", edge.alpha = 0.1, centrality.measure = "degree", min.size = 0, max.size = 0.5, node.alpha = 0.5, layout = lay, ggplot.format=TRUE, show.legend = FALSE, edge.colors = "black")
+
+
+```
+
+<!-- ```{r}
+
+lay <- layoutMultiplex(g.list, layout="fr", ggplot.format=FALSE, box=TRUE)
+
+layer.colors <- brewer.pal(8, "Set2")
+
+plot_multiplex3D(g.list, layer.layout=lay, layer.colors=layer.colors,
+                 layer.shift.x=0.5, layer.space=2, layer.labels="auto",
+                 layer.labels.cex=1.5, node.size.values="auto",
+                 node.size.scale=0.8, show.aggregate=TRUE)
+
+snapshot3d("Output/network.png", fmt="png", width=1024, height=1024)
+
+``` -->
+
+<!-- ```{r}
+
+plot_multiplex3D(
+  g.list,
+  layer.colors = layer.colors,
+  as.undirected = TRUE,
+  layer.layout = lay,
+  layer.labels = "auto",
+  layer.labels.cex = 2,
+  edge.colors = "auto",
+  edge.normalize = FALSE,
+  edge.size.scale = 0.5,
+  node.colors = "auto",
+  node.size.values = 5,
+  node.size.scale = 2,
+  node.alpha = 1,
+  edge.alpha = 0,
+  layer.alpha = "auto",
+  layout = "fr",
+  show.nodeLabels = FALSE,
+  show.aggregate = TRUE,
+  aggr.alpha = "auto",
+  aggr.color = "#dadada",
+  node.colors.aggr = "#dadada",
+  layer.scale = 2,
+  layer.shift.x = 0,
+  layer.shift.y = 0,
+  layer.space = 3,
+  FOV = 30
+)
+
+snapshot3d("Output/network.png", fmt="png", width=1024, height=1024)
+
+
+``` -->
+
+
+#Fen
+
+```{r}
+
+layer_files <- list(
+  "Input/layer1_fen_unique.csv",
+  "Input/layer2_fen_unique.csv",
+  "Input/layer3_fen_unique.csv",
+  "Input/layer4_fen_unique.csv",
+  "Input/layer5_fen_unique.csv",
+  "Input/layer6_fen_unique.csv",
+  "Input/layer7_fen_unique.csv"
+)
+
+edge_lists <- lapply(layer_files, function(file) {
+  layer <- read.csv(file, header=FALSE)
+  colnames(layer) <- c("source", "target")
+  layer$source <- as.character(layer$source)
+  layer$target <- as.character(layer$target)
+  return(layer)
+})
+
+all_nodes <- sort(unique(unlist(lapply(edge_lists, function(edge_list) {
+  unique(c(edge_list$source, edge_list$target))
+}))))
+num_nodes <- length(all_nodes)
+
+adjacency_matrices <- lapply(edge_lists, function(edge_list) {
+  adj_matrix <- matrix(0, nrow=num_nodes, ncol=num_nodes)
+  rownames(adj_matrix) <- all_nodes
+  colnames(adj_matrix) <- all_nodes
+  for (i in 1:nrow(edge_list)) {
+    source <- edge_list$source[i]
+    target <- edge_list$target[i]
+    adj_matrix[source, target] <- 1
+    adj_matrix[target, source] <- 1
+  }
+  return(adj_matrix)
+})
+
+g.list <- lapply(adjacency_matrices, function(adj_matrix) {
+  graph_from_adjacency_matrix(adj_matrix, mode="undirected")
+})
+```
+
+```{r}
+
+lay <- layoutMultiplex(g.list, layout="mds", ggplot.format=TRUE, box=FALSE)
+
+layer.colors <- brewer.pal(8, "Set2")
+
+plot_multiplex(g.list, layer.colors, node.size.values = "auto", edge.alpha = 0.1, centrality.measure = "eigenvector", min.size = 0, max.size = 0.5, node.alpha = 0.5, layout = lay, ggplot.format=TRUE, edge.colors = "black")
+
+
+```
+
+
+<!-- ```{r}
+
+lay <- layoutMultiplex(g.list, layout="fr", ggplot.format=FALSE, box=TRUE)
+
+layer.colors <- brewer.pal(8, "Set2")
+
+plot_multiplex3D(g.list, layer.layout=lay, layer.colors=layer.colors,
+                 layer.shift.x=0.5, layer.space=2, layer.labels="auto",
+                 layer.labels.cex=1.5, node.size.values="auto",
+                 node.size.scale=0.8, show.aggregate=TRUE)
+
+snapshot3d("Output/network.png", fmt="png", width=1024, height=1024)
+
+``` -->
+
+```{r}
+lay <- layoutMultiplex(g.list, layout="mds", ggplot.format=TRUE, box=FALSE)
+
+layer.colors <- brewer.pal(8, "Set2")
+
+fen <- plot_multiplex(g.list, layer.colors, node.size.values = "0.1", edge.alpha = 0.1, centrality.measure = "degree", min.size = 0, max.size = 0.5, node.alpha = 0.5, layout = lay, ggplot.format=TRUE, show.legend = FALSE, edge.colors = "black")
+
+
+```
+
+```{r}
+library(multinet)
+library(reshape2)
+library(ggplot2)
+library(dplyr)
+library(ggpubr)
+
+# Load and process Palsa degree correlation data
+net_palsa <- read_ml("Input/multinet_network_input_palsa.txt", aligned = TRUE)
+temp_palsa <- multinet::layer_comparison_ml(net_palsa, method = "rho.degree")
+temp_palsa$Year <- row.names(temp_palsa)
+melted_palsa <- melt(temp_palsa)
+colnames(melted_palsa) <- c("Year1", "Year2", "value")
+melted_palsa$Year1 <- as.character(melted_palsa$Year1)
+melted_palsa$Year2 <- as.character(melted_palsa$Year2)
+melted_palsa$value <- as.numeric(melted_palsa$value)
+df_palsa <- melted_palsa %>% arrange(Year1, Year2)
+df_palsa$Year1 <- sub("^X", "", df_palsa$Year1)
+df_palsa$Year2 <- sub("^X", "", df_palsa$Year2)
+palsa_undup <- subset(df_palsa, Year1 != Year2)
+
+p <- ggboxplot(
+  palsa_undup, 
+  x = "Year1", 
+  y = "value", 
+  ylim = c(-0.15, 0.95), 
+  ylab = "Degree correlation (ρ)", 
+  xlab = "Comparison year",
+  outlier.shape = NA,
+  width = 0.4
+) +
+  geom_jitter(
+    width = 0.1, 
+    aes(x = Year1, y = value), 
+    color = "black", 
+    size = 2
+  ) +
+  stat_compare_means(label.y = 0.9, label.x = 1.1, size = 5, label = "p.format") +
+  ggtitle("Palsa") +
+  theme(
+    text = element_text(size = 14),
+    axis.title.x = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_line(),
+    axis.title.y = element_text(size = 16, face = "bold"),
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size = 16, face = "bold")
+  )
+
+# Load and process Bog degree correlation data
+net_bog <- read_ml("Input/multinet_network_input_bog.txt", aligned = TRUE)
+temp_bog <- multinet::layer_comparison_ml(net_bog, method = "rho.degree")
+temp_bog$Year <- row.names(temp_bog)
+melted_bog <- melt(temp_bog)
+colnames(melted_bog) <- c("Year1", "Year2", "value")
+melted_bog$Year1 <- as.character(melted_bog$Year1)
+melted_bog$Year2 <- as.character(melted_bog$Year2)
+melted_bog$value <- as.numeric(melted_bog$value)
+df_bog <- melted_bog %>% arrange(Year1, Year2)
+df_bog$Year1 <- sub("^X", "", df_bog$Year1)
+df_bog$Year2 <- sub("^X", "", df_bog$Year2)
+bog_undup <- subset(df_bog, Year1 != Year2)
+
+b <- ggboxplot(
+  bog_undup, 
+  x = "Year1", 
+  y = "value", 
+  ylim = c(-0.15, 0.95), 
+  ylab = "Degree correlation (ρ)", 
+  xlab = "Comparison year",
+  outlier.shape = NA,
+  width = 0.4
+) +
+  geom_jitter(
+    width = 0.1, 
+    aes(x = Year1, y = value), 
+    color = "black", 
+    size = 2
+  ) +
+  stat_compare_means(label.y = 0.9, label.x = 1, size = 5, label = "p.format") +
+  ggtitle("Bog") +
+  theme(
+    text = element_text(size = 14),
+    axis.title.x = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_line(),
+    axis.title.y = element_text(size = 16, face = "bold"),
+    axis.text.y = element_text(size = 12),
+    plot.title = element_text(size = 16, face = "bold")
+  )
+
+# Load and process Fen degree correlation data
+net_fen <- read_ml("Input/multinet_network_input_fen.txt", aligned = TRUE)
+temp_fen <- multinet::layer_comparison_ml(net_fen, method = "rho.degree")
+temp_fen$Year <- row.names(temp_fen)
+melted_fen <- melt(temp_fen)
+colnames(melted_fen) <- c("Year1", "Year2", "value")
+melted_fen$Year1 <- as.character(melted_fen$Year1)
+melted_fen$Year2 <- as.character(melted_fen$Year2)
+melted_fen$value <- as.numeric(melted_fen$value)
+df_fen <- melted_fen %>% arrange(Year1, Year2)
+df_fen$Year1 <- sub("^X", "", df_fen$Year1)
+df_fen$Year2 <- sub("^X", "", df_fen$Year2)
+fen_undup <- subset(df_fen, Year1 != Year2)
+
+f <- ggboxplot(
+  fen_undup, 
+  x = "Year1", 
+  y = "value", 
+  ylim = c(-0.15, 0.95), 
+  ylab = "Degree correlation (ρ)", 
+  xlab = "Comparison year",
+  outlier.shape = NA,
+  width = 0.4
+) +
+  geom_jitter(
+    width = 0.1, 
+    aes(x = Year1, y = value), 
+    color = "black", 
+    size = 2
+  ) +
+  stat_compare_means(label.y = 0.9, size = 5, label.x = 1, label = "p.format") +
+  ggtitle("Fen") +
+  theme(
+    text = element_text(size = 14),
+    axis.title = element_text(size = 16, face = "bold"),
+    axis.text = element_text(size = 12),
+    plot.title = element_text(size = 16, face = "bold")
+  )
+```
+
+```{r}
+
+combined_plot <- plot_grid(
+  plot_grid(palsa, p, nrow = 1, rel_widths = c(5, 1)),
+  plot_grid(bog, b, nrow = 1, rel_widths = c(5, 1)),
+  plot_grid(fen, f, nrow = 1, rel_widths = c(5, 1)),
+  nrow = 3,
+  rel_heights = c(1, 1, 1.3),
+  align = "v",
+  axis = "tb"
+)
+
+
+ggsave(combined_plot,
+       filename = "Output/network.png",
+       width = 20, height = 10, dpi = 600)
+
+ggsave(
+  filename = "Output/network.svg",
+  plot = combined_plot,
+  width = 20,
+  height = 10,
+  units = "in"
+)
+
+
+```
+
+```{r}
+
+layer_files <- list(
+  "Input/layer1_fen_unique.csv"
+)
+
+edge_lists <- lapply(layer_files, function(file) {
+  layer <- read.csv(file, header=FALSE)
+  colnames(layer) <- c("source", "target")
+  layer$source <- as.character(layer$source)
+  layer$target <- as.character(layer$target)
+  return(layer)
+})
+
+all_nodes <- sort(unique(unlist(lapply(edge_lists, function(edge_list) {
+  unique(c(edge_list$source, edge_list$target))
+}))))
+num_nodes <- length(all_nodes)
+
+adjacency_matrices <- lapply(edge_lists, function(edge_list) {
+  adj_matrix <- matrix(0, nrow=num_nodes, ncol=num_nodes)
+  rownames(adj_matrix) <- all_nodes
+  colnames(adj_matrix) <- all_nodes
+  for (i in 1:nrow(edge_list)) {
+    source <- edge_list$source[i]
+    target <- edge_list$target[i]
+    adj_matrix[source, target] <- 1
+    adj_matrix[target, source] <- 1
+  }
+  return(adj_matrix)
+})
+
+g.list <- lapply(adjacency_matrices, function(adj_matrix) {
+  graph_from_adjacency_matrix(adj_matrix, mode="undirected")
+})
+
+lay <- layoutMultiplex(g.list, layout="mds", ggplot.format=TRUE, box=FALSE)
+
+layer.colors <- brewer.pal(8, "Set2")
+
+fen <- plot_multiplex(g.list, layer.colors, node.size.values = "auto", edge.alpha = 0.1, centrality.measure = "degree", min.size = 0, max.size = 0.5, node.alpha = 0.5, layout = lay, ggplot.format=TRUE, show.legend = TRUE, edge.colors = "black")
+
+```
+
+
+<!-- ```{r}
+
+plot_multiplex3D(
+  g.list,
+  layer.colors = layer.colors,
+  as.undirected = TRUE,
+  layer.layout = lay,
+  layer.labels = "auto",
+  layer.labels.cex = 2,
+  edge.colors = "auto",
+  edge.normalize = FALSE,
+  edge.size.scale = 0.5,
+  node.colors = "auto",
+  node.size.values = 5,
+  node.size.scale = 2,
+  node.alpha = 1,
+  edge.alpha = 0,
+  layer.alpha = "auto",
+  layout = "fr",
+  show.nodeLabels = FALSE,
+  show.aggregate = TRUE,
+  aggr.alpha = "auto",
+  aggr.color = "#dadada",
+  node.colors.aggr = "#dadada",
+  layer.scale = 2,
+  layer.shift.x = 0,
+  layer.shift.y = 0,
+  layer.space = 3,
+  FOV = 30
+)
+
+snapshot3d("Output/multi_network_fen.png", fmt="png", width=1024, height=1024)
+
+
+``` -->

@@ -1,0 +1,454 @@
+---
+title: "Network and VIP Analysis"
+author: "Your Name"
+date: "2024-06-13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading Required Libraries
+Load the necessary libraries for data processing and analysis.
+
+```{r load_libraries}
+library(dplyr)
+library(multinet)
+library(ggplot2)
+```
+
+## Functions for Network Analysis
+Define functions to process network data and obtain layer counts.
+
+```{r functions_network_analysis}
+get_num_layers <- function(net, node_id, neighbors, start_year, end_year) {
+  results <- numeric(length(neighbors))
+  names(results) <- neighbors
+  
+  for (year in start_year:end_year) {
+    neigh <- neighbors_ml(net, node_id, layers = year)
+    for (n in neigh) {
+      if (n %in% neighbors) {
+        results[n] <- results[n] + 1
+      }
+    }
+  }
+  
+  output <- data.frame(node_id = node_id, num_layers = results, neighbor_id = names(results))
+  output$neighbor_id <- sub("^[^.]+//.", "", output$neighbor_id)
+  return(output)
+}
+
+process_node_ids <- function(net, node_ids, start_year, end_year) {
+  results_list <- list()
+  
+  for (node_id in node_ids) {
+    # Check if node_id is in the network
+    if (!node_id %in% actors_ml(net)$actor) {
+      message(paste("Node", node_id, "is not in the network"))
+      next
+    }
+    
+    neighbors <- neighbors_ml(net, actor = node_id)
+    results_list[[node_id]] <- get_num_layers(net, node_id, neighbors, start_year, end_year)
+  }
+  
+  result_df <- bind_rows(results_list)
+  colnames(result_df) <- c("node_id", "num_layers", "neighbor_id")
+  return(result_df)
+}
+```
+
+## Processing Initial Nodes and Their Neighbors
+Process the initial set of nodes and then the neighbors of those nodes.
+
+```{r process_nodes}
+# Read in the multinet network file
+network_file <- "../visualization/Input/multinet_network_input_bog.txt"
+net <- read_ml(network_file, aligned = TRUE)
+
+# Process initial node_ids
+initial_node_ids <- c("PLGY01")
+test <- process_node_ids(net, initial_node_ids, 2011, 2017)
+
+# Process neighbors of initial node
+neighbors <- neighbors_ml(net, "PLGY01")
+test_neighbors <- process_node_ids(net, neighbors, 2011, 2017)
+
+# Concatenate test and test_neighbors
+combined_df <- bind_rows(test, test_neighbors)
+
+# Create a consistent identifier for each pair to identify duplicates
+unique_combined_df <- combined_df %>%
+  mutate(pair_id = pmin(node_id, neighbor_id),
+         pair_id_2 = pmax(node_id, neighbor_id)) %>%
+  distinct(pair_id, pair_id_2, .keep_all = TRUE) %>%
+  select(-pair_id, -pair_id_2)
+
+# Print the unique_combined_df to check the results
+print(unique_combined_df)
+
+m_stor_neighbors_unique <- unique_combined_df
+```
+
+## Loading VIP Values
+Load VIP values for different parameters from text files.
+
+```{r load_vip_values}
+vip_values_N_path <- "Input/Bog.08.VIP_values_with_N.percent__blue.txt"
+vip_values_CO2_path <- "Input/Bog.08.VIP_values_with_CO2.mM__blue.txt"
+vip_values_alphaC_path <- "Input/Bog.08.VIP_values_with_alphaCblue.txt"
+vip_values_d13C_path <- "Input/Bog.08.VIP_values_with_d13C_CO2__blue.txt"
+
+# Function to load VIP values
+load_vip_values <- function(file_path, parameter) {
+  data <- read.table(file_path, header = FALSE, sep = " ", fill = TRUE)
+  data <- data %>% select(V5, V10) %>% rename(ID = V5, VIP = V10)
+  data$Parameter <- parameter
+  return(data)
+}
+
+# Load data
+df_N <- load_vip_values(vip_values_N_path, "N percent")
+df_CO2 <- load_vip_values(vip_values_CO2_path, "CO2 mM")
+df_alphaC <- load_vip_values(vip_values_alphaC_path, "alphaC")
+df_d13C <- load_vip_values(vip_values_d13C_path, "d13C CO2")
+
+# Combine data
+combined_df <- bind_rows(df_N, df_CO2, df_alphaC, df_d13C)
+```
+
+## Joining Network Data with VIP Values
+Join the network analysis results with the VIP values for both nodes and their neighbors.
+
+```{r join_vip_values}
+combined_data <- m_stor_neighbors_unique %>%
+  left_join(combined_df, by = c("node_id" = "ID")) %>%
+  rename(VIP_node = VIP, Parameter_node = Parameter) %>%
+  left_join(combined_df, by = c("neighbor_id" = "ID")) %>%
+  rename(VIP_neighbor = VIP, Parameter_neighbor = Parameter) %>%
+  distinct()
+
+# Display the first few rows of the result
+head(combined_data)
+```
+
+## Filtering the Combined Data
+Filter the combined data just for M.stor's neighbors.
+
+```{r filter_data}
+filtered_data <- combined_data %>%
+  filter((node_id == "PLGY01" | neighbor_id == "PLGY01") & VIP_neighbor > 1 & num_layers >= 6)
+
+# Display the first few rows of the filtered result
+unique(filtered_data$neighbor_id)
+```
+
+```{r}
+
+filtered_data_neighbors <- filtered_data %>%
+  select(-node_id, -VIP_node, -Parameter_node, -Parameter_neighbor, -VIP_neighbor) %>% 
+  unique() %>%
+  add_row(neighbor_id = "PLGY01", num_layers = NA)
+
+
+```
+
+```{r}
+
+# Load necessary libraries
+library(readxl)
+
+# Load the user's uploaded Excel file
+file_path <- "Input/all_vip_env_var_corr_DSedits.xlsx"
+
+# Read the first sheet of the Excel file
+vip_env_var_corr_df <- read_excel(file_path, sheet = 1)
+
+# Filter data to include only rows in the blue module
+blue_module_df <- subset(vip_env_var_corr_df, `Module Color` == 'blue')
+
+# Perform a merge on 'neighbor_id' from filtered_data_neighbors and 'genome' from blue_module_df,
+# and also ensure 'Parameter_neighbor' matches 'Environmental Variable'
+# Perform a merge on 'neighbor_id' from filtered_data_neighbors and 'genome' from blue_module_df
+merged_df <- merge(filtered_data_neighbors, blue_module_df, 
+                   by.x = 'neighbor_id', 
+                   by.y = 'genome', 
+                   all.x = TRUE) %>% unique()
+
+# Display the first few rows of the merged dataframe
+print(head(merged_df))
+
+
+```
+
+```{r}
+# Define y_limits and custom_colors for this chunk's plot
+y_limits <- c(0, 5)
+custom_colors <- c(
+  "d13C CO2" = "#E06666", 
+  "alphaC" = "#93C47D", 
+  "[CO2] (mM)" = "#F6B26B", 
+  "CO2 mM" = "#F6B26B",
+  "N percent" = "#76A5AF",
+  "N.percent" = "#76A5AF",
+  "d13C_CO2" = "#E06666",
+  "CO2.mM" = "#F6B26B"
+)
+
+# Function to create the plot for each neighbor with or without labels
+create_vip_correlation_plot <- function(df, id, show_labels = FALSE) {
+  df_id <- df %>% filter(ID == id)
+  
+  # Set consistent factor levels
+  df_id$Parameter <- factor(df_id$Parameter, levels = c("CO2.mM", "N.percent", "alphaC"))
+  
+  # Create the plot
+  p <- ggplot(df_id) +
+    geom_bar(aes(x = as.numeric(Parameter) - 0.2, y = VIP, fill = Parameter), 
+             stat = "identity", width = 0.4, alpha = 0.6) +
+    geom_point(aes(x = as.numeric(Parameter) + 0.2, y = Correlation_scaled, color = Parameter), 
+               size = 12) +  # Large size for correlation points
+    geom_text(aes(x = as.numeric(Parameter), y = Correlation_scaled + 0.25, 
+                  label = ifelse(PValue < 0.05, "*", ""), color = Parameter),
+              vjust = 0, size = 8) +  # Adjust size and vertical position for the significance star
+    geom_hline(aes(yintercept = 1, linetype = "VIP Threshold"), color = "blue", linewidth = 2.0) +
+    geom_hline(aes(yintercept = 0.5 * 5, linetype = "Correlation Threshold"), color = "red", linewidth = 2.0) +
+    scale_x_continuous(
+      breaks = 1:3, 
+      labels = if (show_labels) c("CO2 mM", "%N", "alphaC") else NULL,
+      expand = c(0.1, 0.1)
+    ) +
+    scale_y_continuous(name = NULL, limits = y_limits,  # Extend y-axis limit
+                       sec.axis = sec_axis(~ . / 5, name = NULL, breaks = seq(0, 1, by = 0.2))) +
+    scale_linetype_manual(name = "Thresholds", values = c("VIP Threshold" = "dashed", "Correlation Threshold" = "dotted")) +
+    labs(x = NULL, title = NULL) +  # Remove figure title and x-axis label
+    scale_fill_manual(values = custom_colors) +
+    scale_color_manual(values = custom_colors)
+  
+  # Conditional theme: if show_labels is TRUE, show axis numbers and legend, otherwise hide them
+  if (show_labels) {
+    p <- p + theme_minimal() +
+      theme(
+        legend.position = "bottom",  # Legend at the bottom
+        legend.box = "vertical",     # Stack legend vertically if needed
+        legend.margin = margin(t = 20),  # Add margin above the legend
+        axis.line = element_line(linewidth = 1.5, color = "black"),
+        axis.title.y = element_blank(),  # No axis titles
+        axis.title.y.right = element_blank(),  # No right y-axis title
+        axis.text.x = element_text(size = 15, color = "black"),
+        axis.text.y = element_text(size = 15, color = "black"),
+        axis.ticks.x = element_line(linewidth = 1.5, color = "black"),
+        axis.ticks.length.x = unit(0.3, "cm"),
+        axis.ticks.y = element_line(linewidth = 1.5, color = "black"),
+        plot.margin = margin(t = 20, r = 20, b = 50, l = 20)  # Increase bottom margin to fit legend
+      )
+  } else {
+    p <- p + theme_minimal() +
+      theme(
+        legend.position = "none",
+        axis.line = element_line(linewidth = 1.5, color = "black"),  # Keep axis lines
+        axis.title = element_blank(),  # No axis titles
+        axis.text = element_blank(),  # Remove axis text (numbers)
+        axis.ticks.x = element_line(linewidth = 1.5, color = "black"),
+        axis.ticks.length.x = unit(0.3, "cm"),
+        axis.ticks.y = element_line(linewidth = 1.5, color = "black"),
+        plot.margin = margin(t = 10, r = 10, b = 10, l = 10)  # Smaller margins for compact plots
+      )
+  }
+  
+  return(p)
+}
+# Prepare plot_data by renaming and calculating necessary columns
+plot_data <- merged_df %>%
+  rename(
+    ID = neighbor_id,
+    Parameter = `Environmental Variable`,
+    VIP = `VIP Score`,
+    PValue = p.value
+  ) %>%
+  mutate(Correlation_scaled = spearman_correlation * 5)  # Scale correlation as in the plotting function
+
+# Check the structure of plot_data
+str(plot_data)
+
+# Create and print plots for all unique neighbor IDs in the dataset
+for (id in unique(plot_data$ID)) {
+  if (id == "PLGY01") {
+    plot <- create_vip_correlation_plot(plot_data, id, show_labels = TRUE)  # Show labels for PLGY01
+  } else {
+    plot <- create_vip_correlation_plot(plot_data, id, show_labels = FALSE)  # Hide labels for other plots
+  }
+  print(plot)
+}
+
+
+
+```
+
+```{r}
+# Prepare plot_data by renaming columns and using raw correlation values
+plot_data <- merged_df %>%
+  rename(
+    ID = neighbor_id,
+    Parameter = `Environmental Variable`,
+    VIP = `VIP Score`,
+    Correlation = spearman_correlation  # Use raw correlation values
+  )
+
+# Check the structure of plot_data
+str(plot_data)
+
+# Calculate the maximum y-limit across the entire dataset for VIP values
+y_limits <- c(0, max(plot_data$VIP) * 1.2)
+
+create_vip_correlation_plot <- function(df, id, show_labels = FALSE) {
+  df_id <- df %>% filter(ID == id)
+  
+  # Define the colors for VIP and Correlation
+  vip_color <- "#E07B91"  # Color for VIP values
+  correlation_color <- "#40B0A6"  # Color for Correlation values
+  
+  # Order the Parameter factor based on consistent levels
+  df_id$Parameter <- factor(df_id$Parameter, levels = c("CO2.mM", "N.percent", "alphaC"))
+  
+  # Transform correlation values to match the VIP axis limits
+  df_id <- df_id %>%
+    mutate(Correlation_scaled = Correlation * max(y_limits))  # Scale correlation to match y_limits
+
+  # Create the plot
+  p <- ggplot(df_id) +
+    # Square for VIP values
+    geom_point(aes(x = as.numeric(Parameter) - 0.2, y = VIP), 
+               shape = 15, color = vip_color, size = 15, alpha = 0.6) +
+    # Circle for scaled correlation values
+    geom_point(aes(x = as.numeric(Parameter) + 0.2, y = Correlation_scaled), 
+               shape = 16, color = correlation_color, size = 15) +
+    # Dashed horizontal lines
+    geom_hline(yintercept = 1, color = vip_color, linetype = "dashed", linewidth = 2.0) +
+    geom_hline(yintercept = 0.5 * max(y_limits), color = correlation_color, linetype = "dashed", linewidth = 2.0) +
+    scale_x_continuous(
+      breaks = 1:3, 
+      labels = if (show_labels) c("CO2 mM", "%N", "alphaC") else NULL,  # Show x-axis labels conditionally
+      expand = c(0.1, 0.1)
+    ) +
+    scale_y_continuous(
+      name = if (show_labels) "VIP Value" else NULL, limits = y_limits,  
+      sec.axis = sec_axis(~ . / max(y_limits), name = if (show_labels) "Spearman's rho" else NULL, breaks = seq(0, 1, by = 0.2))  # Fixed 0-1 range for correlation
+    ) +
+    labs(x = NULL) +  # Removed the title
+    theme_minimal() +
+    theme(
+      panel.grid = element_blank(),  # Remove background grid
+      legend.position = "none",
+      axis.line = element_line(size = 1.5, color = "black"),
+      axis.line.y.left = element_line(color = vip_color, size = 1.5),  # Color VIP y-axis line
+      axis.line.y.right = element_line(color = correlation_color, size = 1.5),  # Color Correlation y-axis line
+      axis.text.x = if (show_labels) element_text(size = 18, color = "black", face = "bold") else element_blank(),  # Larger x-axis text
+      axis.text.y.left = if (show_labels) element_text(size = 18, color = "black", face = "bold") else element_blank(),  # Larger left y-axis text
+      axis.text.y.right = if (show_labels) element_text(size = 18, color = "black", face = "bold") else element_blank(),  # Larger right y-axis text
+      axis.ticks.length = unit(0.25, "cm"),  # Increase tick length slightly
+      axis.ticks = element_line(size = 1.2),  # Make ticks visible
+      axis.title.x = element_text(size = 20, face = "bold"),  # Larger bold x-axis label
+      axis.title.y.left = if (show_labels) element_text(size = 20, face = "bold"),  # Larger bold left y-axis label for VIP Value
+      axis.title.y.right = if (show_labels) element_text(size = 20, face = "bold"),  # Larger bold right y-axis label for Spearman's rho
+      plot.margin = margin(t = 10, r = 10, b = 10, l = 10)
+    )
+  
+  return(p)
+}
+
+
+# Create and print plots for all unique neighbor IDs in the dataset
+for (id in unique(plot_data$ID)) {
+  if (id == "PLGY01") {
+    plot <- create_vip_correlation_plot(plot_data, id, show_labels = TRUE)
+  } else {
+    plot <- create_vip_correlation_plot(plot_data, id, show_labels = TRUE)
+  }
+  print(plot)
+}
+
+
+```
+
+```{r}
+library(svglite)
+library(Cairo)
+# Directory to save the plots
+output_dir <- "./Output"
+
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir, recursive = TRUE)
+}
+
+# Create and save plots as PDF and SVG
+for (id in unique(plot_data$ID)) {
+  plot <- if (id == "PLGY01") {
+    create_vip_correlation_plot(plot_data, id, show_labels = TRUE)
+  } else {
+    create_vip_correlation_plot(plot_data, id, show_labels = FALSE)
+  }
+  
+  # Define file paths
+  pdf_path <- file.path(output_dir, paste0("plot_", id, ".pdf"))
+  svg_path <- file.path(output_dir, paste0("plot_", id, ".svg"))
+  
+  # Save as PDF using cairo_pdf
+  ggsave(pdf_path, plot = plot, width = 8, height = 6, device = cairo_pdf, dpi = 300)
+  
+  # Save as SVG
+  ggsave(svg_path, plot = plot, width = 8, height = 6, device = "svg")
+}
+
+
+```
+
+
+
+
+```{r}
+
+
+# # Define the nodes that should have solid lines
+#solid_nodes <- c("PLGY01", "20170700_S25_9", "20170700_S25_26", "20150700_S15_15", 
+#                  "20140700_E22_12", "20110800_S1D_5", "20120700_S1X_2")
+solid_nodes <- c("3300037175_6","20170700_S25_9","20160700_S15_2","20170700_S25_26","20140700_E22_12","20110800_E3D_9","20110800_S1D_14","20120700_S1X_2", "PLGY01")
+
+# 
+# # Create a new column for edge attributes
+# edge_attributes <- unique_combined_df %>%
+#   mutate(edge_line = ifelse(node_id %in% solid_nodes & neighbor_id %in% solid_nodes, "solid", "dashed"))
+# 
+# # Rename columns to match Cytoscape's expected format
+# edge_attributes <- edge_attributes %>%
+#   rename(Source = node_id, Target = neighbor_id)
+# 
+# # Write the edge attributes to a CSV file
+# write.csv(edge_attributes, "edge_attributes.csv", row.names = FALSE, col.names = TRUE, quote = FALSE)
+
+# Filter to keep only connections directly to or from the solid nodes
+filtered_df <- unique_combined_df %>%
+  filter(node_id %in% solid_nodes | neighbor_id %in% solid_nodes)
+
+# Create a new column for edge attributes
+filtered_df <- filtered_df %>%
+  mutate(edge_line = ifelse(node_id %in% solid_nodes & neighbor_id %in% solid_nodes, "solid", "dashed"))
+
+# Rename columns to match Cytoscape's expected format
+edge_attributes_df <- filtered_df %>%
+  rename(Source = node_id, Target = neighbor_id)
+
+# Write the edge attributes to a CSV file
+write.csv(edge_attributes_df %>% select(Source, Target, edge_line, num_layers), "edge_attributes.csv", row.names = FALSE, col.names = TRUE, quote = FALSE)
+
+# Print the DataFrame to check the results
+print(edge_attributes_df)
+
+
+```
+
+
+## Summary
+This document provides a detailed analysis of network interactions and their relationships with VIP values. The workflow includes defining functions for network analysis, processing nodes and their neighbors, loading VIP values, and filtering data to highlight important findings.
