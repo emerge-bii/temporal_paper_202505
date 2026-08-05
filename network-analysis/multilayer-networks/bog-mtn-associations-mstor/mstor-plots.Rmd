@@ -448,7 +448,3 @@ print(edge_attributes_df)
 
 
 ```
-
-
-## Summary
-This document provides a detailed analysis of network interactions and their relationships with VIP values. The workflow includes defining functions for network analysis, processing nodes and their neighbors, loading VIP values, and filtering data to highlight important findings.
