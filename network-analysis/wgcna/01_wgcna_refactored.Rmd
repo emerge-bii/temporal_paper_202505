@@ -81,13 +81,12 @@ physeq
 physeq = filter_taxa(physeq, function(x) sum(x) > 0, TRUE)
 physeq
 
-
-
 ```
 
 
 ```{r wgcna-functions}
 
+# Prepare OTU count matrix (Hellinger transformation) and filter low-occupancy taxa
 prepare_wgcna_data <- function(pseq, min_num_samples) {
     otumat <- as(otu_table(pseq), "matrix")
     otumat <- otumat[,order(colnames(otumat))]
@@ -132,6 +131,7 @@ prepare_wgcna_data <- function(pseq, min_num_samples) {
     return(list(cov = cov, Metadata = Metadata))
 }
 
+# Construct WGCNA modules and extract eigengenes
 build_wgcna_network <- function(cov, power_cov, habitat, save_outputs = FALSE, plot_dendrogram = FALSE) {
     allowWGCNAThreads()
     
@@ -175,6 +175,7 @@ build_wgcna_network <- function(cov, power_cov, habitat, save_outputs = FALSE, p
     return(list(net = net, pops = pops, moduleColors = moduleColors, moduleLabels = moduleLabels, geneTree = geneTree))
 }
 
+# Full WGCNA pipeline: module construction, module-trait correlation, and heatmap generation
 run_wgcna <- function(pseq, min_num_samples, power_cov, habitat) {
     prep <- prepare_wgcna_data(pseq, min_num_samples)
     net_res <- build_wgcna_network(prep$cov, power_cov, habitat, save_outputs = TRUE, plot_dendrogram = TRUE)
@@ -240,6 +241,7 @@ run_wgcna <- function(pseq, min_num_samples, power_cov, habitat) {
     dev.off()
 }
 
+# PLS regression and VIP score calculation for specified module-trait pairs
 run_spls <- function(pseq, min_num_samples, power_cov, habitat, module, parameter) {
     prep <- prepare_wgcna_data(pseq, min_num_samples)
     net_res <- build_wgcna_network(prep$cov, power_cov, habitat, save_outputs = FALSE, plot_dendrogram = FALSE)
@@ -366,6 +368,7 @@ run_spls <- function(pseq, min_num_samples, power_cov, habitat, module, paramete
     return(list(geneModuleMembership = geneModuleMembership, geneTraitSignificance = geneTraitSignificance, VIPtable = df_3))
 }
 
+# Soft-threshold power selection and sample outlier detection
 determine_thresholding <- function(pseq, min_num_samples) {
     prep <- prepare_wgcna_data(pseq, min_num_samples)
     
@@ -415,7 +418,10 @@ determine_thresholding <- function(pseq, min_num_samples) {
   
 }
 
+```
+
 ```{r palsa-thresholding}
+# --- Palsa Habitat Analysis ---
 pseq <- subset_samples(physeq, (Habitat__ == "Palsa"))
 pdf(file.path("output", "Palsa_Thresholding.pdf"), width = 12, height = 9)
 for (i in 1:20) {
@@ -433,6 +439,7 @@ run_wgcna(pseq, min_num_samples = 10, power_cov = 14, "Palsa")
 ```
 
 ```{r bog-thresholding}
+# --- Bog Habitat Analysis ---
 pseq <- subset_samples(physeq, (Habitat__ == "Bog"))
 pdf(file.path("output", "Bog_Thresholding.pdf"), width = 12, height = 9)
 for (i in 1:20) {
@@ -452,6 +459,7 @@ vip_df = run_spls(pseq,  min_num_samples = 1, power_cov = 14, "Bog", module = "b
 
 
 ```{r fen-thresholding}
+# --- Fen Habitat Analysis ---
 pseq <- subset_samples(physeq, (Habitat__ == "Fen"))
 pdf(file.path("output", "Fen_Thresholding.pdf"), width = 12, height = 9)
 for (i in 1:20) {
@@ -469,6 +477,7 @@ run_wgcna(pseq, min_num_samples = 6, power_cov = 12, "Fen")
 ```
 
 ```{r all-thresholding}
+# --- All Samples Combined Analysis ---
 pdf(file.path("output", "AllSamples_Thresholding.pdf"), width = 12, height = 9)
 for (i in 1:20) {
   print(i)

@@ -10,23 +10,18 @@ knitr::opts_chunk$set(echo = TRUE)
 dir.create("Output", showWarnings = FALSE)
 ```
 
-
-
 ```{r}
-
 library(muxViz)
 library(igraph)
 library(RColorBrewer)
 library(viridis)
 library(rgl)
-
-
-
 ```
 
+# Palsa
 
 ```{r}
-
+# Build Palsa adjacency matrices across annual layers (2011-2017)
 layer_files <- list(
   "Input/layer1_palsa_unique.csv",
   "Input/layer2_palsa_unique.csv",
@@ -68,7 +63,6 @@ g.list <- lapply(adjacency_matrices, function(adj_matrix) {
 })
 ```
 
-
 <!-- ```{r}
 
 lay <- layoutMultiplex(g.list, layout="fr", ggplot.format=TRUE, box=FALSE)
@@ -88,20 +82,20 @@ palsa <- plot_multiplex(g.list, layer.colors, node.size.values = "auto", edge.al
 ```{r}
 library(ggraph)
 library(cowplot)
+
+# Generate 2D multiplex layout plot for Palsa
 lay <- layoutMultiplex(g.list, layout="mds", ggplot.format=TRUE, box=FALSE)
 
 layer.colors <- brewer.pal(8, "Set2")
 
 palsa <- plot_multiplex(g.list, layer.colors, node.size.values = "0.1", edge.alpha = 0.1, centrality.measure = "degree", min.size = 0, max.size = 0.1, node.alpha = 0.5, layout = lay, ggplot.format=TRUE, show.legend = FALSE, edge.colors = "black")
 
-
 ```
 
-
-#Bog
+# Bog
 
 ```{r}
-
+# Build Bog adjacency matrices across annual layers (2011-2017)
 layer_files <- list(
   "Input/layer1_bog_unique.csv",
   "Input/layer2_bog_unique.csv",
@@ -144,24 +138,21 @@ g.list <- lapply(adjacency_matrices, function(adj_matrix) {
 ```
 
 ```{r}
-
 lay <- layoutMultiplex(g.list, layout="mds", ggplot.format=TRUE, box=FALSE)
 
 layer.colors <- brewer.pal(8, "Set2")
 
 plot_multiplex(g.list, layer.colors, node.size.values = "0.1", edge.alpha = 0.1, centrality.measure = "eigenvector", min.size = 0, max.size = 0.5, node.alpha = 0.5, layout = lay, ggplot.format=TRUE)
 
-
 ```
 
-
 ```{r}
+# Generate 2D multiplex layout plot for Bog
 lay <- layoutMultiplex(g.list, layout="mds", ggplot.format=TRUE, box=FALSE)
 
 layer.colors <- brewer.pal(8, "Set2")
 
 bog <- plot_multiplex(g.list, layer.colors, node.size.values = "0.1", edge.alpha = 0.1, centrality.measure = "degree", min.size = 0, max.size = 0.5, node.alpha = 0.5, layout = lay, ggplot.format=TRUE, show.legend = FALSE, edge.colors = "black")
-
 
 ```
 
@@ -213,14 +204,12 @@ plot_multiplex3D(
 
 snapshot3d("Output/network.png", fmt="png", width=1024, height=1024)
 
-
 ``` -->
 
-
-#Fen
+# Fen
 
 ```{r}
-
+# Build Fen adjacency matrices across annual layers (2011-2017)
 layer_files <- list(
   "Input/layer1_fen_unique.csv",
   "Input/layer2_fen_unique.csv",
@@ -263,16 +252,13 @@ g.list <- lapply(adjacency_matrices, function(adj_matrix) {
 ```
 
 ```{r}
-
 lay <- layoutMultiplex(g.list, layout="mds", ggplot.format=TRUE, box=FALSE)
 
 layer.colors <- brewer.pal(8, "Set2")
 
 plot_multiplex(g.list, layer.colors, node.size.values = "auto", edge.alpha = 0.1, centrality.measure = "eigenvector", min.size = 0, max.size = 0.5, node.alpha = 0.5, layout = lay, ggplot.format=TRUE, edge.colors = "black")
 
-
 ```
-
 
 <!-- ```{r}
 
@@ -290,12 +276,12 @@ snapshot3d("Output/network.png", fmt="png", width=1024, height=1024)
 ``` -->
 
 ```{r}
+# Generate 2D multiplex layout plot for Fen
 lay <- layoutMultiplex(g.list, layout="mds", ggplot.format=TRUE, box=FALSE)
 
 layer.colors <- brewer.pal(8, "Set2")
 
 fen <- plot_multiplex(g.list, layer.colors, node.size.values = "0.1", edge.alpha = 0.1, centrality.measure = "degree", min.size = 0, max.size = 0.5, node.alpha = 0.5, layout = lay, ggplot.format=TRUE, show.legend = FALSE, edge.colors = "black")
-
 
 ```
 
@@ -306,7 +292,7 @@ library(ggplot2)
 library(dplyr)
 library(ggpubr)
 
-# Load and process Palsa degree correlation data
+# Calculate year-over-year layer degree correlations (Spearman's rho) for Palsa
 net_palsa <- read_ml("Input/multinet_network_input_palsa.txt", aligned = TRUE)
 temp_palsa <- multinet::layer_comparison_ml(net_palsa, method = "rho.degree")
 temp_palsa$Year <- row.names(temp_palsa)
@@ -348,7 +334,7 @@ p <- ggboxplot(
     plot.title = element_text(size = 16, face = "bold")
   )
 
-# Load and process Bog degree correlation data
+# Calculate year-over-year layer degree correlations (Spearman's rho) for Bog
 net_bog <- read_ml("Input/multinet_network_input_bog.txt", aligned = TRUE)
 temp_bog <- multinet::layer_comparison_ml(net_bog, method = "rho.degree")
 temp_bog$Year <- row.names(temp_bog)
@@ -390,7 +376,7 @@ b <- ggboxplot(
     plot.title = element_text(size = 16, face = "bold")
   )
 
-# Load and process Fen degree correlation data
+# Calculate year-over-year layer degree correlations (Spearman's rho) for Fen
 net_fen <- read_ml("Input/multinet_network_input_fen.txt", aligned = TRUE)
 temp_fen <- multinet::layer_comparison_ml(net_fen, method = "rho.degree")
 temp_fen$Year <- row.names(temp_fen)
@@ -431,7 +417,7 @@ f <- ggboxplot(
 ```
 
 ```{r}
-
+# Combine network layouts and degree correlation boxplots into multi-panel figure
 combined_plot <- plot_grid(
   plot_grid(palsa, p, nrow = 1, rel_widths = c(5, 1)),
   plot_grid(bog, b, nrow = 1, rel_widths = c(5, 1)),
@@ -441,7 +427,6 @@ combined_plot <- plot_grid(
   align = "v",
   axis = "tb"
 )
-
 
 ggsave(combined_plot,
        filename = "Output/network.png",
@@ -454,7 +439,6 @@ ggsave(
   height = 10,
   units = "in"
 )
-
 
 ```
 
@@ -502,7 +486,6 @@ fen <- plot_multiplex(g.list, layer.colors, node.size.values = "auto", edge.alph
 
 ```
 
-
 <!-- ```{r}
 
 plot_multiplex3D(
@@ -535,6 +518,5 @@ plot_multiplex3D(
 )
 
 snapshot3d("Output/multi_network_fen.png", fmt="png", width=1024, height=1024)
-
 
 ``` -->
