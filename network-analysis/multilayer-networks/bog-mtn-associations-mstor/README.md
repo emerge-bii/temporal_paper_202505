@@ -1,6 +1,6 @@
 # M. stor (PLGY01) Network and VIP Analysis
 
-This directory contains analyses of multilayer network interactions and environmental correlations for *Methanoflorens stordalenirensis* (*M. stor* / actor ID `PLGY01`) in the Stordalen Mire Bog habitat. 
+This directory contains analyses of multilayer network and environmental correlations for *Methanoflorens stordalenirensis* (*M. stor* / actor ID `PLGY01`) in the Stordalen Mire Bog habitat. 
 
 The workflow integrates multilayer network data (years 2011–2017) with Variable Importance in Projection (VIP) scores and Spearman correlations for environmental parameters to characterize the niche and key associations of *M. stor*'s primary neighbors.
 
