@@ -1,6 +1,5 @@
 ---
 title: "Network and VIP Analysis"
-author: "Your Name"
 date: "2024-06-13"
 output: html_document
 ---
@@ -160,7 +159,7 @@ filtered_data_neighbors <- filtered_data %>%
 # Load necessary libraries
 library(readxl)
 
-# Load the user's uploaded Excel file
+# Load the Excel file
 file_path <- "Input/all_vip_env_var_corr_DSedits.xlsx"
 
 # Read the first sheet of the Excel file
